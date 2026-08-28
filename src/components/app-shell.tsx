@@ -101,26 +101,21 @@ export function AppShell({ children }: { children: React.ReactNode }) {
             aria-hidden="true"
           >
             <rect
-              x="1.5"
-              y="1.5"
-              width="61"
-              height="61"
-              rx="14"
-              className="brand-mark-plate"
+              x="13"
+              y="20"
+              width="20"
+              height="28"
+              rx="5"
+              transform="rotate(-16 23 34)"
+              className="brand-mark-back"
             />
-            <path
-              d="M20 14 36 50"
-              fill="none"
-              className="brand-mark-slash-cyan"
-              strokeLinecap="round"
-              strokeWidth="7"
-            />
-            <path
-              d="m44 14-16 36"
-              fill="none"
-              className="brand-mark-slash-magenta"
-              strokeLinecap="round"
-              strokeWidth="7"
+            <rect
+              x="31"
+              y="16"
+              width="21"
+              height="30"
+              rx="5"
+              className="brand-mark-front"
             />
           </svg>
           <span>Digi Tools</span>

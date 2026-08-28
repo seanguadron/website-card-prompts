@@ -122,7 +122,8 @@ export async function GET(request: Request) {
       });
     }
 
-    return Response.json(await store.listEntries(theme));
+    const manifest = await store.listEntries(theme);
+    return Response.json({ ...manifest, queue: await store.readQueue() });
   } catch (error) {
     return failure(error);
   }
@@ -159,6 +160,11 @@ export async function POST(request: Request) {
       return Response.json(await store.scaffoldPack(theme));
     }
 
+    // Clearing the queue names no card, so it comes before the key check.
+    if (op === "queue-clear") {
+      return Response.json(await store.queueClear());
+    }
+
     if (!theme || !key) {
       throw new CardArtError("theme and key are required", 400);
     }
@@ -187,6 +193,16 @@ export async function POST(request: Request) {
         return Response.json(await store.selectVariant(theme, key, variantId, dataUrl));
       case "clear":
         return Response.json(await store.clearLive(theme, key));
+      case "queue-add":
+        return Response.json(
+          await store.queueAdd(
+            theme,
+            key,
+            typeof body.count === "number" ? body.count : 4,
+          ),
+        );
+      case "queue-remove":
+        return Response.json(await store.queueRemove(theme, key));
       default:
         throw new CardArtError(`Unknown operation: ${op || "(none)"}`, 400);
     }

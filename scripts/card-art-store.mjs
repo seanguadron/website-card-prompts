@@ -111,6 +111,13 @@ export function createCardArtStore({
   const catalogRoot = path.join(root, ...deckConfig.catalogDir);
   const packRoot = path.join(catalogRoot, "art-themes");
 
+  // The generation queue: cards the author wants MORE candidates for. It is
+  // deliberately one file for both decks - the agent that fulfils it works
+  // through a single list in one sitting, and splitting it per deck would just
+  // mean remembering to look twice. Transient working state, so it is
+  // gitignored rather than committed.
+  const queuePath = path.join(root, ".ai", "notes", "art-queue.json");
+
   function assertInside(candidate, base, label) {
     const resolved = path.resolve(candidate);
     const resolvedBase = path.resolve(base);
@@ -887,9 +894,89 @@ export function createCardArtStore({
     });
   }
 
+  // --- the generation queue ------------------------------------------------
+
+  async function readQueue() {
+    try {
+      const parsed = JSON.parse(await readFile(queuePath, "utf8"));
+      return Array.isArray(parsed?.items) ? parsed.items : [];
+    } catch {
+      // No queue yet, or an unreadable one: an empty list is the honest answer
+      // and the next write recreates the file.
+      return [];
+    }
+  }
+
+  async function persistQueue(items) {
+    await mkdir(path.dirname(queuePath), { recursive: true });
+    await writeFile(
+      queuePath,
+      `${JSON.stringify({ version: 1, items }, null, 2)}
+`,
+      "utf8",
+    );
+  }
+
+  // Queue N more candidates for one card. Asking twice adds up rather than
+  // replacing, because "generate more" pressed twice means more.
+  function queueAdd(themeId, key, count) {
+    return serialize(async () => {
+      requireTheme(themeId);
+      const { entries } = await loadContext(themeId);
+      const entry = findEntry(entries, key);
+      const wanted = Number.isInteger(count) && count > 0 ? Math.min(count, 12) : 4;
+
+      const items = await readQueue();
+      const existing = items.find(
+        (item) => item.deck === deck && item.theme === themeId && item.key === key,
+      );
+      if (existing) {
+        existing.count = Math.min(existing.count + wanted, 24);
+        existing.queuedAt = Date.now();
+      } else {
+        items.push({
+          deck,
+          theme: themeId,
+          key,
+          name: entry.name,
+          sequence: entry.sequence,
+          fileName: entry.fileName,
+          count: wanted,
+          queuedAt: Date.now(),
+        });
+      }
+      await persistQueue(items);
+      return { queued: items.length, count: existing ? existing.count : wanted };
+    });
+  }
+
+  function queueRemove(themeId, key) {
+    return serialize(async () => {
+      const items = (await readQueue()).filter(
+        (item) => !(item.deck === deck && item.theme === themeId && item.key === key),
+      );
+      await persistQueue(items);
+      return { queued: items.length };
+    });
+  }
+
+  function queueClear() {
+    return serialize(async () => {
+      // Only this deck's requests: the other deck's queue is not this
+      // studio's to throw away.
+      const items = (await readQueue()).filter((item) => item.deck !== deck);
+      await persistQueue(items);
+      return { queued: items.length };
+    });
+  }
+
   return {
     listEntries,
     listPacks,
+    readQueue,
+    queueAdd,
+    queueRemove,
+    queueClear,
     readVariantFile,
     addVariant,
     saveCrop,

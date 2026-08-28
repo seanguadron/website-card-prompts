@@ -40,11 +40,21 @@ type Entry = {
   variants: Variant[];
 };
 
+/** A card the author wants more candidates for, waiting to be generated. */
+type QueueItem = {
+  deck: string;
+  theme: string;
+  key: string;
+  name: string;
+  count: number;
+};
+
 type Manifest = {
   theme: string;
   style: string;
   entries: Entry[];
   progress: { generated: number; total: number };
+  queue: QueueItem[];
 };
 
 type PackSummary = {
@@ -130,7 +140,22 @@ function isManifest(value: unknown): value is Manifest {
     Array.isArray(candidate.entries) &&
     candidate.entries.every(isEntry) &&
     typeof candidate.progress?.total === "number" &&
-    typeof candidate.progress?.generated === "number"
+    typeof candidate.progress?.generated === "number" &&
+    Array.isArray(candidate.queue) &&
+    candidate.queue.every(isQueueItem)
+  );
+}
+
+function isQueueItem(value: unknown): value is QueueItem {
+  const candidate = value as Partial<QueueItem> | null;
+  return (
+    typeof candidate === "object" &&
+    candidate !== null &&
+    typeof candidate.deck === "string" &&
+    typeof candidate.theme === "string" &&
+    typeof candidate.key === "string" &&
+    typeof candidate.name === "string" &&
+    typeof candidate.count === "number"
   );
 }
 
@@ -393,6 +418,28 @@ export function CardStudio({
   );
 
   const entries = useMemo(() => manifest?.entries ?? [], [manifest]);
+  // What this deck has asked for more of. Keyed for O(1) lookup per row.
+  const queue = useMemo(() => manifest?.queue ?? [], [manifest]);
+  const queuedCounts = useMemo(() => {
+    const counts = new Map<string, number>();
+    for (const item of queue) {
+      if (item.deck === deck && item.theme === theme) {
+        counts.set(item.key, item.count);
+      }
+    }
+    return counts;
+  }, [deck, queue, theme]);
+  const queuedFor = useCallback(
+    (key: string) => queuedCounts.get(key) ?? 0,
+    [queuedCounts],
+  );
+  const queuedTotal = useMemo(
+    () =>
+      queue
+        .filter((item) => item.deck === deck)
+        .reduce((sum, item) => sum + item.count, 0),
+    [deck, queue],
+  );
   // The pack the on-screen rows belong to. For one render after a tab
   // switch this trails `theme`; deriving image URLs from it keeps the
   // entries and their URLs changing in the same frame instead of 404ing.
@@ -619,6 +666,37 @@ export function CardStudio({
           <small>{theme} cards with art</small>
         </div>
       </header>
+
+      {queuedTotal > 0 ? (
+        <div className="card-art-queue" role="status">
+          <span className="card-art-queue-count">{queuedTotal}</span>
+          <div>
+            <strong>
+              {queuedTotal} image{queuedTotal === 1 ? "" : "s"} queued across{" "}
+              {queue.filter((item) => item.deck === deck).length} card
+              {queue.filter((item) => item.deck === deck).length === 1 ? "" : "s"}
+            </strong>
+            {/* The studio cannot reach a model. Say who does, and where the
+                request is parked, so the queue is not a button that appears
+                to do nothing. */}
+            <small>
+              Waiting in <code>.ai/notes/art-queue.json</code> — ask the agent
+              working this repo to run the queue. New images arrive as
+              variants; nothing is applied for you.
+            </small>
+          </div>
+          <button
+            className="button button-quiet"
+            type="button"
+            disabled={busy}
+            onClick={() =>
+              void send({ op: "queue-clear" }, "Cleared the generation queue.")
+            }
+          >
+            Clear queue
+          </button>
+        </div>
+      ) : null}
 
       <div className="card-art-controls">
         <label className="field">
@@ -873,6 +951,26 @@ export function CardStudio({
                             onClick={() => void copyPrompt(entry)}
                           >
                             Copy full prompt
+                          </button>
+                          {/* Queue more candidates for this card. Nothing is
+                              generated here - the studio has no model access.
+                              It records the request; the agent working this
+                              repo fulfils the queue and the new images arrive
+                              as variants to choose from. */}
+                          <button
+                            className="button button-secondary"
+                            type="button"
+                            disabled={busy}
+                            onClick={() =>
+                              void send(
+                                { key: entry.key, op: "queue-add", count: 4 },
+                                `Queued 4 more for ${entry.name}.`,
+                              )
+                            }
+                          >
+                            {queuedFor(entry.key)
+                              ? `Queued ×${queuedFor(entry.key)} — add 4 more`
+                              : "Generate more"}
                           </button>
                           {entry.status === "generated" ? (
                             <button

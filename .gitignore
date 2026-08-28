@@ -19,3 +19,7 @@ npm-debug.log*
 # that produced each one, so any image can be regenerated. Keep this tree on
 # the machine that generates; back it up outside git.
 /card-art-source/
+
+# The generation queue: transient working state between the studio and the
+# agent that fulfils it, not a record worth committing.
+/.ai/notes/art-queue.json

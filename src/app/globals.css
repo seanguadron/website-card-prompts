@@ -179,25 +179,25 @@ a {
   letter-spacing: -0.02em;
 }
 
-/* The mark is the favicon's crossed slashes drawn with theme tokens, so the
-   tab icon and the corner mark are the same object. */
+/* Two cards, one behind the other - the thing both decks actually are, and
+   the one motif that still reads at 16px. It draws with theme tokens; the
+   favicon draws the same shapes with literal colours on a plate, so the tab
+   icon and the corner mark stay the same object. (The old mark was a pair of
+   thin diagonals that turned to lint at tab size.) */
 .brand-mark {
   display: block;
   flex: 0 0 auto;
 }
 
-.brand-mark-plate {
-  fill: var(--card);
-  stroke: color-mix(in oklch, var(--brand-cyan) 45%, var(--border));
-  stroke-width: 3;
-}
-
-.brand-mark-slash-cyan {
-  stroke: var(--brand-cyan);
-}
-
-.brand-mark-slash-magenta {
+.brand-mark-back {
+  fill: var(--background);
   stroke: var(--brand-magenta);
+  stroke-width: 3.5;
+  transition: stroke-width 150ms ease-out;
+}
+
+.brand-mark-front {
+  fill: var(--brand-cyan);
 }
 
 .brand {
@@ -205,8 +205,8 @@ a {
   color: var(--foreground);
 }
 
-.brand:hover .brand-mark-plate {
-  stroke: var(--brand-cyan);
+.brand:hover .brand-mark-back {
+  stroke-width: 4.5;
 }
 
 /* Home is a page like any tab, so the brand carries the same current-page
@@ -215,9 +215,9 @@ a {
   color: var(--brand-cyan-text);
 }
 
-.brand.is-active .brand-mark-plate {
-  stroke: var(--brand-cyan);
-  stroke-width: 5;
+/* Current page is not signalled by colour alone: the back card thickens. */
+.brand.is-active .brand-mark-back {
+  stroke-width: 5.5;
 }
 
 .tool-tabs {
@@ -8489,6 +8489,52 @@ body:has(.page-stage.is-fluid) {
 .card-art-progress small {
   color: var(--muted-foreground);
   font-size: 0.7rem;
+}
+
+/* What the studio has asked to be generated. It sits under the header rather
+   than beside a card, because the queue is one list for the whole session and
+   the point is to see it accumulate. */
+.card-art-queue {
+  display: grid;
+  align-items: center;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: 14px;
+  margin-bottom: 16px;
+  border: 1px solid color-mix(in oklch, var(--brand-cyan) 40%, var(--border));
+  border-radius: 12px;
+  padding: 12px 14px;
+  background: color-mix(in oklch, var(--brand-cyan) 7%, var(--card));
+}
+
+.card-art-queue-count {
+  display: grid;
+  min-width: 38px;
+  height: 38px;
+  place-items: center;
+  border-radius: 10px;
+  background: var(--brand-cyan);
+  color: var(--brand-cyan-foreground);
+  font-family: var(--font-mono), "Cascadia Mono", monospace;
+  font-size: 0.95rem;
+  font-weight: 800;
+}
+
+.card-art-queue strong {
+  display: block;
+  font-size: 0.82rem;
+}
+
+.card-art-queue small {
+  display: block;
+  margin-top: 3px;
+  color: var(--muted-foreground);
+  font-size: 0.7rem;
+  line-height: 1.5;
+}
+
+.card-art-queue code {
+  font-family: var(--font-mono), "Cascadia Mono", monospace;
+  font-size: 0.68rem;
 }
 
 .card-art-controls {

@@ -26,6 +26,18 @@ export type CardArtLink = { key?: string; label: string };
 
 export type CardArtRelation = { label: string; items: CardArtLink[] };
 
+/** One card the author has asked for more candidates for. */
+export type ArtQueueItem = {
+  deck: string;
+  theme: string;
+  key: string;
+  name: string;
+  sequence: number;
+  fileName: string;
+  count: number;
+  queuedAt: number;
+};
+
 export type CardArtEntry = {
   key: string;
   sequence: number;
@@ -95,6 +107,15 @@ export type CardArtStore = {
     themeId: string,
     key: string,
   ): Promise<{ target: string; statusChanged: boolean }>;
+  /** The generation queue, shared by both decks. */
+  readQueue(): Promise<ArtQueueItem[]>;
+  queueAdd(
+    themeId: string,
+    key: string,
+    count: number,
+  ): Promise<{ queued: number; count: number }>;
+  queueRemove(themeId: string, key: string): Promise<{ queued: number }>;
+  queueClear(): Promise<{ queued: number }>;
   variantDir(themeId: string, entry: { key: string }): string;
   livePath(themeId: string, entry: { key: string }): string;
 };
