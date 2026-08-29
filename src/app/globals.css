@@ -1155,12 +1155,23 @@ a {
 /* The guide's acronym row: one card per letter, always a single row at
    width - the column count follows the deck (CRAFT 5, PICTURE 7), so the
    grid must not hard-code one. Narrow screens re-wrap it via media queries. */
-/* The guide's lede: each sentence is its own line, so a break never lands
-   mid-clause and leaves a two-word orphan under it. Each still wraps on its
-   own when the column gets narrow. */
-.craft-lede > span {
-  display: block;
+/* The guide's lede and credit are single statements, not body copy, so they
+   get a wider measure than the 62ch above: CRAFT's lede then sits on one line
+   instead of wrapping "as you go." onto a second, and PICTURE's longer one
+   takes two. `balance` keeps a wrap even rather than leaving a short orphan,
+   and px (not ch) so the smaller credit gets the same width, not a narrower
+   one. Beats `.craft-method-copy p` on specificity, which is the point. */
+.craft-method-copy .craft-lede,
+.craft-method-copy .craft-credit {
+  max-width: min(100%, 660px);
   text-wrap: balance;
+}
+
+/* A lede too long for one line breaks at its sentence boundary instead of
+   wherever the measure runs out. Each sentence still wraps on its own if the
+   column gets narrow enough to need it. */
+.craft-lede-sentences > span {
+  display: block;
 }
 
 /* Whose framework this is. Quiet, but on the page that teaches it. */

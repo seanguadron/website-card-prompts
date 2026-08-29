@@ -155,11 +155,9 @@ export function CraftFlowPanels({
               >
                 Build with C.R.A.F.T.
               </h2>
-              {/* One sentence per line. Left to itself the copy broke after
-                  "updates" and left "as you go." hanging on its own line. */}
               <p className="craft-lede">
-                <span>Set the context, role, actions, format, and audience.</span>
-                <span>Your prompt updates as you go.</span>
+                Set the context, role, actions, format, and audience. Your
+                prompt updates as you go.
               </p>
               {/* The framework is not ours. It is named on the page that
                   teaches it, not buried in a repo file. */}

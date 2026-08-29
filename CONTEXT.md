@@ -8,8 +8,9 @@ The C.R.A.F.T. framework is not this project's: it was developed by Lawton
 Solutions / Lawton Learns (https://www.youtube.com/watch?v=ABCqfaTjNd4). The
 five sections and their meanings come from there, so renaming or re-scoping
 them is a change to someone else's framework, not a local naming decision.
-P.I.C.T.U.R.E. is this project's own extension of the same idea to image
-models.
+P.I.C.T.U.R.E. is not this project's either: it comes from the prompting
+guidance in Midjourney's documentation (https://docs.midjourney.com), and the
+same rule applies to its seven sections.
 
 ## Language
 

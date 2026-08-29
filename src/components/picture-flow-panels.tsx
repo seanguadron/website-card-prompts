@@ -310,8 +310,10 @@ export function PictureFlowPanels({
               >
                 Build with P.I.C.T.U.R.E.
               </h2>
-              {/* One sentence per line, as on the CRAFT guide. */}
-              <p className="craft-lede">
+              {/* Two sentences, one line each. CRAFT's lede is short enough
+                  to sit on a single line whole; this one is not, so rather
+                  than let it wrap mid-phrase it breaks at the period. */}
+              <p className="craft-lede craft-lede-sentences">
                 <span>
                   Name your subject, then stack light, medium, palette, world,
                   references, and framing cards.
@@ -320,6 +322,20 @@ export function PictureFlowPanels({
                   The image prompt updates as you go, with an optional
                   Midjourney tail at the end.
                 </span>
+              </p>
+              {/* Same rule as the CRAFT guide: the framework is not ours, so
+                  it is credited where it is taught. The name wraps whole. */}
+              <p className="craft-credit">
+                Built from the prompting guidance in{" "}
+                <a
+                  className="craft-credit-name"
+                  href="https://docs.midjourney.com"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
+                  Midjourney&rsquo;s documentation
+                </a>
+                .
               </p>
             </div>
             <div className="craft-definition" role="list">

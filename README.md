@@ -24,12 +24,12 @@ export.
 | 05 | **Image Editor** | A layer-based raster editor: paint, select, transform, adjust, export PNG. |
 | 06 | **Vector Editor** | An SVG editor: draw shapes, style fills and strokes, export clean SVG or a rasterized PNG. |
 
-The C.R.A.F.T. framework itself is not ours: it was developed by **Lawton
-Solutions / Lawton Learns**
-([video](https://www.youtube.com/watch?v=ABCqfaTjNd4)). This project is an
-implementation of it — the deck, the cards, and the art are the part built
-here. P.I.C.T.U.R.E. is this project's own extension of the same idea to image
-models.
+Neither framework is ours. C.R.A.F.T. was developed by **Lawton Solutions /
+Lawton Learns** ([video](https://www.youtube.com/watch?v=ABCqfaTjNd4)), and
+P.I.C.T.U.R.E. comes from the prompting guidance in
+**[Midjourney's documentation](https://docs.midjourney.com)**. This project is
+an implementation of both — the decks, the cards, and the art are the part
+built here.
 
 Every card in both decks carries original key art — 1,104 images across four
 illustrated worlds. The CRAFT deck ships in three (Sci-Fi, Fantasy,
