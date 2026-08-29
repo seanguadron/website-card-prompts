@@ -8,6 +8,7 @@ import { FlowStepStrip } from "@/components/flow-step-strip";
 import { PromptArchetypeToolbar } from "@/components/prompt-archetype-toolbar";
 import { PromptBuilderHeader } from "@/components/prompt-builder-header";
 import { CraftFlowPanels } from "@/components/prompt-flow-panels";
+import { useArtQueue } from "@/hooks/use-art-queue";
 import type { CraftDictationApi } from "@/components/prompt-builder-ui";
 import { PromptLibraryPanel } from "@/components/prompt-library-panel";
 import { PromptOutputDock } from "@/components/prompt-output-dock";
@@ -138,6 +139,10 @@ export function PromptBuilder({ roles }: { roles: PromptRole[] }) {
   // this state exists to re-render the deck (every face and bio resolves at
   // render time) and to remember the choice across visits.
   const [artPackId, setArtPackId] = useState(getActiveArtPackId());
+  // Card authoring from inside the deck: development only, and only once the
+  // writer has answered. The world is part of it - queuing from the fantasy
+  // deck asks for fantasy art, because that is the art you were looking at.
+  const artQueue = useArtQueue("craft", artPackId);
   const [savedPrompts, setSavedPrompts] = useState<SavedPrompt[]>([]);
   const [customArchetypes, setCustomArchetypes] = useState<PromptArchetype[]>(
     [],
@@ -958,6 +963,7 @@ export function PromptBuilder({ roles }: { roles: PromptRole[] }) {
               onToggleRole={toggleRole}
               onDropRole={dropRoleIntoSlot}
               onClearRoles={clearRoleLoadout}
+              artQueue={artQueue}
             />
 
             {speechMessage ? (
@@ -1023,6 +1029,48 @@ export function PromptBuilder({ roles }: { roles: PromptRole[] }) {
                 </button>
               ))}
             </div>
+
+            {/* Queue art. Absent in production and off-loopback: the writer
+                is probed, not assumed, so the control never appears where it
+                could not work. It rides with the world switch because the two
+                are the same question - which art, and more of it. */}
+            {artQueue.available ? (
+              <div className="art-queue-dock">
+                <div className="art-queue-dock-row">
+                  <button
+                    type="button"
+                    className={
+                      artQueue.editing
+                        ? "art-queue-dock-toggle is-active"
+                        : "art-queue-dock-toggle"
+                    }
+                    aria-pressed={artQueue.editing}
+                    onClick={artQueue.toggleEditing}
+                  >
+                    {artQueue.editing ? "Done" : "Queue art"}
+                    {artQueue.total > 0 ? (
+                      <span className="art-queue-dock-count">
+                        {artQueue.total}
+                      </span>
+                    ) : null}
+                  </button>
+                  {artQueue.editing && artQueue.total > 0 ? (
+                    <button
+                      type="button"
+                      className="art-queue-dock-clear"
+                      onClick={artQueue.clear}
+                    >
+                      Clear
+                    </button>
+                  ) : null}
+                </div>
+                {artQueue.editing ? (
+                  <p className="art-queue-dock-status" role="status">
+                    {artQueue.status ?? "Click a card to ask for one more image."}
+                  </p>
+                ) : null}
+              </div>
+            ) : null}
           </FlowNavDock>
         </div>
 

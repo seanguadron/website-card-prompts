@@ -9,6 +9,7 @@ import {
   RoleCardFace,
   roleCategoryCode,
 } from "@/components/prompt-builder-ui";
+import type { ArtQueueApi } from "@/hooks/use-art-queue";
 import { useCardDeckMotion } from "@/hooks/use-card-deck-motion";
 import { usePortalTarget } from "@/hooks/use-portal-target";
 import { roleArt } from "@/lib/art-pack";
@@ -27,6 +28,7 @@ export function PromptRoleWorkbench({
   onToggleRole,
   onDropRole,
   onClearRoles,
+  artQueue,
 }: {
   roles: PromptRole[];
   selectedRoleIds: string[];
@@ -36,6 +38,8 @@ export function PromptRoleWorkbench({
   onToggleRole: (role: PromptRole) => void;
   onDropRole: (slotIndex: number, roleId: string) => void;
   onClearRoles: () => void;
+  /** Development-only card authoring. Absent in production and off-loopback. */
+  artQueue?: ArtQueueApi;
 }) {
   const [searchQuery, setSearchQuery] = useState("");
   const [previewRoleId, setPreviewRoleId] = useState<string | null>(null);
@@ -279,6 +283,13 @@ export function PromptRoleWorkbench({
                 ? `SUPPORT ${selectedIndex}`
                 : roleCategoryCode(role.category);
 
+          // Edit mode repoints the card at the queue: the same click that
+          // equips a role instead asks for another portrait of it. A mode, not
+          // a second button - the card IS a button, and one cannot nest.
+          const queuing = artQueue?.editing ?? false;
+          const artKey = roleArt(role.id)?.key;
+          const queued = queuing ? artQueue!.countFor(artKey) : 0;
+
           return (
             <button
               className={[
@@ -286,28 +297,36 @@ export function PromptRoleWorkbench({
                 selected ? "is-selected" : "",
                 previewed ? "is-previewed" : "",
                 draggingSource === `deck-${role.id}` ? "is-dragging" : "",
+                queuing ? "is-queuing" : "",
+                queued > 0 ? "is-queued" : "",
               ]
                 .filter(Boolean)
                 .join(" ")}
               type="button"
-              draggable
+              draggable={!queuing}
               data-motion-card
               onDragStart={(event) =>
                 beginRoleDrag(event, role.id, `deck-${role.id}`)
               }
               onDragEnd={endRoleDrag}
-              onClick={() => onToggleRole(role)}
+              onClick={() =>
+                queuing ? artQueue!.queueOne(artKey, role.name) : onToggleRole(role)
+              }
               onMouseEnter={(event) =>
                 previewRoleCard(role.id, event.currentTarget)
               }
               onMouseLeave={clearRolePreview}
               onFocus={(event) => previewRoleCard(role.id, event.currentTarget)}
               onBlur={clearRolePreview}
-              aria-pressed={selected}
+              aria-pressed={queuing ? undefined : selected}
               aria-label={
-                selected
-                  ? `Remove ${role.name} from role loadout. ${role.description}`
-                  : `Add ${role.name} to role loadout. ${role.description}`
+                queuing
+                  ? `Queue another ${role.name} image${
+                      queued > 0 ? `. ${queued} queued` : ""
+                    }`
+                  : selected
+                    ? `Remove ${role.name} from role loadout. ${role.description}`
+                    : `Add ${role.name} to role loadout. ${role.description}`
               }
               key={role.id}
             >
@@ -318,6 +337,11 @@ export function PromptRoleWorkbench({
                 )}
                 status={selected ? loadoutLabel : undefined}
               />
+              {queued > 0 ? (
+                <span className="art-queue-badge" aria-hidden="true">
+                  {queued}&times;
+                </span>
+              ) : null}
             </button>
           );
         })}

@@ -2,6 +2,7 @@
 
 import type { RefObject } from "react";
 import { PromptCardWorkbench } from "@/components/prompt-card-workbench";
+import type { ArtQueueApi } from "@/hooks/use-art-queue";
 import { PromptRoleWorkbench } from "@/components/prompt-role-workbench";
 import {
   CardIllustrationFrame,
@@ -57,6 +58,7 @@ export function CraftFlowPanels({
   onToggleRole,
   onDropRole,
   onClearRoles,
+  artQueue,
 }: {
   activePanel: number;
   registerPanelHeading: (
@@ -97,6 +99,8 @@ export function CraftFlowPanels({
   onToggleRole: (role: PromptRole) => void;
   onDropRole: (slotIndex: number, roleId: string) => void;
   onClearRoles: () => void;
+  /** Development-only card authoring; undefined everywhere else. */
+  artQueue?: ArtQueueApi;
 }) {
   // Both output-type radio rows share the same options + selection, so one
   // active index feeds two roving groups (guide panel + format panel).
@@ -317,6 +321,7 @@ export function CraftFlowPanels({
                       onRemoveCard("context", slotIndex)
                     }
                     onClearCards={() => onClearCards("context")}
+                    artQueue={artQueue}
                   />
                 </div>
                 <div className="workbench-text-row">
@@ -400,6 +405,7 @@ export function CraftFlowPanels({
                     onToggleRole={onToggleRole}
                     onDropRole={onDropRole}
                     onClearRoles={onClearRoles}
+                  artQueue={artQueue}
                   />
                 </div>
               </div>
@@ -450,6 +456,7 @@ export function CraftFlowPanels({
                   }
                   onRemoveCard={(slotIndex) => onRemoveCard("action", slotIndex)}
                   onClearCards={() => onClearCards("action")}
+                  artQueue={artQueue}
                 />
                 <label className="workbench-text-label" htmlFor="prompt-action">
                   Optional custom steps
@@ -509,6 +516,7 @@ export function CraftFlowPanels({
                   }
                   onRemoveCard={(slotIndex) => onRemoveCard("format", slotIndex)}
                   onClearCards={() => onClearCards("format")}
+                  artQueue={artQueue}
                 />
 
                 <section
@@ -634,6 +642,7 @@ export function CraftFlowPanels({
                       onRemoveCard("target", slotIndex)
                     }
                     onClearCards={() => onClearCards("target")}
+                    artQueue={artQueue}
                   />
                 </div>
                 <div className="workbench-text-row">

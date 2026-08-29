@@ -92,6 +92,14 @@ export async function GET(request: Request) {
       return Response.json({ packs: await store.listPacks() });
     }
 
+    // Just the generation queue. The deck's edit mode needs the queued counts
+    // and nothing else, and it asks on every load - reading the whole 226-entry
+    // manifest to find them would be the expensive way to answer. The queue is
+    // deck-wide, so this comes before the theme requirement below.
+    if (view === "queue") {
+      return Response.json({ queue: await store.readQueue() });
+    }
+
     const theme = requiredParam(params.get("theme"), "theme");
     const key = params.get("key");
     const variant = params.get("variant");

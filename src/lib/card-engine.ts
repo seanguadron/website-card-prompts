@@ -105,6 +105,10 @@ export type CardEngineConfig<
 export type CardArtRef = {
   src: string;
   status: "planned" | "generated";
+  /** The pack entry this image came from, when it came from a pack. Lets a
+   *  card face queue more of the art it is currently showing without knowing
+   *  anything about catalogs or paths. */
+  key?: string;
 };
 
 // Private twin of src/lib/slot-order.ts insertIntoSlots (see header comment).

@@ -27,6 +27,10 @@ export type { ResolvedArt };
 export type CardArtRef = {
   src: string;
   status: "planned" | "generated";
+  /** The pack entry this image came from. Present on pack-resolved art, which
+   *  is what lets a card queue MORE of itself without knowing where it sits
+   *  in the catalog. Optional because the type is the floor both decks meet. */
+  key?: string;
 };
 
 const PACKS = [

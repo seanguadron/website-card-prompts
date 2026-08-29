@@ -15,6 +15,7 @@ import {
   type DragStartEvent,
 } from "@dnd-kit/core";
 import { CardBio, CardIllustrationFrame } from "@/components/prompt-builder-ui";
+import type { ArtQueueApi } from "@/hooks/use-art-queue";
 import { useCardDeckMotion } from "@/hooks/use-card-deck-motion";
 import { usePortalTarget } from "@/hooks/use-portal-target";
 import type {
@@ -143,6 +144,7 @@ function WorkbenchCard<
   onToggle,
   onPreview,
   onClearPreview,
+  artQueue,
 }: {
   engine: CardEngine<S, T, L>;
   lineage: L;
@@ -152,12 +154,26 @@ function WorkbenchCard<
   onToggle: () => void;
   onPreview: (element: HTMLElement) => void;
   onClearPreview: () => void;
+  artQueue?: ArtQueueApi;
 }) {
   const grade = engine.getCardGrade(lineage, values);
   const { attributes, listeners, setNodeRef, isDragging } = useDraggable({
     id: `card:${lineage.id}`,
     data: { lineageId: lineage.id, kind: "card" } satisfies ActiveDrag,
   });
+
+  // Edit mode repoints the card at the art queue. The key is the art the card
+  // is showing RIGHT NOW - a lineage card wears its grade's image once that
+  // grade has one - so queuing from here asks for more of what you are
+  // looking at, not more of the lineage in the abstract.
+  const queuing = artQueue?.editing ?? false;
+  // The art may be a pack entry (has a key, can be queued) or a catalog's
+  // inline illustration (no key, nothing to ask a pack for). Narrow rather
+  // than put a phantom field on the data schema to make the types line up.
+  const currentArt = engine.getCardArt(lineage, values);
+  const artKey =
+    currentArt && "key" in currentArt ? currentArt.key : undefined;
+  const queued = queuing ? artQueue!.countFor(artKey) : 0;
 
   return (
     <button
@@ -167,20 +183,26 @@ function WorkbenchCard<
         selected ? "is-selected" : "",
         suggested ? "is-compatible-suggestion" : "",
         isDragging ? "is-dragging" : "",
+        queuing ? "is-queuing" : "",
+        queued > 0 ? "is-queued" : "",
       ]
         .filter(Boolean)
         .join(" ")}
       type="button"
       data-motion-card
-      onClick={onToggle}
+      onClick={queuing ? () => artQueue!.queueOne(artKey, grade.name) : onToggle}
       onMouseEnter={(event) => onPreview(event.currentTarget)}
       onMouseLeave={onClearPreview}
       onFocus={(event) => onPreview(event.currentTarget)}
       onBlur={onClearPreview}
-      aria-label={`${selected ? "Remove" : "Equip"} ${grade.name}. ${grade.description}`}
-      {...listeners}
+      aria-label={
+        queuing
+          ? `Queue another ${grade.name} image${queued > 0 ? `. ${queued} queued` : ""}`
+          : `${selected ? "Remove" : "Equip"} ${grade.name}. ${grade.description}`
+      }
+      {...(queuing ? {} : listeners)}
       {...attributes}
-      aria-pressed={selected}
+      aria-pressed={queuing ? undefined : selected}
     >
       <CardFace
         engine={engine}
@@ -188,6 +210,11 @@ function WorkbenchCard<
         values={values}
         selected={selected}
       />
+      {queued > 0 ? (
+        <span className="art-queue-badge" aria-hidden="true">
+          {queued}&times;
+        </span>
+      ) : null}
     </button>
   );
 }
@@ -365,6 +392,7 @@ export function PromptCardWorkbench<
   onDropCard,
   onRemoveCard,
   onClearCards,
+  artQueue,
 }: {
   engine: CardEngine<S, T, L>;
   section: S;
@@ -377,6 +405,8 @@ export function PromptCardWorkbench<
   onDropCard: (slotIndex: number, lineageId: string) => void;
   onRemoveCard: (slotIndex: number) => void;
   onClearCards: () => void;
+  /** Development-only card authoring. The PICTURE deck passes none. */
+  artQueue?: ArtQueueApi;
 }) {
   const deck = useMemo(
     () => engine.getSectionDeck(section, values),
@@ -538,6 +568,7 @@ export function PromptCardWorkbench<
                 onToggle={() => onToggleCard(lineage.id)}
                 onPreview={(element) => previewCard(lineage.id, element)}
                 onClearPreview={clearPreview}
+                artQueue={artQueue}
                 key={lineage.id}
               />
             ))}
