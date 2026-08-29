@@ -1155,12 +1155,26 @@ a {
 /* The guide's acronym row: one card per letter, always a single row at
    width - the column count follows the deck (CRAFT 5, PICTURE 7), so the
    grid must not hard-code one. Narrow screens re-wrap it via media queries. */
+/* The guide's lede: each sentence is its own line, so a break never lands
+   mid-clause and leaves a two-word orphan under it. Each still wraps on its
+   own when the column gets narrow. */
+.craft-lede > span {
+  display: block;
+  text-wrap: balance;
+}
+
 /* Whose framework this is. Quiet, but on the page that teaches it. */
 .craft-credit {
   margin-top: 10px;
   color: var(--muted-foreground);
   font-size: 0.76rem;
   line-height: 1.55;
+}
+
+/* A person's name is one unit: it moves to the next line whole rather than
+   splitting after "Lawton". */
+.craft-credit-name {
+  white-space: nowrap;
 }
 
 .craft-credit a {

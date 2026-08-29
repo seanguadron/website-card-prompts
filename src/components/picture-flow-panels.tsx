@@ -310,10 +310,16 @@ export function PictureFlowPanels({
               >
                 Build with P.I.C.T.U.R.E.
               </h2>
-              <p>
-                Name your subject, then stack light, medium, palette, world,
-                references, and framing cards. The image prompt updates as you
-                go, with an optional Midjourney tail at the end.
+              {/* One sentence per line, as on the CRAFT guide. */}
+              <p className="craft-lede">
+                <span>
+                  Name your subject, then stack light, medium, palette, world,
+                  references, and framing cards.
+                </span>
+                <span>
+                  The image prompt updates as you go, with an optional
+                  Midjourney tail at the end.
+                </span>
               </p>
             </div>
             <div className="craft-definition" role="list">

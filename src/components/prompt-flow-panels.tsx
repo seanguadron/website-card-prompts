@@ -155,15 +155,20 @@ export function CraftFlowPanels({
               >
                 Build with C.R.A.F.T.
               </h2>
-              <p>
-                Set the context, role, actions, format, and audience. Your
-                prompt updates as you go.
+              {/* One sentence per line. Left to itself the copy broke after
+                  "updates" and left "as you go." hanging on its own line. */}
+              <p className="craft-lede">
+                <span>Set the context, role, actions, format, and audience.</span>
+                <span>Your prompt updates as you go.</span>
               </p>
               {/* The framework is not ours. It is named on the page that
                   teaches it, not buried in a repo file. */}
               <p className="craft-credit">
                 Built around the C.R.A.F.T. prompting framework developed by{" "}
+                {/* The name is one thing; it wraps as one thing, so the break
+                    lands before it rather than inside it. */}
                 <a
+                  className="craft-credit-name"
                   href="https://www.youtube.com/watch?v=ABCqfaTjNd4"
                   target="_blank"
                   rel="noreferrer noopener"
