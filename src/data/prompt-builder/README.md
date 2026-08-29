@@ -5,6 +5,11 @@ This directory is the editable source of truth for the CRAFT Deck catalog
 Application behavior remains in `src/lib`; these files contain only declarative
 content and configuration.
 
+The C.R.A.F.T. framework these files implement was developed by Lawton
+Solutions / Lawton Learns (https://www.youtube.com/watch?v=ABCqfaTjNd4). The
+five section names and what each one means come from there; the cards, roles,
+archetypes, and art are this project's.
+
 ## Files
 
 - `roles.json` - role cards and categories

@@ -1155,6 +1155,24 @@ a {
 /* The guide's acronym row: one card per letter, always a single row at
    width - the column count follows the deck (CRAFT 5, PICTURE 7), so the
    grid must not hard-code one. Narrow screens re-wrap it via media queries. */
+/* Whose framework this is. Quiet, but on the page that teaches it. */
+.craft-credit {
+  margin-top: 10px;
+  color: var(--muted-foreground);
+  font-size: 0.76rem;
+  line-height: 1.55;
+}
+
+.craft-credit a {
+  color: var(--brand-cyan-text);
+  text-decoration-color: color-mix(in oklch, var(--brand-cyan) 45%, transparent);
+  text-underline-offset: 3px;
+}
+
+.craft-credit a:hover {
+  text-decoration-color: var(--brand-cyan);
+}
+
 .craft-definition {
   display: grid;
   width: 100%;

@@ -4,6 +4,13 @@ The CRAFT Deck (tool id `prompt-builder`) helps a person assemble a portable
 C.R.A.F.T. prompt from explicit choices rather than asking a model to infer
 the missing brief.
 
+The C.R.A.F.T. framework is not this project's: it was developed by Lawton
+Solutions / Lawton Learns (https://www.youtube.com/watch?v=ABCqfaTjNd4). The
+five sections and their meanings come from there, so renaming or re-scoping
+them is a change to someone else's framework, not a local naming decision.
+P.I.C.T.U.R.E. is this project's own extension of the same idea to image
+models.
+
 ## Language
 
 **Role Card**:

@@ -159,6 +159,19 @@ export function CraftFlowPanels({
                 Set the context, role, actions, format, and audience. Your
                 prompt updates as you go.
               </p>
+              {/* The framework is not ours. It is named on the page that
+                  teaches it, not buried in a repo file. */}
+              <p className="craft-credit">
+                Built around the C.R.A.F.T. prompting framework developed by{" "}
+                <a
+                  href="https://www.youtube.com/watch?v=ABCqfaTjNd4"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
+                  Lawton Solutions / Lawton Learns
+                </a>
+                .
+              </p>
             </div>
             <div className="craft-definition" role="list">
               {CRAFT_PARTS.map(({ letter, label, summary }, index) => (
