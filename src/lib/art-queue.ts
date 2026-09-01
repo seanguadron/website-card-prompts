@@ -114,7 +114,9 @@ export async function addToArtQueue(
 ): Promise<number> {
   const response = await fetch(ENDPOINT, {
     method: "POST",
-    headers: { "content-type": "application/json" },
+    // The write-intent header is outside the CORS safelist, so a cross-origin
+    // forgery is forced into a preflight the endpoint never approves.
+    headers: { "content-type": "application/json", "x-card-art-intent": "write" },
     body: JSON.stringify({ op: "queue-add", deck, theme, key, count }),
   });
   if (!response.ok) {
@@ -132,7 +134,9 @@ export async function removeFromArtQueue(
 ): Promise<void> {
   const response = await fetch(ENDPOINT, {
     method: "POST",
-    headers: { "content-type": "application/json" },
+    // The write-intent header is outside the CORS safelist, so a cross-origin
+    // forgery is forced into a preflight the endpoint never approves.
+    headers: { "content-type": "application/json", "x-card-art-intent": "write" },
     body: JSON.stringify({ op: "queue-remove", deck, theme, key }),
   });
   if (!response.ok) {
@@ -144,7 +148,9 @@ export async function removeFromArtQueue(
 export async function clearArtQueue(deck: string): Promise<void> {
   const response = await fetch(ENDPOINT, {
     method: "POST",
-    headers: { "content-type": "application/json" },
+    // The write-intent header is outside the CORS safelist, so a cross-origin
+    // forgery is forced into a preflight the endpoint never approves.
+    headers: { "content-type": "application/json", "x-card-art-intent": "write" },
     body: JSON.stringify({ op: "queue-clear", deck }),
   });
   if (!response.ok) {

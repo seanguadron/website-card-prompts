@@ -49,6 +49,7 @@ export const catalogFiles = {
   suggestions: "suggestions.json",
   builder: "builder.json",
   proofScenarios: "proof-scenarios.json",
+  outcomeScenarios: "outcome-scenarios.json",
 };
 
 export async function readPromptDataJson(fileName) {

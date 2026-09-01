@@ -390,7 +390,9 @@ export function CardStudio({
       try {
         const response = await fetch("/api/card-art", {
           method: "POST",
-          headers: { "content-type": "application/json" },
+          // Write-intent header: forces cross-origin forgeries into a CORS
+          // preflight the endpoint never approves (security gate, 2026-09-01).
+          headers: { "content-type": "application/json", "x-card-art-intent": "write" },
           // Entry-scoped ops target the pack the on-screen rows belong
           // to (the manifest's own theme), never the tab selection - the
           // two can differ for a moment mid-switch, and a write must

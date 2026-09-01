@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import {
   OUTCOME_MAX_CARDS,
+  OUTCOME_SCHEMA_VERSION,
   composeOutcomePrompt,
   outcomeComboKey,
   outcomeMetaPath,
@@ -24,6 +25,38 @@ import {
 // for a meta it means the scenario was never generated, for a shard it means
 // no combination hashing there has been cached yet.
 type Fetched<T> = T | "missing";
+
+// public/proof-outcomes/ files are external data at runtime - a truncated
+// write or hand edit must degrade to "missing", never crash the page
+// (STANDARDS §2.3; there is no error boundary above this component).
+function isOutcomeMeta(value: unknown): value is OutcomeMeta {
+  if (typeof value !== "object" || value === null) return false;
+  const meta = value as Record<string, unknown>;
+  return (
+    meta.schemaVersion === OUTCOME_SCHEMA_VERSION &&
+    typeof meta.model === "string"
+  );
+}
+
+function isOutcomeShardFile(value: unknown): value is OutcomeShardFile {
+  if (typeof value !== "object" || value === null) return false;
+  const shard = value as Record<string, unknown>;
+  return (
+    shard.schemaVersion === OUTCOME_SCHEMA_VERSION &&
+    typeof shard.entries === "object" &&
+    shard.entries !== null
+  );
+}
+
+function isOutcomeEntry(value: unknown): value is OutcomeEntry {
+  if (typeof value !== "object" || value === null) return false;
+  const entry = value as Record<string, unknown>;
+  return (
+    typeof entry.text === "string" &&
+    typeof entry.outputTokens === "number" &&
+    typeof entry.stopReason === "string"
+  );
+}
 
 /**
  * The Outcome Lab: the model's actual answer for the current card selection.
@@ -86,7 +119,12 @@ export function PromptOutcomeLab({
           if (response.status === 404) {
             remember(setMetas, scenarioId, "missing");
           } else if (response.ok) {
-            remember(setMetas, scenarioId, (await response.json()) as OutcomeMeta);
+            const parsed: unknown = await response.json();
+            remember(
+              setMetas,
+              scenarioId,
+              isOutcomeMeta(parsed) ? parsed : "missing",
+            );
           }
         })
         .catch(() => {})
@@ -100,10 +138,11 @@ export function PromptOutcomeLab({
           if (response.status === 404) {
             remember(setShards, shardKey, "missing");
           } else if (response.ok) {
+            const parsed: unknown = await response.json();
             remember(
               setShards,
               shardKey,
-              (await response.json()) as OutcomeShardFile,
+              isOutcomeShardFile(parsed) ? parsed : "missing",
             );
           }
         })
@@ -115,10 +154,15 @@ export function PromptOutcomeLab({
   const scenario = OUTCOME_SCENARIOS.find((s) => s.id === scenarioId)!;
   const meta = metas.get(scenarioId);
   const shardFile = shardKey ? shards.get(shardKey) : undefined;
-  const entry: OutcomeEntry | undefined =
-    comboKey && shardFile && shardFile !== "missing"
+  // Own-property lookup (a key like "__proto__" must read as absent, not as
+  // Object.prototype), and the value itself is checked - one tampered entry
+  // degrades to a miss instead of rendering a non-string as a React child.
+  const rawEntry =
+    comboKey && shardFile && shardFile !== "missing" &&
+    Object.hasOwn(shardFile.entries, comboKey)
       ? shardFile.entries[comboKey]
       : undefined;
+  const entry = isOutcomeEntry(rawEntry) ? rawEntry : undefined;
 
   // The exact question the cached answer replies to, rebuilt with the same
   // composer the batch script used - shown so a surprising answer can be
@@ -215,7 +259,11 @@ export function PromptOutcomeLab({
         ))}
       </div>
       <p className="outcome-context">{scenario.context}</p>
-      {body}
+      {/* Live like the Prompt view's <pre aria-live>: switching scenario or
+          cards re-announces the result to assistive tech. */}
+      <div className="outcome-result" aria-live="polite">
+        {body}
+      </div>
       {!tracksAtDefaults ? (
         <p className="outcome-note outcome-note-quiet">
           Answers were cached with every slider at its default; the current

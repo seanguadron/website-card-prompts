@@ -95,6 +95,10 @@ function validateUniqueIds(catalog) {
       catalog.proofScenarios.scenarios,
       "proof scenario",
     ),
+    ...duplicateErrors(
+      catalog.outcomeScenarios.scenarios,
+      "outcome scenario",
+    ),
   ];
 }
 

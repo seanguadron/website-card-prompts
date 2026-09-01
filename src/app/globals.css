@@ -2273,6 +2273,11 @@ button.role-loadout-slot {
   color: var(--foreground);
 }
 
+.output-view-switch button:active:not(.is-active),
+.outcome-scenario-option:active:not(.is-active) {
+  transform: scale(0.97);
+}
+
 .output-view-switch button.is-active,
 .outcome-scenario-option.is-active {
   border-color: var(--brand-cyan);
@@ -2306,7 +2311,9 @@ button.role-loadout-slot {
   border: 1px solid var(--border);
   border-radius: 10px;
   background: var(--background);
-  font-size: 0.8rem;
+  /* The dock's one real prose element - a model reply meant to be READ -
+     so it sits at the body floor, not the control tier. */
+  font-size: 0.875rem;
   line-height: 1.6;
   white-space: pre-wrap;
   overflow-wrap: break-word;
@@ -2335,6 +2342,9 @@ button.role-loadout-slot {
 }
 
 .outcome-prompt summary {
+  display: flex;
+  align-items: center;
+  min-height: 28px;
   color: var(--muted-foreground);
   font-size: 0.72rem;
   font-weight: 700;
@@ -2757,6 +2767,11 @@ button.role-loadout-slot {
 .art-queue-dock-toggle:hover,
 .art-queue-dock-clear:hover {
   color: var(--foreground);
+}
+
+.art-queue-dock-toggle:active:not(.is-active),
+.art-queue-dock-clear:active {
+  transform: scale(0.97);
 }
 
 .art-queue-dock-toggle.is-active {
@@ -4281,7 +4296,10 @@ button.role-loadout-slot {
    while the mode is on, so it covers nothing during normal browsing. */
 .art-queue-badge {
   position: absolute;
-  top: 8px;
+  /* Below the topline row: the card's top-right corner already belongs to
+     its identity code, and the badge must not paint over it (design gate,
+     2026-09-01). 34px clears the topline; the art face has no text. */
+  top: 34px;
   right: 8px;
   z-index: 2;
   display: grid;

@@ -56,6 +56,33 @@ function isLocalRequest(request: Request) {
   return LOOPBACK.has(name);
 }
 
+// Host authenticates the request's TARGET; these headers authenticate its
+// CALLER. Without this, any webpage open in the same browser could blind-POST
+// writes here as JSON-in-text/plain (no CORS preflight) while the dev server
+// runs, and Host would still read localhost (security gate, 2026-09-01).
+// "same-origin" is the browser vouching for our own pages; "none" is a
+// user-initiated request; absent headers are a non-browser client (curl),
+// which is "another tool on this machine" and not the boundary being drawn.
+// Note "same-site" is rejected on purpose: localhost:3000 -> localhost:5100
+// is same-site but a different origin.
+function isSameOriginRequest(request: Request) {
+  const site = request.headers.get("sec-fetch-site");
+  if (site && site !== "same-origin" && site !== "none") {
+    return false;
+  }
+  const origin = request.headers.get("origin");
+  if (origin) {
+    try {
+      if (new URL(origin).host !== (request.headers.get("host") ?? "")) {
+        return false;
+      }
+    } catch {
+      return false;
+    }
+  }
+  return true;
+}
+
 function notFound() {
   return new Response("Not found", { status: 404 });
 }
@@ -78,7 +105,7 @@ function requiredParam(value: string | null, name: string) {
 }
 
 export async function GET(request: Request) {
-  if (isProduction() || !isLocalRequest(request)) {
+  if (isProduction() || !isLocalRequest(request) || !isSameOriginRequest(request)) {
     return notFound();
   }
 
@@ -142,8 +169,16 @@ export async function GET(request: Request) {
 const MAX_BODY_BYTES = 48 * 1024 * 1024;
 
 export async function POST(request: Request) {
-  if (isProduction() || !isLocalRequest(request)) {
+  if (isProduction() || !isLocalRequest(request) || !isSameOriginRequest(request)) {
     return notFound();
+  }
+
+  // The second, independent layer: a header outside the CORS safelist forces
+  // any cross-origin sender into a preflight, which fails here by default
+  // (no Access-Control-Allow-* is ever sent). Same-origin callers attach it
+  // trivially; a forged simple request cannot.
+  if (request.headers.get("x-card-art-intent") !== "write") {
+    return Response.json({ error: "Missing write-intent header" }, { status: 403 });
   }
 
   try {

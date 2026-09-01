@@ -36,6 +36,19 @@ card art to disk, so the owner does not rename, convert, and move 226 files
 by hand or hand-edit JSON to fix a typo. It is **not** in the tool registry:
 no nav tab, no home card, nothing links to it.
 
+The studio is no longer the endpoint's only caller, though. The CRAFT deck
+has a dev-only **art-queue mode** ("Queue art" in the nav dock): clicking a
+card queues one more image of it, through the same route's queue ops. The
+gating pattern is the one to copy if a shipped tool ever needs an authoring
+affordance again: a build-time flag (`ART_AUTHORING` in
+`src/lib/art-queue.ts`, an inlined `NODE_ENV` check that compiles the mode
+out of production bundles) decides whether the code exists, and a runtime
+probe (fetching the queue on mount) decides whether the control renders —
+the endpoint's own production-404 + loopback-Host + same-origin guards stay
+the actual boundary. The flag is the affordance; the endpoint is the
+boundary; the probe keeps the affordance from appearing anywhere the
+boundary would refuse it.
+
 Each card opens with one tab per facet: **Card** (what the card is —
 universal, the same in every world) and one per art pack (**Sci-Fi** with
 generated art; **Fantasy** and **Superhero** fully authored — 226 briefs
@@ -266,7 +279,7 @@ Do not expect a shell rail; DO recycle these primitives:
 | `downloadBlob` etc. | `src/lib/browser-download.ts` | All file downloads. |
 | `readStored`, `writeStored` | `src/lib/prompt-storage.ts` | SSR-safe JSON localStorage access (see §6 landmine). |
 | `useMediaQuery` | `src/hooks/use-media-query.ts` | Live matchMedia state, SSR-safe (`useSyncExternalStore`; the lint rules reject effect-driven setState). |
-| Output docks | `prompt-output-dock.tsx`, `architect-output-dock.tsx` | Two parallel copy/download artifact panels — pick one as your base; unifying them is sanctioned backlog. |
+| Output docks | `prompt-output-dock.tsx`, `architect-output-dock.tsx` | Two parallel copy/download artifact panels — pick one as your base; unifying them is sanctioned backlog. The prompt dock also takes an optional `outcomeView` node and grows a Prompt/Outcome switch when one is passed (the CRAFT deck's Outcome Lab); without it the dock renders exactly as before. |
 
 Known single-owner caveat: `zip.ts` currently has one importer (Image
 Editor) — generalize class names as you adopt it. `EditorTabs` and

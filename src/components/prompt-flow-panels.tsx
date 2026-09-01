@@ -405,7 +405,7 @@ export function CraftFlowPanels({
                     onToggleRole={onToggleRole}
                     onDropRole={onDropRole}
                     onClearRoles={onClearRoles}
-                  artQueue={artQueue}
+                    artQueue={artQueue}
                   />
                 </div>
               </div>

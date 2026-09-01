@@ -11,19 +11,27 @@
     "archetypes",
     "suggestions",
     "builder",
-    "proofScenarios"
+    "proofScenarios",
+    "outcomeScenarios"
   ],
   "properties": {
     "roles": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["schemaVersion", "roles"],
+      "required": [
+        "schemaVersion",
+        "roles"
+      ],
       "properties": {
-        "schemaVersion": { "const": 2 },
+        "schemaVersion": {
+          "const": 2
+        },
         "roles": {
           "type": "array",
           "minItems": 1,
-          "items": { "$ref": "#/$defs/role" }
+          "items": {
+            "$ref": "#/$defs/role"
+          }
         }
       }
     },
@@ -39,25 +47,39 @@
         "vocabulary"
       ],
       "properties": {
-        "schemaVersion": { "const": 1 },
-        "sectionTracks": { "$ref": "#/$defs/sectionTracks" },
-        "slotBudgets": { "$ref": "#/$defs/slotBudgets" },
+        "schemaVersion": {
+          "const": 1
+        },
+        "sectionTracks": {
+          "$ref": "#/$defs/sectionTracks"
+        },
+        "slotBudgets": {
+          "$ref": "#/$defs/slotBudgets"
+        },
         "definitions": {
           "type": "array",
           "minItems": 1,
-          "items": { "$ref": "#/$defs/trackDefinition" }
+          "items": {
+            "$ref": "#/$defs/trackDefinition"
+          }
         },
-        "defaultValues": { "$ref": "#/$defs/trackValues" },
+        "defaultValues": {
+          "$ref": "#/$defs/trackValues"
+        },
         "vocabulary": {
           "type": "object",
           "additionalProperties": {
             "type": "object",
-            "propertyNames": { "$ref": "#/$defs/trackId" },
+            "propertyNames": {
+              "$ref": "#/$defs/trackId"
+            },
             "additionalProperties": {
               "type": "array",
               "minItems": 3,
               "maxItems": 5,
-              "items": { "$ref": "#/$defs/nonEmptyString" }
+              "items": {
+                "$ref": "#/$defs/nonEmptyString"
+              }
             }
           }
         }
@@ -66,47 +88,74 @@
     "formats": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["schemaVersion", "formats", "recommendedTracks", "modifiers"],
+      "required": [
+        "schemaVersion",
+        "formats",
+        "recommendedTracks",
+        "modifiers"
+      ],
       "properties": {
-        "schemaVersion": { "const": 1 },
+        "schemaVersion": {
+          "const": 1
+        },
         "formats": {
           "type": "array",
           "minItems": 1,
-          "items": { "$ref": "#/$defs/format" }
+          "items": {
+            "$ref": "#/$defs/format"
+          }
         },
         "recommendedTracks": {
           "type": "object",
-          "additionalProperties": { "$ref": "#/$defs/trackValues" }
+          "additionalProperties": {
+            "$ref": "#/$defs/trackValues"
+          }
         },
         "modifiers": {
           "type": "array",
-          "items": { "$ref": "#/$defs/nonEmptyString" }
+          "items": {
+            "$ref": "#/$defs/nonEmptyString"
+          }
         }
       }
     },
     "cards": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["schemaVersion", "cards"],
+      "required": [
+        "schemaVersion",
+        "cards"
+      ],
       "properties": {
-        "schemaVersion": { "const": 2 },
+        "schemaVersion": {
+          "const": 2
+        },
         "cards": {
           "type": "array",
           "minItems": 1,
-          "items": { "$ref": "#/$defs/card" }
+          "items": {
+            "$ref": "#/$defs/card"
+          }
         }
       }
     },
     "archetypes": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["schemaVersion", "archetypes"],
+      "required": [
+        "schemaVersion",
+        "archetypes"
+      ],
       "properties": {
-        "schemaVersion": { "const": 2 },
+        "schemaVersion": {
+          "const": 2
+        },
         "archetypes": {
           "type": "array",
           "minItems": 1,
-          "items": { "$ref": "#/$defs/archetype" }
+          "items": {
+            "$ref": "#/$defs/archetype"
+          }
         }
       }
     },
@@ -120,12 +169,20 @@
         "audienceModifiers"
       ],
       "properties": {
-        "schemaVersion": { "const": 1 },
-        "categoryActions": { "$ref": "#/$defs/stringListMap" },
-        "roleActions": { "$ref": "#/$defs/stringListMap" },
+        "schemaVersion": {
+          "const": 1
+        },
+        "categoryActions": {
+          "$ref": "#/$defs/stringListMap"
+        },
+        "roleActions": {
+          "$ref": "#/$defs/stringListMap"
+        },
         "audienceModifiers": {
           "type": "array",
-          "items": { "$ref": "#/$defs/nonEmptyString" }
+          "items": {
+            "$ref": "#/$defs/nonEmptyString"
+          }
         }
       }
     },
@@ -140,9 +197,15 @@
         "requiredFields"
       ],
       "properties": {
-        "schemaVersion": { "const": 1 },
-        "emptyDraft": { "$ref": "#/$defs/promptDraft" },
-        "exampleDraft": { "$ref": "#/$defs/promptDraft" },
+        "schemaVersion": {
+          "const": 1
+        },
+        "emptyDraft": {
+          "$ref": "#/$defs/promptDraft"
+        },
+        "exampleDraft": {
+          "$ref": "#/$defs/promptDraft"
+        },
         "craftParts": {
           "type": "array",
           "minItems": 5,
@@ -150,14 +213,28 @@
           "items": {
             "type": "object",
             "additionalProperties": false,
-            "required": ["letter", "label", "summary"],
+            "required": [
+              "letter",
+              "label",
+              "summary"
+            ],
             "properties": {
               "letter": {
                 "type": "string",
-                "enum": ["C", "R", "A", "F", "T"]
+                "enum": [
+                  "C",
+                  "R",
+                  "A",
+                  "F",
+                  "T"
+                ]
               },
-              "label": { "$ref": "#/$defs/nonEmptyString" },
-              "summary": { "$ref": "#/$defs/nonEmptyString" }
+              "label": {
+                "$ref": "#/$defs/nonEmptyString"
+              },
+              "summary": {
+                "$ref": "#/$defs/nonEmptyString"
+              }
             }
           }
         },
@@ -168,9 +245,14 @@
           "items": {
             "type": "object",
             "additionalProperties": false,
-            "required": ["label", "field"],
+            "required": [
+              "label",
+              "field"
+            ],
             "properties": {
-              "label": { "$ref": "#/$defs/nonEmptyString" },
+              "label": {
+                "$ref": "#/$defs/nonEmptyString"
+              },
               "field": {
                 "type": "string",
                 "enum": [
@@ -189,14 +271,69 @@
     "proofScenarios": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["schemaVersion", "baseDraft", "scenarios"],
+      "required": [
+        "schemaVersion",
+        "baseDraft",
+        "scenarios"
+      ],
       "properties": {
-        "schemaVersion": { "const": 1 },
-        "baseDraft": { "$ref": "#/$defs/proofDraft" },
+        "schemaVersion": {
+          "const": 1
+        },
+        "baseDraft": {
+          "$ref": "#/$defs/proofDraft"
+        },
         "scenarios": {
           "type": "array",
           "minItems": 1,
-          "items": { "$ref": "#/$defs/proofScenario" }
+          "items": {
+            "$ref": "#/$defs/proofScenario"
+          }
+        }
+      }
+    },
+    "outcomeScenarios": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schemaVersion",
+        "scenarios"
+      ],
+      "properties": {
+        "schemaVersion": {
+          "const": 1
+        },
+        "scenarios": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "id",
+              "name",
+              "context",
+              "target"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9-]*$"
+              },
+              "name": {
+                "type": "string",
+                "minLength": 1
+              },
+              "context": {
+                "type": "string",
+                "minLength": 1
+              },
+              "target": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
         }
       }
     }
@@ -213,33 +350,64 @@
     "roleAbility": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["summary", "bullets"],
+      "required": [
+        "summary",
+        "bullets"
+      ],
       "properties": {
-        "summary": { "$ref": "#/$defs/nonEmptyString" },
+        "summary": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
         "bullets": {
           "type": "array",
           "minItems": 1,
           "maxItems": 6,
-          "items": { "$ref": "#/$defs/nonEmptyString" }
+          "items": {
+            "$ref": "#/$defs/nonEmptyString"
+          }
         }
       }
     },
     "role": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["id", "name", "category", "description", "core", "ability"],
+      "required": [
+        "id",
+        "name",
+        "category",
+        "description",
+        "core",
+        "ability"
+      ],
       "properties": {
-        "id": { "$ref": "#/$defs/id" },
-        "name": { "$ref": "#/$defs/nonEmptyString" },
-        "category": { "$ref": "#/$defs/nonEmptyString" },
-        "description": { "$ref": "#/$defs/nonEmptyString" },
-        "core": { "type": "boolean" },
-        "ability": { "$ref": "#/$defs/roleAbility" }
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "name": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "category": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "description": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "core": {
+          "type": "boolean"
+        },
+        "ability": {
+          "$ref": "#/$defs/roleAbility"
+        }
       }
     },
     "section": {
       "type": "string",
-      "enum": ["context", "action", "format", "target"]
+      "enum": [
+        "context",
+        "action",
+        "format",
+        "target"
+      ]
     },
     "trackId": {
       "type": "string",
@@ -257,54 +425,101 @@
     "sectionTracks": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["context", "action", "format", "target"],
+      "required": [
+        "context",
+        "action",
+        "format",
+        "target"
+      ],
       "properties": {
         "context": {
           "type": "array",
           "uniqueItems": true,
-          "items": { "$ref": "#/$defs/trackId" }
+          "items": {
+            "$ref": "#/$defs/trackId"
+          }
         },
         "action": {
           "type": "array",
           "uniqueItems": true,
-          "items": { "$ref": "#/$defs/trackId" }
+          "items": {
+            "$ref": "#/$defs/trackId"
+          }
         },
         "format": {
           "type": "array",
           "uniqueItems": true,
-          "items": { "$ref": "#/$defs/trackId" }
+          "items": {
+            "$ref": "#/$defs/trackId"
+          }
         },
         "target": {
           "type": "array",
           "uniqueItems": true,
-          "items": { "$ref": "#/$defs/trackId" }
+          "items": {
+            "$ref": "#/$defs/trackId"
+          }
         }
       }
     },
     "slotBudgets": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["context", "action", "format", "target"],
+      "required": [
+        "context",
+        "action",
+        "format",
+        "target"
+      ],
       "properties": {
-        "context": { "type": "integer", "minimum": 1, "maximum": 5 },
-        "action": { "type": "integer", "minimum": 1, "maximum": 5 },
-        "format": { "type": "integer", "minimum": 1, "maximum": 5 },
-        "target": { "type": "integer", "minimum": 1, "maximum": 5 }
+        "context": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 5
+        },
+        "action": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 5
+        },
+        "format": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 5
+        },
+        "target": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 5
+        }
       }
     },
     "trackDefinition": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["id", "label", "description", "points"],
+      "required": [
+        "id",
+        "label",
+        "description",
+        "points"
+      ],
       "properties": {
-        "id": { "$ref": "#/$defs/trackId" },
-        "label": { "$ref": "#/$defs/nonEmptyString" },
-        "description": { "$ref": "#/$defs/nonEmptyString" },
+        "id": {
+          "$ref": "#/$defs/trackId"
+        },
+        "label": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "description": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
         "points": {
           "type": "array",
           "minItems": 4,
           "maxItems": 4,
-          "items": { "$ref": "#/$defs/nonEmptyString" }
+          "items": {
+            "$ref": "#/$defs/nonEmptyString"
+          }
         }
       }
     },
@@ -322,19 +537,53 @@
         "voiceFormality"
       ],
       "properties": {
-        "contextDepth": { "type": "integer", "minimum": 0, "maximum": 3 },
-        "evidenceRigor": { "type": "integer", "minimum": 0, "maximum": 3 },
-        "autonomy": { "type": "integer", "minimum": 0, "maximum": 3 },
-        "challenge": { "type": "integer", "minimum": 0, "maximum": 3 },
-        "outputDetail": { "type": "integer", "minimum": 0, "maximum": 3 },
-        "structure": { "type": "integer", "minimum": 0, "maximum": 3 },
-        "audienceExpertise": { "type": "integer", "minimum": 0, "maximum": 3 },
-        "voiceFormality": { "type": "integer", "minimum": 0, "maximum": 3 }
+        "contextDepth": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 3
+        },
+        "evidenceRigor": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 3
+        },
+        "autonomy": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 3
+        },
+        "challenge": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 3
+        },
+        "outputDetail": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 3
+        },
+        "structure": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 3
+        },
+        "audienceExpertise": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 3
+        },
+        "voiceFormality": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 3
+        }
       }
     },
     "partialTrackValues": {
       "type": "object",
-      "propertyNames": { "$ref": "#/$defs/trackId" },
+      "propertyNames": {
+        "$ref": "#/$defs/trackId"
+      },
       "additionalProperties": {
         "type": "integer",
         "minimum": 0,
@@ -344,24 +593,42 @@
     "format": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["code", "name", "value"],
+      "required": [
+        "code",
+        "name",
+        "value"
+      ],
       "properties": {
         "code": {
           "type": "string",
           "pattern": "^[A-Z][A-Z0-9]*$"
         },
-        "name": { "$ref": "#/$defs/nonEmptyString" },
-        "value": { "$ref": "#/$defs/nonEmptyString" }
+        "name": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "value": {
+          "$ref": "#/$defs/nonEmptyString"
+        }
       }
     },
     "cardGrade": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["name", "description", "instruction"],
+      "required": [
+        "name",
+        "description",
+        "instruction"
+      ],
       "properties": {
-        "name": { "$ref": "#/$defs/nonEmptyString" },
-        "description": { "$ref": "#/$defs/nonEmptyString" },
-        "instruction": { "$ref": "#/$defs/nonEmptyString" }
+        "name": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "description": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "instruction": {
+          "$ref": "#/$defs/nonEmptyString"
+        }
       }
     },
     "affinityRange": {
@@ -377,31 +644,52 @@
     "card": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["id", "code", "section", "driver", "goals", "grades"],
+      "required": [
+        "id",
+        "code",
+        "section",
+        "driver",
+        "goals",
+        "grades"
+      ],
       "properties": {
-        "id": { "$ref": "#/$defs/id" },
+        "id": {
+          "$ref": "#/$defs/id"
+        },
         "code": {
           "type": "string",
           "pattern": "^[A-Z][A-Z0-9]*$"
         },
-        "section": { "$ref": "#/$defs/section" },
-        "driver": { "$ref": "#/$defs/trackId" },
+        "section": {
+          "$ref": "#/$defs/section"
+        },
+        "driver": {
+          "$ref": "#/$defs/trackId"
+        },
         "goals": {
           "type": "array",
           "minItems": 1,
           "maxItems": 6,
-          "items": { "$ref": "#/$defs/nonEmptyString" }
+          "items": {
+            "$ref": "#/$defs/nonEmptyString"
+          }
         },
         "grades": {
           "type": "array",
           "minItems": 1,
           "maxItems": 5,
-          "items": { "$ref": "#/$defs/cardGrade" }
+          "items": {
+            "$ref": "#/$defs/cardGrade"
+          }
         },
         "affinity": {
           "type": "object",
-          "propertyNames": { "$ref": "#/$defs/trackId" },
-          "additionalProperties": { "$ref": "#/$defs/affinityRange" }
+          "propertyNames": {
+            "$ref": "#/$defs/trackId"
+          },
+          "additionalProperties": {
+            "$ref": "#/$defs/affinityRange"
+          }
         }
       }
     },
@@ -421,14 +709,22 @@
         "effects"
       ],
       "properties": {
-        "id": { "$ref": "#/$defs/id" },
+        "id": {
+          "$ref": "#/$defs/id"
+        },
         "code": {
           "type": "string",
           "pattern": "^[A-Z][A-Z0-9]*$"
         },
-        "name": { "$ref": "#/$defs/nonEmptyString" },
-        "description": { "$ref": "#/$defs/nonEmptyString" },
-        "defaultAudience": { "$ref": "#/$defs/nonEmptyString" },
+        "name": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "description": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "defaultAudience": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
         "formatCode": {
           "type": "string",
           "pattern": "^[A-Z][A-Z0-9]*$"
@@ -438,18 +734,30 @@
           "minItems": 1,
           "maxItems": 3,
           "uniqueItems": true,
-          "items": { "$ref": "#/$defs/id" }
+          "items": {
+            "$ref": "#/$defs/id"
+          }
         },
-        "tracks": { "$ref": "#/$defs/trackValues" },
-        "equipped": { "$ref": "#/$defs/equippedCards" },
+        "tracks": {
+          "$ref": "#/$defs/trackValues"
+        },
+        "equipped": {
+          "$ref": "#/$defs/equippedCards"
+        },
         "effects": {
           "type": "array",
           "minItems": 1,
           "maxItems": 6,
-          "items": { "$ref": "#/$defs/nonEmptyString" }
+          "items": {
+            "$ref": "#/$defs/nonEmptyString"
+          }
         },
-        "action": { "type": "string" },
-        "formatNotes": { "type": "string" }
+        "action": {
+          "type": "string"
+        },
+        "formatNotes": {
+          "type": "string"
+        }
       }
     },
     "stringListMap": {
@@ -457,7 +765,9 @@
       "additionalProperties": {
         "type": "array",
         "minItems": 1,
-        "items": { "$ref": "#/$defs/nonEmptyString" }
+        "items": {
+          "$ref": "#/$defs/nonEmptyString"
+        }
       }
     },
     "promptDraft": {
@@ -474,29 +784,53 @@
         "targetUseDefault"
       ],
       "properties": {
-        "context": { "type": "string" },
+        "context": {
+          "type": "string"
+        },
         "roleIds": {
           "type": "array",
           "maxItems": 3,
           "uniqueItems": true,
-          "items": { "$ref": "#/$defs/id" }
+          "items": {
+            "$ref": "#/$defs/id"
+          }
         },
-        "action": { "type": "string" },
-        "format": { "type": "string" },
-        "formatNotes": { "type": "string" },
-        "targetAudience": { "type": "string" },
-        "contextUseDefault": { "type": "boolean" },
-        "targetUseDefault": { "type": "boolean" }
+        "action": {
+          "type": "string"
+        },
+        "format": {
+          "type": "string"
+        },
+        "formatNotes": {
+          "type": "string"
+        },
+        "targetAudience": {
+          "type": "string"
+        },
+        "contextUseDefault": {
+          "type": "boolean"
+        },
+        "targetUseDefault": {
+          "type": "boolean"
+        }
       }
     },
     "proofDraft": {
       "type": "object",
       "additionalProperties": false,
       "properties": {
-        "context": { "type": "string" },
-        "action": { "type": "string" },
-        "formatNotes": { "type": "string" },
-        "targetAudience": { "type": "string" }
+        "context": {
+          "type": "string"
+        },
+        "action": {
+          "type": "string"
+        },
+        "formatNotes": {
+          "type": "string"
+        },
+        "targetAudience": {
+          "type": "string"
+        }
       }
     },
     "equippedCards": {
@@ -506,22 +840,30 @@
         "context": {
           "type": "array",
           "uniqueItems": true,
-          "items": { "$ref": "#/$defs/id" }
+          "items": {
+            "$ref": "#/$defs/id"
+          }
         },
         "action": {
           "type": "array",
           "uniqueItems": true,
-          "items": { "$ref": "#/$defs/id" }
+          "items": {
+            "$ref": "#/$defs/id"
+          }
         },
         "format": {
           "type": "array",
           "uniqueItems": true,
-          "items": { "$ref": "#/$defs/id" }
+          "items": {
+            "$ref": "#/$defs/id"
+          }
         },
         "target": {
           "type": "array",
           "uniqueItems": true,
-          "items": { "$ref": "#/$defs/id" }
+          "items": {
+            "$ref": "#/$defs/id"
+          }
         }
       }
     },
@@ -538,9 +880,15 @@
         "checks"
       ],
       "properties": {
-        "id": { "$ref": "#/$defs/id" },
-        "name": { "$ref": "#/$defs/nonEmptyString" },
-        "proves": { "$ref": "#/$defs/nonEmptyString" },
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "name": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "proves": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
         "panel": {
           "type": "integer",
           "minimum": 0,
@@ -554,26 +902,46 @@
           "type": "array",
           "maxItems": 3,
           "uniqueItems": true,
-          "items": { "$ref": "#/$defs/id" }
+          "items": {
+            "$ref": "#/$defs/id"
+          }
         },
-        "tracks": { "$ref": "#/$defs/partialTrackValues" },
-        "equipped": { "$ref": "#/$defs/equippedCards" },
-        "draft": { "$ref": "#/$defs/proofDraft" },
+        "tracks": {
+          "$ref": "#/$defs/partialTrackValues"
+        },
+        "equipped": {
+          "$ref": "#/$defs/equippedCards"
+        },
+        "draft": {
+          "$ref": "#/$defs/proofDraft"
+        },
         "suggested": {
           "type": "object",
           "additionalProperties": false,
           "properties": {
-            "context": { "$ref": "#/$defs/id" },
-            "action": { "$ref": "#/$defs/id" },
-            "format": { "$ref": "#/$defs/id" },
-            "target": { "$ref": "#/$defs/id" }
+            "context": {
+              "$ref": "#/$defs/id"
+            },
+            "action": {
+              "$ref": "#/$defs/id"
+            },
+            "format": {
+              "$ref": "#/$defs/id"
+            },
+            "target": {
+              "$ref": "#/$defs/id"
+            }
           }
         },
-        "outputExpanded": { "type": "boolean" },
+        "outputExpanded": {
+          "type": "boolean"
+        },
         "checks": {
           "type": "array",
           "minItems": 1,
-          "items": { "$ref": "#/$defs/nonEmptyString" }
+          "items": {
+            "$ref": "#/$defs/nonEmptyString"
+          }
         }
       }
     }

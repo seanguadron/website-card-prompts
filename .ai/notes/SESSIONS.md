@@ -5,6 +5,100 @@ appended by the sessions agent (see AGENTS.md → Learning loop). Lines ending
 with the proposed-amendment flag are STANDARDS candidates;
 `npm run amendments` lists the ones not yet annotated "→ landed in §X.Y".
 
+## 2026-09-01: The Outcome Lab session — precached answers, two attribution fixes, and an $80 lesson in probe-gating spend
+
+**Context.** Mixed session: two small corrections (PICTURE's Midjourney
+attribution, a guide line-wrap fix), one deck feature (queue card art from
+inside the deck), and the start of the Outcome Lab — a system that
+precaches Claude's answer for small card combinations so the deck can show
+a real model answer instead of nothing. The Outcome Lab's first
+production batch overspent badly on empty answers; retuned and paused
+pending the owner's budget pick. Commits `5b492c8`, `b270f2d`, `abd2a89`,
+`93c1672`, `9913dc8`, `b741b11`.
+
+**Decisions.**
+- PICTURE's P.I.C.T.U.R.E. acronym came from Midjourney's own published
+  documentation, not this project's invention — README and CONTEXT.md had
+  claimed it as "this project's own extension." Corrected in `abd2a89`;
+  both decks' guides now credit their real source on the page that teaches
+  the acronym (CRAFT → Lawton Solutions / Lawton Learns, `5b492c8`;
+  PICTURE → Midjourney, `abd2a89`).
+- Guide line breaks: the first fix (`b270f2d`) forced one-sentence-per-line
+  blocks — correct, but it rendered as a thick 4-line paragraph. Owner
+  pushed back ("not a big thick paragraph"); the real cause wasn't the
+  break logic, it was a 62ch (496px) text measure sitting inside a
+  1180px panel. Widening the measure to 660px (`abd2a89`) fixed most of
+  the wrapping without forcing anything. Lesson: fix the measure, not the
+  wrap.
+- Deck art-queue mode (`93c1672`, owner-requested): lets the owner queue
+  more card art from inside the deck, where art is actually being judged,
+  instead of only from the studio. Shipped as a MODE toggle rather than a
+  per-card button — cards are already buttons, and buttons cannot nest.
+  Counts are world-scoped (a click in the fantasy pack queues fantasy
+  art); availability is probed live from the loopback-guarded writer
+  rather than assumed from a build flag.
+- The Outcome Lab (`9913dc8`, owner-requested): precache Claude's answer
+  for every combination of up to 3 cards, under three fixed
+  context+target scenarios, so the deck can show a real answer instead of
+  asking the owner to run one by hand. Answers must come from clean
+  standalone queries — a single user message, no system prompt, no
+  project context — so what's shown is what a bare Claude call actually
+  returns. Storage is static shards under `public/`, fetched on demand,
+  kept deliberately out of the main catalogs so coverage growth doesn't
+  weigh down the app. Card order is out of scope for this pass. Owner's
+  picks: Opus 5, "Origin of the Universe" scenario first, ~$50 approved
+  for the first run, and the process plus all three scenario definitions
+  saved so a later run doesn't need to re-derive them.
+- After the failure below, the pipeline was retuned and re-run only as a
+  small stride-sampled probe (`b741b11`) — no further full-scale
+  generation without a fresh owner go-ahead.
+
+**Learnings.**
+- THE EXPENSIVE ONE: the Outcome Lab's first production batch ran Opus 5
+  at effort `medium` with `max_tokens: 1200`. Adaptive thinking bills as
+  output tokens AND counts against `max_tokens`, so each question burned
+  roughly 1,000 tokens on reasoning before any answer text — 58% of the
+  5,354 answers landed completely empty, with 90% of the batch truncated
+  overall. Actual spend was $80.64 against an estimate of ~$46. The bad
+  data was wiped rather than kept as filler. Fixed by dropping to effort
+  `low`, capping `max_tokens` at 2500, and adding a `--limit N`
+  stride-sampled probe mode so the next run measures real spend on a
+  small slice before committing to the full catalog.
+- Generalizable: a reasoning-model "effort" setting interacts with an
+  output-token cap in a way a simple tokens-per-question estimate will
+  miss — measure against a small real batch, not a per-token
+  multiplication, before sizing a paid run.
+- Account credits are now $0. Owner quoted a menu for the next attempt —
+  Opus singles+pairs only ~$7, a full Sonnet pass ~$25-35, a full Opus
+  pass ~$60-85 — and said to "put a pin on this." Generation is paused on
+  fresh credits plus his pick from that menu, not on any remaining
+  engineering work.
+- The API key in `.env.local` expires 2026-09-02 — needs a fresh key
+  before the next Outcome Lab run, not just fresh credits.
+
+**Preferences / proposed amendments (need owner consent).**
+- Amendment (k) — paid bulk generation (API batches, image runs) should be
+  probe-gated as a standing rule: run a stride-sampled probe first,
+  measure real token/credit spend from it, and quote the full run from
+  those measured numbers rather than a per-item estimate, before
+  submitting anything at scale. The Outcome Lab's $80 empty-answer run is
+  the motivating incident. (proposed amendment, needs the owner's consent)
+- Amendment (l) — `docs/DESIGN_DIRECTION.md` should document three
+  new-this-session idioms: the output dock's second view (Prompt|Outcome
+  switch), the scenario-switch control, and the deck's dev-only
+  authoring-mode pattern, where switching into art-queue mode changes
+  what a card's click does, so the design must make that change visible
+  on the card BEFORE the click, not only after. (proposed amendment,
+  needs the owner's consent)
+- Amendment (m) — the STANDARDS threat-6 checklist should require that
+  every write-capable route handler validates the request's ORIGIN
+  (`Sec-Fetch-Site` / `Origin`), not only its `Host`: `Host` names the
+  target address, not the caller, and a cross-origin page can blind-POST
+  JSON as text/plain with no preflight. Found by the 2026-09-01 security
+  gate on `/api/card-art` (fixed same day: same-origin check + a
+  write-intent header outside the CORS safelist). (proposed amendment,
+  needs the owner's consent)
+
 ## 2026-08-19: PICTURE gallery pack finishes — both guides, the role browser, and the nav dock reshaped from voice dictation
 
 **Context.** Finished the PICTURE deck's 419-entry gallery pack (the art
