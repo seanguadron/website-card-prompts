@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "sectionTracks": {
+    "source": ["emphasis"],
+    "onset": ["emphasis"],
+    "nature": ["emphasis"],
+    "intensity": ["emphasis"],
+    "context": ["emphasis"]
+  },
+  "slotBudgets": {
+    "source": 2,
+    "onset": 1,
+    "nature": 2,
+    "intensity": 1,
+    "context": 2
+  },
+  "definitions": [
+    {
+      "id": "emphasis",
+      "label": "Emphasis",
+      "description": "How much of the mix every equipped card claims, from a hint at the edge of hearing to the whole sound.",
+      "points": ["Hint", "Present", "Dominant"]
+    }
+  ],
+  "defaultValues": {
+    "emphasis": 1
+  }
+}

@@ -4,7 +4,8 @@ export type ToolId =
   | "image-editor"
   | "vector-editor"
   | "skills"
-  | "picture-deck";
+  | "picture-deck"
+  | "sound-deck";
 
 // The one "this is a phone" threshold. Kept byte-identical to the media query
 // that drives the mobile gate in globals.css ("Mobile tool gate" section):
@@ -60,6 +61,21 @@ export const TOOL_REGISTRY: Record<ToolId, ToolDescriptor> = {
       "Builds image-model prompts from P.I.C.T.U.R.E. card choices — lighting, medium, palette, world, references, and framing.",
       "100 card lineages and 18 archetype presets; one Intensity dial tunes every card from subtle to extreme.",
       "Optional Midjourney tail (--ar, --stylize, --no). Drafts autosave in this browser; prompts download as local files.",
+    ],
+  },
+  "sound-deck": {
+    id: "sound-deck",
+    name: "SONIC Deck",
+    shortName: "SONIC",
+    tagline:
+      "Compose sound-effect prompts from S.O.N.I.C. cards — source, onset, nature, intensity, context.",
+    href: "/tools/sound-deck",
+    fullBleed: true,
+    mobileSupport: "gated",
+    mobileGateNotes: [
+      "Builds Firefly sound-effect prompts from S.O.N.I.C. card choices — source, attack, texture, dynamics, and world.",
+      "38 descriptor lineages and 12 archetype presets; one Emphasis dial tunes every card from a hint to dominant.",
+      "One sound per prompt with a layer rack for soundscapes. Drafts autosave in this browser; prompts download as local files.",
     ],
   },
   "architect-wizard": {

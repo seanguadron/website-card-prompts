@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 1,
+  "baseDraft": {
+    "subject": "old wooden door creaking open"
+  },
+  "scenarios": [
+    {
+      "id": "emphasis-morph",
+      "name": "Emphasis morphing",
+      "proves": "One Emphasis dial re-grades every equipped card's term",
+      "panel": 3,
+      "tracks": { "emphasis": 0 },
+      "equipped": {
+        "nature": ["metallic", "wooden"],
+        "onset": ["slow-swell"]
+      },
+      "checks": [
+        "Slide Emphasis from Hint to Dominant on the Nature panel",
+        "The equipped cards' grade names change on their faces",
+        "The merged prompt swaps in the louder terms"
+      ]
+    },
+    {
+      "id": "comma-merge",
+      "name": "Comma merge order",
+      "proves": "Terms join the line in S, N, O, I, C order, deduplicated",
+      "panel": 1,
+      "equipped": {
+        "source": ["impact"],
+        "onset": ["sharp-attack"],
+        "nature": ["metallic"],
+        "intensity": ["loud"],
+        "context": ["trailer"]
+      },
+      "checks": [
+        "Open the output dock and read the assembled line",
+        "The subject leads; heavy impact, metallic, sharp attack, very loud?, dramatic trailer follow in that order",
+        "No term appears twice even if two cards contribute the same words"
+      ]
+    },
+    {
+      "id": "ambience-cap",
+      "name": "Ambience cap",
+      "proves": "Ambience mode keeps the prompt broad: at most two descriptors survive",
+      "panel": 1,
+      "draft": {
+        "subject": "forest at dusk",
+        "ambience": true
+      },
+      "equipped": {
+        "source": ["weather"],
+        "nature": ["watery"],
+        "intensity": ["distant"],
+        "context": ["outdoors"]
+      },
+      "checks": [
+        "Read the assembled prompt with four cards equipped",
+        "Only the first two terms in merge order made the line",
+        "Turn ambience off and all four terms return"
+      ]
+    },
+    {
+      "id": "one-sound-rack",
+      "name": "One sound per line",
+      "proves": "The rack holds separate one-sound prompts; lines never merge",
+      "panel": 5,
+      "draft": {
+        "subject": "birds chirping in the deep forest",
+        "layers": [
+          { "id": "proof-layer-1", "prompt": "relaxing stream babbling" },
+          { "id": "proof-layer-2", "prompt": "desert wind, distant" }
+        ]
+      },
+      "checks": [
+        "Open the Context panel's layer rack",
+        "Two rack lines sit apart from the live prompt, each with its own copy button",
+        "Nothing concatenates them - Firefly gets one sound per generation"
+      ]
+    },
+    {
+      "id": "sound-of-strip",
+      "name": "Describe it directly",
+      "proves": "A leading \"the sound of\" is stripped before composing",
+      "panel": 1,
+      "draft": {
+        "subject": "the sound of a lion roaring"
+      },
+      "checks": [
+        "Read the assembled prompt in the output dock",
+        "It begins \"a lion roaring\" - the leading phrase is gone",
+        "Adobe's first don't cannot reach the prompt from this deck"
+      ]
+    }
+  ]
+}

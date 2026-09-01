@@ -3062,6 +3062,10 @@ button.role-loadout-slot {
   --dock-clearance: 92px;
 }
 
+.is-sound-flow {
+  --dock-clearance: 92px;
+}
+
 /* The panel's own clearance lives with its padding shorthand further down
    (search --dock-clearance): a `padding:` shorthand there would reset any
    padding-bottom declared up here, which is exactly what silently happened
@@ -8714,6 +8718,112 @@ body:has(.page-stage.is-fluid) {
   .picture-deck-range-row output {
     text-align: left;
   }
+}
+
+/* ===== SONIC Deck ===== */
+
+/* Ambience mode rides under the sound line; the shared default-check idiom
+   already carries the checkbox/label anatomy. */
+.sound-deck-ambience-toggle {
+  margin-top: 12px;
+}
+
+/* The layer rack: separate one-sound prompts parked for Firefly's
+   add-audio-track workflow. Each line is its own copyable unit - visually
+   apart from the live prompt so nothing reads as concatenated. */
+.sound-deck-rack {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 0 0 14px;
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: color-mix(in oklch, var(--card) 88%, var(--background));
+}
+
+.sound-deck-rack-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.sound-deck-rack-heading > span {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.sound-deck-rack-heading strong {
+  font-size: 0.85rem;
+}
+
+.sound-deck-rack-heading small {
+  max-width: 46ch;
+  color: var(--muted-foreground);
+  font-size: 0.72rem;
+  line-height: 1.45;
+}
+
+.sound-deck-rack-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sound-deck-rack-line {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 8px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--background);
+}
+
+.sound-deck-rack-line code {
+  flex: 1;
+  min-width: 0;
+  overflow-wrap: anywhere;
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  line-height: 1.45;
+}
+
+.sound-deck-rack-index {
+  display: grid;
+  place-items: center;
+  min-width: 22px;
+  height: 22px;
+  border-radius: 999px;
+  background: color-mix(in oklch, var(--brand-cyan) 12%, var(--card));
+  color: var(--brand-cyan-text);
+  font-size: 0.7rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.sound-deck-rack-empty {
+  margin: 0;
+  color: var(--muted-foreground);
+  font-size: 0.76rem;
+  line-height: 1.5;
+}
+
+.sound-deck-rack-clear {
+  align-self: flex-start;
+}
+
+/* A product fact, not UI chrome: quiet, one line, at the end of the rack. */
+.sound-deck-voice-tip {
+  margin: 0;
+  color: var(--muted-foreground);
+  font-size: 0.72rem;
+  line-height: 1.5;
 }
 
 /* ===== Card Art Studio (development-only authoring surface) ===== */

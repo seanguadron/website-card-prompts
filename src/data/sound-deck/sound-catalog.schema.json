@@ -1,0 +1,292 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SONIC Deck catalog",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["tracks", "cards", "archetypes", "builder", "proofScenarios"],
+  "properties": {
+    "tracks": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schemaVersion",
+        "sectionTracks",
+        "slotBudgets",
+        "definitions",
+        "defaultValues"
+      ],
+      "properties": {
+        "schemaVersion": { "const": 1 },
+        "sectionTracks": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["source", "onset", "nature", "intensity", "context"],
+          "properties": {
+            "source": { "$ref": "#/$defs/trackIdList" },
+            "onset": { "$ref": "#/$defs/trackIdList" },
+            "nature": { "$ref": "#/$defs/trackIdList" },
+            "intensity": { "$ref": "#/$defs/trackIdList" },
+            "context": { "$ref": "#/$defs/trackIdList" }
+          }
+        },
+        "slotBudgets": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["source", "onset", "nature", "intensity", "context"],
+          "properties": {
+            "source": { "$ref": "#/$defs/budget" },
+            "onset": { "$ref": "#/$defs/budget" },
+            "nature": { "$ref": "#/$defs/budget" },
+            "intensity": { "$ref": "#/$defs/budget" },
+            "context": { "$ref": "#/$defs/budget" }
+          }
+        },
+        "definitions": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["id", "label", "description", "points"],
+            "properties": {
+              "id": { "$ref": "#/$defs/id" },
+              "label": { "$ref": "#/$defs/text" },
+              "description": { "$ref": "#/$defs/text" },
+              "points": {
+                "type": "array",
+                "minItems": 2,
+                "items": { "$ref": "#/$defs/text" }
+              }
+            }
+          }
+        },
+        "defaultValues": { "$ref": "#/$defs/trackValues" }
+      }
+    },
+    "cards": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["schemaVersion", "cards"],
+      "properties": {
+        "schemaVersion": { "const": 1 },
+        "cards": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/card" }
+        }
+      }
+    },
+    "archetypes": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["schemaVersion", "archetypes"],
+      "properties": {
+        "schemaVersion": { "const": 1 },
+        "archetypes": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/archetype" }
+        }
+      }
+    },
+    "builder": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["schemaVersion", "emptyDraft", "exampleDraft", "soundParts", "requiredFields"],
+      "properties": {
+        "schemaVersion": { "const": 1 },
+        "emptyDraft": { "$ref": "#/$defs/draft" },
+        "exampleDraft": { "$ref": "#/$defs/draft" },
+        "soundParts": {
+          "type": "array",
+          "minItems": 5,
+          "maxItems": 5,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["letter", "label", "summary"],
+            "properties": {
+              "letter": { "type": "string", "pattern": "^[A-Z]$" },
+              "label": { "$ref": "#/$defs/text" },
+              "summary": { "$ref": "#/$defs/text" }
+            }
+          }
+        },
+        "requiredFields": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["label", "field"],
+            "properties": {
+              "label": { "$ref": "#/$defs/text" },
+              "field": { "enum": ["subject", "ambience", "layers"] }
+            }
+          }
+        }
+      }
+    },
+    "proofScenarios": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["schemaVersion", "baseDraft", "scenarios"],
+      "properties": {
+        "schemaVersion": { "const": 1 },
+        "baseDraft": { "$ref": "#/$defs/draftPatch" },
+        "scenarios": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/proofScenario" }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "id": { "type": "string", "pattern": "^[a-z][a-z0-9-]*$" },
+    "code": { "type": "string", "pattern": "^[A-Z0-9]{2,6}$" },
+    "text": { "type": "string", "minLength": 1 },
+    "budget": { "type": "integer", "minimum": 1, "maximum": 6 },
+    "trackIdList": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/id" }
+    },
+    "trackValues": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["emphasis"],
+      "properties": {
+        "emphasis": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "trackValuesPatch": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "emphasis": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "section": { "enum": ["source", "onset", "nature", "intensity", "context"] },
+    "grade": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "description", "instruction"],
+      "properties": {
+        "name": { "$ref": "#/$defs/text" },
+        "description": { "$ref": "#/$defs/text" },
+        "instruction": { "$ref": "#/$defs/text" }
+      }
+    },
+    "card": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "code", "section", "driver", "goals", "grades"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "code": { "$ref": "#/$defs/code" },
+        "section": { "$ref": "#/$defs/section" },
+        "driver": { "$ref": "#/$defs/id" },
+        "goals": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/text" }
+        },
+        "grades": {
+          "type": "array",
+          "minItems": 2,
+          "items": { "$ref": "#/$defs/grade" }
+        }
+      }
+    },
+    "equippedMap": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "source": { "$ref": "#/$defs/idList" },
+        "onset": { "$ref": "#/$defs/idList" },
+        "nature": { "$ref": "#/$defs/idList" },
+        "intensity": { "$ref": "#/$defs/idList" },
+        "context": { "$ref": "#/$defs/idList" }
+      }
+    },
+    "idList": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/id" }
+    },
+    "archetype": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "code", "name", "description", "tracks", "equipped", "effects"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "code": { "$ref": "#/$defs/code" },
+        "name": { "$ref": "#/$defs/text" },
+        "description": { "$ref": "#/$defs/text" },
+        "tracks": { "$ref": "#/$defs/trackValues" },
+        "equipped": { "$ref": "#/$defs/equippedMap" },
+        "ambience": { "type": "boolean" },
+        "effects": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/text" }
+        }
+      }
+    },
+    "layer": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "prompt"],
+      "properties": {
+        "id": { "$ref": "#/$defs/text" },
+        "prompt": { "$ref": "#/$defs/text" }
+      }
+    },
+    "draft": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["subject", "ambience", "layers"],
+      "properties": {
+        "subject": { "type": "string" },
+        "ambience": { "type": "boolean" },
+        "layers": {
+          "type": "array",
+          "maxItems": 12,
+          "items": { "$ref": "#/$defs/layer" }
+        }
+      }
+    },
+    "draftPatch": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "subject": { "type": "string" },
+        "ambience": { "type": "boolean" },
+        "layers": {
+          "type": "array",
+          "maxItems": 12,
+          "items": { "$ref": "#/$defs/layer" }
+        }
+      }
+    },
+    "proofScenario": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "name", "proves", "panel", "checks"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "name": { "$ref": "#/$defs/text" },
+        "proves": { "$ref": "#/$defs/text" },
+        "panel": { "type": "integer", "minimum": 0, "maximum": 5 },
+        "tracks": { "$ref": "#/$defs/trackValuesPatch" },
+        "equipped": { "$ref": "#/$defs/equippedMap" },
+        "draft": { "$ref": "#/$defs/draftPatch" },
+        "checks": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/text" }
+        }
+      }
+    }
+  }
+}

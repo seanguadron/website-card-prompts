@@ -24,6 +24,12 @@ const TOOL_TAB_ICONS: Record<ToolId, React.ReactNode> = {
       <path d="M4.8 13.6l2.9-2.9 2.1 2.1 1.7-1.7 3.6 3.6" />
     </>
   ),
+  "sound-deck": (
+    <>
+      <rect x="4.5" y="3" width="11" height="14" rx="1.8" />
+      <path d="M6.5 10.5h1.1l1-2.8 1.4 5 1.3-3.6.9 1.4h1.3" />
+    </>
+  ),
   "architect-wizard": (
     <>
       <rect x="3" y="3.5" width="5.5" height="4.5" rx="1" />

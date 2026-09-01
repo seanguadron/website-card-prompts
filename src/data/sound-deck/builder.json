@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "emptyDraft": {
+    "subject": "",
+    "ambience": false,
+    "layers": []
+  },
+  "exampleDraft": {
+    "subject": "heavy castle door creaking open",
+    "ambience": false,
+    "layers": []
+  },
+  "soundParts": [
+    {
+      "letter": "S",
+      "label": "Source",
+      "summary": "What makes the sound."
+    },
+    {
+      "letter": "O",
+      "label": "Onset",
+      "summary": "How it starts and moves."
+    },
+    {
+      "letter": "N",
+      "label": "Nature",
+      "summary": "The material and texture."
+    },
+    {
+      "letter": "I",
+      "label": "Intensity",
+      "summary": "Loudness, weight, and distance."
+    },
+    {
+      "letter": "C",
+      "label": "Context",
+      "summary": "The world, purpose, and space."
+    }
+  ],
+  "requiredFields": [
+    {
+      "label": "Sound",
+      "field": "subject"
+    }
+  ]
+}

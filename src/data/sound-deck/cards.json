@@ -1,0 +1,1031 @@
+{
+  "schemaVersion": 1,
+  "cards": [
+    {
+      "id": "impact",
+      "code": "HIT",
+      "section": "source",
+      "driver": "emphasis",
+      "goals": [
+        "Give the sound a percussive core",
+        "Land one clear moment of contact"
+      ],
+      "grades": [
+        {
+          "name": "Soft Contact",
+          "description": "A gentle tap anchors the sound.",
+          "instruction": "soft single hit"
+        },
+        {
+          "name": "Solid Impact",
+          "description": "One clean, weighty contact.",
+          "instruction": "heavy impact"
+        },
+        {
+          "name": "Massive Slam",
+          "description": "The hit IS the sound.",
+          "instruction": "massive slamming impact"
+        }
+      ]
+    },
+    {
+      "id": "friction",
+      "code": "DRAG",
+      "section": "source",
+      "driver": "emphasis",
+      "goals": [
+        "Rub, scrape, or drag surfaces together",
+        "Add tactile contact texture"
+      ],
+      "grades": [
+        {
+          "name": "Light Scrape",
+          "description": "A whisper of surface contact.",
+          "instruction": "light scrape"
+        },
+        {
+          "name": "Dragged Surface",
+          "description": "Something pulled across a surface.",
+          "instruction": "dragged across a rough surface"
+        },
+        {
+          "name": "Grinding Force",
+          "description": "Full grinding, protesting friction.",
+          "instruction": "harsh grinding friction"
+        }
+      ]
+    },
+    {
+      "id": "whoosh",
+      "code": "WSH",
+      "section": "source",
+      "driver": "emphasis",
+      "goals": [
+        "Move air past the listener",
+        "Carry motion and speed"
+      ],
+      "grades": [
+        {
+          "name": "Air Brush",
+          "description": "A soft pass of air.",
+          "instruction": "soft whoosh"
+        },
+        {
+          "name": "Fast Whoosh",
+          "description": "A quick, committed pass.",
+          "instruction": "fast whoosh"
+        },
+        {
+          "name": "Air Rip",
+          "description": "Violent air displacement.",
+          "instruction": "violent ripping whoosh"
+        }
+      ]
+    },
+    {
+      "id": "mechanism",
+      "code": "GEAR",
+      "section": "source",
+      "driver": "emphasis",
+      "goals": [
+        "Put a machine at the center",
+        "Suggest moving parts and purpose"
+      ],
+      "grades": [
+        {
+          "name": "Small Mechanism",
+          "description": "Delicate parts ticking.",
+          "instruction": "small mechanism clicking"
+        },
+        {
+          "name": "Working Machine",
+          "description": "A machine doing its job.",
+          "instruction": "machine whirring"
+        },
+        {
+          "name": "Heavy Machinery",
+          "description": "Industrial mass in motion.",
+          "instruction": "heavy machinery churning"
+        }
+      ]
+    },
+    {
+      "id": "creature",
+      "code": "BEAST",
+      "section": "source",
+      "driver": "emphasis",
+      "goals": [
+        "Give the sound a living voice",
+        "Imply size and temperament"
+      ],
+      "grades": [
+        {
+          "name": "Small Creature",
+          "description": "Something little stirs.",
+          "instruction": "small creature chittering"
+        },
+        {
+          "name": "Creature Growl",
+          "description": "A living, breathing presence.",
+          "instruction": "low creature growl"
+        },
+        {
+          "name": "Monstrous Roar",
+          "description": "Apex-predator scale.",
+          "instruction": "monstrous roaring"
+        }
+      ]
+    },
+    {
+      "id": "weather",
+      "code": "STORM",
+      "section": "source",
+      "driver": "emphasis",
+      "goals": [
+        "Let the sky make the sound",
+        "Set precipitation and wind"
+      ],
+      "grades": [
+        {
+          "name": "Light Drizzle",
+          "description": "Weather at the edge of hearing.",
+          "instruction": "light drizzle"
+        },
+        {
+          "name": "Steady Rain",
+          "description": "Committed, continuous weather.",
+          "instruction": "steady rain"
+        },
+        {
+          "name": "Torrential Storm",
+          "description": "The sky opens completely.",
+          "instruction": "torrential downpour"
+        }
+      ]
+    },
+    {
+      "id": "crowd",
+      "code": "CROWD",
+      "section": "source",
+      "driver": "emphasis",
+      "goals": [
+        "Fill the space with people",
+        "Set how many voices and how near"
+      ],
+      "grades": [
+        {
+          "name": "Distant Chatter",
+          "description": "People somewhere else.",
+          "instruction": "distant chatter"
+        },
+        {
+          "name": "Room of Voices",
+          "description": "A living crowd around you.",
+          "instruction": "chatter of a crowded room"
+        },
+        {
+          "name": "Roaring Crowd",
+          "description": "A wall of humanity.",
+          "instruction": "roaring crowd"
+        }
+      ]
+    },
+    {
+      "id": "electricity",
+      "code": "VOLT",
+      "section": "source",
+      "driver": "emphasis",
+      "goals": [
+        "Charge the sound with current",
+        "Crackle, hum, and arc"
+      ],
+      "grades": [
+        {
+          "name": "Faint Buzz",
+          "description": "Current at idle.",
+          "instruction": "faint electric buzz"
+        },
+        {
+          "name": "Electric Crackle",
+          "description": "Live, spitting energy.",
+          "instruction": "electric crackle"
+        },
+        {
+          "name": "Arcing Surge",
+          "description": "Uncontained voltage.",
+          "instruction": "arcing electric surge"
+        }
+      ]
+    },
+    {
+      "id": "sharp-attack",
+      "code": "SNAP",
+      "section": "onset",
+      "driver": "emphasis",
+      "goals": [
+        "Start instantly",
+        "Cut through from the first millisecond"
+      ],
+      "grades": [
+        {
+          "name": "Clean Attack",
+          "description": "A tidy, definite start.",
+          "instruction": "clean attack"
+        },
+        {
+          "name": "Sharp Attack",
+          "description": "An instant, cutting start.",
+          "instruction": "sharp attack"
+        },
+        {
+          "name": "Razor Attack",
+          "description": "Zero ramp, all edge.",
+          "instruction": "razor-sharp instant attack"
+        }
+      ]
+    },
+    {
+      "id": "slow-swell",
+      "code": "SWELL",
+      "section": "onset",
+      "driver": "emphasis",
+      "goals": [
+        "Fade in from nothing",
+        "Build anticipation before arrival"
+      ],
+      "grades": [
+        {
+          "name": "Gentle Swell",
+          "description": "Ease in politely.",
+          "instruction": "gentle swell"
+        },
+        {
+          "name": "Slow Swell",
+          "description": "A patient, building entrance.",
+          "instruction": "slow swell"
+        },
+        {
+          "name": "Long Build",
+          "description": "An age of rising tension.",
+          "instruction": "long slow building swell"
+        }
+      ]
+    },
+    {
+      "id": "stutter",
+      "code": "STUT",
+      "section": "onset",
+      "driver": "emphasis",
+      "goals": [
+        "Break the sound into bursts",
+        "Add rhythmic interruption"
+      ],
+      "grades": [
+        {
+          "name": "Slight Stutter",
+          "description": "An occasional catch.",
+          "instruction": "slight stutter"
+        },
+        {
+          "name": "Stuttering",
+          "description": "Chopped, rhythmic delivery.",
+          "instruction": "stuttering rhythm"
+        },
+        {
+          "name": "Chaotic Stutter",
+          "description": "Fragmented to pieces.",
+          "instruction": "chaotic broken stutter"
+        }
+      ]
+    },
+    {
+      "id": "looping",
+      "code": "LOOP",
+      "section": "onset",
+      "driver": "emphasis",
+      "goals": [
+        "Repeat evenly",
+        "Sit steady under other layers"
+      ],
+      "grades": [
+        {
+          "name": "Gentle Cycle",
+          "description": "A soft, even repeat.",
+          "instruction": "gently looping"
+        },
+        {
+          "name": "Steady Loop",
+          "description": "Seamless repetition.",
+          "instruction": "steady seamless loop"
+        },
+        {
+          "name": "Relentless Loop",
+          "description": "Repetition with pressure.",
+          "instruction": "relentless driving loop"
+        }
+      ]
+    },
+    {
+      "id": "single-hit",
+      "code": "ONE",
+      "section": "onset",
+      "driver": "emphasis",
+      "goals": [
+        "One event, then silence",
+        "Keep the moment isolated"
+      ],
+      "grades": [
+        {
+          "name": "One Soft Event",
+          "description": "A single quiet occurrence.",
+          "instruction": "one soft hit, then silence"
+        },
+        {
+          "name": "Single Hit",
+          "description": "One clean event.",
+          "instruction": "single hit"
+        },
+        {
+          "name": "One Huge Moment",
+          "description": "A lone, enormous event.",
+          "instruction": "one massive hit, then silence"
+        }
+      ]
+    },
+    {
+      "id": "rising",
+      "code": "RISE",
+      "section": "onset",
+      "driver": "emphasis",
+      "goals": [
+        "Sweep upward",
+        "Point at a payoff"
+      ],
+      "grades": [
+        {
+          "name": "Gentle Rise",
+          "description": "A hint of lift.",
+          "instruction": "gentle rise"
+        },
+        {
+          "name": "Rising Sweep",
+          "description": "Momentum climbing.",
+          "instruction": "rising sweep"
+        },
+        {
+          "name": "Screaming Riser",
+          "description": "Full trailer-riser panic.",
+          "instruction": "screaming riser"
+        }
+      ]
+    },
+    {
+      "id": "decay-tail",
+      "code": "TAIL",
+      "section": "onset",
+      "driver": "emphasis",
+      "goals": [
+        "Let it ring after the event",
+        "Set how long the space holds it"
+      ],
+      "grades": [
+        {
+          "name": "Short Tail",
+          "description": "A quick, tidy end.",
+          "instruction": "short decay"
+        },
+        {
+          "name": "Long Tail",
+          "description": "A lingering afterglow.",
+          "instruction": "long decay tail"
+        },
+        {
+          "name": "Endless Ring",
+          "description": "It never quite stops.",
+          "instruction": "endless ringing tail"
+        }
+      ]
+    },
+    {
+      "id": "metallic",
+      "code": "METL",
+      "section": "nature",
+      "driver": "emphasis",
+      "goals": [
+        "Make it metal",
+        "Ring, clang, and resonance"
+      ],
+      "grades": [
+        {
+          "name": "Metal Trace",
+          "description": "A hint of metal in it.",
+          "instruction": "faintly metallic"
+        },
+        {
+          "name": "Metallic",
+          "description": "Clearly metal-born.",
+          "instruction": "metallic"
+        },
+        {
+          "name": "Clanging Metal",
+          "description": "All edges and resonance.",
+          "instruction": "harsh clanging metal"
+        }
+      ]
+    },
+    {
+      "id": "wooden",
+      "code": "WOOD",
+      "section": "nature",
+      "driver": "emphasis",
+      "goals": [
+        "Make it wood",
+        "Knock, creak, and grain"
+      ],
+      "grades": [
+        {
+          "name": "Wood Touch",
+          "description": "A warm woody note.",
+          "instruction": "soft wooden knock"
+        },
+        {
+          "name": "Wooden",
+          "description": "Solid timber character.",
+          "instruction": "wooden"
+        },
+        {
+          "name": "Splintering Wood",
+          "description": "Fibers tearing apart.",
+          "instruction": "splintering cracking wood"
+        }
+      ]
+    },
+    {
+      "id": "glassy",
+      "code": "GLAS",
+      "section": "nature",
+      "driver": "emphasis",
+      "goals": [
+        "Make it glass",
+        "Fragile, pure, and bright"
+      ],
+      "grades": [
+        {
+          "name": "Glass Whisper",
+          "description": "Delicate crystalline edge.",
+          "instruction": "delicate glassy tone"
+        },
+        {
+          "name": "Glassy",
+          "description": "Clear glass character.",
+          "instruction": "glassy"
+        },
+        {
+          "name": "Shattering Glass",
+          "description": "Fragility, ended.",
+          "instruction": "shattering glass"
+        }
+      ]
+    },
+    {
+      "id": "hollow",
+      "code": "HOLW",
+      "section": "nature",
+      "driver": "emphasis",
+      "goals": [
+        "Empty the middle out",
+        "Resonate like a vessel"
+      ],
+      "grades": [
+        {
+          "name": "Slightly Hollow",
+          "description": "A touch of empty space.",
+          "instruction": "slightly hollow"
+        },
+        {
+          "name": "Hollow",
+          "description": "A resonant emptiness.",
+          "instruction": "hollow, resonant"
+        },
+        {
+          "name": "Cavern Hollow",
+          "description": "Vast internal emptiness.",
+          "instruction": "cavernously hollow"
+        }
+      ]
+    },
+    {
+      "id": "organic",
+      "code": "FLESH",
+      "section": "nature",
+      "driver": "emphasis",
+      "goals": [
+        "Make it alive",
+        "Wet, soft, bodily texture"
+      ],
+      "grades": [
+        {
+          "name": "Soft Organic",
+          "description": "Gently alive.",
+          "instruction": "soft organic texture"
+        },
+        {
+          "name": "Fleshy",
+          "description": "Unmistakably biological.",
+          "instruction": "organic, fleshy"
+        },
+        {
+          "name": "Visceral",
+          "description": "Wet and bodily.",
+          "instruction": "wet visceral squelch"
+        }
+      ]
+    },
+    {
+      "id": "gritty",
+      "code": "GRIT",
+      "section": "nature",
+      "driver": "emphasis",
+      "goals": [
+        "Roughen the surface",
+        "Sand, gravel, and grain"
+      ],
+      "grades": [
+        {
+          "name": "Fine Grain",
+          "description": "Lightly textured.",
+          "instruction": "lightly textured"
+        },
+        {
+          "name": "Gritty",
+          "description": "Rough and granular.",
+          "instruction": "gritty"
+        },
+        {
+          "name": "Crushed Gravel",
+          "description": "Abrasive all the way down.",
+          "instruction": "crushed gravel grit"
+        }
+      ]
+    },
+    {
+      "id": "watery",
+      "code": "WET",
+      "section": "nature",
+      "driver": "emphasis",
+      "goals": [
+        "Soak it",
+        "Drips, splashes, and flow"
+      ],
+      "grades": [
+        {
+          "name": "Damp",
+          "description": "Moisture at the edges.",
+          "instruction": "damp"
+        },
+        {
+          "name": "Wet",
+          "description": "Splashy, liquid movement.",
+          "instruction": "wet, splashy"
+        },
+        {
+          "name": "Drenched",
+          "description": "Fully submerged character.",
+          "instruction": "drenched, gurgling"
+        }
+      ]
+    },
+    {
+      "id": "synthetic",
+      "code": "SYNTH",
+      "section": "nature",
+      "driver": "emphasis",
+      "goals": [
+        "Make it electronic",
+        "Digital, designed, unreal"
+      ],
+      "grades": [
+        {
+          "name": "Synth Tint",
+          "description": "A designed, electronic hint.",
+          "instruction": "subtle synthetic tone"
+        },
+        {
+          "name": "Synthetic",
+          "description": "Clearly electronic.",
+          "instruction": "synthetic"
+        },
+        {
+          "name": "Digital Glitch",
+          "description": "Aggressively artificial.",
+          "instruction": "harsh digital glitch"
+        }
+      ]
+    },
+    {
+      "id": "quiet",
+      "code": "HUSH",
+      "section": "intensity",
+      "driver": "emphasis",
+      "goals": [
+        "Pull the level down",
+        "Make listeners lean in"
+      ],
+      "grades": [
+        {
+          "name": "Soft",
+          "description": "Comfortably quiet.",
+          "instruction": "soft"
+        },
+        {
+          "name": "Very Quiet",
+          "description": "Just above the noise floor.",
+          "instruction": "very quiet"
+        },
+        {
+          "name": "Barely There",
+          "description": "Almost imagined.",
+          "instruction": "barely audible"
+        }
+      ]
+    },
+    {
+      "id": "loud",
+      "code": "LOUD",
+      "section": "intensity",
+      "driver": "emphasis",
+      "goals": [
+        "Push the level up",
+        "Demand attention"
+      ],
+      "grades": [
+        {
+          "name": "Loud",
+          "description": "Assertive presence.",
+          "instruction": "loud"
+        },
+        {
+          "name": "Very Loud",
+          "description": "Room-filling.",
+          "instruction": "very loud"
+        },
+        {
+          "name": "Deafening",
+          "description": "Beyond comfortable.",
+          "instruction": "deafening"
+        }
+      ]
+    },
+    {
+      "id": "deep",
+      "code": "BASS",
+      "section": "intensity",
+      "driver": "emphasis",
+      "goals": [
+        "Add low end",
+        "Weight you feel in the chest"
+      ],
+      "grades": [
+        {
+          "name": "Warm Low End",
+          "description": "A rounded bottom.",
+          "instruction": "warm low end"
+        },
+        {
+          "name": "Deep",
+          "description": "Bass-forward weight.",
+          "instruction": "deep, bassy"
+        },
+        {
+          "name": "Sub Rumble",
+          "description": "Felt more than heard.",
+          "instruction": "chest-shaking sub-bass rumble"
+        }
+      ]
+    },
+    {
+      "id": "bright",
+      "code": "BRITE",
+      "section": "intensity",
+      "driver": "emphasis",
+      "goals": [
+        "Add top end",
+        "Air, sparkle, and edge"
+      ],
+      "grades": [
+        {
+          "name": "Slightly Bright",
+          "description": "A little sparkle.",
+          "instruction": "slightly bright"
+        },
+        {
+          "name": "Bright",
+          "description": "Crisp high-frequency detail.",
+          "instruction": "bright, crisp"
+        },
+        {
+          "name": "Piercing",
+          "description": "All treble, no mercy.",
+          "instruction": "piercingly bright"
+        }
+      ]
+    },
+    {
+      "id": "distant",
+      "code": "FAR",
+      "section": "intensity",
+      "driver": "emphasis",
+      "goals": [
+        "Push it away",
+        "Let space swallow detail"
+      ],
+      "grades": [
+        {
+          "name": "Set Back",
+          "description": "A step removed.",
+          "instruction": "slightly distant"
+        },
+        {
+          "name": "Distant",
+          "description": "Clearly far away.",
+          "instruction": "distant"
+        },
+        {
+          "name": "Horizon",
+          "description": "At the edge of the world.",
+          "instruction": "very far away, faint"
+        }
+      ]
+    },
+    {
+      "id": "close",
+      "code": "NEAR",
+      "section": "intensity",
+      "driver": "emphasis",
+      "goals": [
+        "Bring it to the ear",
+        "Intimate, detailed presence"
+      ],
+      "grades": [
+        {
+          "name": "Near",
+          "description": "Comfortably close.",
+          "instruction": "close"
+        },
+        {
+          "name": "Close-Up",
+          "description": "Every detail audible.",
+          "instruction": "close-up, intimate detail"
+        },
+        {
+          "name": "In Your Ear",
+          "description": "Uncomfortably present.",
+          "instruction": "right against the ear"
+        }
+      ]
+    },
+    {
+      "id": "forceful",
+      "code": "FORCE",
+      "section": "intensity",
+      "driver": "emphasis",
+      "goals": [
+        "Add pressure",
+        "Sound with intent behind it"
+      ],
+      "grades": [
+        {
+          "name": "Firm",
+          "description": "Definite pressure.",
+          "instruction": "firm"
+        },
+        {
+          "name": "Forceful",
+          "description": "Weight and intent.",
+          "instruction": "forceful"
+        },
+        {
+          "name": "Overwhelming",
+          "description": "Pressure past resistance.",
+          "instruction": "overwhelming force"
+        }
+      ]
+    },
+    {
+      "id": "cinematic",
+      "code": "CINE",
+      "section": "context",
+      "driver": "emphasis",
+      "goals": [
+        "Grade it like a film",
+        "Polish and scale"
+      ],
+      "grades": [
+        {
+          "name": "Filmic Touch",
+          "description": "A hint of the movies.",
+          "instruction": "subtly cinematic"
+        },
+        {
+          "name": "Cinematic",
+          "description": "Movie-grade presence.",
+          "instruction": "cinematic"
+        },
+        {
+          "name": "Blockbuster",
+          "description": "Epic, mixed-for-the-big-screen scale.",
+          "instruction": "epic blockbuster scale"
+        }
+      ]
+    },
+    {
+      "id": "scifi",
+      "code": "SCIFI",
+      "section": "context",
+      "driver": "emphasis",
+      "goals": [
+        "Ship it to the future",
+        "Technology beyond ours"
+      ],
+      "grades": [
+        {
+          "name": "Faint Future",
+          "description": "A futuristic tint.",
+          "instruction": "faintly futuristic"
+        },
+        {
+          "name": "Sci-Fi",
+          "description": "Unmistakably future-made.",
+          "instruction": "scifi, futuristic"
+        },
+        {
+          "name": "Alien Tech",
+          "description": "Beyond human manufacture.",
+          "instruction": "alien technology"
+        }
+      ]
+    },
+    {
+      "id": "cartoon",
+      "code": "TOON",
+      "section": "context",
+      "driver": "emphasis",
+      "goals": [
+        "Play it for laughs",
+        "Bouncy, exaggerated energy"
+      ],
+      "grades": [
+        {
+          "name": "Playful",
+          "description": "A comic lilt.",
+          "instruction": "playful"
+        },
+        {
+          "name": "Cartoonish",
+          "description": "Bouncy and exaggerated.",
+          "instruction": "cartoonish, bouncy"
+        },
+        {
+          "name": "Full Slapstick",
+          "description": "Physics is a suggestion.",
+          "instruction": "full slapstick cartoon"
+        }
+      ]
+    },
+    {
+      "id": "horror",
+      "code": "DREAD",
+      "section": "context",
+      "driver": "emphasis",
+      "goals": [
+        "Make it wrong",
+        "Dread and unease"
+      ],
+      "grades": [
+        {
+          "name": "Uneasy",
+          "description": "Something is off.",
+          "instruction": "uneasy, unsettling"
+        },
+        {
+          "name": "Ominous",
+          "description": "Dark intent nearby.",
+          "instruction": "dark, ominous"
+        },
+        {
+          "name": "Nightmare",
+          "description": "Fully horrifying.",
+          "instruction": "nightmarish horror"
+        }
+      ]
+    },
+    {
+      "id": "small-room",
+      "code": "ROOM",
+      "section": "context",
+      "driver": "emphasis",
+      "goals": [
+        "Close the walls in",
+        "Tight, dry acoustics"
+      ],
+      "grades": [
+        {
+          "name": "Room Tone",
+          "description": "A modest interior.",
+          "instruction": "in a small room"
+        },
+        {
+          "name": "Tight Room",
+          "description": "Walls you can hear.",
+          "instruction": "tight room acoustics"
+        },
+        {
+          "name": "Dead Booth",
+          "description": "No air at all.",
+          "instruction": "cramped booth, dead air"
+        }
+      ]
+    },
+    {
+      "id": "cavernous",
+      "code": "CAVE",
+      "section": "context",
+      "driver": "emphasis",
+      "goals": [
+        "Open a huge space",
+        "Echo and long reverb"
+      ],
+      "grades": [
+        {
+          "name": "Slight Echo",
+          "description": "A breath of space.",
+          "instruction": "slight echo"
+        },
+        {
+          "name": "Cavernous",
+          "description": "A vast interior answers.",
+          "instruction": "cavernous echo"
+        },
+        {
+          "name": "Cathedral",
+          "description": "Reverb without end.",
+          "instruction": "endless cathedral reverb"
+        }
+      ]
+    },
+    {
+      "id": "outdoors",
+      "code": "OPEN",
+      "section": "context",
+      "driver": "emphasis",
+      "goals": [
+        "Take it outside",
+        "Open air and nature"
+      ],
+      "grades": [
+        {
+          "name": "Open Air",
+          "description": "Sky overhead.",
+          "instruction": "open air"
+        },
+        {
+          "name": "Outdoors",
+          "description": "A natural exterior.",
+          "instruction": "outdoors, natural ambience"
+        },
+        {
+          "name": "Wilderness",
+          "description": "Vast, unpeopled space.",
+          "instruction": "vast open wilderness"
+        }
+      ]
+    },
+    {
+      "id": "trailer",
+      "code": "TRLR",
+      "section": "context",
+      "driver": "emphasis",
+      "goals": [
+        "Cut it for the trailer",
+        "Maximum drama per second"
+      ],
+      "grades": [
+        {
+          "name": "Polished",
+          "description": "Promo-ready sheen.",
+          "instruction": "polished"
+        },
+        {
+          "name": "Dramatic Trailer",
+          "description": "Built to sell a story.",
+          "instruction": "dramatic trailer"
+        },
+        {
+          "name": "Thunder Moment",
+          "description": "The money shot.",
+          "instruction": "thunderous trailer moment"
+        }
+      ]
+    }
+  ]
+}

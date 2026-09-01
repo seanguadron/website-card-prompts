@@ -1,0 +1,228 @@
+{
+  "schemaVersion": 1,
+  "archetypes": [
+    {
+      "id": "trailer-hit",
+      "code": "THIT",
+      "name": "Trailer Hit",
+      "description": "One massive, razor-edged impact cut for the money moment.",
+      "tracks": { "emphasis": 2 },
+      "equipped": {
+        "source": ["impact"],
+        "onset": ["sharp-attack"],
+        "intensity": ["deep"],
+        "context": ["cinematic", "trailer"]
+      },
+      "effects": [
+        "Equips Impact with a razor attack at Dominant emphasis",
+        "Adds sub-bass weight and a cinematic trailer finish",
+        "Leaves your sound line untouched"
+      ]
+    },
+    {
+      "id": "laser-zap",
+      "code": "ZAP",
+      "name": "Laser Zap",
+      "description": "A bright synthetic bolt with an instant attack, straight out of the future.",
+      "tracks": { "emphasis": 1 },
+      "equipped": {
+        "source": ["electricity"],
+        "onset": ["sharp-attack"],
+        "nature": ["synthetic"],
+        "intensity": ["bright"],
+        "context": ["scifi"]
+      },
+      "effects": [
+        "Equips Electricity with a sharp attack and synthetic texture",
+        "Brightens the top end and stamps it sci-fi",
+        "Leaves your sound line untouched"
+      ]
+    },
+    {
+      "id": "creature-lair",
+      "code": "LAIR",
+      "name": "Creature Lair",
+      "description": "Something big breathing in the dark, swelling out of a vast echo.",
+      "tracks": { "emphasis": 1 },
+      "equipped": {
+        "source": ["creature"],
+        "onset": ["slow-swell"],
+        "nature": ["organic"],
+        "intensity": ["deep"],
+        "context": ["horror", "cavernous"]
+      },
+      "effects": [
+        "Equips a growling creature with organic texture",
+        "Swells in slowly under horror and cavernous echo",
+        "Leaves your sound line untouched"
+      ]
+    },
+    {
+      "id": "rain-bed",
+      "code": "RAIN",
+      "name": "Rain Bed",
+      "description": "A broad, general rain ambience to sit under everything else.",
+      "tracks": { "emphasis": 0 },
+      "equipped": {
+        "source": ["weather"],
+        "nature": ["watery"],
+        "context": ["outdoors"]
+      },
+      "ambience": true,
+      "effects": [
+        "Equips light weather with watery texture, outdoors",
+        "Switches ambience mode on: broad wording, capped descriptors",
+        "Leaves your sound line untouched"
+      ]
+    },
+    {
+      "id": "ui-click",
+      "code": "CLICK",
+      "name": "Interface Click",
+      "description": "A tiny, close, designed click for buttons and toggles.",
+      "tracks": { "emphasis": 0 },
+      "equipped": {
+        "source": ["mechanism"],
+        "onset": ["single-hit"],
+        "nature": ["synthetic", "glassy"],
+        "intensity": ["close"],
+        "context": ["small-room"]
+      },
+      "effects": [
+        "Equips a small mechanism as one isolated event",
+        "Keeps it close, delicate, and dry at Hint emphasis",
+        "Leaves your sound line untouched"
+      ]
+    },
+    {
+      "id": "haunted-hall",
+      "code": "HAUNT",
+      "name": "Haunted Hall",
+      "description": "A quiet wooden scrape swelling somewhere it should not be.",
+      "tracks": { "emphasis": 1 },
+      "equipped": {
+        "source": ["friction"],
+        "onset": ["slow-swell"],
+        "nature": ["wooden", "hollow"],
+        "intensity": ["quiet"],
+        "context": ["horror", "cavernous"]
+      },
+      "effects": [
+        "Equips a dragged scrape with wooden, hollow texture",
+        "Keeps it very quiet under horror and long echo",
+        "Leaves your sound line untouched"
+      ]
+    },
+    {
+      "id": "machine-room",
+      "code": "MECH",
+      "name": "Machine Room",
+      "description": "Metal machinery looping steadily inside close walls.",
+      "tracks": { "emphasis": 1 },
+      "equipped": {
+        "source": ["mechanism"],
+        "onset": ["looping"],
+        "nature": ["metallic"],
+        "intensity": ["loud"],
+        "context": ["small-room"]
+      },
+      "effects": [
+        "Equips working machinery on a steady loop",
+        "Adds metallic texture and tight room acoustics",
+        "Leaves your sound line untouched"
+      ]
+    },
+    {
+      "id": "storm-front",
+      "code": "SQUAL",
+      "name": "Storm Front",
+      "description": "Weather rising to a cinematic, full-sky roar.",
+      "tracks": { "emphasis": 2 },
+      "equipped": {
+        "source": ["weather"],
+        "onset": ["rising"],
+        "nature": ["watery"],
+        "intensity": ["loud"],
+        "context": ["outdoors", "cinematic"]
+      },
+      "effects": [
+        "Equips torrential weather on a screaming rise",
+        "Pushes it loud, wet, and outdoors at Dominant emphasis",
+        "Leaves your sound line untouched"
+      ]
+    },
+    {
+      "id": "crowd-murmur",
+      "code": "MURM",
+      "name": "Crowd Murmur",
+      "description": "A general restaurant-style bed of distant voices.",
+      "tracks": { "emphasis": 0 },
+      "equipped": {
+        "source": ["crowd"],
+        "intensity": ["distant"],
+        "context": ["small-room"]
+      },
+      "ambience": true,
+      "effects": [
+        "Equips distant chatter kept far back in the room",
+        "Switches ambience mode on: broad wording, capped descriptors",
+        "Leaves your sound line untouched"
+      ]
+    },
+    {
+      "id": "whoosh-cut",
+      "code": "SWIPE",
+      "name": "Whoosh Transition",
+      "description": "A rising, bright pass of air built for scene cuts.",
+      "tracks": { "emphasis": 1 },
+      "equipped": {
+        "source": ["whoosh"],
+        "onset": ["rising"],
+        "intensity": ["bright"],
+        "context": ["cinematic"]
+      },
+      "effects": [
+        "Equips a fast whoosh on a rising sweep",
+        "Brightens it and grades it cinematic",
+        "Leaves your sound line untouched"
+      ]
+    },
+    {
+      "id": "glass-break",
+      "code": "SHATR",
+      "name": "Glass Break",
+      "description": "A close, sharp shatter with nothing polite about it.",
+      "tracks": { "emphasis": 2 },
+      "equipped": {
+        "source": ["impact"],
+        "onset": ["sharp-attack"],
+        "nature": ["glassy"],
+        "intensity": ["close"],
+        "context": ["small-room"]
+      },
+      "effects": [
+        "Equips a massive impact with shattering glass texture",
+        "Keeps it right at the ear inside dry walls",
+        "Leaves your sound line untouched"
+      ]
+    },
+    {
+      "id": "cartoon-boing",
+      "code": "BOING",
+      "name": "Cartoon Boing",
+      "description": "A springy, bouncy rise played entirely for laughs.",
+      "tracks": { "emphasis": 2 },
+      "equipped": {
+        "source": ["mechanism"],
+        "onset": ["rising"],
+        "intensity": ["bright"],
+        "context": ["cartoon"]
+      },
+      "effects": [
+        "Equips a springing mechanism on a rising sweep",
+        "Brightens it and commits to full slapstick",
+        "Leaves your sound line untouched"
+      ]
+    }
+  ]
+}

@@ -8,6 +8,7 @@ const imageTool = TOOL_REGISTRY["image-editor"];
 const vectorTool = TOOL_REGISTRY["vector-editor"];
 const skillsTool = TOOL_REGISTRY["skills"];
 const pictureTool = TOOL_REGISTRY["picture-deck"];
+const soundTool = TOOL_REGISTRY["sound-deck"];
 
 // The landing page lists the same tools as the top bar, in the same order,
 // and says so by construction: both read TOOLS. The order and the numbering
@@ -121,6 +122,41 @@ rain-swept night city, warm
 golden-hour glow, muted
 palette, wide establishing
 shot --ar 3:2 --stylize 250`}</code>
+            </pre>
+          </div>
+        </section>
+
+        <section
+          className="home-feature"
+          id="sounds"
+          aria-labelledby="home-sounds-title"
+        >
+          <div className="home-feature-copy">
+            <span className="tool-kicker">{toolNumber(soundTool)} · SONIC</span>
+            <h2 id="home-sounds-title">{soundTool.name}</h2>
+            <p>{soundTool.tagline}</p>
+            <ul className="home-feature-points">
+              <li>Name the sound, then stack attack, texture, and world cards.</li>
+              <li>One Emphasis dial re-grades every card, hint to dominant.</li>
+              <li>One sound per prompt; a layer rack plans the soundscape.</li>
+            </ul>
+            <Link className="button button-primary" href={soundTool.href}>
+              Open the SONIC Deck
+            </Link>
+          </div>
+          <div className="home-spec" aria-hidden="true">
+            <div className="home-spec-header">
+              <span>prompt.txt</span>
+              <span className="file-badge">SOUND</span>
+            </div>
+            <pre>
+              <code>{`heavy castle door creaking
+open, wooden, slow swell,
+deep, bassy, dark, ominous
+
+Layers:
+1. distant thunder rumbling
+2. rain on stone, steady`}</code>
             </pre>
           </div>
         </section>
