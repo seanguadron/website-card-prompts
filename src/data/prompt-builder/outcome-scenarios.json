@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "scenarios": [
+    {
+      "id": "origin-universe",
+      "name": "Origin of the Universe",
+      "context": "What does modern science actually know about how the universe began, and where does scientific explanation currently reach its limits?",
+      "target": "A general audience interested in physics, cosmology, and the origins of the universe."
+    },
+    {
+      "id": "dreams",
+      "name": "Dreams",
+      "context": "Why do humans dream, and what do scientists currently think dreams are doing in the brain?",
+      "target": "A general audience interested in psychology and neuroscience."
+    },
+    {
+      "id": "evolution",
+      "name": "Evolution",
+      "context": "How can evolution produce highly complex biological structures such as eyes, wings, and immune systems without having a predetermined goal?",
+      "target": "A general audience with no specialized background in evolutionary biology."
+    }
+  ]
+}

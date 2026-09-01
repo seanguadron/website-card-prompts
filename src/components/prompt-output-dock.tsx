@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 
 type CopyState = "idle" | "copied" | "error";
 
@@ -30,6 +30,7 @@ export function PromptOutputDock({
   onCopy,
   onDownload,
   onPrint,
+  outcomeView,
 }: {
   expanded: boolean;
   complete: boolean;
@@ -42,8 +43,13 @@ export function PromptOutputDock({
   onCopy: () => void;
   onDownload: (format: "md" | "txt" | "json") => void;
   onPrint: () => void;
+  /** A second view beside the assembled prompt: what the model answers.
+   *  Only the CRAFT deck provides one; without it the dock is unchanged. */
+  outcomeView?: ReactNode;
 }) {
   const [copiedSection, setCopiedSection] = useState<string | null>(null);
+  const [view, setView] = useState<"prompt" | "outcome">("prompt");
+  const showOutcome = Boolean(outcomeView) && view === "outcome";
   const wordCount = prompt.trim() ? prompt.trim().split(/\s+/).length : 0;
   const estimatedTokens = Math.ceil(prompt.length / 4);
 
@@ -89,15 +95,46 @@ export function PromptOutputDock({
           aria-hidden={!expanded}
           inert={!expanded}
         >
+          {outcomeView ? (
+            <div
+              className="output-view-switch"
+              role="group"
+              aria-label="Output view"
+            >
+              <button
+                type="button"
+                className={showOutcome ? "" : "is-active"}
+                aria-pressed={!showOutcome}
+                onClick={() => setView("prompt")}
+              >
+                Prompt
+              </button>
+              <button
+                type="button"
+                className={showOutcome ? "is-active" : ""}
+                aria-pressed={showOutcome}
+                onClick={() => setView("outcome")}
+              >
+                Outcome
+              </button>
+            </div>
+          ) : null}
+
           <div className="preview-header">
             <div>
-              <h2 id="preview-title">Assembled prompt</h2>
+              <h2 id="preview-title">
+                {showOutcome ? "Model outcome" : "Assembled prompt"}
+              </h2>
             </div>
             <span className={complete ? "preview-state is-ready" : "preview-state"}>
               {complete ? "Ready" : `${missingItems.length} missing`}
             </span>
           </div>
 
+          {showOutcome ? outcomeView : null}
+
+          {!showOutcome ? (
+          <>
           <pre aria-live="polite">
             <code>{prompt}</code>
           </pre>
@@ -201,6 +238,8 @@ export function PromptOutputDock({
             <p className="inline-error" role="alert">
               Clipboard access was blocked. Download the file instead.
             </p>
+          ) : null}
+          </>
           ) : null}
         </div>
     </aside>

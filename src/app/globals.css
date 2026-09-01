@@ -2239,6 +2239,114 @@ button.role-loadout-slot {
   flex: 1;
 }
 
+/* The dock's second view: what the model answers. The switch mirrors the
+   world-switch idiom - small bordered options, cyan when active. */
+.output-view-switch {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 12px;
+}
+
+.output-view-switch button,
+.outcome-scenario-option {
+  min-height: 28px;
+  padding: 0 10px;
+  border: 1px solid var(--input);
+  border-radius: 8px;
+  background: var(--background);
+  color: var(--muted-foreground);
+  font-size: 0.72rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    color 150ms ease-out,
+    background-color 150ms ease-out,
+    border-color 150ms ease-out;
+}
+
+.output-view-switch button {
+  flex: 1;
+}
+
+.output-view-switch button:hover,
+.outcome-scenario-option:hover {
+  color: var(--foreground);
+}
+
+.output-view-switch button.is-active,
+.outcome-scenario-option.is-active {
+  border-color: var(--brand-cyan);
+  background: color-mix(in oklch, var(--brand-cyan) 12%, var(--card));
+  color: var(--brand-cyan-text);
+}
+
+.outcome-lab {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.outcome-scenario-switch {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+/* The question being answered, so the answer below has its context. */
+.outcome-context {
+  margin: 0;
+  color: var(--muted-foreground);
+  font-size: 0.76rem;
+  line-height: 1.5;
+}
+
+/* Model text is prose, not code: wrapped, readable measure, its own card. */
+.outcome-answer {
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--background);
+  font-size: 0.8rem;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+}
+
+.outcome-meta {
+  margin: 0;
+  color: var(--muted-foreground);
+  font-size: 0.7rem;
+}
+
+.outcome-note {
+  margin: 0;
+  color: var(--muted-foreground);
+  font-size: 0.78rem;
+  line-height: 1.5;
+}
+
+.outcome-note code {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+}
+
+.outcome-note-quiet {
+  font-size: 0.7rem;
+}
+
+.outcome-prompt summary {
+  color: var(--muted-foreground);
+  font-size: 0.72rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.outcome-prompt pre {
+  margin-top: 8px;
+  max-height: 240px;
+  overflow: auto;
+}
+
 .missing-fields {
   display: grid;
   gap: 8px;
