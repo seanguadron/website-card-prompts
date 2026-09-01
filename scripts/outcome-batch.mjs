@@ -44,8 +44,14 @@ import {
 // proportionate to a general-audience explainer; sampling params are not
 // sent (removed on this model family).
 const MODEL = "claude-opus-5";
-const MAX_TOKENS = 1200;
-const EFFORT = "medium";
+// Sized from the first run's wreckage: at effort medium, adaptive thinking
+// spent ~1,000 tokens per question and starved a 1,200 cap - 58% of answers
+// came back EMPTY. Effort low keeps thinking on but small (the documented
+// fix; disabling it has its own failure modes), and 2,500 gives the longest
+// natural answers (~600 text tokens typical, ~1,000+ for unconstrained ones)
+// room to finish under whatever thinking remains.
+const MAX_TOKENS = 2500;
+const EFFORT = "low";
 // Batch-discounted list prices per MTok, for the report only.
 const PRICE_IN = 2.5;
 const PRICE_OUT = 12.5;
@@ -204,14 +210,25 @@ async function showPlan(scenarioId) {
   ]);
 }
 
-async function submit(scenarioId) {
+async function submit(scenarioId, limit) {
   const state = await readState();
   if (state[scenarioId]?.batchId) {
     throw new Error(
       `A batch for ${scenarioId} is already tracked (${state[scenarioId].batchId}). Run --wait or --land first.`,
     );
   }
-  const { scenario, pending } = await planScenario(scenarioId);
+  const { scenario, pending: allPending } = await planScenario(scenarioId);
+  let pending = allPending;
+  if (limit && pending.length > limit) {
+    // A probe: stride-sample so the subset spans the size spectrum
+    // (singles, pairs, triples) in the same proportions as the full set,
+    // making its token usage an honest basis for extrapolating the cost.
+    const step = pending.length / limit;
+    pending = Array.from(
+      { length: limit },
+      (_, i) => pending[Math.floor(i * step)],
+    );
+  }
   if (pending.length === 0) {
     report(["Nothing pending - the scenario is fully cached."]);
     return;
@@ -368,7 +385,10 @@ if (!scenarioId) {
 
 try {
   if (flags.includes("--submit")) {
-    await submit(scenarioId);
+    const limitIndex = flags.indexOf("--limit");
+    const limit =
+      limitIndex >= 0 ? Number(flags[limitIndex + 1]) || 0 : 0;
+    await submit(scenarioId, limit);
   } else if (flags.includes("--wait")) {
     await land(scenarioId, { wait: true });
   } else if (flags.includes("--land")) {
