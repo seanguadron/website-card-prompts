@@ -262,9 +262,9 @@ otherwise strand the gate's buttons below the fold on a short screen.
 ## 3. What the shell does NOT provide — and what to recycle
 
 Left tool strips, right docks/inspectors, canvases, panels: **tool-owned**,
-built inside the full-bleed stage. Each existing tool has its own 3-column
-grid (`.builder-main-layout`, `.architect-layout`, `.image-editor-layout`).
-Do not expect a shell rail; DO recycle these primitives:
+built inside the full-bleed stage. Each deck owns its own layout (the flow
+workspace, the card workbench grid, the right-edge output dock). Do not
+expect a shell rail; DO recycle these primitives:
 
 | Primitive | File | Use it for |
 |---|---|---|
@@ -273,21 +273,17 @@ Do not expect a shell rail; DO recycle these primitives:
 | `formatSaveStatusLabel`, `SaveStatus` | `src/lib/save-status.ts` | Autosave chip labels ("Saved 2:41 PM…"). |
 | `useUndoableState` | `src/hooks/use-undoable-state.ts` | Undo/redo: past/future stacks, tag coalescing, `seal`, `jump`, `depth`/`position` for history panels. |
 | `useLocalDraft` | `src/hooks/use-local-draft.ts` | Debounced, quota-guarded localStorage autosave with restore-on-mount lifecycle. |
-| `EditorMenubar` | `src/components/editor-menubar.tsx` | App-style menu bar inside a sub-bar (File/Edit/…, roving focus, submenus). |
-| `EditorTabs` + `tabPanelProps` | `src/components/editor-tabs.tsx` | Accessible roving-tabindex tablists (right-dock tabs). |
-| `createZip`, `textZipEntry` | `src/lib/zip.ts` | Dependency-free layered/archive exports. |
+| `EditorTabs` + `tabPanelProps` | `src/components/editor-tabs.tsx` | Accessible roving-tabindex tablists (the output dock's Prompt/Outcome switch). |
 | `downloadBlob` etc. | `src/lib/browser-download.ts` | All file downloads. |
 | `readStored`, `writeStored` | `src/lib/prompt-storage.ts` | SSR-safe JSON localStorage access (see §6 landmine). |
 | `useMediaQuery` | `src/hooks/use-media-query.ts` | Live matchMedia state, SSR-safe (`useSyncExternalStore`; the lint rules reject effect-driven setState). |
-| Output docks | `prompt-output-dock.tsx`, `architect-output-dock.tsx` | Two parallel copy/download artifact panels — pick one as your base; unifying them is sanctioned backlog. The prompt dock also takes an optional `outcomeView` node and grows a Prompt/Outcome switch when one is passed (the CRAFT deck's Outcome Lab); without it the dock renders exactly as before. |
+| Output dock | `prompt-output-dock.tsx` | The copy/download artifact panel all three decks share. It takes an optional `outcomeView` node and grows a Prompt/Outcome switch when one is passed (the CRAFT deck's Outcome Lab); without it the dock renders exactly as before. |
 
-Known single-owner caveat: `zip.ts` currently has one importer (Image
-Editor) — generalize class names as you adopt it. `EditorTabs` and
-`EditorMenubar` each have two (Image Editor + Vector Editor), a good
-precedent for reusing them. The Vector Editor is also the first native-SVG tool: its scene
-graph renders as real SVG elements, so edit and export are the same artifact
-(`src/lib/vector-editor/`). `CopyButton` (`copy-button.tsx`) hardcodes the
-`skill-copy` class.
+Since the 2026-09-05 split (`docs/adr/0003-split-into-two-projects.md`) the
+Architect Wizard, Image Editor, Vector Editor, and Skills wiki live in the
+sibling Digi Editors project, with their primitives (`EditorMenubar`,
+`EditorDialog`, `zip.ts`, `units.ts`, `useCanvasViewport`, `CopyButton`).
+Port one back deliberately if a deck needs it; do not re-add the tools.
 
 ## 4. Adding a tool, end to end
 
@@ -323,12 +319,14 @@ graph renders as real SVG elements, so edit and export are the same artifact
 ## 5. globals.css zones
 
 One file, zone-ordered: tokens (`:root`, ~1–54) → shell chrome (~56–376) →
-Welcome → **Skills + the SHARED form/button/card primitives interleaved**
-(~543–2418: `.tool-kicker`, `.button`, `.field`, inputs — check here before
-adding a primitive) → Prompt Builder → Architect (`/* ===== ... ===== */`
-banners) → Image Editor → Mobile tool gate (the phone-width §2 rules; last
-because its overrides must beat the shell and tool rules on source order).
-New tool sections append before that trailing zone, with a banner.
+Welcome → **the SHARED form/button/card primitives and the deck guide pages
+interleaved** (`.tool-kicker`, `.button`, `.field`, inputs — check here
+before adding a primitive; the Skills wiki block that used to open this range
+left with the split) → Prompt Builder → PICTURE Deck → SONIC Deck → Card Art
+Studio (`/* ===== ... ===== */` banners) → Mobile tool gate (the phone-width
+§2 rules; last because its overrides must beat the shell and tool rules on
+source order). New tool sections append before that trailing zone, with a
+banner.
 
 ## 6. Persistence conventions
 
@@ -336,10 +334,10 @@ New tool sections append before that trailing zone, with a banner.
 - The theme key is `digitools.theme` (read pre-paint by the bootstrap in
   `src/components/theme-script.tsx`, injected into the streamed `<head>` via
   `useServerInsertedHTML`; the toggle in `app-shell.tsx` writes it).
-- **Landmine — two saved-at byte formats coexist**: Architect stores its
-  saved-at JSON-encoded (quoted) via `writeStored`; Prompt Builder and Image
-  Editor store raw ISO strings via direct `setItem`. Do NOT unify existing
-  keys — you'd orphan users' timestamps. New tools: use `useLocalDraft` and
-  its documented format.
+- **Landmine — two saved-at byte formats coexist**: `writeStored` JSON-encodes
+  (quoted) what it stores, and the Architect Wizard (now in Digi Editors)
+  wrote its saved-at that way; the decks store raw ISO strings via direct
+  `setItem`. Do NOT unify existing keys — you'd orphan users' timestamps.
+  New tools: use `useLocalDraft` and its documented format.
 - Every localStorage READ of externally-influenced data is a trust boundary:
   validate shape before use, never bare-cast (STANDARDS §2.3).

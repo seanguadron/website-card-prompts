@@ -16,7 +16,9 @@ govern everything that ships.
 **The split.** This project becomes the card project: the **CRAFT, SONIC,
 and PICTURE** decks. The **Vector Editor, Image Editor, and Skills wiki** go
 to a separate project, and so does the **Architect Wizard** ("Arc"). "These
-things are not going to be the same."
+things are not going to be the same." *Done 2026-09-05 on the owner's
+instruction: the four tools now live in `W:\Local Files\Codex\DigiEditors`
+(`docs/adr/0003-split-into-two-projects.md`).*
 
 **The board.** The card project becomes "more like a board system": a
 Miro-like board that archetypes drag onto. There is an archetype slot, "an
@@ -84,16 +86,17 @@ Miro-style canvas." The parts worth reading first:
 
 ### This repository (what already exists and carries over)
 
-- `src/components/architect-canvas.tsx`: the only `@xyflow/react` importer.
-  The infinite pan/zoom canvas and the full-bleed cockpit pattern
-  (`fullBleed: true` in the registry, `.page-stage.is-fluid`).
+- `../DigiEditors/src/components/architect-canvas.tsx` (moved with the
+  split): the `@xyflow/react` canvas, the infinite pan/zoom precedent. The
+  full-bleed cockpit pattern (`fullBleed: true` in the registry,
+  `.page-stage.is-fluid`) stayed here in the shell.
 - `src/components/prompt-card-workbench.tsx`: the only `@dnd-kit` importer.
   Card drag, slots, the drop settle; with `prompt-role-workbench.tsx` it is
   also where `src/hooks/use-card-deck-motion.ts` runs the pointer tilt
   (`--card-tilt-x/y`, `perspective(720px)` in `globals.css`), the seed of
   "2.5D."
-- `src/hooks/use-canvas-viewport.ts`: the Image Editor's viewport hook
-  (canvas, minimap).
+- `../DigiEditors/src/hooks/use-canvas-viewport.ts` (moved with the split):
+  the Image Editor's viewport hook (canvas, minimap).
 - `src/components/flow-nav-dock.tsx`: a movable, snapping, persisted window
   inside the workspace; the first object that lives "on" a surface rather
   than in a column.
@@ -127,9 +130,8 @@ Questions for the interview, not answers:
 - Keyboard access for a spatial canvas. Keyboard parity for every drag is a
   standing rule; a board needs a keyboard model, not just a pointer one.
 - The mobile gate: a board is a desktop cockpit; the gate pattern exists.
-- The split itself: which repository keeps the history, the Vercel project,
-  the shared shell code, the studio, and the art pipeline. Hard to reverse,
-  so it gets an ADR when decided.
+- ~~The split itself~~: decided and done, ADR-0003. This repository kept the
+  history, the Vercel project, the shell, the studio, and the art pipeline.
 
 ## 5. Pending inputs from the owner
 

@@ -1,11 +1,4 @@
-export type ToolId =
-  | "prompt-builder"
-  | "architect-wizard"
-  | "image-editor"
-  | "vector-editor"
-  | "skills"
-  | "picture-deck"
-  | "sound-deck";
+export type ToolId = "prompt-builder" | "picture-deck" | "sound-deck";
 
 // The one "this is a phone" threshold. Kept byte-identical to the media query
 // that drives the mobile gate in globals.css ("Mobile tool gate" section):
@@ -32,7 +25,10 @@ export interface ToolDescriptor {
   stage?: "alpha";
 }
 
-// Object-literal order IS the top-bar tab order.
+// Object-literal order IS the top-bar tab order. Since the 2026-09-05 split
+// (docs/adr/0003-split-into-two-projects.md) this project is the three card
+// decks; the Architect Wizard, Image Editor, Vector Editor, and Skills wiki
+// live in the sibling Digi Editors project.
 export const TOOL_REGISTRY: Record<ToolId, ToolDescriptor> = {
   "prompt-builder": {
     id: "prompt-builder",
@@ -76,62 +72,6 @@ export const TOOL_REGISTRY: Record<ToolId, ToolDescriptor> = {
       "Builds Firefly sound-effect prompts from S.O.N.I.C. card choices — source, attack, texture, dynamics, and world.",
       "38 descriptor lineages and 12 archetype presets; one Emphasis dial tunes every card from a hint to dominant.",
       "One sound per prompt with a layer rack for soundscapes. Drafts autosave in this browser; prompts download as local files.",
-    ],
-  },
-  "architect-wizard": {
-    id: "architect-wizard",
-    name: "Architect Wizard",
-    shortName: "Arc",
-    tagline:
-      "Sketch an application's architecture and data model, then export a build brief for an AI agent.",
-    href: "/tools/architect-wizard",
-    fullBleed: true,
-    mobileSupport: "gated",
-    mobileGateNotes: [
-      "Sketches an application's architecture and data model on a node canvas.",
-      "Exports a build brief an AI agent can implement from.",
-      "Diagrams save locally in this browser — nothing leaves your machine.",
-    ],
-  },
-  skills: {
-    id: "skills",
-    name: "Skills",
-    shortName: "Skills",
-    tagline:
-      "A curated library of AI skills — what each one does and how to install it.",
-    href: "/tools/skills",
-    fullBleed: false,
-  },
-  "image-editor": {
-    id: "image-editor",
-    name: "Image Editor",
-    shortName: "Image",
-    tagline:
-      "A local, layer-based image editor — paint, select, adjust, and export in the browser.",
-    href: "/tools/image-editor",
-    fullBleed: true,
-    mobileSupport: "gated",
-    stage: "alpha",
-    mobileGateNotes: [
-      "Layer-based editing: paint, select, adjust, filter.",
-      "Opens local images; exports PNG, JPG, or a layered .zip.",
-      "Runs entirely in this browser — files never leave your machine.",
-    ],
-  },
-  "vector-editor": {
-    id: "vector-editor",
-    name: "Vector Editor",
-    shortName: "Vector",
-    tagline:
-      "A local SVG vector editor — draw shapes, style fills and strokes, and export clean SVG.",
-    href: "/tools/vector-editor",
-    fullBleed: true,
-    mobileSupport: "gated",
-    stage: "alpha",
-    mobileGateNotes: [
-      "Draws vector artwork on an SVG artboard — pen paths with editable anchors, plus rectangles, ellipses, lines, polygons.",
-      "Style fills and strokes, reorder and lock objects, then export clean SVG or PNG.",
-      "Runs entirely in this browser — artwork never leaves your machine.",
     ],
   },
 };

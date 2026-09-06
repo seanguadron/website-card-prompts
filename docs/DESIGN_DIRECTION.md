@@ -58,7 +58,8 @@ JOB, not by hue:
 Rules that follow from it:
 
 - Cyan is a focus/marker/active color, never a light-theme text color.
-- A per-item accent that comes from data (e.g. the Architect block accents)
+- A per-item accent that comes from data (the Architect Wizard's block
+  accents were the case, before it moved to Digi Editors)
   is handed to CSS as a custom property, never set as an inline `color` —
   inline styles beat the theme rule and strand the text at ~2.2:1.
 - Both themes are first-class, so any new accent-colored text is checked in
@@ -69,8 +70,9 @@ Rules that follow from it:
   are invisible; that is exactly how the 1.5:1 ring survived the first pass
   of this very fix.
 - Check a surface with CONTENT in it, not just its default empty state. The
-  Architect's canvas labels kept a 2.3:1 accent through an audit that scored
-  the route clean, because an empty canvas has no nodes to measure.
+  Architect Wizard's canvas labels (now in Digi Editors) kept a 2.3:1 accent
+  through an audit that scored the route clean, because an empty canvas has
+  no nodes to measure.
 
 ## Typography
 

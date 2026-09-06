@@ -1,12 +1,7 @@
 import Link from "next/link";
-import { getSkills, getSkillsByLayer } from "@/lib/skills";
 import { TOOL_REGISTRY, TOOLS } from "@/lib/tool-registry";
 
 const promptTool = TOOL_REGISTRY["prompt-builder"];
-const architectTool = TOOL_REGISTRY["architect-wizard"];
-const imageTool = TOOL_REGISTRY["image-editor"];
-const vectorTool = TOOL_REGISTRY["vector-editor"];
-const skillsTool = TOOL_REGISTRY["skills"];
 const pictureTool = TOOL_REGISTRY["picture-deck"];
 const soundTool = TOOL_REGISTRY["sound-deck"];
 
@@ -14,12 +9,9 @@ const soundTool = TOOL_REGISTRY["sound-deck"];
 // and says so by construction: both read TOOLS. The order and the numbering
 // were literals here and had drifted from the bar by the time anyone looked.
 const toolNumber = (tool: (typeof TOOLS)[number]) =>
-  `Tool ${String(TOOLS.indexOf(tool) + 1).padStart(2, "0")}`;
+  `Deck ${String(TOOLS.indexOf(tool) + 1).padStart(2, "0")}`;
 
 export default function HomePage() {
-  const skillGroups = getSkillsByLayer();
-  const skillCount = getSkills().length;
-
   return (
     <div className="welcome-page">
       <header className="welcome-intro">
@@ -27,11 +19,11 @@ export default function HomePage() {
           <span className="status-dot" aria-hidden="true" />
           Local-first browser tools
         </div>
-        <h1 id="welcome-title">Sharp tools for working with AI.</h1>
+        <h1 id="welcome-title">Prompts, built from cards.</h1>
         <p>
-          Digi Tools is a local-first toolbox — build prompts for language and
-          image models, sketch architectures, edit images and vectors, and
-          browse your skill stack. Everything stays in your browser.
+          Digi Tools is a local-first card system for prompting — build prompts
+          for language, image, and sound models by equipping cards onto a
+          brief. Everything stays in your browser.
         </p>
         <p className="welcome-links">
           <a
@@ -158,155 +150,6 @@ Layers:
 1. distant thunder rumbling
 2. rain on stone, steady`}</code>
             </pre>
-          </div>
-        </section>
-
-        <section
-          className="home-feature"
-          id="architect"
-          aria-labelledby="home-architect-title"
-        >
-          <div className="home-feature-copy">
-            <span className="tool-kicker">{toolNumber(architectTool)} · Architect</span>
-            <h2 id="home-architect-title">{architectTool.name}</h2>
-            <p>{architectTool.tagline}</p>
-            <ul className="home-feature-points">
-              <li>Drop managers, services, workers, and data onto a canvas.</li>
-              <li>Connect them with directional, labeled relationships.</li>
-              <li>Export a build brief — diagram, build order, open questions.</li>
-            </ul>
-            <Link className="button button-primary" href={architectTool.href}>
-              Open Architect
-            </Link>
-          </div>
-          <div className="home-spec" aria-hidden="true">
-            <div className="home-spec-header">
-              <span>architecture</span>
-              <span className="file-badge">CANVAS</span>
-            </div>
-            <div className="home-spec-arch">
-              <span className="home-spec-node">OrderManager</span>
-              <span className="home-spec-arrow">owns →</span>
-              <span className="home-spec-node">Order</span>
-              <span className="home-spec-arrow">uses →</span>
-              <span className="home-spec-node">PaymentService</span>
-            </div>
-          </div>
-        </section>
-
-        <section
-          className="home-feature"
-          id="skills"
-          aria-labelledby="home-skills-title"
-        >
-          <div className="home-feature-copy">
-            <span className="tool-kicker">{toolNumber(skillsTool)} · Skills</span>
-            <h2 id="home-skills-title">{skillsTool.name}</h2>
-            <p>
-              A wiki for the {skillCount} skills in your AI stack — what each one
-              does and the commands to install it.
-            </p>
-            <ul className="home-feature-points">
-              <li>Browse by layer: design, engineering, QA, and optional.</li>
-              <li>Expand a skill for its purpose and install commands.</li>
-              <li>Reference only — no agents, nothing runs here.</li>
-            </ul>
-            <Link className="button button-primary" href={skillsTool.href}>
-              Browse Skills
-            </Link>
-          </div>
-          <div className="home-spec" aria-hidden="true">
-            <div className="home-spec-header">
-              <span>skills</span>
-              <span className="file-badge">{skillCount}</span>
-            </div>
-            <ul className="home-spec-skills">
-              {skillGroups.map((group) => (
-                <li key={group.id}>
-                  <span>{group.label}</span>
-                  <strong>{group.skills.length}</strong>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </section>
-
-        <section
-          className="home-feature"
-          id="image-editor"
-          aria-labelledby="home-image-title"
-        >
-          <div className="home-feature-copy">
-            <span className="tool-kicker">{toolNumber(imageTool)} · Image</span>
-            <h2 id="home-image-title">{imageTool.name}</h2>
-            <p>{imageTool.tagline}</p>
-            <ul className="home-feature-points">
-              <li>Paint and erase across a stack of raster layers.</li>
-              <li>Select, transform, crop, and adjust — with full undo history.</li>
-              <li>Open an image, then export a PNG. Nothing leaves your device.</li>
-            </ul>
-            <Link className="button button-primary" href={imageTool.href}>
-              Open Image Editor
-            </Link>
-          </div>
-          <div className="home-spec" aria-hidden="true">
-            <div className="home-spec-header">
-              <span>canvas.png</span>
-              <span className="file-badge">LAYERS</span>
-            </div>
-            <ul className="home-spec-layers">
-              <li>
-                <span className="home-spec-eye" />
-                <span>Text</span>
-                <strong>100%</strong>
-              </li>
-              <li>
-                <span className="home-spec-eye" />
-                <span>Photo</span>
-                <strong>92%</strong>
-              </li>
-              <li>
-                <span className="home-spec-eye" />
-                <span>Background</span>
-                <strong>100%</strong>
-              </li>
-            </ul>
-          </div>
-        </section>
-
-        <section
-          className="home-feature"
-          id="vector-editor"
-          aria-labelledby="home-vector-title"
-        >
-          <div className="home-feature-copy">
-            <span className="tool-kicker">{toolNumber(vectorTool)} · Vector</span>
-            <h2 id="home-vector-title">{vectorTool.name}</h2>
-            <p>{vectorTool.tagline}</p>
-            <ul className="home-feature-points">
-              <li>Draw rectangles, ellipses, lines, and polygons on an SVG artboard.</li>
-              <li>Select, move, resize, rotate, and restyle — with full undo history.</li>
-              <li>Export clean SVG or a rasterized PNG. Nothing leaves your device.</li>
-            </ul>
-            <Link className="button button-primary" href={vectorTool.href}>
-              Open Vector Editor
-            </Link>
-          </div>
-          <div className="home-spec" aria-hidden="true">
-            <div className="home-spec-header">
-              <span>artboard.svg</span>
-              <span className="file-badge">VECTOR</span>
-            </div>
-            <svg
-              className="home-spec-vector"
-              viewBox="0 0 220 120"
-              role="img"
-              aria-hidden="true"
-            >
-              <rect x="16" y="22" width="78" height="58" rx="8" />
-              <ellipse cx="150" cy="46" rx="40" ry="27" />
-              <polygon points="120,104 150,74 180,104" />
-            </svg>
           </div>
         </section>
       </div>

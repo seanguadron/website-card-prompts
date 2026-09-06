@@ -1,8 +1,8 @@
 # Digi Tools
 
-A local-first toolbox for working with AI models. Build prompts for language,
-image, and sound models from a deck of cards, sketch an application's
-architecture, edit images and vectors, and browse your skill stack.
+A local-first card system for prompting AI models. Build prompts for
+language, image, and sound models by equipping cards onto a brief, from three
+decks that share one card engine.
 
 Everything runs in the browser. There is no account, no server-side state, and
 nothing is uploaded — your work lives in `localStorage` and in files you
@@ -11,19 +11,20 @@ export.
 **[Live app](https://digi-tools-platform-eight.vercel.app)** · Created by
 [Sean Guadron](https://seancreates.com)
 
+Since 2026-09-05 this repository holds only the decks. The Architect Wizard,
+Image Editor, Vector Editor, and Skills wiki that used to ship beside them
+live in the sibling **Digi Editors** project
+(`docs/adr/0003-split-into-two-projects.md`).
+
 ---
 
-## The tools
+## The decks
 
-| | Tool | What it does |
+| | Deck | What it does |
 |---|---|---|
 | 01 | **CRAFT Deck** | Turns a rough request into a structured language-model prompt. Equip role cards and tactic cards onto a C.R.A.F.T. brief — Context, Role, Action, Format, Target audience. 35 roles, 32 modifier cards at four intensities each, 25 ready-made archetypes. |
 | 02 | **PICTURE Deck** | The same idea for image models: P.I.C.T.U.R.E. — Protagonist, Illumination, Canvas, Tone, Universe, References, Execution. 100 cards at three intensities, 18 archetypes, and an optional Midjourney parameter tail. |
 | 03 | **SONIC Deck** | The same idea for sound-effect models: S.O.N.I.C. — Source, Onset, Nature, Intensity, Context. 38 descriptor cards at three emphasis grades, 12 archetypes, one sound per prompt with a layer rack for soundscapes, written in Adobe Firefly's vocabulary. |
-| 04 | **Architect Wizard** | Sketch an app's architecture on a canvas — managers, services, workers, data — then export a build brief an AI agent can work from. |
-| 05 | **Skills** | A reference wiki for the AI skill stack this project uses: what each skill does and how to install it. |
-| 06 | **Image Editor** | A layer-based raster editor: paint, select, transform, adjust, export PNG. |
-| 07 | **Vector Editor** | An SVG editor: draw shapes, style fills and strokes, export clean SVG or a rasterized PNG. |
 
 None of the three frameworks is ours. C.R.A.F.T. was developed by **Lawton
 Solutions / Lawton Learns**
@@ -65,7 +66,7 @@ deterministic gates, so `npm run build` cannot succeed on invalid data.
 npm run typecheck        # tsc, no emit
 npm run lint             # eslint
 npm run test             # node:test — catalogs, art packs, the write endpoint
-npm run data:validate    # both card catalogs + generated-doc drift
+npm run data:validate    # all three card catalogs + generated-doc drift
 npm run check:standards  # the enforceable half of docs/STANDARDS.md
 npm run check:security   # injection primitives, committed secrets, route guards
 ```
@@ -73,9 +74,8 @@ npm run check:security   # injection primitives, committed secrets, route guards
 ## How it is built
 
 Next.js 16 (App Router) and React 19, TypeScript throughout, plain CSS with
-design tokens — no UI framework, no CSS-in-JS. React Flow drives the architect
-canvas; `@dnd-kit` drives card dragging. Card art is generated externally and
-committed as webp.
+design tokens — no UI framework, no CSS-in-JS. `@dnd-kit` drives card
+dragging. Card art is generated externally and committed as webp.
 
 The interesting structural idea is the **art pack**. A card is two things: the
 catalog owns what a card *is* — id, name, description, mechanics, identical in
@@ -85,18 +85,20 @@ never stores an image path; every path is derived from the pack id plus the
 entry key. Swapping worlds is therefore a re-render, not a data migration, and
 adding a world needs no file moves and can't collide with an existing one.
 
-`docs/ARCHITECTURE.md` is the contract for how a tool plugs into the shared
-shell, and what to recycle rather than rebuild.
+`docs/ARCHITECTURE.md` is the contract for how a deck plugs into the shared
+shell, and what to recycle rather than rebuild. `docs/BOARD_VISION.md` is
+where the decks are headed next: a board workspace rather than a page of
+panels.
 
 ## Repository layout
 
 ```
-src/app/          routes — one folder per tool, plus a dev-only studio
-src/components/   the shell, the decks, the editors
+src/app/          routes — one folder per deck, plus a dev-only studio
+src/components/   the shell and the decks
 src/lib/          catalog engines, prompt composition, storage
 src/data/         card catalogs and art packs (JSON, schema-validated)
 scripts/          validators, doc generators, the art-pack toolkit
-docs/             architecture, standards, design direction, art briefs
+docs/             architecture, standards, design direction, art briefs, ADRs
 .claude/          agent definitions, path-scoped rules, and the skill set for Claude Code
 ```
 

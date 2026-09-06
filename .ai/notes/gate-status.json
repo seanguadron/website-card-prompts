@@ -6,15 +6,15 @@
   "owed": [
     {
       "gate": "integration",
-      "reason": "1 uncommitted file(s) touch its surface; 32 file(s) committed since its last report (2026-09-01)"
+      "reason": "80 uncommitted file(s) touch its surface; 33 file(s) committed since its last report (2026-09-01)"
     },
     {
       "gate": "design",
-      "reason": "8 file(s) committed since its last report (2026-09-01)"
+      "reason": "36 uncommitted file(s) touch its surface; 8 file(s) committed since its last report (2026-09-01)"
     },
     {
       "gate": "security",
-      "reason": "7 file(s) committed since its last report (2026-09-01)"
+      "reason": "1 uncommitted file(s) touch its surface; 7 file(s) committed since its last report (2026-09-01)"
     }
   ],
   "notes": "Written by scripts/gate-sweep.mjs (npm run gate:sweep) — deterministic standards + security gates + the gates-owed detector."

@@ -36,8 +36,8 @@ paste docs/AI_STACK.md content here.
   run `npm run build` while a dev server may be live; the two share `.next/`.
 - **Governance commands**: `check:standards`, `check:security`, `gate:sweep`,
   `amendments`, `skill:log` (see `docs/SETUP.md`).
-- **The next major change** (the decks as a board workspace; the editors and
-  Architect split out) is captured in `docs/BOARD_VISION.md`. Read it before
-  proposing structural work on the decks; do not implement from it until the
-  owner starts that step.
+- **This is the card project.** Since 2026-09-05 (ADR-0003) the Architect
+  Wizard, Image Editor, Vector Editor, and Skills wiki live in the sibling
+  project `W:\Local Files\Codex\DigiEditors` (port 5200); never re-add them
+  here. The decks' board-workspace direction is `docs/BOARD_VISION.md`.
 - Personal overrides go in `CLAUDE.local.md` (gitignored), not here.

@@ -30,33 +30,6 @@ const TOOL_TAB_ICONS: Record<ToolId, React.ReactNode> = {
       <path d="M6.5 10.5h1.1l1-2.8 1.4 5 1.3-3.6.9 1.4h1.3" />
     </>
   ),
-  "architect-wizard": (
-    <>
-      <rect x="3" y="3.5" width="5.5" height="4.5" rx="1" />
-      <rect x="11.5" y="12" width="5.5" height="4.5" rx="1" />
-      <path d="M8.5 5.75h3.75a2 2 0 0 1 2 2V12" />
-    </>
-  ),
-  skills: (
-    <>
-      <path d="M10 5.2C8.3 3.9 6.1 3.6 3.5 4v11.4c2.6-.4 4.8 0 6.5 1.3 1.7-1.3 3.9-1.7 6.5-1.3V4c-2.6-.4-4.8-.1-6.5 1.2z" />
-      <path d="M10 5.2v11.5" />
-    </>
-  ),
-  "image-editor": (
-    <>
-      <rect x="2.5" y="4.5" width="15" height="11" rx="1.8" />
-      <circle cx="6.8" cy="8.2" r="1.2" />
-      <path d="M4.5 13.5l3.4-3.4 2.4 2.4 2-2 3.2 3.2" />
-    </>
-  ),
-  "vector-editor": (
-    <>
-      <path d="M5.5 14.5c0-5.2 3.8-9 9-9" />
-      <rect x="2.5" y="13" width="3" height="3" rx="0.6" />
-      <rect x="14.5" y="4" width="3" height="3" rx="0.6" />
-    </>
-  ),
 };
 
 export function AppShell({ children }: { children: React.ReactNode }) {
