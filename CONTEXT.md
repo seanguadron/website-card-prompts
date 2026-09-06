@@ -11,6 +11,11 @@ them is a change to someone else's framework, not a local naming decision.
 P.I.C.T.U.R.E. is not this project's either: it comes from the prompting
 guidance in Midjourney's documentation (https://docs.midjourney.com), and the
 same rule applies to its seven sections.
+S.O.N.I.C. (the SONIC Deck, tool id `sound-deck`) is the reverse case: the
+acronym, the cards, and the archetypes are this project's, but the five rules
+they encode come from Adobe Firefly's documentation for sound-effect prompts
+(https://helpx.adobe.com/firefly/web/work-with-audio-and-video/work-with-audio/writing-effective-text-prompts-for-sound-effects-generation.html),
+so those rules are not ours to bend either.
 
 ## Language
 

@@ -41,7 +41,8 @@ Quality: `npm run typecheck`, `npm run lint`.
 
 ## The governance loop
 
-Phases → gates → learning loop, defined in `AGENTS.md`. The judgment gates
+Phases (0 Context → 4 Close) → gates → learning loop, defined in
+`AGENTS.md`. The judgment gates
 live in `.claude/agents/` (integration-gate, security-gate, design-gate,
 sessions); their deterministic halves are the two check scripts above, wired
 to `prebuild`, `.githooks/pre-commit`, and `.github/workflows/checks.yml`.
@@ -51,9 +52,20 @@ proposals accumulate in `.ai/notes/SESSIONS.md`.
 ## The two skill homes
 
 - `.agents/skills/` — the Codex set (36 skills; Codex discovers these).
-- `.claude/skills/` — the curated Claude Code set (the sharp subset + the
-  `/digi` router; Claude Code only discovers skills here).
+- `.claude/skills/` — the curated Claude Code set (15 skills: the sharp
+  subset + the `/digi` router; Claude Code only discovers skills here).
+- `.claude/rules/` — path-scoped rules for Claude Code (`ui`, `copy`,
+  `nextjs`, `data`, `governance`), loaded only when matching files are
+  touched. Not skills; they carry gov:node markers like the docs.
 
-Both are pinned in `.ai/notes/SKILL_VERSIONS.md` (STANDARDS §3.4). The GSAP
-suite and the Taste collection are deliberately not bridged to the Claude set
-(the repo has no gsap dependency).
+Both homes are pinned in `.ai/notes/SKILL_VERSIONS.md` (STANDARDS §3.4). The
+GSAP suite and the Taste collection are deliberately not bridged to the
+Claude set (the repo has no gsap dependency), and since stack v2
+(2026-09-05) neither is `karpathy-guidelines`.
+
+## Decision records
+
+`docs/adr/` holds one record per decision that is hard to reverse,
+surprising without context, and a real trade-off (its README has the format
+and the test). `.ai/notes/SESSIONS.md` stays the diary; `docs/STANDARDS.md`
+stays the rules.

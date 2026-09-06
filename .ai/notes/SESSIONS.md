@@ -5,6 +5,115 @@ appended by the sessions agent (see AGENTS.md → Learning loop). Lines ending
 with the proposed-amendment flag are STANDARDS candidates;
 `npm run amendments` lists the ones not yet annotated "→ landed in §X.Y".
 
+## 2026-09-05: Stack v2 adopted by adaptation, the board vision captured, and the SONIC deck's paperwork caught up
+
+**Context.** A Claude Code session (Claude Fable 5.1). The owner handed
+over the Digi AI Stack v2 upgrade bundle (`UPGRADE_INSTRUCTIONS.md` +
+`stackv2upgrade.zip`, built from his WebGamingPlatform project) as "a
+rough guide, look for improvements," and in the same message dictated the
+direction for the next major change — the decks split from the editors, a
+Miro-like 2.5D board — asking that it be stored for a later step and
+explicitly not conceptualized yet. Mid-session he added: keep going far,
+don't stop to ask, make assumptions, and report the decisions. Nothing was
+committed — the working tree holds the changes for his review (commit
+only when asked), and `main` was already 6 commits ahead of origin.
+
+**Decisions.**
+- Stack v2 was adopted by ADAPTATION, not by running the bundle
+  (`docs/adr/0001-stack-v2-adopted-by-adaptation.md`). The bundle replaces
+  everything above a marker in AGENTS.md; this repo's AGENTS.md carries
+  that v1 marker at its very END, so the whole governance layer
+  (consent-gated STANDARDS, judgment gates, sessions log, gate ledger, two
+  skill homes) sits above it and would have been wiped. This repo already
+  goes further than v2's Gates 0-4.
+- Taken from v2: `.claude/rules/` path-scoped rules (ui, copy, nextjs
+  rewritten for this repo, plus data and governance written fresh here);
+  `docs/adr/` with the three-part test and an index README positioning
+  ADRs against STANDARDS (rules), SESSIONS.md (diary), and
+  DESIGN_DIRECTION (design resolutions); in AGENTS.md a stack-version
+  line, a Phases table (0 Context → 4 Close, named "phases" so the word
+  "gate" keeps its existing meaning), a "Documents — who updates what,
+  when" table, rules 23 (rewrite STATE.md before ending) and 24 (prune
+  third-party skill folders at install), and new entries in the resources
+  list; Claude Code built-ins (`/code-review`, `/simplify`, `/verify`,
+  `/security-review`, `/run`) named as the QA layer's first pass;
+  `karpathy-guidelines` removed from the Claude set (duplicates rules
+  5/6/12 at a per-turn context cost); `avoid-ai-writing` pruned to
+  SKILL.md + LICENSE in the Claude set; `CLAUDE.local.md` and
+  `.impeccable/live/` gitignored; a Stack changelog in
+  `docs/AI_STACK.md`; `check:standards` now also walks `.claude/rules/`
+  for gov:node markers.
+- Not taken: root `DESIGN.md` replacing `docs/DESIGN_DIRECTION.md`
+  (`docs/adr/0002-design-direction-stays-canonical.md` — the gates,
+  STANDARDS §1.2, and the precedence chain name the file; the root
+  `DESIGN.md` pointer already satisfies Impeccable's context step;
+  `/impeccable init` is never to be run here); gitignoring `.agents/`
+  (here it is the committed Codex home); the Impeccable junction
+  (unneeded — `.agents/skills/impeccable` is already a real directory and
+  its `context.mjs` runs); `docs/CHANGELOG.md` (git + SESSIONS.md serve,
+  no external release audience); the AccessLint `.mcp.json`, skill
+  refreshes/installs, and Playwright prerequisites (persistent
+  configuration and third-party code, left to the owner). The Codex home
+  (`.agents/skills/`) was not modified at all: karpathy and the unpruned
+  avoid-ai-writing remain there, pinned.
+- The board vision went into `docs/BOARD_VISION.md` as a faithful capture
+  of the owner's own words plus the advisor's note, code pointers into
+  WebGamingPlatform (`spec-canvas.tsx` pan/zoom, `spec-workspace.tsx`
+  single-draft undo with 1.5s gesture coalescing, `spec-geometry.ts`, its
+  ADR-0003 world-coordinates + `parentId`) and into this repo
+  (`architect-canvas.tsx`, `prompt-card-workbench.tsx` +
+  `use-card-deck-motion.ts`, `flow-nav-dock.tsx`), and a list of tensions
+  framed as questions. No design in it, by the owner's instruction.
+  AGENTS.md's Phases table, CLAUDE.md, and the `/digi` router point at
+  it.
+- Documents that had drifted from HEAD were fixed: README.md (tools table
+  now lists SONIC at 03 and numbers seven tools; attribution paragraph
+  credits Adobe Firefly; the art paragraph says SONIC has no art yet) and
+  CONTEXT.md (S.O.N.I.C.'s rules are Adobe's, the acronym and cards
+  ours).
+
+**Learnings.**
+- The SONIC Deck (commit `211f122`, 2026-09-01, "the third deck" —
+  S.O.N.I.C. built from Adobe Firefly's five sound-effect prompting
+  rules; 38 lineages × 3 grades, 12 archetypes, an Emphasis dial, ambience
+  mode, a layer rack instead of a parameter tail, no art pack yet, 172
+  tests) landed AFTER that day's close-out with no gate reports, no
+  sessions entry, and no mention in STATE.md, README, CONTEXT.md, or
+  DESIGN_DIRECTION.md. This entry records it from the commit message
+  only — there is no session transcript. Its integration, security, and
+  design gates are owed, as is a DESIGN_DIRECTION section.
+- A skill copied by the `skills` CLI can carry a third-party CLAUDE.md
+  inside our own skill home — `avoid-ai-writing` did, along with tests,
+  cursor rules, and CI. Nested CLAUDE.md files are instructions; pruning
+  at install is now rule 24.
+- An upgrade bundle's "replace above the marker" mechanism is only safe
+  when the target file was authored for it; here the marker had drifted
+  to the end of a fully project-specific file.
+- The Outcome Lab's API key in `.env.local` expired 2026-09-02 (carried
+  over from 2026-09-01, restated only because it is now past due) — the
+  next run needs a fresh key as well as fresh credits.
+
+**Preferences / proposed amendments (need owner consent).**
+- For clear execution instructions the owner wants autonomy: "keep going
+  pretty far, don't stop and ask questions, make assumptions, make a
+  report on decisions you made." The clarify-until-95%-confident interview
+  remains his pattern for PLANS and specs; this is the execution-side
+  complement.
+- Amendment (n) — third-party skill folders are pruned to what the skill
+  needs at install (tests, editor rules, CI, nested CLAUDE.md/AGENTS.md
+  removed) and the prune is recorded in SKILL_VERSIONS.md — AGENTS.md
+  rule 24 today; candidate for STANDARDS §3.1/§3.4's ledger rule.
+  (proposed amendment, needs the owner's consent)
+- Amendment (o) — STANDARDS §3.3's "governance files" should explicitly
+  include `.claude/rules/*.md`; `check:standards` already scans them
+  since 2026-09-05, so the rulebook line should say so.
+  (proposed amendment, needs the owner's consent)
+- Amendment (p) — a stack upgrade bundle is integrated by diffing it
+  against the repo and recording an ADR, never by running its
+  replace-above-the-marker step (`docs/adr/0001-stack-v2-adopted-by-adaptation.md`
+  records this once; the candidate is whether it belongs in STANDARDS §4
+  Process). (proposed amendment, needs the owner's consent)
+
 ## 2026-09-01: The Outcome Lab session — precached answers, two attribution fixes, and an $80 lesson in probe-gating spend
 
 **Context.** Mixed session: two small corrections (PICTURE's Midjourney

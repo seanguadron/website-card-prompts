@@ -1,8 +1,8 @@
 # Digi Tools
 
-A local-first toolbox for working with AI models. Build prompts for language
-and image models from a deck of cards, sketch an application's architecture,
-edit images and vectors, and browse your skill stack.
+A local-first toolbox for working with AI models. Build prompts for language,
+image, and sound models from a deck of cards, sketch an application's
+architecture, edit images and vectors, and browse your skill stack.
 
 Everything runs in the browser. There is no account, no server-side state, and
 nothing is uploaded — your work lives in `localStorage` and in files you
@@ -19,22 +19,28 @@ export.
 |---|---|---|
 | 01 | **CRAFT Deck** | Turns a rough request into a structured language-model prompt. Equip role cards and tactic cards onto a C.R.A.F.T. brief — Context, Role, Action, Format, Target audience. 35 roles, 32 modifier cards at four intensities each, 25 ready-made archetypes. |
 | 02 | **PICTURE Deck** | The same idea for image models: P.I.C.T.U.R.E. — Protagonist, Illumination, Canvas, Tone, Universe, References, Execution. 100 cards at three intensities, 18 archetypes, and an optional Midjourney parameter tail. |
-| 03 | **Architect Wizard** | Sketch an app's architecture on a canvas — managers, services, workers, data — then export a build brief an AI agent can work from. |
-| 04 | **Skills** | A reference wiki for the AI skill stack this project uses: what each skill does and how to install it. |
-| 05 | **Image Editor** | A layer-based raster editor: paint, select, transform, adjust, export PNG. |
-| 06 | **Vector Editor** | An SVG editor: draw shapes, style fills and strokes, export clean SVG or a rasterized PNG. |
+| 03 | **SONIC Deck** | The same idea for sound-effect models: S.O.N.I.C. — Source, Onset, Nature, Intensity, Context. 38 descriptor cards at three emphasis grades, 12 archetypes, one sound per prompt with a layer rack for soundscapes, written in Adobe Firefly's vocabulary. |
+| 04 | **Architect Wizard** | Sketch an app's architecture on a canvas — managers, services, workers, data — then export a build brief an AI agent can work from. |
+| 05 | **Skills** | A reference wiki for the AI skill stack this project uses: what each skill does and how to install it. |
+| 06 | **Image Editor** | A layer-based raster editor: paint, select, transform, adjust, export PNG. |
+| 07 | **Vector Editor** | An SVG editor: draw shapes, style fills and strokes, export clean SVG or a rasterized PNG. |
 
-Neither framework is ours. C.R.A.F.T. was developed by **Lawton Solutions /
-Lawton Learns** ([video](https://www.youtube.com/watch?v=ABCqfaTjNd4)), and
-P.I.C.T.U.R.E. comes from the prompting guidance in
-**[Midjourney's documentation](https://docs.midjourney.com)**. This project is
-an implementation of both — the decks, the cards, and the art are the part
-built here.
+None of the three frameworks is ours. C.R.A.F.T. was developed by **Lawton
+Solutions / Lawton Learns**
+([video](https://www.youtube.com/watch?v=ABCqfaTjNd4)); P.I.C.T.U.R.E. comes
+from the prompting guidance in
+**[Midjourney's documentation](https://docs.midjourney.com)**; and S.O.N.I.C.
+was built from the five rules in
+**[Adobe Firefly's guidance for sound-effect prompts](https://helpx.adobe.com/firefly/web/work-with-audio-and-video/work-with-audio/writing-effective-text-prompts-for-sound-effects-generation.html)**
+(that acronym and its cards are this project's; the rules are Adobe's). This
+project is an implementation of all three — the decks, the cards, and the art
+are the part built here.
 
-Every card in both decks carries original key art — 1,104 images across four
-illustrated worlds. The CRAFT deck ships in three (Sci-Fi, Fantasy,
-Superhero) and switches between them at runtime; the PICTURE deck has one,
-where each card's art demonstrates the technique that card teaches.
+Every card in the CRAFT and PICTURE decks carries original key art — 1,104
+images across four illustrated worlds. The CRAFT deck ships in three (Sci-Fi,
+Fantasy, Superhero) and switches between them at runtime; the PICTURE deck has
+one, where each card's art demonstrates the technique that card teaches. The
+SONIC deck renders letter and code fallbacks until its art pack is generated.
 
 ## Running it
 
@@ -91,7 +97,7 @@ src/lib/          catalog engines, prompt composition, storage
 src/data/         card catalogs and art packs (JSON, schema-validated)
 scripts/          validators, doc generators, the art-pack toolkit
 docs/             architecture, standards, design direction, art briefs
-.claude/          agent definitions and the skill set for Claude Code
+.claude/          agent definitions, path-scoped rules, and the skill set for Claude Code
 ```
 
 ## A note on the docs
@@ -101,7 +107,8 @@ so some of what is committed here is written for them rather than for a human
 reader: `AGENTS.md` and `docs/STANDARDS.md` are the rulebook, `docs/STATE.md`
 is a snapshot rewritten at the end of every working session, and
 `.ai/notes/SESSIONS.md` is the running history of decisions and why they were
-made. The judgment gates in `.claude/agents/` audit new work against those
+made, and `docs/adr/` holds one record per decision that was hard to reverse.
+The judgment gates in `.claude/agents/` audit new work against those
 documents before it ships.
 
 The skills under `.claude/skills/` and `.agents/skills/` are third-party, each

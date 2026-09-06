@@ -10,6 +10,10 @@ task.
 The binding operating rules live in root `AGENTS.md`. This document is the
 catalog, installation guide, and workflow reference.
 
+**Stack version:** 2, adopted 2026-09-05 by adaptation
+(`docs/adr/0001-stack-v2-adopted-by-adaptation.md`). The Stack changelog at
+the end of this file says what each version changed here.
+
 ## Codex Mapping
 
 | Purpose | Codex location |
@@ -103,7 +107,9 @@ Before framework-specific changes:
 - **Vercel Composition Patterns** (`vercel-labs/agent-skills`): scalable
   component APIs and alternatives to boolean-prop proliferation.
 - **Karpathy Guidelines** (`forrestchang/andrej-karpathy-skills`): simple,
-  surgical implementation and explicit assumptions.
+  surgical implementation and explicit assumptions. Codex home only since
+  2026-09-05: it duplicates AGENTS.md rules 5, 6, and 12, so stack v2
+  removed it from the Claude Code set (Stack changelog).
 - **Grill With Docs** (`mattpocock/skills`): architecture interrogation and
   documented tradeoffs for consequential decisions.
 - **TDD** (`mattpocock/skills`): logic changes and refactors where regressions
@@ -118,6 +124,9 @@ Before framework-specific changes:
   responsive checks, and rendered-state verification.
 - **Vercel Optimize** (`vercel-labs/agent-skills`): Vercel cost, performance,
   usage, and deployment analysis.
+- **Claude Code built-ins** (`/code-review`, `/simplify`, `/verify`,
+  `/security-review`, `/run`): the QA layer's first pass in Claude Code
+  sessions, adopted with stack v2. They do not replace the judgment gates.
 
 Before delivery, verify the affected code and rendered behavior. For
 client-facing work, also check visual hierarchy, copy quality, accessibility,
@@ -240,10 +249,14 @@ built, with the same machinery this stack's successor projects use:
 ### Two skill homes
 
 `.agents/skills/` stays the Codex home (this catalog). `.claude/skills/`
-carries the curated Claude Code set: the sharp subset of this catalog plus
-three additions and a router, all pinned in `.ai/notes/SKILL_VERSIONS.md`
-(STANDARDS §3.4). The GSAP suite and Taste collection are deliberately not
-bridged (no gsap dependency in the repo).
+carries the curated Claude Code set (15 skills): the sharp subset of this
+catalog minus `karpathy-guidelines`, plus three additions and a router, all
+pinned in `.ai/notes/SKILL_VERSIONS.md` (STANDARDS §3.4). The GSAP suite and
+Taste collection are deliberately not bridged (no gsap dependency in the
+repo). Two Claude-home copies differ from their Codex twins on purpose:
+`avoid-ai-writing` is pruned to `SKILL.md` + `LICENSE` (upstream ships
+tests, cursor rules, CI, and a nested `CLAUDE.md`), and `karpathy-guidelines`
+is absent. Claude Code sessions never modify the Codex home.
 
 Claude-set additions beyond this catalog:
 
@@ -255,3 +268,48 @@ Claude-set additions beyond this catalog:
   own skills AND agent specs.
 - **digi** (authored in this repo): the `/digi` router — routes a task to the
   right gate, skill, or command.
+
+## Stack changelog
+
+### v2, adapted 2026-09-05
+
+The Digi AI Stack v2 bundle (built from the WebGamingPlatform project) was
+integrated by adaptation, not by running its upgrade script: this
+repository's governance layer already went further than v2's Gates 0–4, and
+the bundle's replace-above-the-marker mechanism would have deleted it
+(`docs/adr/0001-stack-v2-adopted-by-adaptation.md`).
+
+Taken:
+
+- `.claude/rules/` path-scoped rules for Claude Code: `ui`, `copy`, `nextjs`
+  (the v2 trio, rewritten for this repo) plus `data` and `governance` (ours).
+  `check:standards` walks them for gov:node markers.
+- `docs/adr/` decision records with the three-part test; ADR-0001 and
+  ADR-0002 record this adaptation and the design-direction decision.
+- `AGENTS.md`: a stack-version line, the Phases table (0 Context → 4 Close),
+  the "Documents — who updates what, when" table, rules 23–24, and the new
+  resources in the project-structure list.
+- Claude Code built-ins as the QA layer's first pass.
+- `karpathy-guidelines` removed from the Claude Code set; `avoid-ai-writing`
+  pruned in the Claude Code set. Both recorded in `SKILL_VERSIONS.md`.
+- `.gitignore`: `CLAUDE.local.md`, `.impeccable/live/`.
+- `docs/BOARD_VISION.md`: the home for owner direction that is captured
+  before it is designed.
+
+Not taken: root `DESIGN.md` replacing `docs/DESIGN_DIRECTION.md`
+(ADR-0002); gitignoring `.agents/` (it is the committed Codex home); the
+impeccable junction (not needed; the Codex home is a real directory);
+`docs/CHANGELOG.md` (git history and SESSIONS.md serve); the AccessLint
+`.mcp.json`, new or refreshed skill installs, and the Playwright
+prerequisites (left to the owner: persistent configuration or third-party
+code that needs review).
+
+### Governance layer, 2026-07-04
+
+Gates, the learning loop, orchestration markers, and the two skill homes
+(the "Governance Layer" section above).
+
+### v1, 2026-06-11
+
+The three-layer stack for Codex: Design / Engineering / QA, 36 skills in
+`.agents/skills/`, `docs/DESIGN_DIRECTION.md`.

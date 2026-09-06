@@ -25,6 +25,10 @@ that fits, plus a one-line why. Do not run the tool; route to it.
 | Hard bug, fix attempts bouncing | the diagnosing-bugs discipline (model-invoked) |
 | Logic that must not regress (catalog math, state machines) | tdd (model-invoked) |
 | Changed roles.json | `npm run data:generate` (the drift gate fails otherwise) |
+| Reviewing a diff before delivery | `/code-review` first (`/simplify` if it grew; `/security-review` when a trust boundary moved), then the judgment gates AGENTS.md requires |
+| A decision that is hard to reverse, surprising, and a real trade-off | an ADR in `docs/adr/` (format in its README) |
+| Structural or "board" work on the decks | read `docs/BOARD_VISION.md` first; it is captured direction, not a plan — start with the owner's clarifying interview |
+| Unsure which rules apply to a file | `.claude/rules/*.md` load by path; open the matching one |
 | "Which npm command?" | `data:validate` · `data:generate` · `check:standards` · `check:security` · `gate:sweep` · `amendments` · `skill:log` (see docs/SETUP.md) |
 
 ## Rules

@@ -9,7 +9,8 @@
  *   §2.2  generated docs never drift — docs/PROMPT_ROLES.md must byte-match
  *         the generator's output (reuses generateRoleDocs({check:true})).
  *   §3.3  gov:node graph truth — markers parse, ids are unique, and every
- *         reads= edge names a file that exists.
+ *         reads= edge names a file that exists. Scanned: CLAUDE.md,
+ *         AGENTS.md, docs/, .claude/agents/, .claude/rules/.
  *   conv  kebab-case filenames in src/components.
  *
  * (Script-injection and secrets checks live in check-security.mjs.)
@@ -53,6 +54,13 @@ try {
     .concat(
       existsSync(join(ROOT, ".claude", "agents"))
         ? walk(join(ROOT, ".claude", "agents")).filter((p) => p.endsWith(".md"))
+        : []
+    )
+    // Path-scoped rules (stack v2, 2026-09-05) are governance files too:
+    // they carry markers whose reads= edges must stay true.
+    .concat(
+      existsSync(join(ROOT, ".claude", "rules"))
+        ? walk(join(ROOT, ".claude", "rules")).filter((p) => p.endsWith(".md"))
         : []
     )
     .filter((p) => existsSync(p));

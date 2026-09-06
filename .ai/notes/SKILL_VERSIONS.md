@@ -71,11 +71,12 @@ come from `skills-lock.json`.
 
 Claude Code discovers skills only in `.claude/skills/` (STANDARDS §3.4). The
 curated sharp set below was COPIED from this repo's own `.agents/skills/`
-directories (same bytes, same source revisions as the table above):
+directories (same source revisions as the table above; same bytes except
+where the Local modifications table below says otherwise):
 `impeccable`, `emil-design-eng`, `avoid-ai-writing`, `web-design-guidelines`,
 `next-best-practices`, `vercel-react-best-practices`,
-`vercel-composition-patterns`, `karpathy-guidelines`, `grill-with-docs`,
-`tdd`, `audit`, `webapp-testing`.
+`vercel-composition-patterns`, `grill-with-docs`, `tdd`, `audit`,
+`webapp-testing`.
 
 Additions not in the Codex set (copied from the AmazingOS repo's pinned
 installs):
@@ -95,3 +96,29 @@ dependency) and the Taste collection (`brandkit`, `gpt-taste`,
 `scan`/`diff` (the `audit` skill is the routine path; `diff` needs explicit
 approval per AGENTS.md rule 15). All remain available to Codex in
 `.agents/skills/`.
+
+### Local modifications in the Claude set (re-apply after any refresh)
+
+| Skill | Modification | Why | Date |
+|---|---|---|---|
+| `avoid-ai-writing` | Folder pruned to `SKILL.md` + `LICENSE` (the Codex-home copy is unpruned) | Upstream keeps `SKILL.md` at its repo root, so the copy carried its tests, cursor rules, CI workflows, a plugin manifest, and a nested `CLAUDE.md` — a third-party instruction file inside our skill home. `SKILL.md` is self-contained. | 2026-09-05 (stack v2; AGENTS.md rule 24) |
+
+### Removed from the Claude set
+
+| Skill | Removed | Why |
+|---|---|---|
+| `karpathy-guidelines` (`forrestchang/andrej-karpathy-skills` @ `2c606141936f1eeef17fa3043a72095b4765b9c2`) | 2026-09-05, stack v2 | Duplicated AGENTS.md rules 5, 6, and 12 and current-model default behaviour, at a per-turn context cost. Still installed in the Codex home (`.agents/skills/`), where its row above remains the pin. |
+
+The Claude set is 15 directories: the 11 bridged above, the 3 additions, and
+`digi`.
+
+## How to refresh a pin
+
+1. In a CODEX session (the Codex home is never modified from Claude Code):
+   `npx skills update <skill> --agent codex`, review the upstream diff before
+   accepting, and update the skill's row above (revision, hash, date).
+2. If the skill is bridged, re-copy the refreshed directory into
+   `.claude/skills/<skill>/` and re-apply the Claude-set local modifications
+   listed above (the `avoid-ai-writing` prune; AGENTS.md rule 24).
+3. Commit the pin change with the refresh (STANDARDS §3.1) and note any
+   behaviour change in `docs/STATE.md`.

@@ -24,3 +24,8 @@ npm-debug.log*
 # agent that fulfils it, not a record worth committing.
 /.ai/notes/art-queue.json
 /.ai/notes/outcome-batch-state.json
+
+# AI stack: local-only pieces (stack v2, adapted 2026-09-05). NOT .agents/ -
+# here it is the committed Codex skill home (STANDARDS 3.4), not a junction.
+CLAUDE.local.md
+.impeccable/live/
