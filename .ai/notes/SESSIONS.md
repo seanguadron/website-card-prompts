@@ -5,6 +5,156 @@ appended by the sessions agent (see AGENTS.md → Learning loop). Lines ending
 with the proposed-amendment flag are STANDARDS candidates;
 `npm run amendments` lists the ones not yet annotated "→ landed in §X.Y".
 
+## 2026-09-08: The card-project split lands, and the deck board ships as the default view
+
+**Context.** A Claude Code session (Claude Fable 5.1) that ran from
+2026-09-05 into 2026-09-08 across a process restart, with no owner input
+since the opening instructions. In order: "implement the revision fully,
+maybe push first," then "keep going, I know I am ambiguous, use your best
+judgment, I only want to evaluate the card system (CRAFT, PICTURE, SONIC),
+split the project in two, all the other stuff goes into a second project,
+keep going all the way." Two deliverables followed: the repository split,
+and — under the same "all the way" instruction — a full build of the board
+vision captured 2026-09-05. `c45c821` (stack v2 + the board vision + the
+SONIC drift fixes) was pushed to `origin/main` FIRST, so the pre-split tree
+is on GitHub; nothing landed since has been pushed.
+
+**Decisions.**
+- The split, by IMPORT CLOSURE, not a clone
+  (`docs/adr/0003-split-into-two-projects.md`, mirrored in both repos):
+  Digi Tools keeps the three decks, the Card Studio, the card-art endpoint,
+  the art packs, and the pipeline; a NEW repository
+  `W:\Local Files\Codex\DigiEditors` (package `digi-editors`, port 5200,
+  `StartDigiEditors.bat`, no remote yet) took the Architect Wizard, Image
+  Editor, Vector Editor, and Skills wiki, with a copy of the shell, the
+  primitives, the governance layer, and the Codex skill home. A fresh repo
+  from an import commit rather than a clone, since the 6GB card-art history
+  has no business there. `@xyflow/react` dropped here; `@dnd-kit/core`,
+  `ajv`, and `@anthropic-ai/sdk` dropped there. The editors' side lost the
+  generated-doc drift block from `check:standards`, renamed `gate:sweep`'s
+  security triggers, and dropped `data:validate` from CI — STANDARDS
+  §2.1/§2.2 were edited THERE under the split direction and flagged for
+  consent in that repo's own log (amendment (s), below). Cards landed as
+  `5686976`; editors as `9c372d1` (the import) + `863552c` (the split).
+  Both build clean.
+- The board (`docs/adr/0004-board-is-a-second-container.md`,
+  `docs/BOARD_VISION.md` §7): a SECOND CONTAINER for the same panels — DOM
+  + CSS transforms (a translate-and-scale world layer, the
+  WebGamingPlatform spec-canvas pattern), no new dependency — considered
+  and rejected a parallel component tree per deck, a canvas/WebGL scene,
+  and React Flow. The board is the DEFAULT view; the flow stays one click
+  away via a Board/Flow switch in the nav dock, remembered per deck per
+  browser behind a two-value guard (`src/lib/board-prefs.ts`). "Next
+  board" IS the camera: a 380ms glide (cut under reduced motion), wheel
+  pans, ctrl+wheel zooms to the cursor, Space/middle-button pans, Fit/All
+  frame one board or all of them; below 45% scale, faces simplify to art.
+  The Setup board holds the guide plus the archetype socket (dnd-kit; drop
+  or click seats an archetype; unseating keeps the cards; the rail hides
+  in board mode). Section boards: sockets + the tuning console on top, the
+  hand in ONE fanned row (roles use two), the text field at the bottom.
+  `BOARD_WIDTH` 1280 after 1560 framed at 0.64 (height-bound, not
+  width-bound); `BOARD_SCALE_MIN` 0.08 so "All" shows a seven-board row.
+  2.5D so far: pointer tilt, soft shadows + hover lift on board cards, and
+  the deal flip (420ms, 70ms stagger). Deliberately not built: free card
+  placement, a minimap, connectors, camera persistence, shuffles or card
+  backs. Keyboard: `[` `]` `0` `-` `=` and the arrows; every control keeps
+  its existing path. The assistive-technology model — boards are never
+  inerted, Tab-driven focus glides the camera, each board is a labelled
+  region, the framed one carries `aria-current` — was decided after the
+  integration gate's judgment note (Gates, below) and written into
+  DESIGN_DIRECTION and ARCHITECTURE. Docs touched: DESIGN_DIRECTION's new
+  "The board" section plus a Motion exception naming the camera glide and
+  the deal; ARCHITECTURE's "Two containers, one deck" plus new primitives
+  and zone order; CONTEXT's board vocabulary (Board, Pasteboard, Camera,
+  Socket, Hand, Deal, View); `docs/BOARD_VISION.md` §7's status; README;
+  `.claude/rules/ui.md`'s board bullets. The board commit landed
+  2026-09-08 (message "feat(board): the deck board ...").
+- Not done, deliberately: pushing the split/board to `origin/main`
+  (deploys a decks-only, board-first site to the live URL — the owner's
+  call), creating the DigiEditors remote, the SONIC deck's still-owed
+  gates, and a screen-reader pass with the `audit` skill on board mode
+  (owed, recorded in `docs/STATE.md`).
+
+**Learnings.**
+- Inline `node -e` scripts with apostrophes broke bash quoting twice this
+  session — write the script to a file and run it instead.
+- Robocopy exit code 1 means files copied, not failure.
+- A stale `.next/types/validator.ts` references deleted routes and fails
+  typecheck after a route removal; clear `.next` afterward.
+- The React Compiler's `react-hooks/refs` lint flags every read of a
+  custom hook's return object once that object contains a ref — pass the
+  ref INTO the hook instead of returning it.
+- The harness's scaled Browser pane misses clicks by coordinate; verify
+  interactions through dispatched DOM events and read state back.
+- On a content-tall board, HEIGHT bounds the fit scale, not width; a
+  single-row hand fixed it.
+- An unscoped mode class on a shared grid silently outranks media-query
+  breakpoints written for the base class — every new layout mode has to
+  join every existing breakpoint for that grid, or it only half-collapses
+  below the fold (caught by the design gate, below; source of amendment
+  (r)).
+- Background agents die when the Claude Code process exits, and
+  SendMessage is unavailable in this build — relaunch them rather than
+  expect survival across a restart (this session crossed exactly such a
+  restart, 2026-09-05 into 2026-09-08).
+- The two panels-file refactors (flow/board) were verified equivalent by
+  TRACING THE DIFF, not by trusting the final file — the integration gate
+  did the same for the flow-mode aria-hidden/inert parity change (Gates,
+  below).
+
+**Gates.** All three ran against the board surface; reports in
+`.ai/notes/gate-reports/`.
+- Security (2026-09-05, `2026-09-05-security-gate-deck-board.md`): PASS,
+  0 findings — the new `isBoardMode` localStorage guard is a real
+  two-value type guard with post-mount restore; drag ids resolve by
+  strict-equality lookup against catalog-only lists; no new
+  `dangerouslySetInnerHTML`; no exporter or download path changed.
+- Integration (2026-09-08, `2026-09-08-integration-gate-deck-board.md`):
+  PASS, 0 findings, one JUDGMENT note — inactive boards carried no
+  `aria-hidden`/`inert` by design, since Tab-driven focus is what glides
+  the camera. Resolved the same day: the assistive-technology model was
+  written into DESIGN_DIRECTION and ARCHITECTURE (Decisions, above), and
+  a stray "the only `@dnd-kit` importer" line in BOARD_VISION corrected.
+  The screen-reader pass with the `audit` skill remains owed.
+- Design (2026-09-08, `2026-09-08-design-gate-deck-board.md`): FAIL → all
+  five findings fixed the same day, verified in a real browser at
+  1440px/1000px, both themes — 2 High / 2 Medium / 1 Low: board mode
+  hadn't joined the 1180px/1100px responsive collapse (an unscoped
+  `.is-board-mode` rule outranked the media-query resets by specificity,
+  so below 1100px the board kept reserving a dock column the dock had
+  already left); the pasteboard's `:focus-visible` ring was 45%-alpha
+  cyan (≈1.7:1 light, under the 3:1 non-text floor) against a sitewide
+  fully-opaque ring; the "complete" pip differed from incomplete by
+  border/text colour alone (PRODUCT.md forbids colour-only state), fixed
+  with a check badge; far zoom (below 45%) simplified lineage/role cards
+  to art but left archetype cards' topline and name illegibly visible;
+  the archetype hand declared tilt custom properties but never wired
+  `useCardDeckMotion`, so it never tilted. The gate's own note that many
+  sitewide hover/active transitions already animate border-color /
+  background / box-shadow beside transform — reading past "opacity or
+  transform only" literally — was flagged for the sessions log rather
+  than treated as a board defect; source of amendment (q).
+
+**Preferences / proposed amendments (need owner consent).** Reinforces
+2026-09-05's "go far, report decisions" — unprompted for the entire
+2026-09-05→09-08 span — and sharpens it: the owner evaluates the CARD
+SYSTEM only and wants the editors out of the way, which is why the split
+executed literally rather than being questioned.
+- Amendment (q) — clarify DESIGN_DIRECTION's "opacity or transform only"
+  motion rule to also allow border-color/background/box-shadow on hover
+  and active states, which the whole site already does (design gate note,
+  above).
+  (proposed amendment, needs the owner's consent)
+- Amendment (r) — a standing rule that any new layout-mode class (like
+  `.is-board-mode`) must be added to every existing responsive breakpoint
+  for its grid in the same change, not discovered later by a gate.
+  (proposed amendment, needs the owner's consent)
+- Amendment (s) — the Digi Editors copies of STANDARDS §2.1/§2.2 were
+  edited under the split direction
+  (`docs/adr/0003-split-into-two-projects.md`) and await the owner's
+  confirmation; a cross-repo note.
+  (proposed amendment, needs the owner's consent)
+
 ## 2026-09-05: Stack v2 adopted by adaptation, the board vision captured, and the SONIC deck's paperwork caught up
 
 **Context.** A Claude Code session (Claude Fable 5.1). The owner handed
