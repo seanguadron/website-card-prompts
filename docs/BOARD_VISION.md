@@ -90,8 +90,9 @@ Miro-style canvas." The parts worth reading first:
   split): the `@xyflow/react` canvas, the infinite pan/zoom precedent. The
   full-bleed cockpit pattern (`fullBleed: true` in the registry,
   `.page-stage.is-fluid`) stayed here in the shell.
-- `src/components/prompt-card-workbench.tsx`: the only `@dnd-kit` importer.
-  Card drag, slots, the drop settle; with `prompt-role-workbench.tsx` it is
+- `src/components/prompt-card-workbench.tsx`: the `@dnd-kit` card drag
+  (the archetype socket now imports it too), slots, the drop settle; with
+  `prompt-role-workbench.tsx` it is
   also where `src/hooks/use-card-deck-motion.ts` runs the pointer tilt
   (`--card-tilt-x/y`, `perspective(720px)` in `globals.css`), the seed of
   "2.5D."
@@ -144,3 +145,33 @@ Questions for the interview, not answers:
 
 Not a spec, not a plan, not a design direction, and it supersedes nothing.
 Append to it when the owner adds direction; do not design in it.
+
+## 7. What exists now (first implementation, 2026-09-05)
+
+The owner asked for the vision to be implemented "all the way" the same day
+the split landed, using best judgment. What shipped, and what it is not:
+
+- **Every deck has a board view, the default**, switched from the nav dock
+  and remembered per browser. The same panels render in either container;
+  the board adds a pasteboard, a camera, a Setup board with the archetype
+  socket, and a table grammar for each section (sockets and tuning on top,
+  the hand fanned below). `docs/DESIGN_DIRECTION.md` → The board is the
+  grammar; `docs/adr/0004-board-is-a-second-container.md` is the
+  architecture decision; `docs/ARCHITECTURE.md` §1 "Two containers, one
+  deck" is the contract.
+- **"Next board" is the camera**: Next, Back, the pips, the subbar step
+  strip, and keyboard focus glide it from board to board; wheel,
+  ctrl+wheel, Space and the middle button move it freely; Fit and All frame
+  one board or every board.
+- **The archetype socket builds everything out**: drop or click an
+  archetype and every board's sockets fill, with the deal-in flip.
+- **2.5D so far**: the existing pointer tilt, soft shadows and a hover lift
+  on the board's cards, and the deal flip. Shuffle, card backs, and richer
+  table physics are not built.
+- **Not built, by design or by budget**: free placement of cards on the
+  board (sockets are the scaffolding), a minimap, board-to-board
+  connectors, saving the camera position, per-board free notes. The shell
+  (three bars, the output dock) is unchanged; the flow remains one click
+  away for comparison.
+- **The two pending inputs still stand** (§5); the next round starts from
+  the owner's reaction to this board, not from a plan.

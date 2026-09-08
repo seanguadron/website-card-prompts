@@ -40,6 +40,20 @@ win over anything written here.
   their classes on purpose: a restyle lands on every deck at once, so never
   redefine a shared class inside one deck's CSS section.
 
+## The board (`docs/DESIGN_DIRECTION.md` → The board; ADR-0004)
+
+- The board is a container for the same panels, not a second
+  implementation: change a section's content in its `*-flow-panels.tsx` and
+  both views get it. Board-only styling lives in the
+  `/* ===== Deck Board ===== */` zone under `.deck-board`.
+- The camera is the only thing that moves the pasteboard: never scroll an
+  ancestor inside it (`overflow: clip` is deliberate), measure boards with
+  offset metrics, and keep framing math in `src/lib/board-layout.ts` (pure,
+  tested), never in components.
+- Every board control keeps a keyboard path. Motion on the board is the
+  camera glide, the deal flip, and the hover lift, each with a
+  reduced-motion fallback; add nothing that loops.
+
 ## Color and contrast
 
 - Tokens only, no raw hex. Accents split by JOB: `--brand-cyan` and

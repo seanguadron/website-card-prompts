@@ -27,6 +27,36 @@ The registry drives the shell's top-bar tabs and the home page's titles,
 taglines, and CTAs automatically. The home page's per-tool marketing
 sections (`src/app/page.tsx`) are hand-written — a new tool adds one.
 
+### Two containers, one deck
+
+Since 2026-09-05 (`docs/adr/0004-board-is-a-second-container.md`) every deck
+renders the same panels in one of two containers, chosen from the nav dock
+and remembered per browser (`src/lib/board-prefs.ts`): the **flow**
+(`.flow-viewport` + `.flow-track`, one panel at a time) or the **board**
+(`src/components/deck-board.tsx`), the default. The board is a pasteboard
+with a camera (`src/hooks/use-board-camera.ts`; the geometry is pure and
+tested in `src/lib/board-layout.ts`) over a row of surfaces, one per panel,
+plus the Setup board's archetype socket
+(`src/components/board-archetype-socket.tsx`). The deck root owns all state
+either way; its panels file (`*-flow-panels.tsx`) builds each panel's
+contents once and hands them to whichever container is active. Nothing about
+the prompt, sessions, undo, or persistence changes with the view. The CSS
+zone `/* ===== Deck Board ===== */` restyles the panel internals on the board
+(sockets and tuning on top, the hand fanned below); the visual grammar is
+`docs/DESIGN_DIRECTION.md` → The board.
+
+Three rules come with it. **The camera is the only thing that moves the
+pasteboard**: it is `overflow: clip`, so a focus or a `scrollIntoView` inside
+the world cannot shift it; measure boards with offset metrics (they ignore
+the world transform), never client rects. **`DeckBoard` positions its
+children**: a panel never sets its own `left`, `top`, or `width` on the
+board; `BOARD_WIDTH` and `BOARD_GAP` are the layout module's. And **boards
+are never inerted**: the flow hides and inerts inactive panels, the board
+keeps every board present as a labelled region with the framed one
+`aria-current`, because Tab-driven focus is what glides the camera; an
+`inert` on inactive boards would break the very navigation the design relies
+on (integration gate, 2026-09-08).
+
 ### The one server surface: the Card Studio
 
 There is exactly one exception to "no server", and it is an authoring
@@ -277,6 +307,10 @@ expect a shell rail; DO recycle these primitives:
 | `downloadBlob` etc. | `src/lib/browser-download.ts` | All file downloads. |
 | `readStored`, `writeStored` | `src/lib/prompt-storage.ts` | SSR-safe JSON localStorage access (see §6 landmine). |
 | `useMediaQuery` | `src/hooks/use-media-query.ts` | Live matchMedia state, SSR-safe (`useSyncExternalStore`; the lint rules reject effect-driven setState). |
+| `DeckBoard` | `src/components/deck-board.tsx` | The board container: pasteboard, camera, one surface per child, the pips/zoom bar. Hand it the panel contents in FLOW_PANEL order. |
+| `useBoardCamera` + `board-layout.ts` | `src/hooks/use-board-camera.ts`, `src/lib/board-layout.ts` | The camera (gestures, keyboard, framing) and its pure geometry (`fitRect`, `zoomAround`, `panBy`, tiers). Reuse for any future world-space surface. |
+| `BoardArchetypeSocket` | `src/components/board-archetype-socket.tsx` | The Setup board's socket + hand, generic over `{id, code, name, description, effects, art?}`. |
+| `readBoardMode`, `writeBoardMode` | `src/lib/board-prefs.ts` | The per-deck view preference behind an `isBoardMode` guard. |
 | Output dock | `prompt-output-dock.tsx` | The copy/download artifact panel all three decks share. It takes an optional `outcomeView` node and grows a Prompt/Outcome switch when one is passed (the CRAFT deck's Outcome Lab); without it the dock renders exactly as before. |
 
 Since the 2026-09-05 split (`docs/adr/0003-split-into-two-projects.md`) the
@@ -322,8 +356,9 @@ One file, zone-ordered: tokens (`:root`, ~1–54) → shell chrome (~56–376) �
 Welcome → **the SHARED form/button/card primitives and the deck guide pages
 interleaved** (`.tool-kicker`, `.button`, `.field`, inputs — check here
 before adding a primitive; the Skills wiki block that used to open this range
-left with the split) → Prompt Builder → PICTURE Deck → SONIC Deck → Card Art
-Studio (`/* ===== ... ===== */` banners) → Mobile tool gate (the phone-width
+left with the split) → Prompt Builder → PICTURE Deck → SONIC Deck → Deck
+Board (the board container and its overrides of the panel internals) → Card
+Art Studio (`/* ===== ... ===== */` banners) → Mobile tool gate (the phone-width
 §2 rules; last because its overrides must beat the shell and tool rules on
 source order). New tool sections append before that trailing zone, with a
 banner.

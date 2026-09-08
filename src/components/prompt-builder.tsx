@@ -1,8 +1,9 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import type { ChangeEvent } from "react";
+import { BoardArchetypeSocket } from "@/components/board-archetype-socket";
 import { FlowNavDock } from "@/components/flow-nav-dock";
 import { FlowStepStrip } from "@/components/flow-step-strip";
 import { PromptArchetypeToolbar } from "@/components/prompt-archetype-toolbar";
@@ -25,10 +26,12 @@ import { usePromptBuilderHistory } from "@/hooks/use-prompt-builder-history";
 import { usePromptBuilderPersistence } from "@/hooks/use-prompt-builder-persistence";
 import {
   ART_PACK_OPTIONS,
+  archetypeArtWithFallback,
   getActiveArtPackId,
   isArtPackId,
   setActiveArtPack,
 } from "@/lib/art-pack";
+import { readBoardMode, writeBoardMode, type BoardMode } from "@/lib/board-prefs";
 import { readStored, writeStored } from "@/lib/prompt-storage";
 import { downloadTextFile, slugifyFilename } from "@/lib/browser-download";
 import {
@@ -91,6 +94,7 @@ import {
 import {
   buildCustomArchetype,
   deleteCustomArchetype,
+  isCustomArchetype,
   listCustomArchetypes,
   saveCustomArchetype,
 } from "@/lib/prompt-custom-archetypes";
@@ -142,6 +146,13 @@ export function PromptBuilder({ roles }: { roles: PromptRole[] }) {
   // this state exists to re-render the deck (every face and bio resolves at
   // render time) and to remember the choice across visits.
   const [artPackId, setArtPackId] = useState(getActiveArtPackId());
+  // Which container renders the panels: the board (the default, per
+  // docs/BOARD_VISION.md) or the horizontal flow, one click away in the dock.
+  const [viewMode, setViewMode] = useState<BoardMode>("board");
+  // True for a moment after an archetype seats: the slot cards flip in
+  // across the boards. Cleared by a timer, never by the user.
+  const [dealing, setDealing] = useState(false);
+  const dealTimerRef = useRef<number | null>(null);
   // Card authoring from inside the deck: development only, and only once the
   // writer has answered. The world is part of it - queuing from the fantasy
   // deck asks for fantasy art, because that is the art you were looking at.
@@ -311,15 +322,58 @@ export function PromptBuilder({ roles }: { roles: PromptRole[] }) {
       if (isArtPackId(storedPack) && setActiveArtPack(storedPack)) {
         setArtPackId(storedPack);
       }
+      setViewMode(readBoardMode("prompt-builder", "board"));
     }, 0);
     return () => window.clearTimeout(timer);
   }, []);
+
+  useEffect(
+    () => () => {
+      if (dealTimerRef.current !== null) {
+        window.clearTimeout(dealTimerRef.current);
+      }
+    },
+    [],
+  );
 
   function switchArtPack(id: string) {
     if (setActiveArtPack(id)) {
       setArtPackId(id);
       writeStored(ART_PACK_STORAGE_KEY, id);
     }
+  }
+
+  function switchViewMode(mode: BoardMode) {
+    setViewMode(mode);
+    writeBoardMode("prompt-builder", mode);
+  }
+
+  // The archetype hand on the Setup board: custom presets first, then the
+  // catalog, each with its pack art (or the shared preset swatch).
+  const boardArchetypes = [...customArchetypes, ...PROMPT_ARCHETYPES].map(
+    (archetype) => ({
+      id: archetype.id,
+      code: archetype.code,
+      name: archetype.name,
+      description: archetype.description,
+      effects: archetype.effects,
+      art: archetypeArtWithFallback(archetype.id),
+      custom: isCustomArchetype(archetype),
+    }),
+  );
+
+  function applyArchetypeById(id: string) {
+    const archetype = [...PROMPT_ARCHETYPES, ...customArchetypes].find(
+      (candidate) => candidate.id === id,
+    );
+    if (archetype) {
+      applyArchetype(archetype);
+    }
+  }
+
+  function unseatArchetype() {
+    setActiveArchetypeId(null);
+    setSpeechMessage("Archetype unseated. Your cards stay where they are.");
   }
 
   useEffect(() => {
@@ -460,6 +514,15 @@ export function PromptBuilder({ roles }: { roles: PromptRole[] }) {
     setSpeechMessage(
       `${archetype.name} archetype applied. Your current section stayed in place.`,
     );
+    // The deal: the boards' slot cards flip in for a beat.
+    if (dealTimerRef.current !== null) {
+      window.clearTimeout(dealTimerRef.current);
+    }
+    setDealing(true);
+    dealTimerRef.current = window.setTimeout(() => {
+      setDealing(false);
+      dealTimerRef.current = null;
+    }, 1100);
   }
 
   function applyRecommendedSetup() {
@@ -909,11 +972,13 @@ export function PromptBuilder({ roles }: { roles: PromptRole[] }) {
       />
 
       <div
-        className={
-          outputExpanded
-            ? "builder-main-layout"
-            : "builder-main-layout is-output-collapsed"
-        }
+        className={[
+          "builder-main-layout",
+          outputExpanded ? "" : "is-output-collapsed",
+          viewMode === "board" ? "is-board-mode" : "",
+        ]
+          .filter(Boolean)
+          .join(" ")}
       >
         <PromptArchetypeToolbar
           archetypes={PROMPT_ARCHETYPES}
@@ -940,6 +1005,18 @@ export function PromptBuilder({ roles }: { roles: PromptRole[] }) {
               activePanel={nav.activePanel}
               registerPanelHeading={nav.registerPanelHeading}
               flowViewportRef={nav.flowViewportRef}
+              layout={viewMode}
+              dealing={dealing}
+              onActivatePanel={nav.setActivePanel}
+              boardSetup={
+                <BoardArchetypeSocket
+                  items={boardArchetypes}
+                  activeId={activeArchetypeId}
+                  onApply={applyArchetypeById}
+                  onUnseat={unseatArchetype}
+                  hint="Drop an archetype here and every board builds itself out."
+                />
+              }
               draft={draft}
               formatCode={formatCode}
               cardSystem={cardSystem}
@@ -1009,6 +1086,40 @@ export function PromptBuilder({ roles }: { roles: PromptRole[] }) {
                   : "Next"
             }
           >
+            {/* The view switch: the board (one pasteboard, one board per
+                section) or the flow (the panel slider). Same state either
+                way; the prompt never changes. */}
+            <div
+              className="board-mode-switch"
+              role="group"
+              aria-label="Workspace view"
+            >
+              <button
+                type="button"
+                className={
+                  viewMode === "board"
+                    ? "art-pack-switch-option is-active"
+                    : "art-pack-switch-option"
+                }
+                aria-pressed={viewMode === "board"}
+                onClick={() => switchViewMode("board")}
+              >
+                Board
+              </button>
+              <button
+                type="button"
+                className={
+                  viewMode === "flow"
+                    ? "art-pack-switch-option is-active"
+                    : "art-pack-switch-option"
+                }
+                aria-pressed={viewMode === "flow"}
+                onClick={() => switchViewMode("flow")}
+              >
+                Flow
+              </button>
+            </div>
+
             {/* The world switch. Same cards, same prompt - only art and bios
                 change, so it rides with whole-deck navigation, stacked. */}
             <div

@@ -1,8 +1,9 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import type { ChangeEvent } from "react";
+import { BoardArchetypeSocket } from "@/components/board-archetype-socket";
 import { FlowNavDock } from "@/components/flow-nav-dock";
 import { FlowStepStrip } from "@/components/flow-step-strip";
 import { PictureArchetypeToolbar } from "@/components/picture-archetype-toolbar";
@@ -22,8 +23,10 @@ import { usePictureDeckPersistence } from "@/hooks/use-picture-deck-persistence"
 import { usePortalTarget } from "@/hooks/use-portal-target";
 import { usePromptDictation } from "@/hooks/use-prompt-dictation";
 import { useFlowNavigation } from "@/hooks/use-flow-navigation";
+import { readBoardMode, writeBoardMode, type BoardMode } from "@/lib/board-prefs";
 import { downloadTextFile, slugifyFilename } from "@/lib/browser-download";
 import { PICTURE_ARCHETYPES } from "@/lib/picture-archetypes";
+import { pictureArchetypeArtWithFallback } from "@/lib/picture-art-pack";
 import {
   getEquippedFragments,
   pictureCardEngine,
@@ -37,6 +40,7 @@ import type { PictureProofScenario } from "@/lib/picture-proof-scenarios";
 import {
   buildCustomPictureArchetype,
   deleteCustomPictureArchetype,
+  isCustomPictureArchetype,
   listCustomPictureArchetypes,
   saveCustomPictureArchetype,
 } from "@/lib/picture-custom-archetypes";
@@ -114,6 +118,12 @@ export function PictureDeck() {
   const [activePromptName, setActivePromptName] = useState<string | null>(
     null,
   );
+  // Which container renders the panels: the board (the default, per
+  // docs/BOARD_VISION.md) or the horizontal flow, one click away in the dock.
+  const [viewMode, setViewMode] = useState<BoardMode>("board");
+  // True for a moment after an archetype seats: the slot cards flip in.
+  const [dealing, setDealing] = useState(false);
+  const dealTimerRef = useRef<number | null>(null);
   // At phone widths the expanded dock overlays the whole workspace, so the
   // default is collapsed there and expanded everywhere else; any explicit
   // choice wins over the default.
@@ -125,6 +135,24 @@ export function PictureDeck() {
   // The portal below renders on FIRST render, so the target must be resolved
   // after hydration (see use-portal-target).
   const portalTarget = usePortalTarget();
+
+  // Deferred restore of the view choice, like the CRAFT deck's art pack.
+  useEffect(() => {
+    const timer = window.setTimeout(() => {
+      setViewMode(readBoardMode("picture-deck", "board"));
+    }, 0);
+    return () => window.clearTimeout(timer);
+  }, []);
+
+  useEffect(
+    () => () => {
+      if (dealTimerRef.current !== null) {
+        window.clearTimeout(dealTimerRef.current);
+      }
+    },
+    [],
+  );
+
   const persistence = usePictureDeckPersistence({
     draft,
     cardSystem,
@@ -433,6 +461,48 @@ export function PictureDeck() {
     setSpeechMessage(
       `${archetype.name} archetype applied. Your subject stayed in place.`,
     );
+    // The deal: the boards' slot cards flip in for a beat.
+    if (dealTimerRef.current !== null) {
+      window.clearTimeout(dealTimerRef.current);
+    }
+    setDealing(true);
+    dealTimerRef.current = window.setTimeout(() => {
+      setDealing(false);
+      dealTimerRef.current = null;
+    }, 1100);
+  }
+
+  function switchViewMode(mode: BoardMode) {
+    setViewMode(mode);
+    writeBoardMode("picture-deck", mode);
+  }
+
+  // The archetype hand on the Setup board: custom presets first, then the
+  // catalog, each with its gallery art (or the shared preset swatch).
+  const boardArchetypes = [...customArchetypes, ...PICTURE_ARCHETYPES].map(
+    (archetype) => ({
+      id: archetype.id,
+      code: archetype.code,
+      name: archetype.name,
+      description: archetype.description,
+      effects: archetype.effects,
+      art: pictureArchetypeArtWithFallback(archetype.id),
+      custom: isCustomPictureArchetype(archetype),
+    }),
+  );
+
+  function applyArchetypeById(id: string) {
+    const archetype = [...PICTURE_ARCHETYPES, ...customArchetypes].find(
+      (candidate) => candidate.id === id,
+    );
+    if (archetype) {
+      applyPictureArchetype(archetype);
+    }
+  }
+
+  function unseatArchetype() {
+    setActiveArchetypeId(null);
+    setSpeechMessage("Archetype unseated. Your cards stay where they are.");
   }
 
   function saveCurrentAsPreset(name: string) {
@@ -722,11 +792,13 @@ export function PictureDeck() {
       />
 
       <div
-        className={
-          outputExpanded
-            ? "builder-main-layout"
-            : "builder-main-layout is-output-collapsed"
-        }
+        className={[
+          "builder-main-layout",
+          outputExpanded ? "" : "is-output-collapsed",
+          viewMode === "board" ? "is-board-mode" : "",
+        ]
+          .filter(Boolean)
+          .join(" ")}
       >
         <PictureArchetypeToolbar
           archetypes={PICTURE_ARCHETYPES}
@@ -752,6 +824,18 @@ export function PictureDeck() {
               activePanel={nav.activePanel}
               registerPanelHeading={nav.registerPanelHeading}
               flowViewportRef={nav.flowViewportRef}
+              layout={viewMode}
+              dealing={dealing}
+              onActivatePanel={nav.setActivePanel}
+              boardSetup={
+                <BoardArchetypeSocket
+                  items={boardArchetypes}
+                  activeId={activeArchetypeId}
+                  onApply={applyArchetypeById}
+                  onUnseat={unseatArchetype}
+                  hint="Drop an archetype here and every board builds itself out."
+                />
+              }
               draft={draft}
               cardSystem={cardSystem}
               stepComplete={flowStepComplete}
@@ -808,7 +892,40 @@ export function PictureDeck() {
                   ? "Review"
                   : "Next"
             }
-          />
+          >
+            {/* The view switch: the board or the flow. Same state either
+                way; the prompt never changes. */}
+            <div
+              className="board-mode-switch"
+              role="group"
+              aria-label="Workspace view"
+            >
+              <button
+                type="button"
+                className={
+                  viewMode === "board"
+                    ? "art-pack-switch-option is-active"
+                    : "art-pack-switch-option"
+                }
+                aria-pressed={viewMode === "board"}
+                onClick={() => switchViewMode("board")}
+              >
+                Board
+              </button>
+              <button
+                type="button"
+                className={
+                  viewMode === "flow"
+                    ? "art-pack-switch-option is-active"
+                    : "art-pack-switch-option"
+                }
+                aria-pressed={viewMode === "flow"}
+                onClick={() => switchViewMode("flow")}
+              >
+                Flow
+              </button>
+            </div>
+          </FlowNavDock>
         </div>
 
         <PromptOutputDock

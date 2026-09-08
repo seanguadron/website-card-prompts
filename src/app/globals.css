@@ -5209,6 +5209,719 @@ button.role-loadout-slot {
   line-height: 1.5;
 }
 
+/* ===== Deck Board ===== */
+/* The board workspace: one pasteboard per deck, the section boards laid out
+   in a row in world space, and a camera (translate + scale) over them. The
+   panels are the SAME panels the flow renders, in a different container -
+   the overrides below reshape them into a table: sockets on top, the hand
+   fanned below, the tuning console beside it (docs/BOARD_VISION.md). Cards
+   carry the depth (soft shadow, lift, the deal-in flip); the board stays
+   flat. */
+
+.builder-main-layout.is-board-mode {
+  grid-template-columns: minmax(0, 1fr) 380px;
+  grid-template-areas: "work out";
+}
+
+.builder-main-layout.is-board-mode.is-output-collapsed {
+  grid-template-columns: minmax(0, 1fr) 52px;
+}
+
+/* The archetypes live on the Setup board in this mode; the rail stands down. */
+.builder-main-layout.is-board-mode .archetype-toolbar {
+  display: none;
+}
+
+/* Narrow viewports: board mode collapses at the flow's breakpoints. The
+   unscoped rule above would otherwise outrank the 1180px and 1100px resets
+   by specificity and keep reserving a dock column the dock has already left
+   (design gate, 2026-09-08). No archetype row here, so a single row. */
+@media (max-width: 1180px) {
+  .builder-main-layout.is-board-mode {
+    grid-template-columns: minmax(0, 1fr) 360px;
+    grid-template-rows: minmax(0, 1fr);
+    grid-template-areas: "work out";
+  }
+
+  .builder-main-layout.is-board-mode.is-output-collapsed {
+    grid-template-columns: minmax(0, 1fr) 52px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .builder-main-layout.is-board-mode,
+  .builder-main-layout.is-board-mode.is-output-collapsed {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: minmax(0, 1fr);
+    grid-template-areas: "work";
+  }
+}
+
+.deck-board {
+  --board-scale: 1;
+  --board-tx: 0px;
+  --board-ty: 0px;
+  position: relative;
+  height: 100%;
+  min-height: 0;
+  /* clip, not hidden: a focus or scrollIntoView inside the world must never
+     scroll this box - the camera is the only thing that moves it. */
+  overflow: hidden;
+  overflow: clip;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background-color: var(--background);
+  background-image: radial-gradient(
+    circle,
+    color-mix(in oklch, var(--foreground) 16%, transparent) 1px,
+    transparent 1.5px
+  );
+  background-size: calc(32px * var(--board-scale)) calc(32px * var(--board-scale));
+  background-position: var(--board-tx) var(--board-ty);
+  outline: 0;
+  touch-action: none;
+  user-select: none;
+}
+
+.deck-board:focus-visible {
+  /* Full token strength: a diluted ring measured 1.7:1 on the light canvas
+     (design gate, 2026-09-08), the same trap the sitewide ring fell into once. */
+  box-shadow: 0 0 0 3px var(--brand-cyan);
+}
+
+.deck-board textarea,
+.deck-board input {
+  user-select: text;
+}
+
+.deck-board[data-space] {
+  cursor: grab;
+}
+
+.deck-board[data-panning],
+.deck-board[data-panning] * {
+  cursor: grabbing;
+}
+
+.deck-board-world {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  transform-origin: 0 0;
+  will-change: transform;
+  opacity: 0;
+}
+
+.deck-board[data-ready] .deck-board-world {
+  opacity: 1;
+}
+
+.deck-board-world.is-animating {
+  transition: transform 380ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.deck-board-surface {
+  position: absolute;
+  top: 0;
+  display: grid;
+  min-height: 720px;
+  grid-template-rows: auto minmax(0, 1fr);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  background: var(--card);
+  box-shadow:
+    0 34px 70px -44px oklch(0 0 0 / 0.55),
+    inset 0 1px 0 color-mix(in oklch, var(--foreground) 7%, transparent);
+  transition:
+    border-color 200ms ease-out,
+    box-shadow 200ms ease-out;
+}
+
+.deck-board-surface.is-active {
+  border-color: color-mix(in oklch, var(--brand-cyan) 45%, var(--border));
+}
+
+.deck-board-nameplate {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 18px 28px 0;
+  color: var(--muted-foreground);
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.deck-board-nameplate b {
+  display: grid;
+  min-width: 32px;
+  height: 32px;
+  padding: 0 9px;
+  place-items: center;
+  border-radius: 9px;
+  background: var(--brand-cyan);
+  color: var(--brand-cyan-foreground);
+  font-family: var(--font-mono), "Cascadia Mono", monospace;
+  font-size: 0.95rem;
+}
+
+.deck-board-nameplate i {
+  color: var(--brand-cyan-text);
+  font-style: normal;
+}
+
+/* The same panel, on a board: a static block with its own height. The
+   camera does the scrolling, and the nav dock floats over the pasteboard
+   rather than the panel, so no dock clearance either. */
+.flow-workspace .deck-board .flow-panel {
+  width: 100%;
+  height: auto;
+  min-width: 0;
+  flex: none;
+  grid-template-rows: none;
+  overflow: visible;
+  padding: 18px 28px 30px;
+  scrollbar-gutter: auto;
+}
+
+.deck-board .flow-panel-card {
+  width: 100%;
+}
+
+.deck-board .craft-card {
+  overflow: visible;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.deck-board .craft-card::after {
+  display: none;
+}
+
+.deck-board .craft-card-content {
+  padding: 0;
+}
+
+/* Setup board: the guide fills the width, the socket sits beneath it. */
+.deck-board .craft-method {
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  margin-bottom: 0;
+}
+
+/* The workbench becomes the table: sockets on top, the hand beside the
+   tuning console below. */
+.deck-board .card-workbench {
+  grid-template-columns: minmax(0, 1fr) 300px;
+  grid-template-areas:
+    "slots tuning"
+    "deck deck";
+  align-items: start;
+  gap: 18px 22px;
+}
+
+.deck-board .card-slot-board {
+  grid-area: slots;
+}
+
+.deck-board .category-deck {
+  grid-area: deck;
+  min-width: 0;
+}
+
+.deck-board .tuning-console {
+  grid-area: tuning;
+  padding: 14px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: color-mix(in oklch, var(--card) 70%, var(--background));
+}
+
+.deck-board .tuning-track-list {
+  grid-template-columns: minmax(0, 1fr);
+  gap: 16px;
+}
+
+/* The hand: one row that fans sideways when the deck outgrows the table
+   (roles keep two rows - 35 of them). */
+.deck-board .lineage-card-grid,
+.deck-board .role-card-grid {
+  grid-auto-flow: column;
+  grid-template-columns: none;
+  grid-template-rows: max-content;
+  grid-auto-columns: 152px;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  padding: 4px 4px 12px;
+  scroll-snap-type: x proximity;
+  scrollbar-width: thin;
+}
+
+.deck-board .role-card-grid {
+  grid-template-rows: repeat(2, max-content);
+}
+
+.deck-board .lineage-card,
+.deck-board .role-perk-card {
+  scroll-snap-align: start;
+  box-shadow: 0 10px 20px -14px oklch(0 0 0 / 0.6);
+}
+
+.deck-board .lineage-card:hover,
+.deck-board .role-perk-card:hover {
+  --card-lift: -4px;
+  box-shadow: 0 18px 30px -16px oklch(0 0 0 / 0.65);
+}
+
+/* Sockets read as scaffolding: a cyan-tinted dashed frame, solid once seated. */
+.deck-board .card-slot,
+.deck-board .role-loadout-slot {
+  border-width: 2px;
+  border-color: color-mix(in oklch, var(--brand-cyan) 32%, var(--border));
+  background: color-mix(in oklch, var(--brand-cyan) 5%, transparent);
+}
+
+.deck-board .card-slot.is-filled,
+.deck-board .role-loadout-slot.is-filled {
+  border-style: solid;
+  border-color: color-mix(in oklch, var(--brand-cyan) 48%, var(--border));
+}
+
+.deck-board .role-loadout {
+  display: grid;
+  gap: 18px;
+}
+
+/* Far out, faces simplify to their art: the copy is illegible at that size
+   and the board reads as a spread of cards. */
+.deck-board[data-zoom="far"] .lineage-card-copy,
+.deck-board[data-zoom="far"] .lineage-card-topline,
+.deck-board[data-zoom="far"] .lineage-card-action,
+.deck-board[data-zoom="far"] .role-card-name,
+.deck-board[data-zoom="far"] .role-card-topline,
+.deck-board[data-zoom="far"] .role-card-footer,
+.deck-board[data-zoom="far"] .board-archetype-topline,
+.deck-board[data-zoom="far"] .board-archetype-card strong,
+.deck-board[data-zoom="far"] .board-archetype-card small {
+  visibility: hidden;
+}
+
+/* Dealing: when an archetype seats, the slot cards flip in one after the
+   other, from the socket outward. Bounded, non-looping, off under reduced
+   motion (DESIGN_DIRECTION → Motion). */
+@keyframes board-deal {
+  from {
+    opacity: 0;
+    transform: perspective(720px) translateY(14px) rotateY(-78deg) scale(0.94);
+  }
+
+  55% {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 1;
+    transform: perspective(720px) translateY(0) rotateY(0) scale(1);
+  }
+}
+
+.deck-board[data-dealing] .slot-card,
+.deck-board[data-dealing] .role-slot-card,
+.deck-board[data-dealing] .board-socket-card {
+  animation: board-deal 420ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  animation-delay: calc(var(--deal-index, 0) * 70ms);
+}
+
+.deck-board .card-slot:nth-child(2) .slot-card,
+.deck-board .role-loadout-slot:nth-child(2) .role-slot-card {
+  --deal-index: 1;
+}
+
+.deck-board .card-slot:nth-child(3) .slot-card,
+.deck-board .role-loadout-slot:nth-child(3) .role-slot-card {
+  --deal-index: 2;
+}
+
+.deck-board .card-slot:nth-child(4) .slot-card {
+  --deal-index: 3;
+}
+
+.deck-board .card-slot:nth-child(5) .slot-card {
+  --deal-index: 4;
+}
+
+/* The board bar: pips, zoom, Fit, All. Screen space, bottom-left, and it
+   steps aside when the nav dock parks in that corner. */
+.deck-board-bar {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 8px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--card);
+  box-shadow: 0 10px 26px color-mix(in oklch, var(--background) 60%, transparent);
+}
+
+.flow-workspace[data-dock-corner="bottom-left"] .deck-board-bar {
+  left: 216px;
+}
+
+.deck-board-pips {
+  display: flex;
+  gap: 4px;
+}
+
+.deck-board-pip {
+  position: relative;
+  min-width: 28px;
+  height: 28px;
+  padding: 0 7px;
+  border: 1px solid var(--input);
+  border-radius: 7px;
+  background: var(--background);
+  color: var(--muted-foreground);
+  cursor: pointer;
+  font-family: var(--font-mono), "Cascadia Mono", monospace;
+  font-size: 0.74rem;
+  font-weight: 800;
+  transition:
+    color 150ms ease-out,
+    background-color 150ms ease-out,
+    border-color 150ms ease-out;
+}
+
+.deck-board-pip:hover {
+  color: var(--foreground);
+  border-color: color-mix(in oklch, var(--brand-cyan) 55%, var(--border));
+}
+
+.deck-board-pip.is-complete {
+  border-color: color-mix(in oklch, var(--brand-cyan) 55%, var(--border));
+  color: var(--brand-cyan-text);
+}
+
+/* Colour never alone (PRODUCT.md): a completed board also wears a check
+   badge, ringed with the bar's surface so it reads on the active fill too. */
+.deck-board-pip.is-complete::after {
+  content: "\2713";
+  position: absolute;
+  top: -6px;
+  right: -5px;
+  display: grid;
+  width: 13px;
+  height: 13px;
+  place-items: center;
+  border-radius: 999px;
+  background: var(--brand-cyan);
+  box-shadow: 0 0 0 1px var(--card);
+  color: var(--brand-cyan-foreground);
+  font-size: 0.55rem;
+  line-height: 1;
+}
+
+.deck-board-pip.is-active {
+  border-color: var(--brand-cyan);
+  background: var(--brand-cyan);
+  color: var(--brand-cyan-foreground);
+}
+
+.deck-board-zoom {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding-left: 10px;
+  border-left: 1px solid var(--border);
+}
+
+.deck-board-zoom button {
+  min-width: 28px;
+  height: 28px;
+  padding: 0 8px;
+  border: 1px solid var(--input);
+  border-radius: 7px;
+  background: var(--background);
+  color: var(--foreground);
+  cursor: pointer;
+  font-size: 0.72rem;
+  font-weight: 800;
+  transition:
+    border-color 150ms ease-out,
+    background-color 150ms ease-out;
+}
+
+.deck-board-zoom button:hover {
+  border-color: color-mix(in oklch, var(--brand-cyan) 55%, var(--border));
+  background: color-mix(in oklch, var(--brand-cyan) 8%, var(--background));
+}
+
+.deck-board-zoom output {
+  min-width: 44px;
+  color: var(--muted-foreground);
+  font-family: var(--font-mono), "Cascadia Mono", monospace;
+  font-size: 0.7rem;
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+  text-align: center;
+}
+
+/* The view switch rides in the nav dock, above the world switch. */
+.board-mode-switch {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 4px;
+}
+
+/* The archetype socket on the Setup board. */
+.board-archetype {
+  display: grid;
+  grid-template-columns: 196px minmax(0, 1fr);
+  gap: 12px 22px;
+  margin-top: 22px;
+  padding: 16px 18px 12px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: color-mix(in oklch, var(--card) 88%, var(--background));
+}
+
+.board-archetype-heading {
+  grid-column: 1 / -1;
+}
+
+.board-socket {
+  position: relative;
+  display: grid;
+  aspect-ratio: 5 / 7.3;
+  align-content: stretch;
+  padding: 24px 8px 8px;
+  border: 2px dashed color-mix(in oklch, var(--brand-cyan) 42%, var(--border));
+  border-radius: 14px;
+  background: color-mix(in oklch, var(--brand-cyan) 5%, transparent);
+  color: var(--foreground);
+  transition:
+    border-color 160ms ease-out,
+    background-color 160ms ease-out;
+}
+
+.board-socket.is-seated {
+  border-style: solid;
+  border-color: color-mix(in oklch, var(--brand-cyan) 55%, var(--border));
+}
+
+.board-socket.is-over {
+  border-style: solid;
+  border-color: var(--brand-cyan);
+  background: color-mix(in oklch, var(--brand-cyan) 12%, transparent);
+}
+
+.board-socket > span:first-child {
+  position: absolute;
+  top: 7px;
+  left: 9px;
+  font-family: var(--font-mono), "Cascadia Mono", monospace;
+  font-size: 0.56rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.board-socket-empty {
+  display: grid;
+  height: 100%;
+  align-content: center;
+  justify-items: center;
+  gap: 8px;
+  padding: 0 8px;
+  text-align: center;
+}
+
+.board-socket-empty strong {
+  color: color-mix(in oklch, var(--foreground) 52%, transparent);
+  font-size: 1.6rem;
+  font-weight: 400;
+}
+
+.board-socket-empty small {
+  color: var(--muted-foreground);
+  font-size: 0.64rem;
+  line-height: 1.45;
+}
+
+.board-socket-unseat {
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  display: grid;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  place-items: center;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--muted-foreground);
+  cursor: pointer;
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+.board-socket-unseat:hover {
+  border-color: color-mix(in oklch, var(--foreground) 24%, transparent);
+  color: var(--foreground);
+}
+
+.board-archetype-hand {
+  display: grid;
+  min-width: 0;
+  grid-auto-flow: column;
+  grid-template-rows: repeat(2, max-content);
+  grid-auto-columns: 152px;
+  gap: 12px;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  padding: 4px 4px 12px;
+  scroll-snap-type: x proximity;
+  scrollbar-width: thin;
+}
+
+.board-archetype-card {
+  --card-lift: 0px;
+  --card-scale: 1;
+  --card-tilt-x: 0deg;
+  --card-tilt-y: 0deg;
+  position: relative;
+  display: grid;
+  width: 100%;
+  min-width: 0;
+  aspect-ratio: 5 / 7;
+  grid-template-rows: auto minmax(0, 1fr) auto auto;
+  gap: 8px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 10px;
+  background: var(--background);
+  color: var(--foreground);
+  cursor: grab;
+  scroll-snap-align: start;
+  text-align: left;
+  box-shadow: 0 10px 20px -14px oklch(0 0 0 / 0.6);
+  transform: perspective(720px) translateY(var(--card-lift))
+    rotateX(var(--card-tilt-x)) rotateY(var(--card-tilt-y))
+    scale(var(--card-scale));
+  transform-style: preserve-3d;
+  transition:
+    border-color 180ms ease-out,
+    background 180ms ease-out,
+    box-shadow 180ms ease-out,
+    opacity 120ms ease-out,
+    transform 180ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.board-archetype-card::before {
+  position: absolute;
+  inset: 5px;
+  border: 1px solid color-mix(in oklch, var(--border) 72%, transparent);
+  border-radius: 8px;
+  content: "";
+  pointer-events: none;
+}
+
+.board-archetype-card:hover {
+  --card-lift: -4px;
+  box-shadow: 0 18px 30px -16px oklch(0 0 0 / 0.65);
+}
+
+.board-archetype-card:active {
+  --card-scale: 0.98;
+  cursor: grabbing;
+}
+
+.board-archetype-card.is-active {
+  border-color: var(--brand-cyan);
+  background: color-mix(in oklch, var(--brand-cyan) 8%, var(--background));
+  box-shadow: inset 0 0 0 1px var(--brand-cyan);
+}
+
+.board-archetype-card.is-dragging {
+  opacity: 0.32;
+}
+
+.board-socket-card {
+  cursor: default;
+}
+
+.board-archetype-topline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--muted-foreground);
+  font-family: var(--font-mono), "Cascadia Mono", monospace;
+  font-size: 0.54rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.board-archetype-topline > span:first-child {
+  color: var(--brand-cyan-text);
+}
+
+.board-archetype-art {
+  display: grid;
+  min-height: 0;
+  place-items: center;
+  overflow: hidden;
+  border: 1px solid color-mix(in oklch, var(--brand-cyan) 34%, var(--border));
+  border-radius: 8px;
+  background: color-mix(in oklch, var(--brand-cyan) 8%, var(--background));
+  color: var(--brand-cyan-text);
+}
+
+.board-archetype-card strong {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  min-height: calc(2 * 1.25 * 0.72rem);
+  font-size: 0.72rem;
+  line-height: 1.25;
+}
+
+.board-archetype-card small {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  color: var(--muted-foreground);
+  font-size: 0.58rem;
+  line-height: 1.35;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .deck-board-world.is-animating {
+    transition: none;
+  }
+
+  .deck-board[data-dealing] .slot-card,
+  .deck-board[data-dealing] .role-slot-card,
+  .deck-board[data-dealing] .board-socket-card {
+    animation: none;
+  }
+
+  .deck-board .lineage-card:hover,
+  .deck-board .role-perk-card:hover,
+  .board-archetype-card:hover {
+    --card-lift: 0px;
+  }
+}
+
 /* ===== Card Art Studio (development-only authoring surface) ===== */
 /* Not a tool: no registry entry, no nav. A dense worklist over the art pack,
    modeled on the image editor's layer rows. */

@@ -1,6 +1,7 @@
 "use client";
 
 import type { ReactNode, RefObject } from "react";
+import { DeckBoard, type DeckBoardSpec } from "@/components/deck-board";
 import { PromptCardWorkbench } from "@/components/prompt-card-workbench";
 import {
   CardIllustrationFrame,
@@ -11,6 +12,7 @@ import {
   type FieldGuidance,
 } from "@/components/prompt-builder-ui";
 import { useRovingRadioGroup } from "@/hooks/use-roving-radio-group";
+import type { BoardMode } from "@/lib/board-prefs";
 import { pictureLetterArt } from "@/lib/picture-art-pack";
 import { pictureCardEngine } from "@/lib/picture-card-system";
 import {
@@ -104,6 +106,11 @@ const SECTION_LETTERS: Record<PictureSection, string> = {
   execution: "E",
 };
 
+type Panel = {
+  key: string;
+  node: ReactNode;
+};
+
 function TailRangeRow({
   label,
   flag,
@@ -159,6 +166,10 @@ export function PictureFlowPanels({
   activePanel,
   registerPanelHeading,
   flowViewportRef,
+  layout = "flow",
+  boardSetup,
+  onActivatePanel,
+  dealing,
   draft,
   cardSystem,
   stepComplete,
@@ -181,6 +192,14 @@ export function PictureFlowPanels({
     node: HTMLHeadingElement | null,
   ) => void;
   flowViewportRef: RefObject<HTMLDivElement | null>;
+  /** Which container renders the panels: the horizontal flow or the board. */
+  layout?: BoardMode;
+  /** Board mode only: rendered on the Setup board under the guide. */
+  boardSetup?: ReactNode;
+  /** Board mode only: the board asks to make another panel active. */
+  onActivatePanel?: (index: number) => void;
+  /** Board mode only: an archetype just seated, deal the slot cards in. */
+  dealing?: boolean;
   draft: PictureDraft;
   cardSystem: PictureCardSystemState;
   stepComplete: readonly boolean[];
@@ -217,6 +236,7 @@ export function PictureFlowPanels({
     },
   );
   const tailDisabled = !draft.mjTailEnabled;
+  const board = layout === "board";
 
   function sectionWorkbench(section: PictureSection, controlId: string) {
     return (
@@ -242,47 +262,288 @@ export function PictureFlowPanels({
     );
   }
 
-  function cardPanel(section: PictureSection, children?: ReactNode) {
+  function cardPanel(section: PictureSection, children?: ReactNode): Panel {
     const panelIndex = PICTURE_PANEL_INDEX[section];
     const stepIndex = panelIndex - 1;
     const part = PICTURE_PARTS[stepIndex];
 
-    return (
-      <section
-        className="flow-panel"
-        aria-hidden={activePanel !== panelIndex}
-        inert={activePanel !== panelIndex}
-        key={section}
-      >
-        <h2
-          className="sr-only"
-          tabIndex={-1}
-          ref={(node) => {
-            registerPanelHeading(panelIndex, node);
-          }}
-        >
-          {part.label}
-        </h2>
-
-        <div className="flow-panel-card">
-          <CraftCard
-            letter={SECTION_LETTERS[section]}
-            complete={stepComplete[stepIndex]}
+    return {
+      key: section,
+      node: (
+        <>
+          <h2
+            className="sr-only"
+            tabIndex={-1}
+            ref={(node) => {
+              registerPanelHeading(panelIndex, node);
+            }}
           >
-            <div className="field craft-field">
-              <FieldHeading
-                guidance={PANEL_GUIDANCE[section]}
-                label={`${part.label} cards`}
-                controlId={`picture-${section}-workbench`}
-                labelControl={false}
-              />
-              {children}
-              {sectionWorkbench(section, `picture-${section}-workbench`)}
-            </div>
-          </CraftCard>
-        </div>
+            {part.label}
+          </h2>
 
-      </section>
+          <div className="flow-panel-card">
+            <CraftCard
+              letter={SECTION_LETTERS[section]}
+              complete={stepComplete[stepIndex]}
+            >
+              <div className="field craft-field">
+                <FieldHeading
+                  guidance={PANEL_GUIDANCE[section]}
+                  label={`${part.label} cards`}
+                  controlId={`picture-${section}-workbench`}
+                  labelControl={false}
+                />
+                {children}
+                {sectionWorkbench(section, `picture-${section}-workbench`)}
+              </div>
+            </CraftCard>
+          </div>
+        </>
+      ),
+    };
+  }
+
+  const guidePanel: Panel = {
+    key: "guide",
+    node: (
+      <>
+        <div className="craft-method" aria-labelledby="picture-method-title">
+          <div className="craft-method-copy">
+            <h2
+              id="picture-method-title"
+              tabIndex={-1}
+              ref={(node) => {
+                registerPanelHeading(PICTURE_PANEL_INDEX.guide, node);
+              }}
+            >
+              Build with P.I.C.T.U.R.E.
+            </h2>
+            {/* Two sentences, one line each. CRAFT's lede is short enough
+                to sit on a single line whole; this one is not, so rather
+                than let it wrap mid-phrase it breaks at the period. */}
+            <p className="craft-lede craft-lede-sentences">
+              <span>
+                Name your subject, then stack light, medium, palette, world,
+                references, and framing cards.
+              </span>
+              <span>
+                The image prompt updates as you go, with an optional
+                Midjourney tail at the end.
+              </span>
+            </p>
+            {/* Same rule as the CRAFT guide: the framework is not ours, so
+                it is credited where it is taught. The name wraps whole. */}
+            <p className="craft-credit">
+              Built from the prompting guidance in{" "}
+              <a
+                className="craft-credit-name"
+                href="https://docs.midjourney.com"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                Midjourney&rsquo;s documentation
+              </a>
+              .
+            </p>
+          </div>
+          <div className="craft-definition" role="list">
+            {PICTURE_PARTS.map(({ letter, label, summary }, index) => (
+              <button
+                className="craft-definition-card"
+                type="button"
+                role="listitem"
+                onClick={() => navigateToPictureStep(index)}
+                key={letter}
+              >
+                <CardIllustrationFrame
+                  className="craft-definition-art"
+                  illustration={pictureLetterArt(letter)}
+                  fallback={letter}
+                />
+                <span className="craft-definition-word">
+                  <b>{letter}</b>
+                  <span>{label.slice(1)}</span>
+                </span>
+                <small>{summary}</small>
+              </button>
+            ))}
+          </div>
+        </div>
+        {board ? boardSetup : null}
+      </>
+    ),
+  };
+
+  const panels: Panel[] = [
+    guidePanel,
+    cardPanel(
+      "protagonist",
+      <div className="field">
+        <FieldHeading
+          guidance={PANEL_GUIDANCE.protagonist}
+          label="Subject"
+          hint="The one required line: who or what the image is about."
+          controlId="picture-subject"
+        />
+        <CraftDictationField
+          id="picture-subject"
+          field="subject"
+          label="Subject"
+          value={draft.subject}
+          placeholder="a fox in a yellow raincoat crossing a flooded street"
+          rows={3}
+          required
+          attention={attentionTargetId === "picture-subject"}
+          onChange={(value) => onUpdateDraft("subject", value)}
+          dictation={dictation}
+        />
+      </div>,
+    ),
+    cardPanel("illumination"),
+    cardPanel("canvas"),
+    cardPanel("tone"),
+    cardPanel("universe"),
+    cardPanel("references"),
+    cardPanel(
+      "execution",
+      <fieldset className="picture-deck-tail">
+        <legend className="sr-only">Midjourney parameter tail</legend>
+        <label className="workbench-default-check picture-deck-tail-toggle">
+          <input
+            type="checkbox"
+            checked={draft.mjTailEnabled}
+            onChange={(event) => onSetTailEnabled(event.target.checked)}
+          />
+          <span>
+            <strong>Midjourney tail</strong>
+            <small>
+              Append --ar, --stylize, --chaos, --weird, and --no to the
+              prompt. Off keeps the prompt model-agnostic.
+            </small>
+          </span>
+        </label>
+
+        <div
+          className={
+            tailDisabled
+              ? "picture-deck-tail-body is-disabled"
+              : "picture-deck-tail-body"
+          }
+        >
+          <div className="picture-deck-ar-group">
+            <span className="picture-deck-tail-label" id="picture-ar-label">
+              Aspect ratio
+            </span>
+            <div
+              className="picture-deck-ar-row"
+              role="radiogroup"
+              aria-labelledby="picture-ar-label"
+            >
+              {PICTURE_ASPECT_RATIOS.map((option, index) => {
+                const selected = draft.aspectRatio === option.value;
+                return (
+                  <button
+                    className={
+                      selected
+                        ? "picture-deck-ar-tab is-selected"
+                        : "picture-deck-ar-tab"
+                    }
+                    type="button"
+                    role="radio"
+                    aria-checked={selected}
+                    disabled={tailDisabled}
+                    onClick={() => onSelectAspectRatio(option.value)}
+                    key={option.id}
+                    {...aspectGroup.itemProps(index)}
+                  >
+                    <span>{option.value}</span>
+                    <small>{option.label}</small>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+
+          <TailRangeRow
+            label="Stylize"
+            flag="--stylize"
+            field="stylize"
+            range={STYLIZE_RANGE}
+            value={draft.stylize}
+            disabled={tailDisabled}
+            onSetNumber={onSetTailNumber}
+          />
+          <TailRangeRow
+            label="Chaos"
+            flag="--chaos"
+            field="chaos"
+            range={CHAOS_RANGE}
+            value={draft.chaos}
+            disabled={tailDisabled}
+            onSetNumber={onSetTailNumber}
+          />
+          <TailRangeRow
+            label="Weird"
+            flag="--weird"
+            field="weird"
+            range={WEIRD_RANGE}
+            value={draft.weird}
+            disabled={tailDisabled}
+            onSetNumber={onSetTailNumber}
+          />
+
+          <label className="field picture-deck-negative">
+            <span>
+              <strong>Exclude</strong>
+              <small>--no</small>
+            </span>
+            <input
+              type="text"
+              value={draft.negative}
+              disabled={tailDisabled}
+              placeholder="text, watermark, blur"
+              onChange={(event) =>
+                onUpdateDraft("negative", event.target.value)
+              }
+            />
+          </label>
+        </div>
+      </fieldset>,
+    ),
+  ];
+
+  if (board) {
+    const boards: DeckBoardSpec[] = [
+      { key: "guide", letter: "S", label: "Setup", complete: false },
+      ...PICTURE_PARTS.map((part, index) => ({
+        key: part.letter,
+        letter: part.letter,
+        label: part.label,
+        complete: Boolean(stepComplete[index]),
+      })),
+    ];
+
+    return (
+      <DeckBoard
+        boards={boards}
+        activeIndex={activePanel}
+        onActivate={onActivatePanel ?? (() => undefined)}
+        dealing={dealing}
+        ariaLabel="P.I.C.T.U.R.E. board workspace"
+      >
+        {panels.map((panel, index) => (
+          <div
+            className={
+              index === PICTURE_PANEL_INDEX.guide
+                ? "flow-panel flow-intro-panel"
+                : "flow-panel"
+            }
+            key={panel.key}
+          >
+            {panel.node}
+          </div>
+        ))}
+      </DeckBoard>
     );
   }
 
@@ -294,209 +555,20 @@ export function PictureFlowPanels({
           transform: `translate3d(-${activePanel * 100}%, 0, 0)`,
         }}
       >
-        <section
-          className="flow-panel flow-intro-panel"
-          aria-hidden={activePanel !== PICTURE_PANEL_INDEX.guide}
-          inert={activePanel !== PICTURE_PANEL_INDEX.guide}
-        >
-          <div className="craft-method" aria-labelledby="picture-method-title">
-            <div className="craft-method-copy">
-              <h2
-                id="picture-method-title"
-                tabIndex={-1}
-                ref={(node) => {
-                  registerPanelHeading(PICTURE_PANEL_INDEX.guide, node);
-                }}
-              >
-                Build with P.I.C.T.U.R.E.
-              </h2>
-              {/* Two sentences, one line each. CRAFT's lede is short enough
-                  to sit on a single line whole; this one is not, so rather
-                  than let it wrap mid-phrase it breaks at the period. */}
-              <p className="craft-lede craft-lede-sentences">
-                <span>
-                  Name your subject, then stack light, medium, palette, world,
-                  references, and framing cards.
-                </span>
-                <span>
-                  The image prompt updates as you go, with an optional
-                  Midjourney tail at the end.
-                </span>
-              </p>
-              {/* Same rule as the CRAFT guide: the framework is not ours, so
-                  it is credited where it is taught. The name wraps whole. */}
-              <p className="craft-credit">
-                Built from the prompting guidance in{" "}
-                <a
-                  className="craft-credit-name"
-                  href="https://docs.midjourney.com"
-                  target="_blank"
-                  rel="noreferrer noopener"
-                >
-                  Midjourney&rsquo;s documentation
-                </a>
-                .
-              </p>
-            </div>
-            <div className="craft-definition" role="list">
-              {PICTURE_PARTS.map(({ letter, label, summary }, index) => (
-                <button
-                  className="craft-definition-card"
-                  type="button"
-                  role="listitem"
-                  onClick={() => navigateToPictureStep(index)}
-                  key={letter}
-                >
-                  <CardIllustrationFrame
-                    className="craft-definition-art"
-                    illustration={pictureLetterArt(letter)}
-                    fallback={letter}
-                  />
-                  <span className="craft-definition-word">
-                    <b>{letter}</b>
-                    <span>{label.slice(1)}</span>
-                  </span>
-                  <small>{summary}</small>
-                </button>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {cardPanel(
-          "protagonist",
-          <div className="field">
-            <FieldHeading
-              guidance={PANEL_GUIDANCE.protagonist}
-              label="Subject"
-              hint="The one required line: who or what the image is about."
-              controlId="picture-subject"
-            />
-            <CraftDictationField
-              id="picture-subject"
-              field="subject"
-              label="Subject"
-              value={draft.subject}
-              placeholder="a fox in a yellow raincoat crossing a flooded street"
-              rows={3}
-              required
-              attention={attentionTargetId === "picture-subject"}
-              onChange={(value) => onUpdateDraft("subject", value)}
-              dictation={dictation}
-            />
-          </div>,
-        )}
-        {cardPanel("illumination")}
-        {cardPanel("canvas")}
-        {cardPanel("tone")}
-        {cardPanel("universe")}
-        {cardPanel("references")}
-        {cardPanel(
-          "execution",
-          <fieldset className="picture-deck-tail">
-            <legend className="sr-only">Midjourney parameter tail</legend>
-            <label className="workbench-default-check picture-deck-tail-toggle">
-              <input
-                type="checkbox"
-                checked={draft.mjTailEnabled}
-                onChange={(event) => onSetTailEnabled(event.target.checked)}
-              />
-              <span>
-                <strong>Midjourney tail</strong>
-                <small>
-                  Append --ar, --stylize, --chaos, --weird, and --no to the
-                  prompt. Off keeps the prompt model-agnostic.
-                </small>
-              </span>
-            </label>
-
-            <div
-              className={
-                tailDisabled
-                  ? "picture-deck-tail-body is-disabled"
-                  : "picture-deck-tail-body"
-              }
-            >
-              <div className="picture-deck-ar-group">
-                <span className="picture-deck-tail-label" id="picture-ar-label">
-                  Aspect ratio
-                </span>
-                <div
-                  className="picture-deck-ar-row"
-                  role="radiogroup"
-                  aria-labelledby="picture-ar-label"
-                >
-                  {PICTURE_ASPECT_RATIOS.map((option, index) => {
-                    const selected = draft.aspectRatio === option.value;
-                    return (
-                      <button
-                        className={
-                          selected
-                            ? "picture-deck-ar-tab is-selected"
-                            : "picture-deck-ar-tab"
-                        }
-                        type="button"
-                        role="radio"
-                        aria-checked={selected}
-                        disabled={tailDisabled}
-                        onClick={() => onSelectAspectRatio(option.value)}
-                        key={option.id}
-                        {...aspectGroup.itemProps(index)}
-                      >
-                        <span>{option.value}</span>
-                        <small>{option.label}</small>
-                      </button>
-                    );
-                  })}
-                </div>
-              </div>
-
-              <TailRangeRow
-                label="Stylize"
-                flag="--stylize"
-                field="stylize"
-                range={STYLIZE_RANGE}
-                value={draft.stylize}
-                disabled={tailDisabled}
-                onSetNumber={onSetTailNumber}
-              />
-              <TailRangeRow
-                label="Chaos"
-                flag="--chaos"
-                field="chaos"
-                range={CHAOS_RANGE}
-                value={draft.chaos}
-                disabled={tailDisabled}
-                onSetNumber={onSetTailNumber}
-              />
-              <TailRangeRow
-                label="Weird"
-                flag="--weird"
-                field="weird"
-                range={WEIRD_RANGE}
-                value={draft.weird}
-                disabled={tailDisabled}
-                onSetNumber={onSetTailNumber}
-              />
-
-              <label className="field picture-deck-negative">
-                <span>
-                  <strong>Exclude</strong>
-                  <small>--no</small>
-                </span>
-                <input
-                  type="text"
-                  value={draft.negative}
-                  disabled={tailDisabled}
-                  placeholder="text, watermark, blur"
-                  onChange={(event) =>
-                    onUpdateDraft("negative", event.target.value)
-                  }
-                />
-              </label>
-            </div>
-          </fieldset>,
-        )}
+        {panels.map((panel, index) => (
+          <section
+            className={
+              index === PICTURE_PANEL_INDEX.guide
+                ? "flow-panel flow-intro-panel"
+                : "flow-panel"
+            }
+            aria-hidden={activePanel !== index}
+            inert={activePanel !== index}
+            key={panel.key}
+          >
+            {panel.node}
+          </section>
+        ))}
       </div>
     </div>
   );

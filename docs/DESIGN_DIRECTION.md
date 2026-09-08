@@ -357,11 +357,70 @@ considering) lands on both at once. Rules specific to this deck:
 - New selectors are prefixed `picture-deck-`; shared classes are never
   redefined inside the PICTURE Deck banner section.
 
+### The board (every deck's default view, 2026-09-05)
+
+Every deck renders its panels in one of two containers, switched from the
+nav dock and remembered per browser: the **flow** (the horizontal panel
+slider) and the **board**, the default. The board is the first step toward
+`docs/BOARD_VISION.md` and shares one visual grammar across CRAFT, PICTURE,
+and SONIC:
+
+- **The pasteboard** is the deck's world: the page background token under a
+  dot grid that scales with the camera, inside a 14px-radius frame, no
+  texture. The board stays flat; the cards carry the depth.
+- **Boards** are surfaces laid out in a row in world space, 1280 world units
+  wide and content-tall: the Setup board first, then one per section
+  letter. Each has a 20px radius, a thin border, the card surface token, a
+  soft drop shadow (a surface on a table, not a card on a page, so the one
+  large shadow the direction allows), and a **nameplate**: the letter on a
+  cyan tile, the section label, and "Complete" when the section is.
+- **The camera** frames one board at a time. Next and Back, the pips, the
+  subbar step strip, and keyboard focus moving into another board all glide
+  the camera there in 380ms (a cut under reduced motion). Wheel pans,
+  ctrl+wheel zooms to the cursor, Space+drag and the middle button pan from
+  anywhere, the pasteboard's own background drags. Zoom stays between 8%
+  and 200%; Fit frames the active board, All the whole row. Below 45% the
+  card faces simplify to their art.
+- **The Setup board** holds the guide and the **archetype socket**: a
+  card-shaped, cyan-tinted dashed slot with the hand of archetype cards
+  beside it. Dropping or clicking an archetype seats it and builds out every
+  board; editing any board unseats it while the cards stay. The archetype
+  rail is hidden in board mode; the socket is the archetype control.
+- **A section board** is the table: the sockets (the slot rack) and the
+  tuning console share the top row, the **hand** (the section's deck) fans
+  in one row below them and scrolls sideways when it outgrows the table
+  (roles keep two rows), and the free-text field sits at the bottom.
+  Sockets read as scaffolding: a 2px cyan-tinted dashed frame, solid once
+  seated.
+- **The deal.** When an archetype seats, each newly seated card flips in
+  once (`board-deal`, 420ms, a 70ms stagger outward from the socket);
+  nothing loops. Cards on the board lift 4px on hover under a deeper soft
+  shadow. Both are removed under reduced motion.
+- **The board bar** (bottom-left, screen space): one pip per board with its
+  completion state, zoom out, the zoom readout, zoom in, Fit, All. It steps
+  aside when the nav dock parks in that corner.
+- **Keyboard**: `[` and `]` move between boards, `0` fits the active board,
+  `-` and `=` zoom, arrows pan when the pasteboard itself is focused. Every
+  card, socket, and control keeps its existing keyboard path; nothing on the
+  board is pointer-only.
+- **Assistive-technology model**: unlike the flow, which hides and inerts
+  every panel but the active one, the board keeps every board present and
+  reachable, as one long document of labelled regions (`<section
+  aria-label="Context board">`, the framed one `aria-current`). Tabbing or
+  reading into another board frames it. This is the deliberate trade: the
+  camera follows the user, the user never has to find a hidden board.
+- Cyan stays the selected, focus, and marker color; the board adds no hue.
+
 ## Motion
 
 Motion communicates state. Keep common transitions between 150ms and 200ms;
 the card drop settle may run up to 240ms. Use opacity or transform only and
 provide a reduced-motion fallback. Do not add page-load choreography.
+
+Two named exceptions live on the board, because they move a whole scene
+rather than one element: the camera glide between boards (380ms) and the
+deal (420ms per card, a 70ms stagger). Both are user-initiated, run once, and
+cut under reduced motion (resolved 2026-09-08, design gate).
 
 ## Voice
 

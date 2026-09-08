@@ -1,8 +1,9 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import type { ChangeEvent } from "react";
+import { BoardArchetypeSocket } from "@/components/board-archetype-socket";
 import { FlowNavDock } from "@/components/flow-nav-dock";
 import { FlowStepStrip } from "@/components/flow-step-strip";
 import { SoundArchetypeToolbar } from "@/components/sound-archetype-toolbar";
@@ -22,6 +23,7 @@ import { useSoundDeckPersistence } from "@/hooks/use-sound-deck-persistence";
 import { usePortalTarget } from "@/hooks/use-portal-target";
 import { usePromptDictation } from "@/hooks/use-prompt-dictation";
 import { useFlowNavigation } from "@/hooks/use-flow-navigation";
+import { readBoardMode, writeBoardMode, type BoardMode } from "@/lib/board-prefs";
 import { downloadTextFile, slugifyFilename } from "@/lib/browser-download";
 import { SOUND_ARCHETYPES } from "@/lib/sound-archetypes";
 import {
@@ -37,6 +39,7 @@ import type { SoundProofScenario } from "@/lib/sound-proof-scenarios";
 import {
   buildCustomSoundArchetype,
   deleteCustomSoundArchetype,
+  isCustomSoundArchetype,
   listCustomSoundArchetypes,
   saveCustomSoundArchetype,
 } from "@/lib/sound-custom-archetypes";
@@ -112,12 +115,35 @@ export function SoundDeck() {
   const [activePromptName, setActivePromptName] = useState<string | null>(
     null,
   );
+  // Which container renders the panels: the board (the default, per
+  // docs/BOARD_VISION.md) or the horizontal flow, one click away in the dock.
+  const [viewMode, setViewMode] = useState<BoardMode>("board");
+  // True for a moment after an archetype seats: the slot cards flip in.
+  const [dealing, setDealing] = useState(false);
+  const dealTimerRef = useRef<number | null>(null);
   // At phone widths the expanded dock overlays the whole workspace, so the
   // default is collapsed there and expanded everywhere else; any explicit
   // choice wins over the default.
   const phoneWidthDock = useMediaQuery(PHONE_MEDIA_QUERY);
   const [outputExpandedChoice, setOutputExpanded] = useState<boolean | null>(
     null,
+  );
+
+  // Deferred restore of the view choice, like the CRAFT deck's art pack.
+  useEffect(() => {
+    const timer = window.setTimeout(() => {
+      setViewMode(readBoardMode("sound-deck", "board"));
+    }, 0);
+    return () => window.clearTimeout(timer);
+  }, []);
+
+  useEffect(
+    () => () => {
+      if (dealTimerRef.current !== null) {
+        window.clearTimeout(dealTimerRef.current);
+      }
+    },
+    [],
   );
   const outputExpanded = outputExpandedChoice ?? !phoneWidthDock;
   // The portal below renders on FIRST render, so the target must be resolved
@@ -416,6 +442,47 @@ export function SoundDeck() {
     setSpeechMessage(
       `${archetype.name} archetype applied. Your sound line stayed in place.`,
     );
+    // The deal: the boards' slot cards flip in for a beat.
+    if (dealTimerRef.current !== null) {
+      window.clearTimeout(dealTimerRef.current);
+    }
+    setDealing(true);
+    dealTimerRef.current = window.setTimeout(() => {
+      setDealing(false);
+      dealTimerRef.current = null;
+    }, 1100);
+  }
+
+  function switchViewMode(mode: BoardMode) {
+    setViewMode(mode);
+    writeBoardMode("sound-deck", mode);
+  }
+
+  // The archetype hand on the Setup board: custom presets first, then the
+  // catalog. No art pack yet, so the faces carry their code letter.
+  const boardArchetypes = [...customArchetypes, ...SOUND_ARCHETYPES].map(
+    (archetype) => ({
+      id: archetype.id,
+      code: archetype.code,
+      name: archetype.name,
+      description: archetype.description,
+      effects: archetype.effects,
+      custom: isCustomSoundArchetype(archetype),
+    }),
+  );
+
+  function applyArchetypeById(id: string) {
+    const archetype = [...SOUND_ARCHETYPES, ...customArchetypes].find(
+      (candidate) => candidate.id === id,
+    );
+    if (archetype) {
+      applySoundArchetype(archetype);
+    }
+  }
+
+  function unseatArchetype() {
+    setActiveArchetypeId(null);
+    setSpeechMessage("Archetype unseated. Your cards stay where they are.");
   }
 
   function saveCurrentAsPreset(name: string) {
@@ -712,11 +779,13 @@ export function SoundDeck() {
       />
 
       <div
-        className={
-          outputExpanded
-            ? "builder-main-layout"
-            : "builder-main-layout is-output-collapsed"
-        }
+        className={[
+          "builder-main-layout",
+          outputExpanded ? "" : "is-output-collapsed",
+          viewMode === "board" ? "is-board-mode" : "",
+        ]
+          .filter(Boolean)
+          .join(" ")}
       >
         <SoundArchetypeToolbar
           archetypes={SOUND_ARCHETYPES}
@@ -742,6 +811,18 @@ export function SoundDeck() {
               activePanel={nav.activePanel}
               registerPanelHeading={nav.registerPanelHeading}
               flowViewportRef={nav.flowViewportRef}
+              layout={viewMode}
+              dealing={dealing}
+              onActivatePanel={nav.setActivePanel}
+              boardSetup={
+                <BoardArchetypeSocket
+                  items={boardArchetypes}
+                  activeId={activeArchetypeId}
+                  onApply={applyArchetypeById}
+                  onUnseat={unseatArchetype}
+                  hint="Drop an archetype here and every board builds itself out."
+                />
+              }
               draft={draft}
               cardSystem={cardSystem}
               stepComplete={flowStepComplete}
@@ -800,7 +881,40 @@ export function SoundDeck() {
                   ? "Review"
                   : "Next"
             }
-          />
+          >
+            {/* The view switch: the board or the flow. Same state either
+                way; the prompt never changes. */}
+            <div
+              className="board-mode-switch"
+              role="group"
+              aria-label="Workspace view"
+            >
+              <button
+                type="button"
+                className={
+                  viewMode === "board"
+                    ? "art-pack-switch-option is-active"
+                    : "art-pack-switch-option"
+                }
+                aria-pressed={viewMode === "board"}
+                onClick={() => switchViewMode("board")}
+              >
+                Board
+              </button>
+              <button
+                type="button"
+                className={
+                  viewMode === "flow"
+                    ? "art-pack-switch-option is-active"
+                    : "art-pack-switch-option"
+                }
+                aria-pressed={viewMode === "flow"}
+                onClick={() => switchViewMode("flow")}
+              >
+                Flow
+              </button>
+            </div>
+          </FlowNavDock>
         </div>
 
         <PromptOutputDock

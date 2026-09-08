@@ -90,6 +90,42 @@ inspection panel beside its ability. Flavour, never instruction: a Card Bio is
 never sent in the assembled prompt.
 _Avoid_: Lore, flavour text, description
 
+**Board**:
+One section's table in the deck workspace: the sockets, the hand, the tuning
+console, and the free-text field for one letter, laid out as a surface in
+world space. The Setup board holds the guide and the archetype socket.
+_Avoid_: Panel (the flow's word), page, screen
+
+**Pasteboard**:
+The deck's world: the pannable, zoomable space the boards sit in, with the
+camera over it.
+_Avoid_: Canvas, infinite canvas
+
+**Camera**:
+The view over the pasteboard, a translate and a scale. It frames one board at
+a time and glides between them; the user can also pan and zoom freely.
+_Avoid_: Viewport (the DOM box), scroll position
+
+**Socket**:
+A card-shaped slot that scaffolds a choice: the archetype socket on the Setup
+board, and the section sockets (the slot rack) on every section board.
+_Avoid_: Drop zone, well
+
+**Hand**:
+The section's available cards fanned in a row on its board, scrolling
+sideways when there are more than fit.
+_Avoid_: Grid, pool
+
+**Deal**:
+The moment an archetype seats: every board's sockets fill and the seated
+cards flip in once.
+_Avoid_: Animation, transition
+
+**View**:
+Which container renders the deck's panels: the board (the default) or the
+flow. Remembered per deck, per browser.
+_Avoid_: Mode, layout
+
 ## Card Families
 
 **Role Card**:
