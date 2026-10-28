@@ -75,7 +75,7 @@ whether the Codex home drops `karpathy-guidelines`.
 
 ## Runbook
 
-- **Start:** `StartDigiTools.bat` or `npm run dev`, port 5100. Never start a
+- **Start:** `Start.bat` or `npm run dev`, port 5100. Never start a
   second dev server if one is running; verify inside the running one (prefer
   the preview tools; `preview_start {name: "digitools"}` starts it if truly
   down). Never `npm run build` while a dev server may be live (shared

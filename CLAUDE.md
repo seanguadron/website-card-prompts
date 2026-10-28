@@ -30,7 +30,7 @@ paste docs/AI_STACK.md content here.
   `.agents/skills/impeccable` is the real Codex-home copy (no junction). It
   prints `PRODUCT.md`; `docs/DESIGN_DIRECTION.md` stays canonical and root
   `DESIGN.md` is a pointer (ADR-0002). Never run `/impeccable init`.
-- **Dev server**: port 5100 (`npm run dev` / StartDigiTools.bat). If one is
+- **Dev server**: port 5100 (`npm run dev` / Start.bat). If one is
   already running, never start a second — verify in the running one (prefer
   the preview tools; the `.claude/launch.json` entry is `digitools`). Do not
   run `npm run build` while a dev server may be live; the two share `.next/`.

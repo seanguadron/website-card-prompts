@@ -29,3 +29,5 @@ npm-debug.log*
 # here it is the committed Codex skill home (STANDARDS 3.4), not a junction.
 CLAUDE.local.md
 .impeccable/live/
+# the current build, made by Build.bat from amazing.json
+/current-build/

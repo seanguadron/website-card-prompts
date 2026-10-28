@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "name": "Digi Tools",
+  "kind": "next",
+  "project": "DigiTools",
+  "repo": "seanguadron/digi-tools-platform",
+  "port": 5100,
+  "dev": "npm run dev",
+  "build": "npm run build",
+  "run": "npx next start current-build/app -p 5100",
+  "currentBuild": "current-build"
+}

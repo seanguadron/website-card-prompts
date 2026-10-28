@@ -9,7 +9,7 @@ npm install          # also wires .githooks via the prepare script
 npm run dev          # http://localhost:5100
 ```
 
-`StartDigiTools.bat` does the same from Explorer. `next.config.ts` detects
+`Start.bat` does the same from Explorer. `next.config.ts` detects
 the LAN IPv4 at startup so the dev server is reachable across the network;
 HMR over LAN needs the origin allowed there. If a dev server is already
 running on 5100, do not start a second one. Never run `npm run build` while
