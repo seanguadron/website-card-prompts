@@ -868,6 +868,36 @@
       "bio": "The journey, worn as clothing. Every scuff is a mile that actually happened; the explorer lets the picture claim distance without drawing it.",
       "liveVariant": "a",
       "liveRev": 1787233908540
+    },
+    "type-safe-area": {
+      "prompt": "A quiet strip of sky above a painted shoreline.",
+      "alt": "Type-safe area",
+      "status": "planned"
+    },
+    "reflection-control": {
+      "prompt": "A broad reflection bending around a metal latch.",
+      "alt": "Reflection control",
+      "status": "planned"
+    },
+    "feature-priority": {
+      "prompt": "A single product detail in crisp relief.",
+      "alt": "Feature priority",
+      "status": "planned"
+    },
+    "matched-views": {
+      "prompt": "Two specimens aligned along a shared baseline.",
+      "alt": "Matched views",
+      "status": "planned"
+    },
+    "action-silhouette": {
+      "prompt": "A small courier silhouette with a distinct parcel outline.",
+      "alt": "Action silhouette",
+      "status": "planned"
+    },
+    "native-pixel-grid": {
+      "prompt": "A hard-edged pixel shape inside a single empty tile.",
+      "alt": "Native pixel grid",
+      "status": "planned"
     }
   },
   "archetypes": {
@@ -875,7 +905,7 @@
       "prompt": "A small cloaked figure stepping into a vast golden ancient forest, painted in loose watercolor with flowing art nouveau linework, golden-hour light shafting between mossy trunks, a wide establishing frame - a wistful storybook cover moment.",
       "alt": "A watercolor figure entering a golden ancient forest",
       "status": "generated",
-      "bio": "The cover that promises the whole journey: gold light, old trees, and a figure exactly small enough to root for.",
+      "bio": "The lettering needs a clear patch of paper. Let the wash carry through it.",
       "liveVariant": "a",
       "liveRev": 1787233908540
     },
@@ -1003,7 +1033,7 @@
       "prompt": "A naturalist's field study knolled from above - specimens, pressed leaves, and tools aligned at right angles, drawn in fine crosshatched ink on sun-faded paper - a botanical journal page from a long expedition.",
       "alt": "A naturalist's knolled ink field page",
       "status": "generated",
-      "bio": "The expedition, filed at right angles. Ink for the facts, sun-fade for the years.",
+      "bio": "A shared scale lets the eye compare the two outlines. A slight turn reveals the edge or seam.",
       "liveVariant": "a",
       "liveRev": 1787233908540
     },
@@ -1014,6 +1044,11 @@
       "bio": "The poster for episode one of forever. Cel-shaded courage, painted sky, islands optional but included.",
       "liveVariant": "a",
       "liveRev": 1787233908540
+    },
+    "sprite-asset": {
+      "prompt": "A single pixel silhouette fitted inside one cell.",
+      "alt": "Sprite Asset",
+      "status": "planned"
     }
   },
   "grades": {
@@ -3315,6 +3350,108 @@
         "status": "generated",
         "liveVariant": "a",
         "liveRev": 1787233908540
+      }
+    ],
+    "type-safe-area": [
+      {
+        "prompt": "A quiet strip of sky above a painted shoreline.",
+        "alt": "Type-safe area",
+        "status": "planned"
+      },
+      {
+        "prompt": "A quiet strip of sky above a painted shoreline.",
+        "alt": "Type-safe area · quiet field",
+        "status": "planned"
+      },
+      {
+        "prompt": "A quiet strip of sky above a painted shoreline.",
+        "alt": "Type-safe area · clear field",
+        "status": "planned"
+      }
+    ],
+    "reflection-control": [
+      {
+        "prompt": "A broad reflection bending around a metal latch.",
+        "alt": "Reflection control",
+        "status": "planned"
+      },
+      {
+        "prompt": "A broad reflection bending around a metal latch.",
+        "alt": "Reflection control · shaped highlight",
+        "status": "planned"
+      },
+      {
+        "prompt": "A broad reflection bending around a metal latch.",
+        "alt": "Reflection control · clear contour",
+        "status": "planned"
+      }
+    ],
+    "feature-priority": [
+      {
+        "prompt": "A single product detail in crisp relief.",
+        "alt": "Feature priority",
+        "status": "planned"
+      },
+      {
+        "prompt": "A single product detail in crisp relief.",
+        "alt": "Feature priority · edge",
+        "status": "planned"
+      },
+      {
+        "prompt": "A single product detail in crisp relief.",
+        "alt": "Feature priority · contrast",
+        "status": "planned"
+      }
+    ],
+    "matched-views": [
+      {
+        "prompt": "Two specimens aligned along a shared baseline.",
+        "alt": "Matched views",
+        "status": "planned"
+      },
+      {
+        "prompt": "Two specimens aligned along a shared baseline.",
+        "alt": "Matched views · landmarks",
+        "status": "planned"
+      },
+      {
+        "prompt": "Two specimens aligned along a shared baseline.",
+        "alt": "Matched views · registration",
+        "status": "planned"
+      }
+    ],
+    "action-silhouette": [
+      {
+        "prompt": "A small courier silhouette with a distinct parcel outline.",
+        "alt": "Action silhouette",
+        "status": "planned"
+      },
+      {
+        "prompt": "A small courier silhouette with a distinct parcel outline.",
+        "alt": "Action silhouette · separation",
+        "status": "planned"
+      },
+      {
+        "prompt": "A small courier silhouette with a distinct parcel outline.",
+        "alt": "Action silhouette · contour",
+        "status": "planned"
+      }
+    ],
+    "native-pixel-grid": [
+      {
+        "prompt": "A hard-edged pixel shape inside a single empty tile.",
+        "alt": "Native pixel grid",
+        "status": "planned"
+      },
+      {
+        "prompt": "A hard-edged pixel shape inside a single empty tile.",
+        "alt": "Native pixel grid · clusters",
+        "status": "planned"
+      },
+      {
+        "prompt": "A hard-edged pixel shape inside a single empty tile.",
+        "alt": "Native pixel grid · economy",
+        "status": "planned"
       }
     ]
   },

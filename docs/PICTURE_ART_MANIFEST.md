@@ -23,7 +23,7 @@ Per image:
    press "Use this" - it writes the webp to the listed target path, flips
    this pack's `status` to `"generated"`, and re-renders this file.
 
-Progress: 426/426 generated - 119 core images first, then 307 later images (per-grade variants and the guide's acronym cards).
+Progress: 426/451 generated - 126 core images first, then 325 later images (per-grade variants and the guide's acronym cards).
 
 ## Shared craft rules
 
@@ -203,11 +203,24 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A weathered explorer pausing at a canyon rim with a battered pack, rolled maps, and sun-bleached scarf, boots gray with a thousand miles, eyes on the far side.
 ```
 
+#### 013. Action Silhouette
+
+- File name: `PIC-013-Action-Silhouette.png`
+- Target: `public/card-art/gallery/cards/action-silhouette/lineage.webp`
+- Owner: Card `action-silhouette`
+- Status: planned
+
+```
+Collectible-card key art for a deck that teaches image-making. Each card demonstrates exactly one technique, and the image is MADE WITH that technique wherever the brief names one - the technique is how the picture is rendered, never an object shown inside it. One strong, instantly readable focal subject with clean uncluttered edges, composed square with generous breathing room, and it still reads at thumbnail size. The artwork is full-bleed and fills the entire square to every edge, the scene cut off by the picture edges on all four sides: no border, no margin, no matting, no frame, no drawn edge line, no vignette box, no rounded corners, not a picture of a card or a page. Artwork only: no text, no letters, no numbers, no logos, no readable symbols, no ui labels, no card frame, no speech bubbles, no watermarks, no signatures.
+
+A small courier silhouette with a distinct parcel outline.
+```
+
 ### Cards - Illumination
 
-#### 013. Golden Hour
+#### 014. Golden Hour
 
-- File name: `PIC-013-Golden-Hour.png`
+- File name: `PIC-014-Golden-Hour.png`
 - Target: `public/card-art/gallery/cards/golden-hour/lineage.webp`
 - Owner: Card `golden-hour`
 - Status: generated
@@ -219,9 +232,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A lone oak on a grassy hillside at golden hour, low amber sunlight raking across the slope, the tree's long shadow reaching toward the viewer, warm haze softening the far fields.
 ```
 
-#### 014. Bioluminescence
+#### 015. Bioluminescence
 
-- File name: `PIC-014-Bioluminescence.png`
+- File name: `PIC-015-Bioluminescence.png`
 - Target: `public/card-art/gallery/cards/bioluminescence/lineage.webp`
 - Owner: Card `bioluminescence`
 - Status: generated
@@ -233,9 +246,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A dark tidal cove at night where glowing blue-green plankton trace every ripple, a rowboat drifting through the luminous water, mushrooms and moss along the rocks giving off their own soft living light.
 ```
 
-#### 015. Candlelight
+#### 016. Candlelight
 
-- File name: `PIC-015-Candlelight.png`
+- File name: `PIC-016-Candlelight.png`
 - Target: `public/card-art/gallery/cards/candlelight/lineage.webp`
 - Owner: Card `candlelight`
 - Status: generated
@@ -247,9 +260,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 An old wooden table where a hooded reader leans over an open book, lit by warm flickering candlelight, deep soft shadows swallowing the room beyond the small circle of flame.
 ```
 
-#### 016. Moonlight
+#### 017. Moonlight
 
-- File name: `PIC-016-Moonlight.png`
+- File name: `PIC-017-Moonlight.png`
 - Target: `public/card-art/gallery/cards/moonlight/lineage.webp`
 - Owner: Card `moonlight`
 - Status: generated
@@ -261,9 +274,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A sleeping farmhouse and frost-touched field bathed in cold blue moonlight, the moon high and small, tin roof and fence wire glinting silver, night shadows soft and long.
 ```
 
-#### 017. Neon Glow
+#### 018. Neon Glow
 
-- File name: `PIC-017-Neon-Glow.png`
+- File name: `PIC-018-Neon-Glow.png`
 - Target: `public/card-art/gallery/cards/neon-glow/lineage.webp`
 - Owner: Card `neon-glow`
 - Status: generated
@@ -275,9 +288,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A late-night noodle stall on a wet street lit entirely by buzzing neon signs, magenta and cyan glow washing the steam and the cook's apron, colored reflections doubled in the puddles.
 ```
 
-#### 018. Harsh Noon
+#### 019. Harsh Noon
 
-- File name: `PIC-018-Harsh-Noon.png`
+- File name: `PIC-019-Harsh-Noon.png`
 - Target: `public/card-art/gallery/cards/harsh-noon/lineage.webp`
 - Owner: Card `harsh-noon`
 - Status: generated
@@ -289,9 +302,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A whitewashed courtyard at high noon, hard overhead sun cutting knife-black shadows under the arches, a single figure with a wide hat crossing the glare, heat visible in the air.
 ```
 
-#### 019. Overcast Soft
+#### 020. Overcast Soft
 
-- File name: `PIC-019-Overcast-Soft.png`
+- File name: `PIC-020-Overcast-Soft.png`
 - Target: `public/card-art/gallery/cards/overcast-soft/lineage.webp`
 - Owner: Card `overcast-soft`
 - Status: generated
@@ -303,9 +316,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A small fishing harbor under a flat gray sky, shadowless diffuse light evening out the boats and stacked crates, colors quiet and true, the water pewter-smooth.
 ```
 
-#### 020. Dramatic Rim
+#### 021. Dramatic Rim
 
-- File name: `PIC-020-Dramatic-Rim.png`
+- File name: `PIC-021-Dramatic-Rim.png`
 - Target: `public/card-art/gallery/cards/dramatic-rim/lineage.webp`
 - Owner: Card `dramatic-rim`
 - Status: generated
@@ -317,9 +330,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A boxer standing in a dark gym, a hard rim light from behind drawing a bright edge along their shoulders, arms, and jaw, the face nearly lost in shadow, sweat glinting on the lit line.
 ```
 
-#### 021. Volumetric Rays
+#### 022. Volumetric Rays
 
-- File name: `PIC-021-Volumetric-Rays.png`
+- File name: `PIC-022-Volumetric-Rays.png`
 - Target: `public/card-art/gallery/cards/volumetric-rays/lineage.webp`
 - Owner: Card `volumetric-rays`
 - Status: generated
@@ -331,9 +344,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 An old barn interior where volumetric god rays pour through gaps in the boards, dust swimming visibly in the shafts, a plow horse standing where the brightest beam lands.
 ```
 
-#### 022. Firelight
+#### 023. Firelight
 
-- File name: `PIC-022-Firelight.png`
+- File name: `PIC-023-Firelight.png`
 - Target: `public/card-art/gallery/cards/firelight/lineage.webp`
 - Owner: Card `firelight`
 - Status: generated
@@ -345,9 +358,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 Three travelers around a campfire at night, dancing orange firelight playing over their faces and hands, sparks rising, shadows leaping and shrinking on the rocks behind them.
 ```
 
-#### 023. Storm Light
+#### 024. Storm Light
 
-- File name: `PIC-023-Storm-Light.png`
+- File name: `PIC-024-Storm-Light.png`
 - Target: `public/card-art/gallery/cards/storm-light/lineage.webp`
 - Owner: Card `storm-light`
 - Status: generated
@@ -359,9 +372,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A lighthouse on a black headland under a charged storm sky, a lightning flash freezing the rain in mid-air, waves caught white against the rocks, the whole scene lit for one violent instant.
 ```
 
-#### 024. Studio Softbox
+#### 025. Studio Softbox
 
-- File name: `PIC-024-Studio-Softbox.png`
+- File name: `PIC-025-Studio-Softbox.png`
 - Target: `public/card-art/gallery/cards/studio-softbox/lineage.webp`
 - Owner: Card `studio-softbox`
 - Status: generated
@@ -373,11 +386,24 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A single ceramic vase on a seamless gray backdrop in crisp softbox studio light, gradients smooth and deliberate, one soft reflection, nothing in the frame by accident.
 ```
 
+#### 026. Reflection Control
+
+- File name: `PIC-026-Reflection-Control.png`
+- Target: `public/card-art/gallery/cards/reflection-control/lineage.webp`
+- Owner: Card `reflection-control`
+- Status: planned
+
+```
+Collectible-card key art for a deck that teaches image-making. Each card demonstrates exactly one technique, and the image is MADE WITH that technique wherever the brief names one - the technique is how the picture is rendered, never an object shown inside it. One strong, instantly readable focal subject with clean uncluttered edges, composed square with generous breathing room, and it still reads at thumbnail size. The artwork is full-bleed and fills the entire square to every edge, the scene cut off by the picture edges on all four sides: no border, no margin, no matting, no frame, no drawn edge line, no vignette box, no rounded corners, not a picture of a card or a page. Artwork only: no text, no letters, no numbers, no logos, no readable symbols, no ui labels, no card frame, no speech bubbles, no watermarks, no signatures.
+
+A broad reflection bending around a metal latch.
+```
+
 ### Cards - Canvas
 
-#### 025. Oil Painting
+#### 027. Oil Painting
 
-- File name: `PIC-025-Oil-Painting.png`
+- File name: `PIC-027-Oil-Painting.png`
 - Target: `public/card-art/gallery/cards/oil-painting/lineage.webp`
 - Owner: Card `oil-painting`
 - Status: generated
@@ -389,9 +415,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A single pear on a sunlit windowsill rendered as an expressive oil painting, confident visible brushstrokes carrying the fruit's curve, pigment texture alive in the light.
 ```
 
-#### 026. Watercolor
+#### 028. Watercolor
 
-- File name: `PIC-026-Watercolor.png`
+- File name: `PIC-028-Watercolor.png`
 - Target: `public/card-art/gallery/cards/watercolor/lineage.webp`
 - Owner: Card `watercolor`
 - Status: generated
@@ -403,9 +429,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A red umbrella crossing a rainy street rendered as loose watercolor, pigment blooming at every wet edge, puddle reflections bleeding into soft paper white.
 ```
 
-#### 027. Pencil Sketch
+#### 029. Pencil Sketch
 
-- File name: `PIC-027-Pencil-Sketch.png`
+- File name: `PIC-029-Pencil-Sketch.png`
 - Target: `public/card-art/gallery/cards/pencil-sketch/lineage.webp`
 - Owner: Card `pencil-sketch`
 - Status: generated
@@ -417,9 +443,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A sleeping cat curled on a chair drawn as a graphite pencil sketch, visible construction lines beneath the fur, shading built from patient hatching.
 ```
 
-#### 028. Ink Illustration
+#### 030. Ink Illustration
 
-- File name: `PIC-028-Ink-Illustration.png`
+- File name: `PIC-030-Ink-Illustration.png`
 - Target: `public/card-art/gallery/cards/ink-illustration/lineage.webp`
 - Owner: Card `ink-illustration`
 - Status: generated
@@ -431,9 +457,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A strutting rooster as a pen-and-ink illustration, crosshatched shading building the body from pure line, every feather a decision in black on white.
 ```
 
-#### 029. Charcoal Drawing
+#### 031. Charcoal Drawing
 
-- File name: `PIC-029-Charcoal-Drawing.png`
+- File name: `PIC-031-Charcoal-Drawing.png`
 - Target: `public/card-art/gallery/cards/charcoal-drawing/lineage.webp`
 - Owner: Card `charcoal-drawing`
 - Status: generated
@@ -445,9 +471,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A draft horse standing in wind rendered as a smudged charcoal drawing, deep soft blacks in the mane, tone dragged with the thumb, dust of the medium still on the page.
 ```
 
-#### 030. Gouache Poster
+#### 032. Gouache Poster
 
-- File name: `PIC-030-Gouache-Poster.png`
+- File name: `PIC-032-Gouache-Poster.png`
 - Target: `public/card-art/gallery/cards/gouache-poster/lineage.webp`
 - Owner: Card `gouache-poster`
 - Status: generated
@@ -459,9 +485,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A lighthouse over a cove as a mid-century gouache poster, matte flat shapes locking together, simplified waves in three confident blues, paper grain in every flat.
 ```
 
-#### 031. Pixel Art
+#### 033. Pixel Art
 
-- File name: `PIC-031-Pixel-Art.png`
+- File name: `PIC-033-Pixel-Art.png`
 - Target: `public/card-art/gallery/cards/pixel-art/lineage.webp`
 - Owner: Card `pixel-art`
 - Status: generated
@@ -473,9 +499,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A tiny cottage at dusk with a lit window rendered as detailed 16-bit pixel art, every pixel placed on purpose, smoke rising one square at a time.
 ```
 
-#### 032. Low Poly 3d
+#### 034. Low Poly 3d
 
-- File name: `PIC-032-Low-Poly-3d.png`
+- File name: `PIC-034-Low-Poly-3d.png`
 - Target: `public/card-art/gallery/cards/low-poly-3d/lineage.webp`
 - Owner: Card `low-poly-3d`
 - Status: generated
@@ -487,9 +513,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A standing stag as a low-poly 3d render, its body faceted into clean triangles, flat-shaded planes catching a cool gradient sky.
 ```
 
-#### 033. Clay Render
+#### 035. Clay Render
 
-- File name: `PIC-033-Clay-Render.png`
+- File name: `PIC-035-Clay-Render.png`
 - Target: `public/card-art/gallery/cards/clay-render/lineage.webp`
 - Owner: Card `clay-render`
 - Status: generated
@@ -501,9 +527,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A cheerful snail with a spiral shell as a playful claymation-style render, soft studio light on plasticine, tool marks and gentle fingerprints in the surface.
 ```
 
-#### 034. Film Photograph
+#### 036. Film Photograph
 
-- File name: `PIC-034-Film-Photograph.png`
+- File name: `PIC-036-Film-Photograph.png`
 - Target: `public/card-art/gallery/cards/film-photograph/lineage.webp`
 - Owner: Card `film-photograph`
 - Status: generated
@@ -515,9 +541,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A roadside diner at dusk as a 35mm film photograph, natural grain across the sky, honest optics, the neonless building glowing softly against real evening.
 ```
 
-#### 035. Papercut Collage
+#### 037. Papercut Collage
 
-- File name: `PIC-035-Papercut-Collage.png`
+- File name: `PIC-037-Papercut-Collage.png`
 - Target: `public/card-art/gallery/cards/papercut-collage/lineage.webp`
 - Owner: Card `papercut-collage`
 - Status: generated
@@ -529,9 +555,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A whale diving through layered waves as a papercut collage, each depth a separate sheet of colored paper, crisp real drop shadows between the layers.
 ```
 
-#### 036. Stained Glass
+#### 038. Stained Glass
 
-- File name: `PIC-036-Stained-Glass.png`
+- File name: `PIC-038-Stained-Glass.png`
 - Target: `public/card-art/gallery/cards/stained-glass/lineage.webp`
 - Owner: Card `stained-glass`
 - Status: generated
@@ -543,9 +569,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A kingfisher over water as a stained-glass window, leaded black outlines holding panes of luminous blue and amber glass, light doing the coloring from behind.
 ```
 
-#### 037. Embroidered Textile
+#### 039. Embroidered Textile
 
-- File name: `PIC-037-Embroidered-Textile.png`
+- File name: `PIC-039-Embroidered-Textile.png`
 - Target: `public/card-art/gallery/cards/embroidered-textile/lineage.webp`
 - Owner: Card `embroidered-textile`
 - Status: generated
@@ -557,9 +583,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A sitting fox as embroidered textile art, visible satin and chain stitches building the fur direction, linen ground showing between threads, hand-warm and slightly imperfect.
 ```
 
-#### 038. Comic Ink Flats
+#### 040. Comic Ink Flats
 
-- File name: `PIC-038-Comic-Ink-Flats.png`
+- File name: `PIC-040-Comic-Ink-Flats.png`
 - Target: `public/card-art/gallery/cards/comic-ink-flats/lineage.webp`
 - Owner: Card `comic-ink-flats`
 - Status: generated
@@ -571,11 +597,24 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A courier leaping a rooftop gap drawn as a single comic panel, bold ink outlines and flat color, the city dropping away below in confident blacks.
 ```
 
+#### 041. Native Pixel Grid
+
+- File name: `PIC-041-Native-Pixel-Grid.png`
+- Target: `public/card-art/gallery/cards/native-pixel-grid/lineage.webp`
+- Owner: Card `native-pixel-grid`
+- Status: planned
+
+```
+Collectible-card key art for a deck that teaches image-making. Each card demonstrates exactly one technique, and the image is MADE WITH that technique wherever the brief names one - the technique is how the picture is rendered, never an object shown inside it. One strong, instantly readable focal subject with clean uncluttered edges, composed square with generous breathing room, and it still reads at thumbnail size. The artwork is full-bleed and fills the entire square to every edge, the scene cut off by the picture edges on all four sides: no border, no margin, no matting, no frame, no drawn edge line, no vignette box, no rounded corners, not a picture of a card or a page. Artwork only: no text, no letters, no numbers, no logos, no readable symbols, no ui labels, no card frame, no speech bubbles, no watermarks, no signatures.
+
+A hard-edged pixel shape inside a single empty tile.
+```
+
 ### Cards - Tone
 
-#### 039. Muted Palette
+#### 042. Muted Palette
 
-- File name: `PIC-039-Muted-Palette.png`
+- File name: `PIC-042-Muted-Palette.png`
 - Target: `public/card-art/gallery/cards/muted-palette/lineage.webp`
 - Owner: Card `muted-palette`
 - Status: generated
@@ -587,9 +626,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A quiet fishing village at dawn in a muted desaturated palette, grays and softened blues carrying the forms, value structure doing the work color declines to do.
 ```
 
-#### 040. Neon Saturation
+#### 043. Neon Saturation
 
-- File name: `PIC-040-Neon-Saturation.png`
+- File name: `PIC-043-Neon-Saturation.png`
 - Target: `public/card-art/gallery/cards/neon-saturation/lineage.webp`
 - Owner: Card `neon-saturation`
 - Status: generated
@@ -601,9 +640,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A narrow arcade alley at night in a saturated neon palette, glowing magenta and cyan flooding wet pavement, color pushed past realism into pure signal.
 ```
 
-#### 041. Pastel Dream
+#### 044. Pastel Dream
 
-- File name: `PIC-041-Pastel-Dream.png`
+- File name: `PIC-044-Pastel-Dream.png`
 - Target: `public/card-art/gallery/cards/pastel-dream/lineage.webp`
 - Owner: Card `pastel-dream`
 - Status: generated
@@ -615,9 +654,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 Hot-air balloons drifting over misty hills in a soft dreamy pastel palette, powdered pinks, mints, and lilacs, nothing in the scene allowed to shout.
 ```
 
-#### 042. Monochrome Noir
+#### 045. Monochrome Noir
 
-- File name: `PIC-042-Monochrome-Noir.png`
+- File name: `PIC-045-Monochrome-Noir.png`
 - Target: `public/card-art/gallery/cards/monochrome-noir/lineage.webp`
 - Owner: Card `monochrome-noir`
 - Status: generated
@@ -629,9 +668,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A rain-slick exterior stairwell at night in true black-and-white noir, deep contrast, a fedora-shadowed figure paused under one hard bulb, blinds striping the wall.
 ```
 
-#### 043. Earthy Naturals
+#### 046. Earthy Naturals
 
-- File name: `PIC-043-Earthy-Naturals.png`
+- File name: `PIC-046-Earthy-Naturals.png`
 - Target: `public/card-art/gallery/cards/earthy-naturals/lineage.webp`
 - Owner: Card `earthy-naturals`
 - Status: generated
@@ -643,9 +682,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A stone barn with stacked pumpkins and hay in an earthy palette of ochre, moss, and umber, colors that all came out of the same ground.
 ```
 
-#### 044. Jewel Tones
+#### 047. Jewel Tones
 
-- File name: `PIC-044-Jewel-Tones.png`
+- File name: `PIC-047-Jewel-Tones.png`
 - Target: `public/card-art/gallery/cards/jewel-tones/lineage.webp`
 - Owner: Card `jewel-tones`
 - Status: generated
@@ -657,9 +696,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A bazaar textile stall stacked with silks in rich jewel tones - emerald, sapphire, and ruby glowing deep under lantern light, saturated but never neon.
 ```
 
-#### 045. Sepia Vintage
+#### 048. Sepia Vintage
 
-- File name: `PIC-045-Sepia-Vintage.png`
+- File name: `PIC-048-Sepia-Vintage.png`
 - Target: `public/card-art/gallery/cards/sepia-vintage/lineage.webp`
 - Owner: Card `sepia-vintage`
 - Status: generated
@@ -671,9 +710,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 An old fairground carousel aged into sepia tones, warm brown chemistry over every horse and mirror, a photograph that has spent decades in a drawer.
 ```
 
-#### 046. Iridescent Shift
+#### 049. Iridescent Shift
 
-- File name: `PIC-046-Iridescent-Shift.png`
+- File name: `PIC-049-Iridescent-Shift.png`
 - Target: `public/card-art/gallery/cards/iridescent-shift/lineage.webp`
 - Owner: Card `iridescent-shift`
 - Status: generated
@@ -685,9 +724,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A jewel beetle on a wet leaf in iridescent oil-slick color, its shell shifting green-violet-gold with the angle, rainbow interference sliding across every curve.
 ```
 
-#### 047. High Contrast
+#### 050. High Contrast
 
-- File name: `PIC-047-High-Contrast.png`
+- File name: `PIC-050-High-Contrast.png`
 - Target: `public/card-art/gallery/cards/high-contrast/lineage.webp`
 - Owner: Card `high-contrast`
 - Status: generated
@@ -699,9 +738,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A chess set by a window in high contrast, hard highlights against deep shadows, half of every piece blazing and half gone black, the board split like the game.
 ```
 
-#### 048. Candy Pop
+#### 051. Candy Pop
 
-- File name: `PIC-048-Candy-Pop.png`
+- File name: `PIC-051-Candy-Pop.png`
 - Target: `public/card-art/gallery/cards/candy-pop/lineage.webp`
 - Owner: Card `candy-pop`
 - Status: generated
@@ -713,9 +752,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 An ice-cream van on a sunny street in a glossy candy-pop palette, bubblegum pink and lemon yellow, every surface enameled and cheerful past reason.
 ```
 
-#### 049. Cold Steel
+#### 052. Cold Steel
 
-- File name: `PIC-049-Cold-Steel.png`
+- File name: `PIC-052-Cold-Steel.png`
 - Target: `public/card-art/gallery/cards/cold-steel/lineage.webp`
 - Owner: Card `cold-steel`
 - Status: generated
@@ -727,9 +766,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A shipyard crane over gray water in a cold steel palette, slate blues and gunmetal grays, industrial color with all the warmth machined off.
 ```
 
-#### 050. Sun Bleached
+#### 053. Sun Bleached
 
-- File name: `PIC-050-Sun-Bleached.png`
+- File name: `PIC-053-Sun-Bleached.png`
 - Target: `public/card-art/gallery/cards/sun-bleached/lineage.webp`
 - Owner: Card `sun-bleached`
 - Status: generated
@@ -743,9 +782,9 @@ An old boardwalk fence and beach signage in a sun-bleached palette, colors faded
 
 ### Cards - Universe
 
-#### 051. Rainswept City
+#### 054. Rainswept City
 
-- File name: `PIC-051-Rainswept-City.png`
+- File name: `PIC-054-Rainswept-City.png`
 - Target: `public/card-art/gallery/cards/rainswept-city/lineage.webp`
 - Owner: Card `rainswept-city`
 - Status: generated
@@ -757,9 +796,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A rain-swept night city where a figure with an umbrella waits at a crossing, streets turned to mirrors, every window and signal doubled in the wet asphalt.
 ```
 
-#### 052. Ancient Forest
+#### 055. Ancient Forest
 
-- File name: `PIC-052-Ancient-Forest.png`
+- File name: `PIC-055-Ancient-Forest.png`
 - Target: `public/card-art/gallery/cards/ancient-forest/lineage.webp`
 - Owner: Card `ancient-forest`
 - Status: generated
@@ -771,9 +810,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 Deep in an ancient mossy forest where a deer path bends between colossal trunks, shafts of green-gold light between the trees, ferns waist-high, silence with texture.
 ```
 
-#### 053. Desert Expanse
+#### 056. Desert Expanse
 
-- File name: `PIC-053-Desert-Expanse.png`
+- File name: `PIC-056-Desert-Expanse.png`
 - Target: `public/card-art/gallery/cards/desert-expanse/lineage.webp`
 - Owner: Card `desert-expanse`
 - Status: generated
@@ -785,9 +824,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A vast desert of rolling dunes with a tiny camel caravan cresting one ridge, wind-carved sand ripples in the foreground, heat softening the far horizon.
 ```
 
-#### 054. Frozen Tundra
+#### 057. Frozen Tundra
 
-- File name: `PIC-054-Frozen-Tundra.png`
+- File name: `PIC-057-Frozen-Tundra.png`
 - Target: `public/card-art/gallery/cards/frozen-tundra/lineage.webp`
 - Owner: Card `frozen-tundra`
 - Status: generated
@@ -799,9 +838,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A frozen tundra of deep snow and blue-shadowed ice where a sled team pushes toward a low sun, breath-fog hanging, the cold visible in every color.
 ```
 
-#### 055. Underwater Depths
+#### 058. Underwater Depths
 
-- File name: `PIC-055-Underwater-Depths.png`
+- File name: `PIC-058-Underwater-Depths.png`
 - Target: `public/card-art/gallery/cards/underwater-depths/lineage.webp`
 - Owner: Card `underwater-depths`
 - Status: generated
@@ -813,9 +852,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 Deep underwater where a lone diver hangs in open blue, light shafts angling down from a distant surface, particles drifting, a whale shape far below in the dark blue.
 ```
 
-#### 056. Mountain Heights
+#### 059. Mountain Heights
 
-- File name: `PIC-056-Mountain-Heights.png`
+- File name: `PIC-059-Mountain-Heights.png`
 - Target: `public/card-art/gallery/cards/mountain-heights/lineage.webp`
 - Owner: Card `mountain-heights`
 - Status: generated
@@ -827,9 +866,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 High jagged mountain country where a climber traverses a spine of rock, valleys drowned in cloud below, thin air sharpening every edge of stone.
 ```
 
-#### 057. Cozy Interior
+#### 060. Cozy Interior
 
-- File name: `PIC-057-Cozy-Interior.png`
+- File name: `PIC-060-Cozy-Interior.png`
 - Target: `public/card-art/gallery/cards/cozy-interior/lineage.webp`
 - Owner: Card `cozy-interior`
 - Status: generated
@@ -841,9 +880,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A cozy cluttered interior where a cat sleeps in an armchair among blankets, plants, and mug-crowded shelves, lamplight warm, rain safely on the far side of the window.
 ```
 
-#### 058. Grand Library
+#### 061. Grand Library
 
-- File name: `PIC-058-Grand-Library.png`
+- File name: `PIC-061-Grand-Library.png`
 - Target: `public/card-art/gallery/cards/grand-library/lineage.webp`
 - Owner: Card `grand-library`
 - Status: generated
@@ -855,9 +894,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A grand vaulted library where a small reader stands at a table beneath tiers of galleries and rolling ladders, shelves rising into arched shadow, dust idling in the window light.
 ```
 
-#### 059. Floating Islands
+#### 062. Floating Islands
 
-- File name: `PIC-059-Floating-Islands.png`
+- File name: `PIC-062-Floating-Islands.png`
 - Target: `public/card-art/gallery/cards/floating-islands/lineage.webp`
 - Owner: Card `floating-islands`
 - Status: generated
@@ -869,9 +908,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 Grassy islands hanging in open sky with waterfalls pouring off their edges into cloud, a rope bridge linking two of them, a small traveler midway across.
 ```
 
-#### 060. Cyberpunk Megacity
+#### 063. Cyberpunk Megacity
 
-- File name: `PIC-060-Cyberpunk-Megacity.png`
+- File name: `PIC-063-Cyberpunk-Megacity.png`
 - Target: `public/card-art/gallery/cards/cyberpunk-megacity/lineage.webp`
 - Owner: Card `cyberpunk-megacity`
 - Status: generated
@@ -883,9 +922,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A cyberpunk megacity of layered towers and elevated trains where a street vendor's cart glows at the base of hundred-story walls, holographic koi swimming between buildings.
 ```
 
-#### 061. Medieval Village
+#### 064. Medieval Village
 
-- File name: `PIC-061-Medieval-Village.png`
+- File name: `PIC-064-Medieval-Village.png`
 - Target: `public/card-art/gallery/cards/medieval-village/lineage.webp`
 - Owner: Card `medieval-village`
 - Status: generated
@@ -897,9 +936,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A medieval village of thatch and timber around a market square, geese scattering past a well, smoke rising from crooked chimneys, cart ruts worn deep in the lane.
 ```
 
-#### 062. Space Frontier
+#### 065. Space Frontier
 
-- File name: `PIC-062-Space-Frontier.png`
+- File name: `PIC-065-Space-Frontier.png`
 - Target: `public/card-art/gallery/cards/space-frontier/lineage.webp`
 - Owner: Card `space-frontier`
 - Status: generated
@@ -911,9 +950,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 The space frontier: a ring station turning over a curving planet, tug ships crossing its lit docks, deep starfield behind, one small EVA figure on the hull.
 ```
 
-#### 063. Victorian Streets
+#### 066. Victorian Streets
 
-- File name: `PIC-063-Victorian-Streets.png`
+- File name: `PIC-066-Victorian-Streets.png`
 - Target: `public/card-art/gallery/cards/victorian-streets/lineage.webp`
 - Owner: Card `victorian-streets`
 - Status: generated
@@ -925,9 +964,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 Foggy Victorian streets of iron and brick where a lamplighter raises his pole to a gas lamp, carriage lanterns floating in the murk, wet cobbles catching each new flame.
 ```
 
-#### 064. Tropical Shore
+#### 067. Tropical Shore
 
-- File name: `PIC-064-Tropical-Shore.png`
+- File name: `PIC-067-Tropical-Shore.png`
 - Target: `public/card-art/gallery/cards/tropical-shore/lineage.webp`
 - Owner: Card `tropical-shore`
 - Status: generated
@@ -941,9 +980,9 @@ A tropical shore of turquoise water and leaning palms where a beached outrigger 
 
 ### Cards - References
 
-#### 065. Art Nouveau
+#### 068. Art Nouveau
 
-- File name: `PIC-065-Art-Nouveau.png`
+- File name: `PIC-068-Art-Nouveau.png`
 - Target: `public/card-art/gallery/cards/art-nouveau/lineage.webp`
 - Owner: Card `art-nouveau`
 - Status: generated
@@ -955,9 +994,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A woman with long flowing hair among climbing wisteria, rendered in art nouveau style - sinuous organic linework, ornamental curves, hair and vine sharing one rhythm.
 ```
 
-#### 066. Ukiyo E
+#### 069. Ukiyo E
 
-- File name: `PIC-066-Ukiyo-E.png`
+- File name: `PIC-069-Ukiyo-E.png`
 - Target: `public/card-art/gallery/cards/ukiyo-e/lineage.webp`
 - Owner: Card `ukiyo-e`
 - Status: generated
@@ -969,9 +1008,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A ferryboat crossing beneath a rising wave in ukiyo-e woodblock style, flat confident color planes, clean printed line, a distant snow peak holding the horizon.
 ```
 
-#### 067. Impressionist Brush
+#### 070. Impressionist Brush
 
-- File name: `PIC-067-Impressionist-Brush.png`
+- File name: `PIC-070-Impressionist-Brush.png`
 - Target: `public/card-art/gallery/cards/impressionist-brush/lineage.webp`
 - Owner: Card `impressionist-brush`
 - Status: generated
@@ -983,9 +1022,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A garden luncheon under dappled shade in impressionist style, broken color and visible daubs, sunlight arriving as separate touches of paint that mix in the eye.
 ```
 
-#### 068. Baroque Drama
+#### 071. Baroque Drama
 
-- File name: `PIC-068-Baroque-Drama.png`
+- File name: `PIC-071-Baroque-Drama.png`
 - Target: `public/card-art/gallery/cards/baroque-drama/lineage.webp`
 - Owner: Card `baroque-drama`
 - Status: generated
@@ -997,9 +1036,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A candlelit gathering around a table in dramatic baroque style, deep chiaroscuro, faces blazing out of darkness, one raised hand caught in theatrical light.
 ```
 
-#### 069. Surrealist Dream
+#### 072. Surrealist Dream
 
-- File name: `PIC-069-Surrealist-Dream.png`
+- File name: `PIC-072-Surrealist-Dream.png`
 - Target: `public/card-art/gallery/cards/surrealist-dream/lineage.webp`
 - Owner: Card `surrealist-dream`
 - Status: generated
@@ -1011,9 +1050,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A freestanding doorway open in an empty field in surrealist style, dream logic in charge - clouds passing through the door to a different sky, a key floating at eye height.
 ```
 
-#### 070. Gothic Romance
+#### 073. Gothic Romance
 
-- File name: `PIC-070-Gothic-Romance.png`
+- File name: `PIC-073-Gothic-Romance.png`
 - Target: `public/card-art/gallery/cards/gothic-romance/lineage.webp`
 - Owner: Card `gothic-romance`
 - Status: generated
@@ -1025,9 +1064,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A figure in a long dress at the window of a ruined abbey in gothic romance style, ivy and lace, beautiful melancholy, moonlight through broken tracery.
 ```
 
-#### 071. Art Deco Geometry
+#### 074. Art Deco Geometry
 
-- File name: `PIC-071-Art-Deco-Geometry.png`
+- File name: `PIC-074-Art-Deco-Geometry.png`
 - Target: `public/card-art/gallery/cards/art-deco-geometry/lineage.webp`
 - Owner: Card `art-deco-geometry`
 - Status: generated
@@ -1039,9 +1078,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A grand hotel entrance in art deco style, gilded geometry and fanned sunburst motifs, stepped forms in gold and black, a doorman dwarfed by streamlined splendor.
 ```
 
-#### 072. Renaissance Fresco
+#### 075. Renaissance Fresco
 
-- File name: `PIC-072-Renaissance-Fresco.png`
+- File name: `PIC-075-Renaissance-Fresco.png`
 - Target: `public/card-art/gallery/cards/renaissance-fresco/lineage.webp`
 - Owner: Card `renaissance-fresco`
 - Status: generated
@@ -1053,9 +1092,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 Robed figures gathered beneath an arch as a renaissance fresco, drapery studied and serene, pigment sunk into aged plaster, hairline cracks crossing a calm sky.
 ```
 
-#### 073. Van Gogh Swirl
+#### 076. Van Gogh Swirl
 
-- File name: `PIC-073-Van-Gogh-Swirl.png`
+- File name: `PIC-076-Van-Gogh-Swirl.png`
 - Target: `public/card-art/gallery/cards/van-gogh-swirl/lineage.webp`
 - Owner: Card `van-gogh-swirl`
 - Status: generated
@@ -1067,9 +1106,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A cypress tree under a night sky in the style of van gogh, thick swirling impasto strokes, stars spun into vortices, the ground rolling in painted waves.
 ```
 
-#### 074. Anime Cel
+#### 077. Anime Cel
 
-- File name: `PIC-074-Anime-Cel.png`
+- File name: `PIC-077-Anime-Cel.png`
 - Target: `public/card-art/gallery/cards/anime-cel/lineage.webp`
 - Owner: Card `anime-cel`
 - Status: generated
@@ -1081,9 +1120,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A student leaning on a school rooftop railing in anime cel style, clean linework and flat shading, wind in the hair, a painted cumulus sky behind.
 ```
 
-#### 075. Cinematic Still
+#### 078. Cinematic Still
 
-- File name: `PIC-075-Cinematic-Still.png`
+- File name: `PIC-078-Cinematic-Still.png`
 - Target: `public/card-art/gallery/cards/cinematic-still/lineage.webp`
 - Owner: Card `cinematic-still`
 - Status: generated
@@ -1095,9 +1134,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 Two figures across a diner booth as a cinematic film still, anamorphic framing, shallow focus, motivated window light, a story visibly paused mid-beat.
 ```
 
-#### 076. Concept Art Sheet
+#### 079. Concept Art Sheet
 
-- File name: `PIC-076-Concept-Art-Sheet.png`
+- File name: `PIC-079-Concept-Art-Sheet.png`
 - Target: `public/card-art/gallery/cards/concept-art-sheet/lineage.webp`
 - Owner: Card `concept-art-sheet`
 - Status: generated
@@ -1109,9 +1148,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A moss-grown guardian golem rendered as polished production concept art, confident design language, material callouts implied by finish, a hero pose against clean atmosphere.
 ```
 
-#### 077. Vaporwave Grid
+#### 080. Vaporwave Grid
 
-- File name: `PIC-077-Vaporwave-Grid.png`
+- File name: `PIC-080-Vaporwave-Grid.png`
 - Target: `public/card-art/gallery/cards/vaporwave-grid/lineage.webp`
 - Owner: Card `vaporwave-grid`
 - Status: generated
@@ -1123,9 +1162,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A marble bust and potted palm on a pink-and-teal wireframe grid in vaporwave style, checkerboard floor to a low sun, early-web haze over everything.
 ```
 
-#### 078. Cottagecore Idyll
+#### 081. Cottagecore Idyll
 
-- File name: `PIC-078-Cottagecore-Idyll.png`
+- File name: `PIC-081-Cottagecore-Idyll.png`
 - Target: `public/card-art/gallery/cards/cottagecore-idyll/lineage.webp`
 - Owner: Card `cottagecore-idyll`
 - Status: generated
@@ -1137,9 +1176,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A cottage garden table in cottagecore style - fresh bread and wildflowers on gingham, bees at the lavender, laundry line catching a honeyed breeze.
 ```
 
-#### 079. Dark Fantasy Grim
+#### 082. Dark Fantasy Grim
 
-- File name: `PIC-079-Dark-Fantasy-Grim.png`
+- File name: `PIC-082-Dark-Fantasy-Grim.png`
 - Target: `public/card-art/gallery/cards/dark-fantasy-grim/lineage.webp`
 - Owner: Card `dark-fantasy-grim`
 - Status: generated
@@ -1151,9 +1190,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A hooded pilgrim before an iron shrine in dark fantasy style - bone charms, guttering torchlight, chains and crow feathers, dread as part of the architecture.
 ```
 
-#### 080. Synthwave Sunset
+#### 083. Synthwave Sunset
 
-- File name: `PIC-080-Synthwave-Sunset.png`
+- File name: `PIC-083-Synthwave-Sunset.png`
 - Target: `public/card-art/gallery/cards/synthwave-sunset/lineage.webp`
 - Owner: Card `synthwave-sunset`
 - Status: generated
@@ -1165,9 +1204,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A chrome sports car on an endless highway toward a striped synthwave sunset, neon grid horizon, palm silhouettes strobing past, the eighties future at full speed.
 ```
 
-#### 081. Childrens Book Charm
+#### 084. Childrens Book Charm
 
-- File name: `PIC-081-Childrens-Book-Charm.png`
+- File name: `PIC-084-Childrens-Book-Charm.png`
 - Target: `public/card-art/gallery/cards/childrens-book-charm/lineage.webp`
 - Owner: Card `childrens-book-charm`
 - Status: generated
@@ -1179,9 +1218,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A round bear in a red scarf carrying an umbrella as a warm children's storybook illustration, friendly wobbly linework, soft flat color, rain drawn as kind little dashes.
 ```
 
-#### 082. Tarot Card Mystic
+#### 085. Tarot Card Mystic
 
-- File name: `PIC-082-Tarot-Card-Mystic.png`
+- File name: `PIC-085-Tarot-Card-Mystic.png`
 - Target: `public/card-art/gallery/cards/tarot-card-mystic/lineage.webp`
 - Owner: Card `tarot-card-mystic`
 - Status: generated
@@ -1193,9 +1232,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A robed figure holding a lantern composed like a tarot arcana - centered and frontal, sun and moon in opposite corners, symbolic objects arranged with ritual balance.
 ```
 
-#### 083. Vintage Travel Poster
+#### 086. Vintage Travel Poster
 
-- File name: `PIC-083-Vintage-Travel-Poster.png`
+- File name: `PIC-086-Vintage-Travel-Poster.png`
 - Target: `public/card-art/gallery/cards/vintage-travel-poster/lineage.webp`
 - Owner: Card `vintage-travel-poster`
 - Status: generated
@@ -1207,9 +1246,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A clifftop coastal village as a vintage travel poster, flat optimistic shapes, simplified sea and sun, the view selling itself in confident holiday color.
 ```
 
-#### 084. Botanical Plate
+#### 087. Botanical Plate
 
-- File name: `PIC-084-Botanical-Plate.png`
+- File name: `PIC-087-Botanical-Plate.png`
 - Target: `public/card-art/gallery/cards/botanical-plate/lineage.webp`
 - Owner: Card `botanical-plate`
 - Status: generated
@@ -1223,9 +1262,9 @@ A flowering nightshade studied as a botanical scientific illustration on cream p
 
 ### Cards - Execution
 
-#### 085. Close Portrait
+#### 088. Close Portrait
 
-- File name: `PIC-085-Close-Portrait.png`
+- File name: `PIC-088-Close-Portrait.png`
 - Target: `public/card-art/gallery/cards/close-portrait/lineage.webp`
 - Owner: Card `close-portrait`
 - Status: generated
@@ -1237,9 +1276,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 An intimate close-up portrait of a freckled sailor, weathered face filling most of the frame, eyes sharp, the harbor behind melted to soft color by shallow depth of field.
 ```
 
-#### 086. Wide Establishing
+#### 089. Wide Establishing
 
-- File name: `PIC-086-Wide-Establishing.png`
+- File name: `PIC-089-Wide-Establishing.png`
 - Target: `public/card-art/gallery/cards/wide-establishing/lineage.webp`
 - Owner: Card `wide-establishing`
 - Status: generated
@@ -1251,9 +1290,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A wide establishing shot of a river valley at dawn - a small monastery on a bend, fields stitched to the far hills, one road finding its way through the geography.
 ```
 
-#### 087. Low Angle Hero
+#### 090. Low Angle Hero
 
-- File name: `PIC-087-Low-Angle-Hero.png`
+- File name: `PIC-090-Low-Angle-Hero.png`
 - Target: `public/card-art/gallery/cards/low-angle-hero/lineage.webp`
 - Owner: Card `low-angle-hero`
 - Status: generated
@@ -1265,9 +1304,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A firefighter stepping from smoke shot from near the ground, low-angle hero framing, boots huge in the foreground, the figure monumental against a churning sky.
 ```
 
-#### 088. Birds Eye View
+#### 091. Birds Eye View
 
-- File name: `PIC-088-Birds-Eye-View.png`
+- File name: `PIC-091-Birds-Eye-View.png`
 - Target: `public/card-art/gallery/cards/birds-eye-view/lineage.webp`
 - Owner: Card `birds-eye-view`
 - Status: generated
@@ -1279,9 +1318,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A street market seen straight down from above, bird's-eye view flattening stalls, awnings, and shoppers into a living pattern of color and motion.
 ```
 
-#### 089. Dutch Tilt
+#### 092. Dutch Tilt
 
-- File name: `PIC-089-Dutch-Tilt.png`
+- File name: `PIC-092-Dutch-Tilt.png`
 - Target: `public/card-art/gallery/cards/dutch-tilt/lineage.webp`
 - Owner: Card `dutch-tilt`
 - Status: generated
@@ -1293,9 +1332,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A courier sprinting through an alley with the whole frame on a dutch tilt, horizon tipped hard, walls leaning into the run, urgency built from angle alone.
 ```
 
-#### 090. Symmetric Center
+#### 093. Symmetric Center
 
-- File name: `PIC-090-Symmetric-Center.png`
+- File name: `PIC-093-Symmetric-Center.png`
 - Target: `public/card-art/gallery/cards/symmetric-center/lineage.webp`
 - Owner: Card `symmetric-center`
 - Status: generated
@@ -1307,9 +1346,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A grand hotel corridor in perfectly symmetrical centered composition, chandeliers receding in matched pairs, a single bellhop dead center where the mirror lines meet.
 ```
 
-#### 091. Rule Of Thirds
+#### 094. Rule Of Thirds
 
-- File name: `PIC-091-Rule-Of-Thirds.png`
+- File name: `PIC-094-Rule-Of-Thirds.png`
 - Target: `public/card-art/gallery/cards/rule-of-thirds/lineage.webp`
 - Owner: Card `rule-of-thirds`
 - Status: generated
@@ -1321,9 +1360,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A small red boat placed on the lower-left third of a wide calm sea, rule-of-thirds composition, open negative space carrying the morning light.
 ```
 
-#### 092. Shallow Bokeh
+#### 095. Shallow Bokeh
 
-- File name: `PIC-092-Shallow-Bokeh.png`
+- File name: `PIC-095-Shallow-Bokeh.png`
 - Target: `public/card-art/gallery/cards/shallow-bokeh/lineage.webp`
 - Owner: Card `shallow-bokeh`
 - Status: generated
@@ -1335,9 +1374,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A barista's hands pouring latte art in shallow depth of field, the cup razor-sharp while the cafe behind melts into creamy bokeh circles of window light.
 ```
 
-#### 093. Long Exposure
+#### 096. Long Exposure
 
-- File name: `PIC-093-Long-Exposure.png`
+- File name: `PIC-096-Long-Exposure.png`
 - Target: `public/card-art/gallery/cards/long-exposure/lineage.webp`
 - Owner: Card `long-exposure`
 - Status: generated
@@ -1349,9 +1388,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A stone bridge over a waterfall at dusk in long exposure, the water silked to mist, car lights drawing unbroken ribbons across the span, the stones perfectly still.
 ```
 
-#### 094. Double Exposure
+#### 097. Double Exposure
 
-- File name: `PIC-094-Double-Exposure.png`
+- File name: `PIC-097-Double-Exposure.png`
 - Target: `public/card-art/gallery/cards/double-exposure/lineage.webp`
 - Owner: Card `double-exposure`
 - Status: generated
@@ -1363,9 +1402,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A double exposure blending a woman's profile with a pine forest, the treeline rising through her silhouette, birds crossing where her thoughts would be.
 ```
 
-#### 095. Silhouette Shot
+#### 098. Silhouette Shot
 
-- File name: `PIC-095-Silhouette-Shot.png`
+- File name: `PIC-098-Silhouette-Shot.png`
 - Target: `public/card-art/gallery/cards/silhouette-shot/lineage.webp`
 - Owner: Card `silhouette-shot`
 - Status: generated
@@ -1377,9 +1416,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A fisherman casting from a jetty as a clean black silhouette against a blazing sunset sky, all detail surrendered to one perfect readable shape.
 ```
 
-#### 096. Motion Blur Action
+#### 099. Motion Blur Action
 
-- File name: `PIC-096-Motion-Blur-Action.png`
+- File name: `PIC-099-Motion-Blur-Action.png`
 - Target: `public/card-art/gallery/cards/motion-blur-action/lineage.webp`
 - Owner: Card `motion-blur-action`
 - Status: generated
@@ -1391,9 +1430,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A cyclist sprinting through a city in a panned action shot, rider sharp while the street streaks past in horizontal motion blur, speed printed on the frame.
 ```
 
-#### 097. Isometric View
+#### 100. Isometric View
 
-- File name: `PIC-097-Isometric-View.png`
+- File name: `PIC-100-Isometric-View.png`
 - Target: `public/card-art/gallery/cards/isometric-view/lineage.webp`
 - Owner: Card `isometric-view`
 - Status: generated
@@ -1405,9 +1444,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A corner bakery rendered in isometric view, parallel projection with no vanishing point, the little building crisp as a game tile, its alley and rooftop equally knowable.
 ```
 
-#### 098. Knolling Flatlay
+#### 101. Knolling Flatlay
 
-- File name: `PIC-098-Knolling-Flatlay.png`
+- File name: `PIC-101-Knolling-Flatlay.png`
 - Target: `public/card-art/gallery/cards/knolling-flatlay/lineage.webp`
 - Owner: Card `knolling-flatlay`
 - Status: generated
@@ -1419,9 +1458,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A ranger's field kit knolled on canvas from above - knife, compass, matches, rope, and rations aligned at strict right angles, an inventory turned into composition.
 ```
 
-#### 099. Hyper Detailed
+#### 102. Hyper Detailed
 
-- File name: `PIC-099-Hyper-Detailed.png`
+- File name: `PIC-102-Hyper-Detailed.png`
 - Target: `public/card-art/gallery/cards/hyper-detailed/lineage.webp`
 - Owner: Card `hyper-detailed`
 - Status: generated
@@ -1433,9 +1472,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A tide pool rendered hyper-detailed - every barnacle, bubble, and grain resolved, intricate texture rewarding the closest look, the frame dense with observed life.
 ```
 
-#### 100. Minimalist Negative Space
+#### 103. Minimalist Negative Space
 
-- File name: `PIC-100-Minimalist-Negative-Space.png`
+- File name: `PIC-103-Minimalist-Negative-Space.png`
 - Target: `public/card-art/gallery/cards/minimalist-negative-space/lineage.webp`
 - Owner: Card `minimalist-negative-space`
 - Status: generated
@@ -1447,15 +1486,54 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A single red kite high in a vast pale sky, minimalist composition, the tiny diamond and its string the only marks in an ocean of negative space.
 ```
 
+#### 104. Type Safe Area
+
+- File name: `PIC-104-Type-Safe-Area.png`
+- Target: `public/card-art/gallery/cards/type-safe-area/lineage.webp`
+- Owner: Card `type-safe-area`
+- Status: planned
+
+```
+Collectible-card key art for a deck that teaches image-making. Each card demonstrates exactly one technique, and the image is MADE WITH that technique wherever the brief names one - the technique is how the picture is rendered, never an object shown inside it. One strong, instantly readable focal subject with clean uncluttered edges, composed square with generous breathing room, and it still reads at thumbnail size. The artwork is full-bleed and fills the entire square to every edge, the scene cut off by the picture edges on all four sides: no border, no margin, no matting, no frame, no drawn edge line, no vignette box, no rounded corners, not a picture of a card or a page. Artwork only: no text, no letters, no numbers, no logos, no readable symbols, no ui labels, no card frame, no speech bubbles, no watermarks, no signatures.
+
+A quiet strip of sky above a painted shoreline.
+```
+
+#### 105. Feature Priority
+
+- File name: `PIC-105-Feature-Priority.png`
+- Target: `public/card-art/gallery/cards/feature-priority/lineage.webp`
+- Owner: Card `feature-priority`
+- Status: planned
+
+```
+Collectible-card key art for a deck that teaches image-making. Each card demonstrates exactly one technique, and the image is MADE WITH that technique wherever the brief names one - the technique is how the picture is rendered, never an object shown inside it. One strong, instantly readable focal subject with clean uncluttered edges, composed square with generous breathing room, and it still reads at thumbnail size. The artwork is full-bleed and fills the entire square to every edge, the scene cut off by the picture edges on all four sides: no border, no margin, no matting, no frame, no drawn edge line, no vignette box, no rounded corners, not a picture of a card or a page. Artwork only: no text, no letters, no numbers, no logos, no readable symbols, no ui labels, no card frame, no speech bubbles, no watermarks, no signatures.
+
+A single product detail in crisp relief.
+```
+
+#### 106. Matched Views
+
+- File name: `PIC-106-Matched-Views.png`
+- Target: `public/card-art/gallery/cards/matched-views/lineage.webp`
+- Owner: Card `matched-views`
+- Status: planned
+
+```
+Collectible-card key art for a deck that teaches image-making. Each card demonstrates exactly one technique, and the image is MADE WITH that technique wherever the brief names one - the technique is how the picture is rendered, never an object shown inside it. One strong, instantly readable focal subject with clean uncluttered edges, composed square with generous breathing room, and it still reads at thumbnail size. The artwork is full-bleed and fills the entire square to every edge, the scene cut off by the picture edges on all four sides: no border, no margin, no matting, no frame, no drawn edge line, no vignette box, no rounded corners, not a picture of a card or a page. Artwork only: no text, no letters, no numbers, no logos, no readable symbols, no ui labels, no card frame, no speech bubbles, no watermarks, no signatures.
+
+Two specimens aligned along a shared baseline.
+```
+
 ### Archetypes
 
-#### 101. Storybook Cover
+#### 107. Illustrated Cover
 
-- File name: `PIC-101-Storybook-Cover.png`
+- File name: `PIC-107-Illustrated-Cover.png`
 - Target: `public/card-art/gallery/archetypes/storybook-cover.webp`
 - Owner: Archetype `storybook-cover`
 - Status: generated
-- Bio: The cover that promises the whole journey: gold light, old trees, and a figure exactly small enough to root for.
+- Bio: The lettering needs a clear patch of paper. Let the wash carry through it.
 
 ```
 Collectible-card key art for a deck that teaches image-making. Each card demonstrates exactly one technique, and the image is MADE WITH that technique wherever the brief names one - the technique is how the picture is rendered, never an object shown inside it. One strong, instantly readable focal subject with clean uncluttered edges, composed square with generous breathing room, and it still reads at thumbnail size. The artwork is full-bleed and fills the entire square to every edge, the scene cut off by the picture edges on all four sides: no border, no margin, no matting, no frame, no drawn edge line, no vignette box, no rounded corners, not a picture of a card or a page. Artwork only: no text, no letters, no numbers, no logos, no readable symbols, no ui labels, no card frame, no speech bubbles, no watermarks, no signatures.
@@ -1463,9 +1541,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A small cloaked figure stepping into a vast golden ancient forest, painted in loose watercolor with flowing art nouveau linework, golden-hour light shafting between mossy trunks, a wide establishing frame - a wistful storybook cover moment.
 ```
 
-#### 102. Neon Noir
+#### 108. Neon Noir
 
-- File name: `PIC-102-Neon-Noir.png`
+- File name: `PIC-108-Neon-Noir.png`
 - Target: `public/card-art/gallery/archetypes/neon-noir.webp`
 - Owner: Archetype `neon-noir`
 - Status: generated
@@ -1477,9 +1555,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A tight close-up portrait of a rain-soaked figure in a night city, saturated neon magenta and cyan flooding the wet streets behind, faint bioluminescent glow tracing the puddles, shallow focus - electric noir at full charge.
 ```
 
-#### 103. Epic Fantasy Cover
+#### 109. Epic Fantasy Cover
 
-- File name: `PIC-103-Epic-Fantasy-Cover.png`
+- File name: `PIC-109-Epic-Fantasy-Cover.png`
 - Target: `public/card-art/gallery/archetypes/epic-fantasy-cover.webp`
 - Owner: Archetype `epic-fantasy-cover`
 - Status: generated
@@ -1491,9 +1569,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A lone armored figure on a crag shot from near the ground looking up, storm light flashing behind, dark-fantasy iron and bone against rich jewel tones, baroque chiaroscuro carving the figure out of the tempest - a wide epic book-cover frame.
 ```
 
-#### 104. Cozy Storybook
+#### 110. Cozy Storybook
 
-- File name: `PIC-104-Cozy-Storybook.png`
+- File name: `PIC-110-Cozy-Storybook.png`
 - Target: `public/card-art/gallery/archetypes/cozy-storybook.webp`
 - Owner: Archetype `cozy-storybook`
 - Status: generated
@@ -1505,9 +1583,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A warm cluttered reading nook painted in soft watercolor with friendly children's-book charm, pastel pinks and mints, gray-day light through the window, blankets and plants and a sleeping cat - a picture-book page you can nap inside.
 ```
 
-#### 105. Cyber Portrait
+#### 111. Cyber Portrait
 
-- File name: `PIC-105-Cyber-Portrait.png`
+- File name: `PIC-111-Cyber-Portrait.png`
 - Target: `public/card-art/gallery/archetypes/cyber-portrait.webp`
 - Owner: Archetype `cyber-portrait`
 - Status: generated
@@ -1519,9 +1597,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A tight cinematic close-up of a face lit by buzzing neon signs, cyberpunk megacity towers layered behind, hard high-contrast grade splitting the features between magenta glow and black shadow - a film still from a future that never sleeps.
 ```
 
-#### 106. Studio Product
+#### 112. Studio Product
 
-- File name: `PIC-106-Studio-Product.png`
+- File name: `PIC-112-Studio-Product.png`
 - Target: `public/card-art/gallery/archetypes/studio-product.webp`
 - Owner: Archetype `studio-product`
 - Status: generated
@@ -1533,9 +1611,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A single beautiful object dead center on a seamless backdrop in crisp softbox studio light, generous minimalist negative space around it, honest 35mm film grain - a commercial frame with nothing accidental in it.
 ```
 
-#### 107. Ghost Story
+#### 113. Ghost Story
 
-- File name: `PIC-107-Ghost-Story.png`
+- File name: `PIC-113-Ghost-Story.png`
 - Target: `public/card-art/gallery/archetypes/ghost-story.webp`
 - Owner: Archetype `ghost-story`
 - Status: generated
@@ -1547,9 +1625,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A translucent spectral figure drifting down a foggy gaslit Victorian street, cold moonlight through the murk, black-and-white noir palette with gothic romance ruin and lace - a haunting in silver and soot.
 ```
 
-#### 108. Plein Air
+#### 114. Plein Air
 
-- File name: `PIC-108-Plein-Air.png`
+- File name: `PIC-114-Plein-Air.png`
 - Target: `public/card-art/gallery/archetypes/plein-air.webp`
 - Owner: Archetype `plein-air`
 - Status: generated
@@ -1561,9 +1639,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A wide golden-hour field with a distant easel and painter, rendered in broken impressionist color over earthy ochres and mosses, daubs of warm light mixing in the eye - an afternoon painted before it could get away.
 ```
 
-#### 109. Retro Sprite
+#### 115. Retro Sprite
 
-- File name: `PIC-109-Retro-Sprite.png`
+- File name: `PIC-115-Retro-Sprite.png`
 - Target: `public/card-art/gallery/archetypes/retro-sprite.webp`
 - Owner: Archetype `retro-sprite`
 - Status: generated
@@ -1575,9 +1653,22 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A small heroic figure seen from a low angle, rendered as detailed 16-bit pixel art in a loud candy-pop palette, deep-space starfield and planets behind - a title-screen hero frame from a cartridge that never existed.
 ```
 
-#### 110. Wildlife Lens
+#### 116. Sprite Asset
 
-- File name: `PIC-110-Wildlife-Lens.png`
+- File name: `PIC-116-Sprite-Asset.png`
+- Target: `public/card-art/gallery/archetypes/sprite-asset.webp`
+- Owner: Archetype `sprite-asset`
+- Status: planned
+
+```
+Collectible-card key art for a deck that teaches image-making. Each card demonstrates exactly one technique, and the image is MADE WITH that technique wherever the brief names one - the technique is how the picture is rendered, never an object shown inside it. One strong, instantly readable focal subject with clean uncluttered edges, composed square with generous breathing room, and it still reads at thumbnail size. The artwork is full-bleed and fills the entire square to every edge, the scene cut off by the picture edges on all four sides: no border, no margin, no matting, no frame, no drawn edge line, no vignette box, no rounded corners, not a picture of a card or a page. Artwork only: no text, no letters, no numbers, no logos, no readable symbols, no ui labels, no card frame, no speech bubbles, no watermarks, no signatures.
+
+A single pixel silhouette fitted inside one cell.
+```
+
+#### 117. Wildlife Lens
+
+- File name: `PIC-117-Wildlife-Lens.png`
 - Target: `public/card-art/gallery/archetypes/wildlife-lens.webp`
 - Owner: Archetype `wildlife-lens`
 - Status: generated
@@ -1589,9 +1680,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A mountain fox caught through a telephoto lens on 35mm film, creamy bokeh dissolving the crags behind, soft overcast light, earthy natural palette, thin high-country air - one patient frame from a long cold hide.
 ```
 
-#### 111. Dream Drift
+#### 118. Dream Drift
 
-- File name: `PIC-111-Dream-Drift.png`
+- File name: `PIC-118-Dream-Drift.png`
 - Target: `public/card-art/gallery/archetypes/dream-drift.webp`
 - Owner: Archetype `dream-drift`
 - Status: generated
@@ -1603,9 +1694,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A dreamer's silhouette double-exposed with floating islands and waterfalls, surreal dream logic bending the horizon, iridescent opal color shifting across everything, volumetric rays pouring through impossible sky - a lucid dream at full volume.
 ```
 
-#### 112. Gilded Arcana
+#### 119. Gilded Arcana
 
-- File name: `PIC-112-Gilded-Arcana.png`
+- File name: `PIC-119-Gilded-Arcana.png`
 - Target: `public/card-art/gallery/archetypes/gilded-arcana.webp`
 - Owner: Archetype `gilded-arcana`
 - Status: generated
@@ -1617,9 +1708,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A centered symbolic figure composed like a tarot arcana rendered as a leaded stained-glass window, flowing art nouveau linework in the cames, jewel-tone light blazing through emerald and ruby panes - a fortune told in glass.
 ```
 
-#### 113. Deco Metropolis
+#### 120. Deco Metropolis
 
-- File name: `PIC-113-Deco-Metropolis.png`
+- File name: `PIC-120-Deco-Metropolis.png`
 - Target: `public/card-art/gallery/archetypes/deco-metropolis.webp`
 - Owner: Archetype `deco-metropolis`
 - Status: generated
@@ -1631,9 +1722,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A gleaming art deco metropolis seen from directly above, gilded geometry and sunburst motifs in the avenues, vintage travel-poster optimism, hard black-and-gold contrast - the city as a jewelry box lid.
 ```
 
-#### 114. Clay Mascot
+#### 121. Clay Mascot
 
-- File name: `PIC-114-Clay-Mascot.png`
+- File name: `PIC-121-Clay-Mascot.png`
 - Target: `public/card-art/gallery/archetypes/clay-mascot.webp`
 - Owner: Archetype `clay-mascot`
 - Status: generated
@@ -1645,9 +1736,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A cheerful squashable mascot character sculpted in claymation style with visible thumbprints, soft pastel palette, crisp softbox studio light, perfectly centered - a character sheet hero pose begging to be picked up.
 ```
 
-#### 115. Cinema Frame
+#### 122. Cinema Frame
 
-- File name: `PIC-115-Cinema-Frame.png`
+- File name: `PIC-122-Cinema-Frame.png`
 - Target: `public/card-art/gallery/archetypes/cinema-frame.webp`
 - Owner: Archetype `cinema-frame`
 - Status: generated
@@ -1659,9 +1750,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A trench-coated figure at a fence line rim-lit against cold night, steel blue palette, rule-of-thirds framing with the background melted to bokeh, anamorphic cinematic grade - one paused frame of a thriller mid-turn.
 ```
 
-#### 116. Woodblock Journey
+#### 123. Woodblock Journey
 
-- File name: `PIC-116-Woodblock-Journey.png`
+- File name: `PIC-123-Woodblock-Journey.png`
 - Target: `public/card-art/gallery/archetypes/woodblock-journey.webp`
 - Owner: Archetype `woodblock-journey`
 - Status: generated
@@ -1673,13 +1764,13 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A traveler with a walking staff crossing a mountain pass rendered as an ukiyo-e woodblock print, flat muted color planes, wide establishing composition, the peaks stacked in printed layers - a journey pressed into paper.
 ```
 
-#### 117. Field Journal
+#### 124. Field Plate
 
-- File name: `PIC-117-Field-Journal.png`
+- File name: `PIC-124-Field-Plate.png`
 - Target: `public/card-art/gallery/archetypes/field-journal.webp`
 - Owner: Archetype `field-journal`
 - Status: generated
-- Bio: The expedition, filed at right angles. Ink for the facts, sun-fade for the years.
+- Bio: A shared scale lets the eye compare the two outlines. A slight turn reveals the edge or seam.
 
 ```
 Collectible-card key art for a deck that teaches image-making. Each card demonstrates exactly one technique, and the image is MADE WITH that technique wherever the brief names one - the technique is how the picture is rendered, never an object shown inside it. One strong, instantly readable focal subject with clean uncluttered edges, composed square with generous breathing room, and it still reads at thumbnail size. The artwork is full-bleed and fills the entire square to every edge, the scene cut off by the picture edges on all four sides: no border, no margin, no matting, no frame, no drawn edge line, no vignette box, no rounded corners, not a picture of a card or a page. Artwork only: no text, no letters, no numbers, no logos, no readable symbols, no ui labels, no card frame, no speech bubbles, no watermarks, no signatures.
@@ -1687,9 +1778,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A naturalist's field study knolled from above - specimens, pressed leaves, and tools aligned at right angles, drawn in fine crosshatched ink on sun-faded paper - a botanical journal page from a long expedition.
 ```
 
-#### 118. Anime Quest
+#### 125. Anime Quest
 
-- File name: `PIC-118-Anime-Quest.png`
+- File name: `PIC-125-Anime-Quest.png`
 - Target: `public/card-art/gallery/archetypes/anime-quest.webp`
 - Owner: Archetype `anime-quest`
 - Status: generated
@@ -1703,9 +1794,9 @@ A spirited child on a grassy floating island, anime cel shading with clean linew
 
 ### Shared
 
-#### 119. Custom preset swatch
+#### 126. Custom preset swatch
 
-- File name: `PIC-119-Custom-preset-swatch.png`
+- File name: `PIC-126-Custom-preset-swatch.png`
 - Target: `public/card-art/gallery/shared/custom-preset.webp`
 - Owner: picture-custom-archetypes.ts
 - Status: generated
@@ -1726,9 +1817,9 @@ of this section belong to the guide page rather than to any one card.
 
 ### Per-grade variants - Protagonist
 
-#### 120. Lone Wanderer 1. Distant Traveler
+#### 127. Lone Wanderer 1. Distant Traveler
 
-- File name: `PIC-120-Lone-Wanderer-1-Distant-Traveler.png`
+- File name: `PIC-127-Lone-Wanderer-1-Distant-Traveler.png`
 - Target: `public/card-art/gallery/cards/lone-wanderer/grade-01.webp`
 - Owner: Card `lone-wanderer` grade `Distant Traveler`
 - Status: generated
@@ -1739,9 +1830,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 An empty moorland road at dusk with a solitary traveler visible in the middle distance, small but unmistakable, the land quiet around them.
 ```
 
-#### 121. Lone Wanderer 2. Lone Wanderer
+#### 128. Lone Wanderer 2. Lone Wanderer
 
-- File name: `PIC-121-Lone-Wanderer-2-Lone-Wanderer.png`
+- File name: `PIC-128-Lone-Wanderer-2-Lone-Wanderer.png`
 - Target: `public/card-art/gallery/cards/lone-wanderer/grade-02.webp`
 - Owner: Card `lone-wanderer` grade `Lone Wanderer`
 - Status: generated
@@ -1752,9 +1843,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A lone cloaked wanderer as the clear focal point of an empty winding road, seen from behind mid-stride, cloak moving, the moor stretching away on both sides.
 ```
 
-#### 122. Lone Wanderer 3. Speck in the Vast
+#### 129. Lone Wanderer 3. Speck in the Vast
 
-- File name: `PIC-122-Lone-Wanderer-3-Speck-in-the-Vast.png`
+- File name: `PIC-129-Lone-Wanderer-3-Speck-in-the-Vast.png`
 - Target: `public/card-art/gallery/cards/lone-wanderer/grade-03.webp`
 - Owner: Card `lone-wanderer` grade `Speck in the Vast`
 - Status: generated
@@ -1765,9 +1856,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A tiny lone figure dwarfed by a vast empty landscape, the road a thread across an enormous plain beneath a towering sky, the wanderer a speck of resolve.
 ```
 
-#### 123. Gentle Giant 1. Resting Colossus
+#### 130. Gentle Giant 1. Resting Colossus
 
-- File name: `PIC-123-Gentle-Giant-1-Resting-Colossus.png`
+- File name: `PIC-130-Gentle-Giant-1-Resting-Colossus.png`
 - Target: `public/card-art/gallery/cards/gentle-giant/grade-01.webp`
 - Owner: Card `gentle-giant` grade `Resting Colossus`
 - Status: generated
@@ -1778,9 +1869,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A large friendly moss-backed creature resting at the edge of a meadow scene, half-curled and calm, a small figure nearby going about their day.
 ```
 
-#### 124. Gentle Giant 2. Gentle Giant
+#### 131. Gentle Giant 2. Gentle Giant
 
-- File name: `PIC-124-Gentle-Giant-2-Gentle-Giant.png`
+- File name: `PIC-131-Gentle-Giant-2-Gentle-Giant.png`
 - Target: `public/card-art/gallery/cards/gentle-giant/grade-02.webp`
 - Owner: Card `gentle-giant` grade `Gentle Giant`
 - Status: generated
@@ -1791,9 +1882,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A gentle giant creature towering benevolently over a meadow, a tiny human looking up at it, the creature's huge head lowered in greeting.
 ```
 
-#### 125. Gentle Giant 3. Sky-Filling Titan
+#### 132. Gentle Giant 3. Sky-Filling Titan
 
-- File name: `PIC-125-Gentle-Giant-3-Sky-Filling-Titan.png`
+- File name: `PIC-132-Gentle-Giant-3-Sky-Filling-Titan.png`
 - Target: `public/card-art/gallery/cards/gentle-giant/grade-03.webp`
 - Owner: Card `gentle-giant` grade `Sky-Filling Titan`
 - Status: generated
@@ -1804,9 +1895,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A colossal benevolent titan filling the sky above the meadow, its shoulders in the clouds, the horizon bending around its bulk, the tiny figure below lit by its kind gaze.
 ```
 
-#### 126. Faithful Companion 1. Small Companion
+#### 133. Faithful Companion 1. Small Companion
 
-- File name: `PIC-126-Faithful-Companion-1-Small-Companion.png`
+- File name: `PIC-133-Faithful-Companion-1-Small-Companion.png`
 - Target: `public/card-art/gallery/cards/faithful-companion/grade-01.webp`
 - Owner: Card `faithful-companion` grade `Small Companion`
 - Status: generated
@@ -1817,9 +1908,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A traveler on a trail accompanied by a small animal companion - a fox-sized friend trotting in their shadow, the pair moving as one.
 ```
 
-#### 127. Faithful Companion 2. Faithful Companion
+#### 134. Faithful Companion 2. Faithful Companion
 
-- File name: `PIC-127-Faithful-Companion-2-Faithful-Companion.png`
+- File name: `PIC-134-Faithful-Companion-2-Faithful-Companion.png`
 - Target: `public/card-art/gallery/cards/faithful-companion/grade-02.webp`
 - Owner: Card `faithful-companion` grade `Faithful Companion`
 - Status: generated
@@ -1830,9 +1921,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A traveler with a loyal animal companion at their side, a sturdy dog matching their stride, shoulder to knee, both facing the same road.
 ```
 
-#### 128. Faithful Companion 3. Beast and Bond
+#### 135. Faithful Companion 3. Beast and Bond
 
-- File name: `PIC-128-Faithful-Companion-3-Beast-and-Bond.png`
+- File name: `PIC-135-Faithful-Companion-3-Beast-and-Bond.png`
 - Target: `public/card-art/gallery/cards/faithful-companion/grade-03.webp`
 - Owner: Card `faithful-companion` grade `Beast and Bond`
 - Status: generated
@@ -1843,9 +1934,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A traveler bonded to a great beast companion looming beside them - a bear-huge guardian whose shoulder is the traveler's roof, the pair unmistakably one unit.
 ```
 
-#### 129. Clockwork Automaton 1. Clockwork Details
+#### 136. Clockwork Automaton 1. Clockwork Details
 
-- File name: `PIC-129-Clockwork-Automaton-1-Clockwork-Details.png`
+- File name: `PIC-136-Clockwork-Automaton-1-Clockwork-Details.png`
 - Target: `public/card-art/gallery/cards/clockwork-automaton/grade-01.webp`
 - Owner: Card `clockwork-automaton` grade `Clockwork Details`
 - Status: generated
@@ -1856,9 +1947,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A figure at a workbench with visible clockwork and brass mechanical details - a keyhole between the shoulder blades, gear seams at the wrists.
 ```
 
-#### 130. Clockwork Automaton 2. Clockwork Automaton
+#### 137. Clockwork Automaton 2. Clockwork Automaton
 
-- File name: `PIC-130-Clockwork-Automaton-2-Clockwork-Automaton.png`
+- File name: `PIC-137-Clockwork-Automaton-2-Clockwork-Automaton.png`
 - Target: `public/card-art/gallery/cards/clockwork-automaton/grade-02.webp`
 - Owner: Card `clockwork-automaton` grade `Clockwork Automaton`
 - Status: generated
@@ -1869,9 +1960,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 An intricate brass clockwork automaton threading a needle at its bench, glass chest panel showing the escapement turning, lamplight on polished brass.
 ```
 
-#### 131. Clockwork Automaton 3. Living Machinery
+#### 138. Clockwork Automaton 3. Living Machinery
 
-- File name: `PIC-131-Clockwork-Automaton-3-Living-Machinery.png`
+- File name: `PIC-138-Clockwork-Automaton-3-Living-Machinery.png`
 - Target: `public/card-art/gallery/cards/clockwork-automaton/grade-03.webp`
 - Owner: Card `clockwork-automaton` grade `Living Machinery`
 - Status: generated
@@ -1882,9 +1973,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A figure that is living machinery outright: exposed gears, pistons, and ticking brass with no shell at all, steam curling from its joints as it works.
 ```
 
-#### 132. Armored Sentinel 1. Light Armor
+#### 139. Armored Sentinel 1. Light Armor
 
-- File name: `PIC-132-Armored-Sentinel-1-Light-Armor.png`
+- File name: `PIC-139-Armored-Sentinel-1-Light-Armor.png`
 - Target: `public/card-art/gallery/cards/armored-sentinel/grade-01.webp`
 - Owner: Card `armored-sentinel` grade `Light Armor`
 - Status: generated
@@ -1895,9 +1986,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A guard at a mountain gate wearing practical weathered armor - dented breastplate, wrapped grips, gear that has worked for its scars.
 ```
 
-#### 133. Armored Sentinel 2. Armored Sentinel
+#### 140. Armored Sentinel 2. Armored Sentinel
 
-- File name: `PIC-133-Armored-Sentinel-2-Armored-Sentinel.png`
+- File name: `PIC-140-Armored-Sentinel-2-Armored-Sentinel.png`
 - Target: `public/card-art/gallery/cards/armored-sentinel/grade-02.webp`
 - Owner: Card `armored-sentinel` grade `Armored Sentinel`
 - Status: generated
@@ -1908,9 +1999,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 An armored sentinel in full battered plate at the pass gate, spear grounded, visor down, snow collecting on the shoulders of a figure that has not moved in hours.
 ```
 
-#### 134. Armored Sentinel 3. Colossus of War
+#### 141. Armored Sentinel 3. Colossus of War
 
-- File name: `PIC-134-Armored-Sentinel-3-Colossus-of-War.png`
+- File name: `PIC-141-Armored-Sentinel-3-Colossus-of-War.png`
 - Target: `public/card-art/gallery/cards/armored-sentinel/grade-03.webp`
 - Owner: Card `armored-sentinel` grade `Colossus of War`
 - Status: generated
@@ -1921,9 +2012,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A towering colossus in monumental ornate armor filling the gate itself, engraved plate rising like architecture, the pass sealed by sheer presence.
 ```
 
-#### 135. Wise Elder 1. Graying Years
+#### 142. Wise Elder 1. Graying Years
 
-- File name: `PIC-135-Wise-Elder-1-Graying-Years.png`
+- File name: `PIC-142-Wise-Elder-1-Graying-Years.png`
 - Target: `public/card-art/gallery/cards/wise-elder/grade-01.webp`
 - Owner: Card `wise-elder` grade `Graying Years`
 - Status: generated
@@ -1934,9 +2025,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 An aging figure with kind weathered features mending a net on a stone step, gray at the temples, gentle concentration in the task.
 ```
 
-#### 136. Wise Elder 2. Wise Elder
+#### 143. Wise Elder 2. Wise Elder
 
-- File name: `PIC-136-Wise-Elder-2-Wise-Elder.png`
+- File name: `PIC-143-Wise-Elder-2-Wise-Elder.png`
 - Target: `public/card-art/gallery/cards/wise-elder/grade-02.webp`
 - Owner: Card `wise-elder` grade `Wise Elder`
 - Status: generated
@@ -1947,9 +2038,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A wise elder with deep lines and knowing eyes at the same stone step, silver-haired, the net across their lap, a gaze that has already understood you.
 ```
 
-#### 137. Wise Elder 3. Ancient One
+#### 144. Wise Elder 3. Ancient One
 
-- File name: `PIC-137-Wise-Elder-3-Ancient-One.png`
+- File name: `PIC-144-Wise-Elder-3-Ancient-One.png`
 - Target: `public/card-art/gallery/cards/wise-elder/grade-03.webp`
 - Owner: Card `wise-elder` grade `Ancient One`
 - Status: generated
@@ -1960,9 +2051,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 An impossibly ancient figure, mythic and timeworn, face like carved driftwood, hair white as spray, mending a net that seems as old as the sea itself.
 ```
 
-#### 138. Spirited Child 1. Young Onlooker
+#### 145. Spirited Child 1. Young Onlooker
 
-- File name: `PIC-138-Spirited-Child-1-Young-Onlooker.png`
+- File name: `PIC-145-Spirited-Child-1-Young-Onlooker.png`
 - Target: `public/card-art/gallery/cards/spirited-child/grade-01.webp`
 - Owner: Card `spirited-child` grade `Young Onlooker`
 - Status: generated
@@ -1973,9 +2064,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A curious child watching wide-eyed from a garden gate, hands on the rail, leaning toward whatever is coming down the road.
 ```
 
-#### 139. Spirited Child 2. Spirited Child
+#### 146. Spirited Child 2. Spirited Child
 
-- File name: `PIC-139-Spirited-Child-2-Spirited-Child.png`
+- File name: `PIC-146-Spirited-Child-2-Spirited-Child.png`
 - Target: `public/card-art/gallery/cards/spirited-child/grade-02.webp`
 - Owner: Card `spirited-child` grade `Spirited Child`
 - Status: generated
@@ -1986,9 +2077,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A spirited adventurous child leading the way up a forest path, stick-sword raised, coat flapping, certainty bigger than their boots.
 ```
 
-#### 140. Spirited Child 3. Fearless Wonder
+#### 147. Spirited Child 3. Fearless Wonder
 
-- File name: `PIC-140-Spirited-Child-3-Fearless-Wonder.png`
+- File name: `PIC-147-Spirited-Child-3-Fearless-Wonder.png`
 - Target: `public/card-art/gallery/cards/spirited-child/grade-03.webp`
 - Owner: Card `spirited-child` grade `Fearless Wonder`
 - Status: generated
@@ -1999,9 +2090,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A tiny fearless child facing something impossibly large - standing square before a wall of mist and shadow twenty times their height, stick raised anyway.
 ```
 
-#### 141. Winged Beast 1. Passing Wings
+#### 148. Winged Beast 1. Passing Wings
 
-- File name: `PIC-141-Winged-Beast-1-Passing-Wings.png`
+- File name: `PIC-148-Winged-Beast-1-Passing-Wings.png`
 - Target: `public/card-art/gallery/cards/winged-beast/grade-01.webp`
 - Owner: Card `winged-beast` grade `Passing Wings`
 - Status: generated
@@ -2012,9 +2103,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A winged creature passing overhead across a coastal sky, wings wide, its moving shadow crossing the cliff grass.
 ```
 
-#### 142. Winged Beast 2. Winged Beast
+#### 149. Winged Beast 2. Winged Beast
 
-- File name: `PIC-142-Winged-Beast-2-Winged-Beast.png`
+- File name: `PIC-149-Winged-Beast-2-Winged-Beast.png`
 - Target: `public/card-art/gallery/cards/winged-beast/grade-02.webp`
 - Owner: Card `winged-beast` grade `Winged Beast`
 - Status: generated
@@ -2025,9 +2116,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A great winged beast on the cliff edge with wings fully outstretched, primary feathers spread like fingers, the sea wind holding it half-airborne.
 ```
 
-#### 143. Winged Beast 3. Sky Sovereign
+#### 150. Winged Beast 3. Sky Sovereign
 
-- File name: `PIC-143-Winged-Beast-3-Sky-Sovereign.png`
+- File name: `PIC-150-Winged-Beast-3-Sky-Sovereign.png`
 - Target: `public/card-art/gallery/cards/winged-beast/grade-03.webp`
 - Owner: Card `winged-beast` grade `Sky Sovereign`
 - Status: generated
@@ -2038,9 +2129,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 An enormous dragon-like beast dominating the sky above the cliffs, wingspan swallowing the clouds, the sea whitecapped beneath each downbeat.
 ```
 
-#### 144. Ghostly Presence 1. Faint Apparition
+#### 151. Ghostly Presence 1. Faint Apparition
 
-- File name: `PIC-144-Ghostly-Presence-1-Faint-Apparition.png`
+- File name: `PIC-151-Ghostly-Presence-1-Faint-Apparition.png`
 - Target: `public/card-art/gallery/cards/ghostly-presence/grade-01.webp`
 - Owner: Card `ghostly-presence` grade `Faint Apparition`
 - Status: generated
@@ -2051,9 +2142,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 An abandoned ballroom with a faint translucent apparition at the edge of the scene, more suggestion than figure, the dust undisturbed.
 ```
 
-#### 145. Ghostly Presence 2. Ghostly Presence
+#### 152. Ghostly Presence 2. Ghostly Presence
 
-- File name: `PIC-145-Ghostly-Presence-2-Ghostly-Presence.png`
+- File name: `PIC-152-Ghostly-Presence-2-Ghostly-Presence.png`
 - Target: `public/card-art/gallery/cards/ghostly-presence/grade-02.webp`
 - Owner: Card `ghostly-presence` grade `Ghostly Presence`
 - Status: generated
@@ -2064,9 +2155,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A clear ghostly spectral figure drifting mid-ballroom, translucent and softly luminous, moonlight passing through it onto the parquet.
 ```
 
-#### 146. Ghostly Presence 3. Haunting Host
+#### 153. Ghostly Presence 3. Haunting Host
 
-- File name: `PIC-146-Ghostly-Presence-3-Haunting-Host.png`
+- File name: `PIC-153-Ghostly-Presence-3-Haunting-Host.png`
 - Target: `public/card-art/gallery/cards/ghostly-presence/grade-03.webp`
 - Owner: Card `ghostly-presence` grade `Haunting Host`
 - Status: generated
@@ -2077,9 +2168,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A haunting host of translucent spirits filling the ballroom air, dozens of pale figures mid-waltz, the room crowded with the gone.
 ```
 
-#### 147. Crowd Of Many 1. Passersby
+#### 154. Crowd Of Many 1. Passersby
 
-- File name: `PIC-147-Crowd-Of-Many-1-Passersby.png`
+- File name: `PIC-154-Crowd-Of-Many-1-Passersby.png`
 - Target: `public/card-art/gallery/cards/crowd-of-many/grade-01.webp`
 - Owner: Card `crowd-of-many` grade `Passersby`
 - Status: generated
@@ -2090,9 +2181,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A flower seller and cart with a few passersby moving through the background, the market just waking up.
 ```
 
-#### 148. Crowd Of Many 2. Busy Crowd
+#### 155. Crowd Of Many 2. Busy Crowd
 
-- File name: `PIC-148-Crowd-Of-Many-2-Busy-Crowd.png`
+- File name: `PIC-155-Crowd-Of-Many-2-Busy-Crowd.png`
 - Target: `public/card-art/gallery/cards/crowd-of-many/grade-02.webp`
 - Owner: Card `crowd-of-many` grade `Busy Crowd`
 - Status: generated
@@ -2103,9 +2194,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A flower seller surrounded by a bustling crowd, shoppers pressing past on all sides, the bright cart holding its little island of calm.
 ```
 
-#### 149. Crowd Of Many 3. Sea of Faces
+#### 156. Crowd Of Many 3. Sea of Faces
 
-- File name: `PIC-149-Crowd-Of-Many-3-Sea-of-Faces.png`
+- File name: `PIC-156-Crowd-Of-Many-3-Sea-of-Faces.png`
 - Target: `public/card-art/gallery/cards/crowd-of-many/grade-03.webp`
 - Owner: Card `crowd-of-many` grade `Sea of Faces`
 - Status: generated
@@ -2116,9 +2207,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A flower cart lost in an immense sea of people stretching away in every direction, thousands of heads to the horizon, one spot of color in the flood.
 ```
 
-#### 150. Regal Figure 1. Fine Bearing
+#### 157. Regal Figure 1. Fine Bearing
 
-- File name: `PIC-150-Regal-Figure-1-Fine-Bearing.png`
+- File name: `PIC-157-Regal-Figure-1-Fine-Bearing.png`
 - Target: `public/card-art/gallery/cards/regal-figure/grade-01.webp`
 - Owner: Card `regal-figure` grade `Fine Bearing`
 - Status: generated
@@ -2129,9 +2220,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A figure with regal bearing and fine dress at the head of a columned hall, posture doing the work of any crown.
 ```
 
-#### 151. Regal Figure 2. Regal Figure
+#### 158. Regal Figure 2. Regal Figure
 
-- File name: `PIC-151-Regal-Figure-2-Regal-Figure.png`
+- File name: `PIC-158-Regal-Figure-2-Regal-Figure.png`
 - Target: `public/card-art/gallery/cards/regal-figure/grade-02.webp`
 - Owner: Card `regal-figure` grade `Regal Figure`
 - Status: generated
@@ -2142,9 +2233,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A regal crowned figure in ceremonial robes descending the great steps, the train flowing behind, gold thread catching the torchlight.
 ```
 
-#### 152. Regal Figure 3. Living Throne
+#### 159. Regal Figure 3. Living Throne
 
-- File name: `PIC-152-Regal-Figure-3-Living-Throne.png`
+- File name: `PIC-159-Regal-Figure-3-Living-Throne.png`
 - Target: `public/card-art/gallery/cards/regal-figure/grade-03.webp`
 - Owner: Card `regal-figure` grade `Living Throne`
 - Status: generated
@@ -2155,9 +2246,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 An imperious sovereign engulfed in towering ceremonial regalia, the crown a spired city, robes filling the hall like a tide - the person almost lost inside the institution.
 ```
 
-#### 153. Weathered Explorer 1. Field Gear
+#### 160. Weathered Explorer 1. Field Gear
 
-- File name: `PIC-153-Weathered-Explorer-1-Field-Gear.png`
+- File name: `PIC-160-Weathered-Explorer-1-Field-Gear.png`
 - Target: `public/card-art/gallery/cards/weathered-explorer/grade-01.webp`
 - Owner: Card `weathered-explorer` grade `Field Gear`
 - Status: generated
@@ -2168,9 +2259,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A traveler carrying practical well-used expedition gear at a canyon overlook - coiled rope, dented canteen, a pack that has been repacked forever.
 ```
 
-#### 154. Weathered Explorer 2. Weathered Explorer
+#### 161. Weathered Explorer 2. Weathered Explorer
 
-- File name: `PIC-154-Weathered-Explorer-2-Weathered-Explorer.png`
+- File name: `PIC-161-Weathered-Explorer-2-Weathered-Explorer.png`
 - Target: `public/card-art/gallery/cards/weathered-explorer/grade-02.webp`
 - Owner: Card `weathered-explorer` grade `Weathered Explorer`
 - Status: generated
@@ -2181,9 +2272,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A weathered explorer worn by a long journey pausing at the rim, scarf sun-bleached, face wind-cut, maps softened by handling, the canyon huge before them.
 ```
 
-#### 155. Weathered Explorer 3. End of the Map
+#### 162. Weathered Explorer 3. End of the Map
 
-- File name: `PIC-155-Weathered-Explorer-3-End-of-the-Map.png`
+- File name: `PIC-162-Weathered-Explorer-3-End-of-the-Map.png`
 - Target: `public/card-art/gallery/cards/weathered-explorer/grade-03.webp`
 - Owner: Card `weathered-explorer` grade `End of the Map`
 - Status: generated
@@ -2194,11 +2285,50 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A gaunt storied explorer years past the edge of any map, gear patched with whatever the road offered, standing at a rim no chart has ever drawn.
 ```
 
+#### 163. Action Silhouette 1. Action silhouette
+
+- File name: `PIC-163-Action-Silhouette-1-Action-silhouette.png`
+- Target: `public/card-art/gallery/cards/action-silhouette/grade-01.webp`
+- Owner: Card `action-silhouette` grade `Action silhouette`
+- Status: planned
+
+```
+Collectible-card key art for a deck that teaches image-making. Each card demonstrates exactly one technique, and the image is MADE WITH that technique wherever the brief names one - the technique is how the picture is rendered, never an object shown inside it. One strong, instantly readable focal subject with clean uncluttered edges, composed square with generous breathing room, and it still reads at thumbnail size. The artwork is full-bleed and fills the entire square to every edge, the scene cut off by the picture edges on all four sides: no border, no margin, no matting, no frame, no drawn edge line, no vignette box, no rounded corners, not a picture of a card or a page. Artwork only: no text, no letters, no numbers, no logos, no readable symbols, no ui labels, no card frame, no speech bubbles, no watermarks, no signatures.
+
+A small courier silhouette with a distinct parcel outline.
+```
+
+#### 164. Action Silhouette 2. Action silhouette · separation
+
+- File name: `PIC-164-Action-Silhouette-2-Action-silhouette-separation.png`
+- Target: `public/card-art/gallery/cards/action-silhouette/grade-02.webp`
+- Owner: Card `action-silhouette` grade `Action silhouette · separation`
+- Status: planned
+
+```
+Collectible-card key art for a deck that teaches image-making. Each card demonstrates exactly one technique, and the image is MADE WITH that technique wherever the brief names one - the technique is how the picture is rendered, never an object shown inside it. One strong, instantly readable focal subject with clean uncluttered edges, composed square with generous breathing room, and it still reads at thumbnail size. The artwork is full-bleed and fills the entire square to every edge, the scene cut off by the picture edges on all four sides: no border, no margin, no matting, no frame, no drawn edge line, no vignette box, no rounded corners, not a picture of a card or a page. Artwork only: no text, no letters, no numbers, no logos, no readable symbols, no ui labels, no card frame, no speech bubbles, no watermarks, no signatures.
+
+A small courier silhouette with a distinct parcel outline.
+```
+
+#### 165. Action Silhouette 3. Action silhouette · contour
+
+- File name: `PIC-165-Action-Silhouette-3-Action-silhouette-contour.png`
+- Target: `public/card-art/gallery/cards/action-silhouette/grade-03.webp`
+- Owner: Card `action-silhouette` grade `Action silhouette · contour`
+- Status: planned
+
+```
+Collectible-card key art for a deck that teaches image-making. Each card demonstrates exactly one technique, and the image is MADE WITH that technique wherever the brief names one - the technique is how the picture is rendered, never an object shown inside it. One strong, instantly readable focal subject with clean uncluttered edges, composed square with generous breathing room, and it still reads at thumbnail size. The artwork is full-bleed and fills the entire square to every edge, the scene cut off by the picture edges on all four sides: no border, no margin, no matting, no frame, no drawn edge line, no vignette box, no rounded corners, not a picture of a card or a page. Artwork only: no text, no letters, no numbers, no logos, no readable symbols, no ui labels, no card frame, no speech bubbles, no watermarks, no signatures.
+
+A small courier silhouette with a distinct parcel outline.
+```
+
 ### Per-grade variants - Illumination
 
-#### 156. Golden Hour 1. Golden Wash
+#### 166. Golden Hour 1. Golden Wash
 
-- File name: `PIC-156-Golden-Hour-1-Golden-Wash.png`
+- File name: `PIC-166-Golden-Hour-1-Golden-Wash.png`
 - Target: `public/card-art/gallery/cards/golden-hour/grade-01.webp`
 - Owner: Card `golden-hour` grade `Golden Wash`
 - Status: generated
@@ -2209,9 +2339,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A lone oak on a grassy hillside under a soft golden wash, gentle late-afternoon warmth settling over the grass, shadows only beginning to stretch.
 ```
 
-#### 157. Golden Hour 2. Golden Hour
+#### 167. Golden Hour 2. Golden Hour
 
-- File name: `PIC-157-Golden-Hour-2-Golden-Hour.png`
+- File name: `PIC-167-Golden-Hour-2-Golden-Hour.png`
 - Target: `public/card-art/gallery/cards/golden-hour/grade-02.webp`
 - Owner: Card `golden-hour` grade `Golden Hour`
 - Status: generated
@@ -2222,9 +2352,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A lone oak on a grassy hillside at full golden hour, warm directional light raking the slope, a long dramatic shadow and glowing backlit grass seed-heads.
 ```
 
-#### 158. Golden Hour 3. Blazing Sundown
+#### 168. Golden Hour 3. Blazing Sundown
 
-- File name: `PIC-158-Golden-Hour-3-Blazing-Sundown.png`
+- File name: `PIC-168-Golden-Hour-3-Blazing-Sundown.png`
 - Target: `public/card-art/gallery/cards/golden-hour/grade-03.webp`
 - Owner: Card `golden-hour` grade `Blazing Sundown`
 - Status: generated
@@ -2235,9 +2365,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A lone oak on a hillside at blazing sundown, the sun flaring directly into the lens behind the trunk, the whole frame ignited orange, shadow thrown clear across the land.
 ```
 
-#### 159. Bioluminescence 1. Faint Glow
+#### 169. Bioluminescence 1. Faint Glow
 
-- File name: `PIC-159-Bioluminescence-1-Faint-Glow.png`
+- File name: `PIC-169-Bioluminescence-1-Faint-Glow.png`
 - Target: `public/card-art/gallery/cards/bioluminescence/grade-01.webp`
 - Owner: Card `bioluminescence` grade `Faint Glow`
 - Status: generated
@@ -2248,9 +2378,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A dark tidal cove at night, faint blue-green pinpricks of plankton dotting the shallows around a drifting rowboat, most of the scene still deep shadow.
 ```
 
-#### 160. Bioluminescence 2. Living Light
+#### 170. Bioluminescence 2. Living Light
 
-- File name: `PIC-160-Bioluminescence-2-Living-Light.png`
+- File name: `PIC-170-Bioluminescence-2-Living-Light.png`
 - Target: `public/card-art/gallery/cards/bioluminescence/grade-02.webp`
 - Owner: Card `bioluminescence` grade `Living Light`
 - Status: generated
@@ -2261,9 +2391,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A night cove lit by living light: glowing plankton bright in the wake of a rowboat, luminous fungi on the rocks, cool blue-green glow becoming the scene's true light source.
 ```
 
-#### 161. Bioluminescence 3. Abyssal Radiance
+#### 171. Bioluminescence 3. Abyssal Radiance
 
-- File name: `PIC-161-Bioluminescence-3-Abyssal-Radiance.png`
+- File name: `PIC-171-Bioluminescence-3-Abyssal-Radiance.png`
 - Target: `public/card-art/gallery/cards/bioluminescence/grade-03.webp`
 - Owner: Card `bioluminescence` grade `Abyssal Radiance`
 - Status: generated
@@ -2274,9 +2404,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 An abyssal cove where bioluminescence is the only light in the world, water blazing electric blue-green around the silhouetted rowboat, glowing spores drifting like stars in the black air.
 ```
 
-#### 162. Candlelight 1. Candle Warmth
+#### 172. Candlelight 1. Candle Warmth
 
-- File name: `PIC-162-Candlelight-1-Candle-Warmth.png`
+- File name: `PIC-172-Candlelight-1-Candle-Warmth.png`
 - Target: `public/card-art/gallery/cards/candlelight/grade-01.webp`
 - Owner: Card `candlelight` grade `Candle Warmth`
 - Status: generated
@@ -2287,9 +2417,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A reader at a wooden table in a dim room, soft candle warmth touching their face and the book's pages, the rest of the room resting in gentle darkness.
 ```
 
-#### 163. Candlelight 2. Candlelight
+#### 173. Candlelight 2. Candlelight
 
-- File name: `PIC-163-Candlelight-2-Candlelight.png`
+- File name: `PIC-173-Candlelight-2-Candlelight.png`
 - Target: `public/card-art/gallery/cards/candlelight/grade-02.webp`
 - Owner: Card `candlelight` grade `Candlelight`
 - Status: generated
@@ -2300,9 +2430,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A reader bent over a book, warm flickering candlelight carving the scene, wax pooling below the flame, deep shadows pressing in at the edges of the small golden circle.
 ```
 
-#### 164. Candlelight 3. Single Flame
+#### 174. Candlelight 3. Single Flame
 
-- File name: `PIC-164-Candlelight-3-Single-Flame.png`
+- File name: `PIC-174-Candlelight-3-Single-Flame.png`
 - Target: `public/card-art/gallery/cards/candlelight/grade-03.webp`
 - Owner: Card `candlelight` grade `Single Flame`
 - Status: generated
@@ -2313,9 +2443,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A single flame in darkness carving one face out of black, everything else gone: one candle, one hand, one page catching the light, the room entirely surrendered to shadow.
 ```
 
-#### 165. Moonlight 1. Pale Moon
+#### 175. Moonlight 1. Pale Moon
 
-- File name: `PIC-165-Moonlight-1-Pale-Moon.png`
+- File name: `PIC-175-Moonlight-1-Pale-Moon.png`
 - Target: `public/card-art/gallery/cards/moonlight/grade-01.webp`
 - Owner: Card `moonlight` grade `Pale Moon`
 - Status: generated
@@ -2326,9 +2456,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A farmhouse and field under pale moonlight, silver-blue light settling quietly over roofs and grass, the night calm and legible.
 ```
 
-#### 166. Moonlight 2. Moonlight
+#### 176. Moonlight 2. Moonlight
 
-- File name: `PIC-166-Moonlight-2-Moonlight.png`
+- File name: `PIC-176-Moonlight-2-Moonlight.png`
 - Target: `public/card-art/gallery/cards/moonlight/grade-02.webp`
 - Owner: Card `moonlight` grade `Moonlight`
 - Status: generated
@@ -2339,9 +2469,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A farmhouse and frosted field defined by cold blue moonlight, hard-edged silver highlights on the tin roof, deep blue shadows pooling under the eaves.
 ```
 
-#### 167. Moonlight 3. Harvest Moon
+#### 177. Moonlight 3. Harvest Moon
 
-- File name: `PIC-167-Moonlight-3-Harvest-Moon.png`
+- File name: `PIC-177-Moonlight-3-Harvest-Moon.png`
 - Target: `public/card-art/gallery/cards/moonlight/grade-03.webp`
 - Owner: Card `moonlight` grade `Harvest Moon`
 - Status: generated
@@ -2352,9 +2482,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A farmhouse dwarfed beneath a huge low harvest moon, the world flooded silver, every blade of frost-grass glinting, shadows printed black and sharp across the field.
 ```
 
-#### 168. Neon Glow 1. Sign Wash
+#### 178. Neon Glow 1. Sign Wash
 
-- File name: `PIC-168-Neon-Glow-1-Sign-Wash.png`
+- File name: `PIC-178-Neon-Glow-1-Sign-Wash.png`
 - Target: `public/card-art/gallery/cards/neon-glow/grade-01.webp`
 - Owner: Card `neon-glow` grade `Sign Wash`
 - Status: generated
@@ -2365,9 +2495,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A noodle stall at night with a colored neon wash tinting the steam and counter, magenta and cyan hints in the wet pavement.
 ```
 
-#### 169. Neon Glow 2. Neon Glow
+#### 179. Neon Glow 2. Neon Glow
 
-- File name: `PIC-169-Neon-Glow-2-Neon-Glow.png`
+- File name: `PIC-179-Neon-Glow-2-Neon-Glow.png`
 - Target: `public/card-art/gallery/cards/neon-glow/grade-02.webp`
 - Owner: Card `neon-glow` grade `Neon Glow`
 - Status: generated
@@ -2378,9 +2508,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A noodle stall lit by buzzing neon signs, hard magenta and cyan light carving the cook and the counter, saturated reflections flooding the puddled street.
 ```
 
-#### 170. Neon Glow 3. Neon Flood
+#### 180. Neon Glow 3. Neon Flood
 
-- File name: `PIC-170-Neon-Glow-3-Neon-Flood.png`
+- File name: `PIC-180-Neon-Glow-3-Neon-Flood.png`
 - Target: `public/card-art/gallery/cards/neon-glow/grade-03.webp`
 - Owner: Card `neon-glow` grade `Neon Flood`
 - Status: generated
@@ -2391,9 +2521,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A noodle stall drowned in blinding neon from every direction, colors collapsing into pure electric signal, steam glowing pink, the wet street a mirror of burning light.
 ```
 
-#### 171. Harsh Noon 1. Bright Day
+#### 181. Harsh Noon 1. Bright Day
 
-- File name: `PIC-171-Harsh-Noon-1-Bright-Day.png`
+- File name: `PIC-181-Harsh-Noon-1-Bright-Day.png`
 - Target: `public/card-art/gallery/cards/harsh-noon/grade-01.webp`
 - Owner: Card `harsh-noon` grade `Bright Day`
 - Status: generated
@@ -2404,9 +2534,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A whitewashed courtyard in bright midday light, a figure crossing, shadows short and definite underfoot.
 ```
 
-#### 172. Harsh Noon 2. Harsh Noon
+#### 182. Harsh Noon 2. Harsh Noon
 
-- File name: `PIC-172-Harsh-Noon-2-Harsh-Noon.png`
+- File name: `PIC-182-Harsh-Noon-2-Harsh-Noon.png`
 - Target: `public/card-art/gallery/cards/harsh-noon/grade-02.webp`
 - Owner: Card `harsh-noon` grade `Harsh Noon`
 - Status: generated
@@ -2417,9 +2547,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A courtyard under harsh noon sun, black geometric shadows slicing under arches, a hatted figure's shadow pooled tight at their feet, walls burning white.
 ```
 
-#### 173. Harsh Noon 3. Merciless Sun
+#### 183. Harsh Noon 3. Merciless Sun
 
-- File name: `PIC-173-Harsh-Noon-3-Merciless-Sun.png`
+- File name: `PIC-183-Harsh-Noon-3-Merciless-Sun.png`
 - Target: `public/card-art/gallery/cards/harsh-noon/grade-03.webp`
 - Owner: Card `harsh-noon` grade `Merciless Sun`
 - Status: generated
@@ -2430,9 +2560,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A courtyard bleached by merciless overhead sun, shadows reduced to razor cuts of pure black, the figure almost dissolving into glare, the sky white with heat.
 ```
 
-#### 174. Overcast Soft 1. Soft Sky
+#### 184. Overcast Soft 1. Soft Sky
 
-- File name: `PIC-174-Overcast-Soft-1-Soft-Sky.png`
+- File name: `PIC-184-Overcast-Soft-1-Soft-Sky.png`
 - Target: `public/card-art/gallery/cards/overcast-soft/grade-01.webp`
 - Owner: Card `overcast-soft` grade `Soft Sky`
 - Status: generated
@@ -2443,9 +2573,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A fishing harbor in soft overcast light, gentle even illumination over boats and water, shadows faint and forgiving.
 ```
 
-#### 175. Overcast Soft 2. Overcast
+#### 185. Overcast Soft 2. Overcast
 
-- File name: `PIC-175-Overcast-Soft-2-Overcast.png`
+- File name: `PIC-185-Overcast-Soft-2-Overcast.png`
 - Target: `public/card-art/gallery/cards/overcast-soft/grade-02.webp`
 - Owner: Card `overcast-soft` grade `Overcast`
 - Status: generated
@@ -2456,9 +2586,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A harbor under a flat gray ceiling of cloud, completely shadowless light, every hull and rope evenly described, the water a sheet of pewter.
 ```
 
-#### 176. Overcast Soft 3. Luminous Fog
+#### 186. Overcast Soft 3. Luminous Fog
 
-- File name: `PIC-176-Overcast-Soft-3-Luminous-Fog.png`
+- File name: `PIC-186-Overcast-Soft-3-Luminous-Fog.png`
 - Target: `public/card-art/gallery/cards/overcast-soft/grade-03.webp`
 - Owner: Card `overcast-soft` grade `Luminous Fog`
 - Status: generated
@@ -2469,9 +2599,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A harbor swallowed by luminous fog-thick overcast, boats fading into pale layers, the light itself become the weather, horizon erased in soft white.
 ```
 
-#### 177. Dramatic Rim 1. Soft Edge
+#### 187. Dramatic Rim 1. Soft Edge
 
-- File name: `PIC-177-Dramatic-Rim-1-Soft-Edge.png`
+- File name: `PIC-187-Dramatic-Rim-1-Soft-Edge.png`
 - Target: `public/card-art/gallery/cards/dramatic-rim/grade-01.webp`
 - Owner: Card `dramatic-rim` grade `Soft Edge`
 - Status: generated
@@ -2482,9 +2612,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A boxer in a dark gym with a soft rim light lifting their silhouette gently off the background, features in half-shadow.
 ```
 
-#### 178. Dramatic Rim 2. Dramatic Rim
+#### 188. Dramatic Rim 2. Dramatic Rim
 
-- File name: `PIC-178-Dramatic-Rim-2-Dramatic-Rim.png`
+- File name: `PIC-188-Dramatic-Rim-2-Dramatic-Rim.png`
 - Target: `public/card-art/gallery/cards/dramatic-rim/grade-02.webp`
 - Owner: Card `dramatic-rim` grade `Dramatic Rim`
 - Status: generated
@@ -2495,9 +2625,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A boxer edged in dramatic rim lighting, a hard bright line running along shoulders and jaw, the dark gym falling away behind the burning outline.
 ```
 
-#### 179. Dramatic Rim 3. Burning Edge
+#### 189. Dramatic Rim 3. Burning Edge
 
-- File name: `PIC-179-Dramatic-Rim-3-Burning-Edge.png`
+- File name: `PIC-189-Dramatic-Rim-3-Burning-Edge.png`
 - Target: `public/card-art/gallery/cards/dramatic-rim/grade-03.webp`
 - Owner: Card `dramatic-rim` grade `Burning Edge`
 - Status: generated
@@ -2508,9 +2638,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A boxer as a black silhouette wearing a blazing rim of light, the edge burning like a filament, everything inside the outline surrendered to darkness.
 ```
 
-#### 180. Volumetric Rays 1. Faint Rays
+#### 190. Volumetric Rays 1. Faint Rays
 
-- File name: `PIC-180-Volumetric-Rays-1-Faint-Rays.png`
+- File name: `PIC-190-Volumetric-Rays-1-Faint-Rays.png`
 - Target: `public/card-art/gallery/cards/volumetric-rays/grade-01.webp`
 - Owner: Card `volumetric-rays` grade `Faint Rays`
 - Status: generated
@@ -2521,9 +2651,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A barn interior with faint rays of light streaking the dusty air from gaps in the boards, a horse in soft half-light.
 ```
 
-#### 181. Volumetric Rays 2. God Rays
+#### 191. Volumetric Rays 2. God Rays
 
-- File name: `PIC-181-Volumetric-Rays-2-God-Rays.png`
+- File name: `PIC-191-Volumetric-Rays-2-God-Rays.png`
 - Target: `public/card-art/gallery/cards/volumetric-rays/grade-02.webp`
 - Owner: Card `volumetric-rays` grade `God Rays`
 - Status: generated
@@ -2534,9 +2664,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A barn crossed by strong volumetric god rays, each shaft made solid by swirling dust, the horse haloed where the beams converge.
 ```
 
-#### 182. Volumetric Rays 3. Cathedral Shafts
+#### 192. Volumetric Rays 3. Cathedral Shafts
 
-- File name: `PIC-182-Volumetric-Rays-3-Cathedral-Shafts.png`
+- File name: `PIC-192-Volumetric-Rays-3-Cathedral-Shafts.png`
 - Target: `public/card-art/gallery/cards/volumetric-rays/grade-03.webp`
 - Owner: Card `volumetric-rays` grade `Cathedral Shafts`
 - Status: generated
@@ -2547,9 +2677,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A barn carved by massive cathedral shafts of dust-filled light, the beams like architecture, the horse small beneath columns of burning air.
 ```
 
-#### 183. Firelight 1. Ember Glow
+#### 193. Firelight 1. Ember Glow
 
-- File name: `PIC-183-Firelight-1-Ember-Glow.png`
+- File name: `PIC-193-Firelight-1-Ember-Glow.png`
 - Target: `public/card-art/gallery/cards/firelight/grade-01.webp`
 - Owner: Card `firelight` grade `Ember Glow`
 - Status: generated
@@ -2560,9 +2690,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 Travelers by a low campfire, distant ember glow warming the edges of their faces, the night close around them.
 ```
 
-#### 184. Firelight 2. Firelight
+#### 194. Firelight 2. Firelight
 
-- File name: `PIC-184-Firelight-2-Firelight.png`
+- File name: `PIC-194-Firelight-2-Firelight.png`
 - Target: `public/card-art/gallery/cards/firelight/grade-02.webp`
 - Owner: Card `firelight` grade `Firelight`
 - Status: generated
@@ -2573,9 +2703,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 Travelers lit by dancing orange firelight, flame-light moving across faces and blankets, long unstable shadows thrown onto the rocks behind.
 ```
 
-#### 185. Firelight 3. Roaring Blaze
+#### 195. Firelight 3. Roaring Blaze
 
-- File name: `PIC-185-Firelight-3-Roaring-Blaze.png`
+- File name: `PIC-195-Firelight-3-Roaring-Blaze.png`
 - Target: `public/card-art/gallery/cards/firelight/grade-03.webp`
 - Owner: Card `firelight` grade `Roaring Blaze`
 - Status: generated
@@ -2586,9 +2716,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A roaring blaze throwing wild light over the travelers, flames leaping frame-high, chaotic shadows lashing the campsite, sparks streaking the black sky.
 ```
 
-#### 186. Storm Light 1. Brooding Sky
+#### 196. Storm Light 1. Brooding Sky
 
-- File name: `PIC-186-Storm-Light-1-Brooding-Sky.png`
+- File name: `PIC-196-Storm-Light-1-Brooding-Sky.png`
 - Target: `public/card-art/gallery/cards/storm-light/grade-01.webp`
 - Owner: Card `storm-light` grade `Brooding Sky`
 - Status: generated
@@ -2599,9 +2729,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A lighthouse under brooding storm light, the sky bruised green-gray, rain beginning, the sea dark and restless.
 ```
 
-#### 187. Storm Light 2. Lightning Flash
+#### 197. Storm Light 2. Lightning Flash
 
-- File name: `PIC-187-Storm-Light-2-Lightning-Flash.png`
+- File name: `PIC-197-Storm-Light-2-Lightning-Flash.png`
 - Target: `public/card-art/gallery/cards/storm-light/grade-02.webp`
 - Owner: Card `storm-light` grade `Lightning Flash`
 - Status: generated
@@ -2612,9 +2742,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A lighthouse lit by a lightning flash, rain glittering frozen in the burst, the tower's white flank blazing against the black sky.
 ```
 
-#### 188. Storm Light 3. White Strike
+#### 198. Storm Light 3. White Strike
 
-- File name: `PIC-188-Storm-Light-3-White-Strike.png`
+- File name: `PIC-198-Storm-Light-3-White-Strike.png`
 - Target: `public/card-art/gallery/cards/storm-light/grade-03.webp`
 - Owner: Card `storm-light` grade `White Strike`
 - Status: generated
@@ -2625,9 +2755,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A lighthouse frozen in a violent white lightning strike, the world burned to blacks and blinding whites, rain suspended, the sea caught mid-crash.
 ```
 
-#### 189. Studio Softbox 1. Clean Light
+#### 199. Studio Softbox 1. Clean Light
 
-- File name: `PIC-189-Studio-Softbox-1-Clean-Light.png`
+- File name: `PIC-199-Studio-Softbox-1-Clean-Light.png`
 - Target: `public/card-art/gallery/cards/studio-softbox/grade-01.webp`
 - Owner: Card `studio-softbox` grade `Clean Light`
 - Status: generated
@@ -2638,9 +2768,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A ceramic vase on a seamless backdrop in clean studio lighting, soft even light describing its curve, a gentle grounded shadow.
 ```
 
-#### 190. Studio Softbox 2. Softbox Studio
+#### 200. Studio Softbox 2. Softbox Studio
 
-- File name: `PIC-190-Studio-Softbox-2-Softbox-Studio.png`
+- File name: `PIC-200-Studio-Softbox-2-Softbox-Studio.png`
 - Target: `public/card-art/gallery/cards/studio-softbox/grade-02.webp`
 - Owner: Card `studio-softbox` grade `Softbox Studio`
 - Status: generated
@@ -2651,9 +2781,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A ceramic vase in crisp softbox light on a seamless sweep, controlled highlight rolling along the glaze, the shadow placed exactly where it was decided.
 ```
 
-#### 191. Studio Softbox 3. High-Key White
+#### 201. Studio Softbox 3. High-Key White
 
-- File name: `PIC-191-Studio-Softbox-3-High-Key-White.png`
+- File name: `PIC-201-Studio-Softbox-3-High-Key-White.png`
 - Target: `public/card-art/gallery/cards/studio-softbox/grade-03.webp`
 - Owner: Card `studio-softbox` grade `High-Key White`
 - Status: generated
@@ -2664,11 +2794,50 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A ceramic vase in clinical high-key white, every detail evenly lit, shadows all but abolished, the object floating in pure controlled brightness.
 ```
 
+#### 202. Reflection Control 1. Reflection control
+
+- File name: `PIC-202-Reflection-Control-1-Reflection-control.png`
+- Target: `public/card-art/gallery/cards/reflection-control/grade-01.webp`
+- Owner: Card `reflection-control` grade `Reflection control`
+- Status: planned
+
+```
+Collectible-card key art for a deck that teaches image-making. Each card demonstrates exactly one technique, and the image is MADE WITH that technique wherever the brief names one - the technique is how the picture is rendered, never an object shown inside it. One strong, instantly readable focal subject with clean uncluttered edges, composed square with generous breathing room, and it still reads at thumbnail size. The artwork is full-bleed and fills the entire square to every edge, the scene cut off by the picture edges on all four sides: no border, no margin, no matting, no frame, no drawn edge line, no vignette box, no rounded corners, not a picture of a card or a page. Artwork only: no text, no letters, no numbers, no logos, no readable symbols, no ui labels, no card frame, no speech bubbles, no watermarks, no signatures.
+
+A broad reflection bending around a metal latch.
+```
+
+#### 203. Reflection Control 2. Reflection control · shaped highlight
+
+- File name: `PIC-203-Reflection-Control-2-Reflection-control-shaped-highlight.png`
+- Target: `public/card-art/gallery/cards/reflection-control/grade-02.webp`
+- Owner: Card `reflection-control` grade `Reflection control · shaped highlight`
+- Status: planned
+
+```
+Collectible-card key art for a deck that teaches image-making. Each card demonstrates exactly one technique, and the image is MADE WITH that technique wherever the brief names one - the technique is how the picture is rendered, never an object shown inside it. One strong, instantly readable focal subject with clean uncluttered edges, composed square with generous breathing room, and it still reads at thumbnail size. The artwork is full-bleed and fills the entire square to every edge, the scene cut off by the picture edges on all four sides: no border, no margin, no matting, no frame, no drawn edge line, no vignette box, no rounded corners, not a picture of a card or a page. Artwork only: no text, no letters, no numbers, no logos, no readable symbols, no ui labels, no card frame, no speech bubbles, no watermarks, no signatures.
+
+A broad reflection bending around a metal latch.
+```
+
+#### 204. Reflection Control 3. Reflection control · clear contour
+
+- File name: `PIC-204-Reflection-Control-3-Reflection-control-clear-contour.png`
+- Target: `public/card-art/gallery/cards/reflection-control/grade-03.webp`
+- Owner: Card `reflection-control` grade `Reflection control · clear contour`
+- Status: planned
+
+```
+Collectible-card key art for a deck that teaches image-making. Each card demonstrates exactly one technique, and the image is MADE WITH that technique wherever the brief names one - the technique is how the picture is rendered, never an object shown inside it. One strong, instantly readable focal subject with clean uncluttered edges, composed square with generous breathing room, and it still reads at thumbnail size. The artwork is full-bleed and fills the entire square to every edge, the scene cut off by the picture edges on all four sides: no border, no margin, no matting, no frame, no drawn edge line, no vignette box, no rounded corners, not a picture of a card or a page. Artwork only: no text, no letters, no numbers, no logos, no readable symbols, no ui labels, no card frame, no speech bubbles, no watermarks, no signatures.
+
+A broad reflection bending around a metal latch.
+```
+
 ### Per-grade variants - Canvas
 
-#### 192. Oil Painting 1. Oiled Surface
+#### 205. Oil Painting 1. Oiled Surface
 
-- File name: `PIC-192-Oil-Painting-1-Oiled-Surface.png`
+- File name: `PIC-205-Oil-Painting-1-Oiled-Surface.png`
 - Target: `public/card-art/gallery/cards/oil-painting/grade-01.webp`
 - Owner: Card `oil-painting` grade `Oiled Surface`
 - Status: generated
@@ -2679,9 +2848,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A pear on a sunlit windowsill with the soft texture of an oil painting, brushwork gentle and blended, canvas grain just perceptible.
 ```
 
-#### 193. Oil Painting 2. Oil Painting
+#### 206. Oil Painting 2. Oil Painting
 
-- File name: `PIC-193-Oil-Painting-2-Oil-Painting.png`
+- File name: `PIC-206-Oil-Painting-2-Oil-Painting.png`
 - Target: `public/card-art/gallery/cards/oil-painting/grade-02.webp`
 - Owner: Card `oil-painting` grade `Oil Painting`
 - Status: generated
@@ -2692,9 +2861,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A pear on a windowsill as an expressive oil painting, visible confident brushstrokes shaping fruit and light, thick color laid wet into wet.
 ```
 
-#### 194. Oil Painting 3. Impasto Storm
+#### 207. Oil Painting 3. Impasto Storm
 
-- File name: `PIC-194-Oil-Painting-3-Impasto-Storm.png`
+- File name: `PIC-207-Oil-Painting-3-Impasto-Storm.png`
 - Target: `public/card-art/gallery/cards/oil-painting/grade-03.webp`
 - Owner: Card `oil-painting` grade `Impasto Storm`
 - Status: generated
@@ -2705,9 +2874,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A pear on a windowsill as thick impasto oil painting, sculptural ridges of paint catching real light, the strokes standing off the surface like frosting.
 ```
 
-#### 195. Watercolor 1. Light Wash
+#### 208. Watercolor 1. Light Wash
 
-- File name: `PIC-195-Watercolor-1-Light-Wash.png`
+- File name: `PIC-208-Watercolor-1-Light-Wash.png`
 - Target: `public/card-art/gallery/cards/watercolor/grade-01.webp`
 - Owner: Card `watercolor` grade `Light Wash`
 - Status: generated
@@ -2718,9 +2887,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A red umbrella on a rainy street tinted with delicate watercolor washes, colors thin and luminous, the paper breathing through.
 ```
 
-#### 196. Watercolor 2. Watercolor
+#### 209. Watercolor 2. Watercolor
 
-- File name: `PIC-196-Watercolor-2-Watercolor.png`
+- File name: `PIC-209-Watercolor-2-Watercolor.png`
 - Target: `public/card-art/gallery/cards/watercolor/grade-02.webp`
 - Owner: Card `watercolor` grade `Watercolor`
 - Status: generated
@@ -2731,9 +2900,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A red umbrella crossing a rainy street as loose watercolor painting, blooming pigment edges, wet-into-wet skies, reflections dissolving downward.
 ```
 
-#### 197. Watercolor 3. Runaway Water
+#### 210. Watercolor 3. Runaway Water
 
-- File name: `PIC-197-Watercolor-3-Runaway-Water.png`
+- File name: `PIC-210-Watercolor-3-Runaway-Water.png`
 - Target: `public/card-art/gallery/cards/watercolor/grade-03.webp`
 - Owner: Card `watercolor` grade `Runaway Water`
 - Status: generated
@@ -2744,9 +2913,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A red umbrella in wild runaway watercolor - running drips, blooms colliding, patches of raw untouched paper where the rain would be.
 ```
 
-#### 198. Pencil Sketch 1. Light Graphite
+#### 211. Pencil Sketch 1. Light Graphite
 
-- File name: `PIC-198-Pencil-Sketch-1-Light-Graphite.png`
+- File name: `PIC-211-Pencil-Sketch-1-Light-Graphite.png`
 - Target: `public/card-art/gallery/cards/pencil-sketch/grade-01.webp`
 - Owner: Card `pencil-sketch` grade `Light Graphite`
 - Status: generated
@@ -2757,9 +2926,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A sleeping cat on a chair with light pencil-sketch linework, gentle graphite lines finding the curl of the body.
 ```
 
-#### 199. Pencil Sketch 2. Pencil Sketch
+#### 212. Pencil Sketch 2. Pencil Sketch
 
-- File name: `PIC-199-Pencil-Sketch-2-Pencil-Sketch.png`
+- File name: `PIC-212-Pencil-Sketch-2-Pencil-Sketch.png`
 - Target: `public/card-art/gallery/cards/pencil-sketch/grade-02.webp`
 - Owner: Card `pencil-sketch` grade `Pencil Sketch`
 - Status: generated
@@ -2770,9 +2939,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A sleeping cat as a full graphite pencil sketch, construction lines still visible under the finished fur, hatched shadow anchoring the chair.
 ```
 
-#### 200. Pencil Sketch 3. Furious Scribble
+#### 213. Pencil Sketch 3. Furious Scribble
 
-- File name: `PIC-200-Pencil-Sketch-3-Furious-Scribble.png`
+- File name: `PIC-213-Pencil-Sketch-3-Furious-Scribble.png`
 - Target: `public/card-art/gallery/cards/pencil-sketch/grade-03.webp`
 - Owner: Card `pencil-sketch` grade `Furious Scribble`
 - Status: generated
@@ -2783,9 +2952,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A sleeping cat as a furious scribbled pencil drawing, raw and unfinished on purpose, gesture lines flying past the form, energy over accuracy.
 ```
 
-#### 201. Ink Illustration 1. Fine Line
+#### 214. Ink Illustration 1. Fine Line
 
-- File name: `PIC-201-Ink-Illustration-1-Fine-Line.png`
+- File name: `PIC-214-Ink-Illustration-1-Fine-Line.png`
 - Target: `public/card-art/gallery/cards/ink-illustration/grade-01.webp`
 - Owner: Card `ink-illustration` grade `Fine Line`
 - Status: generated
@@ -2796,9 +2965,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A strutting rooster traced with fine ink linework, contours clean and confident, minimal shading.
 ```
 
-#### 202. Ink Illustration 2. Pen and Ink
+#### 215. Ink Illustration 2. Pen and Ink
 
-- File name: `PIC-202-Ink-Illustration-2-Pen-and-Ink.png`
+- File name: `PIC-215-Ink-Illustration-2-Pen-and-Ink.png`
 - Target: `public/card-art/gallery/cards/ink-illustration/grade-02.webp`
 - Owner: Card `ink-illustration` grade `Pen and Ink`
 - Status: generated
@@ -2809,9 +2978,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A strutting rooster as a full pen-and-ink illustration, crosshatched shading deepening the breast and tail, line weight doing all the light.
 ```
 
-#### 203. Ink Illustration 3. Ink Flood
+#### 216. Ink Illustration 3. Ink Flood
 
-- File name: `PIC-203-Ink-Illustration-3-Ink-Flood.png`
+- File name: `PIC-216-Ink-Illustration-3-Ink-Flood.png`
 - Target: `public/card-art/gallery/cards/ink-illustration/grade-03.webp`
 - Owner: Card `ink-illustration` grade `Ink Flood`
 - Status: generated
@@ -2822,9 +2991,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A rooster drowning in heavy black ink against stark white paper, feathers pooling into bold black shapes, highlights left as fearless white cuts.
 ```
 
-#### 204. Charcoal Drawing 1. Soft Charcoal
+#### 217. Charcoal Drawing 1. Soft Charcoal
 
-- File name: `PIC-204-Charcoal-Drawing-1-Soft-Charcoal.png`
+- File name: `PIC-217-Charcoal-Drawing-1-Soft-Charcoal.png`
 - Target: `public/card-art/gallery/cards/charcoal-drawing/grade-01.webp`
 - Owner: Card `charcoal-drawing` grade `Soft Charcoal`
 - Status: generated
@@ -2835,9 +3004,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A draft horse in wind with soft charcoal shading, forms rounded gently, edges lost and found.
 ```
 
-#### 205. Charcoal Drawing 2. Charcoal Drawing
+#### 218. Charcoal Drawing 2. Charcoal Drawing
 
-- File name: `PIC-205-Charcoal-Drawing-2-Charcoal-Drawing.png`
+- File name: `PIC-218-Charcoal-Drawing-2-Charcoal-Drawing.png`
 - Target: `public/card-art/gallery/cards/charcoal-drawing/grade-02.webp`
 - Owner: Card `charcoal-drawing` grade `Charcoal Drawing`
 - Status: generated
@@ -2848,9 +3017,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A draft horse as a full smudged charcoal drawing, thumb-dragged tone through the mane, deep blacks anchoring the legs, paper grain showing.
 ```
 
-#### 206. Charcoal Drawing 3. Charcoal Storm
+#### 219. Charcoal Drawing 3. Charcoal Storm
 
-- File name: `PIC-206-Charcoal-Drawing-3-Charcoal-Storm.png`
+- File name: `PIC-219-Charcoal-Drawing-3-Charcoal-Storm.png`
 - Target: `public/card-art/gallery/cards/charcoal-drawing/grade-03.webp`
 - Owner: Card `charcoal-drawing` grade `Charcoal Storm`
 - Status: generated
@@ -2861,9 +3030,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A draft horse as a violent charcoal study, deep blacks and torn highlights, marks slashed and lifted, the wind drawn as much as the horse.
 ```
 
-#### 207. Gouache Poster 1. Matte Color
+#### 220. Gouache Poster 1. Matte Color
 
-- File name: `PIC-207-Gouache-Poster-1-Matte-Color.png`
+- File name: `PIC-220-Gouache-Poster-1-Matte-Color.png`
 - Target: `public/card-art/gallery/cards/gouache-poster/grade-01.webp`
 - Owner: Card `gouache-poster` grade `Matte Color`
 - Status: generated
@@ -2874,9 +3043,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A lighthouse cove with flat gouache color simplifying the forms, matte paint, shapes tidy and warm.
 ```
 
-#### 208. Gouache Poster 2. Gouache Poster
+#### 221. Gouache Poster 2. Gouache Poster
 
-- File name: `PIC-208-Gouache-Poster-2-Gouache-Poster.png`
+- File name: `PIC-221-Gouache-Poster-2-Gouache-Poster.png`
 - Target: `public/card-art/gallery/cards/gouache-poster/grade-02.webp`
 - Owner: Card `gouache-poster` grade `Gouache Poster`
 - Status: generated
@@ -2887,9 +3056,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A lighthouse cove as a mid-century gouache poster, matte flat shapes, limited confident palette, edges crisp as cut paper.
 ```
 
-#### 209. Gouache Poster 3. Chunky Poster
+#### 222. Gouache Poster 3. Chunky Poster
 
-- File name: `PIC-209-Gouache-Poster-3-Chunky-Poster.png`
+- File name: `PIC-222-Gouache-Poster-3-Chunky-Poster.png`
 - Target: `public/card-art/gallery/cards/gouache-poster/grade-03.webp`
 - Owner: Card `gouache-poster` grade `Chunky Poster`
 - Status: generated
@@ -2900,9 +3069,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A lighthouse cove as bold chunky gouache poster art, shapes big as continents, honest paper grain and brush-dry edges everywhere.
 ```
 
-#### 210. Pixel Art 1. Pixel Touches
+#### 223. Pixel Art 1. Pixel Touches
 
-- File name: `PIC-210-Pixel-Art-1-Pixel-Touches.png`
+- File name: `PIC-223-Pixel-Art-1-Pixel-Touches.png`
 - Target: `public/card-art/gallery/cards/pixel-art/grade-01.webp`
 - Owner: Card `pixel-art` grade `Pixel Touches`
 - Status: generated
@@ -2913,9 +3082,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A cottage at dusk with pixel-art touches - edges quantizing, the lit window resolving into bright squares.
 ```
 
-#### 211. Pixel Art 2. 16-Bit Scene
+#### 224. Pixel Art 2. 16-Bit Scene
 
-- File name: `PIC-211-Pixel-Art-2-16-Bit-Scene.png`
+- File name: `PIC-224-Pixel-Art-2-16-Bit-Scene.png`
 - Target: `public/card-art/gallery/cards/pixel-art/grade-02.webp`
 - Owner: Card `pixel-art` grade `16-Bit Scene`
 - Status: generated
@@ -2926,9 +3095,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A cottage at dusk as detailed 16-bit pixel art, deliberate palette, dithered sky gradient, one warm window glowing pixel by pixel.
 ```
 
-#### 212. Pixel Art 3. 8-Bit Chunk
+#### 225. Pixel Art 3. 8-Bit Chunk
 
-- File name: `PIC-212-Pixel-Art-3-8-Bit-Chunk.png`
+- File name: `PIC-225-Pixel-Art-3-8-Bit-Chunk.png`
 - Target: `public/card-art/gallery/cards/pixel-art/grade-03.webp`
 - Owner: Card `pixel-art` grade `8-Bit Chunk`
 - Status: generated
@@ -2939,9 +3108,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A cottage as chunky 8-bit pixel art, fat pixels and hard dithered gradients, the whole scene an inventory of perfectly placed squares.
 ```
 
-#### 213. Low Poly 3d 1. Poly Accents
+#### 226. Low Poly 3d 1. Poly Accents
 
-- File name: `PIC-213-Low-Poly-3d-1-Poly-Accents.png`
+- File name: `PIC-226-Low-Poly-3d-1-Poly-Accents.png`
 - Target: `public/card-art/gallery/cards/low-poly-3d/grade-01.webp`
 - Owner: Card `low-poly-3d` grade `Poly Accents`
 - Status: generated
@@ -2952,9 +3121,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A standing stag with low-poly 3d accents, larger planes faceting the body while the antlers keep their detail.
 ```
 
-#### 214. Low Poly 3d 2. Low-Poly Render
+#### 227. Low Poly 3d 2. Low-Poly Render
 
-- File name: `PIC-214-Low-Poly-3d-2-Low-Poly-Render.png`
+- File name: `PIC-227-Low-Poly-3d-2-Low-Poly-Render.png`
 - Target: `public/card-art/gallery/cards/low-poly-3d/grade-02.webp`
 - Owner: Card `low-poly-3d` grade `Low-Poly Render`
 - Status: generated
@@ -2965,9 +3134,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A standing stag as a full low-poly 3d render, faceted surfaces flat-shaded, each triangle a deliberate plane of light.
 ```
 
-#### 215. Low Poly 3d 3. Triangle Minimal
+#### 228. Low Poly 3d 3. Triangle Minimal
 
-- File name: `PIC-215-Low-Poly-3d-3-Triangle-Minimal.png`
+- File name: `PIC-228-Low-Poly-3d-3-Triangle-Minimal.png`
 - Target: `public/card-art/gallery/cards/low-poly-3d/grade-03.webp`
 - Owner: Card `low-poly-3d` grade `Triangle Minimal`
 - Status: generated
@@ -2978,9 +3147,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A stag as brutalist low-poly geometry at minimal triangle count, barely enough facets to be a stag at all - and unmistakably one.
 ```
 
-#### 216. Clay Render 1. Clay Feel
+#### 229. Clay Render 1. Clay Feel
 
-- File name: `PIC-216-Clay-Render-1-Clay-Feel.png`
+- File name: `PIC-229-Clay-Render-1-Clay-Feel.png`
 - Target: `public/card-art/gallery/cards/clay-render/grade-01.webp`
 - Owner: Card `clay-render` grade `Clay Feel`
 - Status: generated
@@ -2991,9 +3160,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A cheerful snail with a soft clay-render feel, forms rounded and matte, everything gently squashable.
 ```
 
-#### 217. Clay Render 2. Claymation
+#### 230. Clay Render 2. Claymation
 
-- File name: `PIC-217-Clay-Render-2-Claymation.png`
+- File name: `PIC-230-Clay-Render-2-Claymation.png`
 - Target: `public/card-art/gallery/cards/clay-render/grade-02.webp`
 - Owner: Card `clay-render` grade `Claymation`
 - Status: generated
@@ -3004,9 +3173,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A cheerful snail as a playful claymation-style render, visible tool marks, plasticine sheen, the shell's spiral coiled by hand.
 ```
 
-#### 218. Clay Render 3. Plasticine Squash
+#### 231. Clay Render 3. Plasticine Squash
 
-- File name: `PIC-218-Clay-Render-3-Plasticine-Squash.png`
+- File name: `PIC-231-Clay-Render-3-Plasticine-Squash.png`
 - Target: `public/card-art/gallery/cards/clay-render/grade-03.webp`
 - Owner: Card `clay-render` grade `Plasticine Squash`
 - Status: generated
@@ -3017,9 +3186,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A snail as squashed plasticine clay, thumbprints and all, seams where the colors were rolled together, proudly hand-mashed.
 ```
 
-#### 219. Film Photograph 1. Filmic Look
+#### 232. Film Photograph 1. Filmic Look
 
-- File name: `PIC-219-Film-Photograph-1-Filmic-Look.png`
+- File name: `PIC-232-Film-Photograph-1-Filmic-Look.png`
 - Target: `public/card-art/gallery/cards/film-photograph/grade-01.webp`
 - Owner: Card `film-photograph` grade `Filmic Look`
 - Status: generated
@@ -3030,9 +3199,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A roadside diner at dusk with a filmic photographic look, gentle grain, colors as a good negative remembers them.
 ```
 
-#### 220. Film Photograph 2. 35mm Film
+#### 233. Film Photograph 2. 35mm Film
 
-- File name: `PIC-220-Film-Photograph-2-35mm-Film.png`
+- File name: `PIC-233-Film-Photograph-2-35mm-Film.png`
 - Target: `public/card-art/gallery/cards/film-photograph/grade-02.webp`
 - Owner: Card `film-photograph` grade `35mm Film`
 - Status: generated
@@ -3043,9 +3212,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A roadside diner as a true 35mm film photograph, natural grain structure, halation on the window light, depth honestly rendered.
 ```
 
-#### 221. Film Photograph 3. Expired Roll
+#### 234. Film Photograph 3. Expired Roll
 
-- File name: `PIC-221-Film-Photograph-3-Expired-Roll.png`
+- File name: `PIC-234-Film-Photograph-3-Expired-Roll.png`
 - Target: `public/card-art/gallery/cards/film-photograph/grade-03.webp`
 - Owner: Card `film-photograph` grade `Expired Roll`
 - Status: generated
@@ -3056,9 +3225,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A roadside diner as expired-film photography, heavy grain, magenta-shifted light leaks bleeding from the frame edge, a memory that half-survived the roll.
 ```
 
-#### 222. Papercut Collage 1. Paper Accents
+#### 235. Papercut Collage 1. Paper Accents
 
-- File name: `PIC-222-Papercut-Collage-1-Paper-Accents.png`
+- File name: `PIC-235-Papercut-Collage-1-Paper-Accents.png`
 - Target: `public/card-art/gallery/cards/papercut-collage/grade-01.webp`
 - Owner: Card `papercut-collage` grade `Paper Accents`
 - Status: generated
@@ -3069,9 +3238,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A whale in waves trimmed with layered papercut accents, a few sheets deep, shadows soft between them.
 ```
 
-#### 223. Papercut Collage 2. Papercut Collage
+#### 236. Papercut Collage 2. Papercut Collage
 
-- File name: `PIC-223-Papercut-Collage-2-Papercut-Collage.png`
+- File name: `PIC-236-Papercut-Collage-2-Papercut-Collage.png`
 - Target: `public/card-art/gallery/cards/papercut-collage/grade-02.webp`
 - Owner: Card `papercut-collage` grade `Papercut Collage`
 - Status: generated
@@ -3082,9 +3251,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A whale diving through a layered papercut collage, five or six sheets of sea, crisp cast shadows giving each layer honest depth.
 ```
 
-#### 224. Papercut Collage 3. Paper Diorama
+#### 237. Papercut Collage 3. Paper Diorama
 
-- File name: `PIC-224-Papercut-Collage-3-Paper-Diorama.png`
+- File name: `PIC-237-Papercut-Collage-3-Paper-Diorama.png`
 - Target: `public/card-art/gallery/cards/papercut-collage/grade-03.webp`
 - Owner: Card `papercut-collage` grade `Paper Diorama`
 - Status: generated
@@ -3095,9 +3264,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A whale in a deep 3d paper diorama of dozens of cut layers, a tunnel of sea receding sheet by sheet into shadowed paper depths.
 ```
 
-#### 225. Stained Glass 1. Glass Panes
+#### 238. Stained Glass 1. Glass Panes
 
-- File name: `PIC-225-Stained-Glass-1-Glass-Panes.png`
+- File name: `PIC-238-Stained-Glass-1-Glass-Panes.png`
 - Target: `public/card-art/gallery/cards/stained-glass/grade-01.webp`
 - Owner: Card `stained-glass` grade `Glass Panes`
 - Status: generated
@@ -3108,9 +3277,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A kingfisher over water with stained-glass color panes tinting the scene, a few leaded lines finding the bird.
 ```
 
-#### 226. Stained Glass 2. Stained Glass
+#### 239. Stained Glass 2. Stained Glass
 
-- File name: `PIC-226-Stained-Glass-2-Stained-Glass.png`
+- File name: `PIC-239-Stained-Glass-2-Stained-Glass.png`
 - Target: `public/card-art/gallery/cards/stained-glass/grade-02.webp`
 - Owner: Card `stained-glass` grade `Stained Glass`
 - Status: generated
@@ -3121,9 +3290,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A kingfisher as a full leaded stained-glass window, black cames outlining every pane, glass glowing where the light leans through.
 ```
 
-#### 227. Stained Glass 3. Cathedral Panel
+#### 240. Stained Glass 3. Cathedral Panel
 
-- File name: `PIC-227-Stained-Glass-3-Cathedral-Panel.png`
+- File name: `PIC-240-Stained-Glass-3-Cathedral-Panel.png`
 - Target: `public/card-art/gallery/cards/stained-glass/grade-03.webp`
 - Owner: Card `stained-glass` grade `Cathedral Panel`
 - Status: generated
@@ -3134,9 +3303,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A kingfisher as a towering cathedral stained-glass panel, jewel light flooding through hundreds of panes, the bird blazing at the center of a rose of glass.
 ```
 
-#### 228. Embroidered Textile 1. Stitch Texture
+#### 241. Embroidered Textile 1. Stitch Texture
 
-- File name: `PIC-228-Embroidered-Textile-1-Stitch-Texture.png`
+- File name: `PIC-241-Embroidered-Textile-1-Stitch-Texture.png`
 - Target: `public/card-art/gallery/cards/embroidered-textile/grade-01.webp`
 - Owner: Card `embroidered-textile` grade `Stitch Texture`
 - Status: generated
@@ -3147,9 +3316,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A sitting fox with embroidered texture warming the surface, stitch direction following the fur.
 ```
 
-#### 229. Embroidered Textile 2. Embroidery
+#### 242. Embroidered Textile 2. Embroidery
 
-- File name: `PIC-229-Embroidered-Textile-2-Embroidery.png`
+- File name: `PIC-242-Embroidered-Textile-2-Embroidery.png`
 - Target: `public/card-art/gallery/cards/embroidered-textile/grade-02.webp`
 - Owner: Card `embroidered-textile` grade `Embroidery`
 - Status: generated
@@ -3160,9 +3329,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A sitting fox as full textile art with visible stitches - satin stitch flanks, french-knot eyes, thread catching the light like fur never could.
 ```
 
-#### 230. Embroidered Textile 3. Dense Tapestry
+#### 243. Embroidered Textile 3. Dense Tapestry
 
-- File name: `PIC-230-Embroidered-Textile-3-Dense-Tapestry.png`
+- File name: `PIC-243-Embroidered-Textile-3-Dense-Tapestry.png`
 - Target: `public/card-art/gallery/cards/embroidered-textile/grade-03.webp`
 - Owner: Card `embroidered-textile` grade `Dense Tapestry`
 - Status: generated
@@ -3173,9 +3342,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A fox as dense hand-stitched tapestry in full thread relief, stitches packed shoulder to shoulder, the surface a landscape of thread.
 ```
 
-#### 231. Comic Ink Flats 1. Comic Inks
+#### 244. Comic Ink Flats 1. Comic Inks
 
-- File name: `PIC-231-Comic-Ink-Flats-1-Comic-Inks.png`
+- File name: `PIC-244-Comic-Ink-Flats-1-Comic-Inks.png`
 - Target: `public/card-art/gallery/cards/comic-ink-flats/grade-01.webp`
 - Owner: Card `comic-ink-flats` grade `Comic Inks`
 - Status: generated
@@ -3186,9 +3355,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A courier mid-leap with comic-book inking, bold outlines over the figure, color kept simple.
 ```
 
-#### 232. Comic Ink Flats 2. Comic Panel
+#### 245. Comic Ink Flats 2. Comic Panel
 
-- File name: `PIC-232-Comic-Ink-Flats-2-Comic-Panel.png`
+- File name: `PIC-245-Comic-Ink-Flats-2-Comic-Panel.png`
 - Target: `public/card-art/gallery/cards/comic-ink-flats/grade-02.webp`
 - Owner: Card `comic-ink-flats` grade `Comic Panel`
 - Status: generated
@@ -3199,9 +3368,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A courier leaping a rooftop gap as a full comic panel, bold inks and flat colors, black shadow shapes doing the drama.
 ```
 
-#### 233. Comic Ink Flats 3. Graphic Novel
+#### 246. Comic Ink Flats 3. Graphic Novel
 
-- File name: `PIC-233-Comic-Ink-Flats-3-Graphic-Novel.png`
+- File name: `PIC-246-Comic-Ink-Flats-3-Graphic-Novel.png`
 - Target: `public/card-art/gallery/cards/comic-ink-flats/grade-03.webp`
 - Owner: Card `comic-ink-flats` grade `Graphic Novel`
 - Status: generated
@@ -3212,11 +3381,50 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A rooftop leap as high-contrast graphic novel art, screentone skies and speed lines tearing the air, ink pushed to its limit.
 ```
 
+#### 247. Native Pixel Grid 1. Native pixel grid
+
+- File name: `PIC-247-Native-Pixel-Grid-1-Native-pixel-grid.png`
+- Target: `public/card-art/gallery/cards/native-pixel-grid/grade-01.webp`
+- Owner: Card `native-pixel-grid` grade `Native pixel grid`
+- Status: planned
+
+```
+Collectible-card key art for a deck that teaches image-making. Each card demonstrates exactly one technique, and the image is MADE WITH that technique wherever the brief names one - the technique is how the picture is rendered, never an object shown inside it. One strong, instantly readable focal subject with clean uncluttered edges, composed square with generous breathing room, and it still reads at thumbnail size. The artwork is full-bleed and fills the entire square to every edge, the scene cut off by the picture edges on all four sides: no border, no margin, no matting, no frame, no drawn edge line, no vignette box, no rounded corners, not a picture of a card or a page. Artwork only: no text, no letters, no numbers, no logos, no readable symbols, no ui labels, no card frame, no speech bubbles, no watermarks, no signatures.
+
+A hard-edged pixel shape inside a single empty tile.
+```
+
+#### 248. Native Pixel Grid 2. Native pixel grid · clusters
+
+- File name: `PIC-248-Native-Pixel-Grid-2-Native-pixel-grid-clusters.png`
+- Target: `public/card-art/gallery/cards/native-pixel-grid/grade-02.webp`
+- Owner: Card `native-pixel-grid` grade `Native pixel grid · clusters`
+- Status: planned
+
+```
+Collectible-card key art for a deck that teaches image-making. Each card demonstrates exactly one technique, and the image is MADE WITH that technique wherever the brief names one - the technique is how the picture is rendered, never an object shown inside it. One strong, instantly readable focal subject with clean uncluttered edges, composed square with generous breathing room, and it still reads at thumbnail size. The artwork is full-bleed and fills the entire square to every edge, the scene cut off by the picture edges on all four sides: no border, no margin, no matting, no frame, no drawn edge line, no vignette box, no rounded corners, not a picture of a card or a page. Artwork only: no text, no letters, no numbers, no logos, no readable symbols, no ui labels, no card frame, no speech bubbles, no watermarks, no signatures.
+
+A hard-edged pixel shape inside a single empty tile.
+```
+
+#### 249. Native Pixel Grid 3. Native pixel grid · economy
+
+- File name: `PIC-249-Native-Pixel-Grid-3-Native-pixel-grid-economy.png`
+- Target: `public/card-art/gallery/cards/native-pixel-grid/grade-03.webp`
+- Owner: Card `native-pixel-grid` grade `Native pixel grid · economy`
+- Status: planned
+
+```
+Collectible-card key art for a deck that teaches image-making. Each card demonstrates exactly one technique, and the image is MADE WITH that technique wherever the brief names one - the technique is how the picture is rendered, never an object shown inside it. One strong, instantly readable focal subject with clean uncluttered edges, composed square with generous breathing room, and it still reads at thumbnail size. The artwork is full-bleed and fills the entire square to every edge, the scene cut off by the picture edges on all four sides: no border, no margin, no matting, no frame, no drawn edge line, no vignette box, no rounded corners, not a picture of a card or a page. Artwork only: no text, no letters, no numbers, no logos, no readable symbols, no ui labels, no card frame, no speech bubbles, no watermarks, no signatures.
+
+A hard-edged pixel shape inside a single empty tile.
+```
+
 ### Per-grade variants - Tone
 
-#### 234. Muted Palette 1. Softened Color
+#### 250. Muted Palette 1. Softened Color
 
-- File name: `PIC-234-Muted-Palette-1-Softened-Color.png`
+- File name: `PIC-250-Muted-Palette-1-Softened-Color.png`
 - Target: `public/card-art/gallery/cards/muted-palette/grade-01.webp`
 - Owner: Card `muted-palette` grade `Softened Color`
 - Status: generated
@@ -3227,9 +3435,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A fishing village at dawn with slightly muted colors, every hue eased back one honest step from full strength.
 ```
 
-#### 235. Muted Palette 2. Muted Palette
+#### 251. Muted Palette 2. Muted Palette
 
-- File name: `PIC-235-Muted-Palette-2-Muted-Palette.png`
+- File name: `PIC-251-Muted-Palette-2-Muted-Palette.png`
 - Target: `public/card-art/gallery/cards/muted-palette/grade-02.webp`
 - Owner: Card `muted-palette` grade `Muted Palette`
 - Status: generated
@@ -3240,9 +3448,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A fishing village in a fully muted desaturated palette, restrained grays and dusty blues, the mood carried by value rather than hue.
 ```
 
-#### 236. Muted Palette 3. Ash and Ember
+#### 252. Muted Palette 3. Ash and Ember
 
-- File name: `PIC-236-Muted-Palette-3-Ash-and-Ember.png`
+- File name: `PIC-252-Muted-Palette-3-Ash-and-Ember.png`
 - Target: `public/card-art/gallery/cards/muted-palette/grade-03.webp`
 - Owner: Card `muted-palette` grade `Ash and Ember`
 - Status: generated
@@ -3253,9 +3461,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A fishing village in near-monochrome grays with a single surviving accent - one red buoy alone keeping its color in a silenced world.
 ```
 
-#### 237. Neon Saturation 1. Neon Hints
+#### 253. Neon Saturation 1. Neon Hints
 
-- File name: `PIC-237-Neon-Saturation-1-Neon-Hints.png`
+- File name: `PIC-253-Neon-Saturation-1-Neon-Hints.png`
 - Target: `public/card-art/gallery/cards/neon-saturation/grade-01.webp`
 - Owner: Card `neon-saturation` grade `Neon Hints`
 - Status: generated
@@ -3266,9 +3474,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 An arcade alley with hints of neon color in signs and reflections, electric accents leaking into an otherwise night-real scene.
 ```
 
-#### 238. Neon Saturation 2. Neon Saturation
+#### 254. Neon Saturation 2. Neon Saturation
 
-- File name: `PIC-238-Neon-Saturation-2-Neon-Saturation.png`
+- File name: `PIC-254-Neon-Saturation-2-Neon-Saturation.png`
 - Target: `public/card-art/gallery/cards/neon-saturation/grade-02.webp`
 - Owner: Card `neon-saturation` grade `Neon Saturation`
 - Status: generated
@@ -3279,9 +3487,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 An arcade alley in full neon saturation, glowing magenta and cyan leading the palette, every wet surface repeating the signs.
 ```
 
-#### 239. Neon Saturation 3. Signal Overload
+#### 255. Neon Saturation 3. Signal Overload
 
-- File name: `PIC-239-Neon-Saturation-3-Signal-Overload.png`
+- File name: `PIC-255-Neon-Saturation-3-Signal-Overload.png`
 - Target: `public/card-art/gallery/cards/neon-saturation/grade-03.webp`
 - Owner: Card `neon-saturation` grade `Signal Overload`
 - Status: generated
@@ -3292,9 +3500,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 An arcade alley in electric neon color overload, every surface glowing, color so saturated the light itself feels loud.
 ```
 
-#### 240. Pastel Dream 1. Pastel Hints
+#### 256. Pastel Dream 1. Pastel Hints
 
-- File name: `PIC-240-Pastel-Dream-1-Pastel-Hints.png`
+- File name: `PIC-256-Pastel-Dream-1-Pastel-Hints.png`
 - Target: `public/card-art/gallery/cards/pastel-dream/grade-01.webp`
 - Owner: Card `pastel-dream` grade `Pastel Hints`
 - Status: generated
@@ -3305,9 +3513,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 Balloons over misty hills with gentle pastel hints softening the palette, colors leaning toward powder.
 ```
 
-#### 241. Pastel Dream 2. Pastel Dream
+#### 257. Pastel Dream 2. Pastel Dream
 
-- File name: `PIC-241-Pastel-Dream-2-Pastel-Dream.png`
+- File name: `PIC-257-Pastel-Dream-2-Pastel-Dream.png`
 - Target: `public/card-art/gallery/cards/pastel-dream/grade-02.webp`
 - Owner: Card `pastel-dream` grade `Pastel Dream`
 - Status: generated
@@ -3318,9 +3526,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 Balloons over hills in a fully soft dreamy pastel palette, pink-mint-lilac harmony, edges and light equally gentle.
 ```
 
-#### 242. Pastel Dream 3. Cotton Candy
+#### 258. Pastel Dream 3. Cotton Candy
 
-- File name: `PIC-242-Pastel-Dream-3-Cotton-Candy.png`
+- File name: `PIC-258-Pastel-Dream-3-Cotton-Candy.png`
 - Target: `public/card-art/gallery/cards/pastel-dream/grade-03.webp`
 - Owner: Card `pastel-dream` grade `Cotton Candy`
 - Status: generated
@@ -3331,9 +3539,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 Balloons in an all-over cotton-candy palette of sugared pinks and mints, the whole world confected, even the shadows sweetened.
 ```
 
-#### 243. Monochrome Noir 1. Drained Color
+#### 259. Monochrome Noir 1. Drained Color
 
-- File name: `PIC-243-Monochrome-Noir-1-Drained-Color.png`
+- File name: `PIC-259-Monochrome-Noir-1-Drained-Color.png`
 - Target: `public/card-art/gallery/cards/monochrome-noir/grade-01.webp`
 - Owner: Card `monochrome-noir` grade `Drained Color`
 - Status: generated
@@ -3344,9 +3552,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A stairwell scene nearly monochrome, color drained toward gray, night shapes resolving into value.
 ```
 
-#### 244. Monochrome Noir 2. Monochrome Noir
+#### 260. Monochrome Noir 2. Monochrome Noir
 
-- File name: `PIC-244-Monochrome-Noir-2-Monochrome-Noir.png`
+- File name: `PIC-260-Monochrome-Noir-2-Monochrome-Noir.png`
 - Target: `public/card-art/gallery/cards/monochrome-noir/grade-02.webp`
 - Owner: Card `monochrome-noir` grade `Monochrome Noir`
 - Status: generated
@@ -3357,9 +3565,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A stairwell in full black-and-white noir palette, deep contrast, hard bulb light and blind-striped shadows, wet iron shining.
 ```
 
-#### 245. Monochrome Noir 3. Ink Black
+#### 261. Monochrome Noir 3. Ink Black
 
-- File name: `PIC-245-Monochrome-Noir-3-Ink-Black.png`
+- File name: `PIC-261-Monochrome-Noir-3-Ink-Black.png`
 - Target: `public/card-art/gallery/cards/monochrome-noir/grade-03.webp`
 - Owner: Card `monochrome-noir` grade `Ink Black`
 - Status: generated
@@ -3370,9 +3578,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A stairwell in crushed ink-black monochrome, a single blade of white light cutting the dark, everything else surrendered to black.
 ```
 
-#### 246. Earthy Naturals 1. Natural Cast
+#### 262. Earthy Naturals 1. Natural Cast
 
-- File name: `PIC-246-Earthy-Naturals-1-Natural-Cast.png`
+- File name: `PIC-262-Earthy-Naturals-1-Natural-Cast.png`
 - Target: `public/card-art/gallery/cards/earthy-naturals/grade-01.webp`
 - Owner: Card `earthy-naturals` grade `Natural Cast`
 - Status: generated
@@ -3383,9 +3591,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A stone barn and harvest stack with natural earthy tones settling in, soil-warm and unforced.
 ```
 
-#### 247. Earthy Naturals 2. Earthy Naturals
+#### 263. Earthy Naturals 2. Earthy Naturals
 
-- File name: `PIC-247-Earthy-Naturals-2-Earthy-Naturals.png`
+- File name: `PIC-263-Earthy-Naturals-2-Earthy-Naturals.png`
 - Target: `public/card-art/gallery/cards/earthy-naturals/grade-02.webp`
 - Owner: Card `earthy-naturals` grade `Earthy Naturals`
 - Status: generated
@@ -3396,9 +3604,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A barn and harvest in a full earthy palette - ochre gourds, moss lintels, umber shadow - every color a neighbor of dirt.
 ```
 
-#### 248. Earthy Naturals 3. Deep Loam
+#### 264. Earthy Naturals 3. Deep Loam
 
-- File name: `PIC-248-Earthy-Naturals-3-Deep-Loam.png`
+- File name: `PIC-264-Earthy-Naturals-3-Deep-Loam.png`
 - Target: `public/card-art/gallery/cards/earthy-naturals/grade-03.webp`
 - Owner: Card `earthy-naturals` grade `Deep Loam`
 - Status: generated
@@ -3409,9 +3617,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A harvest scene in deep loam, everything soil, bark, and stone, the palette compressed to what a field could grow and weather could stain.
 ```
 
-#### 249. Jewel Tones 1. Gem Accents
+#### 265. Jewel Tones 1. Gem Accents
 
-- File name: `PIC-249-Jewel-Tones-1-Gem-Accents.png`
+- File name: `PIC-265-Jewel-Tones-1-Gem-Accents.png`
 - Target: `public/card-art/gallery/cards/jewel-tones/grade-01.webp`
 - Owner: Card `jewel-tones` grade `Gem Accents`
 - Status: generated
@@ -3422,9 +3630,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A textile stall with jewel-tone accents enriching the scene, gemstone color glinting among quieter cloth.
 ```
 
-#### 250. Jewel Tones 2. Jewel Tones
+#### 266. Jewel Tones 2. Jewel Tones
 
-- File name: `PIC-250-Jewel-Tones-2-Jewel-Tones.png`
+- File name: `PIC-266-Jewel-Tones-2-Jewel-Tones.png`
 - Target: `public/card-art/gallery/cards/jewel-tones/grade-02.webp`
 - Owner: Card `jewel-tones` grade `Jewel Tones`
 - Status: generated
@@ -3435,9 +3643,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A stall in full jewel tones, bolts of emerald, sapphire, and ruby silk leading the palette, color deep enough to fall into.
 ```
 
-#### 251. Jewel Tones 3. Treasure Hoard
+#### 267. Jewel Tones 3. Treasure Hoard
 
-- File name: `PIC-251-Jewel-Tones-3-Treasure-Hoard.png`
+- File name: `PIC-267-Jewel-Tones-3-Treasure-Hoard.png`
 - Target: `public/card-art/gallery/cards/jewel-tones/grade-03.webp`
 - Owner: Card `jewel-tones` grade `Treasure Hoard`
 - Status: generated
@@ -3448,9 +3656,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A stall as a treasure hoard, every surface saturated gemstone color, shadows amethyst, the very air tinted like the inside of a jewel.
 ```
 
-#### 252. Sepia Vintage 1. Warm Fade
+#### 268. Sepia Vintage 1. Warm Fade
 
-- File name: `PIC-252-Sepia-Vintage-1-Warm-Fade.png`
+- File name: `PIC-268-Sepia-Vintage-1-Warm-Fade.png`
 - Target: `public/card-art/gallery/cards/sepia-vintage/grade-01.webp`
 - Owner: Card `sepia-vintage` grade `Warm Fade`
 - Status: generated
@@ -3461,9 +3669,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A carousel with a warm vintage fade tinting the scene, colors leaning amber, memory setting in at the edges.
 ```
 
-#### 253. Sepia Vintage 2. Sepia Vintage
+#### 269. Sepia Vintage 2. Sepia Vintage
 
-- File name: `PIC-253-Sepia-Vintage-2-Sepia-Vintage.png`
+- File name: `PIC-269-Sepia-Vintage-2-Sepia-Vintage.png`
 - Target: `public/card-art/gallery/cards/sepia-vintage/grade-02.webp`
 - Owner: Card `sepia-vintage` grade `Sepia Vintage`
 - Status: generated
@@ -3474,9 +3682,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A carousel in full aged sepia, vintage photograph feel, browns and creams where the colors used to be, time visible as tone.
 ```
 
-#### 254. Sepia Vintage 3. Daguerreotype
+#### 270. Sepia Vintage 3. Daguerreotype
 
-- File name: `PIC-254-Sepia-Vintage-3-Daguerreotype.png`
+- File name: `PIC-270-Sepia-Vintage-3-Daguerreotype.png`
 - Target: `public/card-art/gallery/cards/sepia-vintage/grade-03.webp`
 - Owner: Card `sepia-vintage` grade `Daguerreotype`
 - Status: generated
@@ -3487,9 +3695,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A carousel in antique daguerreotype tones, chemical stains and vignette creeping from the corners, the image half-returned to silver.
 ```
 
-#### 255. Iridescent Shift 1. Pearl Sheen
+#### 271. Iridescent Shift 1. Pearl Sheen
 
-- File name: `PIC-255-Iridescent-Shift-1-Pearl-Sheen.png`
+- File name: `PIC-271-Iridescent-Shift-1-Pearl-Sheen.png`
 - Target: `public/card-art/gallery/cards/iridescent-shift/grade-01.webp`
 - Owner: Card `iridescent-shift` grade `Pearl Sheen`
 - Status: generated
@@ -3500,9 +3708,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A beetle on a leaf with a pearly iridescent sheen glancing off its shell, hints of shifting color.
 ```
 
-#### 256. Iridescent Shift 2. Iridescent Shift
+#### 272. Iridescent Shift 2. Iridescent Shift
 
-- File name: `PIC-256-Iridescent-Shift-2-Iridescent-Shift.png`
+- File name: `PIC-272-Iridescent-Shift-2-Iridescent-Shift.png`
 - Target: `public/card-art/gallery/cards/iridescent-shift/grade-02.webp`
 - Owner: Card `iridescent-shift` grade `Iridescent Shift`
 - Status: generated
@@ -3513,9 +3721,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A beetle in full iridescent shift, oil-slick color sliding green to violet to gold across the shell, the leaf's water drops refracting.
 ```
 
-#### 257. Iridescent Shift 3. Opal Storm
+#### 273. Iridescent Shift 3. Opal Storm
 
-- File name: `PIC-257-Iridescent-Shift-3-Opal-Storm.png`
+- File name: `PIC-273-Iridescent-Shift-3-Opal-Storm.png`
 - Target: `public/card-art/gallery/cards/iridescent-shift/grade-03.webp`
 - Owner: Card `iridescent-shift` grade `Opal Storm`
 - Status: generated
@@ -3526,9 +3734,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A beetle in an opal storm, the whole world refracting - leaf, air, and light all shifting spectral color like the inside of a soap bubble.
 ```
 
-#### 258. High Contrast 1. Punchy Values
+#### 274. High Contrast 1. Punchy Values
 
-- File name: `PIC-258-High-Contrast-1-Punchy-Values.png`
+- File name: `PIC-274-High-Contrast-1-Punchy-Values.png`
 - Target: `public/card-art/gallery/cards/high-contrast/grade-01.webp`
 - Owner: Card `high-contrast` grade `Punchy Values`
 - Status: generated
@@ -3539,9 +3747,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A chess set by a window with punchy contrast, lights lifted and darks deepened a confident step.
 ```
 
-#### 259. High Contrast 2. High Contrast
+#### 275. High Contrast 2. High Contrast
 
-- File name: `PIC-259-High-Contrast-2-High-Contrast.png`
+- File name: `PIC-275-High-Contrast-2-High-Contrast.png`
 - Target: `public/card-art/gallery/cards/high-contrast/grade-02.webp`
 - Owner: Card `high-contrast` grade `High Contrast`
 - Status: generated
@@ -3552,9 +3760,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A chess set in full high contrast, hard highlights against deep shadow, each piece half-lit half-lost, the midtones squeezed out.
 ```
 
-#### 260. High Contrast 3. Split Black
+#### 276. High Contrast 3. Split Black
 
-- File name: `PIC-260-High-Contrast-3-Split-Black.png`
+- File name: `PIC-276-High-Contrast-3-Split-Black.png`
 - Target: `public/card-art/gallery/cards/high-contrast/grade-03.webp`
 - Owner: Card `high-contrast` grade `Split Black`
 - Status: generated
@@ -3565,9 +3773,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A chess set in extreme split contrast, blown whites against pit black, nothing between - the image reduced to a verdict.
 ```
 
-#### 261. Candy Pop 1. Sweet Accents
+#### 277. Candy Pop 1. Sweet Accents
 
-- File name: `PIC-261-Candy-Pop-1-Sweet-Accents.png`
+- File name: `PIC-277-Candy-Pop-1-Sweet-Accents.png`
 - Target: `public/card-art/gallery/cards/candy-pop/grade-01.webp`
 - Owner: Card `candy-pop` grade `Sweet Accents`
 - Status: generated
@@ -3578,9 +3786,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 An ice-cream van with candy-bright accents popping in, sweet color arriving in stripes and trims.
 ```
 
-#### 262. Candy Pop 2. Candy Pop
+#### 278. Candy Pop 2. Candy Pop
 
-- File name: `PIC-262-Candy-Pop-2-Candy-Pop.png`
+- File name: `PIC-278-Candy-Pop-2-Candy-Pop.png`
 - Target: `public/card-art/gallery/cards/candy-pop/grade-02.webp`
 - Owner: Card `candy-pop` grade `Candy Pop`
 - Status: generated
@@ -3591,9 +3799,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 An ice-cream van in a full glossy candy palette, bubblegum and lemon leading, chrome winking, the street sweetened around it.
 ```
 
-#### 263. Candy Pop 3. Sugar Rush
+#### 279. Candy Pop 3. Sugar Rush
 
-- File name: `PIC-263-Candy-Pop-3-Sugar-Rush.png`
+- File name: `PIC-279-Candy-Pop-3-Sugar-Rush.png`
 - Target: `public/card-art/gallery/cards/candy-pop/grade-03.webp`
 - Owner: Card `candy-pop` grade `Sugar Rush`
 - Status: generated
@@ -3604,9 +3812,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 An ice-cream van in a full sugar rush, every color turned to eleven, glossy and loud, the sky itself reading as flavored.
 ```
 
-#### 264. Cold Steel 1. Cool Cast
+#### 280. Cold Steel 1. Cool Cast
 
-- File name: `PIC-264-Cold-Steel-1-Cool-Cast.png`
+- File name: `PIC-280-Cold-Steel-1-Cool-Cast.png`
 - Target: `public/card-art/gallery/cards/cold-steel/grade-01.webp`
 - Owner: Card `cold-steel` grade `Cool Cast`
 - Status: generated
@@ -3617,9 +3825,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A shipyard crane with a cool blue-gray cast settling over the scene, warmth receding.
 ```
 
-#### 265. Cold Steel 2. Cold Steel
+#### 281. Cold Steel 2. Cold Steel
 
-- File name: `PIC-265-Cold-Steel-2-Cold-Steel.png`
+- File name: `PIC-281-Cold-Steel-2-Cold-Steel.png`
 - Target: `public/card-art/gallery/cards/cold-steel/grade-02.webp`
 - Owner: Card `cold-steel` grade `Cold Steel`
 - Status: generated
@@ -3630,9 +3838,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A shipyard in a full cold steel palette - slate blue hulls, gunmetal sky, zinc water - precision instead of comfort.
 ```
 
-#### 266. Cold Steel 3. Deep Freeze
+#### 282. Cold Steel 3. Deep Freeze
 
-- File name: `PIC-266-Cold-Steel-3-Deep-Freeze.png`
+- File name: `PIC-282-Cold-Steel-3-Deep-Freeze.png`
 - Target: `public/card-art/gallery/cards/cold-steel/grade-03.webp`
 - Owner: Card `cold-steel` grade `Deep Freeze`
 - Status: generated
@@ -3643,9 +3851,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A shipyard in deep freeze, everything blue-black chilled metal, the palette cold enough to hurt bare skin.
 ```
 
-#### 267. Sun Bleached 1. Light Fade
+#### 283. Sun Bleached 1. Light Fade
 
-- File name: `PIC-267-Sun-Bleached-1-Light-Fade.png`
+- File name: `PIC-283-Sun-Bleached-1-Light-Fade.png`
 - Target: `public/card-art/gallery/cards/sun-bleached/grade-01.webp`
 - Owner: Card `sun-bleached` grade `Light Fade`
 - Status: generated
@@ -3656,9 +3864,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A boardwalk fence with lightly sun-faded color, paint eased back like one hard summer passed.
 ```
 
-#### 268. Sun Bleached 2. Sun-Bleached
+#### 284. Sun Bleached 2. Sun-Bleached
 
-- File name: `PIC-268-Sun-Bleached-2-Sun-Bleached.png`
+- File name: `PIC-284-Sun-Bleached-2-Sun-Bleached.png`
 - Target: `public/card-art/gallery/cards/sun-bleached/grade-02.webp`
 - Owner: Card `sun-bleached` grade `Sun-Bleached`
 - Status: generated
@@ -3669,9 +3877,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A boardwalk in a fully washed sun-bleached palette, pigment surrendering to salt and light, every color a former version of itself.
 ```
 
-#### 269. Sun Bleached 3. Ghost Paint
+#### 285. Sun Bleached 3. Ghost Paint
 
-- File name: `PIC-269-Sun-Bleached-3-Ghost-Paint.png`
+- File name: `PIC-285-Sun-Bleached-3-Ghost-Paint.png`
 - Target: `public/card-art/gallery/cards/sun-bleached/grade-03.webp`
 - Owner: Card `sun-bleached` grade `Ghost Paint`
 - Status: generated
@@ -3684,9 +3892,9 @@ A boardwalk in ghost paint, color surviving only in faded traces caught in the w
 
 ### Per-grade variants - Universe
 
-#### 270. Rainswept City 1. After the Rain
+#### 286. Rainswept City 1. After the Rain
 
-- File name: `PIC-270-Rainswept-City-1-After-the-Rain.png`
+- File name: `PIC-286-Rainswept-City-1-After-the-Rain.png`
 - Target: `public/card-art/gallery/cards/rainswept-city/grade-01.webp`
 - Owner: Card `rainswept-city` grade `After the Rain`
 - Status: generated
@@ -3697,9 +3905,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A city street after rain, pavement wet and softly reflective, a figure at the crossing, drizzle still hanging in the streetlight.
 ```
 
-#### 271. Rainswept City 2. Rain-Swept City
+#### 287. Rainswept City 2. Rain-Swept City
 
-- File name: `PIC-271-Rainswept-City-2-Rain-Swept-City.png`
+- File name: `PIC-287-Rainswept-City-2-Rain-Swept-City.png`
 - Target: `public/card-art/gallery/cards/rainswept-city/grade-02.webp`
 - Owner: Card `rainswept-city` grade `Rain-Swept City`
 - Status: generated
@@ -3710,9 +3918,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A full rain-swept night city, steady rain combing the light, streets reflecting like canals, the umbrella figure ringed by doubled glow.
 ```
 
-#### 272. Rainswept City 3. Drowned Metropolis
+#### 288. Rainswept City 3. Drowned Metropolis
 
-- File name: `PIC-272-Rainswept-City-3-Drowned-Metropolis.png`
+- File name: `PIC-288-Rainswept-City-3-Drowned-Metropolis.png`
 - Target: `public/card-art/gallery/cards/rainswept-city/grade-03.webp`
 - Owner: Card `rainswept-city` grade `Drowned Metropolis`
 - Status: generated
@@ -3723,9 +3931,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A drowned metropolis in torrential downpour, rain flooding the avenues, the glowing city and its reflection nearly meeting in the rising water.
 ```
 
-#### 273. Ancient Forest 1. Forest Edge
+#### 289. Ancient Forest 1. Forest Edge
 
-- File name: `PIC-273-Ancient-Forest-1-Forest-Edge.png`
+- File name: `PIC-289-Ancient-Forest-1-Forest-Edge.png`
 - Target: `public/card-art/gallery/cards/ancient-forest/grade-01.webp`
 - Owner: Card `ancient-forest` grade `Forest Edge`
 - Status: generated
@@ -3736,9 +3944,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 The edge of an old mossy forest, a deer path entering between the first great trunks, the deep green waiting past the treeline.
 ```
 
-#### 274. Ancient Forest 2. Ancient Forest
+#### 290. Ancient Forest 2. Ancient Forest
 
-- File name: `PIC-274-Ancient-Forest-2-Ancient-Forest.png`
+- File name: `PIC-290-Ancient-Forest-2-Ancient-Forest.png`
 - Target: `public/card-art/gallery/cards/ancient-forest/grade-02.webp`
 - Owner: Card `ancient-forest` grade `Ancient Forest`
 - Status: generated
@@ -3749,9 +3957,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 Deep old-growth forest surrounding the path, moss sleeving every trunk, shafts of light dropping through the canopy like slow rain.
 ```
 
-#### 275. Ancient Forest 3. Primeval Depths
+#### 291. Ancient Forest 3. Primeval Depths
 
-- File name: `PIC-275-Ancient-Forest-3-Primeval-Depths.png`
+- File name: `PIC-291-Ancient-Forest-3-Primeval-Depths.png`
 - Target: `public/card-art/gallery/cards/ancient-forest/grade-03.webp`
 - Owner: Card `ancient-forest` grade `Primeval Depths`
 - Status: generated
@@ -3762,9 +3970,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A primeval forest of colossal ancient trees swallowing the frame whole, trunks wide as towers, the path a rumor in the green dark.
 ```
 
-#### 276. Desert Expanse 1. Dry Country
+#### 292. Desert Expanse 1. Dry Country
 
-- File name: `PIC-276-Desert-Expanse-1-Dry-Country.png`
+- File name: `PIC-292-Desert-Expanse-1-Dry-Country.png`
 - Target: `public/card-art/gallery/cards/desert-expanse/grade-01.webp`
 - Owner: Card `desert-expanse` grade `Dry Country`
 - Status: generated
@@ -3775,9 +3983,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 Dry open scrubland with a small caravan passing through, hardy brush and pale sand, distance beginning to assert itself.
 ```
 
-#### 277. Desert Expanse 2. Desert Expanse
+#### 293. Desert Expanse 2. Desert Expanse
 
-- File name: `PIC-277-Desert-Expanse-2-Desert-Expanse.png`
+- File name: `PIC-293-Desert-Expanse-2-Desert-Expanse.png`
 - Target: `public/card-art/gallery/cards/desert-expanse/grade-02.webp`
 - Owner: Card `desert-expanse` grade `Desert Expanse`
 - Status: generated
@@ -3788,9 +3996,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A full desert expanse of rolling dunes to the horizon, the caravan a thread of silhouettes on a ridge, ripples sharp in the near sand.
 ```
 
-#### 278. Desert Expanse 3. Endless Erg
+#### 294. Desert Expanse 3. Endless Erg
 
-- File name: `PIC-278-Desert-Expanse-3-Endless-Erg.png`
+- File name: `PIC-294-Desert-Expanse-3-Endless-Erg.png`
 - Target: `public/card-art/gallery/cards/desert-expanse/grade-03.webp`
 - Owner: Card `desert-expanse` grade `Endless Erg`
 - Status: generated
@@ -3801,9 +4009,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 An endless erg, an ocean of dunes under heat shimmer, the caravan almost dissolved by distance, sand and sky negotiating the horizon.
 ```
 
-#### 279. Frozen Tundra 1. First Frost
+#### 295. Frozen Tundra 1. First Frost
 
-- File name: `PIC-279-Frozen-Tundra-1-First-Frost.png`
+- File name: `PIC-295-Frozen-Tundra-1-First-Frost.png`
 - Target: `public/card-art/gallery/cards/frozen-tundra/grade-01.webp`
 - Owner: Card `frozen-tundra` grade `First Frost`
 - Status: generated
@@ -3814,9 +4022,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 Frost-dusted country under thin snow, a sled team moving through, the first real bite of winter in the air.
 ```
 
-#### 280. Frozen Tundra 2. Frozen Tundra
+#### 296. Frozen Tundra 2. Frozen Tundra
 
-- File name: `PIC-280-Frozen-Tundra-2-Frozen-Tundra.png`
+- File name: `PIC-296-Frozen-Tundra-2-Frozen-Tundra.png`
 - Target: `public/card-art/gallery/cards/frozen-tundra/grade-02.webp`
 - Owner: Card `frozen-tundra` grade `Frozen Tundra`
 - Status: generated
@@ -3827,9 +4035,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 Full frozen tundra, deep snow and ice fields all around, the sled team small between white ground and pale sky, runners hissing.
 ```
 
-#### 281. Frozen Tundra 3. White Death
+#### 297. Frozen Tundra 3. White Death
 
-- File name: `PIC-281-Frozen-Tundra-3-White-Death.png`
+- File name: `PIC-297-Frozen-Tundra-3-White-Death.png`
 - Target: `public/card-art/gallery/cards/frozen-tundra/grade-03.webp`
 - Owner: Card `frozen-tundra` grade `White Death`
 - Status: generated
@@ -3840,9 +4048,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A howling arctic whiteout, horizon erased, the sled team barely shapes in the blizzard, the world reduced to wind and white.
 ```
 
-#### 282. Underwater Depths 1. Shallows
+#### 298. Underwater Depths 1. Shallows
 
-- File name: `PIC-282-Underwater-Depths-1-Shallows.png`
+- File name: `PIC-298-Underwater-Depths-1-Shallows.png`
 - Target: `public/card-art/gallery/cards/underwater-depths/grade-01.webp`
 - Owner: Card `underwater-depths` grade `Shallows`
 - Status: generated
@@ -3853,9 +4061,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 Sunlit shallows with a diver gliding over ripple-lit sand, the surface bright and close overhead.
 ```
 
-#### 283. Underwater Depths 2. Underwater Depths
+#### 299. Underwater Depths 2. Underwater Depths
 
-- File name: `PIC-283-Underwater-Depths-2-Underwater-Depths.png`
+- File name: `PIC-299-Underwater-Depths-2-Underwater-Depths.png`
 - Target: `public/card-art/gallery/cards/underwater-depths/grade-02.webp`
 - Owner: Card `underwater-depths` grade `Underwater Depths`
 - Status: generated
@@ -3866,9 +4074,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 Open deep water swallowing the scene, the diver suspended in blue light and drifting particles, the surface a far memory.
 ```
 
-#### 284. Underwater Depths 3. Abyssal Trench
+#### 300. Underwater Depths 3. Abyssal Trench
 
-- File name: `PIC-284-Underwater-Depths-3-Abyssal-Trench.png`
+- File name: `PIC-300-Underwater-Depths-3-Abyssal-Trench.png`
 - Target: `public/card-art/gallery/cards/underwater-depths/grade-03.webp`
 - Owner: Card `underwater-depths` grade `Abyssal Trench`
 - Status: generated
@@ -3879,9 +4087,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A crushing abyssal trench, darkness pressing in, the diver's small lamp against black pressure, the deep entirely indifferent.
 ```
 
-#### 285. Mountain Heights 1. Foothills
+#### 301. Mountain Heights 1. Foothills
 
-- File name: `PIC-285-Mountain-Heights-1-Foothills.png`
+- File name: `PIC-301-Mountain-Heights-1-Foothills.png`
 - Target: `public/card-art/gallery/cards/mountain-heights/grade-01.webp`
 - Owner: Card `mountain-heights` grade `Foothills`
 - Status: generated
@@ -3892,9 +4100,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 Rising foothill country, a climber on a grassy shoulder, real peaks beginning behind.
 ```
 
-#### 286. Mountain Heights 2. Mountain Heights
+#### 302. Mountain Heights 2. Mountain Heights
 
-- File name: `PIC-286-Mountain-Heights-2-Mountain-Heights.png`
+- File name: `PIC-302-Mountain-Heights-2-Mountain-Heights.png`
 - Target: `public/card-art/gallery/cards/mountain-heights/grade-02.webp`
 - Owner: Card `mountain-heights` grade `Mountain Heights`
 - Status: generated
@@ -3905,9 +4113,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 Full mountain heights, jagged ridges and thin air, the climber small on a rock spine, the valley floor lost below.
 ```
 
-#### 287. Mountain Heights 3. Knife Ridge
+#### 303. Mountain Heights 3. Knife Ridge
 
-- File name: `PIC-287-Mountain-Heights-3-Knife-Ridge.png`
+- File name: `PIC-303-Mountain-Heights-3-Knife-Ridge.png`
 - Target: `public/card-art/gallery/cards/mountain-heights/grade-03.webp`
 - Owner: Card `mountain-heights` grade `Knife Ridge`
 - Status: generated
@@ -3918,9 +4126,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A knife-edge summit ridge above a sea of clouds, the climber balanced between two drops, nothing higher anywhere.
 ```
 
-#### 288. Cozy Interior 1. Warm Room
+#### 304. Cozy Interior 1. Warm Room
 
-- File name: `PIC-288-Cozy-Interior-1-Warm-Room.png`
+- File name: `PIC-304-Cozy-Interior-1-Warm-Room.png`
 - Target: `public/card-art/gallery/cards/cozy-interior/grade-01.webp`
 - Owner: Card `cozy-interior` grade `Warm Room`
 - Status: generated
@@ -3931,9 +4139,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A warm lived-in room, an armchair cat, soft lamplight, belongings arranged by affection rather than order.
 ```
 
-#### 289. Cozy Interior 2. Cozy Interior
+#### 305. Cozy Interior 2. Cozy Interior
 
-- File name: `PIC-289-Cozy-Interior-2-Cozy-Interior.png`
+- File name: `PIC-305-Cozy-Interior-2-Cozy-Interior.png`
 - Target: `public/card-art/gallery/cards/cozy-interior/grade-02.webp`
 - Owner: Card `cozy-interior` grade `Cozy Interior`
 - Status: generated
@@ -3944,9 +4152,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A fully cozy cluttered interior - blankets and plants and leaning books everywhere, the armchair cat at the center of a room that loves you back.
 ```
 
-#### 290. Cozy Interior 3. Nested Deep
+#### 306. Cozy Interior 3. Nested Deep
 
-- File name: `PIC-290-Cozy-Interior-3-Nested-Deep.png`
+- File name: `PIC-306-Cozy-Interior-3-Nested-Deep.png`
 - Target: `public/card-art/gallery/cards/cozy-interior/grade-03.webp`
 - Owner: Card `cozy-interior` grade `Nested Deep`
 - Status: generated
@@ -3957,9 +4165,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 An impossibly snug nest of books and lamplight, shelves closing overhead like a burrow, warmth stacked on warmth, the cat entirely correct.
 ```
 
-#### 291. Grand Library 1. Book Room
+#### 307. Grand Library 1. Book Room
 
-- File name: `PIC-291-Grand-Library-1-Book-Room.png`
+- File name: `PIC-307-Grand-Library-1-Book-Room.png`
 - Target: `public/card-art/gallery/cards/grand-library/grade-01.webp`
 - Owner: Card `grand-library` grade `Book Room`
 - Status: generated
@@ -3970,9 +4178,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A room lined with old books, one reader at a table, shelves solid to the ceiling.
 ```
 
-#### 292. Grand Library 2. Grand Library
+#### 308. Grand Library 2. Grand Library
 
-- File name: `PIC-292-Grand-Library-2-Grand-Library.png`
+- File name: `PIC-308-Grand-Library-2-Grand-Library.png`
 - Target: `public/card-art/gallery/cards/grand-library/grade-02.webp`
 - Owner: Card `grand-library` grade `Grand Library`
 - Status: generated
@@ -3983,9 +4191,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A grand vaulted library, ladders and galleries stacked skyward, the reader small under the architecture of shelves.
 ```
 
-#### 293. Grand Library 3. Infinite Stacks
+#### 309. Grand Library 3. Infinite Stacks
 
-- File name: `PIC-293-Grand-Library-3-Infinite-Stacks.png`
+- File name: `PIC-309-Grand-Library-3-Infinite-Stacks.png`
 - Target: `public/card-art/gallery/cards/grand-library/grade-03.webp`
 - Owner: Card `grand-library` grade `Infinite Stacks`
 - Status: generated
@@ -3996,9 +4204,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 Infinite library stacks rising out of sight in every direction, bridges between bookcases, the reader a speck in a canyon of spines.
 ```
 
-#### 294. Floating Islands 1. Drifting Rocks
+#### 310. Floating Islands 1. Drifting Rocks
 
-- File name: `PIC-294-Floating-Islands-1-Drifting-Rocks.png`
+- File name: `PIC-310-Floating-Islands-1-Drifting-Rocks.png`
 - Target: `public/card-art/gallery/cards/floating-islands/grade-01.webp`
 - Owner: Card `floating-islands` grade `Drifting Rocks`
 - Status: generated
@@ -4009,9 +4217,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A cliff meadow with a few rocks drifting weightless nearby, gravity beginning to reconsider.
 ```
 
-#### 295. Floating Islands 2. Floating Islands
+#### 311. Floating Islands 2. Floating Islands
 
-- File name: `PIC-295-Floating-Islands-2-Floating-Islands.png`
+- File name: `PIC-311-Floating-Islands-2-Floating-Islands.png`
 - Target: `public/card-art/gallery/cards/floating-islands/grade-02.webp`
 - Owner: Card `floating-islands` grade `Floating Islands`
 - Status: generated
@@ -4022,9 +4230,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 Full floating islands hanging in open sky, waterfalls streaming into cloud below, the rope bridge and its traveler between two drifting shores.
 ```
 
-#### 296. Floating Islands 3. Shattered World
+#### 312. Floating Islands 3. Shattered World
 
-- File name: `PIC-296-Floating-Islands-3-Shattered-World.png`
+- File name: `PIC-312-Floating-Islands-3-Shattered-World.png`
 - Target: `public/card-art/gallery/cards/floating-islands/grade-03.webp`
 - Owner: Card `floating-islands` grade `Shattered World`
 - Status: generated
@@ -4035,9 +4243,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A whole shattered world hanging in the air - island chains, inverted cliffs, rivers falling into sky, the bridge a thread through a broken continent.
 ```
 
-#### 297. Cyberpunk Megacity 1. City Lights
+#### 313. Cyberpunk Megacity 1. City Lights
 
-- File name: `PIC-297-Cyberpunk-Megacity-1-City-Lights.png`
+- File name: `PIC-313-Cyberpunk-Megacity-1-City-Lights.png`
 - Target: `public/card-art/gallery/cards/cyberpunk-megacity/grade-01.webp`
 - Owner: Card `cyberpunk-megacity` grade `City Lights`
 - Status: generated
@@ -4048,9 +4256,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A dense glowing night city behind a street vendor's cart, towers stacked deep, traffic streaming light.
 ```
 
-#### 298. Cyberpunk Megacity 2. Cyberpunk Megacity
+#### 314. Cyberpunk Megacity 2. Cyberpunk Megacity
 
-- File name: `PIC-298-Cyberpunk-Megacity-2-Cyberpunk-Megacity.png`
+- File name: `PIC-314-Cyberpunk-Megacity-2-Cyberpunk-Megacity.png`
 - Target: `public/card-art/gallery/cards/cyberpunk-megacity/grade-02.webp`
 - Owner: Card `cyberpunk-megacity` grade `Cyberpunk Megacity`
 - Status: generated
@@ -4061,9 +4269,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A full cyberpunk megacity - layered towers, holograms between buildings, wet streets carrying the glow, the vendor's cart tiny at the canyon floor.
 ```
 
-#### 299. Cyberpunk Megacity 3. Vertical Sprawl
+#### 315. Cyberpunk Megacity 3. Vertical Sprawl
 
-- File name: `PIC-299-Cyberpunk-Megacity-3-Vertical-Sprawl.png`
+- File name: `PIC-315-Cyberpunk-Megacity-3-Vertical-Sprawl.png`
 - Target: `public/card-art/gallery/cards/cyberpunk-megacity/grade-03.webp`
 - Owner: Card `cyberpunk-megacity` grade `Vertical Sprawl`
 - Status: generated
@@ -4074,9 +4282,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 An endless vertical sprawl with no ground in sight, city above city above city, the cart clinging to a mid-level walkway in a bottomless lattice of light.
 ```
 
-#### 300. Medieval Village 1. Old Lanes
+#### 316. Medieval Village 1. Old Lanes
 
-- File name: `PIC-300-Medieval-Village-1-Old-Lanes.png`
+- File name: `PIC-316-Medieval-Village-1-Old-Lanes.png`
 - Target: `public/card-art/gallery/cards/medieval-village/grade-01.webp`
 - Owner: Card `medieval-village` grade `Old Lanes`
 - Status: generated
@@ -4087,9 +4295,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 Old cobbled lanes with timber-framed houses leaning together, a well at the corner, geese on patrol.
 ```
 
-#### 301. Medieval Village 2. Medieval Village
+#### 317. Medieval Village 2. Medieval Village
 
-- File name: `PIC-301-Medieval-Village-2-Medieval-Village.png`
+- File name: `PIC-317-Medieval-Village-2-Medieval-Village.png`
 - Target: `public/card-art/gallery/cards/medieval-village/grade-02.webp`
 - Owner: Card `medieval-village` grade `Medieval Village`
 - Status: generated
@@ -4100,9 +4308,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A full medieval village - thatched roofs, market square stalls, the well and its geese, wood smoke over everything.
 ```
 
-#### 302. Medieval Village 3. Living History
+#### 318. Medieval Village 3. Living History
 
-- File name: `PIC-302-Medieval-Village-3-Living-History.png`
+- File name: `PIC-318-Medieval-Village-3-Living-History.png`
 - Target: `public/card-art/gallery/cards/medieval-village/grade-03.webp`
 - Owner: Card `medieval-village` grade `Living History`
 - Status: generated
@@ -4113,9 +4321,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A sprawling walled medieval town, banners and chimney smoke, gates and turrets, the square thronged inside living history.
 ```
 
-#### 303. Space Frontier 1. High Orbit
+#### 319. Space Frontier 1. High Orbit
 
-- File name: `PIC-303-Space-Frontier-1-High-Orbit.png`
+- File name: `PIC-319-Space-Frontier-1-High-Orbit.png`
 - Target: `public/card-art/gallery/cards/space-frontier/grade-01.webp`
 - Owner: Card `space-frontier` grade `High Orbit`
 - Status: generated
@@ -4126,9 +4334,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 High orbit, the planet curving away below a lone station, the day-night terminator crossing continents.
 ```
 
-#### 304. Space Frontier 2. Space Frontier
+#### 320. Space Frontier 2. Space Frontier
 
-- File name: `PIC-304-Space-Frontier-2-Space-Frontier.png`
+- File name: `PIC-320-Space-Frontier-2-Space-Frontier.png`
 - Target: `public/card-art/gallery/cards/space-frontier/grade-02.webp`
 - Owner: Card `space-frontier` grade `Space Frontier`
 - Status: generated
@@ -4139,9 +4347,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 The full frontier - stations and starships against the void, docks blazing, the EVA figure at work on the sunlit hull.
 ```
 
-#### 305. Space Frontier 3. Deep Cosmos
+#### 321. Space Frontier 3. Deep Cosmos
 
-- File name: `PIC-305-Space-Frontier-3-Deep-Cosmos.png`
+- File name: `PIC-321-Space-Frontier-3-Deep-Cosmos.png`
 - Target: `public/card-art/gallery/cards/space-frontier/grade-03.webp`
 - Owner: Card `space-frontier` grade `Deep Cosmos`
 - Status: generated
@@ -4152,9 +4360,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 Deep cosmos, nebulae and galaxies swallowing the frame, the station a bright mote against clouds of newborn stars.
 ```
 
-#### 306. Victorian Streets 1. Gas Lamps
+#### 322. Victorian Streets 1. Gas Lamps
 
-- File name: `PIC-306-Victorian-Streets-1-Gas-Lamps.png`
+- File name: `PIC-322-Victorian-Streets-1-Gas-Lamps.png`
 - Target: `public/card-art/gallery/cards/victorian-streets/grade-01.webp`
 - Owner: Card `victorian-streets` grade `Gas Lamps`
 - Status: generated
@@ -4165,9 +4373,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A gaslit brick street at dusk, the lamplighter at his first lamp, fog just beginning to pool.
 ```
 
-#### 307. Victorian Streets 2. Victorian Streets
+#### 323. Victorian Streets 2. Victorian Streets
 
-- File name: `PIC-307-Victorian-Streets-2-Victorian-Streets.png`
+- File name: `PIC-323-Victorian-Streets-2-Victorian-Streets.png`
 - Target: `public/card-art/gallery/cards/victorian-streets/grade-02.webp`
 - Owner: Card `victorian-streets` grade `Victorian Streets`
 - Status: generated
@@ -4178,9 +4386,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 Full Victorian fog - iron railings, brick terraces, carriage clatter unseen, the lamplighter's small flames haloed down the row.
 ```
 
-#### 308. Victorian Streets 3. Smoke and Soot
+#### 324. Victorian Streets 3. Smoke and Soot
 
-- File name: `PIC-308-Victorian-Streets-3-Smoke-and-Soot.png`
+- File name: `PIC-324-Victorian-Streets-3-Smoke-and-Soot.png`
 - Target: `public/card-art/gallery/cards/victorian-streets/grade-03.webp`
 - Owner: Card `victorian-streets` grade `Smoke and Soot`
 - Status: generated
@@ -4191,9 +4399,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A soot-dark industrial labyrinth of chimneys and fog, gaslight barely holding, the lamplighter a silhouette in a city made of smoke.
 ```
 
-#### 309. Tropical Shore 1. Beach Day
+#### 325. Tropical Shore 1. Beach Day
 
-- File name: `PIC-309-Tropical-Shore-1-Beach-Day.png`
+- File name: `PIC-325-Tropical-Shore-1-Beach-Day.png`
 - Target: `public/card-art/gallery/cards/tropical-shore/grade-01.webp`
 - Owner: Card `tropical-shore` grade `Beach Day`
 - Status: generated
@@ -4204,9 +4412,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A bright sandy shoreline, the outrigger pulled up past the tide line, clear water lapping.
 ```
 
-#### 310. Tropical Shore 2. Tropical Shore
+#### 326. Tropical Shore 2. Tropical Shore
 
-- File name: `PIC-310-Tropical-Shore-2-Tropical-Shore.png`
+- File name: `PIC-326-Tropical-Shore-2-Tropical-Shore.png`
 - Target: `public/card-art/gallery/cards/tropical-shore/grade-02.webp`
 - Owner: Card `tropical-shore` grade `Tropical Shore`
 - Status: generated
@@ -4217,9 +4425,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A full tropical shore - turquoise water, leaning palms, the canoe's shadow crisp on white sand, reef patterns under glass-clear swell.
 ```
 
-#### 311. Tropical Shore 3. Lost Lagoon
+#### 327. Tropical Shore 3. Lost Lagoon
 
-- File name: `PIC-311-Tropical-Shore-3-Lost-Lagoon.png`
+- File name: `PIC-327-Tropical-Shore-3-Lost-Lagoon.png`
 - Target: `public/card-art/gallery/cards/tropical-shore/grade-03.webp`
 - Owner: Card `tropical-shore` grade `Lost Lagoon`
 - Status: generated
@@ -4232,9 +4440,9 @@ A hidden lagoon of impossible turquoise clarity, walls of green rising around st
 
 ### Per-grade variants - References
 
-#### 312. Art Nouveau 1. Nouveau Touch
+#### 328. Art Nouveau 1. Nouveau Touch
 
-- File name: `PIC-312-Art-Nouveau-1-Nouveau-Touch.png`
+- File name: `PIC-328-Art-Nouveau-1-Nouveau-Touch.png`
 - Target: `public/card-art/gallery/cards/art-nouveau/grade-01.webp`
 - Owner: Card `art-nouveau` grade `Nouveau Touch`
 - Status: generated
@@ -4245,9 +4453,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A woman among wisteria with art nouveau touches, organic curves slipping into the linework of hair and stem.
 ```
 
-#### 313. Art Nouveau 2. Art Nouveau
+#### 329. Art Nouveau 2. Art Nouveau
 
-- File name: `PIC-313-Art-Nouveau-2-Art-Nouveau.png`
+- File name: `PIC-329-Art-Nouveau-2-Art-Nouveau.png`
 - Target: `public/card-art/gallery/cards/art-nouveau/grade-02.webp`
 - Owner: Card `art-nouveau` grade `Art Nouveau`
 - Status: generated
@@ -4258,9 +4466,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 Full art nouveau: flowing whiplash linework and ornament leading the style, the figure and flowers woven into one decorative rhythm.
 ```
 
-#### 314. Art Nouveau 3. Full Mucha
+#### 330. Art Nouveau 3. Full Mucha
 
-- File name: `PIC-314-Art-Nouveau-3-Full-Mucha.png`
+- File name: `PIC-330-Art-Nouveau-3-Full-Mucha.png`
 - Target: `public/card-art/gallery/cards/art-nouveau/grade-03.webp`
 - Owner: Card `art-nouveau` grade `Full Mucha`
 - Status: generated
@@ -4271,9 +4479,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 Full nouveau poster style, ornamental decorative framing, a halo arc behind the head, hair and blossom filling every curve of the composition.
 ```
 
-#### 315. Ukiyo E 1. Ukiyo-e Accents
+#### 331. Ukiyo E 1. Ukiyo-e Accents
 
-- File name: `PIC-315-Ukiyo-E-1-Ukiyo-e-Accents.png`
+- File name: `PIC-331-Ukiyo-E-1-Ukiyo-e-Accents.png`
 - Target: `public/card-art/gallery/cards/ukiyo-e/grade-01.webp`
 - Owner: Card `ukiyo-e` grade `Ukiyo-e Accents`
 - Status: generated
@@ -4284,9 +4492,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A ferryboat and wave with ukiyo-e influences, color flattening into planes, outlines calming into printed line.
 ```
 
-#### 316. Ukiyo E 2. Ukiyo-e
+#### 332. Ukiyo E 2. Ukiyo-e
 
-- File name: `PIC-316-Ukiyo-E-2-Ukiyo-e.png`
+- File name: `PIC-332-Ukiyo-E-2-Ukiyo-e.png`
 - Target: `public/card-art/gallery/cards/ukiyo-e/grade-02.webp`
 - Owner: Card `ukiyo-e` grade `Ukiyo-e`
 - Status: generated
@@ -4297,9 +4505,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 Full ukiyo-e woodblock: flat color planes, deliberate registration, the wave's foam patterned, the peak serene behind.
 ```
 
-#### 317. Ukiyo E 3. Great Wave
+#### 333. Ukiyo E 3. Great Wave
 
-- File name: `PIC-317-Ukiyo-E-3-Great-Wave.png`
+- File name: `PIC-333-Ukiyo-E-3-Great-Wave.png`
 - Target: `public/card-art/gallery/cards/ukiyo-e/grade-03.webp`
 - Owner: Card `ukiyo-e` grade `Great Wave`
 - Status: generated
@@ -4310,9 +4518,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 Bold ukiyo-e stylization with dramatic wave motifs, claw-foam towering over the small boat, the print pushed to its most iconic pitch.
 ```
 
-#### 318. Impressionist Brush 1. Loose Touch
+#### 334. Impressionist Brush 1. Loose Touch
 
-- File name: `PIC-318-Impressionist-Brush-1-Loose-Touch.png`
+- File name: `PIC-334-Impressionist-Brush-1-Loose-Touch.png`
 - Target: `public/card-art/gallery/cards/impressionist-brush/grade-01.webp`
 - Owner: Card `impressionist-brush` grade `Loose Touch`
 - Status: generated
@@ -4323,9 +4531,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A garden luncheon with loose impressionist touches, edges softening, light beginning to break into color.
 ```
 
-#### 319. Impressionist Brush 2. Impressionist
+#### 335. Impressionist Brush 2. Impressionist
 
-- File name: `PIC-319-Impressionist-Brush-2-Impressionist.png`
+- File name: `PIC-335-Impressionist-Brush-2-Impressionist.png`
 - Target: `public/card-art/gallery/cards/impressionist-brush/grade-02.webp`
 - Owner: Card `impressionist-brush` grade `Impressionist`
 - Status: generated
@@ -4336,9 +4544,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 Full impressionism: broken color and visible daubs, the tablecloth a weather of touches, shade violet where it dares.
 ```
 
-#### 320. Impressionist Brush 3. Pure Light Study
+#### 336. Impressionist Brush 3. Pure Light Study
 
-- File name: `PIC-320-Impressionist-Brush-3-Pure-Light-Study.png`
+- File name: `PIC-336-Impressionist-Brush-3-Pure-Light-Study.png`
 - Target: `public/card-art/gallery/cards/impressionist-brush/grade-03.webp`
 - Owner: Card `impressionist-brush` grade `Pure Light Study`
 - Status: generated
@@ -4349,9 +4557,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A pure impressionist light study, form dissolving entirely into color, the luncheon a shimmer of paint that only resolves at distance.
 ```
 
-#### 321. Baroque Drama 1. Old Master Touch
+#### 337. Baroque Drama 1. Old Master Touch
 
-- File name: `PIC-321-Baroque-Drama-1-Old-Master-Touch.png`
+- File name: `PIC-337-Baroque-Drama-1-Old-Master-Touch.png`
 - Target: `public/card-art/gallery/cards/baroque-drama/grade-01.webp`
 - Owner: Card `baroque-drama` grade `Old Master Touch`
 - Status: generated
@@ -4362,9 +4570,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A table gathering with old-master warmth, shadows deepening, light beginning to choose its favorites.
 ```
 
-#### 322. Baroque Drama 2. Baroque Drama
+#### 338. Baroque Drama 2. Baroque Drama
 
-- File name: `PIC-322-Baroque-Drama-2-Baroque-Drama.png`
+- File name: `PIC-338-Baroque-Drama-2-Baroque-Drama.png`
 - Target: `public/card-art/gallery/cards/baroque-drama/grade-02.webp`
 - Owner: Card `baroque-drama` grade `Baroque Drama`
 - Status: generated
@@ -4375,9 +4583,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 Full baroque drama: chiaroscuro theatricality, the gathering carved from darkness, every gesture staged by the light.
 ```
 
-#### 323. Baroque Drama 3. Full Caravaggio
+#### 339. Baroque Drama 3. Full Caravaggio
 
-- File name: `PIC-323-Baroque-Drama-3-Full-Caravaggio.png`
+- File name: `PIC-339-Baroque-Drama-3-Full-Caravaggio.png`
 - Target: `public/card-art/gallery/cards/baroque-drama/grade-03.webp`
 - Owner: Card `baroque-drama` grade `Full Caravaggio`
 - Status: generated
@@ -4388,9 +4596,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 Total darkness pierced by theatrical light, figures blazing out of black, the single candle running the entire performance.
 ```
 
-#### 324. Surrealist Dream 1. Dream Logic
+#### 340. Surrealist Dream 1. Dream Logic
 
-- File name: `PIC-324-Surrealist-Dream-1-Dream-Logic.png`
+- File name: `PIC-340-Surrealist-Dream-1-Dream-Logic.png`
 - Target: `public/card-art/gallery/cards/surrealist-dream/grade-01.webp`
 - Owner: Card `surrealist-dream` grade `Dream Logic`
 - Status: generated
@@ -4401,9 +4609,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A field with quiet surrealist touches - a doorway standing where no wall is, its shadow falling the wrong way.
 ```
 
-#### 325. Surrealist Dream 2. Surrealist Dream
+#### 341. Surrealist Dream 2. Surrealist Dream
 
-- File name: `PIC-325-Surrealist-Dream-2-Surrealist-Dream.png`
+- File name: `PIC-341-Surrealist-Dream-2-Surrealist-Dream.png`
 - Target: `public/card-art/gallery/cards/surrealist-dream/grade-02.webp`
 - Owner: Card `surrealist-dream` grade `Surrealist Dream`
 - Status: generated
@@ -4414,9 +4622,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 Full surrealism: dream logic and symbolic objects, the door open onto a second weather, the floating key casting a bird's shadow.
 ```
 
-#### 326. Surrealist Dream 3. Deep Unreality
+#### 342. Surrealist Dream 3. Deep Unreality
 
-- File name: `PIC-326-Surrealist-Dream-3-Deep-Unreality.png`
+- File name: `PIC-342-Surrealist-Dream-3-Deep-Unreality.png`
 - Target: `public/card-art/gallery/cards/surrealist-dream/grade-03.webp`
 - Owner: Card `surrealist-dream` grade `Deep Unreality`
 - Status: generated
@@ -4427,9 +4635,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 Deep unreality: melting forms and impossible space, the field folding into sky, doors opening onto doors onto doors.
 ```
 
-#### 327. Gothic Romance 1. Dark Undertone
+#### 343. Gothic Romance 1. Dark Undertone
 
-- File name: `PIC-327-Gothic-Romance-1-Dark-Undertone.png`
+- File name: `PIC-343-Gothic-Romance-1-Dark-Undertone.png`
 - Target: `public/card-art/gallery/cards/gothic-romance/grade-01.webp`
 - Owner: Card `gothic-romance` grade `Dark Undertone`
 - Status: generated
@@ -4440,9 +4648,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 An abbey scene with a dark gothic undertone, ivy claiming the stones, the mood tilting toward dusk.
 ```
 
-#### 328. Gothic Romance 2. Gothic Romance
+#### 344. Gothic Romance 2. Gothic Romance
 
-- File name: `PIC-328-Gothic-Romance-2-Gothic-Romance.png`
+- File name: `PIC-344-Gothic-Romance-2-Gothic-Romance.png`
 - Target: `public/card-art/gallery/cards/gothic-romance/grade-02.webp`
 - Owner: Card `gothic-romance` grade `Gothic Romance`
 - Status: generated
@@ -4453,9 +4661,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 Full gothic romance: ruins, lace, and melancholy, the figure pale at the glassless window, roses grown wild through the nave.
 ```
 
-#### 329. Gothic Romance 3. Full Midnight
+#### 345. Gothic Romance 3. Full Midnight
 
-- File name: `PIC-329-Gothic-Romance-3-Full-Midnight.png`
+- File name: `PIC-345-Gothic-Romance-3-Full-Midnight.png`
 - Target: `public/card-art/gallery/cards/gothic-romance/grade-03.webp`
 - Owner: Card `gothic-romance` grade `Full Midnight`
 - Status: generated
@@ -4466,9 +4674,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 Full midnight: cathedral gloom and stormy rapture, lightning behind the ruined rose window, grief and grandeur indistinguishable.
 ```
 
-#### 330. Art Deco Geometry 1. Deco Lines
+#### 346. Art Deco Geometry 1. Deco Lines
 
-- File name: `PIC-330-Art-Deco-Geometry-1-Deco-Lines.png`
+- File name: `PIC-346-Art-Deco-Geometry-1-Deco-Lines.png`
 - Target: `public/card-art/gallery/cards/art-deco-geometry/grade-01.webp`
 - Owner: Card `art-deco-geometry` grade `Deco Lines`
 - Status: generated
@@ -4479,9 +4687,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A hotel entrance with streamlined deco lines structuring the scene, geometry tightening, brass beginning to gleam.
 ```
 
-#### 331. Art Deco Geometry 2. Art Deco
+#### 347. Art Deco Geometry 2. Art Deco
 
-- File name: `PIC-331-Art-Deco-Geometry-2-Art-Deco.png`
+- File name: `PIC-347-Art-Deco-Geometry-2-Art-Deco.png`
 - Target: `public/card-art/gallery/cards/art-deco-geometry/grade-02.webp`
 - Owner: Card `art-deco-geometry` grade `Art Deco`
 - Status: generated
@@ -4492,9 +4700,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 Full art deco: gilded geometry and fanned motifs leading, stepped black-and-gold forms, symmetry with jewelry on.
 ```
 
-#### 332. Art Deco Geometry 3. Deco Monument
+#### 348. Art Deco Geometry 3. Deco Monument
 
-- File name: `PIC-332-Art-Deco-Geometry-3-Deco-Monument.png`
+- File name: `PIC-348-Art-Deco-Geometry-3-Deco-Monument.png`
 - Target: `public/card-art/gallery/cards/art-deco-geometry/grade-03.webp`
 - Owner: Card `art-deco-geometry` grade `Deco Monument`
 - Status: generated
@@ -4505,9 +4713,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A deco monument: the frame itself become gilded architecture, monumental gold-and-black geometry, the doorman a grace note at its base.
 ```
 
-#### 333. Renaissance Fresco 1. Classical Poise
+#### 349. Renaissance Fresco 1. Classical Poise
 
-- File name: `PIC-333-Renaissance-Fresco-1-Classical-Poise.png`
+- File name: `PIC-349-Renaissance-Fresco-1-Classical-Poise.png`
 - Target: `public/card-art/gallery/cards/renaissance-fresco/grade-01.webp`
 - Owner: Card `renaissance-fresco` grade `Classical Poise`
 - Status: generated
@@ -4518,9 +4726,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A gathering of robed figures with classical renaissance poise, composition steadied into balance.
 ```
 
-#### 334. Renaissance Fresco 2. Renaissance Fresco
+#### 350. Renaissance Fresco 2. Renaissance Fresco
 
-- File name: `PIC-334-Renaissance-Fresco-2-Renaissance-Fresco.png`
+- File name: `PIC-350-Renaissance-Fresco-2-Renaissance-Fresco.png`
 - Target: `public/card-art/gallery/cards/renaissance-fresco/grade-02.webp`
 - Owner: Card `renaissance-fresco` grade `Renaissance Fresco`
 - Status: generated
@@ -4531,9 +4739,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A full renaissance fresco: drapery and gesture on aged plaster, earth pigments and serene geometry, the arch framing heaven.
 ```
 
-#### 335. Renaissance Fresco 3. Ceiling Vision
+#### 351. Renaissance Fresco 3. Ceiling Vision
 
-- File name: `PIC-335-Renaissance-Fresco-3-Ceiling-Vision.png`
+- File name: `PIC-351-Renaissance-Fresco-3-Ceiling-Vision.png`
 - Target: `public/card-art/gallery/cards/renaissance-fresco/grade-03.webp`
 - Owner: Card `renaissance-fresco` grade `Ceiling Vision`
 - Status: generated
@@ -4544,9 +4752,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A soaring ceiling vision: figures among clouds seen from below, robes spiraling upward, the fresco opening the roof to painted sky.
 ```
 
-#### 336. Van Gogh Swirl 1. Living Strokes
+#### 352. Van Gogh Swirl 1. Living Strokes
 
-- File name: `PIC-336-Van-Gogh-Swirl-1-Living-Strokes.png`
+- File name: `PIC-352-Van-Gogh-Swirl-1-Living-Strokes.png`
 - Target: `public/card-art/gallery/cards/van-gogh-swirl/grade-01.webp`
 - Owner: Card `van-gogh-swirl` grade `Living Strokes`
 - Status: generated
@@ -4557,9 +4765,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A cypress at dusk with expressive swirling brushstrokes beginning to move through sky and field.
 ```
 
-#### 337. Van Gogh Swirl 2. Van Gogh Swirl
+#### 353. Van Gogh Swirl 2. Van Gogh Swirl
 
-- File name: `PIC-337-Van-Gogh-Swirl-2-Van-Gogh-Swirl.png`
+- File name: `PIC-353-Van-Gogh-Swirl-2-Van-Gogh-Swirl.png`
 - Target: `public/card-art/gallery/cards/van-gogh-swirl/grade-02.webp`
 - Owner: Card `van-gogh-swirl` grade `Van Gogh Swirl`
 - Status: generated
@@ -4570,9 +4778,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 Full van gogh manner: thick swirling impasto, the night sky turning in painted currents around burning stars.
 ```
 
-#### 338. Van Gogh Swirl 3. Starry Turbulence
+#### 354. Van Gogh Swirl 3. Starry Turbulence
 
-- File name: `PIC-338-Van-Gogh-Swirl-3-Starry-Turbulence.png`
+- File name: `PIC-354-Van-Gogh-Swirl-3-Starry-Turbulence.png`
 - Target: `public/card-art/gallery/cards/van-gogh-swirl/grade-03.webp`
 - Owner: Card `van-gogh-swirl` grade `Starry Turbulence`
 - Status: generated
@@ -4583,9 +4791,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 Churning turbulence, sky and ground alive with swirls, the cypress a green flame in a night that will not hold still.
 ```
 
-#### 339. Anime Cel 1. Anime Touch
+#### 355. Anime Cel 1. Anime Touch
 
-- File name: `PIC-339-Anime-Cel-1-Anime-Touch.png`
+- File name: `PIC-355-Anime-Cel-1-Anime-Touch.png`
 - Target: `public/card-art/gallery/cards/anime-cel/grade-01.webp`
 - Owner: Card `anime-cel` grade `Anime Touch`
 - Status: generated
@@ -4596,9 +4804,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A rooftop scene with clean anime linework sharpening the figure, shading simplifying toward cel planes.
 ```
 
-#### 340. Anime Cel 2. Anime Cel
+#### 356. Anime Cel 2. Anime Cel
 
-- File name: `PIC-340-Anime-Cel-2-Anime-Cel.png`
+- File name: `PIC-356-Anime-Cel-2-Anime-Cel.png`
 - Target: `public/card-art/gallery/cards/anime-cel/grade-02.webp`
 - Owner: Card `anime-cel` grade `Anime Cel`
 - Status: generated
@@ -4609,9 +4817,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 Full anime cel: flat two-tone shading, expressive eyes, crisp line, the painted sky doing the atmosphere.
 ```
 
-#### 341. Anime Cel 3. Key Visual
+#### 357. Anime Cel 3. Key Visual
 
-- File name: `PIC-341-Anime-Cel-3-Key-Visual.png`
+- File name: `PIC-357-Anime-Cel-3-Key-Visual.png`
 - Target: `public/card-art/gallery/cards/anime-cel/grade-03.webp`
 - Owner: Card `anime-cel` grade `Key Visual`
 - Status: generated
@@ -4622,9 +4830,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A theatrical key visual: painted sky and dramatic wind, hair and jacket flying, lens flare over the railing - the poster frame of an unmade film.
 ```
 
-#### 342. Cinematic Still 1. Filmic Grade
+#### 358. Cinematic Still 1. Filmic Grade
 
-- File name: `PIC-342-Cinematic-Still-1-Filmic-Grade.png`
+- File name: `PIC-358-Cinematic-Still-1-Filmic-Grade.png`
 - Target: `public/card-art/gallery/cards/cinematic-still/grade-01.webp`
 - Owner: Card `cinematic-still` grade `Filmic Grade`
 - Status: generated
@@ -4635,9 +4843,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A diner booth scene with a cinematic color grade settling in, contrast shaped, light beginning to mean something.
 ```
 
-#### 343. Cinematic Still 2. Cinematic Still
+#### 359. Cinematic Still 2. Cinematic Still
 
-- File name: `PIC-343-Cinematic-Still-2-Cinematic-Still.png`
+- File name: `PIC-359-Cinematic-Still-2-Cinematic-Still.png`
 - Target: `public/card-art/gallery/cards/cinematic-still/grade-02.webp`
 - Owner: Card `cinematic-still` grade `Cinematic Still`
 - Status: generated
@@ -4648,9 +4856,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A true film still: anamorphic feel, oval bokeh in the window lights, blocking that implies the scene before and after.
 ```
 
-#### 344. Cinematic Still 3. Epic Frame
+#### 360. Cinematic Still 3. Epic Frame
 
-- File name: `PIC-344-Cinematic-Still-3-Epic-Frame.png`
+- File name: `PIC-360-Cinematic-Still-3-Epic-Frame.png`
 - Target: `public/card-art/gallery/cards/cinematic-still/grade-03.webp`
 - Owner: Card `cinematic-still` grade `Epic Frame`
 - Status: generated
@@ -4661,9 +4869,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 An epic blockbuster frame: teal and amber grade, atmospheric haze, the booth lit like the turning point of the third act.
 ```
 
-#### 345. Concept Art Sheet 1. Concept Polish
+#### 361. Concept Art Sheet 1. Concept Polish
 
-- File name: `PIC-345-Concept-Art-Sheet-1-Concept-Polish.png`
+- File name: `PIC-361-Concept-Art-Sheet-1-Concept-Polish.png`
 - Target: `public/card-art/gallery/cards/concept-art-sheet/grade-01.webp`
 - Owner: Card `concept-art-sheet` grade `Concept Polish`
 - Status: generated
@@ -4674,9 +4882,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A guardian golem with concept-art polish tightening the render, silhouette read-first, materials resolving.
 ```
 
-#### 346. Concept Art Sheet 2. Concept Art
+#### 362. Concept Art Sheet 2. Concept Art
 
-- File name: `PIC-346-Concept-Art-Sheet-2-Concept-Art.png`
+- File name: `PIC-362-Concept-Art-Sheet-2-Concept-Art.png`
 - Target: `public/card-art/gallery/cards/concept-art-sheet/grade-02.webp`
 - Owner: Card `concept-art-sheet` grade `Concept Art`
 - Status: generated
@@ -4687,9 +4895,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 Full production concept art: the golem posed with design confidence, lighting neutral enough to sell the shapes, edges crisp where it matters.
 ```
 
-#### 347. Concept Art Sheet 3. Splash Key Art
+#### 363. Concept Art Sheet 3. Splash Key Art
 
-- File name: `PIC-347-Concept-Art-Sheet-3-Splash-Key-Art.png`
+- File name: `PIC-363-Concept-Art-Sheet-3-Splash-Key-Art.png`
 - Target: `public/card-art/gallery/cards/concept-art-sheet/grade-03.webp`
 - Owner: Card `concept-art-sheet` grade `Splash Key Art`
 - Status: generated
@@ -4700,9 +4908,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 Dramatic splash key art: the golem mid-stride through painterly effects and depth, dust and light staged for the franchise cover.
 ```
 
-#### 348. Vaporwave Grid 1. Vapor Tint
+#### 364. Vaporwave Grid 1. Vapor Tint
 
-- File name: `PIC-348-Vaporwave-Grid-1-Vapor-Tint.png`
+- File name: `PIC-364-Vaporwave-Grid-1-Vapor-Tint.png`
 - Target: `public/card-art/gallery/cards/vaporwave-grid/grade-01.webp`
 - Owner: Card `vaporwave-grid` grade `Vapor Tint`
 - Status: generated
@@ -4713,9 +4921,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A bust-and-palm scene with a pink and teal vapor tint drifting in, the horizon flattening toward a grid.
 ```
 
-#### 349. Vaporwave Grid 2. Vaporwave
+#### 365. Vaporwave Grid 2. Vaporwave
 
-- File name: `PIC-349-Vaporwave-Grid-2-Vaporwave.png`
+- File name: `PIC-365-Vaporwave-Grid-2-Vaporwave.png`
 - Target: `public/card-art/gallery/cards/vaporwave-grid/grade-02.webp`
 - Owner: Card `vaporwave-grid` grade `Vaporwave`
 - Status: generated
@@ -4726,9 +4934,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 Full vaporwave: marble statue, wireframe grid, checkerboard perspective, a striped sun that never finishes setting.
 ```
 
-#### 350. Vaporwave Grid 3. Mall of Memory
+#### 366. Vaporwave Grid 3. Mall of Memory
 
-- File name: `PIC-350-Vaporwave-Grid-3-Mall-of-Memory.png`
+- File name: `PIC-366-Vaporwave-Grid-3-Mall-of-Memory.png`
 - Target: `public/card-art/gallery/cards/vaporwave-grid/grade-03.webp`
 - Owner: Card `vaporwave-grid` grade `Mall of Memory`
 - Status: generated
@@ -4739,9 +4947,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A fully dissolved retro-digital dreamscape - checkerboards folding into sky, palms duplicating, the endless sunset buffering forever.
 ```
 
-#### 351. Cottagecore Idyll 1. Pastoral Touch
+#### 367. Cottagecore Idyll 1. Pastoral Touch
 
-- File name: `PIC-351-Cottagecore-Idyll-1-Pastoral-Touch.png`
+- File name: `PIC-367-Cottagecore-Idyll-1-Pastoral-Touch.png`
 - Target: `public/card-art/gallery/cards/cottagecore-idyll/grade-01.webp`
 - Owner: Card `cottagecore-idyll` grade `Pastoral Touch`
 - Status: generated
@@ -4752,9 +4960,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A garden table with gentle pastoral warmth settling in, gingham and clover, the kettle nearly singing.
 ```
 
-#### 352. Cottagecore Idyll 2. Cottagecore
+#### 368. Cottagecore Idyll 2. Cottagecore
 
-- File name: `PIC-352-Cottagecore-Idyll-2-Cottagecore.png`
+- File name: `PIC-368-Cottagecore-Idyll-2-Cottagecore.png`
 - Target: `public/card-art/gallery/cards/cottagecore-idyll/grade-02.webp`
 - Owner: Card `cottagecore-idyll` grade `Cottagecore`
 - Status: generated
@@ -4765,9 +4973,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 Full cottagecore: gardens, gingham, and warm bread, roses over the door, the whole scene at jam-making pace.
 ```
 
-#### 353. Cottagecore Idyll 3. Storybook Meadow
+#### 369. Cottagecore Idyll 3. Storybook Meadow
 
-- File name: `PIC-353-Cottagecore-Idyll-3-Storybook-Meadow.png`
+- File name: `PIC-369-Cottagecore-Idyll-3-Storybook-Meadow.png`
 - Target: `public/card-art/gallery/cards/cottagecore-idyll/grade-03.webp`
 - Owner: Card `cottagecore-idyll` grade `Storybook Meadow`
 - Status: generated
@@ -4778,9 +4986,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 An impossibly idyllic cottage meadow, wildflowers everywhere, the table adrift in blossom - pastoral turned all the way up.
 ```
 
-#### 354. Dark Fantasy Grim 1. Grim Cast
+#### 370. Dark Fantasy Grim 1. Grim Cast
 
-- File name: `PIC-354-Dark-Fantasy-Grim-1-Grim-Cast.png`
+- File name: `PIC-370-Dark-Fantasy-Grim-1-Grim-Cast.png`
 - Target: `public/card-art/gallery/cards/dark-fantasy-grim/grade-01.webp`
 - Owner: Card `dark-fantasy-grim` grade `Grim Cast`
 - Status: generated
@@ -4791,9 +4999,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A shrine scene with a grim dark-fantasy cast, iron and shadow gathering, comfort quietly leaving.
 ```
 
-#### 355. Dark Fantasy Grim 2. Dark Fantasy
+#### 371. Dark Fantasy Grim 2. Dark Fantasy
 
-- File name: `PIC-355-Dark-Fantasy-Grim-2-Dark-Fantasy.png`
+- File name: `PIC-371-Dark-Fantasy-Grim-2-Dark-Fantasy.png`
 - Target: `public/card-art/gallery/cards/dark-fantasy-grim/grade-02.webp`
 - Owner: Card `dark-fantasy-grim` grade `Dark Fantasy`
 - Status: generated
@@ -4804,9 +5012,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 Full dark fantasy: iron, bone, and torchlight leading, the pilgrim small before the spiked shrine, the dark furnished.
 ```
 
-#### 356. Dark Fantasy Grim 3. Grimdark Abyss
+#### 372. Dark Fantasy Grim 3. Grimdark Abyss
 
-- File name: `PIC-356-Dark-Fantasy-Grim-3-Grimdark-Abyss.png`
+- File name: `PIC-372-Dark-Fantasy-Grim-3-Grimdark-Abyss.png`
 - Target: `public/card-art/gallery/cards/dark-fantasy-grim/grade-03.webp`
 - Owner: Card `dark-fantasy-grim` grade `Grimdark Abyss`
 - Status: generated
@@ -4817,9 +5025,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 Grimdark abyss: oppressive dread in every corner, the torch nearly beaten, the shrine vast and hungry in the black.
 ```
 
-#### 357. Synthwave Sunset 1. Retro Glow
+#### 373. Synthwave Sunset 1. Retro Glow
 
-- File name: `PIC-357-Synthwave-Sunset-1-Retro-Glow.png`
+- File name: `PIC-373-Synthwave-Sunset-1-Retro-Glow.png`
 - Target: `public/card-art/gallery/cards/synthwave-sunset/grade-01.webp`
 - Owner: Card `synthwave-sunset` grade `Retro Glow`
 - Status: generated
@@ -4830,9 +5038,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A highway scene with a retro-future synthwave glow warming the horizon, chrome beginning to catch pink.
 ```
 
-#### 358. Synthwave Sunset 2. Synthwave
+#### 374. Synthwave Sunset 2. Synthwave
 
-- File name: `PIC-358-Synthwave-Sunset-2-Synthwave.png`
+- File name: `PIC-374-Synthwave-Sunset-2-Synthwave.png`
 - Target: `public/card-art/gallery/cards/synthwave-sunset/grade-02.webp`
 - Owner: Card `synthwave-sunset` grade `Synthwave`
 - Status: generated
@@ -4843,9 +5051,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 Full synthwave: striped sunset, chrome bodywork, grid horizon rolling out, palms in silhouette procession.
 ```
 
-#### 359. Synthwave Sunset 3. Outrun Forever
+#### 375. Synthwave Sunset 3. Outrun Forever
 
-- File name: `PIC-359-Synthwave-Sunset-3-Outrun-Forever.png`
+- File name: `PIC-375-Synthwave-Sunset-3-Outrun-Forever.png`
 - Target: `public/card-art/gallery/cards/synthwave-sunset/grade-03.webp`
 - Owner: Card `synthwave-sunset` grade `Outrun Forever`
 - Status: generated
@@ -4856,9 +5064,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 Full outrun: laser palms and endless neon highway, the sun a banded giant, speed lines burning off the chrome.
 ```
 
-#### 360. Childrens Book Charm 1. Friendly Lines
+#### 376. Childrens Book Charm 1. Friendly Lines
 
-- File name: `PIC-360-Childrens-Book-Charm-1-Friendly-Lines.png`
+- File name: `PIC-376-Childrens-Book-Charm-1-Friendly-Lines.png`
 - Target: `public/card-art/gallery/cards/childrens-book-charm/grade-01.webp`
 - Owner: Card `childrens-book-charm` grade `Friendly Lines`
 - Status: generated
@@ -4869,9 +5077,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A bear in a scarf with friendly children's-book linework, shapes rounding, menace legally prohibited.
 ```
 
-#### 361. Childrens Book Charm 2. Storybook Page
+#### 377. Childrens Book Charm 2. Storybook Page
 
-- File name: `PIC-361-Childrens-Book-Charm-2-Storybook-Page.png`
+- File name: `PIC-377-Childrens-Book-Charm-2-Storybook-Page.png`
 - Target: `public/card-art/gallery/cards/childrens-book-charm/grade-02.webp`
 - Owner: Card `childrens-book-charm` grade `Storybook Page`
 - Status: generated
@@ -4882,9 +5090,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A full storybook page: warm illustrated charm, the bear's umbrella sheltering a duck, colors soft and flat and kind.
 ```
 
-#### 362. Childrens Book Charm 3. Bedtime Classic
+#### 378. Childrens Book Charm 3. Bedtime Classic
 
-- File name: `PIC-362-Childrens-Book-Charm-3-Bedtime-Classic.png`
+- File name: `PIC-378-Childrens-Book-Charm-3-Bedtime-Classic.png`
 - Target: `public/card-art/gallery/cards/childrens-book-charm/grade-03.webp`
 - Owner: Card `childrens-book-charm` grade `Bedtime Classic`
 - Status: generated
@@ -4895,9 +5103,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A classic bedtime spread: full picture-book charm, soft and round, the bear's lamplit doorway promising cocoa on the next page.
 ```
 
-#### 363. Tarot Card Mystic 1. Mystic Symbols
+#### 379. Tarot Card Mystic 1. Mystic Symbols
 
-- File name: `PIC-363-Tarot-Card-Mystic-1-Mystic-Symbols.png`
+- File name: `PIC-379-Tarot-Card-Mystic-1-Mystic-Symbols.png`
 - Target: `public/card-art/gallery/cards/tarot-card-mystic/grade-01.webp`
 - Owner: Card `tarot-card-mystic` grade `Mystic Symbols`
 - Status: generated
@@ -4908,9 +5116,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A lantern-bearer with mystic tarot symbolism gathering at the edges - stars, a key, a coiled rope, each placed with intent.
 ```
 
-#### 364. Tarot Card Mystic 2. Tarot Arcana
+#### 380. Tarot Card Mystic 2. Tarot Arcana
 
-- File name: `PIC-364-Tarot-Card-Mystic-2-Tarot-Arcana.png`
+- File name: `PIC-380-Tarot-Card-Mystic-2-Tarot-Arcana.png`
 - Target: `public/card-art/gallery/cards/tarot-card-mystic/grade-02.webp`
 - Owner: Card `tarot-card-mystic` grade `Tarot Arcana`
 - Status: generated
@@ -4921,9 +5129,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A full arcana composition: the figure centered and symbolic, celestial emblems balanced around, the image reading as meaning.
 ```
 
-#### 365. Tarot Card Mystic 3. Gilded Arcana
+#### 381. Tarot Card Mystic 3. Gilded Arcana
 
-- File name: `PIC-365-Tarot-Card-Mystic-3-Gilded-Arcana.png`
+- File name: `PIC-381-Tarot-Card-Mystic-3-Gilded-Arcana.png`
 - Target: `public/card-art/gallery/cards/tarot-card-mystic/grade-03.webp`
 - Owner: Card `tarot-card-mystic` grade `Gilded Arcana`
 - Status: generated
@@ -4934,9 +5142,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A fully gilded arcana: celestial ornament and stars, gold-rayed halo, the lantern-bearer enthroned in symmetrical mystery.
 ```
 
-#### 366. Vintage Travel Poster 1. Poster Tint
+#### 382. Vintage Travel Poster 1. Poster Tint
 
-- File name: `PIC-366-Vintage-Travel-Poster-1-Poster-Tint.png`
+- File name: `PIC-382-Vintage-Travel-Poster-1-Poster-Tint.png`
 - Target: `public/card-art/gallery/cards/vintage-travel-poster/grade-01.webp`
 - Owner: Card `vintage-travel-poster` grade `Poster Tint`
 - Status: generated
@@ -4947,9 +5155,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A coastal village with vintage travel-poster color tinting the scene, optimism entering the palette.
 ```
 
-#### 367. Vintage Travel Poster 2. Travel Poster
+#### 383. Vintage Travel Poster 2. Travel Poster
 
-- File name: `PIC-367-Vintage-Travel-Poster-2-Travel-Poster.png`
+- File name: `PIC-383-Vintage-Travel-Poster-2-Travel-Poster.png`
 - Target: `public/card-art/gallery/cards/vintage-travel-poster/grade-02.webp`
 - Owner: Card `vintage-travel-poster` grade `Travel Poster`
 - Status: generated
@@ -4960,9 +5168,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A full travel poster: flat cheerful shapes selling the view, simplified waves, a sky with exactly one perfect cloud.
 ```
 
-#### 368. Vintage Travel Poster 3. Grand Tour
+#### 384. Vintage Travel Poster 3. Grand Tour
 
-- File name: `PIC-368-Vintage-Travel-Poster-3-Grand-Tour.png`
+- File name: `PIC-384-Vintage-Travel-Poster-3-Grand-Tour.png`
 - Target: `public/card-art/gallery/cards/vintage-travel-poster/grade-03.webp`
 - Owner: Card `vintage-travel-poster` grade `Grand Tour`
 - Status: generated
@@ -4973,9 +5181,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A golden-age tourism poster: simplified grandeur and clean skies, the village iconic, the sea impossibly cooperative.
 ```
 
-#### 369. Botanical Plate 1. Naturalist Eye
+#### 385. Botanical Plate 1. Naturalist Eye
 
-- File name: `PIC-369-Botanical-Plate-1-Naturalist-Eye.png`
+- File name: `PIC-385-Botanical-Plate-1-Naturalist-Eye.png`
 - Target: `public/card-art/gallery/cards/botanical-plate/grade-01.webp`
 - Owner: Card `botanical-plate` grade `Naturalist Eye`
 - Status: generated
@@ -4986,9 +5194,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A flowering plant with naturalist botanical precision sharpening the detail, structure honestly observed.
 ```
 
-#### 370. Botanical Plate 2. Botanical Plate
+#### 386. Botanical Plate 2. Botanical Plate
 
-- File name: `PIC-370-Botanical-Plate-2-Botanical-Plate.png`
+- File name: `PIC-386-Botanical-Plate-2-Botanical-Plate.png`
 - Target: `public/card-art/gallery/cards/botanical-plate/grade-02.webp`
 - Owner: Card `botanical-plate` grade `Botanical Plate`
 - Status: generated
@@ -4999,9 +5207,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A full botanical plate: the specimen on cream paper with root, leaf, and dissected flower arranged for study.
 ```
 
-#### 371. Botanical Plate 3. Field Folio
+#### 387. Botanical Plate 3. Field Folio
 
-- File name: `PIC-371-Botanical-Plate-3-Field-Folio.png`
+- File name: `PIC-387-Botanical-Plate-3-Field-Folio.png`
 - Target: `public/card-art/gallery/cards/botanical-plate/grade-03.webp`
 - Owner: Card `botanical-plate` grade `Field Folio`
 - Status: generated
@@ -5014,9 +5222,9 @@ A dense antique folio study: multiple specimens arranged, seeds and sections in 
 
 ### Per-grade variants - Execution
 
-#### 372. Close Portrait 1. Portrait Frame
+#### 388. Close Portrait 1. Portrait Frame
 
-- File name: `PIC-372-Close-Portrait-1-Portrait-Frame.png`
+- File name: `PIC-388-Close-Portrait-1-Portrait-Frame.png`
 - Target: `public/card-art/gallery/cards/close-portrait/grade-01.webp`
 - Owner: Card `close-portrait` grade `Portrait Frame`
 - Status: generated
@@ -5027,9 +5235,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A classic portrait crop of a freckled sailor, head and shoulders centered, the harbor softly present behind.
 ```
 
-#### 373. Close Portrait 2. Close Portrait
+#### 389. Close Portrait 2. Close Portrait
 
-- File name: `PIC-373-Close-Portrait-2-Close-Portrait.png`
+- File name: `PIC-389-Close-Portrait-2-Close-Portrait.png`
 - Target: `public/card-art/gallery/cards/close-portrait/grade-02.webp`
 - Owner: Card `close-portrait` grade `Close Portrait`
 - Status: generated
@@ -5040,9 +5248,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 An intimate close-up: the sailor's face carrying the frame, catchlights crisp, the background dissolved to color.
 ```
 
-#### 374. Close Portrait 3. Macro Gaze
+#### 390. Close Portrait 3. Macro Gaze
 
-- File name: `PIC-374-Close-Portrait-3-Macro-Gaze.png`
+- File name: `PIC-390-Close-Portrait-3-Macro-Gaze.png`
 - Target: `public/card-art/gallery/cards/close-portrait/grade-03.webp`
 - Owner: Card `close-portrait` grade `Macro Gaze`
 - Status: generated
@@ -5053,9 +5261,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 An extreme macro gaze: the face filling the frame edge to edge, salt in the eyebrows, the world reduced to skin, light, and eyes.
 ```
 
-#### 375. Wide Establishing 1. Wide Frame
+#### 391. Wide Establishing 1. Wide Frame
 
-- File name: `PIC-375-Wide-Establishing-1-Wide-Frame.png`
+- File name: `PIC-391-Wide-Establishing-1-Wide-Frame.png`
 - Target: `public/card-art/gallery/cards/wide-establishing/grade-01.webp`
 - Owner: Card `wide-establishing` grade `Wide Frame`
 - Status: generated
@@ -5066,9 +5274,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A generous wide crop of the valley, the monastery comfortably placed, the land given room to breathe.
 ```
 
-#### 376. Wide Establishing 2. Establishing Shot
+#### 392. Wide Establishing 2. Establishing Shot
 
-- File name: `PIC-376-Wide-Establishing-2-Establishing-Shot.png`
+- File name: `PIC-392-Wide-Establishing-2-Establishing-Shot.png`
 - Target: `public/card-art/gallery/cards/wide-establishing/grade-02.webp`
 - Owner: Card `wide-establishing` grade `Establishing Shot`
 - Status: generated
@@ -5079,9 +5287,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A sweeping establishing view: the whole valley's geography readable, river, road, and rooftops in one deliberate sentence.
 ```
 
-#### 377. Wide Establishing 3. God's Eye
+#### 393. Wide Establishing 3. God's Eye
 
-- File name: `PIC-377-Wide-Establishing-3-God-s-Eye.png`
+- File name: `PIC-393-Wide-Establishing-3-God-s-Eye.png`
 - Target: `public/card-art/gallery/cards/wide-establishing/grade-03.webp`
 - Owner: Card `wide-establishing` grade `God's Eye`
 - Status: generated
@@ -5092,9 +5300,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 An ultra-wide aerial panorama swallowing the valley whole, the monastery a fleck, weather systems sharing the frame.
 ```
 
-#### 378. Low Angle Hero 1. Slight Look-Up
+#### 394. Low Angle Hero 1. Slight Look-Up
 
-- File name: `PIC-378-Low-Angle-Hero-1-Slight-Look-Up.png`
+- File name: `PIC-394-Low-Angle-Hero-1-Slight-Look-Up.png`
 - Target: `public/card-art/gallery/cards/low-angle-hero/grade-01.webp`
 - Owner: Card `low-angle-hero` grade `Slight Look-Up`
 - Status: generated
@@ -5105,9 +5313,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A firefighter in smoke from a slightly low angle, stature quietly amplified, the sky claiming more of the frame.
 ```
 
-#### 379. Low Angle Hero 2. Low-Angle Hero
+#### 395. Low Angle Hero 2. Low-Angle Hero
 
-- File name: `PIC-379-Low-Angle-Hero-2-Low-Angle-Hero.png`
+- File name: `PIC-395-Low-Angle-Hero-2-Low-Angle-Hero.png`
 - Target: `public/card-art/gallery/cards/low-angle-hero/grade-02.webp`
 - Owner: Card `low-angle-hero` grade `Low-Angle Hero`
 - Status: generated
@@ -5118,9 +5326,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A full low-angle hero shot from near the pavement, the figure towering, coat sweeping, smoke parting overhead.
 ```
 
-#### 380. Low Angle Hero 3. Monument View
+#### 396. Low Angle Hero 3. Monument View
 
-- File name: `PIC-380-Low-Angle-Hero-3-Monument-View.png`
+- File name: `PIC-396-Low-Angle-Hero-3-Monument-View.png`
 - Target: `public/card-art/gallery/cards/low-angle-hero/grade-03.webp`
 - Owner: Card `low-angle-hero` grade `Monument View`
 - Status: generated
@@ -5131,9 +5339,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 An extreme worm's-eye view, the figure monumental against the sky, perspective streaking upward, ground and viewer both humbled.
 ```
 
-#### 381. Birds Eye View 1. High Vantage
+#### 397. Birds Eye View 1. High Vantage
 
-- File name: `PIC-381-Birds-Eye-View-1-High-Vantage.png`
+- File name: `PIC-397-Birds-Eye-View-1-High-Vantage.png`
 - Target: `public/card-art/gallery/cards/birds-eye-view/grade-01.webp`
 - Owner: Card `birds-eye-view` grade `High Vantage`
 - Status: generated
@@ -5144,9 +5352,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 The market from a high vantage, tilting down, stalls beginning to arrange into shapes.
 ```
 
-#### 382. Birds Eye View 2. Bird's-Eye View
+#### 398. Birds Eye View 2. Bird's-Eye View
 
-- File name: `PIC-382-Birds-Eye-View-2-Bird-s-Eye-View.png`
+- File name: `PIC-398-Birds-Eye-View-2-Bird-s-Eye-View.png`
 - Target: `public/card-art/gallery/cards/birds-eye-view/grade-02.webp`
 - Owner: Card `birds-eye-view` grade `Bird's-Eye View`
 - Status: generated
@@ -5157,9 +5365,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A true bird's-eye view, straight down: awnings as color blocks, shoppers as moving points, the street a designed pattern.
 ```
 
-#### 383. Birds Eye View 3. Satellite Map
+#### 399. Birds Eye View 3. Satellite Map
 
-- File name: `PIC-383-Birds-Eye-View-3-Satellite-Map.png`
+- File name: `PIC-399-Birds-Eye-View-3-Satellite-Map.png`
 - Target: `public/card-art/gallery/cards/birds-eye-view/grade-03.webp`
 - Owner: Card `birds-eye-view` grade `Satellite Map`
 - Status: generated
@@ -5170,9 +5378,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 So high the market becomes cartography - lanes and rooftops flattened into a living map, geometry replacing gravity.
 ```
 
-#### 384. Dutch Tilt 1. Slight Cant
+#### 400. Dutch Tilt 1. Slight Cant
 
-- File name: `PIC-384-Dutch-Tilt-1-Slight-Cant.png`
+- File name: `PIC-400-Dutch-Tilt-1-Slight-Cant.png`
 - Target: `public/card-art/gallery/cards/dutch-tilt/grade-01.webp`
 - Owner: Card `dutch-tilt` grade `Slight Cant`
 - Status: generated
@@ -5183,9 +5391,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 An alley sprint with the horizon canted a few degrees, the ground subtly no longer to be trusted.
 ```
 
-#### 385. Dutch Tilt 2. Dutch Tilt
+#### 401. Dutch Tilt 2. Dutch Tilt
 
-- File name: `PIC-385-Dutch-Tilt-2-Dutch-Tilt.png`
+- File name: `PIC-401-Dutch-Tilt-2-Dutch-Tilt.png`
 - Target: `public/card-art/gallery/cards/dutch-tilt/grade-02.webp`
 - Owner: Card `dutch-tilt` grade `Dutch Tilt`
 - Status: generated
@@ -5196,9 +5404,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A committed dutch tilt: diagonal horizon, the alley leaning, the run charged by the frame itself.
 ```
 
-#### 386. Dutch Tilt 3. Vertigo Frame
+#### 402. Dutch Tilt 3. Vertigo Frame
 
-- File name: `PIC-386-Dutch-Tilt-3-Vertigo-Frame.png`
+- File name: `PIC-402-Dutch-Tilt-3-Vertigo-Frame.png`
 - Target: `public/card-art/gallery/cards/dutch-tilt/grade-03.webp`
 - Owner: Card `dutch-tilt` grade `Vertigo Frame`
 - Status: generated
@@ -5209,9 +5417,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 An extreme tilt lurching into vertigo, the world nearly sideways, balance abandoned - motion sickness as composition.
 ```
 
-#### 387. Symmetric Center 1. Centered Subject
+#### 403. Symmetric Center 1. Centered Subject
 
-- File name: `PIC-387-Symmetric-Center-1-Centered-Subject.png`
+- File name: `PIC-403-Symmetric-Center-1-Centered-Subject.png`
 - Target: `public/card-art/gallery/cards/symmetric-center/grade-01.webp`
 - Owner: Card `symmetric-center` grade `Centered Subject`
 - Status: generated
@@ -5222,9 +5430,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 The corridor with its subject dead center, balance settling over the frame.
 ```
 
-#### 388. Symmetric Center 2. Formal Symmetry
+#### 404. Symmetric Center 2. Formal Symmetry
 
-- File name: `PIC-388-Symmetric-Center-2-Formal-Symmetry.png`
+- File name: `PIC-404-Symmetric-Center-2-Formal-Symmetry.png`
 - Target: `public/card-art/gallery/cards/symmetric-center/grade-02.webp`
 - Owner: Card `symmetric-center` grade `Formal Symmetry`
 - Status: generated
@@ -5235,9 +5443,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 Perfect formal symmetry: the corridor mirrored left-right, pairs of sconces agreeing, the bellhop at the exact fold.
 ```
 
-#### 389. Symmetric Center 3. Temple Symmetry
+#### 405. Symmetric Center 3. Temple Symmetry
 
-- File name: `PIC-389-Symmetric-Center-3-Temple-Symmetry.png`
+- File name: `PIC-405-Symmetric-Center-3-Temple-Symmetry.png`
 - Target: `public/card-art/gallery/cards/symmetric-center/grade-03.webp`
 - Owner: Card `symmetric-center` grade `Temple Symmetry`
 - Status: generated
@@ -5248,9 +5456,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 Obsessive temple symmetry, mirrored down to the reflections in the polished floor, the frame arranged like a ritual.
 ```
 
-#### 390. Rule Of Thirds 1. Off-Center
+#### 406. Rule Of Thirds 1. Off-Center
 
-- File name: `PIC-390-Rule-Of-Thirds-1-Off-Center.png`
+- File name: `PIC-406-Rule-Of-Thirds-1-Off-Center.png`
 - Target: `public/card-art/gallery/cards/rule-of-thirds/grade-01.webp`
 - Owner: Card `rule-of-thirds` grade `Off-Center`
 - Status: generated
@@ -5261,9 +5469,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 The red boat stepping off center, the sea given the larger share of the frame.
 ```
 
-#### 391. Rule Of Thirds 2. Rule of Thirds
+#### 407. Rule Of Thirds 2. Rule of Thirds
 
-- File name: `PIC-391-Rule-Of-Thirds-2-Rule-of-Thirds.png`
+- File name: `PIC-407-Rule-Of-Thirds-2-Rule-of-Thirds.png`
 - Target: `public/card-art/gallery/cards/rule-of-thirds/grade-02.webp`
 - Owner: Card `rule-of-thirds` grade `Rule of Thirds`
 - Status: generated
@@ -5274,9 +5482,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 Classic thirds placement: the boat at a power point, horizon on the upper line, open water breathing around it.
 ```
 
-#### 392. Rule Of Thirds 3. Far Corner
+#### 408. Rule Of Thirds 3. Far Corner
 
-- File name: `PIC-392-Rule-Of-Thirds-3-Far-Corner.png`
+- File name: `PIC-408-Rule-Of-Thirds-3-Far-Corner.png`
 - Target: `public/card-art/gallery/cards/rule-of-thirds/grade-03.webp`
 - Owner: Card `rule-of-thirds` grade `Far Corner`
 - Status: generated
@@ -5287,9 +5495,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 The boat tucked in one far corner of a vast open frame, the sea enormous, the composition all patience.
 ```
 
-#### 393. Shallow Bokeh 1. Soft Background
+#### 409. Shallow Bokeh 1. Soft Background
 
-- File name: `PIC-393-Shallow-Bokeh-1-Soft-Background.png`
+- File name: `PIC-409-Shallow-Bokeh-1-Soft-Background.png`
 - Target: `public/card-art/gallery/cards/shallow-bokeh/grade-01.webp`
 - Owner: Card `shallow-bokeh` grade `Soft Background`
 - Status: generated
@@ -5300,9 +5508,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 The pour with a softly blurred background, the cafe easing out of focus behind the cup.
 ```
 
-#### 394. Shallow Bokeh 2. Shallow Bokeh
+#### 410. Shallow Bokeh 2. Shallow Bokeh
 
-- File name: `PIC-394-Shallow-Bokeh-2-Shallow-Bokeh.png`
+- File name: `PIC-410-Shallow-Bokeh-2-Shallow-Bokeh.png`
 - Target: `public/card-art/gallery/cards/shallow-bokeh/grade-02.webp`
 - Owner: Card `shallow-bokeh` grade `Shallow Bokeh`
 - Status: generated
@@ -5313,9 +5521,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 Full shallow bokeh: the cup crisp, the room dissolved into creamy discs of light, focus doing the pointing.
 ```
 
-#### 395. Shallow Bokeh 3. Razor Focus
+#### 411. Shallow Bokeh 3. Razor Focus
 
-- File name: `PIC-395-Shallow-Bokeh-3-Razor-Focus.png`
+- File name: `PIC-411-Shallow-Bokeh-3-Razor-Focus.png`
 - Target: `public/card-art/gallery/cards/shallow-bokeh/grade-03.webp`
 - Owner: Card `shallow-bokeh` grade `Razor Focus`
 - Status: generated
@@ -5326,9 +5534,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A razor-thin focal plane - one edge of the cup sharp, everything else including the hands dissolving into orbs of light.
 ```
 
-#### 396. Long Exposure 1. Slow Shutter
+#### 412. Long Exposure 1. Slow Shutter
 
-- File name: `PIC-396-Long-Exposure-1-Slow-Shutter.png`
+- File name: `PIC-412-Long-Exposure-1-Slow-Shutter.png`
 - Target: `public/card-art/gallery/cards/long-exposure/grade-01.webp`
 - Owner: Card `long-exposure` grade `Slow Shutter`
 - Status: generated
@@ -5339,9 +5547,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 The bridge and falls with slow-shutter softness, water beginning to blur, lights starting to streak.
 ```
 
-#### 397. Long Exposure 2. Long Exposure
+#### 413. Long Exposure 2. Long Exposure
 
-- File name: `PIC-397-Long-Exposure-2-Long-Exposure.png`
+- File name: `PIC-413-Long-Exposure-2-Long-Exposure.png`
 - Target: `public/card-art/gallery/cards/long-exposure/grade-02.webp`
 - Owner: Card `long-exposure` grade `Long Exposure`
 - Status: generated
@@ -5352,9 +5560,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A full long exposure: water silked, light trails ribboning the bridge, time visibly pooled in one frame.
 ```
 
-#### 398. Long Exposure 3. Hours Open
+#### 414. Long Exposure 3. Hours Open
 
-- File name: `PIC-398-Long-Exposure-3-Hours-Open.png`
+- File name: `PIC-414-Long-Exposure-3-Hours-Open.png`
 - Target: `public/card-art/gallery/cards/long-exposure/grade-03.webp`
 - Owner: Card `long-exposure` grade `Hours Open`
 - Status: generated
@@ -5365,9 +5573,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 Hours in one frame: star trails arcing over the bridge, ghost traffic layered into light, the waterfall a standing cloud.
 ```
 
-#### 399. Double Exposure 1. Faint Overlay
+#### 415. Double Exposure 1. Faint Overlay
 
-- File name: `PIC-399-Double-Exposure-1-Faint-Overlay.png`
+- File name: `PIC-415-Double-Exposure-1-Faint-Overlay.png`
 - Target: `public/card-art/gallery/cards/double-exposure/grade-01.webp`
 - Owner: Card `double-exposure` grade `Faint Overlay`
 - Status: generated
@@ -5378,9 +5586,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 The profile with a faint forest overlay, trees ghosting through the edge of the silhouette.
 ```
 
-#### 400. Double Exposure 2. Double Exposure
+#### 416. Double Exposure 2. Double Exposure
 
-- File name: `PIC-400-Double-Exposure-2-Double-Exposure.png`
+- File name: `PIC-416-Double-Exposure-2-Double-Exposure.png`
 - Target: `public/card-art/gallery/cards/double-exposure/grade-02.webp`
 - Owner: Card `double-exposure` grade `Double Exposure`
 - Status: generated
@@ -5391,9 +5599,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A full double exposure: the landscape living inside the silhouette, hairline and canopy sharing one edge.
 ```
 
-#### 401. Double Exposure 3. Layered Ghosts
+#### 417. Double Exposure 3. Layered Ghosts
 
-- File name: `PIC-401-Double-Exposure-3-Layered-Ghosts.png`
+- File name: `PIC-417-Double-Exposure-3-Layered-Ghosts.png`
 - Target: `public/card-art/gallery/cards/double-exposure/grade-03.webp`
 - Owner: Card `double-exposure` grade `Layered Ghosts`
 - Status: generated
@@ -5404,9 +5612,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 Many exposures stacked into layered ghosts - profile, forest, weather, and birds translucently interleaved in one breathing frame.
 ```
 
-#### 402. Silhouette Shot 1. Half Shadow
+#### 418. Silhouette Shot 1. Half Shadow
 
-- File name: `PIC-402-Silhouette-Shot-1-Half-Shadow.png`
+- File name: `PIC-418-Silhouette-Shot-1-Half-Shadow.png`
 - Target: `public/card-art/gallery/cards/silhouette-shot/grade-01.webp`
 - Owner: Card `silhouette-shot` grade `Half Shadow`
 - Status: generated
@@ -5417,9 +5625,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 The fisherman half in shadow against the bright sky, features fading, shape strengthening.
 ```
 
-#### 403. Silhouette Shot 2. Silhouette
+#### 419. Silhouette Shot 2. Silhouette
 
-- File name: `PIC-403-Silhouette-Shot-2-Silhouette.png`
+- File name: `PIC-419-Silhouette-Shot-2-Silhouette.png`
 - Target: `public/card-art/gallery/cards/silhouette-shot/grade-02.webp`
 - Owner: Card `silhouette-shot` grade `Silhouette`
 - Status: generated
@@ -5430,9 +5638,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A clean silhouette: the cast frozen black against the glowing sky, the line of rod and arm unmistakable.
 ```
 
-#### 404. Silhouette Shot 3. Pure Shape
+#### 420. Silhouette Shot 3. Pure Shape
 
-- File name: `PIC-404-Silhouette-Shot-3-Pure-Shape.png`
+- File name: `PIC-420-Silhouette-Shot-3-Pure-Shape.png`
 - Target: `public/card-art/gallery/cards/silhouette-shot/grade-03.webp`
 - Owner: Card `silhouette-shot` grade `Pure Shape`
 - Status: generated
@@ -5443,9 +5651,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 Pure shape: nothing but cut-paper black against a blazing sky, the figure an emblem of itself.
 ```
 
-#### 405. Motion Blur Action 1. Hint of Motion
+#### 421. Motion Blur Action 1. Hint of Motion
 
-- File name: `PIC-405-Motion-Blur-Action-1-Hint-of-Motion.png`
+- File name: `PIC-421-Motion-Blur-Action-1-Hint-of-Motion.png`
 - Target: `public/card-art/gallery/cards/motion-blur-action/grade-01.webp`
 - Owner: Card `motion-blur-action` grade `Hint of Motion`
 - Status: generated
@@ -5456,9 +5664,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 The cyclist with a hint of motion blur at the wheels and edges, stillness starting to fail.
 ```
 
-#### 406. Motion Blur Action 2. Action Pan
+#### 422. Motion Blur Action 2. Action Pan
 
-- File name: `PIC-406-Motion-Blur-Action-2-Action-Pan.png`
+- File name: `PIC-422-Motion-Blur-Action-2-Action-Pan.png`
 - Target: `public/card-art/gallery/cards/motion-blur-action/grade-02.webp`
 - Owner: Card `motion-blur-action` grade `Action Pan`
 - Status: generated
@@ -5469,9 +5677,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A full action pan: the rider held sharp, background torn into streaks, the frame moving with the subject.
 ```
 
-#### 407. Motion Blur Action 3. Full Velocity
+#### 423. Motion Blur Action 3. Full Velocity
 
-- File name: `PIC-407-Motion-Blur-Action-3-Full-Velocity.png`
+- File name: `PIC-423-Motion-Blur-Action-3-Full-Velocity.png`
 - Target: `public/card-art/gallery/cards/motion-blur-action/grade-03.webp`
 - Owner: Card `motion-blur-action` grade `Full Velocity`
 - Status: generated
@@ -5482,9 +5690,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 Full velocity: the whole frame tearing with speed lines, the cyclist a blade of focus through streaming light.
 ```
 
-#### 408. Isometric View 1. Angled Overview
+#### 424. Isometric View 1. Angled Overview
 
-- File name: `PIC-408-Isometric-View-1-Angled-Overview.png`
+- File name: `PIC-424-Isometric-View-1-Angled-Overview.png`
 - Target: `public/card-art/gallery/cards/isometric-view/grade-01.webp`
 - Owner: Card `isometric-view` grade `Angled Overview`
 - Status: generated
@@ -5495,9 +5703,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 The bakery from a tidy angled overview, the scene beginning to miniaturize.
 ```
 
-#### 409. Isometric View 2. Isometric View
+#### 425. Isometric View 2. Isometric View
 
-- File name: `PIC-409-Isometric-View-2-Isometric-View.png`
+- File name: `PIC-425-Isometric-View-2-Isometric-View.png`
 - Target: `public/card-art/gallery/cards/isometric-view/grade-02.webp`
 - Owner: Card `isometric-view` grade `Isometric View`
 - Status: generated
@@ -5508,9 +5716,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 True isometric: parallel lines never converging, the bakery a perfect readable tile, shadows obediently diagonal.
 ```
 
-#### 410. Isometric View 3. Diorama Cutaway
+#### 426. Isometric View 3. Diorama Cutaway
 
-- File name: `PIC-410-Isometric-View-3-Diorama-Cutaway.png`
+- File name: `PIC-426-Isometric-View-3-Diorama-Cutaway.png`
 - Target: `public/card-art/gallery/cards/isometric-view/grade-03.webp`
 - Owner: Card `isometric-view` grade `Diorama Cutaway`
 - Status: generated
@@ -5521,9 +5729,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 An isometric cutaway diorama: walls opened to show the ovens, stockroom, and stair, the whole bakery legible at once.
 ```
 
-#### 411. Knolling Flatlay 1. Tidy Layout
+#### 427. Knolling Flatlay 1. Tidy Layout
 
-- File name: `PIC-411-Knolling-Flatlay-1-Tidy-Layout.png`
+- File name: `PIC-427-Knolling-Flatlay-1-Tidy-Layout.png`
 - Target: `public/card-art/gallery/cards/knolling-flatlay/grade-01.webp`
 - Owner: Card `knolling-flatlay` grade `Tidy Layout`
 - Status: generated
@@ -5534,9 +5742,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 The field kit in a tidy flat lay, objects settling into rows on the canvas.
 ```
 
-#### 412. Knolling Flatlay 2. Knolling
+#### 428. Knolling Flatlay 2. Knolling
 
-- File name: `PIC-412-Knolling-Flatlay-2-Knolling.png`
+- File name: `PIC-428-Knolling-Flatlay-2-Knolling.png`
 - Target: `public/card-art/gallery/cards/knolling-flatlay/grade-02.webp`
 - Owner: Card `knolling-flatlay` grade `Knolling`
 - Status: generated
@@ -5547,9 +5755,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 Full knolling: every item aligned at right angles from directly above, spacing even, the kit reading as a sentence of objects.
 ```
 
-#### 413. Knolling Flatlay 3. Museum Inventory
+#### 429. Knolling Flatlay 3. Museum Inventory
 
-- File name: `PIC-413-Knolling-Flatlay-3-Museum-Inventory.png`
+- File name: `PIC-429-Knolling-Flatlay-3-Museum-Inventory.png`
 - Target: `public/card-art/gallery/cards/knolling-flatlay/grade-03.webp`
 - Owner: Card `knolling-flatlay` grade `Museum Inventory`
 - Status: generated
@@ -5560,9 +5768,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A museum-grade inventory grid: the kit disassembled to components, every screw and strap aligned, obsessive order as beauty.
 ```
 
-#### 414. Hyper Detailed 1. Fine Detail
+#### 430. Hyper Detailed 1. Fine Detail
 
-- File name: `PIC-414-Hyper-Detailed-1-Fine-Detail.png`
+- File name: `PIC-430-Hyper-Detailed-1-Fine-Detail.png`
 - Target: `public/card-art/gallery/cards/hyper-detailed/grade-01.webp`
 - Owner: Card `hyper-detailed` grade `Fine Detail`
 - Status: generated
@@ -5573,9 +5781,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 The tide pool finely detailed, textures sharpening across rock and water.
 ```
 
-#### 415. Hyper Detailed 2. Hyper-Detailed
+#### 431. Hyper Detailed 2. Hyper-Detailed
 
-- File name: `PIC-415-Hyper-Detailed-2-Hyper-Detailed.png`
+- File name: `PIC-431-Hyper-Detailed-2-Hyper-Detailed.png`
 - Target: `public/card-art/gallery/cards/hyper-detailed/grade-02.webp`
 - Owner: Card `hyper-detailed` grade `Hyper-Detailed`
 - Status: generated
@@ -5586,9 +5794,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 Fully hyper-detailed: intricate texture throughout, anemones and shell-script resolved to the smallest legible touch.
 ```
 
-#### 416. Hyper Detailed 3. Infinite Engraving
+#### 432. Hyper Detailed 3. Infinite Engraving
 
-- File name: `PIC-416-Hyper-Detailed-3-Infinite-Engraving.png`
+- File name: `PIC-432-Hyper-Detailed-3-Infinite-Engraving.png`
 - Target: `public/card-art/gallery/cards/hyper-detailed/grade-03.webp`
 - Owner: Card `hyper-detailed` grade `Infinite Engraving`
 - Status: generated
@@ -5599,9 +5807,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 Obsessive density: every square inch engraved with miniature texture, the pool an infinite inventory the eye can graze forever.
 ```
 
-#### 417. Minimalist Negative Space 1. Breathing Room
+#### 433. Minimalist Negative Space 1. Breathing Room
 
-- File name: `PIC-417-Minimalist-Negative-Space-1-Breathing-Room.png`
+- File name: `PIC-433-Minimalist-Negative-Space-1-Breathing-Room.png`
 - Target: `public/card-art/gallery/cards/minimalist-negative-space/grade-01.webp`
 - Owner: Card `minimalist-negative-space` grade `Breathing Room`
 - Status: generated
@@ -5612,9 +5820,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 The kite with generous negative space opening around it, the sky claiming most of the frame.
 ```
 
-#### 418. Minimalist Negative Space 2. Minimalist Frame
+#### 434. Minimalist Negative Space 2. Minimalist Frame
 
-- File name: `PIC-418-Minimalist-Negative-Space-2-Minimalist-Frame.png`
+- File name: `PIC-434-Minimalist-Negative-Space-2-Minimalist-Frame.png`
 - Target: `public/card-art/gallery/cards/minimalist-negative-space/grade-02.webp`
 - Owner: Card `minimalist-negative-space` grade `Minimalist Frame`
 - Status: generated
@@ -5625,9 +5833,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 Full minimalism: a tiny subject in a vast clean field, the string a hairline, emptiness doing the framing.
 ```
 
-#### 419. Minimalist Negative Space 3. Almost Nothing
+#### 435. Minimalist Negative Space 3. Almost Nothing
 
-- File name: `PIC-419-Minimalist-Negative-Space-3-Almost-Nothing.png`
+- File name: `PIC-435-Minimalist-Negative-Space-3-Almost-Nothing.png`
 - Target: `public/card-art/gallery/cards/minimalist-negative-space/grade-03.webp`
 - Owner: Card `minimalist-negative-space` grade `Almost Nothing`
 - Status: generated
@@ -5638,11 +5846,128 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 Almost nothing: the image approaching pure emptiness, one small mark of kite in the void - and the void composed.
 ```
 
+#### 436. Type Safe Area 1. Type-safe area
+
+- File name: `PIC-436-Type-Safe-Area-1-Type-safe-area.png`
+- Target: `public/card-art/gallery/cards/type-safe-area/grade-01.webp`
+- Owner: Card `type-safe-area` grade `Type-safe area`
+- Status: planned
+
+```
+Collectible-card key art for a deck that teaches image-making. Each card demonstrates exactly one technique, and the image is MADE WITH that technique wherever the brief names one - the technique is how the picture is rendered, never an object shown inside it. One strong, instantly readable focal subject with clean uncluttered edges, composed square with generous breathing room, and it still reads at thumbnail size. The artwork is full-bleed and fills the entire square to every edge, the scene cut off by the picture edges on all four sides: no border, no margin, no matting, no frame, no drawn edge line, no vignette box, no rounded corners, not a picture of a card or a page. Artwork only: no text, no letters, no numbers, no logos, no readable symbols, no ui labels, no card frame, no speech bubbles, no watermarks, no signatures.
+
+A quiet strip of sky above a painted shoreline.
+```
+
+#### 437. Type Safe Area 2. Type-safe area · quiet field
+
+- File name: `PIC-437-Type-Safe-Area-2-Type-safe-area-quiet-field.png`
+- Target: `public/card-art/gallery/cards/type-safe-area/grade-02.webp`
+- Owner: Card `type-safe-area` grade `Type-safe area · quiet field`
+- Status: planned
+
+```
+Collectible-card key art for a deck that teaches image-making. Each card demonstrates exactly one technique, and the image is MADE WITH that technique wherever the brief names one - the technique is how the picture is rendered, never an object shown inside it. One strong, instantly readable focal subject with clean uncluttered edges, composed square with generous breathing room, and it still reads at thumbnail size. The artwork is full-bleed and fills the entire square to every edge, the scene cut off by the picture edges on all four sides: no border, no margin, no matting, no frame, no drawn edge line, no vignette box, no rounded corners, not a picture of a card or a page. Artwork only: no text, no letters, no numbers, no logos, no readable symbols, no ui labels, no card frame, no speech bubbles, no watermarks, no signatures.
+
+A quiet strip of sky above a painted shoreline.
+```
+
+#### 438. Type Safe Area 3. Type-safe area · clear field
+
+- File name: `PIC-438-Type-Safe-Area-3-Type-safe-area-clear-field.png`
+- Target: `public/card-art/gallery/cards/type-safe-area/grade-03.webp`
+- Owner: Card `type-safe-area` grade `Type-safe area · clear field`
+- Status: planned
+
+```
+Collectible-card key art for a deck that teaches image-making. Each card demonstrates exactly one technique, and the image is MADE WITH that technique wherever the brief names one - the technique is how the picture is rendered, never an object shown inside it. One strong, instantly readable focal subject with clean uncluttered edges, composed square with generous breathing room, and it still reads at thumbnail size. The artwork is full-bleed and fills the entire square to every edge, the scene cut off by the picture edges on all four sides: no border, no margin, no matting, no frame, no drawn edge line, no vignette box, no rounded corners, not a picture of a card or a page. Artwork only: no text, no letters, no numbers, no logos, no readable symbols, no ui labels, no card frame, no speech bubbles, no watermarks, no signatures.
+
+A quiet strip of sky above a painted shoreline.
+```
+
+#### 439. Feature Priority 1. Feature priority
+
+- File name: `PIC-439-Feature-Priority-1-Feature-priority.png`
+- Target: `public/card-art/gallery/cards/feature-priority/grade-01.webp`
+- Owner: Card `feature-priority` grade `Feature priority`
+- Status: planned
+
+```
+Collectible-card key art for a deck that teaches image-making. Each card demonstrates exactly one technique, and the image is MADE WITH that technique wherever the brief names one - the technique is how the picture is rendered, never an object shown inside it. One strong, instantly readable focal subject with clean uncluttered edges, composed square with generous breathing room, and it still reads at thumbnail size. The artwork is full-bleed and fills the entire square to every edge, the scene cut off by the picture edges on all four sides: no border, no margin, no matting, no frame, no drawn edge line, no vignette box, no rounded corners, not a picture of a card or a page. Artwork only: no text, no letters, no numbers, no logos, no readable symbols, no ui labels, no card frame, no speech bubbles, no watermarks, no signatures.
+
+A single product detail in crisp relief.
+```
+
+#### 440. Feature Priority 2. Feature priority · edge
+
+- File name: `PIC-440-Feature-Priority-2-Feature-priority-edge.png`
+- Target: `public/card-art/gallery/cards/feature-priority/grade-02.webp`
+- Owner: Card `feature-priority` grade `Feature priority · edge`
+- Status: planned
+
+```
+Collectible-card key art for a deck that teaches image-making. Each card demonstrates exactly one technique, and the image is MADE WITH that technique wherever the brief names one - the technique is how the picture is rendered, never an object shown inside it. One strong, instantly readable focal subject with clean uncluttered edges, composed square with generous breathing room, and it still reads at thumbnail size. The artwork is full-bleed and fills the entire square to every edge, the scene cut off by the picture edges on all four sides: no border, no margin, no matting, no frame, no drawn edge line, no vignette box, no rounded corners, not a picture of a card or a page. Artwork only: no text, no letters, no numbers, no logos, no readable symbols, no ui labels, no card frame, no speech bubbles, no watermarks, no signatures.
+
+A single product detail in crisp relief.
+```
+
+#### 441. Feature Priority 3. Feature priority · contrast
+
+- File name: `PIC-441-Feature-Priority-3-Feature-priority-contrast.png`
+- Target: `public/card-art/gallery/cards/feature-priority/grade-03.webp`
+- Owner: Card `feature-priority` grade `Feature priority · contrast`
+- Status: planned
+
+```
+Collectible-card key art for a deck that teaches image-making. Each card demonstrates exactly one technique, and the image is MADE WITH that technique wherever the brief names one - the technique is how the picture is rendered, never an object shown inside it. One strong, instantly readable focal subject with clean uncluttered edges, composed square with generous breathing room, and it still reads at thumbnail size. The artwork is full-bleed and fills the entire square to every edge, the scene cut off by the picture edges on all four sides: no border, no margin, no matting, no frame, no drawn edge line, no vignette box, no rounded corners, not a picture of a card or a page. Artwork only: no text, no letters, no numbers, no logos, no readable symbols, no ui labels, no card frame, no speech bubbles, no watermarks, no signatures.
+
+A single product detail in crisp relief.
+```
+
+#### 442. Matched Views 1. Matched views
+
+- File name: `PIC-442-Matched-Views-1-Matched-views.png`
+- Target: `public/card-art/gallery/cards/matched-views/grade-01.webp`
+- Owner: Card `matched-views` grade `Matched views`
+- Status: planned
+
+```
+Collectible-card key art for a deck that teaches image-making. Each card demonstrates exactly one technique, and the image is MADE WITH that technique wherever the brief names one - the technique is how the picture is rendered, never an object shown inside it. One strong, instantly readable focal subject with clean uncluttered edges, composed square with generous breathing room, and it still reads at thumbnail size. The artwork is full-bleed and fills the entire square to every edge, the scene cut off by the picture edges on all four sides: no border, no margin, no matting, no frame, no drawn edge line, no vignette box, no rounded corners, not a picture of a card or a page. Artwork only: no text, no letters, no numbers, no logos, no readable symbols, no ui labels, no card frame, no speech bubbles, no watermarks, no signatures.
+
+Two specimens aligned along a shared baseline.
+```
+
+#### 443. Matched Views 2. Matched views · landmarks
+
+- File name: `PIC-443-Matched-Views-2-Matched-views-landmarks.png`
+- Target: `public/card-art/gallery/cards/matched-views/grade-02.webp`
+- Owner: Card `matched-views` grade `Matched views · landmarks`
+- Status: planned
+
+```
+Collectible-card key art for a deck that teaches image-making. Each card demonstrates exactly one technique, and the image is MADE WITH that technique wherever the brief names one - the technique is how the picture is rendered, never an object shown inside it. One strong, instantly readable focal subject with clean uncluttered edges, composed square with generous breathing room, and it still reads at thumbnail size. The artwork is full-bleed and fills the entire square to every edge, the scene cut off by the picture edges on all four sides: no border, no margin, no matting, no frame, no drawn edge line, no vignette box, no rounded corners, not a picture of a card or a page. Artwork only: no text, no letters, no numbers, no logos, no readable symbols, no ui labels, no card frame, no speech bubbles, no watermarks, no signatures.
+
+Two specimens aligned along a shared baseline.
+```
+
+#### 444. Matched Views 3. Matched views · registration
+
+- File name: `PIC-444-Matched-Views-3-Matched-views-registration.png`
+- Target: `public/card-art/gallery/cards/matched-views/grade-03.webp`
+- Owner: Card `matched-views` grade `Matched views · registration`
+- Status: planned
+
+```
+Collectible-card key art for a deck that teaches image-making. Each card demonstrates exactly one technique, and the image is MADE WITH that technique wherever the brief names one - the technique is how the picture is rendered, never an object shown inside it. One strong, instantly readable focal subject with clean uncluttered edges, composed square with generous breathing room, and it still reads at thumbnail size. The artwork is full-bleed and fills the entire square to every edge, the scene cut off by the picture edges on all four sides: no border, no margin, no matting, no frame, no drawn edge line, no vignette box, no rounded corners, not a picture of a card or a page. Artwork only: no text, no letters, no numbers, no logos, no readable symbols, no ui labels, no card frame, no speech bubbles, no watermarks, no signatures.
+
+Two specimens aligned along a shared baseline.
+```
+
 ### Acronym letters - the guide page
 
-#### 420. Letter P - Protagonist
+#### 445. Letter P - Protagonist
 
-- File name: `PIC-420-Letter-P-Protagonist.png`
+- File name: `PIC-445-Letter-P-Protagonist.png`
 - Target: `public/card-art/gallery/craft/letter-p.webp`
 - Owner: Guide step `Protagonist`
 - Status: generated
@@ -5654,9 +5979,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 Protagonist. A casting line of silhouetted figures in a rehearsal hall, one stepped forward into a single warm spotlight, the chosen subject sharp and lit while the line behind stays in soft shadow.
 ```
 
-#### 421. Letter I - Illumination
+#### 446. Letter I - Illumination
 
-- File name: `PIC-421-Letter-I-Illumination.png`
+- File name: `PIC-446-Letter-I-Illumination.png`
 - Target: `public/card-art/gallery/craft/letter-i.webp`
 - Owner: Guide step `Illumination`
 - Status: generated
@@ -5668,9 +5993,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 Illumination. A plaster bust on a sculptor's stand in a dark studio, one hard window beam carving its features out of the black, dust hanging bright in the shaft - the light visibly building the form.
 ```
 
-#### 422. Letter C - Canvas
+#### 447. Letter C - Canvas
 
-- File name: `PIC-422-Letter-C-Canvas.png`
+- File name: `PIC-447-Letter-C-Canvas.png`
 - Target: `public/card-art/gallery/craft/letter-c.webp`
 - Owner: Guide step `Canvas`
 - Status: generated
@@ -5682,9 +6007,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 Canvas. One landscape crossing three mediums in a single image: rolling hills that begin as loose pencil construction lines, resolve into inked linework midfield, and finish as full oil paint at the far ridge - the same scene becoming more painted as it goes.
 ```
 
-#### 423. Letter T - Tone
+#### 448. Letter T - Tone
 
-- File name: `PIC-423-Letter-T-Tone.png`
+- File name: `PIC-448-Letter-T-Tone.png`
 - Target: `public/card-art/gallery/craft/letter-t.webp`
 - Owner: Guide step `Tone`
 - Status: generated
@@ -5696,9 +6021,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 Tone. One orchard lane split down its middle seam: the left half in warm honeyed golds, the right half in cold blue dusk, identical trees wearing two entirely different moods - palette as attitude.
 ```
 
-#### 424. Letter U - Universe
+#### 449. Letter U - Universe
 
-- File name: `PIC-424-Letter-U-Universe.png`
+- File name: `PIC-449-Letter-U-Universe.png`
 - Target: `public/card-art/gallery/craft/letter-u.webp`
 - Owner: Guide step `Universe`
 - Status: generated
@@ -5710,9 +6035,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 Universe. A single wooden door standing alone in quiet grassland, opened onto a rain-soaked neon city at night, a small traveler on the threshold between the two worlds.
 ```
 
-#### 425. Letter R - References
+#### 450. Letter R - References
 
-- File name: `PIC-425-Letter-R-References.png`
+- File name: `PIC-450-Letter-R-References.png`
 - Target: `public/card-art/gallery/craft/letter-r.webp`
 - Owner: Guide step `References`
 - Status: generated
@@ -5724,9 +6049,9 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 References. An artist's desk from above, strewn with open books, postcards, and torn print clippings of wildly different painting styles, a hand mid-stroke copying from one onto a fresh sheet - a study built from studies. All book pages and clippings show artwork only, no readable writing.
 ```
 
-#### 426. Letter E - Execution
+#### 451. Letter E - Execution
 
-- File name: `PIC-426-Letter-E-Execution.png`
+- File name: `PIC-451-Letter-E-Execution.png`
 - Target: `public/card-art/gallery/craft/letter-e.webp`
 - Owner: Guide step `Execution`
 - Status: generated

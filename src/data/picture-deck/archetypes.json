@@ -4,8 +4,8 @@
     {
       "id": "storybook-cover",
       "code": "STORY",
-      "name": "Storybook Cover",
-      "description": "A wistful children's-book cover: watercolor washes, golden light, and a deep old forest behind your subject.",
+      "name": "Illustrated Cover",
+      "description": "Loose watercolor with a quiet space for lettering in the setting you supply.",
       "tracks": {
         "intensity": 1
       },
@@ -13,17 +13,8 @@
         "canvas": [
           "watercolor"
         ],
-        "illumination": [
-          "golden-hour"
-        ],
-        "universe": [
-          "ancient-forest"
-        ],
-        "references": [
-          "art-nouveau"
-        ],
         "execution": [
-          "wide-establishing"
+          "type-safe-area"
         ]
       },
       "mjTail": {
@@ -31,9 +22,9 @@
         "stylize": 250
       },
       "effects": [
-        "Equips five style cards across Canvas, Illumination, Universe, References, and Execution",
-        "Sets the tail preset to portrait 2:3 at stylize 250",
-        "Leaves your subject line untouched"
+        "Keeps the watercolor washes and pigment edges",
+        "Reserves the title area specified in your subject line",
+        "Starts with a portrait cover format"
       ]
     },
     {
@@ -199,9 +190,10 @@
         "stylize": 100
       },
       "effects": [
-        "Equips the four cards of a controlled studio catalog shot",
+        "Starts with centered framing, studio light, negative space and a filmic finish",
         "Runs at Subtle so nothing upstages the subject",
-        "Sets the tail preset to square 1:1 at stylize 100"
+        "Sets the tail preset to square 1:1 at stylize 100",
+        "Equip Feature priority in Execution or Reflection control in Illumination when a detail needs attention"
       ]
     },
     {
@@ -298,6 +290,28 @@
         "Builds a game-splash pixel scene from four cards",
         "Runs at Bold so the pixels stay detailed, not chunky",
         "Sets the tail preset to square 1:1"
+      ]
+    },
+    {
+      "id": "sprite-asset",
+      "code": "ASSET",
+      "name": "Sprite Asset",
+      "description": "A complete pixel asset at the grid size and camera view specified in your brief.",
+      "tracks": {
+        "intensity": 1
+      },
+      "equipped": {
+        "protagonist": [
+          "action-silhouette"
+        ],
+        "canvas": [
+          "native-pixel-grid"
+        ]
+      },
+      "effects": [
+        "Keeps the whole asset inside one cell",
+        "Separates the parts that define its silhouette",
+        "Takes the grid, viewpoint and palette from the current brief"
       ]
     },
     {
@@ -529,32 +543,26 @@
     {
       "id": "field-journal",
       "code": "FLORA",
-      "name": "Field Journal",
-      "description": "A naturalist's page: botanical precision in ink, sun-faded paper, and specimens laid out at right angles.",
+      "name": "Field Plate",
+      "description": "Fine ink studies at a shared scale, aligned to show the features you want to compare.",
       "tracks": {
         "intensity": 0
       },
       "equipped": {
-        "references": [
-          "botanical-plate"
-        ],
         "canvas": [
           "ink-illustration"
         ],
-        "tone": [
-          "sun-bleached"
-        ],
         "execution": [
-          "knolling-flatlay"
+          "matched-views"
         ]
       },
       "mjTail": {
         "aspectRatio": "4:5"
       },
       "effects": [
-        "Builds an antique field-journal plate from four cards",
-        "Runs at Subtle so the linework stays scientific",
-        "Sets the tail preset to social 4:5"
+        "Draws the supplied specimens in fine ink",
+        "Matches scale and corresponding landmarks",
+        "Leaves the viewing angle free to expose a distinguishing feature"
       ]
     },
     {

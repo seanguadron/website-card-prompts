@@ -2754,6 +2754,162 @@
           "instruction": "a gaunt storied explorer years past the edge of any map"
         }
       ]
+    },
+    {
+      "id": "type-safe-area",
+      "code": "TYPE",
+      "section": "execution",
+      "driver": "intensity",
+      "goals": [
+        "Leave room for the requested lettering."
+      ],
+      "grades": [
+        {
+          "name": "Type-safe area",
+          "description": "Clear small details from the requested lettering area.",
+          "instruction": "fine detail kept outside the requested lettering area"
+        },
+        {
+          "name": "Type-safe area · quiet field",
+          "description": "Reserve one quiet value shape for the title.",
+          "instruction": "the requested title area held as one quiet value shape, with the main silhouette outside it"
+        },
+        {
+          "name": "Type-safe area · clear field",
+          "description": "Keep competing edges and accents beyond the lettering zone.",
+          "instruction": "the requested lettering zone clear of silhouettes, hard edges and color accents"
+        }
+      ]
+    },
+    {
+      "id": "reflection-control",
+      "code": "GLARE",
+      "section": "illumination",
+      "driver": "intensity",
+      "goals": [
+        "Place the highlight so the material and its key feature both read."
+      ],
+      "grades": [
+        {
+          "name": "Reflection control",
+          "description": "Keep the brightest reflection clear of the feature.",
+          "instruction": "brightest reflection placed beside the named feature so its edge stays visible"
+        },
+        {
+          "name": "Reflection control · shaped highlight",
+          "description": "Use the highlight to describe the material.",
+          "instruction": "a broad shaped highlight following the material beside the named feature"
+        },
+        {
+          "name": "Reflection control · clear contour",
+          "description": "Keep the entire contour distinct under the light.",
+          "instruction": "reflections shaped away from the full contour of the named feature, preserving its material finish"
+        }
+      ]
+    },
+    {
+      "id": "feature-priority",
+      "code": "FEAT",
+      "section": "execution",
+      "driver": "intensity",
+      "goals": [
+        "Give the feature named in the brief the clearest read."
+      ],
+      "grades": [
+        {
+          "name": "Feature priority",
+          "description": "Frame the subject so its named detail can be seen.",
+          "instruction": "the named feature clearly visible within the requested view"
+        },
+        {
+          "name": "Feature priority · edge",
+          "description": "Separate the feature from its immediate surroundings.",
+          "instruction": "the named feature carrying the clearest local edge against its surroundings"
+        },
+        {
+          "name": "Feature priority · contrast",
+          "description": "Concentrate detail where the feature needs it.",
+          "instruction": "local contrast and texture concentrated on the named feature, quieter detail around it"
+        }
+      ]
+    },
+    {
+      "id": "matched-views",
+      "code": "MATCH",
+      "section": "execution",
+      "driver": "intensity",
+      "goals": [
+        "Make corresponding features comparable at the same scale."
+      ],
+      "grades": [
+        {
+          "name": "Matched views",
+          "description": "Keep the supplied specimens at the same scale.",
+          "instruction": "supplied specimens aligned at one scale by a shared landmark, each view angled as needed to show the observed feature"
+        },
+        {
+          "name": "Matched views · landmarks",
+          "description": "Align corresponding landmarks while exposing the relevant feature.",
+          "instruction": "corresponding landmarks aligned at one scale, each view angled only as needed to expose the observed feature"
+        },
+        {
+          "name": "Matched views · registration",
+          "description": "Make small differences directly comparable.",
+          "instruction": "common scale and aligned landmarks across all supplied views, small differences clearly separated, viewing angle adjusted where a feature would be hidden"
+        }
+      ]
+    },
+    {
+      "id": "action-silhouette",
+      "code": "POSE",
+      "section": "protagonist",
+      "driver": "intensity",
+      "goals": [
+        "Keep the action readable at the requested size."
+      ],
+      "grades": [
+        {
+          "name": "Action silhouette",
+          "description": "Give the action a clear outer contour.",
+          "instruction": "the supplied action legible in the subject outline at the requested viewing size"
+        },
+        {
+          "name": "Action silhouette · separation",
+          "description": "Separate the parts that explain the action.",
+          "instruction": "a clear gap or edge between the parts that define the action, readable at native size in the requested view"
+        },
+        {
+          "name": "Action silhouette · contour",
+          "description": "Keep the defining parts distinct even in a single value.",
+          "instruction": "the action recognizable from the outer contour alone, defining parts distinct at native size in the requested view"
+        }
+      ]
+    },
+    {
+      "id": "native-pixel-grid",
+      "code": "GRID",
+      "section": "canvas",
+      "driver": "intensity",
+      "goals": [
+        "Fit the whole asset inside the cell specified by the brief."
+      ],
+      "grades": [
+        {
+          "name": "Native pixel grid",
+          "description": "Fit the subject to the supplied cell and viewpoint.",
+          "instruction": "hard-edged pixel art, whole subject inside the requested cell at the specified view, empty background"
+        },
+        {
+          "name": "Native pixel grid · clusters",
+          "description": "Group pixels into clear shapes at the same grid size.",
+          "instruction": "hard-edged pixel clusters on the requested grid, entire asset inside one cell in the specified view, empty background"
+        },
+        {
+          "name": "Native pixel grid · economy",
+          "description": "Use fewer, larger clusters within the same cell.",
+          "instruction": "economical large pixel clusters on the requested grid, full silhouette inside one cell in the specified view, empty background"
+        }
+      ]
     }
   ]
 }

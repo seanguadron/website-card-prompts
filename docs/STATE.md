@@ -4,7 +4,7 @@ Last rewritten 2026-11-19.
 
 ## Now
 
-The fixed archetype rail and standard-size board cards shipped to production at 9b2d4c3. Four CRAFT presets now carry the editorial pilot methods. Meeting record traces commitments, Research brief matches evidence, Decision advisor checks reversal conditions, and Revision pass preserves facts and voice. Change record is an optional Format card. The local prompt and skill exporters use the same equipped instructions. The PICTURE editorial proposal is in docs/PICTURE_CONTENT_PROPOSAL.md and awaits owner review.
+The fixed archetype rail and standard-size board cards shipped to production at 9b2d4c3. Four CRAFT presets now carry the editorial pilot methods. Meeting record traces commitments, Research brief matches evidence, Decision advisor checks reversal conditions, and Revision pass preserves facts and voice. Change record is an optional Format card. The local prompt and skill exporters use the same equipped instructions. PICTURE now includes Illustrated Cover and Field Plate, plus Sprite Asset alongside Retro Sprite. Studio Product keeps its neutral opening hand. Reflection control and Feature priority are optional. The SONIC proposal is in docs/SONIC_CONTENT_PROPOSAL.md for owner review.
 
 
 ## Runbook
@@ -64,8 +64,8 @@ flow view, plus two unregistered authoring surfaces.
   35 roles, 37 lineages ×4 grades, 25 archetypes, library/share/sessions/
   dictation/proof lab, the world picker (3 illustrated worlds), the
   dev-only art-queue mode, and local Prompt and Skill exports. Credits Lawton Solutions.
-- **PICTURE Deck** (`picture-deck`): P.I.C.T.U.R.E. image prompts — 100
-  lineages ×3 grades, 18 archetypes, Midjourney tail, 426/426 gallery art.
+- **PICTURE Deck** (`picture-deck`): P.I.C.T.U.R.E. image prompts — 106
+  lineages ×3 grades, 19 archetypes, optional Midjourney tail, 426 existing gallery assets. The 25 new gallery entries use the pending-art fallback.
   Credits Midjourney's documentation.
 - **SONIC Deck** (`sound-deck`): S.O.N.I.C. sound-effect prompts for Adobe
   Firefly — 38 lineages ×3 grades, 12 archetypes, Emphasis dial, ambience

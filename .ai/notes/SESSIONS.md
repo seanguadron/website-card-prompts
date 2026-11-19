@@ -5,6 +5,16 @@ appended by the sessions agent (see AGENTS.md → Learning loop). Lines ending
 with the proposed-amendment flag are STANDARDS candidates;
 `npm run amendments` lists the ones not yet annotated "→ landed in §X.Y".
 
+## 2026-11-19 — PICTURE pilot approved
+
+**Context.** Sean authorized publication after comparing current and proposed PICTURE prompts across eight briefs in chat.
+
+**Decisions.** Publish Illustrated Cover and Field Plate. Keep Studio Product as the opening product hand, with Reflection control available to equip when glare obscures a feature. Add Sprite Asset alongside Retro Sprite so players can choose a grid-bound asset or a styled game illustration.
+
+**Learnings.** Matching specimen scale helps readers compare leaf margins. Allowing a different angle for an open seed pod exposes an interior that identical views could hide.
+
+**Preferences.** Prepare the SONIC editorial proposal for review before changing its catalog. Keep model APIs off and defer new artwork.
+
 ## 2026-11-19 — Four CRAFT hands approved
 
 **Context.** Vercel marked the archetype-only rail and revised board ready in production at `9b2d4c3`. Sean reviewed the eight in-chat comparisons and approved four CRAFT hand changes.

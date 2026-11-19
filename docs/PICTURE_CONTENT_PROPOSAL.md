@@ -1,5 +1,7 @@
 # PICTURE editorial proposal
 
+The owner approved Illustrated Cover, Field Plate and a separate Sprite Asset. Studio Product retains its existing base with optional Reflection control and Feature priority. The catalog counts and other recommendations below describe the proposal before this release.
+
 ## What I would change first
 
 Give each starting hand a picture the player can recognize as successful. A cover needs a place to put a title. A product photograph needs to show the selling feature. A field plate needs to preserve the differences between specimens. Today the medium and mood are often vivid while those choices are left to chance.

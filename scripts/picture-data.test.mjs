@@ -19,8 +19,8 @@ test("catalog counts and invariants", async () => {
   const catalog = await catalogPromise;
   const cards = catalog.cards.cards;
 
-  assert.equal(cards.length, 100);
-  assert.equal(catalog.archetypes.archetypes.length, 18);
+  assert.equal(cards.length, 106);
+  assert.equal(catalog.archetypes.archetypes.length, 19);
   assert.equal(catalog.proofScenarios.scenarios.length, 8);
 
   for (const card of cards) {
@@ -41,13 +41,13 @@ test("per-section card counts match the authored plan", async () => {
   }
 
   assert.deepEqual(counts, {
-    protagonist: 12,
-    illumination: 12,
-    canvas: 14,
+    protagonist: 13,
+    illumination: 13,
+    canvas: 15,
     tone: 12,
     universe: 14,
     references: 20,
-    execution: 16,
+    execution: 19,
   });
 });
 
@@ -91,11 +91,11 @@ test("the gallery pack covers every card, grade, and archetype", async () => {
   const pack = structuredClone(await galleryPromise);
   const entries = collectPictureArtEntries(catalog, pack);
 
-  // 100 lineages + 18 archetypes + 1 shared swatch + 300 grade variants
+  // 106 lineages + 19 archetypes + 1 shared swatch + 318 grade variants
   // + 7 acronym letters for the guide page.
-  assert.equal(entries.length, 426);
+  assert.equal(entries.length, 451);
   // Every derived target is unique.
-  assert.equal(new Set(entries.map((entry) => entry.target)).size, 426);
+  assert.equal(new Set(entries.map((entry) => entry.target)).size, 451);
 });
 
 test("a pack entry going missing fails coverage once draft clears", async () => {

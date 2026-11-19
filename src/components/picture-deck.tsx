@@ -447,7 +447,7 @@ export function PictureDeck() {
       }),
     );
     setDraft((current) =>
-      isCustomPictureArchetype(archetype) && !archetype.mjTail
+      !archetype.mjTail
         ? { ...current, mjTailEnabled: false }
         : applyTailPreset(current, archetype.mjTail),
     );
