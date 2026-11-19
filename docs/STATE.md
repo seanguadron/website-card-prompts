@@ -4,7 +4,7 @@ Last rewritten 2026-11-19.
 
 ## Now
 
-The fixed archetype rail and standard-size board cards shipped to production at 9b2d4c3. Four CRAFT presets now carry the editorial pilot methods. Meeting record traces commitments, Research brief matches evidence, Decision advisor checks reversal conditions, and Revision pass preserves facts and voice. Change record is an optional Format card. The local prompt and skill exporters use the same equipped instructions. PICTURE now includes Illustrated Cover and Field Plate, plus Sprite Asset alongside Retro Sprite. Studio Product keeps its neutral opening hand. Reflection control and Feature priority are optional. The SONIC proposal is in docs/SONIC_CONTENT_PROPOSAL.md for owner review.
+The fixed archetype rail and standard-size board cards shipped to production at 9b2d4c3. Four CRAFT presets now carry the editorial pilot methods. Meeting record traces commitments, Research brief matches evidence, Decision advisor checks reversal conditions, and Revision pass preserves facts and voice. Change record is an optional Format card. The local prompt and skill exporters use the same equipped instructions. PICTURE release 9bd9340 is live at https://www.cardprompts.com/tools/picture-deck and includes Illustrated Cover and Field Plate, plus Sprite Asset alongside Retro Sprite. Studio Product keeps its neutral opening hand. Reflection control and Feature priority are optional. The SONIC proposal is in docs/SONIC_CONTENT_PROPOSAL.md for owner review.
 
 
 ## Runbook

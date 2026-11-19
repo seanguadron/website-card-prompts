@@ -12,7 +12,7 @@ Everything runs in the browser. There is no account, no server-side state, and
 nothing is uploaded — your work lives in `localStorage` and in files you
 export.
 
-**[Live app](https://digi-tools-platform-eight.vercel.app)** · Created by
+**[Live app](https://www.cardprompts.com)** · Created by
 [Sean Guadron](https://seancreates.com)
 
 Since 2026-09-05 this repository holds only the decks. The Architect Wizard,
