@@ -44,7 +44,7 @@ function isStoredArchetypeShape(entry: unknown): entry is PromptArchetype {
 }
 
 export function listCustomArchetypes(): PromptArchetype[] {
-  const entries = readStored<PromptArchetype[]>(CUSTOM_KEY, []);
+  const entries = readStored(CUSTOM_KEY, []);
   return Array.isArray(entries) ? entries.filter(isStoredArchetypeShape) : [];
 }
 

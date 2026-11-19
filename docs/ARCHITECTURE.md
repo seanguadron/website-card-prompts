@@ -376,3 +376,7 @@ banner.
   New tools: use `useLocalDraft` and its documented format.
 - Every localStorage READ of externally-influenced data is a trust boundary:
   validate shape before use, never bare-cast (STANDARDS §2.3).
+
+## Exporting a hand as a skill
+
+The shared output dock previews and downloads a local SKILL.md. Decks supply their reusable choices to the compiler in `src/lib/deck-skill.ts`. The current subject or one-off brief belongs to the prompt export. Browser storage keys keep their original namespace for compatibility.

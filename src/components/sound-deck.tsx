@@ -79,6 +79,7 @@ import {
 import {
   buildSoundPrompt,
   buildSoundSections,
+  buildSoundHandSections,
   SOUND_SECTIONS,
 } from "@/lib/sound-prompt";
 import type { SoundSection } from "@/lib/sound-prompt";
@@ -431,8 +432,9 @@ export function SoundDeck() {
         suggested: soundCardEngine.createEmptySuggestedCards(),
       }),
     );
-    if (archetype.ambience) {
-      setDraft((current) => ({ ...current, ambience: true }));
+    if (archetype.ambience !== undefined) {
+      const ambience = archetype.ambience;
+      setDraft((current) => ({ ...current, ambience }));
     }
     setActiveArchetypeId(archetype.id);
     setActivePromptName(null);
@@ -543,10 +545,13 @@ export function SoundDeck() {
   }
 
   function saveCurrentToLibrary(name: string) {
-    setSavedPrompts(saveToSoundLibrary(name, draft, cardSystem));
+    const entries = saveToSoundLibrary(name, draft, cardSystem);
+    if (!entries) return false;
+    setSavedPrompts(entries);
     // Mirror saveToSoundLibrary's fallback so exports pick up the name.
     setActivePromptName(name.trim() || "Untitled prompt");
     setSpeechMessage("Saved to your prompt library.");
+    return true;
   }
 
   function loadSavedPrompt(entry: SavedSoundPrompt) {
@@ -576,7 +581,10 @@ export function SoundDeck() {
   }
 
   function removeSavedPrompt(id: string) {
-    setSavedPrompts(deleteFromSoundLibrary(id));
+    const entries = deleteFromSoundLibrary(id);
+    if (!entries) return false;
+    setSavedPrompts(entries);
+    return true;
   }
 
   function loadProofScenario(scenario: SoundProofScenario) {
@@ -927,6 +935,9 @@ export function SoundDeck() {
           onToggle={() => setOutputExpanded(!outputExpanded)}
           onMissingSelect={focusMissingField}
           onCopy={copyPrompt}
+          skillDeck="sonic"
+          skillHand={activePromptName ?? activeArchetype?.name ?? "hand"}
+          skillChoices={buildSoundHandSections(equippedTerms, draft.ambience)}
           onDownload={downloadPrompt}
           onPrint={printPrompt}
         />

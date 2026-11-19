@@ -157,7 +157,6 @@ export function buildPictureSections(
     return null;
   }
 
-  const cleaned = cleanedSectionFragments(fragments);
   const sections: PicturePromptSection[] = [
     {
       key: "subject",
@@ -167,6 +166,15 @@ export function buildPictureSections(
     },
   ];
 
+  return [...sections, ...buildPictureHandSections(fragments, tail)];
+}
+
+export function buildPictureHandSections(
+  fragments: Record<PictureSection, readonly string[]>,
+  tail: PictureTail,
+): PicturePromptSection[] {
+  const cleaned = cleanedSectionFragments(fragments);
+  const sections: PicturePromptSection[] = [];
   for (const section of PICTURE_SECTIONS) {
     if (cleaned[section].length > 0) {
       sections.push({

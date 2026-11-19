@@ -19,7 +19,7 @@ function storageKey(deckId: string) {
 }
 
 export function readBoardMode(deckId: string, fallback: BoardMode): BoardMode {
-  const stored = readStored<unknown>(storageKey(deckId), null);
+  const stored = readStored(storageKey(deckId), null);
   return isBoardMode(stored) ? stored : fallback;
 }
 

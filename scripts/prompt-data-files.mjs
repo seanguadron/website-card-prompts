@@ -14,14 +14,14 @@ function verifiedCwd() {
     const pkg = JSON.parse(
       readFileSync(path.join(cwd, "package.json"), "utf8"),
     );
-    if (pkg.name === "digi-tools") {
+    if (pkg.name === "website-card-prompts") {
       return cwd;
     }
   } catch {
     // fall through to the throw below
   }
   throw new Error(
-    `Cannot locate the DigiTools repo root: ${cwd} is not the digi-tools package. ` +
+    `Cannot locate the CardPrompts repo root: ${cwd} is not the website-card-prompts package. ` +
       "Start the dev server from the repo root (npm run dev).",
   );
 }

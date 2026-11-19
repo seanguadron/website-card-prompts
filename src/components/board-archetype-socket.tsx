@@ -5,7 +5,6 @@ import { createPortal } from "react-dom";
 import {
   DndContext,
   DragOverlay,
-  KeyboardSensor,
   PointerSensor,
   useDraggable,
   useDroppable,
@@ -113,7 +112,6 @@ export function BoardArchetypeSocket({
   const handMotion = useCardDeckMotion();
   const sensors = useSensors(
     useSensor(PointerSensor, { activationConstraint: { distance: 6 } }),
-    useSensor(KeyboardSensor),
   );
   const seated = items.find((item) => item.id === activeId) ?? null;
   const dragging = items.find((item) => item.id === draggingId) ?? null;

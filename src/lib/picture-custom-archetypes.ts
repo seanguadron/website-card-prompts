@@ -46,7 +46,7 @@ function isStoredArchetypeShape(entry: unknown): entry is PictureArchetype {
 }
 
 export function listCustomPictureArchetypes(): PictureArchetype[] {
-  const entries = readStored<PictureArchetype[]>(CUSTOM_KEY, []);
+  const entries = readStored(CUSTOM_KEY, []);
   return Array.isArray(entries) ? entries.filter(isStoredArchetypeShape) : [];
 }
 

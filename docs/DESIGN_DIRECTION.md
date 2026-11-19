@@ -1,10 +1,10 @@
-# Digi Tools Design Direction
+# Card Prompts Design Direction
 
 <!-- gov:node id=design-direction kind=doc title="DESIGN_DIRECTION.md (canonical visual direction)" -->
 
 ## Intent
 
-Digi Tools is a working cockpit, not a public marketing showcase. The welcome
+Card Prompts is a working cockpit, not a public marketing showcase. The welcome
 page should explain the product quickly, then move the user into a real tool.
 The CRAFT Deck should feel useful on first load and remain clear at narrow
 viewport widths.
@@ -37,7 +37,7 @@ first-class.
 - Secondary accent: magenta only for a single featured marker when needed
 - Color strategy: restrained, with accent color below 10% of the surface
 
-Use the OKLCH values from the supplied Digi Tools token handoff. Focus rings
+Use the OKLCH values from the supplied Card Prompts token handoff. Focus rings
 must remain visible in both themes.
 
 ### Accent colors mark; they do not spell (resolved 2026-07-17)
@@ -327,7 +327,7 @@ configurations locally; do not attempt to merge independent per-track memories.
   Loading a proof replaces the current draft, jumps to the relevant panel, and
   exposes a dismissible checklist describing the behavior to verify.
 - Cyan remains the selected and focus color. The game reference changes
-  structure and interaction, not the established Digi Tools palette.
+  structure and interaction, not the established Card Prompts palette.
 
 ### PICTURE Deck
 
@@ -437,3 +437,5 @@ generic AI product language.
 - No oversized rounded containers
 - No fake metrics, customer logos, or testimonials
 - No account, team, cloud, or sync language
+
+The output dock presents Prompt and Skill as sibling views. Skill previews the exported Markdown, names the installation folder, and uses the equipped hand independently of the one-off brief. CRAFT also retains the Outcome view.

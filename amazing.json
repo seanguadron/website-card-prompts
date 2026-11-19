@@ -1,9 +1,9 @@
 {
   "version": 1,
-  "name": "Digi Tools",
+  "name": "Card Prompts",
   "kind": "next",
-  "project": "DigiTools",
-  "repo": "seanguadron/digi-tools-platform",
+  "project": "CardPrompts",
+  "repo": "seanguadron/website-card-prompts",
   "port": 5100,
   "dev": "npm run dev",
   "build": "npm run build",

@@ -313,3 +313,5 @@ Gates, the learning loop, orchestration markers, and the two skill homes
 
 The three-layer stack for Codex: Design / Engineering / QA, 36 skills in
 `.agents/skills/`, `docs/DESIGN_DIRECTION.md`.
+
+2026-11-19: Installed Matt Pocock's code-review in the project Codex home. The exact source revision is in the skill pins.

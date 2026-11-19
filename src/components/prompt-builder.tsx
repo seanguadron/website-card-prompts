@@ -53,6 +53,7 @@ import {
   applyRecommendedTracks,
   buildPrompt,
   buildPromptSections,
+  formatRoleLoadout,
   CRAFT_PARTS,
   clearEquippedCards,
   createCardSystem,
@@ -318,7 +319,7 @@ export function PromptBuilder({ roles }: { roles: PromptRole[] }) {
       setCustomArchetypes(listCustomArchetypes());
       // Restore the chosen world. localStorage is user-editable, so the value
       // only counts if it names a pack this build actually ships.
-      const storedPack = readStored<unknown>(ART_PACK_STORAGE_KEY, null);
+      const storedPack = readStored(ART_PACK_STORAGE_KEY, null);
       if (isArtPackId(storedPack) && setActiveArtPack(storedPack)) {
         setArtPackId(storedPack);
       }
@@ -817,10 +818,13 @@ export function PromptBuilder({ roles }: { roles: PromptRole[] }) {
   }
 
   function saveCurrentToLibrary(name: string) {
-    setSavedPrompts(saveToLibrary(name, draft, cardSystem));
+    const entries = saveToLibrary(name, draft, cardSystem);
+    if (!entries) return false;
+    setSavedPrompts(entries);
     // Mirror saveToLibrary's fallback so exports pick up the saved name.
     setActivePromptName(name.trim() || "Untitled prompt");
     setSpeechMessage("Saved to your prompt library.");
+    return true;
   }
 
   function loadSavedPrompt(entry: SavedPrompt) {
@@ -850,7 +854,10 @@ export function PromptBuilder({ roles }: { roles: PromptRole[] }) {
   }
 
   function removeSavedPrompt(id: string) {
-    setSavedPrompts(deleteFromLibrary(id));
+    const entries = deleteFromLibrary(id);
+    if (!entries) return false;
+    setSavedPrompts(entries);
+    return true;
   }
 
   function saveCurrentAsPreset(name: string) {
@@ -1209,6 +1216,15 @@ export function PromptBuilder({ roles }: { roles: PromptRole[] }) {
           onToggle={() => setOutputExpanded(!outputExpanded)}
           onMissingSelect={focusMissingField}
           onCopy={copyPrompt}
+          skillDeck="craft"
+          skillHand={activePromptName ?? activeArchetype?.name ?? selectedRoles[0]?.name ?? "hand"}
+          skillChoices={[
+              { label: "Roles", body: formatRoleLoadout(selectedRoles) },
+              { label: "Format", body: selectedRoles.length || draft.format !== EMPTY_DRAFT.format ? draft.format : "" },
+              ...Object.entries(equippedInstructions).map(([label, lines]) => ({
+                label, body: lines.join("\n"),
+              })),
+            ]}
           onDownload={downloadPrompt}
           onPrint={printPrompt}
         />

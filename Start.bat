@@ -1,8 +1,8 @@
 @echo off
 REM generated from amazing.json by launch:apply (Amazing OS Core, launch/): change amazing.json and apply again, never this file.
-REM Start.bat: starts Digi Tools for development on port 5100. Close the window or press Ctrl+C to stop it.
+REM Start.bat: starts Card Prompts for development on port 5100. Close the window or press Ctrl+C to stop it.
 setlocal
-title Digi Tools - http://localhost:5100
+title Card Prompts - http://localhost:5100
 cd /d "%~dp0"
 set "PORT=5100"
 
@@ -21,7 +21,7 @@ REM rmdir /s /q removes a junction without following it.
 if exist ".next" rmdir /s /q ".next"
 
 echo.
-echo   Starting Digi Tools on http://localhost:5100
+echo   Starting Card Prompts on http://localhost:5100
 echo   From another device on this network: http://%COMPUTERNAME%:%PORT%
 echo   ^(the name stays; the IP address changes, and a new address means signing in again^)
 echo   The browser opens once the port answers.
@@ -29,7 +29,7 @@ start "" /min powershell -NoProfile -WindowStyle Hidden -Command "for ($i = 0; $
 echo.
 call npm run dev
 echo.
-echo   Digi Tools stopped.
+echo   Card Prompts stopped.
 pause
 exit /b 0
 
@@ -39,7 +39,7 @@ setlocal EnableDelayedExpansion
 echo   Port %PORT% is taken by !HOLDER!
 endlocal
 echo   Nothing was started and nothing was stopped: this window stops only what it starts.
-echo   If that is Digi Tools already running, it is at http://localhost:5100
+echo   If that is Card Prompts already running, it is at http://localhost:5100
 echo   Otherwise close what holds the port, then run this again.
 echo.
 pause

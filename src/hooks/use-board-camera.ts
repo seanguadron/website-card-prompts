@@ -276,10 +276,7 @@ export function useBoardCamera({
       if (event.code !== "Space" || isTyping(event.target) || event.repeat) {
         return;
       }
-      const inside = viewportRef.current?.contains(
-        event.target instanceof Node ? event.target : null,
-      );
-      if (!inside) {
+      if (event.target !== viewportRef.current) {
         return;
       }
       event.preventDefault();
@@ -368,13 +365,13 @@ export function useBoardCamera({
     const onPasteboard = event.target === event.currentTarget;
     switch (event.key) {
       case "[":
+      case "]": {
+        const next = Math.max(0, Math.min(boardCount - 1, activeIndex + (event.key === "]" ? 1 : -1)));
         event.preventDefault();
-        onActivate(Math.max(0, activeIndex - 1));
+        boardRefs.current[next]?.focus({ preventScroll: true });
+        onActivate(next);
         return;
-      case "]":
-        event.preventDefault();
-        onActivate(Math.min(boardCount - 1, activeIndex + 1));
-        return;
+      }
       case "0":
         event.preventDefault();
         frameBoard(activeIndex, true);

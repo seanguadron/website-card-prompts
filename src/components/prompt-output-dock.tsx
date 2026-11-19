@@ -2,6 +2,9 @@
 
 import { useState, type ReactNode } from "react";
 
+import { buildDeckSkill, skillFolder, type SkillDeck } from "@/lib/deck-skill";
+import { downloadTextFile } from "@/lib/browser-download";
+
 type CopyState = "idle" | "copied" | "error";
 
 // Structural section shape so both decks' section types fit (their key
@@ -28,6 +31,9 @@ export function PromptOutputDock({
   onToggle,
   onMissingSelect,
   onCopy,
+  skillDeck,
+  skillHand,
+  skillChoices,
   onDownload,
   onPrint,
   outcomeView,
@@ -41,6 +47,9 @@ export function PromptOutputDock({
   onToggle: () => void;
   onMissingSelect: (field: string) => void;
   onCopy: () => void;
+  skillDeck: SkillDeck;
+  skillHand: string;
+  skillChoices: { label: string; body: string }[];
   onDownload: (format: "md" | "txt" | "json") => void;
   onPrint: () => void;
   /** A second view beside the assembled prompt: what the model answers.
@@ -48,8 +57,11 @@ export function PromptOutputDock({
   outcomeView?: ReactNode;
 }) {
   const [copiedSection, setCopiedSection] = useState<string | null>(null);
-  const [view, setView] = useState<"prompt" | "outcome">("prompt");
+  const [view, setView] = useState<"prompt" | "skill" | "outcome">("prompt");
   const showOutcome = Boolean(outcomeView) && view === "outcome";
+  const skill = buildDeckSkill(skillDeck, skillHand, skillChoices);
+  const skillReady = skillChoices.some((choice) => choice.body.trim());
+  const ready = view === "skill" ? skillReady : complete;
   const wordCount = prompt.trim() ? prompt.trim().split(/\s+/).length : 0;
   const estimatedTokens = Math.ceil(prompt.length / 4);
 
@@ -86,7 +98,7 @@ export function PromptOutputDock({
         >
           <span aria-hidden="true">{expanded ? ">" : "<"}</span>
           <strong>Output</strong>
-          <small>{complete ? "Ready" : missingItems.length}</small>
+          <small>{ready ? "Ready" : view === "skill" ? "Hand" : missingItems.length}</small>
         </button>
 
         <div
@@ -95,7 +107,6 @@ export function PromptOutputDock({
           aria-hidden={!expanded}
           inert={!expanded}
         >
-          {outcomeView ? (
             <div
               className="output-view-switch"
               role="group"
@@ -103,37 +114,64 @@ export function PromptOutputDock({
             >
               <button
                 type="button"
-                className={showOutcome ? "" : "is-active"}
-                aria-pressed={!showOutcome}
+                className={view === "prompt" ? "is-active" : ""}
+                aria-pressed={view === "prompt"}
                 onClick={() => setView("prompt")}
               >
                 Prompt
               </button>
               <button
                 type="button"
+                className={view === "skill" ? "is-active" : ""}
+                aria-pressed={view === "skill"}
+                onClick={() => setView("skill")}
+              >
+                Skill
+              </button>
+              {outcomeView && <button
+                type="button"
                 className={showOutcome ? "is-active" : ""}
                 aria-pressed={showOutcome}
                 onClick={() => setView("outcome")}
               >
                 Outcome
-              </button>
+              </button>}
             </div>
-          ) : null}
 
           <div className="preview-header">
             <div>
               <h2 id="preview-title">
-                {showOutcome ? "Model outcome" : "Assembled prompt"}
+                {showOutcome ? "Model outcome" : view === "skill" ? "Reusable skill" : "Assembled prompt"}
               </h2>
             </div>
-            <span className={complete ? "preview-state is-ready" : "preview-state"}>
-              {complete ? "Ready" : `${missingItems.length} missing`}
+            <span className={ready ? "preview-state is-ready" : "preview-state"}>
+              {ready ? "Ready" : view === "skill" ? "Empty hand" : `${missingItems.length} missing`}
             </span>
           </div>
 
           {showOutcome ? outcomeView : null}
 
-          {!showOutcome ? (
+          {view === "skill" && (
+            <>
+              <p className="skill-location">Save as <code>{skillFolder(skillDeck, skillHand)}/SKILL.md</code> in your skills directory.</p>
+              <pre><code>{skillReady ? skill : "Equip a card to give this skill a direction."}</code></pre>
+              {!skillReady && (
+                <button type="button" className="button button-secondary" onClick={onToggle}>
+                  Return to cards
+                </button>
+              )}
+              <button
+                type="button"
+                className="button button-primary"
+                disabled={!skillReady}
+                onClick={() => downloadTextFile("SKILL.md", skill, "text/markdown;charset=utf-8")}
+              >
+                Download SKILL.md
+              </button>
+            </>
+          )}
+
+          {view === "prompt" ? (
           <>
           <pre aria-live="polite">
             <code>{prompt}</code>

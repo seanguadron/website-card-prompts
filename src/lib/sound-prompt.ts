@@ -158,6 +158,14 @@ export function buildSoundSections(
     },
   ];
 
+  return [...sections, ...buildSoundHandSections(fragments, ambience)];
+}
+
+export function buildSoundHandSections(
+  fragments: Record<SoundSection, readonly string[]>,
+  ambience: boolean,
+): SoundPromptSection[] {
+  const sections: SoundPromptSection[] = [];
   // Grouped back by section AFTER the ambience cap, so the sections view
   // shows exactly the terms the prompt carries - a capped-out card simply
   // does not appear, matching the line.

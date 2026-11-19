@@ -25,3 +25,7 @@ export function base64UrlToBytes(value: string): Uint8Array {
   }
   return bytes;
 }
+
+export function isSessionRecord(value: unknown): value is Record<string, unknown> {
+  return typeof value === "object" && value !== null && !Array.isArray(value);
+}

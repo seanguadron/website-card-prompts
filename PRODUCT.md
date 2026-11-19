@@ -6,20 +6,11 @@ product
 
 ## Users
 
-Digi Tools is for makers and developers who want a focused place to assemble
-prompts, structured notes, and small configuration artifacts without opening a
-new script or hand-writing every file.
+Card Prompts is for people who write with language models, direct images, or design sound effects.
 
 ## Product Purpose
 
-Digi Tools is a local-first browser toolbox. Each tool helps the user shape a
-small artifact, inspect the result, and export it to their own machine. The
-first tool is the CRAFT Deck, a prompt builder for ChatGPT, Claude, and other
-language models.
-
-Success means a user can move from a rough idea to a useful, portable prompt in
-one short session. The product does not require an account, database, or cloud
-workspace.
+A maker chooses a deck, equips cards, and reads the resulting brief as it changes. CRAFT shapes instructions, PICTURE directs a scene, and SONIC describes a sound. Each hand can produce a one-off prompt and a reusable skill for the next brief. Drafts and collections live in the browser.
 
 ## Brand Personality
 

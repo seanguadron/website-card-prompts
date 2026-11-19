@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "baseDraft": {
-    "context": "Evaluate the current Digi Tools Prompt Builder as a working local-first product. Preserve the C.R.A.F.T. workflow, card system, accessibility, and existing visual direction.",
+    "context": "Evaluate the current Card Prompts Prompt Builder as a working local-first product. Preserve the C.R.A.F.T. workflow, card system, accessibility, and existing visual direction.",
     "action": "Inspect the configured workflow.\nIdentify what the selected cards and Snap Points change.\nReport any visual or interaction ambiguity.",
     "formatNotes": "Make the result easy to verify against the visible interface.",
     "targetAudience": "A product designer and frontend developer reviewing the next iteration."

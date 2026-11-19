@@ -1,8 +1,8 @@
 @echo off
 REM generated from amazing.json by launch:apply (Amazing OS Core, launch/): change amazing.json and apply again, never this file.
-REM Build.bat: builds Digi Tools from a clean main into current-build\app, with current-build\BUILD.txt naming the commit.
+REM Build.bat: builds Card Prompts from a clean main into current-build\app, with current-build\BUILD.txt naming the commit.
 setlocal
-title Build Digi Tools
+title Build Card Prompts
 cd /d "%~dp0"
 set "PORT=5100"
 
@@ -25,7 +25,7 @@ if not exist ".\node_modules\" (
   popd
 )
 echo.
-echo   Building Digi Tools from main...
+echo   Building Card Prompts from main...
 echo.
 call npm run build
 if errorlevel 1 goto :build_failed
@@ -50,7 +50,7 @@ if not exist "%OUT%\app\" goto :swap_failed
 if exist "%OUT%\app.old\" rmdir /s /q "%OUT%\app.old"
 
 set "INFO=%OUT%\BUILD.txt"
-> "%INFO%" echo name: Digi Tools
+> "%INFO%" echo name: Card Prompts
 >> "%INFO%" node -p "'version: ' + (require('./package.json').version || 'none')"
 >> "%INFO%" echo branch: %BRANCH%
 >> "%INFO%" git log -1 "--format=commit: %%h%%nsubject: %%s"

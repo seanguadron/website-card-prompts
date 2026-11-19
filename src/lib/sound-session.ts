@@ -3,6 +3,7 @@ import {
   restoreSoundDraft,
 } from "@/lib/sound-deck-state";
 import type { SoundCardSystemState, SoundDraft } from "@/lib/sound-types";
+import { isSessionRecord } from "@/lib/share-param";
 import { base64UrlToBytes, bytesToBase64Url } from "@/lib/share-param";
 
 type SoundSession = {
@@ -37,8 +38,9 @@ export function restoreSoundSession(value: string) {
     typeof parsed !== "object" ||
     parsed === null ||
     parsed.tool !== "sound-deck" ||
-    !parsed.draft ||
-    !parsed.cardSystem
+    parsed.version !== 1 ||
+    !isSessionRecord(parsed.draft) ||
+    !isSessionRecord(parsed.cardSystem)
   ) {
     throw new Error("Not a SONIC Deck session.");
   }

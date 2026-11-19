@@ -1,4 +1,4 @@
-# Digi Tools CRAFT Deck
+# Card Prompts CRAFT Deck
 
 The CRAFT Deck (tool id `prompt-builder`) helps a person assemble a portable
 C.R.A.F.T. prompt from explicit choices rather than asking a model to infer

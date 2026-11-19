@@ -32,7 +32,7 @@ paste docs/AI_STACK.md content here.
   `DESIGN.md` is a pointer (ADR-0002). Never run `/impeccable init`.
 - **Dev server**: port 5100 (`npm run dev` / Start.bat). If one is
   already running, never start a second — verify in the running one (prefer
-  the preview tools; the `.claude/launch.json` entry is `digitools`). Do not
+  the preview tools; the `.claude/launch.json` entry is `card-prompts`). Do not
   run `npm run build` while a dev server may be live; the two share `.next/`.
 - **Governance commands**: `check:standards`, `check:security`, `gate:sweep`,
   `amendments`, `skill:log` (see `docs/SETUP.md`).

@@ -3301,11 +3301,12 @@ button.role-loadout-slot {
 }
 
 .output-dock-content {
-  display: grid;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
   width: auto;
   height: 100%;
   margin-left: 52px;
-  grid-template-rows: auto minmax(0, 1fr) auto auto auto;
   opacity: 0;
   pointer-events: none;
   transition: opacity 140ms ease-out;
@@ -3322,8 +3323,13 @@ button.role-loadout-slot {
   padding: 13px 16px;
 }
 
+.output-dock-content > * { flex-shrink: 0; }
+
+.skill-location { margin: 0; padding: 8px 16px; overflow-wrap: anywhere; }
+
 .prompt-output-dock pre {
-  min-height: 0;
+  flex: 1 0 7rem;
+  min-height: 7rem;
   max-height: none;
   margin: 0;
   overflow: auto;

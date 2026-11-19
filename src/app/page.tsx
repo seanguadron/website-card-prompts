@@ -17,17 +17,15 @@ export default function HomePage() {
       <header className="welcome-intro">
         <div className="product-label">
           <span className="status-dot" aria-hidden="true" />
-          Local-first browser tools
+          Card Prompts
         </div>
         <h1 id="welcome-title">Prompts, built from cards.</h1>
         <p>
-          Digi Tools is a local-first card system for prompting — build prompts
-          for language, image, and sound models by equipping cards onto a
-          brief. Everything stays in your browser.
+          Choose CRAFT for writing, PICTURE for images, or SONIC for sound effects. Pick a starting hand, swap cards, and export a prompt or a reusable skill. Your draft stays in this browser.
         </p>
         <p className="welcome-links">
           <a
-            href="https://github.com/seanguadron/digi-tools-platform"
+            href="https://github.com/seanguadron/website-card-prompts"
             target="_blank"
             rel="noreferrer noopener"
           >

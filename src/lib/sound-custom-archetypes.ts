@@ -45,7 +45,7 @@ function isStoredArchetypeShape(entry: unknown): entry is SoundArchetype {
 }
 
 export function listCustomSoundArchetypes(): SoundArchetype[] {
-  const entries = readStored<SoundArchetype[]>(CUSTOM_KEY, []);
+  const entries = readStored(CUSTOM_KEY, []);
   return Array.isArray(entries) ? entries.filter(isStoredArchetypeShape) : [];
 }
 
@@ -80,12 +80,12 @@ export function buildCustomSoundArchetype(
     description: "Your saved cards, emphasis, and mode.",
     tracks: { ...cardSystem.tracks },
     equipped,
-    ...(draft.ambience ? { ambience: true } : {}),
+    ambience: draft.ambience,
     effects: [
       `Loads ${cardCount} equipped ${cardCount === 1 ? "card" : "cards"} at ${emphasisLabel} emphasis.`,
       draft.ambience
         ? "Switches ambience mode on."
-        : "Leaves ambience mode untouched.",
+        : "Switches ambience mode off.",
       "Preserves your sound line.",
     ],
   };

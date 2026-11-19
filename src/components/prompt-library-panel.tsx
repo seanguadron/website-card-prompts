@@ -16,11 +16,12 @@ export function PromptLibraryPanel<
   open: boolean;
   savedPrompts: E[];
   onClose: () => void;
-  onSave: (name: string) => void;
+  onSave: (name: string) => boolean;
   onLoad: (entry: E) => void;
-  onDelete: (id: string) => void;
+  onDelete: (id: string) => boolean;
 }) {
   const [name, setName] = useState("");
+  const [error, setError] = useState("");
   const portalTarget =
     typeof document === "undefined" ? null : document.body;
 
@@ -29,8 +30,12 @@ export function PromptLibraryPanel<
   }
 
   function handleSave() {
-    onSave(name);
-    setName("");
+    if (onSave(name)) {
+      setName("");
+      setError("");
+    } else {
+      setError("Could not save in this browser. Download your session to keep a copy.");
+    }
   }
 
   return createPortal(
@@ -76,6 +81,7 @@ export function PromptLibraryPanel<
           </button>
         </div>
 
+        {error && <p role="alert">{error}</p>}
         {savedPrompts.length === 0 ? (
           <p className="prompt-library-empty">
             No saved prompts yet. Save the current build to reuse it later.
@@ -101,7 +107,7 @@ export function PromptLibraryPanel<
                   </button>
                   <button
                     type="button"
-                    onClick={() => onDelete(entry.id)}
+                    onClick={() => setError(onDelete(entry.id) ? "" : "Could not delete this saved prompt.")}
                     aria-label={`Delete ${entry.name}`}
                   >
                     Delete

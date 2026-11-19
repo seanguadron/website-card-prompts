@@ -1,8 +1,8 @@
 @echo off
 REM generated from amazing.json by launch:apply (Amazing OS Core, launch/): change amazing.json and apply again, never this file.
-REM Start-Build.bat: runs Digi Tools's current build, what Build.bat last put in current-build\app. Close the window or press Ctrl+C to stop it.
+REM Start-Build.bat: runs Card Prompts's current build, what Build.bat last put in current-build\app. Close the window or press Ctrl+C to stop it.
 setlocal
-title Digi Tools, current build - http://localhost:5100
+title Card Prompts, current build - http://localhost:5100
 cd /d "%~dp0"
 set "PORT=5100"
 
@@ -16,13 +16,13 @@ set "NEXT_DIST_DIR="
 REM next start reads the .env files in the build's folder: the repo's own, copied in fresh each start.
 for %%f in (.env .env.local .env.production .env.production.local) do if exist "%%f" copy /y "%%f" "current-build\app\" >nul
 echo.
-echo   Starting Digi Tools's current build on http://localhost:5100
+echo   Starting Card Prompts's current build on http://localhost:5100
 echo   The browser opens once the port answers.
 start "" /min powershell -NoProfile -WindowStyle Hidden -Command "for ($i = 0; $i -lt 600; $i++) { foreach ($a in '127.0.0.1', '::1') { try { (New-Object Net.Sockets.TcpClient($a, 5100)).Close(); Start-Process 'http://localhost:5100'; exit } catch {} }; Start-Sleep -Milliseconds 500 }"
 echo.
 call npx next start current-build/app -p 5100
 echo.
-echo   Digi Tools's current build stopped.
+echo   Card Prompts's current build stopped.
 pause
 exit /b 0
 
@@ -39,7 +39,7 @@ setlocal EnableDelayedExpansion
 echo   Port %PORT% is taken by !HOLDER!
 endlocal
 echo   Nothing was started and nothing was stopped: this window stops only what it starts.
-echo   If that is Digi Tools already running, it is at http://localhost:5100
+echo   If that is Card Prompts already running, it is at http://localhost:5100
 echo   Otherwise close what holds the port, then run this again.
 echo.
 pause

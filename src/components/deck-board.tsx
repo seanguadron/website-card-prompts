@@ -106,6 +106,7 @@ export function DeckBoard({
                   ? "deck-board-surface is-active"
                   : "deck-board-surface"
               }
+              tabIndex={-1}
               data-board-index={index}
               ref={(node) => camera.registerBoard(index, node)}
               style={{ left: origin.x, top: origin.y, width: BOARD_WIDTH }}

@@ -11,7 +11,7 @@
     "targetUseDefault": true
   },
   "exampleDraft": {
-    "context": "Digi Tools is a local-first browser toolbox. The current onboarding should help a first-time user reach a useful prompt within two minutes. Review the flow without adding accounts, cloud sync, or a full redesign.",
+    "context": "Card Prompts is a browser-based card workbench. The current onboarding should help a first-time user reach a useful prompt within two minutes. Review the flow without adding accounts, cloud sync, or a full redesign.",
     "roleIds": [
       "ux-ui-advisor"
     ],

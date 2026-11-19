@@ -6,6 +6,7 @@ import type {
   CardSystemState,
   PromptDraft,
 } from "@/lib/prompt-builder-state";
+import { isSessionRecord } from "@/lib/share-param";
 import { base64UrlToBytes, bytesToBase64Url } from "@/lib/share-param";
 import type { PromptRole } from "@/lib/prompt-types";
 
@@ -42,8 +43,9 @@ export function restorePromptSession(value: string, roles: PromptRole[]) {
     typeof parsed !== "object" ||
     parsed === null ||
     (parsed.tool !== undefined && parsed.tool !== "craft-deck") ||
-    !parsed.draft ||
-    !parsed.cardSystem
+    parsed.version !== 1 ||
+    !isSessionRecord(parsed.draft) ||
+    !isSessionRecord(parsed.cardSystem)
   ) {
     throw new Error("Missing session data.");
   }

@@ -5,6 +5,21 @@ appended by the sessions agent (see AGENTS.md → Learning loop). Lines ending
 with the proposed-amendment flag are STANDARDS candidates;
 `npm run amendments` lists the ones not yet annotated "→ landed in §X.Y".
 
+## 2026-11-19: Card Prompts adds reusable skills alongside one-off prompts
+
+**Context.** Sean revisited the card system and asked for a review of what each deck should contribute to a reusable skill.
+
+**Decisions.**
+
+- Keep CRAFT, PICTURE, and SONIC as the site's three public decks. The September split already removed Architect Wizard, Skills wiki, Image Editor, and Vector Editor from this checkout.
+- Rename the GitHub repository to `seanguadron/website-card-prompts` and use Card Prompts as the site name. Existing browser storage keys continue to identify saved hands and preferences.
+- Give each deck two outputs. The one-off prompt describes the current brief. The skill carries the hand's reusable choices into the next brief.
+- Install Matt Pocock's upstream `code-review` skill in the project's Codex skill home. Use its standards and specification reviews to find and address concrete defects across the decks.
+
+**Learnings.** A reusable hand can be ready before its one-off subject or brief exists. The skill preview and download use the hand's own readiness.
+
+**Preferences.** Keep choosing and combining cards at the center of the workflow for both outputs.
+
 ## 2026-09-08: The card-project split lands, and the deck board ships as the default view
 
 **Context.** A Claude Code session (Claude Fable 5.1) that ran from

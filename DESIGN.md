@@ -1,4 +1,4 @@
-# Digi Tools Design
+# Card Prompts Design
 
 The canonical visual direction lives in
 [`docs/DESIGN_DIRECTION.md`](docs/DESIGN_DIRECTION.md).

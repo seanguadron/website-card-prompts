@@ -175,3 +175,7 @@ the split landed, using best judgment. What shipped, and what it is not:
   away for comparison.
 - **The two pending inputs still stand** (§5); the next round starts from
   the owner's reaction to this board, not from a plan.
+
+## November 2026 owner direction
+
+Keep CRAFT, PICTURE, and SONIC as card decks. Finishing a hand should produce both a reusable skill and a one-off prompt.

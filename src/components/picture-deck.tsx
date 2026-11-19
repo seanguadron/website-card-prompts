@@ -82,6 +82,7 @@ import {
 import {
   buildPicturePrompt,
   buildPictureSections,
+  buildPictureHandSections,
   PICTURE_SECTIONS,
 } from "@/lib/picture-prompt";
 import type { PictureSection } from "@/lib/picture-prompt";
@@ -200,16 +201,9 @@ export function PictureDeck() {
     [draft.subject, equippedFragments, tail],
   );
 
-  const missingFields = PICTURE_REQUIRED_FIELDS.filter(({ field }) => {
-    if (field === "subject") {
-      return (
-        !isPictureFieldComplete(draft, field) &&
-        !cardSystem.equipped.protagonist.some(Boolean)
-      );
-    }
-
-    return !isPictureFieldComplete(draft, field);
-  });
+  const missingFields = PICTURE_REQUIRED_FIELDS.filter(
+    ({ field }) => !isPictureFieldComplete(draft, field),
+  );
   const missingItems = missingFields.map(({ field, label }) => ({
     field,
     label,
@@ -452,7 +446,11 @@ export function PictureDeck() {
         suggested: pictureCardEngine.createEmptySuggestedCards(),
       }),
     );
-    setDraft((current) => applyTailPreset(current, archetype.mjTail));
+    setDraft((current) =>
+      isCustomPictureArchetype(archetype) && !archetype.mjTail
+        ? { ...current, mjTailEnabled: false }
+        : applyTailPreset(current, archetype.mjTail),
+    );
     setActiveArchetypeId(archetype.id);
     setActivePromptName(null);
     setActiveProofId(null);
@@ -563,10 +561,13 @@ export function PictureDeck() {
   }
 
   function saveCurrentToLibrary(name: string) {
-    setSavedPrompts(saveToPictureLibrary(name, draft, cardSystem));
+    const entries = saveToPictureLibrary(name, draft, cardSystem);
+    if (!entries) return false;
+    setSavedPrompts(entries);
     // Mirror saveToPictureLibrary's fallback so exports pick up the name.
     setActivePromptName(name.trim() || "Untitled prompt");
     setSpeechMessage("Saved to your prompt library.");
+    return true;
   }
 
   function loadSavedPrompt(entry: SavedPicturePrompt) {
@@ -596,7 +597,10 @@ export function PictureDeck() {
   }
 
   function removeSavedPrompt(id: string) {
-    setSavedPrompts(deleteFromPictureLibrary(id));
+    const entries = deleteFromPictureLibrary(id);
+    if (!entries) return false;
+    setSavedPrompts(entries);
+    return true;
   }
 
   function loadProofScenario(scenario: PictureProofScenario) {
@@ -938,6 +942,9 @@ export function PictureDeck() {
           onToggle={() => setOutputExpanded(!outputExpanded)}
           onMissingSelect={focusMissingField}
           onCopy={copyPrompt}
+          skillDeck="picture"
+          skillHand={activePromptName ?? activeArchetype?.name ?? "hand"}
+          skillChoices={buildPictureHandSections(equippedFragments, tail)}
           onDownload={downloadPrompt}
           onPrint={printPrompt}
         />

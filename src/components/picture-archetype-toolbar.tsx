@@ -16,7 +16,7 @@ const INTENSITY_LABELS = ["Subtle", "Bold", "Extreme"];
 function tailSummary(archetype: PictureArchetype) {
   const tail = archetype.mjTail;
   if (!tail) {
-    return "off";
+    return isCustomPictureArchetype(archetype) ? "off" : "keep current setting";
   }
 
   const parts = [

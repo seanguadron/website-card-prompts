@@ -36,7 +36,7 @@ function isSavedPromptShape(entry: unknown): entry is SavedSoundPrompt {
 }
 
 export function listSavedSoundPrompts(): SavedSoundPrompt[] {
-  const entries = readStored<SavedSoundPrompt[]>(LIBRARY_KEY, []);
+  const entries = readStored(LIBRARY_KEY, []);
   return Array.isArray(entries) ? entries.filter(isSavedPromptShape) : [];
 }
 
@@ -44,7 +44,7 @@ export function saveToSoundLibrary(
   name: string,
   draft: SoundDraft,
   cardSystem: SoundCardSystemState,
-): SavedSoundPrompt[] {
+): SavedSoundPrompt[] | null {
   const entry: SavedSoundPrompt = {
     id: makeId(),
     name: name.trim() || "Untitled prompt",
@@ -53,12 +53,10 @@ export function saveToSoundLibrary(
     cardSystem,
   };
   const next = [entry, ...listSavedSoundPrompts()].slice(0, LIBRARY_LIMIT);
-  writeStored(LIBRARY_KEY, next);
-  return next;
+  return writeStored(LIBRARY_KEY, next) ? next : null;
 }
 
-export function deleteFromSoundLibrary(id: string): SavedSoundPrompt[] {
+export function deleteFromSoundLibrary(id: string): SavedSoundPrompt[] | null {
   const next = listSavedSoundPrompts().filter((entry) => entry.id !== id);
-  writeStored(LIBRARY_KEY, next);
-  return next;
+  return writeStored(LIBRARY_KEY, next) ? next : null;
 }

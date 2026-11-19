@@ -39,7 +39,7 @@ function isSavedPromptShape(entry: unknown): entry is SavedPrompt {
 }
 
 export function listSavedPrompts(): SavedPrompt[] {
-  const entries = readStored<SavedPrompt[]>(LIBRARY_KEY, []);
+  const entries = readStored(LIBRARY_KEY, []);
   return Array.isArray(entries) ? entries.filter(isSavedPromptShape) : [];
 }
 
@@ -47,7 +47,7 @@ export function saveToLibrary(
   name: string,
   draft: PromptDraft,
   cardSystem: CardSystemState,
-): SavedPrompt[] {
+): SavedPrompt[] | null {
   const entry: SavedPrompt = {
     id: makeId(),
     name: name.trim() || "Untitled prompt",
@@ -56,12 +56,10 @@ export function saveToLibrary(
     cardSystem,
   };
   const next = [entry, ...listSavedPrompts()].slice(0, LIBRARY_LIMIT);
-  writeStored(LIBRARY_KEY, next);
-  return next;
+  return writeStored(LIBRARY_KEY, next) ? next : null;
 }
 
-export function deleteFromLibrary(id: string): SavedPrompt[] {
+export function deleteFromLibrary(id: string): SavedPrompt[] | null {
   const next = listSavedPrompts().filter((entry) => entry.id !== id);
-  writeStored(LIBRARY_KEY, next);
-  return next;
+  return writeStored(LIBRARY_KEY, next) ? next : null;
 }

@@ -69,7 +69,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
         <Link
           className={isHome ? "brand is-active" : "brand"}
           href="/"
-          aria-label="Digi Tools home"
+          aria-label="Card Prompts home"
           aria-current={isHome ? "page" : undefined}
         >
           <svg
@@ -97,10 +97,10 @@ export function AppShell({ children }: { children: React.ReactNode }) {
               className="brand-mark-front"
             />
           </svg>
-          <span>Digi Tools</span>
+          <span>Card Prompts</span>
         </Link>
 
-        <nav className="tool-tabs" aria-label="Tools">
+        <nav className="tool-tabs" aria-label="Decks">
           {TOOLS.map((tool) => (
             <Link
               className={
@@ -145,7 +145,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
         <div className="context-default">
           <span className="context-path">
             <span className="status-dot" aria-hidden="true" />
-            {activeTool ? `Tools / ${activeTool.name}` : "Welcome"}
+            {activeTool ? `Decks / ${activeTool.name}` : "Welcome"}
           </span>
           <span className="context-note">Local browser session</span>
         </div>

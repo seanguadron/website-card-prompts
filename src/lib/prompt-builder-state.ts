@@ -99,6 +99,19 @@ export type BuildPromptOptions = {
   audienceDefault?: string | null;
 };
 
+export function formatRoleLoadout(selectedRoles: PromptRole[]) {
+  return selectedRoles
+    .map((role, index) => {
+      const position = index === 0 ? "Lead role" : `Supporting role ${index}`;
+      const priorities = getRoleActionSuggestions(role)
+        .slice(0, 3)
+        .map((priority) => `- ${priority}`)
+        .join("\n");
+      return `${index + 1}. ${position}: ${role.name}\n${role.ability?.summary ?? role.description}\nRole priorities:\n${priorities}`;
+    })
+    .join("\n\n");
+}
+
 export function buildPromptSections(
   draft: PromptDraft,
   selectedRoles: PromptRole[],
@@ -139,24 +152,13 @@ export function buildPromptSections(
   const targetAudience = [targetLead, ...cardInstructions.target]
     .filter(Boolean)
     .join("\n");
-  const roleLoadout = selectedRoles
-    .map((role, index) => {
-      const position = index === 0 ? "Lead role" : `Supporting role ${index}`;
-      const priorities = getRoleActionSuggestions(role)
-        .slice(0, 3)
-        .map((priority) => `- ${priority}`)
-        .join("\n");
-      return `${index + 1}. ${position}: ${role.name}\n${role.description}\nRole priorities:\n${priorities}`;
-    })
-    .join("\n\n");
-
   return [
     { key: "context", heading: "CONTEXT", label: "Context", body: context },
     {
       key: "role",
       heading: "ROLE LOADOUT",
       label: "Roles",
-      body: `Use the lead role as the primary decision-making perspective. Use supporting roles to strengthen the work without overriding the lead role.\n\n${roleLoadout}`,
+      body: `Use the lead role as the primary decision-making perspective. Use supporting roles to strengthen the work without overriding the lead role.\n\n${formatRoleLoadout(selectedRoles)}`,
     },
     {
       key: "action",
@@ -187,7 +189,7 @@ export function buildPrompt(
     options,
   );
   if (!sections) {
-    return "Complete the five C.R.A.F.T. sections to build your prompt.";
+    return "Choose a role and add an action to build your prompt.";
   }
 
   return sections

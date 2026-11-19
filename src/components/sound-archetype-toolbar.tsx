@@ -215,7 +215,7 @@ export function SoundArchetypeToolbar({
               </div>
               <code>
                 Emphasis: {previewEmphasis}. Equipped cards: {previewCardCount}.
-                Ambience: {previewArchetype.ambience ? "on" : "off"}.
+                Ambience: {previewArchetype.ambience === undefined ? "keep current setting" : previewArchetype.ambience ? "on" : "off"}.
               </code>
             </aside>,
             portalTarget,

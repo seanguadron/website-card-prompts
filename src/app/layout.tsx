@@ -18,11 +18,11 @@ const mono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Digi Tools",
-    template: "%s | Digi Tools",
+    default: "Card Prompts",
+    template: "%s | Card Prompts",
   },
   description:
-    "A local-first browser toolbox for building prompts and structured artifacts.",
+    "Build language, image, and sound prompts with the CRAFT, PICTURE, and SONIC card decks.",
 };
 
 export const viewport: Viewport = {

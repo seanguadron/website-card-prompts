@@ -112,6 +112,10 @@ approval per AGENTS.md rule 15). All remain available to Codex in
 The Claude set is 15 directories: the 11 bridged above, the 3 additions, and
 `digi`.
 
+## November 2026 addition
+
+Codex project skill `code-review` installed from `mattpocock/skills` at `abeeaf95660ba9e8b7c753eb38f441ca707a8823`, directory `skills/engineering/code-review`. SKILL.md SHA-256 `9c921a8d88138a41401d8897ca1bb852088ab1b7b605cdd04edc13e3e8aab6dd`. Includes the upstream agent metadata.
+
 ## How to refresh a pin
 
 1. In a CODEX session (the Codex home is never modified from Claude Code):

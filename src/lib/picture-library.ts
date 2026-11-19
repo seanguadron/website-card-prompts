@@ -39,7 +39,7 @@ function isSavedPromptShape(entry: unknown): entry is SavedPicturePrompt {
 }
 
 export function listSavedPicturePrompts(): SavedPicturePrompt[] {
-  const entries = readStored<SavedPicturePrompt[]>(LIBRARY_KEY, []);
+  const entries = readStored(LIBRARY_KEY, []);
   return Array.isArray(entries) ? entries.filter(isSavedPromptShape) : [];
 }
 
@@ -47,7 +47,7 @@ export function saveToPictureLibrary(
   name: string,
   draft: PictureDraft,
   cardSystem: PictureCardSystemState,
-): SavedPicturePrompt[] {
+): SavedPicturePrompt[] | null {
   const entry: SavedPicturePrompt = {
     id: makeId(),
     name: name.trim() || "Untitled prompt",
@@ -56,12 +56,10 @@ export function saveToPictureLibrary(
     cardSystem,
   };
   const next = [entry, ...listSavedPicturePrompts()].slice(0, LIBRARY_LIMIT);
-  writeStored(LIBRARY_KEY, next);
-  return next;
+  return writeStored(LIBRARY_KEY, next) ? next : null;
 }
 
-export function deleteFromPictureLibrary(id: string): SavedPicturePrompt[] {
+export function deleteFromPictureLibrary(id: string): SavedPicturePrompt[] | null {
   const next = listSavedPicturePrompts().filter((entry) => entry.id !== id);
-  writeStored(LIBRARY_KEY, next);
-  return next;
+  return writeStored(LIBRARY_KEY, next) ? next : null;
 }
