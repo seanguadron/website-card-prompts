@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, type ReactNode } from "react";
+import { useState } from "react";
 
 import { buildDeckSkill, skillFolder, type SkillDeck } from "@/lib/deck-skill";
 import { downloadTextFile } from "@/lib/browser-download";
@@ -36,7 +36,6 @@ export function PromptOutputDock({
   skillChoices,
   onDownload,
   onPrint,
-  outcomeView,
 }: {
   expanded: boolean;
   complete: boolean;
@@ -52,13 +51,9 @@ export function PromptOutputDock({
   skillChoices: { label: string; body: string }[];
   onDownload: (format: "md" | "txt" | "json") => void;
   onPrint: () => void;
-  /** A second view beside the assembled prompt: what the model answers.
-   *  Only the CRAFT deck provides one; without it the dock is unchanged. */
-  outcomeView?: ReactNode;
 }) {
   const [copiedSection, setCopiedSection] = useState<string | null>(null);
-  const [view, setView] = useState<"prompt" | "skill" | "outcome">("prompt");
-  const showOutcome = Boolean(outcomeView) && view === "outcome";
+  const [view, setView] = useState<"prompt" | "skill">("prompt");
   const skill = buildDeckSkill(skillDeck, skillHand, skillChoices);
   const skillReady = skillChoices.some((choice) => choice.body.trim());
   const ready = view === "skill" ? skillReady : complete;
@@ -128,28 +123,18 @@ export function PromptOutputDock({
               >
                 Skill
               </button>
-              {outcomeView && <button
-                type="button"
-                className={showOutcome ? "is-active" : ""}
-                aria-pressed={showOutcome}
-                onClick={() => setView("outcome")}
-              >
-                Outcome
-              </button>}
             </div>
 
           <div className="preview-header">
             <div>
               <h2 id="preview-title">
-                {showOutcome ? "Model outcome" : view === "skill" ? "Reusable skill" : "Assembled prompt"}
+                {view === "skill" ? "Reusable skill" : "Assembled prompt"}
               </h2>
             </div>
             <span className={ready ? "preview-state is-ready" : "preview-state"}>
               {ready ? "Ready" : view === "skill" ? "Empty hand" : `${missingItems.length} missing`}
             </span>
           </div>
-
-          {showOutcome ? outcomeView : null}
 
           {view === "skill" && (
             <>

@@ -1,23 +1,4 @@
-/**
- * The Outcome Lab: what Claude actually says back.
- *
- * The deck shows the prompt a card combination assembles; this shows the
- * ANSWER that prompt gets. Three fixed context+target scenarios, every
- * combination of up to three tactic cards, each one asked ONCE as a clean
- * standalone API query - no system prompt, no project context, nothing but
- * the assembled prompt itself - and the responses cached as static files.
- * Browsing card combinations then shows the model's answer instantly,
- * because the question was already asked.
- *
- * This module is the shared core: the combo key, the shard math, and the
- * prompt composer. `scripts/outcome-batch.mjs` uses it to generate and land
- * the cache; the deck uses it to look answers up. One composer on both sides
- * is the guarantee that the cached answer really belongs to the prompt the
- * app would show.
- *
- * Kept free of path aliases and JSON imports so plain node (the batch script,
- * the test runner) can load it directly - same constraint as card-engine.ts.
- */
+/** Offline helpers for interpreting the retired Outcome Lab fixtures. */
 
 export type OutcomeScenario = {
   id: string;

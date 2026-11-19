@@ -1941,16 +1941,14 @@ button.role-loadout-slot {
   flex: 1;
 }
 
-/* The dock's second view: what the model answers. The switch mirrors the
-   world-switch idiom - small bordered options, cyan when active. */
+/* Prompt and reusable skill share the same output dock. */
 .output-view-switch {
   display: flex;
   gap: 4px;
   margin-bottom: 12px;
 }
 
-.output-view-switch button,
-.outcome-scenario-option {
+.output-view-switch button {
   min-height: 28px;
   padding: 0 10px;
   border: 1px solid var(--input);
@@ -1970,93 +1968,18 @@ button.role-loadout-slot {
   flex: 1;
 }
 
-.output-view-switch button:hover,
-.outcome-scenario-option:hover {
+.output-view-switch button:hover {
   color: var(--foreground);
 }
 
-.output-view-switch button:active:not(.is-active),
-.outcome-scenario-option:active:not(.is-active) {
+.output-view-switch button:active:not(.is-active) {
   transform: scale(0.97);
 }
 
-.output-view-switch button.is-active,
-.outcome-scenario-option.is-active {
+.output-view-switch button.is-active {
   border-color: var(--brand-cyan);
   background: color-mix(in oklch, var(--brand-cyan) 12%, var(--card));
   color: var(--brand-cyan-text);
-}
-
-.outcome-lab {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.outcome-scenario-switch {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 4px;
-}
-
-/* The question being answered, so the answer below has its context. */
-.outcome-context {
-  margin: 0;
-  color: var(--muted-foreground);
-  font-size: 0.76rem;
-  line-height: 1.5;
-}
-
-/* Model text is prose, not code: wrapped, readable measure, its own card. */
-.outcome-answer {
-  padding: 12px;
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  background: var(--background);
-  /* The dock's one real prose element - a model reply meant to be READ -
-     so it sits at the body floor, not the control tier. */
-  font-size: 0.875rem;
-  line-height: 1.6;
-  white-space: pre-wrap;
-  overflow-wrap: break-word;
-}
-
-.outcome-meta {
-  margin: 0;
-  color: var(--muted-foreground);
-  font-size: 0.7rem;
-}
-
-.outcome-note {
-  margin: 0;
-  color: var(--muted-foreground);
-  font-size: 0.78rem;
-  line-height: 1.5;
-}
-
-.outcome-note code {
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-}
-
-.outcome-note-quiet {
-  font-size: 0.7rem;
-}
-
-.outcome-prompt summary {
-  display: flex;
-  align-items: center;
-  min-height: 28px;
-  color: var(--muted-foreground);
-  font-size: 0.72rem;
-  font-weight: 700;
-  cursor: pointer;
-}
-
-.outcome-prompt pre {
-  margin-top: 8px;
-  max-height: 240px;
-  overflow: auto;
 }
 
 .missing-fields {

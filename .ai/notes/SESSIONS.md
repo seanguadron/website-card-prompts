@@ -5,6 +5,16 @@ appended by the sessions agent (see AGENTS.md → Learning loop). Lines ending
 with the proposed-amendment flag are STANDARDS candidates;
 `npm run amendments` lists the ones not yet annotated "→ landed in §X.Y".
 
+## 2026-11-19 — Separate the Outcome Lab from the deck
+
+**Context.** The Outcome Lab experiment let players inspect model-generated answers for card combinations. The editorial pilot prompted Sean to clarify where model usage belongs.
+
+**Decisions.** Disconnect the experiment from the website, leave its generation pipeline idle and remove any project API key used for it. Keep local composition of one-off prompts and reusable skills available as players select cards.
+
+**Learnings.** The historical batch pipeline generated answers ahead of time for a static reader. Composing the prompt or skill itself requires only the card data.
+
+**Preferences.** Sean accepts editorial trials within his monthly account allowance and wants to avoid additional model charges. The pilot remains paused while its cost is uncertain.
+
 ## 2026-11-19: Deal individual cards into slots
 
 **Context.** After choosing how archetypes enter the board, Sean clarified how players should inspect and place an individual card.

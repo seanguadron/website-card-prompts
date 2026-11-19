@@ -20,8 +20,7 @@
     "amendments": "node scripts/pending-amendments.mjs",
     "skill:log": "node scripts/log-skill.mjs",
     "prepare": "git config core.hooksPath .githooks || echo \"hooks: skipped\"",
-    "art:queue": "node scripts/art-queue.mjs",
-    "outcomes:batch": "node --experimental-strip-types --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/outcome-batch.mjs"
+    "art:queue": "node scripts/art-queue.mjs"
   },
   "dependencies": {
     "@dnd-kit/core": "^6.3.1",
@@ -30,7 +29,6 @@
     "react-dom": "19.2.7"
   },
   "devDependencies": {
-    "@anthropic-ai/sdk": "^0.122.0",
     "@tailwindcss/postcss": "4.3.1",
     "@types/node": "24.10.1",
     "@types/react": "19.2.7",

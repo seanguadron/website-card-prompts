@@ -303,7 +303,7 @@ expect a shell rail; DO recycle these primitives:
 | `formatSaveStatusLabel`, `SaveStatus` | `src/lib/save-status.ts` | Autosave chip labels ("Saved 2:41 PM…"). |
 | `useUndoableState` | `src/hooks/use-undoable-state.ts` | Undo/redo: past/future stacks, tag coalescing, `seal`, `jump`, `depth`/`position` for history panels. |
 | `useLocalDraft` | `src/hooks/use-local-draft.ts` | Debounced, quota-guarded localStorage autosave with restore-on-mount lifecycle. |
-| `EditorTabs` + `tabPanelProps` | `src/components/editor-tabs.tsx` | Accessible roving-tabindex tablists (the output dock's Prompt/Outcome switch). |
+| `EditorTabs` + `tabPanelProps` | `src/components/editor-tabs.tsx` | Accessible roving-tabindex tablists used by Card Studio. |
 | `downloadBlob` etc. | `src/lib/browser-download.ts` | All file downloads. |
 | `readStored`, `writeStored` | `src/lib/prompt-storage.ts` | SSR-safe JSON localStorage access (see §6 landmine). |
 | `useMediaQuery` | `src/hooks/use-media-query.ts` | Live matchMedia state, SSR-safe (`useSyncExternalStore`; the lint rules reject effect-driven setState). |
@@ -311,7 +311,7 @@ expect a shell rail; DO recycle these primitives:
 | `useBoardCamera` + `board-layout.ts` | `src/hooks/use-board-camera.ts`, `src/lib/board-layout.ts` | The camera (gestures, keyboard, framing) and its pure geometry (`fitRect`, `zoomAround`, `panBy`, tiers). Reuse for any future world-space surface. |
 | `BoardArchetypeSocket` | `src/components/board-archetype-socket.tsx` | The Setup board's socket + hand, generic over `{id, code, name, description, details, art?}`. |
 | `readBoardMode`, `writeBoardMode` | `src/lib/board-prefs.ts` | The per-deck view preference behind an `isBoardMode` guard. |
-| Output dock | `prompt-output-dock.tsx` | The copy/download artifact panel all three decks share. It takes an optional `outcomeView` node and grows a Prompt/Outcome switch when one is passed (the CRAFT deck's Outcome Lab); without it the dock renders exactly as before. |
+| Output dock | `prompt-output-dock.tsx` | All three decks use this panel to preview, copy and download locally assembled prompts and skills. |
 
 Since the 2026-09-05 split (`docs/adr/0003-split-into-two-projects.md`) the
 Architect Wizard, Image Editor, Vector Editor, and Skills wiki live in the

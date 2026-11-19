@@ -4,7 +4,7 @@ Last rewritten 2026-11-19.
 
 ## Now
 
-Card Prompts opens directly in CRAFT. The left library offers archetypes, section cards and CRAFT roles. The CRAFT editorial proposal is in docs/CRAFT_CONTENT_PROPOSAL.md and awaits owner review before catalog or art changes. All three deck workspaces span the window. GitHub and origin point to seanguadron/website-card-prompts. The September split removed Architect, Image, Vector, and the Skills wiki. Existing browser storage keys remain compatible with saved hands. The shared Output dock offers a one-off prompt or SKILL.md. The skill applies reusable card choices to a new brief.
+Card Prompts opens directly in CRAFT. The left library offers archetypes, section cards and CRAFT roles. The four-hand CRAFT editorial pilot is prepared and paused. The old Outcome Lab was removed locally. Its provider batch and project credential are gone. The output dock offers Prompt and Skill. All three deck workspaces span the window. GitHub and origin point to seanguadron/website-card-prompts. The September split removed Architect, Image, Vector, and the Skills wiki. Existing browser storage keys remain compatible with saved hands. The shared Output dock offers a one-off prompt or SKILL.md. The skill applies reusable card choices to a new brief.
 
 ## Runbook
 
@@ -30,10 +30,6 @@ Card Prompts opens directly in CRAFT. The left library offers archetypes, sectio
 - **Decisions:** hard to reverse + surprising + a real trade-off → an ADR in
   `docs/adr/` (0001 stack v2, 0002 design direction, 0003 the split, 0004
   the board). Diary stays `SESSIONS.md`; rules stay `STANDARDS.md`.
-- **Outcome Lab pipeline:** `npm run outcomes:batch -- <scenario-id>` (dry
-  plan) · `--submit [--limit N]` · `--wait` · `--land`. Scenario ids:
-  `origin-universe`, `dreams`, `evolution`. Probe with `--limit 40` and read
-  measured tokens before any full submit.
 - **Art queue:** the studio button or the CRAFT deck's dev-only "Queue art"
   mode fill `.ai/notes/art-queue.json`; `npm run art:queue [-- --prompts|--json]`
   resolves it (nano_banana_pro · 2k · 1:1). Batch generation (Higgsfield
@@ -66,8 +62,7 @@ flow view, plus two unregistered authoring surfaces.
 - **CRAFT Deck** (`prompt-builder`): C.R.A.F.T. prompts from card choices —
   35 roles, 32 lineages ×4 grades, 25 archetypes, library/share/sessions/
   dictation/proof lab, the world picker (3 illustrated worlds), the
-  dev-only art-queue mode, and the Outcome Lab (dock Prompt|Outcome switch;
-  answers pending generation). Credits Lawton Solutions.
+  dev-only art-queue mode, and local Prompt and Skill exports. Credits Lawton Solutions.
 - **PICTURE Deck** (`picture-deck`): P.I.C.T.U.R.E. image prompts — 100
   lineages ×3 grades, 18 archetypes, Midjourney tail, 426/426 gallery art.
   Credits Midjourney's documentation.
@@ -86,9 +81,7 @@ flow view, plus two unregistered authoring surfaces.
 **The art-pack model** (`docs/ARCHITECTURE.md` §1): four packs complete —
 sci-fi, fantasy, superhero (226 each), gallery (426) — 1,104 images.
 
-**The outcome model**: catalog-independent; scenarios in data, combinations
-composed and asked offline by `scripts/outcome-batch.mjs`, answers as static
-shards under `public/proof-outcomes/`, the app a pure reader.
+**Outcome Lab** is retired. Historical scenario data and pure helpers are available for offline review. The provider batch script, project-local API key and deck integration were removed.
 
 **The governance layer** (stack v2, adapted): AGENTS.md (phases, gates,
 documents table, rules) → `docs/STANDARDS.md` (consent-gated) → judgment
@@ -99,6 +92,6 @@ gates in `.claude/agents/` + deterministic halves in `scripts/check-*.mjs`
 
 - The owner authorized publishing the release on main. The production build passed, and the local browser downloaded each deck's skill and matched it to its preview. The release includes the September split and board. The setup hand uses native keyboard button activation and pointer dragging. The shared tray can collapse independently of Output. Select a section to drag individual cards to its slots. Hover or focus to inspect a card. On narrow screens it becomes a horizontal strip. Browser verification covered all three decks at 3840 by 2160, gray-surface panning, wheel zoom and drops from the tray while viewing a section.
 - The board still owes a manual screen-reader pass. SONIC lacks an illustrated art pack and its original deck-wide design paperwork.
-- Outcome Lab remains paused pending credits, a fresh key, and the owner's choice of generation budget. Keep the small probe before a full paid run.
+- The four-hand editorial pilot is paused. The owner wants any future trials covered by the monthly account without additional charges.
 - Review findings and deck-by-deck product recommendations are in docs/DECK_REVIEW.md.
 - Prior decisions and outstanding amendment proposals are in the sessions ledger. Use the gate reports for the November review and fixes.

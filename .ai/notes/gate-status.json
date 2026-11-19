@@ -3,6 +3,19 @@
   "standards": "pass",
   "security": "pass",
   "stateFresh": true,
-  "owed": [],
+  "owed": [
+    {
+      "gate": "integration",
+      "reason": "7 uncommitted file(s) touch its surface"
+    },
+    {
+      "gate": "design",
+      "reason": "4 uncommitted file(s) touch its surface"
+    },
+    {
+      "gate": "security",
+      "reason": "1 uncommitted file(s) touch its surface"
+    }
+  ],
   "notes": "Written by scripts/gate-sweep.mjs (npm run gate:sweep) — deterministic standards + security gates + the gates-owed detector."
 }

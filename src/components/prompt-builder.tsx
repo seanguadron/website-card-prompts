@@ -10,7 +10,6 @@ import { PromptArchetypeToolbar, PromptArchetypeDetails } from "@/components/pro
 import { PromptBuilderHeader } from "@/components/prompt-builder-header";
 import { CraftFlowPanels } from "@/components/prompt-flow-panels";
 import { useArtQueue } from "@/hooks/use-art-queue";
-import { PromptOutcomeLab } from "@/components/prompt-outcome-lab";
 import type { CraftDictationApi } from "@/components/prompt-builder-ui";
 import { PromptLibraryPanel } from "@/components/prompt-library-panel";
 import { PromptOutputDock } from "@/components/prompt-output-dock";
@@ -40,8 +39,6 @@ import {
 } from "@/lib/prompt-archetypes";
 import { FORMAT_OPTIONS } from "@/lib/prompt-builder-options";
 import {
-  CARD_SECTIONS,
-  DEFAULT_TRACK_VALUES,
   getEquippedInstructions,
   getFormatCode,
   getRecommendedTrackValues,
@@ -1197,17 +1194,6 @@ export function PromptBuilder({ roles }: { roles: PromptRole[] }) {
         </div>
 
         <PromptOutputDock
-          outcomeView={
-            <PromptOutcomeLab
-              equippedIds={CARD_SECTIONS.flatMap(
-                (section) => cardSystem.equipped[section],
-              )}
-              tracksAtDefaults={TRACK_IDS.every(
-                (trackId) =>
-                  cardSystem.tracks[trackId] === DEFAULT_TRACK_VALUES[trackId],
-              )}
-            />
-          }
           expanded={outputExpanded}
           complete={isComplete}
           missingItems={missingItems}

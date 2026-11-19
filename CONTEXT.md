@@ -212,11 +212,5 @@ directional Voice Formality track.
 _Avoid_: Tone slider
 
 **Outcome Lab**:
-The output dock's second view: Claude's precached answer for the current card
-combination under a fixed scenario (a context + target pair from
-`outcome-scenarios.json`). Answers are generated offline by
-`scripts/outcome-batch.mjs` as clean standalone queries - one user message
-holding only the composed prompt - and served as static shards; the app only
-reads. Combinations are order-blind and capped at three cards, sliders at
-defaults.
+Retired experiment for comparing cached answers across fixed card combinations. Its scenario fixtures and offline helpers remain available for reference.
 _Avoid_: Proof Lab (a different, older feature), playground, live preview

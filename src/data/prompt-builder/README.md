@@ -20,9 +20,7 @@ archetypes, and art are this project's.
 - `suggestions.json` - role, category, and audience suggestions
 - `builder.json` - C.R.A.F.T. labels, defaults, and example draft
 - `proof-scenarios.json` - Proof Lab configurations
-- `outcome-scenarios.json` - the Outcome Lab's fixed context+target questions
-  (answers are generated offline by `scripts/outcome-batch.mjs`, never stored
-  here)
+- `outcome-scenarios.json` - archived fixtures for the retired Outcome Lab experiment.
 
 ## Art packs
 
