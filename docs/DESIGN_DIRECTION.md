@@ -388,7 +388,7 @@ and SONIC:
   (roles keep two rows), and the free-text field sits at the bottom.
   Sockets read as scaffolding: a 2px cyan-tinted dashed frame, solid once
   seated.
-- **The deal.** On entering a section, the visible hand travels from a shared pile and turns face up in 400ms with a short stagger. Seating an archetype flips the occupied sockets. Each deck has three geometric backs. Reduced motion leaves the faces immediately available.
+- **The deal.** On entering a section, the visible hand travels from a shared pile and turns face up in 400ms with a short stagger. Seating an archetype flips the occupied sockets. Each deck has three illustrated backs. The pen, prism and waveform lead CRAFT, PICTURE and SONIC respectively and appear on socket flips. Brass tools on oxblood mark CRAFT, optical motifs on teal mark PICTURE, and silver sound motifs on indigo mark SONIC. Reduced motion leaves the faces immediately available.
 - **The board bar** (bottom-left, screen space): one pip per board with its
   completion state, zoom out, the zoom readout, zoom in, Fit, All. It steps
   aside when the nav dock parks in that corner.

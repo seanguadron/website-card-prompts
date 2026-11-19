@@ -9,3 +9,5 @@
 {"at":"2026-11-19T19:09:31.838Z","skill":"webapp-testing","surface":"Shared board interaction checks"}
 {"at":"2026-11-19T19:27:11.755Z","skill":"avoid-ai-writing","surface":"CRAFT hand instructions and PICTURE proposal"}
 {"at":"2026-11-19T19:39:50.767Z","skill":"avoid-ai-writing","surface":"PICTURE production cards and SONIC editorial proposal"}
+{"at":"2026-11-19T19:59:23.459Z","skill":"avoid-ai-writing","surface":"SONIC and PICTURE catalog definitions"}
+{"at":"2026-11-19T19:59:37.130Z","skill":"tdd","surface":"SONIC and PICTURE prompt exports"}

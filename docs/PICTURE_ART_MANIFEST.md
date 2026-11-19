@@ -2586,11 +2586,11 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A harbor under a flat gray ceiling of cloud, completely shadowless light, every hull and rope evenly described, the water a sheet of pewter.
 ```
 
-#### 186. Overcast Soft 3. Luminous Fog
+#### 186. Overcast Soft 3. Even Skylight
 
-- File name: `PIC-186-Overcast-Soft-3-Luminous-Fog.png`
+- File name: `PIC-186-Overcast-Soft-3-Even-Skylight.png`
 - Target: `public/card-art/gallery/cards/overcast-soft/grade-03.webp`
-- Owner: Card `overcast-soft` grade `Luminous Fog`
+- Owner: Card `overcast-soft` grade `Even Skylight`
 - Status: generated
 
 ```
@@ -2781,11 +2781,11 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A ceramic vase in crisp softbox light on a seamless sweep, controlled highlight rolling along the glaze, the shadow placed exactly where it was decided.
 ```
 
-#### 201. Studio Softbox 3. High-Key White
+#### 201. Studio Softbox 3. Wraparound Light
 
-- File name: `PIC-201-Studio-Softbox-3-High-Key-White.png`
+- File name: `PIC-201-Studio-Softbox-3-Wraparound-Light.png`
 - Target: `public/card-art/gallery/cards/studio-softbox/grade-03.webp`
-- Owner: Card `studio-softbox` grade `High-Key White`
+- Owner: Card `studio-softbox` grade `Wraparound Light`
 - Status: generated
 
 ```
@@ -5287,11 +5287,11 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A sweeping establishing view: the whole valley's geography readable, river, road, and rooftops in one deliberate sentence.
 ```
 
-#### 393. Wide Establishing 3. God's Eye
+#### 393. Wide Establishing 3. Panoramic View
 
-- File name: `PIC-393-Wide-Establishing-3-God-s-Eye.png`
+- File name: `PIC-393-Wide-Establishing-3-Panoramic-View.png`
 - Target: `public/card-art/gallery/cards/wide-establishing/grade-03.webp`
-- Owner: Card `wide-establishing` grade `God's Eye`
+- Owner: Card `wide-establishing` grade `Panoramic View`
 - Status: generated
 
 ```
@@ -5482,11 +5482,11 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 Classic thirds placement: the boat at a power point, horizon on the upper line, open water breathing around it.
 ```
 
-#### 408. Rule Of Thirds 3. Far Corner
+#### 408. Rule Of Thirds 3. Thirds Intersection
 
-- File name: `PIC-408-Rule-Of-Thirds-3-Far-Corner.png`
+- File name: `PIC-408-Rule-Of-Thirds-3-Thirds-Intersection.png`
 - Target: `public/card-art/gallery/cards/rule-of-thirds/grade-03.webp`
-- Owner: Card `rule-of-thirds` grade `Far Corner`
+- Owner: Card `rule-of-thirds` grade `Thirds Intersection`
 - Status: generated
 
 ```
@@ -5560,11 +5560,11 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A full long exposure: water silked, light trails ribboning the bridge, time visibly pooled in one frame.
 ```
 
-#### 414. Long Exposure 3. Hours Open
+#### 414. Long Exposure 3. Extended Exposure
 
-- File name: `PIC-414-Long-Exposure-3-Hours-Open.png`
+- File name: `PIC-414-Long-Exposure-3-Extended-Exposure.png`
 - Target: `public/card-art/gallery/cards/long-exposure/grade-03.webp`
-- Owner: Card `long-exposure` grade `Hours Open`
+- Owner: Card `long-exposure` grade `Extended Exposure`
 - Status: generated
 
 ```
@@ -5599,11 +5599,11 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 A full double exposure: the landscape living inside the silhouette, hairline and canopy sharing one edge.
 ```
 
-#### 417. Double Exposure 3. Layered Ghosts
+#### 417. Double Exposure 3. Strong Overlay
 
-- File name: `PIC-417-Double-Exposure-3-Layered-Ghosts.png`
+- File name: `PIC-417-Double-Exposure-3-Strong-Overlay.png`
 - Target: `public/card-art/gallery/cards/double-exposure/grade-03.webp`
-- Owner: Card `double-exposure` grade `Layered Ghosts`
+- Owner: Card `double-exposure` grade `Strong Overlay`
 - Status: generated
 
 ```
@@ -5716,11 +5716,11 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 True isometric: parallel lines never converging, the bakery a perfect readable tile, shadows obediently diagonal.
 ```
 
-#### 426. Isometric View 3. Diorama Cutaway
+#### 426. Isometric View 3. Isometric Axes
 
-- File name: `PIC-426-Isometric-View-3-Diorama-Cutaway.png`
+- File name: `PIC-426-Isometric-View-3-Isometric-Axes.png`
 - Target: `public/card-art/gallery/cards/isometric-view/grade-03.webp`
-- Owner: Card `isometric-view` grade `Diorama Cutaway`
+- Owner: Card `isometric-view` grade `Isometric Axes`
 - Status: generated
 
 ```
@@ -5755,11 +5755,11 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 Full knolling: every item aligned at right angles from directly above, spacing even, the kit reading as a sentence of objects.
 ```
 
-#### 429. Knolling Flatlay 3. Museum Inventory
+#### 429. Knolling Flatlay 3. Inventory Grid
 
-- File name: `PIC-429-Knolling-Flatlay-3-Museum-Inventory.png`
+- File name: `PIC-429-Knolling-Flatlay-3-Inventory-Grid.png`
 - Target: `public/card-art/gallery/cards/knolling-flatlay/grade-03.webp`
-- Owner: Card `knolling-flatlay` grade `Museum Inventory`
+- Owner: Card `knolling-flatlay` grade `Inventory Grid`
 - Status: generated
 
 ```
@@ -5794,11 +5794,11 @@ Collectible-card key art for a deck that teaches image-making. Each card demonst
 Fully hyper-detailed: intricate texture throughout, anemones and shell-script resolved to the smallest legible touch.
 ```
 
-#### 432. Hyper Detailed 3. Infinite Engraving
+#### 432. Hyper Detailed 3. Surface Study
 
-- File name: `PIC-432-Hyper-Detailed-3-Infinite-Engraving.png`
+- File name: `PIC-432-Hyper-Detailed-3-Surface-Study.png`
 - Target: `public/card-art/gallery/cards/hyper-detailed/grade-03.webp`
-- Owner: Card `hyper-detailed` grade `Infinite Engraving`
+- Owner: Card `hyper-detailed` grade `Surface Study`
 - Status: generated
 
 ```

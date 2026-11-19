@@ -122,3 +122,13 @@ test("sections carry only non-empty panels plus subject and parameters", () => {
   assert.equal(sections[1].heading, "REFERENCES");
   assert.equal(sections[2].body, "--ar 3:2 --stylize 250 --chaos 10");
 });
+
+test("exclude accepts words without introducing extra parameters", () => {
+  assert.equal(buildTailString({ ...OFF_TAIL, enabled: true, negative: "text --chaos 99" }),
+    "--ar 3:2 --stylize 250 --chaos 10 --no text");
+});
+
+test("the exported tail omits zero ratios and out-of-range parameters", () => {
+  assert.equal(buildTailString({ enabled: true, aspectRatio: "0:1",
+    stylize: 1001, chaos: 101, weird: 3001, negative: "" }), "");
+});

@@ -16,7 +16,7 @@ import type { BoardMode } from "@/lib/board-prefs";
 import { soundCardEngine } from "@/lib/sound-card-system";
 import { SOUND_PARTS } from "@/lib/sound-deck-state";
 import { SOUND_PANEL_INDEX } from "@/lib/sound-navigation";
-import { AMBIENCE_TERM_LIMIT, SOUND_LAYER_LIMIT } from "@/lib/sound-prompt";
+import { SOUND_LAYER_LIMIT } from "@/lib/sound-prompt";
 import type { SoundSection } from "@/lib/sound-prompt";
 import type {
   SoundCardSystemState,
@@ -50,8 +50,8 @@ const PANEL_GUIDANCE: Record<SoundSection, FieldGuidance> = {
     title: "Nature help",
     body: "Pick the material and texture the sound is made of.",
     points: [
-      "Adjectives are Firefly's steering wheel: metallic, wooden, glassy.",
-      "Two textures at most; a third muddies the character.",
+      "Try an audible quality such as a metallic ring or a woody knock.",
+      "Start with the texture you most want to hear.",
     ],
   },
   intensity: {
@@ -59,14 +59,14 @@ const PANEL_GUIDANCE: Record<SoundSection, FieldGuidance> = {
     body: "Set loudness, weight, and distance.",
     points: [
       "\"Very loud explosion\" and \"soft explosion\" are different sounds.",
-      "Distance is dynamics too: distant reads quieter and softer-edged.",
+      "Use distance for listener position and loudness for level.",
     ],
   },
   context: {
     title: "Context help",
     body: "Place the sound in a world, a purpose, and a space.",
     points: [
-      "Genre words carry a whole mix style: cinematic, cartoonish, scifi.",
+      "Pair a genre cue with an audible detail, such as a springy pitch bend.",
       "Finish here, then stack extra sounds on the layer rack below.",
     ],
   },
@@ -311,7 +311,7 @@ export function SoundFlowPanels({
           <FieldHeading
             guidance={PANEL_GUIDANCE.source}
             label="Sound"
-            hint="The one required line: the sound itself, noun first."
+            hint="Name the source and what you hear it doing."
             controlId="sound-subject"
           />
           <CraftDictationField
@@ -327,9 +327,6 @@ export function SoundFlowPanels({
             dictation={dictation}
           />
         </div>
-        {/* Ambience is a composition MODE, not a card: Firefly's docs
-            say broad beats specific for beds, so on, the merge caps the
-            descriptor count instead of stacking every equipped card. */}
         <label className="workbench-default-check sound-deck-ambience-toggle">
           <input
             type="checkbox"
@@ -339,9 +336,7 @@ export function SoundFlowPanels({
           <span>
             <strong>Ambience mode</strong>
             <small>
-              For beds and room tone: keeps the prompt broad, at most{" "}
-              {AMBIENCE_TERM_LIMIT} descriptors. Off builds a specific
-              one-shot effect.
+              For beds and room tone, describe the space first. Equip just the details you want to hear.
             </small>
           </span>
         </label>

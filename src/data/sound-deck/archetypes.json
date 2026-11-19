@@ -65,13 +65,12 @@
       "tracks": { "emphasis": 0 },
       "equipped": {
         "source": ["weather"],
-        "nature": ["watery"],
         "context": ["outdoors"]
       },
       "ambience": true,
       "effects": [
-        "Equips light weather with watery texture, outdoors",
-        "Switches ambience mode on: broad wording, capped descriptors",
+        "Pairs light drizzle with an open-air setting",
+        "Places the setting immediately after your sound",
         "Leaves your sound line untouched"
       ]
     },
@@ -146,7 +145,7 @@
         "context": ["outdoors", "cinematic"]
       },
       "effects": [
-        "Equips torrential weather on a screaming rise",
+        "Equips torrential weather on a steep pitch rise",
         "Pushes it loud, wet, and outdoors at Dominant emphasis",
         "Leaves your sound line untouched"
       ]
@@ -165,7 +164,7 @@
       "ambience": true,
       "effects": [
         "Equips distant chatter kept far back in the room",
-        "Switches ambience mode on: broad wording, capped descriptors",
+        "Places the setting immediately after your sound",
         "Leaves your sound line untouched"
       ]
     },
@@ -213,13 +212,12 @@
       "description": "A springy, bouncy rise played entirely for laughs.",
       "tracks": { "emphasis": 2 },
       "equipped": {
-        "source": ["mechanism"],
         "onset": ["rising"],
         "intensity": ["bright"],
         "context": ["cartoon"]
       },
       "effects": [
-        "Equips a springing mechanism on a rising sweep",
+        "Gives the named spring sound a steep upward pitch sweep",
         "Brightens it and commits to full slapstick",
         "Leaves your sound line untouched"
       ]

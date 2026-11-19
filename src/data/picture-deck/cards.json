@@ -244,9 +244,9 @@
           "instruction": "under a flat gray sky, shadowless diffuse light"
         },
         {
-          "name": "Luminous Fog",
-          "description": "Fog-thick overcast swallows the world.",
-          "instruction": "swallowed by luminous fog-thick overcast"
+          "name": "Even Skylight",
+          "description": "Broad skylight softens even the deepest shadows.",
+          "instruction": "broad diffuse skylight, very soft shadow edges"
         }
       ]
     },
@@ -381,13 +381,13 @@
         },
         {
           "name": "Softbox Studio",
-          "description": "Crisp softbox light on a seamless backdrop.",
-          "instruction": "in crisp softbox studio light, seamless backdrop"
+          "description": "A broad studio source shapes the highlights.",
+          "instruction": "broad softbox highlights with soft-edged shadows"
         },
         {
-          "name": "High-Key White",
-          "description": "Clinical high-key white lights every detail.",
-          "instruction": "in clinical high-key studio white, every detail lit"
+          "name": "Wraparound Light",
+          "description": "Large soft sources wrap light around the subject.",
+          "instruction": "wraparound softbox light with a gradual falloff"
         }
       ]
     },
@@ -2083,9 +2083,9 @@
           "instruction": "wide establishing shot, sweeping vista"
         },
         {
-          "name": "God's Eye",
-          "description": "An ultra-wide aerial panorama swallows the scene.",
-          "instruction": "ultra-wide aerial panorama"
+          "name": "Panoramic View",
+          "description": "A broad sweep shows the geography around the subject.",
+          "instruction": "panoramic establishing view with the surroundings in frame"
         }
       ]
     },
@@ -2224,9 +2224,9 @@
           "instruction": "rule-of-thirds composition, open negative space"
         },
         {
-          "name": "Far Corner",
-          "description": "The subject holds one far corner of a vast frame.",
-          "instruction": "subject tucked in a far corner of a vast open frame"
+          "name": "Thirds Intersection",
+          "description": "The focal detail sits at a crossing of the thirds grid.",
+          "instruction": "main focal detail at a thirds intersection"
         }
       ]
     },
@@ -2274,13 +2274,13 @@
         },
         {
           "name": "Long Exposure",
-          "description": "Water silks and lights draw trails.",
-          "instruction": "long exposure, silked water and light trails"
+          "description": "Movement traces a path while stationary details hold.",
+          "instruction": "long exposure, moving details traced against still surroundings"
         },
         {
-          "name": "Hours Open",
-          "description": "Star trails and ghost crowds, hours in one frame.",
-          "instruction": "hours-long exposure, star trails and ghosted motion"
+          "name": "Extended Exposure",
+          "description": "Moving features stretch into continuous trails.",
+          "instruction": "extended exposure with long continuous motion trails"
         }
       ]
     },
@@ -2305,9 +2305,9 @@
           "instruction": "double exposure, landscape blended inside the silhouette"
         },
         {
-          "name": "Layered Ghosts",
-          "description": "Many exposures stack into layered ghosts.",
-          "instruction": "multiple stacked exposures, layered translucent ghosts"
+          "name": "Strong Overlay",
+          "description": "Two exposures share the frame with both images clearly visible.",
+          "instruction": "two strongly overlapping exposures with both layers visible"
         }
       ]
     },
@@ -2386,9 +2386,9 @@
           "instruction": "isometric view, parallel projection"
         },
         {
-          "name": "Diorama Cutaway",
-          "description": "An isometric cutaway diorama with open rooms.",
-          "instruction": "isometric cutaway diorama, walls opened to show the rooms"
+          "name": "Isometric Axes",
+          "description": "Parallel edges and equal axis scales define the whole view.",
+          "instruction": "isometric projection throughout, parallel edges and equal scale along all three axes"
         }
       ]
     },
@@ -2413,9 +2413,9 @@
           "instruction": "knolling flat lay, objects aligned at right angles from above"
         },
         {
-          "name": "Museum Inventory",
-          "description": "An obsessive museum-grade inventory grid.",
-          "instruction": "obsessive knolling inventory, every piece disassembled and aligned"
+          "name": "Inventory Grid",
+          "description": "The supplied objects form a precise overhead grid.",
+          "instruction": "overhead inventory of the supplied objects, precisely aligned at right angles"
         }
       ]
     },
@@ -2440,9 +2440,9 @@
           "instruction": "hyper-detailed, intricate textures throughout"
         },
         {
-          "name": "Infinite Engraving",
-          "description": "Obsessive density in every square inch.",
-          "instruction": "obsessively detailed, every surface engraved with miniature texture"
+          "name": "Surface Study",
+          "description": "The existing material shows fine surface detail.",
+          "instruction": "minute surface detail true to each material"
         }
       ],
       "affinity": {

@@ -21,8 +21,7 @@ export type PictureSection = (typeof PICTURE_SECTIONS)[number];
 
 // The order fragments join into the prompt line: subject detail first, then
 // medium, world, light, color, influences, and framing/finish last — the
-// anatomy Midjourney's own prompt guidance recommends. Reordering the merged
-// line is a one-array edit.
+// order used by this deck.
 export const PICTURE_MERGE_ORDER: readonly PictureSection[] = [
   "protagonist",
   "canvas",
@@ -98,10 +97,10 @@ function cleanedSectionFragments(
   return cleaned;
 }
 
-const ASPECT_RATIO_PATTERN = /^\d+:\d+$/;
+const ASPECT_RATIO_PATTERN = /^[1-9]\d*:[1-9]\d*$/;
 
-function tailNumber(flag: string, value: number | null) {
-  if (typeof value !== "number" || !Number.isFinite(value) || value < 0) {
+function tailNumber(flag: string, value: number | null, maximum: number) {
+  if (typeof value !== "number" || !Number.isFinite(value) || value < 0 || value > maximum) {
     return null;
   }
 
@@ -113,14 +112,14 @@ export function buildTailString(tail: PictureTail): string {
     return "";
   }
 
-  const negative = cleanFragment(tail.negative);
+  const negative = cleanFragment(tail.negative.split(/(?:^|\s)--/u, 1)[0]);
   const parts = [
     ASPECT_RATIO_PATTERN.test(tail.aspectRatio)
       ? `--ar ${tail.aspectRatio}`
       : null,
-    tailNumber("--stylize", tail.stylize),
-    tailNumber("--chaos", tail.chaos),
-    tailNumber("--weird", tail.weird),
+    tailNumber("--stylize", tail.stylize, 1000),
+    tailNumber("--chaos", tail.chaos, 100),
+    tailNumber("--weird", tail.weird, 3000),
     negative ? `--no ${negative}` : null,
   ];
 

@@ -32,8 +32,7 @@ export type SoundLayer = {
 
 export type SoundDraft = {
   subject: string;
-  // Firefly's "use general descriptions to generate ambiences": on, the
-  // composer caps the descriptor count instead of stacking every card.
+  // Place setting terms immediately after the sound in ambience mode.
   ambience: boolean;
   layers: SoundLayer[];
 };

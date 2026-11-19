@@ -5,6 +5,22 @@ appended by the sessions agent (see AGENTS.md → Learning loop). Lines ending
 with the proposed-amendment flag are STANDARDS candidates;
 `npm run amendments` lists the ones not yet annotated "→ landed in §X.Y".
 
+## 2026-11-19 — Preferred deck backs and release approval
+
+**Decisions.** Sean approved publishing all nine rendered backs together with the SONIC and PICTURE prompt updates. He asked for a live check on each deck with the project’s generation API kept off.
+
+**Preferences.** Use the pen as CRAFT’s primary back for now, the prism for PICTURE, and the third design, the waveform, for SONIC. Keep the other six designs in the release.
+
+## 2026-11-19 — SONIC and PICTURE prompt accuracy and rendered backs
+
+**Context.** Sean asked for both decks’ definitions and exported prompts to be checked against the tools people use them with. He authorized card edits and requested three rendered back designs for each of the three decks.
+
+**Decisions.** The local SONIC revision puts the setting first in ambience mode and includes every equipped descriptor. PICTURE keeps a plain-text image prompt for Firefly and an optional parameter tail for Midjourney. The review covered prompt text locally. Publication and provider trials were outside this pass.
+
+**Learnings.** The former two-descriptor cutoff dropped the room from Crowd Murmur. Adobe recommends broad ambience descriptions without prescribing a descriptor count. PICTURE’s section order is a deck design choice.
+
+**Preferences.** The art request covers nine card backs. Sean asked for rendered artwork without Higgsfield and kept audio generation and the project’s model API off.
+
 ## 2026-11-19 — PICTURE pilot approved
 
 **Context.** Sean authorized publication after comparing current and proposed PICTURE prompts across eight briefs in chat.

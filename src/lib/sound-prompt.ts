@@ -1,10 +1,4 @@
-// The SONIC Deck's merge: one comma-joined sound-effect prompt built from the
-// sound line and the equipped cards' grade terms, the way Firefly's own
-// guidance says to write them - describe the sound directly, then stack
-// comma-separated descriptors. Two Firefly rules are enforced here rather
-// than merely taught: the composer strips a leading "the sound of" (their
-// first don't), and ambience mode caps the descriptor count (over-specified
-// ambiences sound less organic).
+// SONIC exports one sound per rack entry. Ambience puts the setting first.
 //
 // There is no parameter tail: Firefly has no numeric flags. Layering happens
 // on audio tracks in Firefly, so the deck's rack holds whole separate
@@ -38,10 +32,7 @@ export const SOUND_MERGE_ORDER: readonly SoundSection[] = [
 export const SOUND_INCOMPLETE_TEXT =
   "Name a sound to build your prompt.";
 
-// Ambience mode follows Firefly's "use general descriptions" rule: a broad
-// phrase plus at most this many descriptors. More than two reads as an
-// over-directed ambience, which their docs call out as sounding less organic.
-export const AMBIENCE_TERM_LIMIT = 2;
+const AMBIENCE_MERGE_ORDER: readonly SoundSection[] = ["context", "source", "nature", "onset", "intensity"];
 
 // The rack holds separate one-sound prompts to generate individually and
 // layer on Firefly audio tracks. Capped so a stored draft stays a draft.
@@ -109,18 +100,15 @@ function cleanedSectionFragments(
   return cleaned;
 }
 
-// The merged terms in prompt order, ambience cap applied. Shared by the
-// prompt and the sections view so the two can never disagree about what
-// made the line.
 function mergedTerms(
   fragments: Record<SoundSection, readonly string[]>,
   ambience: boolean,
 ) {
   const cleaned = cleanedSectionFragments(fragments);
-  const terms = SOUND_MERGE_ORDER.flatMap((section) =>
+  const order = ambience ? AMBIENCE_MERGE_ORDER : SOUND_MERGE_ORDER;
+  return order.flatMap((section) =>
     cleaned[section].map((fragment) => ({ section, fragment })),
   );
-  return ambience ? terms.slice(0, AMBIENCE_TERM_LIMIT) : terms;
 }
 
 export function buildSoundPrompt(
@@ -161,14 +149,16 @@ export function buildSoundSections(
   return [...sections, ...buildSoundHandSections(fragments, ambience)];
 }
 
+export function buildSoundSkillChoices(fragments: Record<SoundSection, readonly string[]>, ambience: boolean) {
+  const sections = buildSoundHandSections(fragments, ambience);
+  return ambience ? [{ label: "Ambience", body: "Describe the environment first and retain the selected audible details." }, ...sections] : sections;
+}
+
 export function buildSoundHandSections(
   fragments: Record<SoundSection, readonly string[]>,
   ambience: boolean,
 ): SoundPromptSection[] {
   const sections: SoundPromptSection[] = [];
-  // Grouped back by section AFTER the ambience cap, so the sections view
-  // shows exactly the terms the prompt carries - a capped-out card simply
-  // does not appear, matching the line.
   const terms = mergedTerms(fragments, ambience);
   for (const section of SOUND_SECTIONS) {
     const body = terms

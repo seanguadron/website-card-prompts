@@ -79,7 +79,7 @@ import {
 import {
   buildSoundPrompt,
   buildSoundSections,
-  buildSoundHandSections,
+  buildSoundSkillChoices,
   SOUND_SECTIONS,
 } from "@/lib/sound-prompt";
 import type { SoundSection } from "@/lib/sound-prompt";
@@ -939,7 +939,7 @@ export function SoundDeck() {
           onCopy={copyPrompt}
           skillDeck="sonic"
           skillHand={activePromptName ?? activeArchetype?.name ?? "hand"}
-          skillChoices={buildSoundHandSections(equippedTerms, draft.ambience)}
+          skillChoices={buildSoundSkillChoices(equippedTerms, draft.ambience)}
           onDownload={downloadPrompt}
           onPrint={printPrompt}
         />

@@ -4,10 +4,7 @@ This directory is the editable source of truth for the PICTURE Deck catalog
 (tool id `picture-deck`). Application behavior remains in `src/lib`; these
 files contain only declarative content and configuration.
 
-The P.I.C.T.U.R.E. framework these files implement comes from the prompting
-guidance in Midjourney's documentation (https://docs.midjourney.com). The
-seven section names and what each one means come from there; the cards,
-archetypes, and art are this project's.
+The seven section names, merge order, cards and archetypes belong to this project. The natural-language prompt describes visible content. The optional parameter tail follows [Midjourney's parameter syntax](https://docs.midjourney.com/hc/en-us/articles/32859204029709-Parameter-List).
 
 ## Files
 

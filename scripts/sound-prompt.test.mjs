@@ -1,9 +1,9 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 import {
-  AMBIENCE_TERM_LIMIT,
   buildSoundPrompt,
   buildSoundSections,
+  buildSoundSkillChoices,
   cleanSoundSubject,
   SOUND_INCOMPLETE_TEXT,
   SOUND_MERGE_ORDER,
@@ -75,9 +75,7 @@ test("duplicate and empty terms drop out; whitespace and commas are cleaned", ()
   assert.equal(prompt, "rain on a metal roof, metallic, outdoors");
 });
 
-// Ambience mode is the "use general descriptions" rule as a mechanic: the
-// cap keeps the first terms in merge order and drops the rest.
-test("ambience mode caps the descriptor count", () => {
+test("ambience leads with place and retains every selected descriptor", () => {
   const terms = {
     ...EMPTY_TERMS,
     source: ["light drizzle"],
@@ -85,14 +83,10 @@ test("ambience mode caps the descriptor count", () => {
     intensity: ["distant"],
     context: ["outdoors, natural ambience"],
   };
-  const ambient = buildSoundPrompt("forest at dusk", terms, true);
-  assert.equal(ambient, "forest at dusk, light drizzle, wet, splashy");
-  assert.equal(
-    ambient.split(", ").length,
-    // subject + capped terms; "wet, splashy" is one term carrying a comma.
-    1 + AMBIENCE_TERM_LIMIT + 1,
-  );
-
+  assert.equal(buildSoundPrompt("forest at dusk", terms, true),
+    "forest at dusk, outdoors, natural ambience, light drizzle, wet, splashy, distant");
+  assert.equal(buildSoundSkillChoices(terms, true)[0].label, "Ambience");
+  assert.ok(buildSoundSkillChoices(terms, false).every(section => section.label !== "Ambience"));
   const specific = buildSoundPrompt("forest at dusk", terms, false);
   assert.equal(
     specific,
@@ -109,10 +103,9 @@ test("the sections view carries exactly what the prompt carries", () => {
   };
   const sections = buildSoundSections("window pane breaking", terms, true);
   assert.ok(sections);
-  // Ambience capped at two terms: source + nature made it, intensity did not.
   assert.deepEqual(
     sections.map((section) => section.key),
-    ["subject", "source", "nature"],
+    ["subject", "source", "nature", "intensity"],
   );
   assert.equal(sections[0].body, "window pane breaking");
 

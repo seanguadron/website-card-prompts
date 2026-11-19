@@ -40,8 +40,8 @@
     },
     {
       "id": "ambience-cap",
-      "name": "Ambience cap",
-      "proves": "Ambience mode keeps the prompt broad: at most two descriptors survive",
+      "name": "Ambience setting",
+      "proves": "Ambience places the setting first and retains all equipped terms",
       "panel": 1,
       "draft": {
         "subject": "forest at dusk",
@@ -55,8 +55,8 @@
       },
       "checks": [
         "Read the assembled prompt with four cards equipped",
-        "Only the first two terms in merge order made the line",
-        "Turn ambience off and all four terms return"
+        "The setting follows the subject and all four terms appear",
+        "Turn ambience off and the setting moves to the end"
       ]
     },
     {

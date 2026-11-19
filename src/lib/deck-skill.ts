@@ -21,7 +21,7 @@ const workflows = {
     trigger: "write sound-effect prompts using this acoustic direction",
     steps: [
       "Identify the new sound source and what it does. Ask for the event or environment if it is missing.",
-      "Apply the sound descriptors below to that source. Keep the most audible details first.",
+      "Apply the sound descriptors below to that source. Keep the audible details that fit the current brief. For ambience, establish the setting early.",
       "Return a concise comma-separated prompt for each requested sound. Put separate layers on separate lines.",
     ],
   },

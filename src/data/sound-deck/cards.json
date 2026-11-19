@@ -174,9 +174,9 @@
       ],
       "grades": [
         {
-          "name": "Distant Chatter",
-          "description": "People somewhere else.",
-          "instruction": "distant chatter"
+          "name": "Low Murmur",
+          "description": "Overlapping voices blend into a low murmur.",
+          "instruction": "low indistinct chatter"
         },
         {
           "name": "Room of Voices",
@@ -315,13 +315,13 @@
         },
         {
           "name": "Steady Loop",
-          "description": "Seamless repetition.",
-          "instruction": "steady seamless loop"
+          "description": "An even cycle with matching energy at each repeat.",
+          "instruction": "steady repeating cycle"
         },
         {
-          "name": "Relentless Loop",
-          "description": "Repetition with pressure.",
-          "instruction": "relentless driving loop"
+          "name": "Persistent Cycle",
+          "description": "The pattern repeats at a fixed pace.",
+          "instruction": "persistent evenly spaced repeats"
         }
       ]
     },
@@ -336,9 +336,9 @@
       ],
       "grades": [
         {
-          "name": "One Soft Event",
-          "description": "A single quiet occurrence.",
-          "instruction": "one soft hit, then silence"
+          "name": "Single Tap",
+          "description": "One discrete contact. Choose its loudness separately.",
+          "instruction": "one tap"
         },
         {
           "name": "Single Hit",
@@ -346,9 +346,9 @@
           "instruction": "single hit"
         },
         {
-          "name": "One Huge Moment",
-          "description": "A lone, enormous event.",
-          "instruction": "one massive hit, then silence"
+          "name": "Isolated Strike",
+          "description": "One distinct strike with no repeats.",
+          "instruction": "a single isolated strike"
         }
       ]
     },
@@ -373,9 +373,9 @@
           "instruction": "rising sweep"
         },
         {
-          "name": "Screaming Riser",
-          "description": "Full trailer-riser panic.",
-          "instruction": "screaming riser"
+          "name": "Steep Rise",
+          "description": "The pitch climbs steeply toward its peak.",
+          "instruction": "steep upward pitch sweep"
         }
       ]
     },
@@ -400,9 +400,9 @@
           "instruction": "long decay tail"
         },
         {
-          "name": "Endless Ring",
-          "description": "It never quite stops.",
-          "instruction": "endless ringing tail"
+          "name": "Long Fade",
+          "description": "The resonance fades gradually after the event.",
+          "instruction": "a sustained tail fading gradually"
         }
       ]
     },
@@ -454,9 +454,9 @@
           "instruction": "wooden"
         },
         {
-          "name": "Splintering Wood",
-          "description": "Fibers tearing apart.",
-          "instruction": "splintering cracking wood"
+          "name": "Woody Resonance",
+          "description": "A pronounced woody knock colors the sound.",
+          "instruction": "strong woody resonance"
         }
       ]
     },
@@ -579,9 +579,9 @@
       ],
       "grades": [
         {
-          "name": "Damp",
-          "description": "Moisture at the edges.",
-          "instruction": "damp"
+          "name": "Light Patter",
+          "description": "Fine drops make a soft pattering texture.",
+          "instruction": "soft patter"
         },
         {
           "name": "Wet",
@@ -616,9 +616,9 @@
           "instruction": "synthetic"
         },
         {
-          "name": "Digital Glitch",
-          "description": "Aggressively artificial.",
-          "instruction": "harsh digital glitch"
+          "name": "Electronic Tone",
+          "description": "A pronounced electronic tone colors the source.",
+          "instruction": "pronounced electronic timbre"
         }
       ]
     },
@@ -940,9 +940,9 @@
           "instruction": "tight room acoustics"
         },
         {
-          "name": "Dead Booth",
-          "description": "No air at all.",
-          "instruction": "cramped booth, dead air"
+          "name": "Close Walls",
+          "description": "Early reflections make the walls sound close.",
+          "instruction": "short, closely spaced room reflections"
         }
       ]
     },
@@ -994,9 +994,9 @@
           "instruction": "outdoors, natural ambience"
         },
         {
-          "name": "Wilderness",
-          "description": "Vast, unpeopled space.",
-          "instruction": "vast open wilderness"
+          "name": "Open Space",
+          "description": "The sound carries through open air.",
+          "instruction": "open-air acoustics with little reflected sound"
         }
       ]
     },

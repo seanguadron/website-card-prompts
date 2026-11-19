@@ -56,9 +56,9 @@ const PANEL_GUIDANCE: Record<PictureSection, FieldGuidance> = {
   },
   canvas: {
     title: "Canvas help",
-    body: "Choose the medium the image pretends to be.",
+    body: "Choose how the image should look made: a photograph, a drawing, a painting, or another medium.",
     points: [
-      "Mediums fight each other; two at most.",
+      "For mixed media, name the job each medium does, such as ink outlines over watercolor.",
       "Extreme grades make the medium the subject.",
     ],
   },
@@ -67,7 +67,7 @@ const PANEL_GUIDANCE: Record<PictureSection, FieldGuidance> = {
     body: "Set the palette and its attitude.",
     points: [
       "Muted and neon pull opposite directions; pick a side.",
-      "Tone reads strongest in backgrounds and skies.",
+      "Name where an accent color belongs if the placement matters.",
     ],
   },
   universe: {
@@ -75,14 +75,14 @@ const PANEL_GUIDANCE: Record<PictureSection, FieldGuidance> = {
     body: "Place the subject in a world, era, or setting.",
     points: [
       "The world card carries weather, place, and period.",
-      "Leave it empty for a clean studio-like backdrop.",
+      "For a plain studio backdrop, describe its surface or color in your subject line.",
     ],
   },
   references: {
     title: "References help",
     body: "Channel artists, movements, and aesthetics.",
     points: [
-      "Stack up to four; order does not matter, weight does.",
+      "These cards add written style cues. Attach reference images in your image tool.",
       "References mix with Canvas: 'ukiyo-e watercolor' is a real look.",
     ],
   },
@@ -331,13 +331,11 @@ export function PictureFlowPanels({
                 Midjourney tail at the end.
               </span>
             </p>
-            {/* Same rule as the CRAFT guide: the framework is not ours, so
-                it is credited where it is taught. The name wraps whole. */}
             <p className="craft-credit">
-              Built from the prompting guidance in{" "}
+              For advice on describing a scene, see{" "}
               <a
                 className="craft-credit-name"
-                href="https://docs.midjourney.com"
+                href="https://docs.midjourney.com/hc/en-us/articles/32023408776205-Prompt-Basics"
                 target="_blank"
                 rel="noreferrer noopener"
               >
@@ -418,7 +416,7 @@ export function PictureFlowPanels({
             <strong>Midjourney tail</strong>
             <small>
               Append --ar, --stylize, --chaos, --weird, and --no to the
-              prompt. Off keeps the prompt model-agnostic.
+              prompt. Switch off for Adobe Firefly and other plain-text prompts.
             </small>
           </span>
         </label>
@@ -495,7 +493,7 @@ export function PictureFlowPanels({
           <label className="field picture-deck-negative">
             <span>
               <strong>Exclude</strong>
-              <small>--no</small>
+              <small>--no · List individual things to leave out.</small>
             </span>
             <input
               type="text"

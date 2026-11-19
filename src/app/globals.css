@@ -6940,12 +6940,12 @@ button.role-loadout-slot {
     animation: deal-from-pile 400ms ease-in-out var(--deal-delay) both;
   }
 }
-.deck-board[data-deck="craft"] { --card-back: url("/card-backs/craft-1.svg"); }
-.deck-board[data-deck="craft"] :is(.lineage-card, .role-perk-card):nth-child(3n + 2) { --card-back: url("/card-backs/craft-2.svg"); }
-.deck-board[data-deck="craft"] :is(.board-socket-card, .role-slot-card, .lineage-card:nth-child(3n), .role-perk-card:nth-child(3n)) { --card-back: url("/card-backs/craft-3.svg"); }
-.deck-board[data-deck="picture"] { --card-back: url("/card-backs/picture-1.svg"); }
-.deck-board[data-deck="picture"] :is(.lineage-card, .role-perk-card):nth-child(3n + 2) { --card-back: url("/card-backs/picture-2.svg"); }
-.deck-board[data-deck="picture"] :is(.board-socket-card, .role-slot-card, .lineage-card:nth-child(3n), .role-perk-card:nth-child(3n)) { --card-back: url("/card-backs/picture-3.svg"); }
-.deck-board[data-deck="sonic"] { --card-back: url("/card-backs/sonic-1.svg"); }
-.deck-board[data-deck="sonic"] :is(.lineage-card, .role-perk-card):nth-child(3n + 2) { --card-back: url("/card-backs/sonic-2.svg"); }
-.deck-board[data-deck="sonic"] :is(.board-socket-card, .role-slot-card, .lineage-card:nth-child(3n), .role-perk-card:nth-child(3n)) { --card-back: url("/card-backs/sonic-3.svg"); }
+.deck-board[data-deck="craft"] { --card-back: url("/card-backs/craft-1.webp"); }
+.deck-board[data-deck="craft"] :is(.lineage-card-grid, .role-card-grid) :is(.lineage-card, .role-perk-card):nth-child(3n + 2) { --card-back: url("/card-backs/craft-2.webp"); }
+.deck-board[data-deck="craft"] :is(.lineage-card-grid, .role-card-grid) :is(.lineage-card, .role-perk-card):nth-child(3n) { --card-back: url("/card-backs/craft-3.webp"); }
+.deck-board[data-deck="picture"] { --card-back: url("/card-backs/picture-2.webp"); }
+.deck-board[data-deck="picture"] :is(.lineage-card-grid, .role-card-grid) :is(.lineage-card, .role-perk-card):nth-child(3n + 2) { --card-back: url("/card-backs/picture-1.webp"); }
+.deck-board[data-deck="picture"] :is(.lineage-card-grid, .role-card-grid) :is(.lineage-card, .role-perk-card):nth-child(3n) { --card-back: url("/card-backs/picture-3.webp"); }
+.deck-board[data-deck="sonic"] { --card-back: url("/card-backs/sonic-3.webp"); }
+.deck-board[data-deck="sonic"] :is(.lineage-card-grid, .role-card-grid) :is(.lineage-card, .role-perk-card):nth-child(3n + 2) { --card-back: url("/card-backs/sonic-2.webp"); }
+.deck-board[data-deck="sonic"] :is(.lineage-card-grid, .role-card-grid) :is(.lineage-card, .role-perk-card):nth-child(3n) { --card-back: url("/card-backs/sonic-1.webp"); }
