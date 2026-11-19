@@ -26,7 +26,7 @@ live in the sibling **Digi Editors** project
 
 | | Deck | What it does |
 |---|---|---|
-| 01 | **CRAFT Deck** | Turns a rough request into a structured language-model prompt. Equip role cards and tactic cards onto a C.R.A.F.T. brief — Context, Role, Action, Format, Target audience. 35 roles, 32 modifier cards at four intensities each, 25 ready-made archetypes. |
+| 01 | **CRAFT Deck** | Turns a rough request into a structured language-model prompt. Equip role cards and tactic cards onto a C.R.A.F.T. brief — Context, Role, Action, Format, Target audience. 35 roles, 37 tactic and modifier lineages at four grades each, 25 ready-made archetypes. |
 | 02 | **PICTURE Deck** | The same idea for image models: P.I.C.T.U.R.E. — Protagonist, Illumination, Canvas, Tone, Universe, References, Execution. 100 cards at three intensities, 18 archetypes, and an optional Midjourney parameter tail. |
 | 03 | **SONIC Deck** | The same idea for sound-effect models: S.O.N.I.C. — Source, Onset, Nature, Intensity, Context. 38 descriptor cards at three emphasis grades, 12 archetypes, one sound per prompt with a layer rack for soundscapes, written in Adobe Firefly's vocabulary. |
 

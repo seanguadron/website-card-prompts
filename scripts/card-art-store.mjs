@@ -260,13 +260,10 @@ export function createCardArtStore({
     }
   }
 
-  function parseVariant(baseName, file) {
-    // <base>-<letter>[_cropped].<ext>
-    const pattern = new RegExp(
-      `^${baseName.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}-([a-z])(${CROP_SUFFIX})?\\.([a-z0-9]+)$`,
-      "i",
-    );
-    const match = pattern.exec(file);
+  // The directory is keyed by the stable catalog ID. The file's display
+  // name and sequence number may belong to an earlier catalog edition.
+  function parseVariant(file) {
+    const match = /^[A-Za-z0-9-]+-\d{3,}-[A-Za-z0-9-]+-([a-z])(_cropped)?\.(?:png|jpg|webp)$/i.exec(file);
     if (!match) {
       return null;
     }
@@ -280,10 +277,9 @@ export function createCardArtStore({
 
   async function readVariants(themeId, entry) {
     const dir = variantDir(themeId, entry);
-    const baseName = variantBaseName(entry);
     const files = await listVariantFiles(dir);
     return files
-      .map((file) => parseVariant(baseName, file))
+      .map(parseVariant)
       .filter(Boolean)
       .sort((a, b) => a.id.localeCompare(b.id));
   }
@@ -479,7 +475,7 @@ export function createCardArtStore({
 
     const { bytes, extension } = decodeDataUrl(dataUrl);
     const dir = variantDir(themeId, entry);
-    const file = `${variantBaseName(entry)}-${source.letter}${CROP_SUFFIX}.${extension}`;
+    const file = source.file.replace(/\.[^.]+$/, `${CROP_SUFFIX}.${extension}`);
 
     await mkdir(dir, { recursive: true });
     await writeFile(assertInside(path.join(dir, file), variantRoot, "crop file"), bytes);

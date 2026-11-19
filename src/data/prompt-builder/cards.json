@@ -1062,6 +1062,162 @@
         "Say the uncomfortable part at the right volume.",
         "Keep the stance consistent from open to close."
       ]
+    },
+    {
+      "id": "action-record",
+      "code": "LOG",
+      "section": "action",
+      "driver": "challenge",
+      "grades": [
+        {
+          "name": "Capture commitments",
+          "description": "Keep agreed actions and open questions separate.",
+          "instruction": "Extract decisions, commitments and open questions. Record an owner or date only when the notes supply one."
+        },
+        {
+          "name": "Meeting handoff",
+          "description": "Lead with the instruction the next reader needs.",
+          "instruction": "Lead with the next action or hold. Give its owner, due date and source line where available. Mark an unassigned owner or date explicitly. Keep observations separate from suggested causes."
+        },
+        {
+          "name": "Reconcile the minutes",
+          "description": "Show which instruction is current after a correction.",
+          "instruction": "Lead with the next action or hold. List commitments, their owners, due dates and source lines where available. Mark unassigned fields explicitly. Identify which earlier decision a correction supersedes. Flag unresolved conflicts and distinguish observations from hypotheses."
+        },
+        {
+          "name": "Trace the record",
+          "description": "Show the supporting note for every consequential field.",
+          "instruction": "Trace each decision, owner, deadline and dependency to its source passage. Preserve unresolved alternatives and unassigned fields. Lead with the instruction currently in force."
+        }
+      ],
+      "goals": [
+        "Trace each decision to the meeting record."
+      ]
+    },
+    {
+      "id": "action-matched-compare",
+      "code": "MATCH",
+      "section": "action",
+      "driver": "challenge",
+      "grades": [
+        {
+          "name": "Check the unit",
+          "description": "Identify what was counted in each source.",
+          "instruction": "Answer the bounded question from the supplied evidence. Seek outside sources only if requested. Lead with what the evidence establishes and distinguish observation from inference. Identify the unit counted in each source before comparing values."
+        },
+        {
+          "name": "Match the groups",
+          "description": "Check whether the groups and periods line up.",
+          "instruction": "Answer the bounded question from the supplied evidence. Seek outside sources only if requested. Lead with what the evidence establishes and distinguish observation from inference. Compare the source populations, periods and units. Identify differences that change what the comparison can establish."
+        },
+        {
+          "name": "Compare like for like",
+          "description": "Name the missing figures for a fair comparison.",
+          "instruction": "Answer the bounded question from the supplied evidence. Seek outside sources only if requested. Lead with what the evidence establishes and distinguish observation from inference. Check periods, populations, units and denominators. Calculate rates only from matched counts. Name the missing figures needed to answer the question and distinguish association from cause."
+        },
+        {
+          "name": "Test the comparison",
+          "description": "State which conclusion survives each plausible comparison.",
+          "instruction": "Answer the bounded question from the supplied evidence. Seek outside sources only if requested. Lead with what the evidence establishes and distinguish observation from inference. Test the conclusion on comparable groups and periods with consistent units and denominators. Show which missing measurements would distinguish competing explanations. State the limit of any causal claim."
+        }
+      ],
+      "goals": [
+        "Compare evidence on a common basis.",
+        "Name the missing measurement that could change the answer."
+      ]
+    },
+    {
+      "id": "action-revise",
+      "code": "REVISE",
+      "section": "action",
+      "driver": "challenge",
+      "grades": [
+        {
+          "name": "Local revision",
+          "description": "Revise the requested passage and check its meaning.",
+          "instruction": "Revise the requested passage. Preserve its facts and deliberate expressions. Return the replacement copy."
+        },
+        {
+          "name": "Revision pass",
+          "description": "Check promises, conditions and deadlines against the original.",
+          "instruction": "Revise for the intended reader. Before returning the clean copy, check names, amounts, deadlines, conditions and commitments against the source. Preserve deliberate voice cues."
+        },
+        {
+          "name": "Structural revision",
+          "description": "Reorder the draft while keeping the original commitments.",
+          "instruction": "Reorder the draft for its audience. Check each factual claim, commitment, exception and voice cue against the original. Put the revised copy first."
+        },
+        {
+          "name": "Constraint review",
+          "description": "Check consequential wording throughout the revision.",
+          "instruction": "Revise the draft, then compare every consequential change with the source. Restore any lost condition, deadline, qualification or deliberate voice cue. Return the revised copy."
+        }
+      ],
+      "goals": [
+        "Preserve facts, commitments and deliberate voice."
+      ]
+    },
+    {
+      "id": "action-conditional-recommend",
+      "code": "FLIP",
+      "section": "action",
+      "driver": "autonomy",
+      "grades": [
+        {
+          "name": "Conditional choice",
+          "description": "Choose among the options that meet the requirements.",
+          "instruction": "Apply mandatory requirements first. Recommend an eligible option and name a condition that could change the choice."
+        },
+        {
+          "name": "Recommend with a condition",
+          "description": "Use the reader’s stated priorities to break a tie.",
+          "instruction": "Separate requirements from preferences. Compare feasible options on the same basis. Recommend one and give the change that would reverse the decision."
+        },
+        {
+          "name": "Decision threshold",
+          "description": "Distinguish a tie from a switch in the recommendation.",
+          "instruction": "Apply mandatory requirements first, then the reader’s stated priorities. Compare like totals. Give the smallest material change that would reverse the recommendation. Where quantities permit, distinguish the tie point from an outright win."
+        },
+        {
+          "name": "Test the reversal",
+          "description": "Check whether a change in a key assumption alters the winner.",
+          "instruction": "Recommend an eligible option under the stated priorities. Test the strongest alternative against a changed constraint or cost. Quantify its tie and reversal thresholds when the figures permit. State what confirmation is needed before switching."
+        }
+      ],
+      "goals": [
+        "Identify what would change the choice."
+      ]
+    },
+    {
+      "id": "format-change-record",
+      "code": "EDIT",
+      "section": "format",
+      "driver": "outputDetail",
+      "grades": [
+        {
+          "name": "Change record",
+          "description": "Add one short note about a consequential edit.",
+          "instruction": "After the clean draft, add one separate edit note identifying the consequential change."
+        },
+        {
+          "name": "Change record · reason",
+          "description": "Explain the edit that most affected the reader.",
+          "instruction": "After the clean draft, add one short edit note naming the most consequential edit and why it helps the reader."
+        },
+        {
+          "name": "Change record · example",
+          "description": "Show the before and after for one consequential change.",
+          "instruction": "After the clean draft, quote the original and revised wording for one consequential edit and explain its effect."
+        },
+        {
+          "name": "Change record · review",
+          "description": "Identify the consequence a reviewer should weigh.",
+          "instruction": "After the clean draft, give a separate review note for the most consequential change. Show the before and after, its effect on meaning or emphasis, and what the editor should review."
+        }
+      ],
+      "goals": [
+        "Keep editorial commentary separate from sendable copy."
+      ]
     }
   ]
 }

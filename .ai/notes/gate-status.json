@@ -6,11 +6,11 @@
   "owed": [
     {
       "gate": "integration",
-      "reason": "12 uncommitted file(s) touch its surface"
+      "reason": "11 uncommitted file(s) touch its surface"
     },
     {
-      "gate": "design",
-      "reason": "12 uncommitted file(s) touch its surface"
+      "gate": "security",
+      "reason": "5 uncommitted file(s) touch its surface"
     }
   ],
   "notes": "Written by scripts/gate-sweep.mjs (npm run gate:sweep) — deterministic standards + security gates + the gates-owed detector."

@@ -9,7 +9,7 @@ function clone(value) {
 test("the current prompt catalog is valid", async () => {
   const catalog = await loadCatalog();
   assert.equal(catalog.roles.roles.length, 35);
-  assert.equal(catalog.cards.cards.length, 32);
+  assert.equal(catalog.cards.cards.length, 37);
   assert.equal(catalog.archetypes.archetypes.length, 25);
   assert.ok(
     catalog.cards.cards.every(

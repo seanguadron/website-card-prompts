@@ -188,8 +188,8 @@ test("every entry the catalog owes resolves to a unique webp", async () => {
     await loadArtTheme("sci-fi"),
   );
 
-  assert.equal(entries.length, 226);
-  assert.equal(new Set(entries.map((entry) => entry.target)).size, 226);
+  assert.equal(entries.length, 251);
+  assert.equal(new Set(entries.map((entry) => entry.target)).size, 251);
   for (const entry of entries) {
     assert.equal(entry.target, artPathFor("sci-fi", entry.key));
     assert.ok(entry.target.endsWith(".webp"));

@@ -27,7 +27,7 @@ Per image:
    `public/`, flip `status` in this pack's JSON, and run
    `npm run data:generate`.
 
-Progress: 226/226 generated - 98 core images first, then 128 per-grade variants.
+Progress: 226/251 generated - 103 core images first, then 148 per-grade variants.
 
 ## Shared art direction
 
@@ -869,11 +869,63 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A signal flare hovering at a gap in the case-board, its light outlining the exact shape of the missing piece rather than filling it in.
 ```
 
+#### 059. LOG lineage
+
+- File name: `SUP-059-LOG-lineage.png`
+- Target: `public/card-art/superhero/cards/action-record/lineage.webp`
+- Owner: Card `action-record`
+- Status: planned
+
+```
+Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash-page illustration: heavy confident ink outlines, dynamic foreshortened staging, halftone-dot shading over punchy four-color flats, the way a landmark issue paints its cover moment. Hot crimson key light rakes the subject from one side, a hard electric-yellow rim light separates it from a deep indigo night-city darkness, and speedline energy and rooftop haze fall away behind. One strong centered focal shape, isolated, uncluttered edges, nothing in the background competing with it, and it still reads at thumbnail size. Square composition with generous breathing room. The art is full-bleed and fills the entire square to every edge, the scene cut off by the picture edges on all four sides: no border, no margin, no matting, no panel gutter, no drawn edge line, no vignette box, no rounded corners. Artwork only: no text, no letters, no numbers, no logos, no readable symbols, no UI labels, no card frame, no speech bubbles, no caption boxes, no sound-effect lettering.
+
+A ledger with a dated correction slip.
+```
+
+#### 060. MATCH lineage
+
+- File name: `SUP-060-MATCH-lineage.png`
+- Target: `public/card-art/superhero/cards/action-matched-compare/lineage.webp`
+- Owner: Card `action-matched-compare`
+- Status: planned
+
+```
+Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash-page illustration: heavy confident ink outlines, dynamic foreshortened staging, halftone-dot shading over punchy four-color flats, the way a landmark issue paints its cover moment. Hot crimson key light rakes the subject from one side, a hard electric-yellow rim light separates it from a deep indigo night-city darkness, and speedline energy and rooftop haze fall away behind. One strong centered focal shape, isolated, uncluttered edges, nothing in the background competing with it, and it still reads at thumbnail size. Square composition with generous breathing room. The art is full-bleed and fills the entire square to every edge, the scene cut off by the picture edges on all four sides: no border, no margin, no matting, no panel gutter, no drawn edge line, no vignette box, no rounded corners. Artwork only: no text, no letters, no numbers, no logos, no readable symbols, no UI labels, no card frame, no speech bubbles, no caption boxes, no sound-effect lettering.
+
+Two graduated measures aligned on one baseline.
+```
+
+#### 061. REVISE lineage
+
+- File name: `SUP-061-REVISE-lineage.png`
+- Target: `public/card-art/superhero/cards/action-revise/lineage.webp`
+- Owner: Card `action-revise`
+- Status: planned
+
+```
+Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash-page illustration: heavy confident ink outlines, dynamic foreshortened staging, halftone-dot shading over punchy four-color flats, the way a landmark issue paints its cover moment. Hot crimson key light rakes the subject from one side, a hard electric-yellow rim light separates it from a deep indigo night-city darkness, and speedline energy and rooftop haze fall away behind. One strong centered focal shape, isolated, uncluttered edges, nothing in the background competing with it, and it still reads at thumbnail size. Square composition with generous breathing room. The art is full-bleed and fills the entire square to every edge, the scene cut off by the picture edges on all four sides: no border, no margin, no matting, no panel gutter, no drawn edge line, no vignette box, no rounded corners. Artwork only: no text, no letters, no numbers, no logos, no readable symbols, no UI labels, no card frame, no speech bubbles, no caption boxes, no sound-effect lettering.
+
+A marked proof laid beside its source.
+```
+
+#### 062. FLIP lineage
+
+- File name: `SUP-062-FLIP-lineage.png`
+- Target: `public/card-art/superhero/cards/action-conditional-recommend/lineage.webp`
+- Owner: Card `action-conditional-recommend`
+- Status: planned
+
+```
+Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash-page illustration: heavy confident ink outlines, dynamic foreshortened staging, halftone-dot shading over punchy four-color flats, the way a landmark issue paints its cover moment. Hot crimson key light rakes the subject from one side, a hard electric-yellow rim light separates it from a deep indigo night-city darkness, and speedline energy and rooftop haze fall away behind. One strong centered focal shape, isolated, uncluttered edges, nothing in the background competing with it, and it still reads at thumbnail size. Square composition with generous breathing room. The art is full-bleed and fills the entire square to every edge, the scene cut off by the picture edges on all four sides: no border, no margin, no matting, no panel gutter, no drawn edge line, no vignette box, no rounded corners. Artwork only: no text, no letters, no numbers, no logos, no readable symbols, no UI labels, no card frame, no speech bubbles, no caption boxes, no sound-effect lettering.
+
+A balance with a sliding counterweight.
+```
+
 ### Cards - Format
 
-#### 059. INF lineage
+#### 063. INF lineage
 
-- File name: `SUP-059-INF-lineage.png`
+- File name: `SUP-063-INF-lineage.png`
 - Target: `public/card-art/superhero/cards/format-info-card/lineage.webp`
 - Owner: Card `format-info-card`
 - Status: generated
@@ -885,9 +937,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A single clean steel slab standing alone in the dark, its face flat and plainly lit, no ornament and nothing stacked around it.
 ```
 
-#### 060. KEY lineage
+#### 064. KEY lineage
 
-- File name: `SUP-060-KEY-lineage.png`
+- File name: `SUP-064-KEY-lineage.png`
 - Target: `public/card-art/superhero/cards/format-key-points/lineage.webp`
 - Owner: Card `format-key-points`
 - Status: generated
@@ -899,9 +951,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A rack of distinct batons and throwing tools standing in a row, each one separate and evenly lit, clear dark gaps holding them apart.
 ```
 
-#### 061. SUM lineage
+#### 065. SUM lineage
 
-- File name: `SUP-061-SUM-lineage.png`
+- File name: `SUP-065-SUM-lineage.png`
 - Target: `public/card-art/superhero/cards/format-summary/lineage.webp`
 - Owner: Card `format-summary`
 - Status: generated
@@ -913,9 +965,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A lab flask with the glowing concentrate settled at the very top and the supporting sediment layered below it in shadow.
 ```
 
-#### 062. SEC lineage
+#### 066. SEC lineage
 
-- File name: `SUP-062-SEC-lineage.png`
+- File name: `SUP-066-SEC-lineage.png`
 - Target: `public/card-art/superhero/cards/format-sections/lineage.webp`
 - Owner: Card `format-sections`
 - Status: generated
@@ -927,9 +979,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A cutaway skyscraper of stacked floors, each floor a distinct sealed volume with its own internal glow, the divisions between them crisp.
 ```
 
-#### 063. CIT lineage
+#### 067. CIT lineage
 
-- File name: `SUP-063-CIT-lineage.png`
+- File name: `SUP-067-CIT-lineage.png`
 - Target: `public/card-art/superhero/cards/format-evidence/lineage.webp`
 - Owner: Card `format-evidence`
 - Status: generated
@@ -941,9 +993,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A floating claim slab held by taut cables to sealed evidence vaults below, each cable lit along its length, one unanchored slab drifting loose.
 ```
 
-#### 064. TAB lineage
+#### 068. TAB lineage
 
-- File name: `SUP-064-TAB-lineage.png`
+- File name: `SUP-068-TAB-lineage.png`
 - Target: `public/card-art/superhero/cards/format-comparison/lineage.webp`
 - Owner: Card `format-comparison`
 - Status: generated
@@ -955,9 +1007,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 Several prototype devices mounted along shared measuring struts on a compact lab rig, the joints where they diverge flaring brighter, the rig ending well inside the picture.
 ```
 
-#### 065. NXT lineage
+#### 069. NXT lineage
 
-- File name: `SUP-065-NXT-lineage.png`
+- File name: `SUP-069-NXT-lineage.png`
 - Target: `public/card-art/superhero/cards/format-next/lineage.webp`
 - Owner: Card `format-next`
 - Status: generated
@@ -969,9 +1021,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A row of launch bays with ready-markers lit in sequence, the first primed and glowing hot, the later ones waiting cooler down the line.
 ```
 
-#### 066. LEN lineage
+#### 070. LEN lineage
 
-- File name: `SUP-066-LEN-lineage.png`
+- File name: `SUP-070-LEN-lineage.png`
 - Target: `public/card-art/superhero/cards/format-length/lineage.webp`
 - Owner: Card `format-length`
 - Status: generated
@@ -983,9 +1035,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A hydraulic caliper clamped around a bar of luminous alloy, compressing it to an exact marked width, the trimmed excess venting away as vapor.
 ```
 
-#### 067. TIER lineage
+#### 071. TIER lineage
 
-- File name: `SUP-067-TIER-lineage.png`
+- File name: `SUP-071-TIER-lineage.png`
 - Target: `public/card-art/superhero/cards/format-tiers/lineage.webp`
 - Owner: Card `format-tiers`
 - Status: generated
@@ -997,11 +1049,24 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A hangar podium of descending platforms, the top platform small and brilliantly lit, each lower level wider and dimmer with supporting depth.
 ```
 
+#### 072. EDIT lineage
+
+- File name: `SUP-072-EDIT-lineage.png`
+- Target: `public/card-art/superhero/cards/format-change-record/lineage.webp`
+- Owner: Card `format-change-record`
+- Status: planned
+
+```
+Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash-page illustration: heavy confident ink outlines, dynamic foreshortened staging, halftone-dot shading over punchy four-color flats, the way a landmark issue paints its cover moment. Hot crimson key light rakes the subject from one side, a hard electric-yellow rim light separates it from a deep indigo night-city darkness, and speedline energy and rooftop haze fall away behind. One strong centered focal shape, isolated, uncluttered edges, nothing in the background competing with it, and it still reads at thumbnail size. Square composition with generous breathing room. The art is full-bleed and fills the entire square to every edge, the scene cut off by the picture edges on all four sides: no border, no margin, no matting, no panel gutter, no drawn edge line, no vignette box, no rounded corners. Artwork only: no text, no letters, no numbers, no logos, no readable symbols, no UI labels, no card frame, no speech bubbles, no caption boxes, no sound-effect lettering.
+
+A margin note beside a clean proof.
+```
+
 ### Cards - Target
 
-#### 068. LVL lineage
+#### 073. LVL lineage
 
-- File name: `SUP-068-LVL-lineage.png`
+- File name: `SUP-073-LVL-lineage.png`
 - Target: `public/card-art/superhero/cards/target-language/lineage.webp`
 - Owner: Card `target-language`
 - Status: generated
@@ -1013,9 +1078,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A decoder tower stepping a dense scrambled transmission down through cleaner and simpler stages, the signal emerging clear at street level without losing its meaning.
 ```
 
-#### 069. VOC lineage
+#### 074. VOC lineage
 
-- File name: `SUP-069-VOC-lineage.png`
+- File name: `SUP-074-VOC-lineage.png`
 - Target: `public/card-art/superhero/cards/target-voice/lineage.webp`
 - Owner: Card `target-voice`
 - Status: generated
@@ -1027,9 +1092,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A voice modulator rig held in a field of register bands, the selected band ringing bright and steady across its whole length.
 ```
 
-#### 070. EX lineage
+#### 075. EX lineage
 
-- File name: `SUP-070-EX-lineage.png`
+- File name: `SUP-075-EX-lineage.png`
 - Target: `public/card-art/superhero/cards/target-examples/lineage.webp`
 - Owner: Card `target-examples`
 - Status: generated
@@ -1041,9 +1106,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A projector rig casting small vivid street-level scenes into the air beneath a large abstract looming shape, the miniatures sharp where the abstraction is vague.
 ```
 
-#### 071. DCN lineage
+#### 076. DCN lineage
 
-- File name: `SUP-071-DCN-lineage.png`
+- File name: `SUP-076-DCN-lineage.png`
 - Target: `public/card-art/superhero/cards/target-decisions/lineage.webp`
 - Owner: Card `target-decisions`
 - Status: generated
@@ -1055,9 +1120,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A control console of heavy switches, each one linked by a taut cable to the machinery it triggers further down the line.
 ```
 
-#### 072. STN lineage
+#### 077. STN lineage
 
-- File name: `SUP-072-STN-lineage.png`
+- File name: `SUP-077-STN-lineage.png`
 - Target: `public/card-art/superhero/cards/target-stance/lineage.webp`
 - Owner: Card `target-stance`
 - Status: generated
@@ -1071,9 +1136,9 @@ A stance dial set between a hot crimson pole and a cold blue pole, the needle lo
 
 ### Archetypes
 
-#### 073. Executive summary
+#### 078. Executive summary
 
-- File name: `SUP-073-Executive-summary.png`
+- File name: `SUP-078-Executive-summary.png`
 - Target: `public/card-art/superhero/archetypes/executive-summary.webp`
 - Owner: Archetype `executive-summary`
 - Status: generated
@@ -1085,9 +1150,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A command table where a mountain of case files has been distilled to one decision slab hovering at eye level under a spotlight, the source stack receding into darkness behind it.
 ```
 
-#### 074. Creative concept
+#### 079. Creative concept
 
-- File name: `SUP-074-Creative-concept.png`
+- File name: `SUP-079-Creative-concept.png`
 - Target: `public/card-art/superhero/archetypes/creative-concept.webp`
 - Owner: Archetype `creative-concept`
 - Status: generated
@@ -1099,9 +1164,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A concept chamber with a luminous idea suspended in the shaping field, growing structure and a hard bright hook at its core while rough offcuts drift away.
 ```
 
-#### 075. Note taker
+#### 080. Meeting record
 
-- File name: `SUP-075-Note-taker.png`
+- File name: `SUP-080-Meeting-record.png`
 - Target: `public/card-art/superhero/archetypes/note-taker.webp`
 - Owner: Archetype `note-taker`
 - Status: generated
@@ -1113,9 +1178,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A capture rig turning a chaotic incoming stream of fragments into neat ordered plates that stack themselves into a clean archive rack.
 ```
 
-#### 076. Message & email
+#### 081. Message & email
 
-- File name: `SUP-076-Message-email.png`
+- File name: `SUP-081-Message-email.png`
 - Target: `public/card-art/superhero/archetypes/message-email.webp`
 - Owner: Archetype `message-email`
 - Status: generated
@@ -1127,9 +1192,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A comms relay composing one sealed transmission capsule, its tone-tuning ring glowing at the chosen register, ready to launch into the dark channel.
 ```
 
-#### 077. Prompt improver
+#### 082. Prompt improver
 
-- File name: `SUP-077-Prompt-improver.png`
+- File name: `SUP-082-Prompt-improver.png`
 - Target: `public/card-art/superhero/archetypes/prompt-improver.webp`
 - Owner: Archetype `prompt-improver`
 - Status: generated
@@ -1141,9 +1206,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A workbench where an old directive core has been stripped down and rebuilt sharper, the discarded ambiguous parts laid out dark to one side.
 ```
 
-#### 078. Learning guide
+#### 083. Learning guide
 
-- File name: `SUP-078-Learning-guide.png`
+- File name: `SUP-083-Learning-guide.png`
 - Target: `public/card-art/superhero/archetypes/learning-guide.webp`
 - Owner: Archetype `learning-guide`
 - Status: generated
@@ -1155,9 +1220,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A training hologram with a central idea at its heart and a guided path of illuminated waypoints circling it, worked examples orbiting close.
 ```
 
-#### 079. App build handoff
+#### 084. App build handoff
 
-- File name: `SUP-079-App-build-handoff.png`
+- File name: `SUP-084-App-build-handoff.png`
 - Target: `public/card-art/superhero/archetypes/app-build-handoff.webp`
 - Owner: Archetype `app-build-handoff`
 - Status: generated
@@ -1169,9 +1234,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A sealed mission capsule holding a complete self-contained plan, every layer visible through its casing, locked into a robot sidekick's chest dock and ready to run without a handler.
 ```
 
-#### 080. Agent skill
+#### 085. Agent skill
 
-- File name: `SUP-080-Agent-skill.png`
+- File name: `SUP-085-Agent-skill.png`
 - Target: `public/card-art/superhero/archetypes/agent-skill.webp`
 - Owner: Archetype `agent-skill`
 - Status: generated
@@ -1183,9 +1248,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A utility-belt cartridge snapped onto a bandolier rail, its trigger face lit, procedure grooves and guardrail clamps visible along its casing.
 ```
 
-#### 081. Agent gate
+#### 086. Agent gate
 
-- File name: `SUP-081-Agent-gate.png`
+- File name: `SUP-086-Agent-gate.png`
 - Target: `public/card-art/superhero/archetypes/agent-gate.webp`
 - Owner: Archetype `agent-gate`
 - Status: generated
@@ -1197,9 +1262,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A judgment gate arch scanning a device passing beneath it, a hard scanning plane sweeping the object and a verdict light holding at the top of the arch.
 ```
 
-#### 082. Social post
+#### 087. Social post
 
-- File name: `SUP-082-Social-post.png`
+- File name: `SUP-087-Social-post.png`
 - Target: `public/card-art/superhero/archetypes/social-post.webp`
 - Owner: Archetype `social-post`
 - Status: generated
@@ -1211,9 +1276,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A rooftop signal rig fitted with several interchangeable beacon heads, one selected and raised, its shaped burst already rolling out over the night skyline.
 ```
 
-#### 083. Quick explanation
+#### 088. Quick explanation
 
-- File name: `SUP-083-Quick-explanation.png`
+- File name: `SUP-088-Quick-explanation.png`
 - Target: `public/card-art/superhero/archetypes/quick-explanation.webp`
 - Owner: Archetype `quick-explanation`
 - Status: generated
@@ -1225,9 +1290,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A compact signal watch held up alone, one clear steady beam, nothing around it and nothing between the viewer and the point.
 ```
 
-#### 084. Research brief
+#### 089. Research brief
 
-- File name: `SUP-084-Research-brief.png`
+- File name: `SUP-089-Research-brief.png`
 - Target: `public/card-art/superhero/archetypes/research-brief.webp`
 - Owner: Archetype `research-brief`
 - Status: generated
@@ -1239,9 +1304,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A balanced dossier suspended between two evidence pillars, confidence bands rendered as visible width around each finding, the uncertain ones deliberately wider.
 ```
 
-#### 085. Decision advisor
+#### 090. Decision advisor
 
-- File name: `SUP-085-Decision-advisor.png`
+- File name: `SUP-090-Decision-advisor.png`
 - Target: `public/card-art/superhero/archetypes/decision-advisor.webp`
 - Owner: Archetype `decision-advisor`
 - Status: generated
@@ -1253,9 +1318,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A war-room weighing console with several mission options mounted on measured arms, one arm settling low and lighting hot as the recommendation commits.
 ```
 
-#### 086. Data analysis
+#### 091. Data analysis
 
-- File name: `SUP-086-Data-analysis.png`
+- File name: `SUP-091-Data-analysis.png`
 - Target: `public/card-art/superhero/archetypes/data-analysis.webp`
 - Owner: Archetype `data-analysis`
 - Status: generated
@@ -1267,9 +1332,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A black-box flight recorder cracked open, its contents fanning out into layered insight strata, one segment isolated and brought forward glowing.
 ```
 
-#### 087. Risk premortem
+#### 092. Risk premortem
 
-- File name: `SUP-087-Risk-premortem.png`
+- File name: `SUP-092-Risk-premortem.png`
 - Target: `public/card-art/superhero/archetypes/risk-premortem.webp`
 - Owner: Archetype `risk-premortem`
 - Status: generated
@@ -1281,9 +1346,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A collapsed-bridge diorama on the planning table being read in reverse, luminous failure lines running backward from the wreck to the small quiet bolt that started it.
 ```
 
-#### 088. Writing draft
+#### 093. Writing draft
 
-- File name: `SUP-088-Writing-draft.png`
+- File name: `SUP-093-Writing-draft.png`
 - Target: `public/card-art/superhero/archetypes/writing-draft.webp`
 - Owner: Archetype `writing-draft`
 - Status: generated
@@ -1295,9 +1360,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A story loom weaving a first continuous draft out of raw fiber, the fabric clean but still on the frame, edges deliberately unfinished.
 ```
 
-#### 089. Rewrite & polish
+#### 094. Revision pass
 
-- File name: `SUP-089-Rewrite-polish.png`
+- File name: `SUP-094-Revision-pass.png`
 - Target: `public/card-art/superhero/archetypes/rewrite-polish.webp`
 - Owner: Archetype `rewrite-polish`
 - Status: generated
@@ -1309,9 +1374,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A suit-finishing wheel refining an existing armor piece, dull surface lifting away under the buffer to reveal the same form underneath, sharper and brighter.
 ```
 
-#### 090. Critique & review
+#### 095. Critique & review
 
-- File name: `SUP-090-Critique-review.png`
+- File name: `SUP-095-Critique-review.png`
 - Target: `public/card-art/superhero/archetypes/critique-review.webp`
 - Owner: Archetype `critique-review`
 - Status: generated
@@ -1323,9 +1388,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 An inspection bay with a device held in restraints, prioritized flag-markers planted along it, the most serious one burning hottest.
 ```
 
-#### 091. Presentation outline
+#### 096. Presentation outline
 
-- File name: `SUP-091-Presentation-outline.png`
+- File name: `SUP-096-Presentation-outline.png`
 - Target: `public/card-art/superhero/archetypes/presentation-outline.webp`
 - Owner: Archetype `presentation-outline`
 - Status: generated
@@ -1337,9 +1402,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A run of floating briefing screens receding in sequence across the war room, each holding one clear shape, a bright throughline connecting them front to back.
 ```
 
-#### 092. Project plan
+#### 097. Project plan
 
-- File name: `SUP-092-Project-plan.png`
+- File name: `SUP-097-Project-plan.png`
 - Target: `public/card-art/superhero/archetypes/build-plan.webp`
 - Owner: Archetype `build-plan`
 - Status: generated
@@ -1351,9 +1416,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A headquarters tower rising in ordered construction stages with milestone beacons locked at each level, dependency cables drawn taut between them.
 ```
 
-#### 093. Spec / PRD
+#### 098. Spec / PRD
 
-- File name: `SUP-093-Spec-PRD.png`
+- File name: `SUP-098-Spec-PRD.png`
 - Target: `public/card-art/superhero/archetypes/spec-prd.webp`
 - Owner: Archetype `spec-prd`
 - Status: generated
@@ -1365,9 +1430,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A contract vault with requirement plates bolted around its core, each plate seated and sealed, tolerances etched as clean grooves in the armor plating.
 ```
 
-#### 094. Code implementation
+#### 099. Code implementation
 
-- File name: `SUP-094-Code-implementation.png`
+- File name: `SUP-099-Code-implementation.png`
 - Target: `public/card-art/superhero/archetypes/coding.webp`
 - Owner: Archetype `coding`
 - Status: generated
@@ -1379,9 +1444,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 An auto-forge in the hero's lab assembling a working gadget piece by piece, structure knitting into place under the arm, test probes already tapping the finished edge.
 ```
 
-#### 095. Debug & fix
+#### 100. Debug & fix
 
-- File name: `SUP-095-Debug-fix.png`
+- File name: `SUP-100-Debug-fix.png`
 - Target: `public/card-art/superhero/archetypes/technical-troubleshoot.webp`
 - Owner: Archetype `technical-troubleshoot`
 - Status: generated
@@ -1393,9 +1458,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A hangar bay with the team's jet opened up and one traced fault line glowing along its spine, a repair clamp moving in toward the exact break.
 ```
 
-#### 096. Explain code
+#### 101. Explain code
 
-- File name: `SUP-096-Explain-code.png`
+- File name: `SUP-101-Explain-code.png`
 - Target: `public/card-art/superhero/archetypes/explain-code.webp`
 - Owner: Archetype `explain-code`
 - Status: generated
@@ -1407,9 +1472,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A training-room projector stepping through a captured villain device one stage at a time, the active stage lit and turning while the rest of the path stays visible.
 ```
 
-#### 097. Extract to data
+#### 102. Extract to data
 
-- File name: `SUP-097-Extract-to-data.png`
+- File name: `SUP-102-Extract-to-data.png`
 - Target: `public/card-art/superhero/archetypes/extract-data.webp`
 - Owner: Archetype `extract-data`
 - Status: generated
@@ -1423,9 +1488,9 @@ An extractor drawing clean uniform structured shards out of raw unsorted wreckag
 
 ### Shared
 
-#### 098. Custom preset swatch
+#### 103. Custom preset swatch
 
-- File name: `SUP-098-Custom-preset-swatch.png`
+- File name: `SUP-103-Custom-preset-swatch.png`
 - Target: `public/card-art/superhero/shared/custom-preset.webp`
 - Owner: prompt-custom-archetypes.ts
 - Status: generated
@@ -1445,9 +1510,9 @@ without these. Generate a grade here to override its card face.
 
 ### Per-grade variants - Context
 
-#### 099. SCP 1. Situation Snapshot
+#### 104. SCP 1. Situation Snapshot
 
-- File name: `SUP-099-SCP-1-Situation-Snapshot.png`
+- File name: `SUP-104-SCP-1-Situation-Snapshot.png`
 - Target: `public/card-art/superhero/cards/context-scope/grade-01.webp`
 - Owner: Card `context-scope` grade `Situation Snapshot`
 - Status: generated
@@ -1458,9 +1523,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A searchlight holding a small tight pool around a single doorway, only the pavement immediately beneath it visible and everything else swallowed by night.
 ```
 
-#### 100. SCP 2. Working Brief
+#### 105. SCP 2. Working Brief
 
-- File name: `SUP-100-SCP-2-Working-Brief.png`
+- File name: `SUP-105-SCP-2-Working-Brief.png`
 - Target: `public/card-art/superhero/cards/context-scope/grade-02.webp`
 - Owner: Card `context-scope` grade `Working Brief`
 - Status: generated
@@ -1471,9 +1536,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A searchlight with its pool widened to take in the nearby block it may draw on, a clean marked boundary line where the light stops.
 ```
 
-#### 101. SCP 3. Decision Context
+#### 106. SCP 3. Decision Context
 
-- File name: `SUP-101-SCP-3-Decision-Context.png`
+- File name: `SUP-106-SCP-3-Decision-Context.png`
 - Target: `public/card-art/superhero/cards/context-scope/grade-03.webp`
 - Owner: Card `context-scope` grade `Decision Context`
 - Status: generated
@@ -1484,9 +1549,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A searchlight lighting a broad stretch of streets with bystander markers standing inside it and worn tire-paths crossing where things have already been tried.
 ```
 
-#### 102. SCP 4. Complete Operating Picture
+#### 107. SCP 4. Complete Operating Picture
 
-- File name: `SUP-102-SCP-4-Complete-Operating-Picture.png`
+- File name: `SUP-107-SCP-4-Complete-Operating-Picture.png`
 - Target: `public/card-art/superhero/cards/context-scope/grade-04.webp`
 - Owner: Card `context-scope` grade `Complete Operating Picture`
 - Status: generated
@@ -1497,9 +1562,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A searchlight bank fully powered, its beams thrown to the skyline so the whole district reads at once with nothing left guessed at in the dark.
 ```
 
-#### 103. SRC 1. Given As True
+#### 108. SRC 1. Given As True
 
-- File name: `SUP-103-SRC-1-Given-As-True.png`
+- File name: `SUP-108-SRC-1-Given-As-True.png`
 - Target: `public/card-art/superhero/cards/context-evidence/grade-01.webp`
 - Owner: Card `context-evidence` grade `Given As True`
 - Status: generated
@@ -1510,9 +1575,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 An evidence board with claims pinned and accepted as given, the connecting threads still spooled unused at the bottom rail.
 ```
 
-#### 104. SRC 2. Source Support
+#### 109. SRC 2. Source Support
 
-- File name: `SUP-104-SRC-2-Source-Support.png`
+- File name: `SUP-109-SRC-2-Source-Support.png`
 - Target: `public/card-art/superhero/cards/context-evidence/grade-02.webp`
 - Owner: Card `context-evidence` grade `Source Support`
 - Status: generated
@@ -1523,9 +1588,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 An evidence board with threads run from the load-bearing claims down to a few solid exhibits, the unsupported claims left pinned dark.
 ```
 
-#### 105. SRC 3. Corroborated Sources
+#### 110. SRC 3. Corroborated Sources
 
-- File name: `SUP-105-SRC-3-Corroborated-Sources.png`
+- File name: `SUP-110-SRC-3-Corroborated-Sources.png`
 - Target: `public/card-art/superhero/cards/context-evidence/grade-03.webp`
 - Owner: Card `context-evidence` grade `Corroborated Sources`
 - Status: generated
@@ -1536,9 +1601,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 An evidence board where each key claim is cross-braced by several converging threads arriving from different exhibits.
 ```
 
-#### 106. SRC 4. Audit Trail
+#### 111. SRC 4. Audit Trail
 
-- File name: `SUP-106-SRC-4-Audit-Trail.png`
+- File name: `SUP-111-SRC-4-Audit-Trail.png`
 - Target: `public/card-art/superhero/cards/context-evidence/grade-04.webp`
 - Owner: Card `context-evidence` grade `Audit Trail`
 - Status: generated
@@ -1549,9 +1614,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 An evidence board threaded end to end, conflicting threads held deliberately apart and lit against each other, confidence readable in every strand.
 ```
 
-#### 107. LIM 1. Basic Limits
+#### 112. LIM 1. Basic Limits
 
-- File name: `SUP-107-LIM-1-Basic-Limits.png`
+- File name: `SUP-112-LIM-1-Basic-Limits.png`
 - Target: `public/card-art/superhero/cards/context-constraints/grade-01.webp`
 - Owner: Card `context-constraints` grade `Basic Limits`
 - Status: generated
@@ -1562,9 +1627,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A pair of containment clamps resting lightly at the edges of an energy core, barely engaged, holding only the stated exclusions.
 ```
 
-#### 108. LIM 2. Operating Limits
+#### 113. LIM 2. Operating Limits
 
-- File name: `SUP-108-LIM-2-Operating-Limits.png`
+- File name: `SUP-113-LIM-2-Operating-Limits.png`
 - Target: `public/card-art/superhero/cards/context-constraints/grade-02.webp`
 - Owner: Card `context-constraints` grade `Operating Limits`
 - Status: generated
@@ -1575,9 +1640,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 Four containment clamps closed on an energy core, compressing it to a smaller practical footprint of time, gear, and budget.
 ```
 
-#### 109. LIM 3. Constraint Map
+#### 114. LIM 3. Constraint Map
 
-- File name: `SUP-109-LIM-3-Constraint-Map.png`
+- File name: `SUP-114-LIM-3-Constraint-Map.png`
 - Target: `public/card-art/superhero/cards/context-constraints/grade-03.webp`
 - Owner: Card `context-constraints` grade `Constraint Map`
 - Status: generated
@@ -1588,9 +1653,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 Hard steel clamps locked tight while softer preference-markers sit visibly separate and loose beside them, the difference obvious.
 ```
 
-#### 110. LIM 4. Boundary Conditions
+#### 115. LIM 4. Boundary Conditions
 
-- File name: `SUP-110-LIM-4-Boundary-Conditions.png`
+- File name: `SUP-115-LIM-4-Boundary-Conditions.png`
 - Target: `public/card-art/superhero/cards/context-constraints/grade-04.webp`
 - Owner: Card `context-constraints` grade `Boundary Conditions`
 - Status: generated
@@ -1601,9 +1666,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A full cage of containment clamps around a core with stress readouts glowing at every joint and exception latches sprung along the frame.
 ```
 
-#### 111. ASM 1. Working Assumptions
+#### 116. ASM 1. Working Assumptions
 
-- File name: `SUP-111-ASM-1-Working-Assumptions.png`
+- File name: `SUP-116-ASM-1-Working-Assumptions.png`
 - Target: `public/card-art/superhero/cards/context-assumptions/grade-01.webp`
 - Owner: Card `context-assumptions` grade `Working Assumptions`
 - Status: generated
@@ -1614,9 +1679,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A frame with a few translucent holographic girders plainly visible among the solid steel, simply shown rather than hidden.
 ```
 
-#### 112. ASM 2. Assumption Check
+#### 117. ASM 2. Assumption Check
 
-- File name: `SUP-112-ASM-2-Assumption-Check.png`
+- File name: `SUP-117-ASM-2-Assumption-Check.png`
 - Target: `public/card-art/superhero/cards/context-assumptions/grade-02.webp`
 - Owner: Card `context-assumptions` grade `Assumption Check`
 - Status: generated
@@ -1627,9 +1692,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A frame where the load-bearing holographic girders pulse with warning light, marking the ones that would drop the roof.
 ```
 
-#### 113. ASM 3. Assumption Register
+#### 118. ASM 3. Assumption Register
 
-- File name: `SUP-113-ASM-3-Assumption-Register.png`
+- File name: `SUP-118-ASM-3-Assumption-Register.png`
 - Target: `public/card-art/superhero/cards/context-assumptions/grade-03.webp`
 - Owner: Card `context-assumptions` grade `Assumption Register`
 - Status: generated
@@ -1640,9 +1705,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A frame where every holographic girder carries its own base-plate and a consequence line running out from it.
 ```
 
-#### 114. ASM 4. Uncertainty Model
+#### 119. ASM 4. Uncertainty Model
 
-- File name: `SUP-114-ASM-4-Uncertainty-Model.png`
+- File name: `SUP-119-ASM-4-Uncertainty-Model.png`
 - Target: `public/card-art/superhero/cards/context-assumptions/grade-04.webp`
 - Owner: Card `context-assumptions` grade `Uncertainty Model`
 - Status: generated
@@ -1653,9 +1718,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A frame of holographic girders ranked by size and brightness, tilt-lines projecting how far the structure moves if each one fails.
 ```
 
-#### 115. WIN 1. Done Means
+#### 120. WIN 1. Done Means
 
-- File name: `SUP-115-WIN-1-Done-Means.png`
+- File name: `SUP-120-WIN-1-Done-Means.png`
 - Target: `public/card-art/superhero/cards/context-success/grade-01.webp`
 - Owner: Card `context-success` grade `Done Means`
 - Status: generated
@@ -1666,9 +1731,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A simple range target with the needle resting quietly on its ring, one clear mark for what finished means.
 ```
 
-#### 116. WIN 2. Success Check
+#### 121. WIN 2. Success Check
 
-- File name: `SUP-116-WIN-2-Success-Check.png`
+- File name: `SUP-121-WIN-2-Success-Check.png`
 - Target: `public/card-art/superhero/cards/context-success/grade-02.webp`
 - Owner: Card `context-success` grade `Success Check`
 - Status: generated
@@ -1679,9 +1744,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A range gauge locked into the green with the pass threshold scored sharply on its face.
 ```
 
-#### 117. WIN 3. Success Criteria
+#### 122. WIN 3. Success Criteria
 
-- File name: `SUP-117-WIN-3-Success-Criteria.png`
+- File name: `SUP-122-WIN-3-Success-Criteria.png`
 - Target: `public/card-art/superhero/cards/context-success/grade-03.webp`
 - Owner: Card `context-success` grade `Success Criteria`
 - Status: generated
@@ -1692,9 +1757,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A bank of range gauges mounted together, pass zones lit green and failure zones marked hard in dark red.
 ```
 
-#### 118. WIN 4. Evaluation Framework
+#### 123. WIN 4. Evaluation Framework
 
-- File name: `SUP-118-WIN-4-Evaluation-Framework.png`
+- File name: `SUP-123-WIN-4-Evaluation-Framework.png`
 - Target: `public/card-art/superhero/cards/context-success/grade-04.webp`
 - Owner: Card `context-success` grade `Evaluation Framework`
 - Status: generated
@@ -1705,9 +1770,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A full wall of range gauges and graded measures, thresholds etched into each dial and the whole war-room board reading out at once.
 ```
 
-#### 119. OUT 1. No-Go List
+#### 124. OUT 1. No-Go List
 
-- File name: `SUP-119-OUT-1-No-Go-List.png`
+- File name: `SUP-124-OUT-1-No-Go-List.png`
 - Target: `public/card-art/superhero/cards/context-exclusions/grade-01.webp`
 - Owner: Card `context-exclusions` grade `No-Go List`
 - Status: generated
@@ -1718,9 +1783,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A checkpoint barricade shunting a few marked vehicles aside into a small dark holding lane while the rest of the traffic continues.
 ```
 
-#### 120. OUT 2. Scope Fence
+#### 125. OUT 2. Scope Fence
 
-- File name: `SUP-120-OUT-2-Scope-Fence.png`
+- File name: `SUP-125-OUT-2-Scope-Fence.png`
 - Target: `public/card-art/superhero/cards/context-exclusions/grade-02.webp`
 - Owner: Card `context-exclusions` grade `Scope Fence`
 - Status: generated
@@ -1731,9 +1796,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A checkpoint holding a clean lit line across the road, the traffic kept firmly on one side of it.
 ```
 
-#### 121. OUT 3. Anti-Goals
+#### 126. OUT 3. Anti-Goals
 
-- File name: `SUP-121-OUT-3-Anti-Goals.png`
+- File name: `SUP-126-OUT-3-Anti-Goals.png`
 - Target: `public/card-art/superhero/cards/context-exclusions/grade-03.webp`
 - Owner: Card `context-exclusions` grade `Anti-Goals`
 - Status: generated
@@ -1744,9 +1809,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A checkpoint as a hard sealed barrier with turned-away shapes visibly pressed up against its face, unable to pass.
 ```
 
-#### 122. OUT 4. Drift Alarm
+#### 127. OUT 4. Drift Alarm
 
-- File name: `SUP-122-OUT-4-Drift-Alarm.png`
+- File name: `SUP-127-OUT-4-Drift-Alarm.png`
 - Target: `public/card-art/superhero/cards/context-exclusions/grade-04.webp`
 - Owner: Card `context-exclusions` grade `Drift Alarm`
 - Status: generated
@@ -1759,9 +1824,9 @@ A checkpoint firing actively, alarm light sweeping the road, an escaping runner 
 
 ### Per-grade variants - Action
 
-#### 123. INS 1. Guided Review
+#### 128. INS 1. Guided Review
 
-- File name: `SUP-123-INS-1-Guided-Review.png`
+- File name: `SUP-128-INS-1-Guided-Review.png`
 - Target: `public/card-art/superhero/cards/action-inspect/grade-01.webp`
 - Owner: Card `action-inspect` grade `Guided Review`
 - Status: generated
@@ -1772,9 +1837,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A detective's lens following a single pointed line across a disassembled device, one indicated area lit and the rest dim.
 ```
 
-#### 124. INS 2. Checklist Inspection
+#### 129. INS 2. Checklist Inspection
 
-- File name: `SUP-124-INS-2-Checklist-Inspection.png`
+- File name: `SUP-129-INS-2-Checklist-Inspection.png`
 - Target: `public/card-art/superhero/cards/action-inspect/grade-02.webp`
 - Owner: Card `action-inspect` grade `Checklist Inspection`
 - Status: generated
@@ -1785,9 +1850,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A detective's lens stepping across marked checkpoints in sequence along a disassembled device, each one lighting as it clears.
 ```
 
-#### 125. INS 3. Independent Inspection
+#### 130. INS 3. Independent Inspection
 
-- File name: `SUP-125-INS-3-Independent-Inspection.png`
+- File name: `SUP-130-INS-3-Independent-Inspection.png`
 - Target: `public/card-art/superhero/cards/action-inspect/grade-03.webp`
 - Owner: Card `action-inspect` grade `Independent Inspection`
 - Status: generated
@@ -1798,9 +1863,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A detective's lens roaming a disassembled device on its own arm, several gaps and conflicts flagged where it has been.
 ```
 
-#### 126. INS 4. Full Audit
+#### 131. INS 4. Full Audit
 
-- File name: `SUP-126-INS-4-Full-Audit.png`
+- File name: `SUP-131-INS-4-Full-Audit.png`
 - Target: `public/card-art/superhero/cards/action-inspect/grade-04.webp`
 - Owner: Card `action-inspect` grade `Full Audit`
 - Status: generated
@@ -1811,9 +1876,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A device fully laid out under a bank of lenses, every part lit and measured at once.
 ```
 
-#### 127. ANL 1. Pattern Read
+#### 132. ANL 1. Pattern Read
 
-- File name: `SUP-127-ANL-1-Pattern-Read.png`
+- File name: `SUP-132-ANL-1-Pattern-Read.png`
 - Target: `public/card-art/superhero/cards/action-analyze/grade-01.webp`
 - Owner: Card `action-analyze` grade `Pattern Read`
 - Status: generated
@@ -1824,9 +1889,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A forensics column resolving a mixed sample into two or three clean luminous bands.
 ```
 
-#### 128. ANL 2. Rival Explanations
+#### 133. ANL 2. Rival Explanations
 
-- File name: `SUP-128-ANL-2-Rival-Explanations.png`
+- File name: `SUP-133-ANL-2-Rival-Explanations.png`
 - Target: `public/card-art/superhero/cards/action-analyze/grade-02.webp`
 - Owner: Card `action-analyze` grade `Rival Explanations`
 - Status: generated
@@ -1837,9 +1902,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 Two forensics columns held side by side, a candidate band-pattern in each, the rival readings compared directly.
 ```
 
-#### 129. ANL 3. Critical Analysis
+#### 134. ANL 3. Critical Analysis
 
-- File name: `SUP-129-ANL-3-Critical-Analysis.png`
+- File name: `SUP-134-ANL-3-Critical-Analysis.png`
 - Target: `public/card-art/superhero/cards/action-analyze/grade-03.webp`
 - Owner: Card `action-analyze` grade `Critical Analysis`
 - Status: generated
@@ -1850,9 +1915,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A forensics column driven harder until the assumptions inside crack apart into visible sub-bands.
 ```
 
-#### 130. ANL 4. Adversarial Analysis
+#### 135. ANL 4. Adversarial Analysis
 
-- File name: `SUP-130-ANL-4-Adversarial-Analysis.png`
+- File name: `SUP-135-ANL-4-Adversarial-Analysis.png`
 - Target: `public/card-art/superhero/cards/action-analyze/grade-04.webp`
 - Owner: Card `action-analyze` grade `Adversarial Analysis`
 - Status: generated
@@ -1863,9 +1928,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A forensics column run to its extremes, the residue searched for the one disconfirming trace that breaks the pattern.
 ```
 
-#### 131. CMP 1. Options on the Table
+#### 136. CMP 1. Options on the Table
 
-- File name: `SUP-131-CMP-1-Options-on-the-Table.png`
+- File name: `SUP-136-CMP-1-Options-on-the-Table.png`
 - Target: `public/card-art/superhero/cards/action-compare/grade-01.webp`
 - Owner: Card `action-compare` grade `Options on the Table`
 - Status: generated
@@ -1876,9 +1941,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A lab balance with two devices simply laid on its pans, the beam still level, differences visible but unjudged.
 ```
 
-#### 132. CMP 2. Framed Comparison
+#### 137. CMP 2. Framed Comparison
 
-- File name: `SUP-132-CMP-2-Framed-Comparison.png`
+- File name: `SUP-137-CMP-2-Framed-Comparison.png`
 - Target: `public/card-art/superhero/cards/action-compare/grade-02.webp`
 - Owner: Card `action-compare` grade `Framed Comparison`
 - Status: generated
@@ -1889,9 +1954,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A lab balance with a measuring beam sighted across both devices against criteria etched on the frame.
 ```
 
-#### 133. CMP 3. Weighted Comparison
+#### 138. CMP 3. Weighted Comparison
 
-- File name: `SUP-133-CMP-3-Weighted-Comparison.png`
+- File name: `SUP-138-CMP-3-Weighted-Comparison.png`
 - Target: `public/card-art/superhero/cards/action-compare/grade-03.webp`
 - Owner: Card `action-compare` grade `Weighted Comparison`
 - Status: generated
@@ -1902,9 +1967,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A lab balance with calibrated weights added along its arms, the tilt now decisive rather than incidental.
 ```
 
-#### 134. CMP 4. Decision Matrix
+#### 139. CMP 4. Decision Matrix
 
-- File name: `SUP-134-CMP-4-Decision-Matrix.png`
+- File name: `SUP-139-CMP-4-Decision-Matrix.png`
 - Target: `public/card-art/superhero/cards/action-compare/grade-04.webp`
 - Owner: Card `action-compare` grade `Decision Matrix`
 - Status: generated
@@ -1915,9 +1980,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A full array of balance pans on scored arms, every device measured against every axis, a verdict light burning above the winner.
 ```
 
-#### 135. BLD 1. Draft Together
+#### 140. BLD 1. Draft Together
 
-- File name: `SUP-135-BLD-1-Draft-Together.png`
+- File name: `SUP-140-BLD-1-Draft-Together.png`
 - Target: `public/card-art/superhero/cards/action-create/grade-01.webp`
 - Owner: Card `action-create` grade `Draft Together`
 - Status: generated
@@ -1928,9 +1993,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A gantry arm holding a rough unfinished armature, open questions sparking at the points where a decision is still needed.
 ```
 
-#### 136. BLD 2. Build to Plan
+#### 141. BLD 2. Build to Plan
 
-- File name: `SUP-136-BLD-2-Build-to-Plan.png`
+- File name: `SUP-141-BLD-2-Build-to-Plan.png`
 - Target: `public/card-art/superhero/cards/action-create/grade-02.webp`
 - Owner: Card `action-create` grade `Build to Plan`
 - Status: generated
@@ -1941,9 +2006,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A gantry arm building precisely along a projected plan, following its guide-lines without deviation.
 ```
 
-#### 137. BLD 3. Independent Build
+#### 142. BLD 3. Independent Build
 
-- File name: `SUP-137-BLD-3-Independent-Build.png`
+- File name: `SUP-142-BLD-3-Independent-Build.png`
 - Target: `public/card-art/superhero/cards/action-create/grade-03.webp`
 - Owner: Card `action-create` grade `Independent Build`
 - Status: generated
@@ -1954,9 +2019,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A gantry arm working with no plan projected, filling the silent gaps with its own decisions as the build completes.
 ```
 
-#### 138. BLD 4. End-to-End Delivery
+#### 143. BLD 4. End-to-End Delivery
 
-- File name: `SUP-138-BLD-4-End-to-End-Delivery.png`
+- File name: `SUP-143-BLD-4-End-to-End-Delivery.png`
 - Target: `public/card-art/superhero/cards/action-create/grade-04.webp`
 - Owner: Card `action-create` grade `End-to-End Delivery`
 - Status: generated
@@ -1967,9 +2032,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A finished gadget released from the gantry cradle, verified and lit, the arm already retracting behind it.
 ```
 
-#### 139. REC 1. Directions
+#### 144. REC 1. Directions
 
-- File name: `SUP-139-REC-1-Directions.png`
+- File name: `SUP-144-REC-1-Directions.png`
 - Target: `public/card-art/superhero/cards/action-recommend/grade-01.webp`
 - Owner: Card `action-recommend` grade `Directions`
 - Status: generated
@@ -1980,9 +2045,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A rail-yard switch with several branching tracks all lit equally, none chosen, each simply shown as possible.
 ```
 
-#### 140. REC 2. Practical Pick
+#### 145. REC 2. Practical Pick
 
-- File name: `SUP-140-REC-2-Practical-Pick.png`
+- File name: `SUP-145-REC-2-Practical-Pick.png`
 - Target: `public/card-art/superhero/cards/action-recommend/grade-02.webp`
 - Owner: Card `action-recommend` grade `Practical Pick`
 - Status: generated
@@ -1993,9 +2058,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A rail-yard with one track selected and the constraint gates it fits standing open along its length.
 ```
 
-#### 141. REC 3. Backed Recommendation
+#### 146. REC 3. Backed Recommendation
 
-- File name: `SUP-141-REC-3-Backed-Recommendation.png`
+- File name: `SUP-146-REC-3-Backed-Recommendation.png`
 - Target: `public/card-art/superhero/cards/action-recommend/grade-03.webp`
 - Owner: Card `action-recommend` grade `Backed Recommendation`
 - Status: generated
@@ -2006,9 +2071,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A rail-yard with the chosen track blazing, the runner-up dimmed but still visible beside it, a risk flare marked on the choice.
 ```
 
-#### 142. REC 4. Full Conviction
+#### 147. REC 4. Full Conviction
 
-- File name: `SUP-142-REC-4-Full-Conviction.png`
+- File name: `SUP-147-REC-4-Full-Conviction.png`
 - Target: `public/card-art/superhero/cards/action-recommend/grade-04.webp`
 - Owner: Card `action-recommend` grade `Full Conviction`
 - Status: generated
@@ -2019,9 +2084,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A rail-yard with the switch thrown hard, a single track blazing full length and every alternative retracted into the dark.
 ```
 
-#### 143. TST 1. Sanity Pass
+#### 148. TST 1. Sanity Pass
 
-- File name: `SUP-143-TST-1-Sanity-Pass.png`
+- File name: `SUP-148-TST-1-Sanity-Pass.png`
 - Target: `public/card-art/superhero/cards/action-verify/grade-01.webp`
 - Owner: Card `action-verify` grade `Sanity Pass`
 - Status: generated
@@ -2032,9 +2097,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A scanner gate running a gadget through one quick pass, an obvious flaw catching in the beam.
 ```
 
-#### 144. TST 2. Criteria Check
+#### 149. TST 2. Criteria Check
 
-- File name: `SUP-144-TST-2-Criteria-Check.png`
+- File name: `SUP-149-TST-2-Criteria-Check.png`
 - Target: `public/card-art/superhero/cards/action-verify/grade-02.webp`
 - Owner: Card `action-verify` grade `Criteria Check`
 - Status: generated
@@ -2045,9 +2110,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A line of scanner gates lighting pass or fail in turn as the gadget travels the course.
 ```
 
-#### 145. TST 3. Stress Test
+#### 150. TST 3. Stress Test
 
-- File name: `SUP-145-TST-3-Stress-Test.png`
+- File name: `SUP-150-TST-3-Stress-Test.png`
 - Target: `public/card-art/superhero/cards/action-verify/grade-03.webp`
 - Owner: Card `action-verify` grade `Stress Test`
 - Status: generated
@@ -2058,9 +2123,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A scanner course pushing a gadget past its normal load, the seams and joints glowing hot where they strain.
 ```
 
-#### 146. TST 4. Red Team
+#### 151. TST 4. Red Team
 
-- File name: `SUP-146-TST-4-Red-Team.png`
+- File name: `SUP-151-TST-4-Red-Team.png`
 - Target: `public/card-art/superhero/cards/action-verify/grade-04.webp`
 - Owner: Card `action-verify` grade `Red Team`
 - Status: generated
@@ -2071,9 +2136,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A scanner course turned hostile, attacking the gadget from every side at once like a hunting adversary.
 ```
 
-#### 147. SMR 1. Key Points Pull
+#### 152. SMR 1. Key Points Pull
 
-- File name: `SUP-147-SMR-1-Key-Points-Pull.png`
+- File name: `SUP-152-SMR-1-Key-Points-Pull.png`
 - Target: `public/card-art/superhero/cards/action-summarize/grade-01.webp`
 - Owner: Card `action-summarize` grade `Key Points Pull`
 - Status: generated
@@ -2084,9 +2149,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A compactor lifting a few key items cleanly out of a tall stack of case material.
 ```
 
-#### 148. SMR 2. Faithful Summary
+#### 153. SMR 2. Faithful Summary
 
-- File name: `SUP-148-SMR-2-Faithful-Summary.png`
+- File name: `SUP-153-SMR-2-Faithful-Summary.png`
 - Target: `public/card-art/superhero/cards/action-summarize/grade-02.webp`
 - Owner: Card `action-summarize` grade `Faithful Summary`
 - Status: generated
@@ -2097,9 +2162,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A compactor reducing a stack evenly, the original proportions still readable in the compressed block.
 ```
 
-#### 149. SMR 3. Decision Summary
+#### 154. SMR 3. Decision Summary
 
-- File name: `SUP-149-SMR-3-Decision-Summary.png`
+- File name: `SUP-154-SMR-3-Decision-Summary.png`
 - Target: `public/card-art/superhero/cards/action-summarize/grade-03.webp`
 - Owner: Card `action-summarize` grade `Decision Summary`
 - Status: generated
@@ -2110,9 +2175,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A compactor with the decision-critical layer pulled bright to the top and the remainder crushed thin beneath it.
 ```
 
-#### 150. SMR 4. Executive Distillation
+#### 155. SMR 4. Executive Distillation
 
-- File name: `SUP-150-SMR-4-Executive-Distillation.png`
+- File name: `SUP-155-SMR-4-Executive-Distillation.png`
 - Target: `public/card-art/superhero/cards/action-summarize/grade-04.webp`
 - Owner: Card `action-summarize` grade `Executive Distillation`
 - Status: generated
@@ -2123,9 +2188,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A compactor yielding one brilliant dense chip, the enormous source volume behind it only a faint ghost.
 ```
 
-#### 151. RES 1. Supplied Sources
+#### 156. RES 1. Supplied Sources
 
-- File name: `SUP-151-RES-1-Supplied-Sources.png`
+- File name: `SUP-156-RES-1-Supplied-Sources.png`
 - Target: `public/card-art/superhero/cards/action-research/grade-01.webp`
 - Owner: Card `action-research` grade `Supplied Sources`
 - Status: generated
@@ -2136,9 +2201,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A sweep dish pointed at a few supplied sources, the dark gaps between them plainly marked and unfilled.
 ```
 
-#### 152. RES 2. Targeted Lookup
+#### 157. RES 2. Targeted Lookup
 
-- File name: `SUP-152-RES-2-Targeted-Lookup.png`
+- File name: `SUP-157-RES-2-Targeted-Lookup.png`
 - Target: `public/card-art/superhero/cards/action-research/grade-02.webp`
 - Owner: Card `action-research` grade `Targeted Lookup`
 - Status: generated
@@ -2149,9 +2214,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A sweep dish firing narrow targeted beams into specific gaps, each return tagged with where it came from.
 ```
 
-#### 153. RES 3. Open Research
+#### 158. RES 3. Open Research
 
-- File name: `SUP-153-RES-3-Open-Research.png`
+- File name: `SUP-158-RES-3-Open-Research.png`
 - Target: `public/card-art/superhero/cards/action-research/grade-03.webp`
 - Owner: Card `action-research` grade `Open Research`
 - Status: generated
@@ -2162,9 +2227,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A sweep dish scanning wide across the open dark on its own initiative, weighing the returns it finds.
 ```
 
-#### 154. RES 4. Deep Investigation
+#### 159. RES 4. Deep Investigation
 
-- File name: `SUP-154-RES-4-Deep-Investigation.png`
+- File name: `SUP-159-RES-4-Deep-Investigation.png`
 - Target: `public/card-art/superhero/cards/action-research/grade-04.webp`
 - Owner: Card `action-research` grade `Deep Investigation`
 - Status: generated
@@ -2175,9 +2240,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A sweep dish with several beams converging to corroborate one distant return, confidence rings tightening around the lock.
 ```
 
-#### 155. PLN 1. Rough Outline
+#### 160. PLN 1. Rough Outline
 
-- File name: `SUP-155-PLN-1-Rough-Outline.png`
+- File name: `SUP-160-PLN-1-Rough-Outline.png`
 - Target: `public/card-art/superhero/cards/action-plan/grade-01.webp`
 - Owner: Card `action-plan` grade `Rough Outline`
 - Status: generated
@@ -2188,9 +2253,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A heist-board with a few mission markers set loosely along its timeline in a sensible order.
 ```
 
-#### 156. PLN 2. Sequenced Plan
+#### 161. PLN 2. Sequenced Plan
 
-- File name: `SUP-156-PLN-2-Sequenced-Plan.png`
+- File name: `SUP-161-PLN-2-Sequenced-Plan.png`
 - Target: `public/card-art/superhero/cards/action-plan/grade-02.webp`
 - Owner: Card `action-plan` grade `Sequenced Plan`
 - Status: generated
@@ -2201,9 +2266,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A heist-board with ordered markers, dependency lines drawn taut between them and one risk flare burning.
 ```
 
-#### 157. PLN 3. Delivery Plan
+#### 162. PLN 3. Delivery Plan
 
-- File name: `SUP-157-PLN-3-Delivery-Plan.png`
+- File name: `SUP-162-PLN-3-Delivery-Plan.png`
 - Target: `public/card-art/superhero/cards/action-plan/grade-03.webp`
 - Owner: Card `action-plan` grade `Delivery Plan`
 - Status: generated
@@ -2214,9 +2279,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A heist-board phased into grouped stages with milestone gates and verification checks standing between them.
 ```
 
-#### 158. PLN 4. Executable Program
+#### 163. PLN 4. Executable Program
 
-- File name: `SUP-158-PLN-4-Executable-Program.png`
+- File name: `SUP-163-PLN-4-Executable-Program.png`
 - Target: `public/card-art/superhero/cards/action-plan/grade-04.webp`
 - Owner: Card `action-plan` grade `Executable Program`
 - Status: generated
@@ -2227,9 +2292,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A heist-board fully built out and running itself, every marker firing in order with no operator anywhere in the frame.
 ```
 
-#### 159. IDE 1. Quick Options
+#### 164. IDE 1. Quick Options
 
-- File name: `SUP-159-IDE-1-Quick-Options.png`
+- File name: `SUP-164-IDE-1-Quick-Options.png`
 - Target: `public/card-art/superhero/cards/action-ideate/grade-01.webp`
 - Owner: Card `action-ideate` grade `Quick Options`
 - Status: generated
@@ -2240,9 +2305,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 An idea coil throwing off a small handful of distinct starting forms.
 ```
 
-#### 160. IDE 2. Divergent Set
+#### 165. IDE 2. Divergent Set
 
-- File name: `SUP-160-IDE-2-Divergent-Set.png`
+- File name: `SUP-165-IDE-2-Divergent-Set.png`
 - Target: `public/card-art/superhero/cards/action-ideate/grade-02.webp`
 - Owner: Card `action-ideate` grade `Divergent Set`
 - Status: generated
@@ -2253,9 +2318,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 An idea coil flinging many genuinely different shapes wide, no two alike anywhere in the spread.
 ```
 
-#### 161. IDE 3. Explore and Converge
+#### 166. IDE 3. Explore and Converge
 
-- File name: `SUP-161-IDE-3-Explore-and-Converge.png`
+- File name: `SUP-166-IDE-3-Explore-and-Converge.png`
 - Target: `public/card-art/superhero/cards/action-ideate/grade-03.webp`
 - Owner: Card `action-ideate` grade `Explore and Converge`
 - Status: generated
@@ -2266,9 +2331,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 An idea coil mid-burst with the strongest few forms already pulled together into a lit converging cluster.
 ```
 
-#### 162. IDE 4. Creative Sweep
+#### 167. IDE 4. Creative Sweep
 
-- File name: `SUP-162-IDE-4-Creative-Sweep.png`
+- File name: `SUP-167-IDE-4-Creative-Sweep.png`
 - Target: `public/card-art/superhero/cards/action-ideate/grade-04.webp`
 - Owner: Card `action-ideate` grade `Creative Sweep`
 - Status: generated
@@ -2279,9 +2344,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 An idea coil showing its full spectrum from safe compact forms to wild irregular ones, ranked along a lit gradient.
 ```
 
-#### 163. EXP 1. Direct Answer
+#### 168. EXP 1. Direct Answer
 
-- File name: `SUP-163-EXP-1-Direct-Answer.png`
+- File name: `SUP-168-EXP-1-Direct-Answer.png`
 - Target: `public/card-art/superhero/cards/action-explain/grade-01.webp`
 - Owner: Card `action-explain` grade `Direct Answer`
 - Status: generated
@@ -2292,9 +2357,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A holo-table showing a single part in isolation, the rest of the gadget still folded shut.
 ```
 
-#### 164. EXP 2. Guided Walkthrough
+#### 169. EXP 2. Guided Walkthrough
 
-- File name: `SUP-164-EXP-2-Guided-Walkthrough.png`
+- File name: `SUP-169-EXP-2-Guided-Walkthrough.png`
 - Target: `public/card-art/superhero/cards/action-explain/grade-02.webp`
 - Owner: Card `action-explain` grade `Guided Walkthrough`
 - Status: generated
@@ -2305,9 +2370,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A holo-table unfolding parts one at a time along a lit path, each step following from the one before.
 ```
 
-#### 165. EXP 3. Deep Explanation
+#### 170. EXP 3. Deep Explanation
 
-- File name: `SUP-165-EXP-3-Deep-Explanation.png`
+- File name: `SUP-170-EXP-3-Deep-Explanation.png`
 - Target: `public/card-art/superhero/cards/action-explain/grade-03.webp`
 - Owner: Card `action-explain` grade `Deep Explanation`
 - Status: generated
@@ -2318,9 +2383,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A holo-table with the gadget fully open, the hidden linkage exposed and one trap-point flagged bright.
 ```
 
-#### 166. EXP 4. Full Teaching Pass
+#### 171. EXP 4. Full Teaching Pass
 
-- File name: `SUP-166-EXP-4-Full-Teaching-Pass.png`
+- File name: `SUP-171-EXP-4-Full-Teaching-Pass.png`
 - Target: `public/card-art/superhero/cards/action-explain/grade-04.webp`
 - Owner: Card `action-explain` grade `Full Teaching Pass`
 - Status: generated
@@ -2331,9 +2396,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A holo-table with everything unfolded and further branches still opening outward at the edges of the scene.
 ```
 
-#### 167. ASK 1. Full Interview
+#### 172. ASK 1. Full Interview
 
-- File name: `SUP-167-ASK-1-Full-Interview.png`
+- File name: `SUP-172-ASK-1-Full-Interview.png`
 - Target: `public/card-art/superhero/cards/action-clarify/grade-01.webp`
 - Owner: Card `action-clarify` grade `Full Interview`
 - Status: generated
@@ -2344,9 +2409,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A signal flare firing many pulses in patient batches into a dark gap, its outline almost completely mapped by the returns.
 ```
 
-#### 168. ASK 2. 95% Confidence Check
+#### 173. ASK 2. 95% Confidence Check
 
-- File name: `SUP-168-ASK-2-95-Confidence-Check.png`
+- File name: `SUP-173-ASK-2-95-Confidence-Check.png`
 - Target: `public/card-art/superhero/cards/action-clarify/grade-02.webp`
 - Owner: Card `action-clarify` grade `95% Confidence Check`
 - Status: generated
@@ -2357,9 +2422,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A signal flare still pulsing at a gap that is nearly closed, only a thin sliver of unknown shape left dark.
 ```
 
-#### 169. ASK 3. Blocking Questions Only
+#### 174. ASK 3. Blocking Questions Only
 
-- File name: `SUP-169-ASK-3-Blocking-Questions-Only.png`
+- File name: `SUP-174-ASK-3-Blocking-Questions-Only.png`
 - Target: `public/card-art/superhero/cards/action-clarify/grade-03.webp`
 - Owner: Card `action-clarify` grade `Blocking Questions Only`
 - Status: generated
@@ -2370,9 +2435,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A signal flare sending one single hard pulse into the one gap that actually blocks the path forward.
 ```
 
-#### 170. ASK 4. Assume & Log
+#### 175. ASK 4. Assume & Log
 
-- File name: `SUP-170-ASK-4-Assume-Log.png`
+- File name: `SUP-175-ASK-4-Assume-Log.png`
 - Target: `public/card-art/superhero/cards/action-clarify/grade-04.webp`
 - Owner: Card `action-clarify` grade `Assume & Log`
 - Status: generated
@@ -2383,11 +2448,219 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A signal flare gone dark, the gap bridged instead by a placed assumption block with a bright tag fixed to its face.
 ```
 
+#### 176. LOG 1. Capture commitments
+
+- File name: `SUP-176-LOG-1-Capture-commitments.png`
+- Target: `public/card-art/superhero/cards/action-record/grade-01.webp`
+- Owner: Card `action-record` grade `Capture commitments`
+- Status: planned
+
+```
+Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash-page illustration: heavy confident ink outlines, dynamic foreshortened staging, halftone-dot shading over punchy four-color flats, the way a landmark issue paints its cover moment. Hot crimson key light rakes the subject from one side, a hard electric-yellow rim light separates it from a deep indigo night-city darkness, and speedline energy and rooftop haze fall away behind. One strong centered focal shape, isolated, uncluttered edges, nothing in the background competing with it, and it still reads at thumbnail size. Square composition with generous breathing room. The art is full-bleed and fills the entire square to every edge, the scene cut off by the picture edges on all four sides: no border, no margin, no matting, no panel gutter, no drawn edge line, no vignette box, no rounded corners. Artwork only: no text, no letters, no numbers, no logos, no readable symbols, no UI labels, no card frame, no speech bubbles, no caption boxes, no sound-effect lettering.
+
+A ledger with a dated correction slip.
+```
+
+#### 177. LOG 2. Meeting handoff
+
+- File name: `SUP-177-LOG-2-Meeting-handoff.png`
+- Target: `public/card-art/superhero/cards/action-record/grade-02.webp`
+- Owner: Card `action-record` grade `Meeting handoff`
+- Status: planned
+
+```
+Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash-page illustration: heavy confident ink outlines, dynamic foreshortened staging, halftone-dot shading over punchy four-color flats, the way a landmark issue paints its cover moment. Hot crimson key light rakes the subject from one side, a hard electric-yellow rim light separates it from a deep indigo night-city darkness, and speedline energy and rooftop haze fall away behind. One strong centered focal shape, isolated, uncluttered edges, nothing in the background competing with it, and it still reads at thumbnail size. Square composition with generous breathing room. The art is full-bleed and fills the entire square to every edge, the scene cut off by the picture edges on all four sides: no border, no margin, no matting, no panel gutter, no drawn edge line, no vignette box, no rounded corners. Artwork only: no text, no letters, no numbers, no logos, no readable symbols, no UI labels, no card frame, no speech bubbles, no caption boxes, no sound-effect lettering.
+
+A ledger with a dated correction slip.
+```
+
+#### 178. LOG 3. Reconcile the minutes
+
+- File name: `SUP-178-LOG-3-Reconcile-the-minutes.png`
+- Target: `public/card-art/superhero/cards/action-record/grade-03.webp`
+- Owner: Card `action-record` grade `Reconcile the minutes`
+- Status: planned
+
+```
+Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash-page illustration: heavy confident ink outlines, dynamic foreshortened staging, halftone-dot shading over punchy four-color flats, the way a landmark issue paints its cover moment. Hot crimson key light rakes the subject from one side, a hard electric-yellow rim light separates it from a deep indigo night-city darkness, and speedline energy and rooftop haze fall away behind. One strong centered focal shape, isolated, uncluttered edges, nothing in the background competing with it, and it still reads at thumbnail size. Square composition with generous breathing room. The art is full-bleed and fills the entire square to every edge, the scene cut off by the picture edges on all four sides: no border, no margin, no matting, no panel gutter, no drawn edge line, no vignette box, no rounded corners. Artwork only: no text, no letters, no numbers, no logos, no readable symbols, no UI labels, no card frame, no speech bubbles, no caption boxes, no sound-effect lettering.
+
+A ledger with a dated correction slip.
+```
+
+#### 179. LOG 4. Trace the record
+
+- File name: `SUP-179-LOG-4-Trace-the-record.png`
+- Target: `public/card-art/superhero/cards/action-record/grade-04.webp`
+- Owner: Card `action-record` grade `Trace the record`
+- Status: planned
+
+```
+Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash-page illustration: heavy confident ink outlines, dynamic foreshortened staging, halftone-dot shading over punchy four-color flats, the way a landmark issue paints its cover moment. Hot crimson key light rakes the subject from one side, a hard electric-yellow rim light separates it from a deep indigo night-city darkness, and speedline energy and rooftop haze fall away behind. One strong centered focal shape, isolated, uncluttered edges, nothing in the background competing with it, and it still reads at thumbnail size. Square composition with generous breathing room. The art is full-bleed and fills the entire square to every edge, the scene cut off by the picture edges on all four sides: no border, no margin, no matting, no panel gutter, no drawn edge line, no vignette box, no rounded corners. Artwork only: no text, no letters, no numbers, no logos, no readable symbols, no UI labels, no card frame, no speech bubbles, no caption boxes, no sound-effect lettering.
+
+A ledger with a dated correction slip.
+```
+
+#### 180. MATCH 1. Check the unit
+
+- File name: `SUP-180-MATCH-1-Check-the-unit.png`
+- Target: `public/card-art/superhero/cards/action-matched-compare/grade-01.webp`
+- Owner: Card `action-matched-compare` grade `Check the unit`
+- Status: planned
+
+```
+Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash-page illustration: heavy confident ink outlines, dynamic foreshortened staging, halftone-dot shading over punchy four-color flats, the way a landmark issue paints its cover moment. Hot crimson key light rakes the subject from one side, a hard electric-yellow rim light separates it from a deep indigo night-city darkness, and speedline energy and rooftop haze fall away behind. One strong centered focal shape, isolated, uncluttered edges, nothing in the background competing with it, and it still reads at thumbnail size. Square composition with generous breathing room. The art is full-bleed and fills the entire square to every edge, the scene cut off by the picture edges on all four sides: no border, no margin, no matting, no panel gutter, no drawn edge line, no vignette box, no rounded corners. Artwork only: no text, no letters, no numbers, no logos, no readable symbols, no UI labels, no card frame, no speech bubbles, no caption boxes, no sound-effect lettering.
+
+Two graduated measures aligned on one baseline.
+```
+
+#### 181. MATCH 2. Match the groups
+
+- File name: `SUP-181-MATCH-2-Match-the-groups.png`
+- Target: `public/card-art/superhero/cards/action-matched-compare/grade-02.webp`
+- Owner: Card `action-matched-compare` grade `Match the groups`
+- Status: planned
+
+```
+Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash-page illustration: heavy confident ink outlines, dynamic foreshortened staging, halftone-dot shading over punchy four-color flats, the way a landmark issue paints its cover moment. Hot crimson key light rakes the subject from one side, a hard electric-yellow rim light separates it from a deep indigo night-city darkness, and speedline energy and rooftop haze fall away behind. One strong centered focal shape, isolated, uncluttered edges, nothing in the background competing with it, and it still reads at thumbnail size. Square composition with generous breathing room. The art is full-bleed and fills the entire square to every edge, the scene cut off by the picture edges on all four sides: no border, no margin, no matting, no panel gutter, no drawn edge line, no vignette box, no rounded corners. Artwork only: no text, no letters, no numbers, no logos, no readable symbols, no UI labels, no card frame, no speech bubbles, no caption boxes, no sound-effect lettering.
+
+Two graduated measures aligned on one baseline.
+```
+
+#### 182. MATCH 3. Compare like for like
+
+- File name: `SUP-182-MATCH-3-Compare-like-for-like.png`
+- Target: `public/card-art/superhero/cards/action-matched-compare/grade-03.webp`
+- Owner: Card `action-matched-compare` grade `Compare like for like`
+- Status: planned
+
+```
+Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash-page illustration: heavy confident ink outlines, dynamic foreshortened staging, halftone-dot shading over punchy four-color flats, the way a landmark issue paints its cover moment. Hot crimson key light rakes the subject from one side, a hard electric-yellow rim light separates it from a deep indigo night-city darkness, and speedline energy and rooftop haze fall away behind. One strong centered focal shape, isolated, uncluttered edges, nothing in the background competing with it, and it still reads at thumbnail size. Square composition with generous breathing room. The art is full-bleed and fills the entire square to every edge, the scene cut off by the picture edges on all four sides: no border, no margin, no matting, no panel gutter, no drawn edge line, no vignette box, no rounded corners. Artwork only: no text, no letters, no numbers, no logos, no readable symbols, no UI labels, no card frame, no speech bubbles, no caption boxes, no sound-effect lettering.
+
+Two graduated measures aligned on one baseline.
+```
+
+#### 183. MATCH 4. Test the comparison
+
+- File name: `SUP-183-MATCH-4-Test-the-comparison.png`
+- Target: `public/card-art/superhero/cards/action-matched-compare/grade-04.webp`
+- Owner: Card `action-matched-compare` grade `Test the comparison`
+- Status: planned
+
+```
+Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash-page illustration: heavy confident ink outlines, dynamic foreshortened staging, halftone-dot shading over punchy four-color flats, the way a landmark issue paints its cover moment. Hot crimson key light rakes the subject from one side, a hard electric-yellow rim light separates it from a deep indigo night-city darkness, and speedline energy and rooftop haze fall away behind. One strong centered focal shape, isolated, uncluttered edges, nothing in the background competing with it, and it still reads at thumbnail size. Square composition with generous breathing room. The art is full-bleed and fills the entire square to every edge, the scene cut off by the picture edges on all four sides: no border, no margin, no matting, no panel gutter, no drawn edge line, no vignette box, no rounded corners. Artwork only: no text, no letters, no numbers, no logos, no readable symbols, no UI labels, no card frame, no speech bubbles, no caption boxes, no sound-effect lettering.
+
+Two graduated measures aligned on one baseline.
+```
+
+#### 184. REVISE 1. Local revision
+
+- File name: `SUP-184-REVISE-1-Local-revision.png`
+- Target: `public/card-art/superhero/cards/action-revise/grade-01.webp`
+- Owner: Card `action-revise` grade `Local revision`
+- Status: planned
+
+```
+Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash-page illustration: heavy confident ink outlines, dynamic foreshortened staging, halftone-dot shading over punchy four-color flats, the way a landmark issue paints its cover moment. Hot crimson key light rakes the subject from one side, a hard electric-yellow rim light separates it from a deep indigo night-city darkness, and speedline energy and rooftop haze fall away behind. One strong centered focal shape, isolated, uncluttered edges, nothing in the background competing with it, and it still reads at thumbnail size. Square composition with generous breathing room. The art is full-bleed and fills the entire square to every edge, the scene cut off by the picture edges on all four sides: no border, no margin, no matting, no panel gutter, no drawn edge line, no vignette box, no rounded corners. Artwork only: no text, no letters, no numbers, no logos, no readable symbols, no UI labels, no card frame, no speech bubbles, no caption boxes, no sound-effect lettering.
+
+A marked proof laid beside its source.
+```
+
+#### 185. REVISE 2. Revision pass
+
+- File name: `SUP-185-REVISE-2-Revision-pass.png`
+- Target: `public/card-art/superhero/cards/action-revise/grade-02.webp`
+- Owner: Card `action-revise` grade `Revision pass`
+- Status: planned
+
+```
+Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash-page illustration: heavy confident ink outlines, dynamic foreshortened staging, halftone-dot shading over punchy four-color flats, the way a landmark issue paints its cover moment. Hot crimson key light rakes the subject from one side, a hard electric-yellow rim light separates it from a deep indigo night-city darkness, and speedline energy and rooftop haze fall away behind. One strong centered focal shape, isolated, uncluttered edges, nothing in the background competing with it, and it still reads at thumbnail size. Square composition with generous breathing room. The art is full-bleed and fills the entire square to every edge, the scene cut off by the picture edges on all four sides: no border, no margin, no matting, no panel gutter, no drawn edge line, no vignette box, no rounded corners. Artwork only: no text, no letters, no numbers, no logos, no readable symbols, no UI labels, no card frame, no speech bubbles, no caption boxes, no sound-effect lettering.
+
+A marked proof laid beside its source.
+```
+
+#### 186. REVISE 3. Structural revision
+
+- File name: `SUP-186-REVISE-3-Structural-revision.png`
+- Target: `public/card-art/superhero/cards/action-revise/grade-03.webp`
+- Owner: Card `action-revise` grade `Structural revision`
+- Status: planned
+
+```
+Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash-page illustration: heavy confident ink outlines, dynamic foreshortened staging, halftone-dot shading over punchy four-color flats, the way a landmark issue paints its cover moment. Hot crimson key light rakes the subject from one side, a hard electric-yellow rim light separates it from a deep indigo night-city darkness, and speedline energy and rooftop haze fall away behind. One strong centered focal shape, isolated, uncluttered edges, nothing in the background competing with it, and it still reads at thumbnail size. Square composition with generous breathing room. The art is full-bleed and fills the entire square to every edge, the scene cut off by the picture edges on all four sides: no border, no margin, no matting, no panel gutter, no drawn edge line, no vignette box, no rounded corners. Artwork only: no text, no letters, no numbers, no logos, no readable symbols, no UI labels, no card frame, no speech bubbles, no caption boxes, no sound-effect lettering.
+
+A marked proof laid beside its source.
+```
+
+#### 187. REVISE 4. Constraint review
+
+- File name: `SUP-187-REVISE-4-Constraint-review.png`
+- Target: `public/card-art/superhero/cards/action-revise/grade-04.webp`
+- Owner: Card `action-revise` grade `Constraint review`
+- Status: planned
+
+```
+Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash-page illustration: heavy confident ink outlines, dynamic foreshortened staging, halftone-dot shading over punchy four-color flats, the way a landmark issue paints its cover moment. Hot crimson key light rakes the subject from one side, a hard electric-yellow rim light separates it from a deep indigo night-city darkness, and speedline energy and rooftop haze fall away behind. One strong centered focal shape, isolated, uncluttered edges, nothing in the background competing with it, and it still reads at thumbnail size. Square composition with generous breathing room. The art is full-bleed and fills the entire square to every edge, the scene cut off by the picture edges on all four sides: no border, no margin, no matting, no panel gutter, no drawn edge line, no vignette box, no rounded corners. Artwork only: no text, no letters, no numbers, no logos, no readable symbols, no UI labels, no card frame, no speech bubbles, no caption boxes, no sound-effect lettering.
+
+A marked proof laid beside its source.
+```
+
+#### 188. FLIP 1. Conditional choice
+
+- File name: `SUP-188-FLIP-1-Conditional-choice.png`
+- Target: `public/card-art/superhero/cards/action-conditional-recommend/grade-01.webp`
+- Owner: Card `action-conditional-recommend` grade `Conditional choice`
+- Status: planned
+
+```
+Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash-page illustration: heavy confident ink outlines, dynamic foreshortened staging, halftone-dot shading over punchy four-color flats, the way a landmark issue paints its cover moment. Hot crimson key light rakes the subject from one side, a hard electric-yellow rim light separates it from a deep indigo night-city darkness, and speedline energy and rooftop haze fall away behind. One strong centered focal shape, isolated, uncluttered edges, nothing in the background competing with it, and it still reads at thumbnail size. Square composition with generous breathing room. The art is full-bleed and fills the entire square to every edge, the scene cut off by the picture edges on all four sides: no border, no margin, no matting, no panel gutter, no drawn edge line, no vignette box, no rounded corners. Artwork only: no text, no letters, no numbers, no logos, no readable symbols, no UI labels, no card frame, no speech bubbles, no caption boxes, no sound-effect lettering.
+
+A balance with a sliding counterweight.
+```
+
+#### 189. FLIP 2. Recommend with a condition
+
+- File name: `SUP-189-FLIP-2-Recommend-with-a-condition.png`
+- Target: `public/card-art/superhero/cards/action-conditional-recommend/grade-02.webp`
+- Owner: Card `action-conditional-recommend` grade `Recommend with a condition`
+- Status: planned
+
+```
+Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash-page illustration: heavy confident ink outlines, dynamic foreshortened staging, halftone-dot shading over punchy four-color flats, the way a landmark issue paints its cover moment. Hot crimson key light rakes the subject from one side, a hard electric-yellow rim light separates it from a deep indigo night-city darkness, and speedline energy and rooftop haze fall away behind. One strong centered focal shape, isolated, uncluttered edges, nothing in the background competing with it, and it still reads at thumbnail size. Square composition with generous breathing room. The art is full-bleed and fills the entire square to every edge, the scene cut off by the picture edges on all four sides: no border, no margin, no matting, no panel gutter, no drawn edge line, no vignette box, no rounded corners. Artwork only: no text, no letters, no numbers, no logos, no readable symbols, no UI labels, no card frame, no speech bubbles, no caption boxes, no sound-effect lettering.
+
+A balance with a sliding counterweight.
+```
+
+#### 190. FLIP 3. Decision threshold
+
+- File name: `SUP-190-FLIP-3-Decision-threshold.png`
+- Target: `public/card-art/superhero/cards/action-conditional-recommend/grade-03.webp`
+- Owner: Card `action-conditional-recommend` grade `Decision threshold`
+- Status: planned
+
+```
+Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash-page illustration: heavy confident ink outlines, dynamic foreshortened staging, halftone-dot shading over punchy four-color flats, the way a landmark issue paints its cover moment. Hot crimson key light rakes the subject from one side, a hard electric-yellow rim light separates it from a deep indigo night-city darkness, and speedline energy and rooftop haze fall away behind. One strong centered focal shape, isolated, uncluttered edges, nothing in the background competing with it, and it still reads at thumbnail size. Square composition with generous breathing room. The art is full-bleed and fills the entire square to every edge, the scene cut off by the picture edges on all four sides: no border, no margin, no matting, no panel gutter, no drawn edge line, no vignette box, no rounded corners. Artwork only: no text, no letters, no numbers, no logos, no readable symbols, no UI labels, no card frame, no speech bubbles, no caption boxes, no sound-effect lettering.
+
+A balance with a sliding counterweight.
+```
+
+#### 191. FLIP 4. Test the reversal
+
+- File name: `SUP-191-FLIP-4-Test-the-reversal.png`
+- Target: `public/card-art/superhero/cards/action-conditional-recommend/grade-04.webp`
+- Owner: Card `action-conditional-recommend` grade `Test the reversal`
+- Status: planned
+
+```
+Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash-page illustration: heavy confident ink outlines, dynamic foreshortened staging, halftone-dot shading over punchy four-color flats, the way a landmark issue paints its cover moment. Hot crimson key light rakes the subject from one side, a hard electric-yellow rim light separates it from a deep indigo night-city darkness, and speedline energy and rooftop haze fall away behind. One strong centered focal shape, isolated, uncluttered edges, nothing in the background competing with it, and it still reads at thumbnail size. Square composition with generous breathing room. The art is full-bleed and fills the entire square to every edge, the scene cut off by the picture edges on all four sides: no border, no margin, no matting, no panel gutter, no drawn edge line, no vignette box, no rounded corners. Artwork only: no text, no letters, no numbers, no logos, no readable symbols, no UI labels, no card frame, no speech bubbles, no caption boxes, no sound-effect lettering.
+
+A balance with a sliding counterweight.
+```
+
 ### Per-grade variants - Format
 
-#### 171. INF 1. Plain Answer
+#### 192. INF 1. Plain Answer
 
-- File name: `SUP-171-INF-1-Plain-Answer.png`
+- File name: `SUP-192-INF-1-Plain-Answer.png`
 - Target: `public/card-art/superhero/cards/format-info-card/grade-01.webp`
 - Owner: Card `format-info-card` grade `Plain Answer`
 - Status: generated
@@ -2398,9 +2671,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A single answer placard standing bare in the dark, its steel face plain and unornamented.
 ```
 
-#### 172. INF 2. Answer Card
+#### 193. INF 2. Answer Card
 
-- File name: `SUP-172-INF-2-Answer-Card.png`
+- File name: `SUP-193-INF-2-Answer-Card.png`
 - Target: `public/card-art/superhero/cards/format-info-card/grade-02.webp`
 - Owner: Card `format-info-card` grade `Answer Card`
 - Status: generated
@@ -2411,9 +2684,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A single answer slab tightened down, its essentials arranged in one clean scannable face.
 ```
 
-#### 173. INF 3. Information Brief
+#### 194. INF 3. Information Brief
 
-- File name: `SUP-173-INF-3-Information-Brief.png`
+- File name: `SUP-194-INF-3-Information-Brief.png`
 - Target: `public/card-art/superhero/cards/format-info-card/grade-03.webp`
 - Owner: Card `format-info-card` grade `Information Brief`
 - Status: generated
@@ -2424,9 +2697,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A thicker answer placard with context strata visible in its cut steel edge, layered beneath the face.
 ```
 
-#### 174. INF 4. Reference Piece
+#### 195. INF 4. Reference Piece
 
-- File name: `SUP-174-INF-4-Reference-Piece.png`
+- File name: `SUP-195-INF-4-Reference-Piece.png`
 - Target: `public/card-art/superhero/cards/format-info-card/grade-04.webp`
 - Owner: Card `format-info-card` grade `Reference Piece`
 - Status: generated
@@ -2437,9 +2710,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A substantial steel reference monolith with caveat notches cut into its margin and worked scenes inset along its side.
 ```
 
-#### 175. KEY 1. Loose Bullets
+#### 196. KEY 1. Loose Bullets
 
-- File name: `SUP-175-KEY-1-Loose-Bullets.png`
+- File name: `SUP-196-KEY-1-Loose-Bullets.png`
 - Target: `public/card-art/superhero/cards/format-key-points/grade-01.webp`
 - Owner: Card `format-key-points` grade `Loose Bullets`
 - Status: generated
@@ -2450,9 +2723,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A rack holding a few batons leaning loosely, unaligned but separate.
 ```
 
-#### 176. KEY 2. Grouped Points
+#### 197. KEY 2. Grouped Points
 
-- File name: `SUP-176-KEY-2-Grouped-Points.png`
+- File name: `SUP-197-KEY-2-Grouped-Points.png`
 - Target: `public/card-art/superhero/cards/format-key-points/grade-02.webp`
 - Owner: Card `format-key-points` grade `Grouped Points`
 - Status: generated
@@ -2463,9 +2736,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A rack of batons clustered into marked groups, related tools standing together.
 ```
 
-#### 177. KEY 3. Sectioned Points
+#### 198. KEY 3. Sectioned Points
 
-- File name: `SUP-177-KEY-3-Sectioned-Points.png`
+- File name: `SUP-198-KEY-3-Sectioned-Points.png`
 - Target: `public/card-art/superhero/cards/format-key-points/grade-03.webp`
 - Owner: Card `format-key-points` grade `Sectioned Points`
 - Status: generated
@@ -2476,9 +2749,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A full rack of batons arranged into clearly divided marked sections.
 ```
 
-#### 178. KEY 4. Checklist Discipline
+#### 199. KEY 4. Checklist Discipline
 
-- File name: `SUP-178-KEY-4-Checklist-Discipline.png`
+- File name: `SUP-199-KEY-4-Checklist-Discipline.png`
 - Target: `public/card-art/superhero/cards/format-key-points/grade-04.webp`
 - Owner: Card `format-key-points` grade `Checklist Discipline`
 - Status: generated
@@ -2489,9 +2762,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A rack of uniform atomic batons, each identical in size with a tick-notch cut into its head.
 ```
 
-#### 179. SUM 1. One-Liner
+#### 200. SUM 1. One-Liner
 
-- File name: `SUP-179-SUM-1-One-Liner.png`
+- File name: `SUP-200-SUM-1-One-Liner.png`
 - Target: `public/card-art/superhero/cards/format-summary/grade-01.webp`
 - Owner: Card `format-summary` grade `One-Liner`
 - Status: generated
@@ -2502,9 +2775,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A lab flask holding one bright drop suspended at the very top.
 ```
 
-#### 180. SUM 2. Quick Summary
+#### 201. SUM 2. Quick Summary
 
-- File name: `SUP-180-SUM-2-Quick-Summary.png`
+- File name: `SUP-201-SUM-2-Quick-Summary.png`
 - Target: `public/card-art/superhero/cards/format-summary/grade-02.webp`
 - Owner: Card `format-summary` grade `Quick Summary`
 - Status: generated
@@ -2515,9 +2788,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A lab flask with a small clear band of concentrate floating above the settled sediment.
 ```
 
-#### 181. SUM 3. Executive Summary
+#### 202. SUM 3. Executive Summary
 
-- File name: `SUP-181-SUM-3-Executive-Summary.png`
+- File name: `SUP-202-SUM-3-Executive-Summary.png`
 - Target: `public/card-art/superhero/cards/format-summary/grade-03.webp`
 - Owner: Card `format-summary` grade `Executive Summary`
 - Status: generated
@@ -2528,9 +2801,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A lab flask with a thick lit layer of findings and an implication channel running off it toward a marked move.
 ```
 
-#### 182. SUM 4. Standalone Abstract
+#### 203. SUM 4. Standalone Abstract
 
-- File name: `SUP-182-SUM-4-Standalone-Abstract.png`
+- File name: `SUP-203-SUM-4-Standalone-Abstract.png`
 - Target: `public/card-art/superhero/cards/format-summary/grade-04.webp`
 - Owner: Card `format-summary` grade `Standalone Abstract`
 - Status: generated
@@ -2541,9 +2814,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A sealed self-contained lab flask, complete on its own, needing nothing outside its own glass.
 ```
 
-#### 183. SEC 1. Natural Flow
+#### 204. SEC 1. Natural Flow
 
-- File name: `SUP-183-SEC-1-Natural-Flow.png`
+- File name: `SUP-204-SEC-1-Natural-Flow.png`
 - Target: `public/card-art/superhero/cards/format-sections/grade-01.webp`
 - Owner: Card `format-sections` grade `Natural Flow`
 - Status: generated
@@ -2554,9 +2827,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A mostly continuous building with only one or two floors divided where they genuinely help.
 ```
 
-#### 184. SEC 2. Clear Sections
+#### 205. SEC 2. Clear Sections
 
-- File name: `SUP-184-SEC-2-Clear-Sections.png`
+- File name: `SUP-205-SEC-2-Clear-Sections.png`
 - Target: `public/card-art/superhero/cards/format-sections/grade-02.webp`
 - Owner: Card `format-sections` grade `Clear Sections`
 - Status: generated
@@ -2567,9 +2840,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A building divided into evenly spaced floors, each one distinct and separately lit.
 ```
 
-#### 185. SEC 3. Set Sequence
+#### 206. SEC 3. Set Sequence
 
-- File name: `SUP-185-SEC-3-Set-Sequence.png`
+- File name: `SUP-206-SEC-3-Set-Sequence.png`
 - Target: `public/card-art/superhero/cards/format-sections/grade-03.webp`
 - Owner: Card `format-sections` grade `Set Sequence`
 - Status: generated
@@ -2580,9 +2853,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A building of floors in a fixed ordered stack, every level present and none skipped.
 ```
 
-#### 186. SEC 4. Locked Template
+#### 207. SEC 4. Locked Template
 
-- File name: `SUP-186-SEC-4-Locked-Template.png`
+- File name: `SUP-207-SEC-4-Locked-Template.png`
 - Target: `public/card-art/superhero/cards/format-sections/grade-04.webp`
 - Owner: Card `format-sections` grade `Locked Template`
 - Status: generated
@@ -2593,9 +2866,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A building machined to an exact template, floor seams flush and sealed, nothing added and nothing dropped.
 ```
 
-#### 187. CIT 1. Source Notes
+#### 208. CIT 1. Source Notes
 
-- File name: `SUP-187-CIT-1-Source-Notes.png`
+- File name: `SUP-208-CIT-1-Source-Notes.png`
 - Target: `public/card-art/superhero/cards/format-evidence/grade-01.webp`
 - Owner: Card `format-evidence` grade `Source Notes`
 - Status: generated
@@ -2606,9 +2879,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A floating claim slab with a couple of cables dropped to the strongest evidence vaults below it.
 ```
 
-#### 188. CIT 2. Linked Sources
+#### 209. CIT 2. Linked Sources
 
-- File name: `SUP-188-CIT-2-Linked-Sources.png`
+- File name: `SUP-209-CIT-2-Linked-Sources.png`
 - Target: `public/card-art/superhero/cards/format-evidence/grade-02.webp`
 - Owner: Card `format-evidence` grade `Linked Sources`
 - Status: generated
@@ -2619,9 +2892,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 Several floating claim slabs each cabled inline to its own vault, lines short and taut.
 ```
 
-#### 189. CIT 3. Evidence Notes
+#### 210. CIT 3. Evidence Notes
 
-- File name: `SUP-189-CIT-3-Evidence-Notes.png`
+- File name: `SUP-210-CIT-3-Evidence-Notes.png`
 - Target: `public/card-art/superhero/cards/format-evidence/grade-03.webp`
 - Owner: Card `format-evidence` grade `Evidence Notes`
 - Status: generated
@@ -2632,9 +2905,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 Anchor cables rendered at visible thicknesses, each line's width showing the weight of evidence it carries.
 ```
 
-#### 190. CIT 4. Citation Record
+#### 211. CIT 4. Citation Record
 
-- File name: `SUP-190-CIT-4-Citation-Record.png`
+- File name: `SUP-211-CIT-4-Citation-Record.png`
 - Target: `public/card-art/superhero/cards/format-evidence/grade-04.webp`
 - Owner: Card `format-evidence` grade `Citation Record`
 - Status: generated
@@ -2645,9 +2918,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 Every claim cabled to a vault, with inference lines rendered distinctly as dashed strands among the solid ones.
 ```
 
-#### 191. TAB 1. Option Notes
+#### 212. TAB 1. Option Notes
 
-- File name: `SUP-191-TAB-1-Option-Notes.png`
+- File name: `SUP-212-TAB-1-Option-Notes.png`
 - Target: `public/card-art/superhero/cards/format-comparison/grade-01.webp`
 - Owner: Card `format-comparison` grade `Option Notes`
 - Status: generated
@@ -2658,9 +2931,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 Several prototypes standing separated in the dark, clearly apart from each other but with no rig built yet.
 ```
 
-#### 192. TAB 2. Comparison Table
+#### 213. TAB 2. Comparison Table
 
-- File name: `SUP-192-TAB-2-Comparison-Table.png`
+- File name: `SUP-213-TAB-2-Comparison-Table.png`
 - Target: `public/card-art/superhero/cards/format-comparison/grade-02.webp`
 - Owner: Card `format-comparison` grade `Comparison Table`
 - Status: generated
@@ -2671,9 +2944,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A compact strut rig with the prototypes mounted on it and the key measuring axes lit, the rig ending well inside the picture.
 ```
 
-#### 193. TAB 3. Decision Table
+#### 214. TAB 3. Decision Table
 
-- File name: `SUP-193-TAB-3-Decision-Table.png`
+- File name: `SUP-214-TAB-3-Decision-Table.png`
 - Target: `public/card-art/superhero/cards/format-comparison/grade-03.webp`
 - Owner: Card `format-comparison` grade `Decision Table`
 - Status: generated
@@ -2684,9 +2957,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A strut rig with criteria markers along its edges and the winning row glowing across its full width, the rig ending well inside the picture.
 ```
 
-#### 194. TAB 4. Evaluation Matrix
+#### 215. TAB 4. Evaluation Matrix
 
-- File name: `SUP-194-TAB-4-Evaluation-Matrix.png`
+- File name: `SUP-215-TAB-4-Evaluation-Matrix.png`
 - Target: `public/card-art/superhero/cards/format-comparison/grade-04.webp`
 - Owner: Card `format-comparison` grade `Evaluation Matrix`
 - Status: generated
@@ -2697,9 +2970,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A dense lattice of weighted cells with scored intersections and a ranked verdict column burning down one side, the lattice ending well inside the picture.
 ```
 
-#### 195. NXT 1. Next Move
+#### 216. NXT 1. Next Move
 
-- File name: `SUP-195-NXT-1-Next-Move.png`
+- File name: `SUP-216-NXT-1-Next-Move.png`
 - Target: `public/card-art/superhero/cards/format-next/grade-01.webp`
 - Owner: Card `format-next` grade `Next Move`
 - Status: generated
@@ -2710,9 +2983,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A launch row with a single bay primed and glowing hot at its head.
 ```
 
-#### 196. NXT 2. Next Steps
+#### 217. NXT 2. Next Steps
 
-- File name: `SUP-196-NXT-2-Next-Steps.png`
+- File name: `SUP-217-NXT-2-Next-Steps.png`
 - Target: `public/card-art/superhero/cards/format-next/grade-02.webp`
 - Owner: Card `format-next` grade `Next Steps`
 - Status: generated
@@ -2723,9 +2996,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A launch row with a short ordered run of bays lit in sequence down its length.
 ```
 
-#### 197. NXT 3. Prioritized Actions
+#### 218. NXT 3. Prioritized Actions
 
-- File name: `SUP-197-NXT-3-Prioritized-Actions.png`
+- File name: `SUP-218-NXT-3-Prioritized-Actions.png`
 - Target: `public/card-art/superhero/cards/format-next/grade-03.webp`
 - Owner: Card `format-next` grade `Prioritized Actions`
 - Status: generated
@@ -2736,9 +3009,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A launch row with bays ranked by heat, owner tags clipped to the hottest ones.
 ```
 
-#### 198. NXT 4. Execution Handoff
+#### 219. NXT 4. Execution Handoff
 
-- File name: `SUP-198-NXT-4-Execution-Handoff.png`
+- File name: `SUP-219-NXT-4-Execution-Handoff.png`
 - Target: `public/card-art/superhero/cards/format-next/grade-04.webp`
 - Owner: Card `format-next` grade `Execution Handoff`
 - Status: generated
@@ -2749,9 +3022,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A launch row fully loaded and released, running its whole sequence with no operator present to drive it.
 ```
 
-#### 199. LEN 1. Tight Budget
+#### 220. LEN 1. Tight Budget
 
-- File name: `SUP-199-LEN-1-Tight-Budget.png`
+- File name: `SUP-220-LEN-1-Tight-Budget.png`
 - Target: `public/card-art/superhero/cards/format-length/grade-01.webp`
 - Owner: Card `format-length` grade `Tight Budget`
 - Status: generated
@@ -2762,9 +3035,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A hydraulic caliper clamped hard on a bar of luminous alloy, a heavy offcut venting away as vapor.
 ```
 
-#### 200. LEN 2. One Screen
+#### 221. LEN 2. One Screen
 
-- File name: `SUP-200-LEN-2-One-Screen.png`
+- File name: `SUP-221-LEN-2-One-Screen.png`
 - Target: `public/card-art/superhero/cards/format-length/grade-02.webp`
 - Owner: Card `format-length` grade `One Screen`
 - Status: generated
@@ -2775,9 +3048,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A hydraulic caliper holding alloy to a single dense measure, compact and fully packed.
 ```
 
-#### 201. LEN 3. Room to Explain
+#### 222. LEN 3. Room to Explain
 
-- File name: `SUP-201-LEN-3-Room-to-Explain.png`
+- File name: `SUP-222-LEN-3-Room-to-Explain.png`
 - Target: `public/card-art/superhero/cards/format-length/grade-03.webp`
 - Owner: Card `format-length` grade `Room to Explain`
 - Status: generated
@@ -2788,9 +3061,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A hydraulic caliper opened to the alloy's natural width, the space spent on substance rather than padding.
 ```
 
-#### 202. LEN 4. Complete Treatment
+#### 223. LEN 4. Complete Treatment
 
-- File name: `SUP-202-LEN-4-Complete-Treatment.png`
+- File name: `SUP-223-LEN-4-Complete-Treatment.png`
 - Target: `public/card-art/superhero/cards/format-length/grade-04.webp`
 - Owner: Card `format-length` grade `Complete Treatment`
 - Status: generated
@@ -2801,9 +3074,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A hydraulic caliper opened wide but stopping exactly at the alloy's true edge, complete with nothing added beyond it.
 ```
 
-#### 203. TIER 1. Essentials First
+#### 224. TIER 1. Essentials First
 
-- File name: `SUP-203-TIER-1-Essentials-First.png`
+- File name: `SUP-224-TIER-1-Essentials-First.png`
 - Target: `public/card-art/superhero/cards/format-tiers/grade-01.webp`
 - Owner: Card `format-tiers` grade `Essentials First`
 - Status: generated
@@ -2814,9 +3087,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A hangar podium with one small brilliantly lit top platform and the depth below it only suggested in shadow.
 ```
 
-#### 204. TIER 2. Three Tiers
+#### 225. TIER 2. Three Tiers
 
-- File name: `SUP-204-TIER-2-Three-Tiers.png`
+- File name: `SUP-225-TIER-2-Three-Tiers.png`
 - Target: `public/card-art/superhero/cards/format-tiers/grade-02.webp`
 - Owner: Card `format-tiers` grade `Three Tiers`
 - Status: generated
@@ -2827,9 +3100,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A hangar podium of three clean descending platforms, each one clearly separated from the next.
 ```
 
-#### 205. TIER 3. Tiered Sections
+#### 226. TIER 3. Tiered Sections
 
-- File name: `SUP-205-TIER-3-Tiered-Sections.png`
+- File name: `SUP-226-TIER-3-Tiered-Sections.png`
 - Target: `public/card-art/superhero/cards/format-tiers/grade-03.webp`
 - Owner: Card `format-tiers` grade `Tiered Sections`
 - Status: generated
@@ -2840,9 +3113,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A hangar podium of three marked platforms with every item visibly assigned to one of them.
 ```
 
-#### 206. TIER 4. Locked Tier Hierarchy
+#### 227. TIER 4. Locked Tier Hierarchy
 
-- File name: `SUP-206-TIER-4-Locked-Tier-Hierarchy.png`
+- File name: `SUP-227-TIER-4-Locked-Tier-Hierarchy.png`
 - Target: `public/card-art/superhero/cards/format-tiers/grade-04.webp`
 - Owner: Card `format-tiers` grade `Locked Tier Hierarchy`
 - Status: generated
@@ -2853,11 +3126,63 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A strictly machined terrace of platforms with hard edges, nothing resting anywhere outside the hierarchy.
 ```
 
+#### 228. EDIT 1. Change record
+
+- File name: `SUP-228-EDIT-1-Change-record.png`
+- Target: `public/card-art/superhero/cards/format-change-record/grade-01.webp`
+- Owner: Card `format-change-record` grade `Change record`
+- Status: planned
+
+```
+Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash-page illustration: heavy confident ink outlines, dynamic foreshortened staging, halftone-dot shading over punchy four-color flats, the way a landmark issue paints its cover moment. Hot crimson key light rakes the subject from one side, a hard electric-yellow rim light separates it from a deep indigo night-city darkness, and speedline energy and rooftop haze fall away behind. One strong centered focal shape, isolated, uncluttered edges, nothing in the background competing with it, and it still reads at thumbnail size. Square composition with generous breathing room. The art is full-bleed and fills the entire square to every edge, the scene cut off by the picture edges on all four sides: no border, no margin, no matting, no panel gutter, no drawn edge line, no vignette box, no rounded corners. Artwork only: no text, no letters, no numbers, no logos, no readable symbols, no UI labels, no card frame, no speech bubbles, no caption boxes, no sound-effect lettering.
+
+A margin note beside a clean proof.
+```
+
+#### 229. EDIT 2. Change record · reason
+
+- File name: `SUP-229-EDIT-2-Change-record-reason.png`
+- Target: `public/card-art/superhero/cards/format-change-record/grade-02.webp`
+- Owner: Card `format-change-record` grade `Change record · reason`
+- Status: planned
+
+```
+Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash-page illustration: heavy confident ink outlines, dynamic foreshortened staging, halftone-dot shading over punchy four-color flats, the way a landmark issue paints its cover moment. Hot crimson key light rakes the subject from one side, a hard electric-yellow rim light separates it from a deep indigo night-city darkness, and speedline energy and rooftop haze fall away behind. One strong centered focal shape, isolated, uncluttered edges, nothing in the background competing with it, and it still reads at thumbnail size. Square composition with generous breathing room. The art is full-bleed and fills the entire square to every edge, the scene cut off by the picture edges on all four sides: no border, no margin, no matting, no panel gutter, no drawn edge line, no vignette box, no rounded corners. Artwork only: no text, no letters, no numbers, no logos, no readable symbols, no UI labels, no card frame, no speech bubbles, no caption boxes, no sound-effect lettering.
+
+A margin note beside a clean proof.
+```
+
+#### 230. EDIT 3. Change record · example
+
+- File name: `SUP-230-EDIT-3-Change-record-example.png`
+- Target: `public/card-art/superhero/cards/format-change-record/grade-03.webp`
+- Owner: Card `format-change-record` grade `Change record · example`
+- Status: planned
+
+```
+Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash-page illustration: heavy confident ink outlines, dynamic foreshortened staging, halftone-dot shading over punchy four-color flats, the way a landmark issue paints its cover moment. Hot crimson key light rakes the subject from one side, a hard electric-yellow rim light separates it from a deep indigo night-city darkness, and speedline energy and rooftop haze fall away behind. One strong centered focal shape, isolated, uncluttered edges, nothing in the background competing with it, and it still reads at thumbnail size. Square composition with generous breathing room. The art is full-bleed and fills the entire square to every edge, the scene cut off by the picture edges on all four sides: no border, no margin, no matting, no panel gutter, no drawn edge line, no vignette box, no rounded corners. Artwork only: no text, no letters, no numbers, no logos, no readable symbols, no UI labels, no card frame, no speech bubbles, no caption boxes, no sound-effect lettering.
+
+A margin note beside a clean proof.
+```
+
+#### 231. EDIT 4. Change record · review
+
+- File name: `SUP-231-EDIT-4-Change-record-review.png`
+- Target: `public/card-art/superhero/cards/format-change-record/grade-04.webp`
+- Owner: Card `format-change-record` grade `Change record · review`
+- Status: planned
+
+```
+Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash-page illustration: heavy confident ink outlines, dynamic foreshortened staging, halftone-dot shading over punchy four-color flats, the way a landmark issue paints its cover moment. Hot crimson key light rakes the subject from one side, a hard electric-yellow rim light separates it from a deep indigo night-city darkness, and speedline energy and rooftop haze fall away behind. One strong centered focal shape, isolated, uncluttered edges, nothing in the background competing with it, and it still reads at thumbnail size. Square composition with generous breathing room. The art is full-bleed and fills the entire square to every edge, the scene cut off by the picture edges on all four sides: no border, no margin, no matting, no panel gutter, no drawn edge line, no vignette box, no rounded corners. Artwork only: no text, no letters, no numbers, no logos, no readable symbols, no UI labels, no card frame, no speech bubbles, no caption boxes, no sound-effect lettering.
+
+A margin note beside a clean proof.
+```
+
 ### Per-grade variants - Target
 
-#### 207. LVL 1. First Contact
+#### 232. LVL 1. First Contact
 
-- File name: `SUP-207-LVL-1-First-Contact.png`
+- File name: `SUP-232-LVL-1-First-Contact.png`
 - Target: `public/card-art/superhero/cards/target-language/grade-01.webp`
 - Owner: Card `target-language` grade `First Contact`
 - Status: generated
@@ -2868,9 +3193,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A decoder tower stepping its signal all the way down to the simplest broadest stage, emerging plain and unhurried.
 ```
 
-#### 208. LVL 2. Plain Language
+#### 233. LVL 2. Plain Language
 
-- File name: `SUP-208-LVL-2-Plain-Language.png`
+- File name: `SUP-233-LVL-2-Plain-Language.png`
 - Target: `public/card-art/superhero/cards/target-language/grade-02.webp`
 - Owner: Card `target-language` grade `Plain Language`
 - Status: generated
@@ -2881,9 +3206,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A decoder tower holding a clear middle stage, unfamiliar bursts visibly unpacked as the signal enters.
 ```
 
-#### 209. LVL 3. Working Vocabulary
+#### 234. LVL 3. Working Vocabulary
 
-- File name: `SUP-209-LVL-3-Working-Vocabulary.png`
+- File name: `SUP-234-LVL-3-Working-Vocabulary.png`
 - Target: `public/card-art/superhero/cards/target-language/grade-03.webp`
 - Owner: Card `target-language` grade `Working Vocabulary`
 - Status: generated
@@ -2894,9 +3219,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A decoder tower running at standard density, only the most obscure stages clarified along the path.
 ```
 
-#### 210. LVL 4. Expert Shorthand
+#### 235. LVL 4. Expert Shorthand
 
-- File name: `SUP-210-LVL-4-Expert-Shorthand.png`
+- File name: `SUP-235-LVL-4-Expert-Shorthand.png`
 - Target: `public/card-art/superhero/cards/target-language/grade-04.webp`
 - Owner: Card `target-language` grade `Expert Shorthand`
 - Status: generated
@@ -2907,9 +3232,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A decoder tower passed straight through undiluted, the signal leaving at full technical density.
 ```
 
-#### 211. VOC 1. Straight Talk
+#### 236. VOC 1. Straight Talk
 
-- File name: `SUP-211-VOC-1-Straight-Talk.png`
+- File name: `SUP-236-VOC-1-Straight-Talk.png`
 - Target: `public/card-art/superhero/cards/target-voice/grade-01.webp`
 - Owner: Card `target-voice` grade `Straight Talk`
 - Status: generated
@@ -2920,9 +3245,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A voice modulator with its band ringing loose and natural, warm and conversational.
 ```
 
-#### 212. VOC 2. Clear Neutral
+#### 237. VOC 2. Clear Neutral
 
-- File name: `SUP-212-VOC-2-Clear-Neutral.png`
+- File name: `SUP-237-VOC-2-Clear-Neutral.png`
 - Target: `public/card-art/superhero/cards/target-voice/grade-02.webp`
 - Owner: Card `target-voice` grade `Clear Neutral`
 - Status: generated
@@ -2933,9 +3258,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A voice modulator holding a calm even band without ornament or flourish.
 ```
 
-#### 213. VOC 3. Professional Voice
+#### 238. VOC 3. Professional Voice
 
-- File name: `SUP-213-VOC-3-Professional-Voice.png`
+- File name: `SUP-238-VOC-3-Professional-Voice.png`
 - Target: `public/card-art/superhero/cards/target-voice/grade-03.webp`
 - Owner: Card `target-voice` grade `Professional Voice`
 - Status: generated
@@ -2946,9 +3271,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A voice modulator holding a polished precise band, its edges clean and deliberate.
 ```
 
-#### 214. VOC 4. Formal Register
+#### 239. VOC 4. Formal Register
 
-- File name: `SUP-214-VOC-4-Formal-Register.png`
+- File name: `SUP-239-VOC-4-Formal-Register.png`
 - Target: `public/card-art/superhero/cards/target-voice/grade-04.webp`
 - Owner: Card `target-voice` grade `Formal Register`
 - Status: generated
@@ -2959,9 +3284,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A voice modulator holding a rigid disciplined band exactly on its mark, formal and unwavering.
 ```
 
-#### 215. EX 1. Everyday Analogy
+#### 240. EX 1. Everyday Analogy
 
-- File name: `SUP-215-EX-1-Everyday-Analogy.png`
+- File name: `SUP-240-EX-1-Everyday-Analogy.png`
 - Target: `public/card-art/superhero/cards/target-examples/grade-01.webp`
 - Owner: Card `target-examples` grade `Everyday Analogy`
 - Status: generated
@@ -2972,9 +3297,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A projector casting one familiar street-corner scene beneath a large abstract shape.
 ```
 
-#### 216. EX 2. Worked Example
+#### 241. EX 2. Worked Example
 
-- File name: `SUP-216-EX-2-Worked-Example.png`
+- File name: `SUP-241-EX-2-Worked-Example.png`
 - Target: `public/card-art/superhero/cards/target-examples/grade-02.webp`
 - Owner: Card `target-examples` grade `Worked Example`
 - Status: generated
@@ -2985,9 +3310,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A projector carrying a single street scene all the way through from start to finish.
 ```
 
-#### 217. EX 3. Domain Example
+#### 242. EX 3. Domain Example
 
-- File name: `SUP-217-EX-3-Domain-Example.png`
+- File name: `SUP-242-EX-3-Domain-Example.png`
 - Target: `public/card-art/superhero/cards/target-examples/grade-03.webp`
 - Owner: Card `target-examples` grade `Domain Example`
 - Status: generated
@@ -2998,9 +3323,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A projector casting realistic street scenes with their messy irregular detail deliberately left in.
 ```
 
-#### 218. EX 4. Edge Case
+#### 243. EX 4. Edge Case
 
-- File name: `SUP-218-EX-4-Edge-Case.png`
+- File name: `SUP-243-EX-4-Edge-Case.png`
 - Target: `public/card-art/superhero/cards/target-examples/grade-04.webp`
 - Owner: Card `target-examples` grade `Edge Case`
 - Status: generated
@@ -3011,9 +3336,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A projector placing scenes right at the boundary where the larger rule visibly breaks down.
 ```
 
-#### 219. DCN 1. Next Decision
+#### 244. DCN 1. Next Decision
 
-- File name: `SUP-219-DCN-1-Next-Decision.png`
+- File name: `SUP-244-DCN-1-Next-Decision.png`
 - Target: `public/card-art/superhero/cards/target-decisions/grade-01.webp`
 - Owner: Card `target-decisions` grade `Next Decision`
 - Status: generated
@@ -3024,9 +3349,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A switch console with one switch highlighted and the input it still needs lit beside it.
 ```
 
-#### 220. DCN 2. Actionable Framing
+#### 245. DCN 2. Actionable Framing
 
-- File name: `SUP-220-DCN-2-Actionable-Framing.png`
+- File name: `SUP-245-DCN-2-Actionable-Framing.png`
 - Target: `public/card-art/superhero/cards/target-decisions/grade-02.webp`
 - Owner: Card `target-decisions` grade `Actionable Framing`
 - Status: generated
@@ -3037,9 +3362,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A switch console with its switches marked by the action each one triggers further down the line.
 ```
 
-#### 221. DCN 3. Tradeoff Brief
+#### 246. DCN 3. Tradeoff Brief
 
-- File name: `SUP-221-DCN-3-Tradeoff-Brief.png`
+- File name: `SUP-246-DCN-3-Tradeoff-Brief.png`
 - Target: `public/card-art/superhero/cards/target-decisions/grade-03.webp`
 - Owner: Card `target-decisions` grade `Tradeoff Brief`
 - Status: generated
@@ -3050,9 +3375,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A switch console of paired switches, each pair showing what is gained against what is given up.
 ```
 
-#### 222. DCN 4. Decision Record
+#### 247. DCN 4. Decision Record
 
-- File name: `SUP-222-DCN-4-Decision-Record.png`
+- File name: `SUP-247-DCN-4-Decision-Record.png`
 - Target: `public/card-art/superhero/cards/target-decisions/grade-04.webp`
 - Owner: Card `target-decisions` grade `Decision Record`
 - Status: generated
@@ -3063,9 +3388,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A switch console with the chosen switch locked in place and its accepted consequences recorded along the panel.
 ```
 
-#### 223. STN 1. Warm & Encouraging
+#### 248. STN 1. Warm & Encouraging
 
-- File name: `SUP-223-STN-1-Warm-Encouraging.png`
+- File name: `SUP-248-STN-1-Warm-Encouraging.png`
 - Target: `public/card-art/superhero/cards/target-stance/grade-01.webp`
 - Owner: Card `target-stance` grade `Warm & Encouraging`
 - Status: generated
@@ -3076,9 +3401,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A stance dial with the needle at the warm pole, the scene washed in soft encouraging light.
 ```
 
-#### 224. STN 2. Even & Matter-of-Fact
+#### 249. STN 2. Even & Matter-of-Fact
 
-- File name: `SUP-224-STN-2-Even-Matter-of-Fact.png`
+- File name: `SUP-249-STN-2-Even-Matter-of-Fact.png`
 - Target: `public/card-art/superhero/cards/target-stance/grade-02.webp`
 - Owner: Card `target-stance` grade `Even & Matter-of-Fact`
 - Status: generated
@@ -3089,9 +3414,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A stance dial on the console with the needle centered, the war room lit even and matter-of-fact with no lean either way.
 ```
 
-#### 225. STN 3. Candid & Direct
+#### 250. STN 3. Candid & Direct
 
-- File name: `SUP-225-STN-3-Candid-Direct.png`
+- File name: `SUP-250-STN-3-Candid-Direct.png`
 - Target: `public/card-art/superhero/cards/target-stance/grade-03.webp`
 - Owner: Card `target-stance` grade `Candid & Direct`
 - Status: generated
@@ -3102,9 +3427,9 @@ Bold superhero comic-book collectible-card key art, drawn as a full-bleed splash
 A stance dial with the needle pushed toward the cold blue pole, the light hard, clear, and unsoftened across the console.
 ```
 
-#### 226. STN 4. Authoritative & Decisive
+#### 251. STN 4. Authoritative & Decisive
 
-- File name: `SUP-226-STN-4-Authoritative-Decisive.png`
+- File name: `SUP-251-STN-4-Authoritative-Decisive.png`
 - Target: `public/card-art/superhero/cards/target-stance/grade-04.webp`
 - Owner: Card `target-stance` grade `Authoritative & Decisive`
 - Status: generated

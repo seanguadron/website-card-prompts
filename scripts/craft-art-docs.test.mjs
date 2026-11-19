@@ -26,12 +26,12 @@ test("every shipped art pack covers the catalog with no orphans", async () => {
   }
 });
 
-test("the pack owes 226 images: 98 core, then 128 per-grade variants", async () => {
+test("the pack owes 251 images: 103 core, then 148 per-grade variants", async () => {
   const entries = collectCraftArtEntries(await catalogPromise, await themePromise);
 
-  assert.equal(entries.length, 226);
-  assert.equal(entries.filter((entry) => !entry.later).length, 98);
-  assert.equal(entries.filter((entry) => entry.later).length, 128);
+  assert.equal(entries.length, 251);
+  assert.equal(entries.filter((entry) => !entry.later).length, 103);
+  assert.equal(entries.filter((entry) => entry.later).length, 148);
 });
 
 test("the acronym leads and every target sits under the theme path", async () => {
@@ -60,12 +60,12 @@ test("rendered prompts carry no generator flags and pair both paragraphs", async
   // Seedream takes plain prose; the aspect ratio is a UI control there.
   assert.ok(!rendered.includes("--ar"), "rendered doc leaked a Midjourney flag");
   assert.ok(!rendered.includes("--stylize"));
-  assert.equal((rendered.match(/^#### \d{3}\./gm) ?? []).length, 226);
+  assert.equal((rendered.match(/^#### \d{3}\./gm) ?? []).length, 251);
 
   const style = (await themePromise).theme.style;
   // One copy of the style paragraph per entry, plus the standalone one in
   // the shared art direction section.
-  assert.equal(rendered.split(style).length - 1, 227);
+  assert.equal(rendered.split(style).length - 1, 252);
 });
 
 test("file names follow PREFIX-NNN-Name and stay filesystem-safe", async () => {

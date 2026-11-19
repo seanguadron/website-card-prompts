@@ -27,7 +27,7 @@ Per image:
    `public/`, flip `status` in this pack's JSON, and run
    `npm run data:generate`.
 
-Progress: 226/226 generated - 98 core images first, then 128 per-grade variants.
+Progress: 226/251 generated - 103 core images first, then 148 per-grade variants.
 
 ## Shared art direction
 
@@ -869,11 +869,63 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A query beacon pulsing into a dark gap in a structure, its light outlining the exact shape of the missing piece rather than filling it in.
 ```
 
+#### 059. LOG lineage
+
+- File name: `SCI-059-LOG-lineage.png`
+- Target: `public/card-art/sci-fi/cards/action-record/lineage.webp`
+- Owner: Card `action-record`
+- Status: planned
+
+```
+Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: painterly volumetric rendering carried by clean comic ink weight on the silhouette, cinematic and high-craft, the way a premium video game paints its collectible cards. Cyan and teal key light rakes the subject from one side, a hard cyan rim light separates it from a deep blue-black background, and soft atmospheric haze falls away behind. One strong centered focal shape, isolated, uncluttered edges, nothing in the background competing with it, and it still reads at thumbnail size. Square composition with generous breathing room. Artwork only: no text, no letters, no numbers, no logos, no readable symbols, no UI labels, no card frame.
+
+A ledger with a dated correction slip.
+```
+
+#### 060. MATCH lineage
+
+- File name: `SCI-060-MATCH-lineage.png`
+- Target: `public/card-art/sci-fi/cards/action-matched-compare/lineage.webp`
+- Owner: Card `action-matched-compare`
+- Status: planned
+
+```
+Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: painterly volumetric rendering carried by clean comic ink weight on the silhouette, cinematic and high-craft, the way a premium video game paints its collectible cards. Cyan and teal key light rakes the subject from one side, a hard cyan rim light separates it from a deep blue-black background, and soft atmospheric haze falls away behind. One strong centered focal shape, isolated, uncluttered edges, nothing in the background competing with it, and it still reads at thumbnail size. Square composition with generous breathing room. Artwork only: no text, no letters, no numbers, no logos, no readable symbols, no UI labels, no card frame.
+
+Two graduated measures aligned on one baseline.
+```
+
+#### 061. REVISE lineage
+
+- File name: `SCI-061-REVISE-lineage.png`
+- Target: `public/card-art/sci-fi/cards/action-revise/lineage.webp`
+- Owner: Card `action-revise`
+- Status: planned
+
+```
+Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: painterly volumetric rendering carried by clean comic ink weight on the silhouette, cinematic and high-craft, the way a premium video game paints its collectible cards. Cyan and teal key light rakes the subject from one side, a hard cyan rim light separates it from a deep blue-black background, and soft atmospheric haze falls away behind. One strong centered focal shape, isolated, uncluttered edges, nothing in the background competing with it, and it still reads at thumbnail size. Square composition with generous breathing room. Artwork only: no text, no letters, no numbers, no logos, no readable symbols, no UI labels, no card frame.
+
+A marked proof laid beside its source.
+```
+
+#### 062. FLIP lineage
+
+- File name: `SCI-062-FLIP-lineage.png`
+- Target: `public/card-art/sci-fi/cards/action-conditional-recommend/lineage.webp`
+- Owner: Card `action-conditional-recommend`
+- Status: planned
+
+```
+Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: painterly volumetric rendering carried by clean comic ink weight on the silhouette, cinematic and high-craft, the way a premium video game paints its collectible cards. Cyan and teal key light rakes the subject from one side, a hard cyan rim light separates it from a deep blue-black background, and soft atmospheric haze falls away behind. One strong centered focal shape, isolated, uncluttered edges, nothing in the background competing with it, and it still reads at thumbnail size. Square composition with generous breathing room. Artwork only: no text, no letters, no numbers, no logos, no readable symbols, no UI labels, no card frame.
+
+A balance with a sliding counterweight.
+```
+
 ### Cards - Format
 
-#### 059. INF lineage
+#### 063. INF lineage
 
-- File name: `SCI-059-INF-lineage.png`
+- File name: `SCI-063-INF-lineage.png`
 - Target: `public/card-art/sci-fi/cards/format-info-card/lineage.webp`
 - Owner: Card `format-info-card`
 - Status: generated
@@ -885,9 +937,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A single clean answer slab standing alone in the dark, its face flat and legible, no ornament and nothing stacked around it.
 ```
 
-#### 060. KEY lineage
+#### 064. KEY lineage
 
-- File name: `SCI-060-KEY-lineage.png`
+- File name: `SCI-064-KEY-lineage.png`
 - Target: `public/card-art/sci-fi/cards/format-key-points/lineage.webp`
 - Owner: Card `format-key-points`
 - Status: generated
@@ -899,9 +951,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A rack of separated point-shards standing in a row, each one distinct and evenly lit, clear dark gaps holding them apart.
 ```
 
-#### 061. SUM lineage
+#### 065. SUM lineage
 
-- File name: `SCI-061-SUM-lineage.png`
+- File name: `SCI-065-SUM-lineage.png`
 - Target: `public/card-art/sci-fi/cards/format-summary/lineage.webp`
 - Owner: Card `format-summary`
 - Status: generated
@@ -913,9 +965,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A distillation vessel with the heaviest conclusion settled bright at the top and the supporting sediment layered below it in shadow.
 ```
 
-#### 062. SEC lineage
+#### 066. SEC lineage
 
-- File name: `SCI-062-SEC-lineage.png`
+- File name: `SCI-066-SEC-lineage.png`
 - Target: `public/card-art/sci-fi/cards/format-sections/lineage.webp`
 - Owner: Card `format-sections`
 - Status: generated
@@ -927,9 +979,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A segmented column of stacked chambers, each chamber a distinct sealed volume with its own internal glow, the divisions between them crisp.
 ```
 
-#### 063. CIT lineage
+#### 067. CIT lineage
 
-- File name: `SCI-063-CIT-lineage.png`
+- File name: `SCI-067-CIT-lineage.png`
 - Target: `public/card-art/sci-fi/cards/format-evidence/lineage.webp`
 - Owner: Card `format-evidence`
 - Status: generated
@@ -941,9 +993,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 Anchor lines running from a floating claim down to solid source cores below, each line taut and lit, one unanchored claim drifting loose.
 ```
 
-#### 064. TAB lineage
+#### 068. TAB lineage
 
-- File name: `SCI-064-TAB-lineage.png`
+- File name: `SCI-068-TAB-lineage.png`
 - Target: `public/card-art/sci-fi/cards/format-comparison/lineage.webp`
 - Owner: Card `format-comparison`
 - Status: generated
@@ -955,9 +1007,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A grid lattice aligning several items along the same measuring axes, the intersections where they diverge flaring brighter than the rest.
 ```
 
-#### 065. NXT lineage
+#### 069. NXT lineage
 
-- File name: `SCI-065-NXT-lineage.png`
+- File name: `SCI-069-NXT-lineage.png`
 - Target: `public/card-art/sci-fi/cards/format-next/lineage.webp`
 - Owner: Card `format-next`
 - Status: generated
@@ -969,9 +1021,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A launch rail with ordered ready-markers lit in sequence, the first one primed and glowing hot, the later ones waiting cooler down the line.
 ```
 
-#### 066. LEN lineage
+#### 070. LEN lineage
 
-- File name: `SCI-066-LEN-lineage.png`
+- File name: `SCI-070-LEN-lineage.png`
 - Target: `public/card-art/sci-fi/cards/format-length/lineage.webp`
 - Owner: Card `format-length`
 - Status: generated
@@ -983,9 +1035,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A precision caliper clamped around a body of luminous material, compressing it to an exact marked width, the trimmed excess venting away as vapor.
 ```
 
-#### 067. TIER lineage
+#### 071. TIER lineage
 
-- File name: `SCI-067-TIER-lineage.png`
+- File name: `SCI-071-TIER-lineage.png`
 - Target: `public/card-art/sci-fi/cards/format-tiers/lineage.webp`
 - Owner: Card `format-tiers`
 - Status: generated
@@ -997,11 +1049,24 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A stepped platform descending into the dark, the top step small and brilliantly lit, each lower step wider and dimmer with supporting depth.
 ```
 
+#### 072. EDIT lineage
+
+- File name: `SCI-072-EDIT-lineage.png`
+- Target: `public/card-art/sci-fi/cards/format-change-record/lineage.webp`
+- Owner: Card `format-change-record`
+- Status: planned
+
+```
+Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: painterly volumetric rendering carried by clean comic ink weight on the silhouette, cinematic and high-craft, the way a premium video game paints its collectible cards. Cyan and teal key light rakes the subject from one side, a hard cyan rim light separates it from a deep blue-black background, and soft atmospheric haze falls away behind. One strong centered focal shape, isolated, uncluttered edges, nothing in the background competing with it, and it still reads at thumbnail size. Square composition with generous breathing room. Artwork only: no text, no letters, no numbers, no logos, no readable symbols, no UI labels, no card frame.
+
+A margin note beside a clean proof.
+```
+
 ### Cards - Target
 
-#### 068. LVL lineage
+#### 073. LVL lineage
 
-- File name: `SCI-068-LVL-lineage.png`
+- File name: `SCI-073-LVL-lineage.png`
 - Target: `public/card-art/sci-fi/cards/target-language/lineage.webp`
 - Owner: Card `target-language`
 - Status: generated
@@ -1013,9 +1078,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A translator prism stepping a dense beam down through graded facets, the light emerging simpler and clearer at each stage without losing its color.
 ```
 
-#### 069. VOC lineage
+#### 074. VOC lineage
 
-- File name: `SCI-069-VOC-lineage.png`
+- File name: `SCI-074-VOC-lineage.png`
 - Target: `public/card-art/sci-fi/cards/target-voice/lineage.webp`
 - Owner: Card `target-voice`
 - Status: generated
@@ -1027,9 +1092,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A tone modulator with a resonating fork held in a field of register bands, the selected band ringing bright and steady across its whole length.
 ```
 
-#### 070. EX lineage
+#### 075. EX lineage
 
-- File name: `SCI-070-EX-lineage.png`
+- File name: `SCI-075-EX-lineage.png`
 - Target: `public/card-art/sci-fi/cards/target-examples/lineage.webp`
 - Owner: Card `target-examples`
 - Status: generated
@@ -1041,9 +1106,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A projector casting small concrete miniature scenes into the air beneath a large abstract form, the miniatures sharp where the abstraction is vague.
 ```
 
-#### 071. DCN lineage
+#### 076. DCN lineage
 
-- File name: `SCI-071-DCN-lineage.png`
+- File name: `SCI-076-DCN-lineage.png`
 - Target: `public/card-art/sci-fi/cards/target-decisions/lineage.webp`
 - Owner: Card `target-decisions`
 - Status: generated
@@ -1055,9 +1120,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A decision console of weighted levers, each one linked by a taut line to the consequence it triggers further down the board.
 ```
 
-#### 072. STN lineage
+#### 077. STN lineage
 
-- File name: `SCI-072-STN-lineage.png`
+- File name: `SCI-077-STN-lineage.png`
 - Target: `public/card-art/sci-fi/cards/target-stance/lineage.webp`
 - Owner: Card `target-stance`
 - Status: generated
@@ -1071,9 +1136,9 @@ A stance dial set between a warm amber pole and a hard cold pole, the needle loc
 
 ### Archetypes
 
-#### 073. Executive summary
+#### 078. Executive summary
 
-- File name: `SCI-073-Executive-summary.png`
+- File name: `SCI-078-Executive-summary.png`
 - Target: `public/card-art/sci-fi/archetypes/executive-summary.webp`
 - Owner: Archetype `executive-summary`
 - Status: generated
@@ -1085,9 +1150,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A command table where a mountain of raw material has been distilled to one decision slab hovering at eye level under a spotlight, the source volume receding into darkness behind it.
 ```
 
-#### 074. Creative concept
+#### 079. Creative concept
 
-- File name: `SCI-074-Creative-concept.png`
+- File name: `SCI-079-Creative-concept.png`
 - Target: `public/card-art/sci-fi/archetypes/creative-concept.webp`
 - Owner: Archetype `creative-concept`
 - Status: generated
@@ -1099,9 +1164,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A concept forge with a luminous idea suspended in the shaping field, growing structure and a hard bright hook at its core while rough offcuts drift away.
 ```
 
-#### 075. Note taker
+#### 080. Meeting record
 
-- File name: `SCI-075-Note-taker.png`
+- File name: `SCI-080-Meeting-record.png`
 - Target: `public/card-art/sci-fi/archetypes/note-taker.webp`
 - Owner: Archetype `note-taker`
 - Status: generated
@@ -1113,9 +1178,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A capture array turning a chaotic incoming stream of fragments into neat ordered tablets stacking themselves into a clean archive rack.
 ```
 
-#### 076. Message & email
+#### 081. Message & email
 
-- File name: `SCI-076-Message-email.png`
+- File name: `SCI-081-Message-email.png`
 - Target: `public/card-art/sci-fi/archetypes/message-email.webp`
 - Owner: Archetype `message-email`
 - Status: generated
@@ -1127,9 +1192,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A comms relay composing one sealed transmission capsule, its tone-tuning ring glowing at the chosen register, ready to launch into a dark channel.
 ```
 
-#### 077. Prompt improver
+#### 082. Prompt improver
 
-- File name: `SCI-077-Prompt-improver.png`
+- File name: `SCI-082-Prompt-improver.png`
 - Target: `public/card-art/sci-fi/archetypes/prompt-improver.webp`
 - Owner: Archetype `prompt-improver`
 - Status: generated
@@ -1141,9 +1206,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A workbench where an old instruction core has been stripped down and rebuilt sharper, the discarded ambiguous parts laid out dark to one side.
 ```
 
-#### 078. Learning guide
+#### 083. Learning guide
 
-- File name: `SCI-078-Learning-guide.png`
+- File name: `SCI-083-Learning-guide.png`
 - Target: `public/card-art/sci-fi/archetypes/learning-guide.webp`
 - Owner: Archetype `learning-guide`
 - Status: generated
@@ -1155,9 +1220,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A teaching orrery with a central idea at its heart and a guided path of illuminated waypoints circling it, worked examples orbiting close.
 ```
 
-#### 079. App build handoff
+#### 084. App build handoff
 
-- File name: `SCI-079-App-build-handoff.png`
+- File name: `SCI-084-App-build-handoff.png`
 - Target: `public/card-art/sci-fi/archetypes/app-build-handoff.webp`
 - Owner: Archetype `app-build-handoff`
 - Status: generated
@@ -1169,9 +1234,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A sealed blueprint capsule holding a complete self-contained plan, every layer visible through its shell, docked into an autonomous builder waiting to execute.
 ```
 
-#### 080. Agent skill
+#### 085. Agent skill
 
-- File name: `SCI-080-Agent-skill.png`
+- File name: `SCI-085-Agent-skill.png`
 - Target: `public/card-art/sci-fi/archetypes/agent-skill.webp`
 - Owner: Archetype `agent-skill`
 - Status: generated
@@ -1183,9 +1248,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A modular skill cartridge on a mounting rail, its trigger face lit, procedure rails and guardrail clamps visible along its length.
 ```
 
-#### 081. Agent gate
+#### 086. Agent gate
 
-- File name: `SCI-081-Agent-gate.png`
+- File name: `SCI-086-Agent-gate.png`
 - Target: `public/card-art/sci-fi/archetypes/agent-gate.webp`
 - Owner: Archetype `agent-gate`
 - Status: generated
@@ -1197,9 +1262,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A judgment gate arch scanning an artifact passing beneath it, a hard scanning plane sweeping the object and a verdict light holding at the top of the arch.
 ```
 
-#### 082. Social post
+#### 087. Social post
 
-- File name: `SCI-082-Social-post.png`
+- File name: `SCI-087-Social-post.png`
 - Target: `public/card-art/sci-fi/archetypes/social-post.webp`
 - Owner: Archetype `social-post`
 - Status: generated
@@ -1211,9 +1276,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A broadcast pod fitted with several interchangeable antenna heads, one selected and extended, its shaped signal already carrying out into the dark.
 ```
 
-#### 083. Quick explanation
+#### 088. Quick explanation
 
-- File name: `SCI-083-Quick-explanation.png`
+- File name: `SCI-088-Quick-explanation.png`
 - Target: `public/card-art/sci-fi/archetypes/quick-explanation.webp`
 - Owner: Archetype `quick-explanation`
 - Status: generated
@@ -1225,9 +1290,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A compact answer beacon standing alone, one clear steady light, nothing around it and nothing between the viewer and the point.
 ```
 
-#### 084. Research brief
+#### 089. Research brief
 
-- File name: `SCI-084-Research-brief.png`
+- File name: `SCI-089-Research-brief.png`
 - Target: `public/card-art/sci-fi/archetypes/research-brief.webp`
 - Owner: Archetype `research-brief`
 - Status: generated
@@ -1239,9 +1304,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A balanced dossier suspended between two source pillars, confidence bands rendered as visible width around each finding, the uncertain ones deliberately wider.
 ```
 
-#### 085. Decision advisor
+#### 090. Decision advisor
 
-- File name: `SCI-085-Decision-advisor.png`
+- File name: `SCI-090-Decision-advisor.png`
 - Target: `public/card-art/sci-fi/archetypes/decision-advisor.webp`
 - Owner: Archetype `decision-advisor`
 - Status: generated
@@ -1253,9 +1318,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A weighing console with several options mounted on measured arms, one arm settling low and lighting bright as the recommendation commits.
 ```
 
-#### 086. Data analysis
+#### 091. Data analysis
 
-- File name: `SCI-086-Data-analysis.png`
+- File name: `SCI-091-Data-analysis.png`
 - Target: `public/card-art/sci-fi/archetypes/data-analysis.webp`
 - Owner: Archetype `data-analysis`
 - Status: generated
@@ -1267,9 +1332,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A data core being read open, its contents fanning out into layered insight strata, one segment isolated and brought forward glowing.
 ```
 
-#### 087. Risk premortem
+#### 092. Risk premortem
 
-- File name: `SCI-087-Risk-premortem.png`
+- File name: `SCI-092-Risk-premortem.png`
 - Target: `public/card-art/sci-fi/archetypes/risk-premortem.webp`
 - Owner: Archetype `risk-premortem`
 - Status: generated
@@ -1281,9 +1346,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A wreckage diorama being read in reverse, luminous failure lines running backward from the broken result to the small quiet cause that started it.
 ```
 
-#### 088. Writing draft
+#### 093. Writing draft
 
-- File name: `SCI-088-Writing-draft.png`
+- File name: `SCI-093-Writing-draft.png`
 - Target: `public/card-art/sci-fi/archetypes/writing-draft.webp`
 - Owner: Archetype `writing-draft`
 - Status: generated
@@ -1295,9 +1360,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A text loom weaving a first continuous draft out of raw fiber, the fabric clean but still on the frame, edges deliberately unfinished.
 ```
 
-#### 089. Rewrite & polish
+#### 094. Revision pass
 
-- File name: `SCI-089-Rewrite-polish.png`
+- File name: `SCI-094-Revision-pass.png`
 - Target: `public/card-art/sci-fi/archetypes/rewrite-polish.webp`
 - Owner: Archetype `rewrite-polish`
 - Status: generated
@@ -1309,9 +1374,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A polishing lathe refining an existing form, dull surface lifting away under the tool to reveal the same shape underneath, sharper and brighter.
 ```
 
-#### 090. Critique & review
+#### 095. Critique & review
 
-- File name: `SCI-090-Critique-review.png`
+- File name: `SCI-095-Critique-review.png`
 - Target: `public/card-art/sci-fi/archetypes/critique-review.webp`
 - Owner: Archetype `critique-review`
 - Status: generated
@@ -1323,9 +1388,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 An inspection bay with an artifact held in restraints, prioritized flag-markers planted along it, the most serious one burning hottest.
 ```
 
-#### 091. Presentation outline
+#### 096. Presentation outline
 
-- File name: `SCI-091-Presentation-outline.png`
+- File name: `SCI-096-Presentation-outline.png`
 - Target: `public/card-art/sci-fi/archetypes/presentation-outline.webp`
 - Owner: Archetype `presentation-outline`
 - Status: generated
@@ -1337,9 +1402,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A run of floating stage panels receding in sequence, each holding one clear shape, a bright throughline connecting them front to back.
 ```
 
-#### 092. Project plan
+#### 097. Project plan
 
-- File name: `SCI-092-Project-plan.png`
+- File name: `SCI-097-Project-plan.png`
 - Target: `public/card-art/sci-fi/archetypes/build-plan.webp`
 - Owner: Archetype `build-plan`
 - Status: generated
@@ -1351,9 +1416,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A project scaffold rising in ordered stages with milestone nodes locked at each level, dependency struts drawn taut between them.
 ```
 
-#### 093. Spec / PRD
+#### 098. Spec / PRD
 
-- File name: `SCI-093-Spec-PRD.png`
+- File name: `SCI-098-Spec-PRD.png`
 - Target: `public/card-art/sci-fi/archetypes/spec-prd.webp`
 - Owner: Archetype `spec-prd`
 - Status: generated
@@ -1365,9 +1430,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A spec capsule with requirement plates locked around its core, each plate seated and sealed, tolerances etched as clean grooves in the metal.
 ```
 
-#### 094. Code implementation
+#### 099. Code implementation
 
-- File name: `SCI-094-Code-implementation.png`
+- File name: `SCI-099-Code-implementation.png`
 - Target: `public/card-art/sci-fi/archetypes/coding.webp`
 - Owner: Archetype `coding`
 - Status: generated
@@ -1379,9 +1444,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A code fabricator writing a working component into being, structure knitting itself into place under the emitter head, test probes already touching the finished edge.
 ```
 
-#### 095. Debug & fix
+#### 100. Debug & fix
 
-- File name: `SCI-095-Debug-fix.png`
+- File name: `SCI-100-Debug-fix.png`
 - Target: `public/card-art/sci-fi/archetypes/technical-troubleshoot.webp`
 - Owner: Archetype `technical-troubleshoot`
 - Status: generated
@@ -1393,9 +1458,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A diagnostic bay with a machine opened up and one traced fault line glowing along its length, a repair clamp moving in toward the exact break.
 ```
 
-#### 096. Explain code
+#### 101. Explain code
 
-- File name: `SCI-096-Explain-code.png`
+- File name: `SCI-101-Explain-code.png`
 - Target: `public/card-art/sci-fi/archetypes/explain-code.webp`
 - Owner: Archetype `explain-code`
 - Status: generated
@@ -1407,9 +1472,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A walkthrough projector stepping through a mechanism one stage at a time, the active stage lit and moving while the rest of the path stays visible.
 ```
 
-#### 097. Extract to data
+#### 102. Extract to data
 
-- File name: `SCI-097-Extract-to-data.png`
+- File name: `SCI-102-Extract-to-data.png`
 - Target: `public/card-art/sci-fi/archetypes/extract-data.webp`
 - Owner: Archetype `extract-data`
 - Status: generated
@@ -1423,9 +1488,9 @@ An extractor drawing clean uniform structured shards out of raw unsorted ore, th
 
 ### Shared
 
-#### 098. Custom preset swatch
+#### 103. Custom preset swatch
 
-- File name: `SCI-098-Custom-preset-swatch.png`
+- File name: `SCI-103-Custom-preset-swatch.png`
 - Target: `public/card-art/sci-fi/shared/custom-preset.webp`
 - Owner: prompt-custom-archetypes.ts
 - Status: generated
@@ -1445,9 +1510,9 @@ without these. Generate a grade here to override its card face.
 
 ### Per-grade variants - Context
 
-#### 099. SCP 1. Situation Snapshot
+#### 104. SCP 1. Situation Snapshot
 
-- File name: `SCI-099-SCP-1-Situation-Snapshot.png`
+- File name: `SCI-104-SCP-1-Situation-Snapshot.png`
 - Target: `public/card-art/sci-fi/cards/context-scope/grade-01.webp`
 - Owner: Card `context-scope` grade `Situation Snapshot`
 - Status: generated
@@ -1458,9 +1523,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A survey drone holding a small tight pool of light around a single object, only the ground immediately beneath it visible and everything else swallowed by dark.
 ```
 
-#### 100. SCP 2. Working Brief
+#### 105. SCP 2. Working Brief
 
-- File name: `SCI-100-SCP-2-Working-Brief.png`
+- File name: `SCI-105-SCP-2-Working-Brief.png`
 - Target: `public/card-art/sci-fi/cards/context-scope/grade-02.webp`
 - Owner: Card `context-scope` grade `Working Brief`
 - Status: generated
@@ -1471,9 +1536,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A survey drone with its pool widened to take in the nearby inputs it may use, a clean marked boundary edge drawn where the light stops.
 ```
 
-#### 101. SCP 3. Decision Context
+#### 106. SCP 3. Decision Context
 
-- File name: `SCI-101-SCP-3-Decision-Context.png`
+- File name: `SCI-106-SCP-3-Decision-Context.png`
 - Target: `public/card-art/sci-fi/cards/context-scope/grade-03.webp`
 - Owner: Card `context-scope` grade `Decision Context`
 - Status: generated
@@ -1484,9 +1549,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A survey drone lighting a broad field with stakeholder markers standing inside it and worn paths crossing the ground where things have already been tried.
 ```
 
-#### 102. SCP 4. Complete Operating Picture
+#### 107. SCP 4. Complete Operating Picture
 
-- File name: `SCI-102-SCP-4-Complete-Operating-Picture.png`
+- File name: `SCI-107-SCP-4-Complete-Operating-Picture.png`
 - Target: `public/card-art/sci-fi/cards/context-scope/grade-04.webp`
 - Owner: Card `context-scope` grade `Complete Operating Picture`
 - Status: generated
@@ -1497,9 +1562,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A survey drone fully deployed, its light thrown to the horizon so the entire terrain reads at once with nothing left guessed at in shadow.
 ```
 
-#### 103. SRC 1. Given As True
+#### 108. SRC 1. Given As True
 
-- File name: `SCI-103-SRC-1-Given-As-True.png`
+- File name: `SCI-108-SRC-1-Given-As-True.png`
 - Target: `public/card-art/sci-fi/cards/context-evidence/grade-01.webp`
 - Owner: Card `context-evidence` grade `Given As True`
 - Status: generated
@@ -1510,9 +1575,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 An evidence spindle with claim cores mounted and accepted as given, the provenance filaments still coiled unused at the base of the rack.
 ```
 
-#### 104. SRC 2. Source Support
+#### 109. SRC 2. Source Support
 
-- File name: `SCI-104-SRC-2-Source-Support.png`
+- File name: `SCI-109-SRC-2-Source-Support.png`
 - Target: `public/card-art/sci-fi/cards/context-evidence/grade-02.webp`
 - Owner: Card `context-evidence` grade `Source Support`
 - Status: generated
@@ -1523,9 +1588,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 An evidence spindle with filaments run from the load-bearing claims down to a few solid source cores, the unsupported claims left dark.
 ```
 
-#### 105. SRC 3. Corroborated Sources
+#### 110. SRC 3. Corroborated Sources
 
-- File name: `SCI-105-SRC-3-Corroborated-Sources.png`
+- File name: `SCI-110-SRC-3-Corroborated-Sources.png`
 - Target: `public/card-art/sci-fi/cards/context-evidence/grade-03.webp`
 - Owner: Card `context-evidence` grade `Corroborated Sources`
 - Status: generated
@@ -1536,9 +1601,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 An evidence spindle where each key claim is cross-braced by several converging filaments arriving from different cores.
 ```
 
-#### 106. SRC 4. Audit Trail
+#### 111. SRC 4. Audit Trail
 
-- File name: `SCI-106-SRC-4-Audit-Trail.png`
+- File name: `SCI-111-SRC-4-Audit-Trail.png`
 - Target: `public/card-art/sci-fi/cards/context-evidence/grade-04.webp`
 - Owner: Card `context-evidence` grade `Audit Trail`
 - Status: generated
@@ -1549,9 +1614,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 An evidence spindle threaded end to end, conflicting filaments held deliberately apart and lit against each other, confidence readable in every strand.
 ```
 
-#### 107. LIM 1. Basic Limits
+#### 112. LIM 1. Basic Limits
 
-- File name: `SCI-107-LIM-1-Basic-Limits.png`
+- File name: `SCI-112-LIM-1-Basic-Limits.png`
 - Target: `public/card-art/sci-fi/cards/context-constraints/grade-01.webp`
 - Owner: Card `context-constraints` grade `Basic Limits`
 - Status: generated
@@ -1562,9 +1627,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A pair of limiter clamps resting lightly at the edges of a working volume, barely engaged, holding only the stated exclusions.
 ```
 
-#### 108. LIM 2. Operating Limits
+#### 113. LIM 2. Operating Limits
 
-- File name: `SCI-108-LIM-2-Operating-Limits.png`
+- File name: `SCI-113-LIM-2-Operating-Limits.png`
 - Target: `public/card-art/sci-fi/cards/context-constraints/grade-02.webp`
 - Owner: Card `context-constraints` grade `Operating Limits`
 - Status: generated
@@ -1575,9 +1640,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 Four limiter clamps closed on a working volume, compressing it to a smaller practical footprint of time, tools, and budget.
 ```
 
-#### 109. LIM 3. Constraint Map
+#### 114. LIM 3. Constraint Map
 
-- File name: `SCI-109-LIM-3-Constraint-Map.png`
+- File name: `SCI-114-LIM-3-Constraint-Map.png`
 - Target: `public/card-art/sci-fi/cards/context-constraints/grade-03.webp`
 - Owner: Card `context-constraints` grade `Constraint Map`
 - Status: generated
@@ -1588,9 +1653,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 Hard steel limiter clamps locked tight while softer preference-markers sit visibly separate and loose beside them, the difference obvious.
 ```
 
-#### 110. LIM 4. Boundary Conditions
+#### 115. LIM 4. Boundary Conditions
 
-- File name: `SCI-110-LIM-4-Boundary-Conditions.png`
+- File name: `SCI-115-LIM-4-Boundary-Conditions.png`
 - Target: `public/card-art/sci-fi/cards/context-constraints/grade-04.webp`
 - Owner: Card `context-constraints` grade `Boundary Conditions`
 - Status: generated
@@ -1601,9 +1666,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A full cage of limiter clamps around a volume with stress readouts glowing at every joint and exception latches sprung along the frame.
 ```
 
-#### 111. ASM 1. Working Assumptions
+#### 116. ASM 1. Working Assumptions
 
-- File name: `SCI-111-ASM-1-Working-Assumptions.png`
+- File name: `SCI-116-ASM-1-Working-Assumptions.png`
 - Target: `public/card-art/sci-fi/cards/context-assumptions/grade-01.webp`
 - Owner: Card `context-assumptions` grade `Working Assumptions`
 - Status: generated
@@ -1614,9 +1679,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A scaffold with a few translucent placeholder blocks plainly visible among the solid structure, simply shown rather than hidden.
 ```
 
-#### 112. ASM 2. Assumption Check
+#### 117. ASM 2. Assumption Check
 
-- File name: `SCI-112-ASM-2-Assumption-Check.png`
+- File name: `SCI-117-ASM-2-Assumption-Check.png`
 - Target: `public/card-art/sci-fi/cards/context-assumptions/grade-02.webp`
 - Owner: Card `context-assumptions` grade `Assumption Check`
 - Status: generated
@@ -1627,9 +1692,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A scaffold where the load-bearing translucent blocks pulse with warning light, marking the ones that would change everything.
 ```
 
-#### 113. ASM 3. Assumption Register
+#### 118. ASM 3. Assumption Register
 
-- File name: `SCI-113-ASM-3-Assumption-Register.png`
+- File name: `SCI-118-ASM-3-Assumption-Register.png`
 - Target: `public/card-art/sci-fi/cards/context-assumptions/grade-03.webp`
 - Owner: Card `context-assumptions` grade `Assumption Register`
 - Status: generated
@@ -1640,9 +1705,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A scaffold where every translucent block carries its own base-plate and a consequence line running out from it.
 ```
 
-#### 114. ASM 4. Uncertainty Model
+#### 119. ASM 4. Uncertainty Model
 
-- File name: `SCI-114-ASM-4-Uncertainty-Model.png`
+- File name: `SCI-119-ASM-4-Uncertainty-Model.png`
 - Target: `public/card-art/sci-fi/cards/context-assumptions/grade-04.webp`
 - Owner: Card `context-assumptions` grade `Uncertainty Model`
 - Status: generated
@@ -1653,9 +1718,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A scaffold of translucent blocks ranked by height and brightness, tilt lines projecting how far the whole structure moves if each one fails.
 ```
 
-#### 115. WIN 1. Done Means
+#### 120. WIN 1. Done Means
 
-- File name: `SCI-115-WIN-1-Done-Means.png`
+- File name: `SCI-120-WIN-1-Done-Means.png`
 - Target: `public/card-art/sci-fi/cards/context-success/grade-01.webp`
 - Owner: Card `context-success` grade `Done Means`
 - Status: generated
@@ -1666,9 +1731,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A simple calibration target ring with the needle resting quietly on it, one clear mark for what finished means.
 ```
 
-#### 116. WIN 2. Success Check
+#### 121. WIN 2. Success Check
 
-- File name: `SCI-116-WIN-2-Success-Check.png`
+- File name: `SCI-121-WIN-2-Success-Check.png`
 - Target: `public/card-art/sci-fi/cards/context-success/grade-02.webp`
 - Owner: Card `context-success` grade `Success Check`
 - Status: generated
@@ -1679,9 +1744,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 An acceptance gauge locked into the green with the pass threshold scored sharply on its face.
 ```
 
-#### 117. WIN 3. Success Criteria
+#### 122. WIN 3. Success Criteria
 
-- File name: `SCI-117-WIN-3-Success-Criteria.png`
+- File name: `SCI-122-WIN-3-Success-Criteria.png`
 - Target: `public/card-art/sci-fi/cards/context-success/grade-03.webp`
 - Owner: Card `context-success` grade `Success Criteria`
 - Status: generated
@@ -1692,9 +1757,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A bank of acceptance gauges mounted together, pass zones lit green and failure zones marked hard in dark red.
 ```
 
-#### 118. WIN 4. Evaluation Framework
+#### 123. WIN 4. Evaluation Framework
 
-- File name: `SCI-118-WIN-4-Evaluation-Framework.png`
+- File name: `SCI-123-WIN-4-Evaluation-Framework.png`
 - Target: `public/card-art/sci-fi/cards/context-success/grade-04.webp`
 - Owner: Card `context-success` grade `Evaluation Framework`
 - Status: generated
@@ -1705,9 +1770,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A full instrument wall of graded measures, thresholds etched into each dial and the whole board reading out at once.
 ```
 
-#### 119. OUT 1. No-Go List
+#### 124. OUT 1. No-Go List
 
-- File name: `SCI-119-OUT-1-No-Go-List.png`
+- File name: `SCI-124-OUT-1-No-Go-List.png`
 - Target: `public/card-art/sci-fi/cards/context-exclusions/grade-01.webp`
 - Owner: Card `context-exclusions` grade `No-Go List`
 - Status: generated
@@ -1718,9 +1783,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A diverter gate shunting a few marked items aside into a small dark holding bin while the rest of the flow continues.
 ```
 
-#### 120. OUT 2. Scope Fence
+#### 125. OUT 2. Scope Fence
 
-- File name: `SCI-120-OUT-2-Scope-Fence.png`
+- File name: `SCI-125-OUT-2-Scope-Fence.png`
 - Target: `public/card-art/sci-fi/cards/context-exclusions/grade-02.webp`
 - Owner: Card `context-exclusions` grade `Scope Fence`
 - Status: generated
@@ -1731,9 +1796,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A diverter gate holding a clean lit line across the channel, the flow kept firmly on one side of it.
 ```
 
-#### 121. OUT 3. Anti-Goals
+#### 126. OUT 3. Anti-Goals
 
-- File name: `SCI-121-OUT-3-Anti-Goals.png`
+- File name: `SCI-126-OUT-3-Anti-Goals.png`
 - Target: `public/card-art/sci-fi/cards/context-exclusions/grade-03.webp`
 - Owner: Card `context-exclusions` grade `Anti-Goals`
 - Status: generated
@@ -1744,9 +1809,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A diverter gate as a hard sealed barrier with rejected forms visibly pressed up against its face, unable to pass.
 ```
 
-#### 122. OUT 4. Drift Alarm
+#### 127. OUT 4. Drift Alarm
 
-- File name: `SCI-122-OUT-4-Drift-Alarm.png`
+- File name: `SCI-127-OUT-4-Drift-Alarm.png`
 - Target: `public/card-art/sci-fi/cards/context-exclusions/grade-04.webp`
 - Owner: Card `context-exclusions` grade `Drift Alarm`
 - Status: generated
@@ -1759,9 +1824,9 @@ A diverter gate firing actively, alarm light sweeping the channel, an escaping b
 
 ### Per-grade variants - Action
 
-#### 123. INS 1. Guided Review
+#### 128. INS 1. Guided Review
 
-- File name: `SCI-123-INS-1-Guided-Review.png`
+- File name: `SCI-128-INS-1-Guided-Review.png`
 - Target: `public/card-art/sci-fi/cards/action-inspect/grade-01.webp`
 - Owner: Card `action-inspect` grade `Guided Review`
 - Status: generated
@@ -1772,9 +1837,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A magnifier probe following a single pointed line across an opened assembly, one indicated area lit and the rest dim.
 ```
 
-#### 124. INS 2. Checklist Inspection
+#### 129. INS 2. Checklist Inspection
 
-- File name: `SCI-124-INS-2-Checklist-Inspection.png`
+- File name: `SCI-129-INS-2-Checklist-Inspection.png`
 - Target: `public/card-art/sci-fi/cards/action-inspect/grade-02.webp`
 - Owner: Card `action-inspect` grade `Checklist Inspection`
 - Status: generated
@@ -1785,9 +1850,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A magnifier probe stepping across marked checkpoints in sequence along an opened assembly, each one lighting as it clears.
 ```
 
-#### 125. INS 3. Independent Inspection
+#### 130. INS 3. Independent Inspection
 
-- File name: `SCI-125-INS-3-Independent-Inspection.png`
+- File name: `SCI-130-INS-3-Independent-Inspection.png`
 - Target: `public/card-art/sci-fi/cards/action-inspect/grade-03.webp`
 - Owner: Card `action-inspect` grade `Independent Inspection`
 - Status: generated
@@ -1798,9 +1863,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A magnifier probe roaming an opened assembly under its own control, several gaps and conflicts flagged where it has been.
 ```
 
-#### 126. INS 4. Full Audit
+#### 131. INS 4. Full Audit
 
-- File name: `SCI-126-INS-4-Full-Audit.png`
+- File name: `SCI-131-INS-4-Full-Audit.png`
 - Target: `public/card-art/sci-fi/cards/action-inspect/grade-04.webp`
 - Owner: Card `action-inspect` grade `Full Audit`
 - Status: generated
@@ -1811,9 +1876,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 An opened assembly fully disassembled under a bank of magnifier probes, every part lit and measured at once.
 ```
 
-#### 127. ANL 1. Pattern Read
+#### 132. ANL 1. Pattern Read
 
-- File name: `SCI-127-ANL-1-Pattern-Read.png`
+- File name: `SCI-132-ANL-1-Pattern-Read.png`
 - Target: `public/card-art/sci-fi/cards/action-analyze/grade-01.webp`
 - Owner: Card `action-analyze` grade `Pattern Read`
 - Status: generated
@@ -1824,9 +1889,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A separation column resolving a mixed signal into two or three clean luminous bands.
 ```
 
-#### 128. ANL 2. Rival Explanations
+#### 133. ANL 2. Rival Explanations
 
-- File name: `SCI-128-ANL-2-Rival-Explanations.png`
+- File name: `SCI-133-ANL-2-Rival-Explanations.png`
 - Target: `public/card-art/sci-fi/cards/action-analyze/grade-02.webp`
 - Owner: Card `action-analyze` grade `Rival Explanations`
 - Status: generated
@@ -1837,9 +1902,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 Two separation columns held side by side, a candidate band-pattern in each, the rival readings compared directly.
 ```
 
-#### 129. ANL 3. Critical Analysis
+#### 134. ANL 3. Critical Analysis
 
-- File name: `SCI-129-ANL-3-Critical-Analysis.png`
+- File name: `SCI-134-ANL-3-Critical-Analysis.png`
 - Target: `public/card-art/sci-fi/cards/action-analyze/grade-03.webp`
 - Owner: Card `action-analyze` grade `Critical Analysis`
 - Status: generated
@@ -1850,9 +1915,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A separation column driven harder until the assumptions inside crack apart into visible sub-bands.
 ```
 
-#### 130. ANL 4. Adversarial Analysis
+#### 135. ANL 4. Adversarial Analysis
 
-- File name: `SCI-130-ANL-4-Adversarial-Analysis.png`
+- File name: `SCI-135-ANL-4-Adversarial-Analysis.png`
 - Target: `public/card-art/sci-fi/cards/action-analyze/grade-04.webp`
 - Owner: Card `action-analyze` grade `Adversarial Analysis`
 - Status: generated
@@ -1863,9 +1928,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A separation column run to its extremes, hunting through the residue for the one disconfirming trace that breaks the pattern.
 ```
 
-#### 131. CMP 1. Options on the Table
+#### 136. CMP 1. Options on the Table
 
-- File name: `SCI-131-CMP-1-Options-on-the-Table.png`
+- File name: `SCI-136-CMP-1-Options-on-the-Table.png`
 - Target: `public/card-art/sci-fi/cards/action-compare/grade-01.webp`
 - Owner: Card `action-compare` grade `Options on the Table`
 - Status: generated
@@ -1876,9 +1941,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A twin-pan balance with two artifacts simply laid out on its pans, the beam still level, differences visible but unjudged.
 ```
 
-#### 132. CMP 2. Framed Comparison
+#### 137. CMP 2. Framed Comparison
 
-- File name: `SCI-132-CMP-2-Framed-Comparison.png`
+- File name: `SCI-137-CMP-2-Framed-Comparison.png`
 - Target: `public/card-art/sci-fi/cards/action-compare/grade-02.webp`
 - Owner: Card `action-compare` grade `Framed Comparison`
 - Status: generated
@@ -1889,9 +1954,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A twin-pan balance with a measuring beam sighted across both artifacts against marked criteria etched on the frame.
 ```
 
-#### 133. CMP 3. Weighted Comparison
+#### 138. CMP 3. Weighted Comparison
 
-- File name: `SCI-133-CMP-3-Weighted-Comparison.png`
+- File name: `SCI-138-CMP-3-Weighted-Comparison.png`
 - Target: `public/card-art/sci-fi/cards/action-compare/grade-03.webp`
 - Owner: Card `action-compare` grade `Weighted Comparison`
 - Status: generated
@@ -1902,9 +1967,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A twin-pan balance with calibrated weights added along its arms, the tilt now decisive rather than incidental.
 ```
 
-#### 134. CMP 4. Decision Matrix
+#### 139. CMP 4. Decision Matrix
 
-- File name: `SCI-134-CMP-4-Decision-Matrix.png`
+- File name: `SCI-139-CMP-4-Decision-Matrix.png`
 - Target: `public/card-art/sci-fi/cards/action-compare/grade-04.webp`
 - Owner: Card `action-compare` grade `Decision Matrix`
 - Status: generated
@@ -1915,9 +1980,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A full array of balance pans on scored arms, every artifact measured against every axis, a verdict light burning above the winner.
 ```
 
-#### 135. BLD 1. Draft Together
+#### 140. BLD 1. Draft Together
 
-- File name: `SCI-135-BLD-1-Draft-Together.png`
+- File name: `SCI-140-BLD-1-Draft-Together.png`
 - Target: `public/card-art/sci-fi/cards/action-create/grade-01.webp`
 - Owner: Card `action-create` grade `Draft Together`
 - Status: generated
@@ -1928,9 +1993,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A fabricator arm holding a rough unfinished armature, open questions sparking at the points where a decision is still needed.
 ```
 
-#### 136. BLD 2. Build to Plan
+#### 141. BLD 2. Build to Plan
 
-- File name: `SCI-136-BLD-2-Build-to-Plan.png`
+- File name: `SCI-141-BLD-2-Build-to-Plan.png`
 - Target: `public/card-art/sci-fi/cards/action-create/grade-02.webp`
 - Owner: Card `action-create` grade `Build to Plan`
 - Status: generated
@@ -1941,9 +2006,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A fabricator arm building precisely along a projected plan, following its guide-lines without deviation.
 ```
 
-#### 137. BLD 3. Independent Build
+#### 142. BLD 3. Independent Build
 
-- File name: `SCI-137-BLD-3-Independent-Build.png`
+- File name: `SCI-142-BLD-3-Independent-Build.png`
 - Target: `public/card-art/sci-fi/cards/action-create/grade-03.webp`
 - Owner: Card `action-create` grade `Independent Build`
 - Status: generated
@@ -1954,9 +2019,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A fabricator arm working with no plan projected, filling the silent gaps with its own decisions as the form completes.
 ```
 
-#### 138. BLD 4. End-to-End Delivery
+#### 143. BLD 4. End-to-End Delivery
 
-- File name: `SCI-138-BLD-4-End-to-End-Delivery.png`
+- File name: `SCI-143-BLD-4-End-to-End-Delivery.png`
 - Target: `public/card-art/sci-fi/cards/action-create/grade-04.webp`
 - Owner: Card `action-create` grade `End-to-End Delivery`
 - Status: generated
@@ -1967,9 +2032,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A finished artifact released from the fabricator cradle, verified and lit, the arm already retracting behind it.
 ```
 
-#### 139. REC 1. Directions
+#### 144. REC 1. Directions
 
-- File name: `SCI-139-REC-1-Directions.png`
+- File name: `SCI-144-REC-1-Directions.png`
 - Target: `public/card-art/sci-fi/cards/action-recommend/grade-01.webp`
 - Owner: Card `action-recommend` grade `Directions`
 - Status: generated
@@ -1980,9 +2045,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A selector mechanism with several branching rails all lit equally, none chosen, each simply shown as possible.
 ```
 
-#### 140. REC 2. Practical Pick
+#### 145. REC 2. Practical Pick
 
-- File name: `SCI-140-REC-2-Practical-Pick.png`
+- File name: `SCI-145-REC-2-Practical-Pick.png`
 - Target: `public/card-art/sci-fi/cards/action-recommend/grade-02.webp`
 - Owner: Card `action-recommend` grade `Practical Pick`
 - Status: generated
@@ -1993,9 +2058,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A selector mechanism with one rail selected and the constraint gates it fits standing open along its length.
 ```
 
-#### 141. REC 3. Backed Recommendation
+#### 146. REC 3. Backed Recommendation
 
-- File name: `SCI-141-REC-3-Backed-Recommendation.png`
+- File name: `SCI-146-REC-3-Backed-Recommendation.png`
 - Target: `public/card-art/sci-fi/cards/action-recommend/grade-03.webp`
 - Owner: Card `action-recommend` grade `Backed Recommendation`
 - Status: generated
@@ -2006,9 +2071,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A selector mechanism with the chosen rail blazing, the runner-up dimmed but still visible beside it, a risk flare marked on the choice.
 ```
 
-#### 142. REC 4. Full Conviction
+#### 147. REC 4. Full Conviction
 
-- File name: `SCI-142-REC-4-Full-Conviction.png`
+- File name: `SCI-147-REC-4-Full-Conviction.png`
 - Target: `public/card-art/sci-fi/cards/action-recommend/grade-04.webp`
 - Owner: Card `action-recommend` grade `Full Conviction`
 - Status: generated
@@ -2019,9 +2084,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A selector mechanism with the switch thrown hard, a single rail blazing full length and every alternative retracted into the dark.
 ```
 
-#### 143. TST 1. Sanity Pass
+#### 148. TST 1. Sanity Pass
 
-- File name: `SCI-143-TST-1-Sanity-Pass.png`
+- File name: `SCI-148-TST-1-Sanity-Pass.png`
 - Target: `public/card-art/sci-fi/cards/action-verify/grade-01.webp`
 - Owner: Card `action-verify` grade `Sanity Pass`
 - Status: generated
@@ -2032,9 +2097,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A test rig running a component through one quick gate, an obvious flaw catching in the beam.
 ```
 
-#### 144. TST 2. Criteria Check
+#### 149. TST 2. Criteria Check
 
-- File name: `SCI-144-TST-2-Criteria-Check.png`
+- File name: `SCI-149-TST-2-Criteria-Check.png`
 - Target: `public/card-art/sci-fi/cards/action-verify/grade-02.webp`
 - Owner: Card `action-verify` grade `Criteria Check`
 - Status: generated
@@ -2045,9 +2110,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A test rig with each gate lighting pass or fail in turn as the component travels the line.
 ```
 
-#### 145. TST 3. Stress Test
+#### 150. TST 3. Stress Test
 
-- File name: `SCI-145-TST-3-Stress-Test.png`
+- File name: `SCI-150-TST-3-Stress-Test.png`
 - Target: `public/card-art/sci-fi/cards/action-verify/grade-03.webp`
 - Owner: Card `action-verify` grade `Stress Test`
 - Status: generated
@@ -2058,9 +2123,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A test rig pushing a component past its normal load, the edges and joints glowing hot where they strain.
 ```
 
-#### 146. TST 4. Red Team
+#### 151. TST 4. Red Team
 
-- File name: `SCI-146-TST-4-Red-Team.png`
+- File name: `SCI-151-TST-4-Red-Team.png`
 - Target: `public/card-art/sci-fi/cards/action-verify/grade-04.webp`
 - Owner: Card `action-verify` grade `Red Team`
 - Status: generated
@@ -2071,9 +2136,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A test rig turned hostile, attacking the component from every side at once like a hunting adversary.
 ```
 
-#### 147. SMR 1. Key Points Pull
+#### 152. SMR 1. Key Points Pull
 
-- File name: `SCI-147-SMR-1-Key-Points-Pull.png`
+- File name: `SCI-152-SMR-1-Key-Points-Pull.png`
 - Target: `public/card-art/sci-fi/cards/action-summarize/grade-01.webp`
 - Owner: Card `action-summarize` grade `Key Points Pull`
 - Status: generated
@@ -2084,9 +2149,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A compression press lifting a few key points cleanly out of a tall stack of material.
 ```
 
-#### 148. SMR 2. Faithful Summary
+#### 153. SMR 2. Faithful Summary
 
-- File name: `SCI-148-SMR-2-Faithful-Summary.png`
+- File name: `SCI-153-SMR-2-Faithful-Summary.png`
 - Target: `public/card-art/sci-fi/cards/action-summarize/grade-02.webp`
 - Owner: Card `action-summarize` grade `Faithful Summary`
 - Status: generated
@@ -2097,9 +2162,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A compression press reducing a stack evenly, the original proportions still readable in the compressed slab.
 ```
 
-#### 149. SMR 3. Decision Summary
+#### 154. SMR 3. Decision Summary
 
-- File name: `SCI-149-SMR-3-Decision-Summary.png`
+- File name: `SCI-154-SMR-3-Decision-Summary.png`
 - Target: `public/card-art/sci-fi/cards/action-summarize/grade-03.webp`
 - Owner: Card `action-summarize` grade `Decision Summary`
 - Status: generated
@@ -2110,9 +2175,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A compression press with the decision-critical layer pulled bright to the top and the remainder crushed thin beneath it.
 ```
 
-#### 150. SMR 4. Executive Distillation
+#### 155. SMR 4. Executive Distillation
 
-- File name: `SCI-150-SMR-4-Executive-Distillation.png`
+- File name: `SCI-155-SMR-4-Executive-Distillation.png`
 - Target: `public/card-art/sci-fi/cards/action-summarize/grade-04.webp`
 - Owner: Card `action-summarize` grade `Executive Distillation`
 - Status: generated
@@ -2123,9 +2188,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A compression press yielding one brilliant dense wafer, the enormous source volume behind it only a faint ghost.
 ```
 
-#### 151. RES 1. Supplied Sources
+#### 156. RES 1. Supplied Sources
 
-- File name: `SCI-151-RES-1-Supplied-Sources.png`
+- File name: `SCI-156-RES-1-Supplied-Sources.png`
 - Target: `public/card-art/sci-fi/cards/action-research/grade-01.webp`
 - Owner: Card `action-research` grade `Supplied Sources`
 - Status: generated
@@ -2136,9 +2201,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A deep-scan array pointed at a few supplied cores, the dark gaps between them plainly marked and unfilled.
 ```
 
-#### 152. RES 2. Targeted Lookup
+#### 157. RES 2. Targeted Lookup
 
-- File name: `SCI-152-RES-2-Targeted-Lookup.png`
+- File name: `SCI-157-RES-2-Targeted-Lookup.png`
 - Target: `public/card-art/sci-fi/cards/action-research/grade-02.webp`
 - Owner: Card `action-research` grade `Targeted Lookup`
 - Status: generated
@@ -2149,9 +2214,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A deep-scan array firing narrow targeted beams into specific gaps, each return tagged where it came from.
 ```
 
-#### 153. RES 3. Open Research
+#### 158. RES 3. Open Research
 
-- File name: `SCI-153-RES-3-Open-Research.png`
+- File name: `SCI-158-RES-3-Open-Research.png`
 - Target: `public/card-art/sci-fi/cards/action-research/grade-03.webp`
 - Owner: Card `action-research` grade `Open Research`
 - Status: generated
@@ -2162,9 +2227,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A deep-scan array sweeping wide across open darkness on its own initiative, weighing the returns it finds.
 ```
 
-#### 154. RES 4. Deep Investigation
+#### 159. RES 4. Deep Investigation
 
-- File name: `SCI-154-RES-4-Deep-Investigation.png`
+- File name: `SCI-159-RES-4-Deep-Investigation.png`
 - Target: `public/card-art/sci-fi/cards/action-research/grade-04.webp`
 - Owner: Card `action-research` grade `Deep Investigation`
 - Status: generated
@@ -2175,9 +2240,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A deep-scan array with several beams converging to corroborate one distant return, confidence rings tightening around the lock.
 ```
 
-#### 155. PLN 1. Rough Outline
+#### 160. PLN 1. Rough Outline
 
-- File name: `SCI-155-PLN-1-Rough-Outline.png`
+- File name: `SCI-160-PLN-1-Rough-Outline.png`
 - Target: `public/card-art/sci-fi/cards/action-plan/grade-01.webp`
 - Owner: Card `action-plan` grade `Rough Outline`
 - Status: generated
@@ -2188,9 +2253,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A sequencer track with a few nodes set loosely along it in a sensible order.
 ```
 
-#### 156. PLN 2. Sequenced Plan
+#### 161. PLN 2. Sequenced Plan
 
-- File name: `SCI-156-PLN-2-Sequenced-Plan.png`
+- File name: `SCI-161-PLN-2-Sequenced-Plan.png`
 - Target: `public/card-art/sci-fi/cards/action-plan/grade-02.webp`
 - Owner: Card `action-plan` grade `Sequenced Plan`
 - Status: generated
@@ -2201,9 +2266,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A sequencer track with ordered nodes, dependency lines drawn taut between them and one risk flare burning.
 ```
 
-#### 157. PLN 3. Delivery Plan
+#### 162. PLN 3. Delivery Plan
 
-- File name: `SCI-157-PLN-3-Delivery-Plan.png`
+- File name: `SCI-162-PLN-3-Delivery-Plan.png`
 - Target: `public/card-art/sci-fi/cards/action-plan/grade-03.webp`
 - Owner: Card `action-plan` grade `Delivery Plan`
 - Status: generated
@@ -2214,9 +2279,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A sequencer track phased into grouped stages with milestone gates and verification checks standing between them.
 ```
 
-#### 158. PLN 4. Executable Program
+#### 163. PLN 4. Executable Program
 
-- File name: `SCI-158-PLN-4-Executable-Program.png`
+- File name: `SCI-163-PLN-4-Executable-Program.png`
 - Target: `public/card-art/sci-fi/cards/action-plan/grade-04.webp`
 - Owner: Card `action-plan` grade `Executable Program`
 - Status: generated
@@ -2227,9 +2292,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A sequencer track fully built out and running itself, every node firing in order with no operator anywhere in the frame.
 ```
 
-#### 159. IDE 1. Quick Options
+#### 164. IDE 1. Quick Options
 
-- File name: `SCI-159-IDE-1-Quick-Options.png`
+- File name: `SCI-164-IDE-1-Quick-Options.png`
 - Target: `public/card-art/sci-fi/cards/action-ideate/grade-01.webp`
 - Owner: Card `action-ideate` grade `Quick Options`
 - Status: generated
@@ -2240,9 +2305,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A spark chamber throwing off a small handful of distinct starting forms.
 ```
 
-#### 160. IDE 2. Divergent Set
+#### 165. IDE 2. Divergent Set
 
-- File name: `SCI-160-IDE-2-Divergent-Set.png`
+- File name: `SCI-165-IDE-2-Divergent-Set.png`
 - Target: `public/card-art/sci-fi/cards/action-ideate/grade-02.webp`
 - Owner: Card `action-ideate` grade `Divergent Set`
 - Status: generated
@@ -2253,9 +2318,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A spark chamber flinging many genuinely different shapes wide, no two alike anywhere in the spread.
 ```
 
-#### 161. IDE 3. Explore and Converge
+#### 166. IDE 3. Explore and Converge
 
-- File name: `SCI-161-IDE-3-Explore-and-Converge.png`
+- File name: `SCI-166-IDE-3-Explore-and-Converge.png`
 - Target: `public/card-art/sci-fi/cards/action-ideate/grade-03.webp`
 - Owner: Card `action-ideate` grade `Explore and Converge`
 - Status: generated
@@ -2266,9 +2331,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A spark chamber mid-burst with the strongest few forms already pulled together into a lit converging cluster.
 ```
 
-#### 162. IDE 4. Creative Sweep
+#### 167. IDE 4. Creative Sweep
 
-- File name: `SCI-162-IDE-4-Creative-Sweep.png`
+- File name: `SCI-167-IDE-4-Creative-Sweep.png`
 - Target: `public/card-art/sci-fi/cards/action-ideate/grade-04.webp`
 - Owner: Card `action-ideate` grade `Creative Sweep`
 - Status: generated
@@ -2279,9 +2344,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A spark chamber showing its full spectrum from safe compact forms to wild irregular ones, ranked along a lit gradient.
 ```
 
-#### 163. EXP 1. Direct Answer
+#### 168. EXP 1. Direct Answer
 
-- File name: `SCI-163-EXP-1-Direct-Answer.png`
+- File name: `SCI-168-EXP-1-Direct-Answer.png`
 - Target: `public/card-art/sci-fi/cards/action-explain/grade-01.webp`
 - Owner: Card `action-explain` grade `Direct Answer`
 - Status: generated
@@ -2292,9 +2357,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 An exploded-view projector showing a single part in isolation, the rest of the mechanism still folded shut.
 ```
 
-#### 164. EXP 2. Guided Walkthrough
+#### 169. EXP 2. Guided Walkthrough
 
-- File name: `SCI-164-EXP-2-Guided-Walkthrough.png`
+- File name: `SCI-169-EXP-2-Guided-Walkthrough.png`
 - Target: `public/card-art/sci-fi/cards/action-explain/grade-02.webp`
 - Owner: Card `action-explain` grade `Guided Walkthrough`
 - Status: generated
@@ -2305,9 +2370,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 An exploded-view projector unfolding parts one at a time along a lit path, each step following from the one before.
 ```
 
-#### 165. EXP 3. Deep Explanation
+#### 170. EXP 3. Deep Explanation
 
-- File name: `SCI-165-EXP-3-Deep-Explanation.png`
+- File name: `SCI-170-EXP-3-Deep-Explanation.png`
 - Target: `public/card-art/sci-fi/cards/action-explain/grade-03.webp`
 - Owner: Card `action-explain` grade `Deep Explanation`
 - Status: generated
@@ -2318,9 +2383,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 An exploded-view projector with the mechanism fully open, the hidden linkage exposed and one trap-point flagged bright.
 ```
 
-#### 166. EXP 4. Full Teaching Pass
+#### 171. EXP 4. Full Teaching Pass
 
-- File name: `SCI-166-EXP-4-Full-Teaching-Pass.png`
+- File name: `SCI-171-EXP-4-Full-Teaching-Pass.png`
 - Target: `public/card-art/sci-fi/cards/action-explain/grade-04.webp`
 - Owner: Card `action-explain` grade `Full Teaching Pass`
 - Status: generated
@@ -2331,9 +2396,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 An exploded-view projector with everything unfolded and further branches still opening outward at the edges of the frame.
 ```
 
-#### 167. ASK 1. Full Interview
+#### 172. ASK 1. Full Interview
 
-- File name: `SCI-167-ASK-1-Full-Interview.png`
+- File name: `SCI-172-ASK-1-Full-Interview.png`
 - Target: `public/card-art/sci-fi/cards/action-clarify/grade-01.webp`
 - Owner: Card `action-clarify` grade `Full Interview`
 - Status: generated
@@ -2344,9 +2409,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A query beacon firing many pulses in patient batches into a dark gap, its outline almost completely mapped by the returns.
 ```
 
-#### 168. ASK 2. 95% Confidence Check
+#### 173. ASK 2. 95% Confidence Check
 
-- File name: `SCI-168-ASK-2-95-Confidence-Check.png`
+- File name: `SCI-173-ASK-2-95-Confidence-Check.png`
 - Target: `public/card-art/sci-fi/cards/action-clarify/grade-02.webp`
 - Owner: Card `action-clarify` grade `95% Confidence Check`
 - Status: generated
@@ -2357,9 +2422,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A query beacon still pulsing into a gap that is nearly closed, only a thin sliver of unknown shape left dark.
 ```
 
-#### 169. ASK 3. Blocking Questions Only
+#### 174. ASK 3. Blocking Questions Only
 
-- File name: `SCI-169-ASK-3-Blocking-Questions-Only.png`
+- File name: `SCI-174-ASK-3-Blocking-Questions-Only.png`
 - Target: `public/card-art/sci-fi/cards/action-clarify/grade-03.webp`
 - Owner: Card `action-clarify` grade `Blocking Questions Only`
 - Status: generated
@@ -2370,9 +2435,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A query beacon sending one single hard pulse into the one gap that actually blocks the path forward.
 ```
 
-#### 170. ASK 4. Assume & Log
+#### 175. ASK 4. Assume & Log
 
-- File name: `SCI-170-ASK-4-Assume-Log.png`
+- File name: `SCI-175-ASK-4-Assume-Log.png`
 - Target: `public/card-art/sci-fi/cards/action-clarify/grade-04.webp`
 - Owner: Card `action-clarify` grade `Assume & Log`
 - Status: generated
@@ -2383,11 +2448,219 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A query beacon gone dark, the gap bridged instead by a placed assumption block with a bright log tag fixed to its face.
 ```
 
+#### 176. LOG 1. Capture commitments
+
+- File name: `SCI-176-LOG-1-Capture-commitments.png`
+- Target: `public/card-art/sci-fi/cards/action-record/grade-01.webp`
+- Owner: Card `action-record` grade `Capture commitments`
+- Status: planned
+
+```
+Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: painterly volumetric rendering carried by clean comic ink weight on the silhouette, cinematic and high-craft, the way a premium video game paints its collectible cards. Cyan and teal key light rakes the subject from one side, a hard cyan rim light separates it from a deep blue-black background, and soft atmospheric haze falls away behind. One strong centered focal shape, isolated, uncluttered edges, nothing in the background competing with it, and it still reads at thumbnail size. Square composition with generous breathing room. Artwork only: no text, no letters, no numbers, no logos, no readable symbols, no UI labels, no card frame.
+
+A ledger with a dated correction slip.
+```
+
+#### 177. LOG 2. Meeting handoff
+
+- File name: `SCI-177-LOG-2-Meeting-handoff.png`
+- Target: `public/card-art/sci-fi/cards/action-record/grade-02.webp`
+- Owner: Card `action-record` grade `Meeting handoff`
+- Status: planned
+
+```
+Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: painterly volumetric rendering carried by clean comic ink weight on the silhouette, cinematic and high-craft, the way a premium video game paints its collectible cards. Cyan and teal key light rakes the subject from one side, a hard cyan rim light separates it from a deep blue-black background, and soft atmospheric haze falls away behind. One strong centered focal shape, isolated, uncluttered edges, nothing in the background competing with it, and it still reads at thumbnail size. Square composition with generous breathing room. Artwork only: no text, no letters, no numbers, no logos, no readable symbols, no UI labels, no card frame.
+
+A ledger with a dated correction slip.
+```
+
+#### 178. LOG 3. Reconcile the minutes
+
+- File name: `SCI-178-LOG-3-Reconcile-the-minutes.png`
+- Target: `public/card-art/sci-fi/cards/action-record/grade-03.webp`
+- Owner: Card `action-record` grade `Reconcile the minutes`
+- Status: planned
+
+```
+Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: painterly volumetric rendering carried by clean comic ink weight on the silhouette, cinematic and high-craft, the way a premium video game paints its collectible cards. Cyan and teal key light rakes the subject from one side, a hard cyan rim light separates it from a deep blue-black background, and soft atmospheric haze falls away behind. One strong centered focal shape, isolated, uncluttered edges, nothing in the background competing with it, and it still reads at thumbnail size. Square composition with generous breathing room. Artwork only: no text, no letters, no numbers, no logos, no readable symbols, no UI labels, no card frame.
+
+A ledger with a dated correction slip.
+```
+
+#### 179. LOG 4. Trace the record
+
+- File name: `SCI-179-LOG-4-Trace-the-record.png`
+- Target: `public/card-art/sci-fi/cards/action-record/grade-04.webp`
+- Owner: Card `action-record` grade `Trace the record`
+- Status: planned
+
+```
+Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: painterly volumetric rendering carried by clean comic ink weight on the silhouette, cinematic and high-craft, the way a premium video game paints its collectible cards. Cyan and teal key light rakes the subject from one side, a hard cyan rim light separates it from a deep blue-black background, and soft atmospheric haze falls away behind. One strong centered focal shape, isolated, uncluttered edges, nothing in the background competing with it, and it still reads at thumbnail size. Square composition with generous breathing room. Artwork only: no text, no letters, no numbers, no logos, no readable symbols, no UI labels, no card frame.
+
+A ledger with a dated correction slip.
+```
+
+#### 180. MATCH 1. Check the unit
+
+- File name: `SCI-180-MATCH-1-Check-the-unit.png`
+- Target: `public/card-art/sci-fi/cards/action-matched-compare/grade-01.webp`
+- Owner: Card `action-matched-compare` grade `Check the unit`
+- Status: planned
+
+```
+Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: painterly volumetric rendering carried by clean comic ink weight on the silhouette, cinematic and high-craft, the way a premium video game paints its collectible cards. Cyan and teal key light rakes the subject from one side, a hard cyan rim light separates it from a deep blue-black background, and soft atmospheric haze falls away behind. One strong centered focal shape, isolated, uncluttered edges, nothing in the background competing with it, and it still reads at thumbnail size. Square composition with generous breathing room. Artwork only: no text, no letters, no numbers, no logos, no readable symbols, no UI labels, no card frame.
+
+Two graduated measures aligned on one baseline.
+```
+
+#### 181. MATCH 2. Match the groups
+
+- File name: `SCI-181-MATCH-2-Match-the-groups.png`
+- Target: `public/card-art/sci-fi/cards/action-matched-compare/grade-02.webp`
+- Owner: Card `action-matched-compare` grade `Match the groups`
+- Status: planned
+
+```
+Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: painterly volumetric rendering carried by clean comic ink weight on the silhouette, cinematic and high-craft, the way a premium video game paints its collectible cards. Cyan and teal key light rakes the subject from one side, a hard cyan rim light separates it from a deep blue-black background, and soft atmospheric haze falls away behind. One strong centered focal shape, isolated, uncluttered edges, nothing in the background competing with it, and it still reads at thumbnail size. Square composition with generous breathing room. Artwork only: no text, no letters, no numbers, no logos, no readable symbols, no UI labels, no card frame.
+
+Two graduated measures aligned on one baseline.
+```
+
+#### 182. MATCH 3. Compare like for like
+
+- File name: `SCI-182-MATCH-3-Compare-like-for-like.png`
+- Target: `public/card-art/sci-fi/cards/action-matched-compare/grade-03.webp`
+- Owner: Card `action-matched-compare` grade `Compare like for like`
+- Status: planned
+
+```
+Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: painterly volumetric rendering carried by clean comic ink weight on the silhouette, cinematic and high-craft, the way a premium video game paints its collectible cards. Cyan and teal key light rakes the subject from one side, a hard cyan rim light separates it from a deep blue-black background, and soft atmospheric haze falls away behind. One strong centered focal shape, isolated, uncluttered edges, nothing in the background competing with it, and it still reads at thumbnail size. Square composition with generous breathing room. Artwork only: no text, no letters, no numbers, no logos, no readable symbols, no UI labels, no card frame.
+
+Two graduated measures aligned on one baseline.
+```
+
+#### 183. MATCH 4. Test the comparison
+
+- File name: `SCI-183-MATCH-4-Test-the-comparison.png`
+- Target: `public/card-art/sci-fi/cards/action-matched-compare/grade-04.webp`
+- Owner: Card `action-matched-compare` grade `Test the comparison`
+- Status: planned
+
+```
+Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: painterly volumetric rendering carried by clean comic ink weight on the silhouette, cinematic and high-craft, the way a premium video game paints its collectible cards. Cyan and teal key light rakes the subject from one side, a hard cyan rim light separates it from a deep blue-black background, and soft atmospheric haze falls away behind. One strong centered focal shape, isolated, uncluttered edges, nothing in the background competing with it, and it still reads at thumbnail size. Square composition with generous breathing room. Artwork only: no text, no letters, no numbers, no logos, no readable symbols, no UI labels, no card frame.
+
+Two graduated measures aligned on one baseline.
+```
+
+#### 184. REVISE 1. Local revision
+
+- File name: `SCI-184-REVISE-1-Local-revision.png`
+- Target: `public/card-art/sci-fi/cards/action-revise/grade-01.webp`
+- Owner: Card `action-revise` grade `Local revision`
+- Status: planned
+
+```
+Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: painterly volumetric rendering carried by clean comic ink weight on the silhouette, cinematic and high-craft, the way a premium video game paints its collectible cards. Cyan and teal key light rakes the subject from one side, a hard cyan rim light separates it from a deep blue-black background, and soft atmospheric haze falls away behind. One strong centered focal shape, isolated, uncluttered edges, nothing in the background competing with it, and it still reads at thumbnail size. Square composition with generous breathing room. Artwork only: no text, no letters, no numbers, no logos, no readable symbols, no UI labels, no card frame.
+
+A marked proof laid beside its source.
+```
+
+#### 185. REVISE 2. Revision pass
+
+- File name: `SCI-185-REVISE-2-Revision-pass.png`
+- Target: `public/card-art/sci-fi/cards/action-revise/grade-02.webp`
+- Owner: Card `action-revise` grade `Revision pass`
+- Status: planned
+
+```
+Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: painterly volumetric rendering carried by clean comic ink weight on the silhouette, cinematic and high-craft, the way a premium video game paints its collectible cards. Cyan and teal key light rakes the subject from one side, a hard cyan rim light separates it from a deep blue-black background, and soft atmospheric haze falls away behind. One strong centered focal shape, isolated, uncluttered edges, nothing in the background competing with it, and it still reads at thumbnail size. Square composition with generous breathing room. Artwork only: no text, no letters, no numbers, no logos, no readable symbols, no UI labels, no card frame.
+
+A marked proof laid beside its source.
+```
+
+#### 186. REVISE 3. Structural revision
+
+- File name: `SCI-186-REVISE-3-Structural-revision.png`
+- Target: `public/card-art/sci-fi/cards/action-revise/grade-03.webp`
+- Owner: Card `action-revise` grade `Structural revision`
+- Status: planned
+
+```
+Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: painterly volumetric rendering carried by clean comic ink weight on the silhouette, cinematic and high-craft, the way a premium video game paints its collectible cards. Cyan and teal key light rakes the subject from one side, a hard cyan rim light separates it from a deep blue-black background, and soft atmospheric haze falls away behind. One strong centered focal shape, isolated, uncluttered edges, nothing in the background competing with it, and it still reads at thumbnail size. Square composition with generous breathing room. Artwork only: no text, no letters, no numbers, no logos, no readable symbols, no UI labels, no card frame.
+
+A marked proof laid beside its source.
+```
+
+#### 187. REVISE 4. Constraint review
+
+- File name: `SCI-187-REVISE-4-Constraint-review.png`
+- Target: `public/card-art/sci-fi/cards/action-revise/grade-04.webp`
+- Owner: Card `action-revise` grade `Constraint review`
+- Status: planned
+
+```
+Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: painterly volumetric rendering carried by clean comic ink weight on the silhouette, cinematic and high-craft, the way a premium video game paints its collectible cards. Cyan and teal key light rakes the subject from one side, a hard cyan rim light separates it from a deep blue-black background, and soft atmospheric haze falls away behind. One strong centered focal shape, isolated, uncluttered edges, nothing in the background competing with it, and it still reads at thumbnail size. Square composition with generous breathing room. Artwork only: no text, no letters, no numbers, no logos, no readable symbols, no UI labels, no card frame.
+
+A marked proof laid beside its source.
+```
+
+#### 188. FLIP 1. Conditional choice
+
+- File name: `SCI-188-FLIP-1-Conditional-choice.png`
+- Target: `public/card-art/sci-fi/cards/action-conditional-recommend/grade-01.webp`
+- Owner: Card `action-conditional-recommend` grade `Conditional choice`
+- Status: planned
+
+```
+Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: painterly volumetric rendering carried by clean comic ink weight on the silhouette, cinematic and high-craft, the way a premium video game paints its collectible cards. Cyan and teal key light rakes the subject from one side, a hard cyan rim light separates it from a deep blue-black background, and soft atmospheric haze falls away behind. One strong centered focal shape, isolated, uncluttered edges, nothing in the background competing with it, and it still reads at thumbnail size. Square composition with generous breathing room. Artwork only: no text, no letters, no numbers, no logos, no readable symbols, no UI labels, no card frame.
+
+A balance with a sliding counterweight.
+```
+
+#### 189. FLIP 2. Recommend with a condition
+
+- File name: `SCI-189-FLIP-2-Recommend-with-a-condition.png`
+- Target: `public/card-art/sci-fi/cards/action-conditional-recommend/grade-02.webp`
+- Owner: Card `action-conditional-recommend` grade `Recommend with a condition`
+- Status: planned
+
+```
+Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: painterly volumetric rendering carried by clean comic ink weight on the silhouette, cinematic and high-craft, the way a premium video game paints its collectible cards. Cyan and teal key light rakes the subject from one side, a hard cyan rim light separates it from a deep blue-black background, and soft atmospheric haze falls away behind. One strong centered focal shape, isolated, uncluttered edges, nothing in the background competing with it, and it still reads at thumbnail size. Square composition with generous breathing room. Artwork only: no text, no letters, no numbers, no logos, no readable symbols, no UI labels, no card frame.
+
+A balance with a sliding counterweight.
+```
+
+#### 190. FLIP 3. Decision threshold
+
+- File name: `SCI-190-FLIP-3-Decision-threshold.png`
+- Target: `public/card-art/sci-fi/cards/action-conditional-recommend/grade-03.webp`
+- Owner: Card `action-conditional-recommend` grade `Decision threshold`
+- Status: planned
+
+```
+Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: painterly volumetric rendering carried by clean comic ink weight on the silhouette, cinematic and high-craft, the way a premium video game paints its collectible cards. Cyan and teal key light rakes the subject from one side, a hard cyan rim light separates it from a deep blue-black background, and soft atmospheric haze falls away behind. One strong centered focal shape, isolated, uncluttered edges, nothing in the background competing with it, and it still reads at thumbnail size. Square composition with generous breathing room. Artwork only: no text, no letters, no numbers, no logos, no readable symbols, no UI labels, no card frame.
+
+A balance with a sliding counterweight.
+```
+
+#### 191. FLIP 4. Test the reversal
+
+- File name: `SCI-191-FLIP-4-Test-the-reversal.png`
+- Target: `public/card-art/sci-fi/cards/action-conditional-recommend/grade-04.webp`
+- Owner: Card `action-conditional-recommend` grade `Test the reversal`
+- Status: planned
+
+```
+Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: painterly volumetric rendering carried by clean comic ink weight on the silhouette, cinematic and high-craft, the way a premium video game paints its collectible cards. Cyan and teal key light rakes the subject from one side, a hard cyan rim light separates it from a deep blue-black background, and soft atmospheric haze falls away behind. One strong centered focal shape, isolated, uncluttered edges, nothing in the background competing with it, and it still reads at thumbnail size. Square composition with generous breathing room. Artwork only: no text, no letters, no numbers, no logos, no readable symbols, no UI labels, no card frame.
+
+A balance with a sliding counterweight.
+```
+
 ### Per-grade variants - Format
 
-#### 171. INF 1. Plain Answer
+#### 192. INF 1. Plain Answer
 
-- File name: `SCI-171-INF-1-Plain-Answer.png`
+- File name: `SCI-192-INF-1-Plain-Answer.png`
 - Target: `public/card-art/sci-fi/cards/format-info-card/grade-01.webp`
 - Owner: Card `format-info-card` grade `Plain Answer`
 - Status: generated
@@ -2398,9 +2671,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A single answer slab standing bare in the dark, its face plain and unornamented.
 ```
 
-#### 172. INF 2. Answer Card
+#### 193. INF 2. Answer Card
 
-- File name: `SCI-172-INF-2-Answer-Card.png`
+- File name: `SCI-193-INF-2-Answer-Card.png`
 - Target: `public/card-art/sci-fi/cards/format-info-card/grade-02.webp`
 - Owner: Card `format-info-card` grade `Answer Card`
 - Status: generated
@@ -2411,9 +2684,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A single answer slab tightened down, its essentials arranged in one clean scannable block.
 ```
 
-#### 173. INF 3. Information Brief
+#### 194. INF 3. Information Brief
 
-- File name: `SCI-173-INF-3-Information-Brief.png`
+- File name: `SCI-194-INF-3-Information-Brief.png`
 - Target: `public/card-art/sci-fi/cards/format-info-card/grade-03.webp`
 - Owner: Card `format-info-card` grade `Information Brief`
 - Status: generated
@@ -2424,9 +2697,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A thicker answer slab with context strata visible in its cut edge, layered beneath the face.
 ```
 
-#### 174. INF 4. Reference Piece
+#### 195. INF 4. Reference Piece
 
-- File name: `SCI-174-INF-4-Reference-Piece.png`
+- File name: `SCI-195-INF-4-Reference-Piece.png`
 - Target: `public/card-art/sci-fi/cards/format-info-card/grade-04.webp`
 - Owner: Card `format-info-card` grade `Reference Piece`
 - Status: generated
@@ -2437,9 +2710,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A substantial reference monolith with caveat notches cut into its margin and worked examples inset along its side.
 ```
 
-#### 175. KEY 1. Loose Bullets
+#### 196. KEY 1. Loose Bullets
 
-- File name: `SCI-175-KEY-1-Loose-Bullets.png`
+- File name: `SCI-196-KEY-1-Loose-Bullets.png`
 - Target: `public/card-art/sci-fi/cards/format-key-points/grade-01.webp`
 - Owner: Card `format-key-points` grade `Loose Bullets`
 - Status: generated
@@ -2450,9 +2723,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A rack holding a few point-shards leaning loosely, unaligned but separate.
 ```
 
-#### 176. KEY 2. Grouped Points
+#### 197. KEY 2. Grouped Points
 
-- File name: `SCI-176-KEY-2-Grouped-Points.png`
+- File name: `SCI-197-KEY-2-Grouped-Points.png`
 - Target: `public/card-art/sci-fi/cards/format-key-points/grade-02.webp`
 - Owner: Card `format-key-points` grade `Grouped Points`
 - Status: generated
@@ -2463,9 +2736,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A rack of point-shards clustered into labeled groups, related shards standing together.
 ```
 
-#### 177. KEY 3. Sectioned Points
+#### 198. KEY 3. Sectioned Points
 
-- File name: `SCI-177-KEY-3-Sectioned-Points.png`
+- File name: `SCI-198-KEY-3-Sectioned-Points.png`
 - Target: `public/card-art/sci-fi/cards/format-key-points/grade-03.webp`
 - Owner: Card `format-key-points` grade `Sectioned Points`
 - Status: generated
@@ -2476,9 +2749,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A full rack of point-shards arranged into clearly divided labeled sections.
 ```
 
-#### 178. KEY 4. Checklist Discipline
+#### 199. KEY 4. Checklist Discipline
 
-- File name: `SCI-178-KEY-4-Checklist-Discipline.png`
+- File name: `SCI-199-KEY-4-Checklist-Discipline.png`
 - Target: `public/card-art/sci-fi/cards/format-key-points/grade-04.webp`
 - Owner: Card `format-key-points` grade `Checklist Discipline`
 - Status: generated
@@ -2489,9 +2762,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A rack of uniform atomic point-shards, each identical in size with a tick-notch cut into its head.
 ```
 
-#### 179. SUM 1. One-Liner
+#### 200. SUM 1. One-Liner
 
-- File name: `SCI-179-SUM-1-One-Liner.png`
+- File name: `SCI-200-SUM-1-One-Liner.png`
 - Target: `public/card-art/sci-fi/cards/format-summary/grade-01.webp`
 - Owner: Card `format-summary` grade `One-Liner`
 - Status: generated
@@ -2502,9 +2775,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A distillation vessel holding one bright drop suspended at the very top.
 ```
 
-#### 180. SUM 2. Quick Summary
+#### 201. SUM 2. Quick Summary
 
-- File name: `SCI-180-SUM-2-Quick-Summary.png`
+- File name: `SCI-201-SUM-2-Quick-Summary.png`
 - Target: `public/card-art/sci-fi/cards/format-summary/grade-02.webp`
 - Owner: Card `format-summary` grade `Quick Summary`
 - Status: generated
@@ -2515,9 +2788,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A distillation vessel with a small clear band of summary floating above the settled sediment.
 ```
 
-#### 181. SUM 3. Executive Summary
+#### 202. SUM 3. Executive Summary
 
-- File name: `SCI-181-SUM-3-Executive-Summary.png`
+- File name: `SCI-202-SUM-3-Executive-Summary.png`
 - Target: `public/card-art/sci-fi/cards/format-summary/grade-03.webp`
 - Owner: Card `format-summary` grade `Executive Summary`
 - Status: generated
@@ -2528,9 +2801,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A distillation vessel with a thick lit layer of findings and an implication channel running off it toward a marked move.
 ```
 
-#### 182. SUM 4. Standalone Abstract
+#### 203. SUM 4. Standalone Abstract
 
-- File name: `SCI-182-SUM-4-Standalone-Abstract.png`
+- File name: `SCI-203-SUM-4-Standalone-Abstract.png`
 - Target: `public/card-art/sci-fi/cards/format-summary/grade-04.webp`
 - Owner: Card `format-summary` grade `Standalone Abstract`
 - Status: generated
@@ -2541,9 +2814,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A sealed self-contained distillation vessel, complete on its own, needing nothing outside its own glass.
 ```
 
-#### 183. SEC 1. Natural Flow
+#### 204. SEC 1. Natural Flow
 
-- File name: `SCI-183-SEC-1-Natural-Flow.png`
+- File name: `SCI-204-SEC-1-Natural-Flow.png`
 - Target: `public/card-art/sci-fi/cards/format-sections/grade-01.webp`
 - Owner: Card `format-sections` grade `Natural Flow`
 - Status: generated
@@ -2554,9 +2827,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A mostly continuous column with only one or two divisions cut where they genuinely help.
 ```
 
-#### 184. SEC 2. Clear Sections
+#### 205. SEC 2. Clear Sections
 
-- File name: `SCI-184-SEC-2-Clear-Sections.png`
+- File name: `SCI-205-SEC-2-Clear-Sections.png`
 - Target: `public/card-art/sci-fi/cards/format-sections/grade-02.webp`
 - Owner: Card `format-sections` grade `Clear Sections`
 - Status: generated
@@ -2567,9 +2840,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A column divided into evenly spaced chambers, each one distinct and separately lit.
 ```
 
-#### 185. SEC 3. Set Sequence
+#### 206. SEC 3. Set Sequence
 
-- File name: `SCI-185-SEC-3-Set-Sequence.png`
+- File name: `SCI-206-SEC-3-Set-Sequence.png`
 - Target: `public/card-art/sci-fi/cards/format-sections/grade-03.webp`
 - Owner: Card `format-sections` grade `Set Sequence`
 - Status: generated
@@ -2580,9 +2853,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A column of chambers in a fixed ordered stack, every chamber present and none skipped.
 ```
 
-#### 186. SEC 4. Locked Template
+#### 207. SEC 4. Locked Template
 
-- File name: `SCI-186-SEC-4-Locked-Template.png`
+- File name: `SCI-207-SEC-4-Locked-Template.png`
 - Target: `public/card-art/sci-fi/cards/format-sections/grade-04.webp`
 - Owner: Card `format-sections` grade `Locked Template`
 - Status: generated
@@ -2593,9 +2866,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A column machined to an exact template, chamber seams flush and sealed, nothing added and nothing dropped.
 ```
 
-#### 187. CIT 1. Source Notes
+#### 208. CIT 1. Source Notes
 
-- File name: `SCI-187-CIT-1-Source-Notes.png`
+- File name: `SCI-208-CIT-1-Source-Notes.png`
 - Target: `public/card-art/sci-fi/cards/format-evidence/grade-01.webp`
 - Owner: Card `format-evidence` grade `Source Notes`
 - Status: generated
@@ -2606,9 +2879,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A floating claim with a couple of anchor lines dropped to the strongest source cores below it.
 ```
 
-#### 188. CIT 2. Linked Sources
+#### 209. CIT 2. Linked Sources
 
-- File name: `SCI-188-CIT-2-Linked-Sources.png`
+- File name: `SCI-209-CIT-2-Linked-Sources.png`
 - Target: `public/card-art/sci-fi/cards/format-evidence/grade-02.webp`
 - Owner: Card `format-evidence` grade `Linked Sources`
 - Status: generated
@@ -2619,9 +2892,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 Several floating claims each tethered inline to its own source core, lines short and taut.
 ```
 
-#### 189. CIT 3. Evidence Notes
+#### 210. CIT 3. Evidence Notes
 
-- File name: `SCI-189-CIT-3-Evidence-Notes.png`
+- File name: `SCI-210-CIT-3-Evidence-Notes.png`
 - Target: `public/card-art/sci-fi/cards/format-evidence/grade-03.webp`
 - Owner: Card `format-evidence` grade `Evidence Notes`
 - Status: generated
@@ -2632,9 +2905,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 Anchor lines rendered at visible thicknesses, each strand's width showing the weight of evidence it carries.
 ```
 
-#### 190. CIT 4. Citation Record
+#### 211. CIT 4. Citation Record
 
-- File name: `SCI-190-CIT-4-Citation-Record.png`
+- File name: `SCI-211-CIT-4-Citation-Record.png`
 - Target: `public/card-art/sci-fi/cards/format-evidence/grade-04.webp`
 - Owner: Card `format-evidence` grade `Citation Record`
 - Status: generated
@@ -2645,9 +2918,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 Every claim anchored to a core, with inference lines rendered distinctly as dashed strands among the solid ones.
 ```
 
-#### 191. TAB 1. Option Notes
+#### 212. TAB 1. Option Notes
 
-- File name: `SCI-191-TAB-1-Option-Notes.png`
+- File name: `SCI-212-TAB-1-Option-Notes.png`
 - Target: `public/card-art/sci-fi/cards/format-comparison/grade-01.webp`
 - Owner: Card `format-comparison` grade `Option Notes`
 - Status: generated
@@ -2658,9 +2931,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 Several alternatives standing separated in the dark, clearly apart from each other but with no grid drawn yet.
 ```
 
-#### 192. TAB 2. Comparison Table
+#### 213. TAB 2. Comparison Table
 
-- File name: `SCI-192-TAB-2-Comparison-Table.png`
+- File name: `SCI-213-TAB-2-Comparison-Table.png`
 - Target: `public/card-art/sci-fi/cards/format-comparison/grade-02.webp`
 - Owner: Card `format-comparison` grade `Comparison Table`
 - Status: generated
@@ -2671,9 +2944,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A compact grid lattice with the alternatives placed on it and the key measuring axes lit.
 ```
 
-#### 193. TAB 3. Decision Table
+#### 214. TAB 3. Decision Table
 
-- File name: `SCI-193-TAB-3-Decision-Table.png`
+- File name: `SCI-214-TAB-3-Decision-Table.png`
 - Target: `public/card-art/sci-fi/cards/format-comparison/grade-03.webp`
 - Owner: Card `format-comparison` grade `Decision Table`
 - Status: generated
@@ -2684,9 +2957,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A grid lattice with criteria explicit along its edges and the winning row glowing across its full width.
 ```
 
-#### 194. TAB 4. Evaluation Matrix
+#### 215. TAB 4. Evaluation Matrix
 
-- File name: `SCI-194-TAB-4-Evaluation-Matrix.png`
+- File name: `SCI-215-TAB-4-Evaluation-Matrix.png`
 - Target: `public/card-art/sci-fi/cards/format-comparison/grade-04.webp`
 - Owner: Card `format-comparison` grade `Evaluation Matrix`
 - Status: generated
@@ -2697,9 +2970,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A dense grid lattice of weighted cells with scored intersections and a ranked verdict column burning down one side.
 ```
 
-#### 195. NXT 1. Next Move
+#### 216. NXT 1. Next Move
 
-- File name: `SCI-195-NXT-1-Next-Move.png`
+- File name: `SCI-216-NXT-1-Next-Move.png`
 - Target: `public/card-art/sci-fi/cards/format-next/grade-01.webp`
 - Owner: Card `format-next` grade `Next Move`
 - Status: generated
@@ -2710,9 +2983,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A launch rail with a single marker primed and glowing hot at its head.
 ```
 
-#### 196. NXT 2. Next Steps
+#### 217. NXT 2. Next Steps
 
-- File name: `SCI-196-NXT-2-Next-Steps.png`
+- File name: `SCI-217-NXT-2-Next-Steps.png`
 - Target: `public/card-art/sci-fi/cards/format-next/grade-02.webp`
 - Owner: Card `format-next` grade `Next Steps`
 - Status: generated
@@ -2723,9 +2996,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A launch rail with a short ordered run of markers lit in sequence down its length.
 ```
 
-#### 197. NXT 3. Prioritized Actions
+#### 218. NXT 3. Prioritized Actions
 
-- File name: `SCI-197-NXT-3-Prioritized-Actions.png`
+- File name: `SCI-218-NXT-3-Prioritized-Actions.png`
 - Target: `public/card-art/sci-fi/cards/format-next/grade-03.webp`
 - Owner: Card `format-next` grade `Prioritized Actions`
 - Status: generated
@@ -2736,9 +3009,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A launch rail with markers ranked by heat, owner tags clipped to the hottest ones.
 ```
 
-#### 198. NXT 4. Execution Handoff
+#### 219. NXT 4. Execution Handoff
 
-- File name: `SCI-198-NXT-4-Execution-Handoff.png`
+- File name: `SCI-219-NXT-4-Execution-Handoff.png`
 - Target: `public/card-art/sci-fi/cards/format-next/grade-04.webp`
 - Owner: Card `format-next` grade `Execution Handoff`
 - Status: generated
@@ -2749,9 +3022,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A launch rail fully loaded and released, running its whole sequence with no operator present to drive it.
 ```
 
-#### 199. LEN 1. Tight Budget
+#### 220. LEN 1. Tight Budget
 
-- File name: `SCI-199-LEN-1-Tight-Budget.png`
+- File name: `SCI-220-LEN-1-Tight-Budget.png`
 - Target: `public/card-art/sci-fi/cards/format-length/grade-01.webp`
 - Owner: Card `format-length` grade `Tight Budget`
 - Status: generated
@@ -2762,9 +3035,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A precision caliper clamped hard on a body of luminous material, a heavy offcut venting away as vapor.
 ```
 
-#### 200. LEN 2. One Screen
+#### 221. LEN 2. One Screen
 
-- File name: `SCI-200-LEN-2-One-Screen.png`
+- File name: `SCI-221-LEN-2-One-Screen.png`
 - Target: `public/card-art/sci-fi/cards/format-length/grade-02.webp`
 - Owner: Card `format-length` grade `One Screen`
 - Status: generated
@@ -2775,9 +3048,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A precision caliper holding material to a single dense measure, compact and fully packed.
 ```
 
-#### 201. LEN 3. Room to Explain
+#### 222. LEN 3. Room to Explain
 
-- File name: `SCI-201-LEN-3-Room-to-Explain.png`
+- File name: `SCI-222-LEN-3-Room-to-Explain.png`
 - Target: `public/card-art/sci-fi/cards/format-length/grade-03.webp`
 - Owner: Card `format-length` grade `Room to Explain`
 - Status: generated
@@ -2788,9 +3061,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A precision caliper opened to the material's natural width, the space spent on substance rather than padding.
 ```
 
-#### 202. LEN 4. Complete Treatment
+#### 223. LEN 4. Complete Treatment
 
-- File name: `SCI-202-LEN-4-Complete-Treatment.png`
+- File name: `SCI-223-LEN-4-Complete-Treatment.png`
 - Target: `public/card-art/sci-fi/cards/format-length/grade-04.webp`
 - Owner: Card `format-length` grade `Complete Treatment`
 - Status: generated
@@ -2801,9 +3074,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A precision caliper opened wide but stopping exactly at the material's true edge, complete with nothing added beyond it.
 ```
 
-#### 203. TIER 1. Essentials First
+#### 224. TIER 1. Essentials First
 
-- File name: `SCI-203-TIER-1-Essentials-First.png`
+- File name: `SCI-224-TIER-1-Essentials-First.png`
 - Target: `public/card-art/sci-fi/cards/format-tiers/grade-01.webp`
 - Owner: Card `format-tiers` grade `Essentials First`
 - Status: generated
@@ -2814,9 +3087,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A stepped platform with one small brilliantly lit top step and the depth below it only suggested in shadow.
 ```
 
-#### 204. TIER 2. Three Tiers
+#### 225. TIER 2. Three Tiers
 
-- File name: `SCI-204-TIER-2-Three-Tiers.png`
+- File name: `SCI-225-TIER-2-Three-Tiers.png`
 - Target: `public/card-art/sci-fi/cards/format-tiers/grade-02.webp`
 - Owner: Card `format-tiers` grade `Three Tiers`
 - Status: generated
@@ -2827,9 +3100,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A stepped platform of three clean descending steps, each one clearly separated from the next.
 ```
 
-#### 205. TIER 3. Tiered Sections
+#### 226. TIER 3. Tiered Sections
 
-- File name: `SCI-205-TIER-3-Tiered-Sections.png`
+- File name: `SCI-226-TIER-3-Tiered-Sections.png`
 - Target: `public/card-art/sci-fi/cards/format-tiers/grade-03.webp`
 - Owner: Card `format-tiers` grade `Tiered Sections`
 - Status: generated
@@ -2840,9 +3113,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A stepped platform of three labeled steps with every item visibly assigned to one of them.
 ```
 
-#### 206. TIER 4. Locked Tier Hierarchy
+#### 227. TIER 4. Locked Tier Hierarchy
 
-- File name: `SCI-206-TIER-4-Locked-Tier-Hierarchy.png`
+- File name: `SCI-227-TIER-4-Locked-Tier-Hierarchy.png`
 - Target: `public/card-art/sci-fi/cards/format-tiers/grade-04.webp`
 - Owner: Card `format-tiers` grade `Locked Tier Hierarchy`
 - Status: generated
@@ -2853,11 +3126,63 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A strictly machined terrace of tiers with hard edges, nothing resting anywhere outside the hierarchy.
 ```
 
+#### 228. EDIT 1. Change record
+
+- File name: `SCI-228-EDIT-1-Change-record.png`
+- Target: `public/card-art/sci-fi/cards/format-change-record/grade-01.webp`
+- Owner: Card `format-change-record` grade `Change record`
+- Status: planned
+
+```
+Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: painterly volumetric rendering carried by clean comic ink weight on the silhouette, cinematic and high-craft, the way a premium video game paints its collectible cards. Cyan and teal key light rakes the subject from one side, a hard cyan rim light separates it from a deep blue-black background, and soft atmospheric haze falls away behind. One strong centered focal shape, isolated, uncluttered edges, nothing in the background competing with it, and it still reads at thumbnail size. Square composition with generous breathing room. Artwork only: no text, no letters, no numbers, no logos, no readable symbols, no UI labels, no card frame.
+
+A margin note beside a clean proof.
+```
+
+#### 229. EDIT 2. Change record · reason
+
+- File name: `SCI-229-EDIT-2-Change-record-reason.png`
+- Target: `public/card-art/sci-fi/cards/format-change-record/grade-02.webp`
+- Owner: Card `format-change-record` grade `Change record · reason`
+- Status: planned
+
+```
+Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: painterly volumetric rendering carried by clean comic ink weight on the silhouette, cinematic and high-craft, the way a premium video game paints its collectible cards. Cyan and teal key light rakes the subject from one side, a hard cyan rim light separates it from a deep blue-black background, and soft atmospheric haze falls away behind. One strong centered focal shape, isolated, uncluttered edges, nothing in the background competing with it, and it still reads at thumbnail size. Square composition with generous breathing room. Artwork only: no text, no letters, no numbers, no logos, no readable symbols, no UI labels, no card frame.
+
+A margin note beside a clean proof.
+```
+
+#### 230. EDIT 3. Change record · example
+
+- File name: `SCI-230-EDIT-3-Change-record-example.png`
+- Target: `public/card-art/sci-fi/cards/format-change-record/grade-03.webp`
+- Owner: Card `format-change-record` grade `Change record · example`
+- Status: planned
+
+```
+Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: painterly volumetric rendering carried by clean comic ink weight on the silhouette, cinematic and high-craft, the way a premium video game paints its collectible cards. Cyan and teal key light rakes the subject from one side, a hard cyan rim light separates it from a deep blue-black background, and soft atmospheric haze falls away behind. One strong centered focal shape, isolated, uncluttered edges, nothing in the background competing with it, and it still reads at thumbnail size. Square composition with generous breathing room. Artwork only: no text, no letters, no numbers, no logos, no readable symbols, no UI labels, no card frame.
+
+A margin note beside a clean proof.
+```
+
+#### 231. EDIT 4. Change record · review
+
+- File name: `SCI-231-EDIT-4-Change-record-review.png`
+- Target: `public/card-art/sci-fi/cards/format-change-record/grade-04.webp`
+- Owner: Card `format-change-record` grade `Change record · review`
+- Status: planned
+
+```
+Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: painterly volumetric rendering carried by clean comic ink weight on the silhouette, cinematic and high-craft, the way a premium video game paints its collectible cards. Cyan and teal key light rakes the subject from one side, a hard cyan rim light separates it from a deep blue-black background, and soft atmospheric haze falls away behind. One strong centered focal shape, isolated, uncluttered edges, nothing in the background competing with it, and it still reads at thumbnail size. Square composition with generous breathing room. Artwork only: no text, no letters, no numbers, no logos, no readable symbols, no UI labels, no card frame.
+
+A margin note beside a clean proof.
+```
+
 ### Per-grade variants - Target
 
-#### 207. LVL 1. First Contact
+#### 232. LVL 1. First Contact
 
-- File name: `SCI-207-LVL-1-First-Contact.png`
+- File name: `SCI-232-LVL-1-First-Contact.png`
 - Target: `public/card-art/sci-fi/cards/target-language/grade-01.webp`
 - Owner: Card `target-language` grade `First Contact`
 - Status: generated
@@ -2868,9 +3193,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A translator prism stepping its beam all the way down to the simplest broadest facet, emerging plain and unhurried.
 ```
 
-#### 208. LVL 2. Plain Language
+#### 233. LVL 2. Plain Language
 
-- File name: `SCI-208-LVL-2-Plain-Language.png`
+- File name: `SCI-233-LVL-2-Plain-Language.png`
 - Target: `public/card-art/sci-fi/cards/target-language/grade-02.webp`
 - Owner: Card `target-language` grade `Plain Language`
 - Status: generated
@@ -2881,9 +3206,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A translator prism holding a clear middle facet, unfamiliar terms visibly unpacked as the light enters.
 ```
 
-#### 209. LVL 3. Working Vocabulary
+#### 234. LVL 3. Working Vocabulary
 
-- File name: `SCI-209-LVL-3-Working-Vocabulary.png`
+- File name: `SCI-234-LVL-3-Working-Vocabulary.png`
 - Target: `public/card-art/sci-fi/cards/target-language/grade-03.webp`
 - Owner: Card `target-language` grade `Working Vocabulary`
 - Status: generated
@@ -2894,9 +3219,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A translator prism running at standard density, only the most obscure facets clarified along the path.
 ```
 
-#### 210. LVL 4. Expert Shorthand
+#### 235. LVL 4. Expert Shorthand
 
-- File name: `SCI-210-LVL-4-Expert-Shorthand.png`
+- File name: `SCI-235-LVL-4-Expert-Shorthand.png`
 - Target: `public/card-art/sci-fi/cards/target-language/grade-04.webp`
 - Owner: Card `target-language` grade `Expert Shorthand`
 - Status: generated
@@ -2907,9 +3232,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A translator prism passed straight through undiluted, the beam leaving at full technical density.
 ```
 
-#### 211. VOC 1. Straight Talk
+#### 236. VOC 1. Straight Talk
 
-- File name: `SCI-211-VOC-1-Straight-Talk.png`
+- File name: `SCI-236-VOC-1-Straight-Talk.png`
 - Target: `public/card-art/sci-fi/cards/target-voice/grade-01.webp`
 - Owner: Card `target-voice` grade `Straight Talk`
 - Status: generated
@@ -2920,9 +3245,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A tone modulator with its fork ringing loose and natural, the band warm and conversational.
 ```
 
-#### 212. VOC 2. Clear Neutral
+#### 237. VOC 2. Clear Neutral
 
-- File name: `SCI-212-VOC-2-Clear-Neutral.png`
+- File name: `SCI-237-VOC-2-Clear-Neutral.png`
 - Target: `public/card-art/sci-fi/cards/target-voice/grade-02.webp`
 - Owner: Card `target-voice` grade `Clear Neutral`
 - Status: generated
@@ -2933,9 +3258,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A tone modulator holding a calm even band without ornament or flourish.
 ```
 
-#### 213. VOC 3. Professional Voice
+#### 238. VOC 3. Professional Voice
 
-- File name: `SCI-213-VOC-3-Professional-Voice.png`
+- File name: `SCI-238-VOC-3-Professional-Voice.png`
 - Target: `public/card-art/sci-fi/cards/target-voice/grade-03.webp`
 - Owner: Card `target-voice` grade `Professional Voice`
 - Status: generated
@@ -2946,9 +3271,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A tone modulator holding a polished precise band, its edges clean and deliberate.
 ```
 
-#### 214. VOC 4. Formal Register
+#### 239. VOC 4. Formal Register
 
-- File name: `SCI-214-VOC-4-Formal-Register.png`
+- File name: `SCI-239-VOC-4-Formal-Register.png`
 - Target: `public/card-art/sci-fi/cards/target-voice/grade-04.webp`
 - Owner: Card `target-voice` grade `Formal Register`
 - Status: generated
@@ -2959,9 +3284,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A tone modulator holding a rigid disciplined band exactly on its mark, formal and unwavering.
 ```
 
-#### 215. EX 1. Everyday Analogy
+#### 240. EX 1. Everyday Analogy
 
-- File name: `SCI-215-EX-1-Everyday-Analogy.png`
+- File name: `SCI-240-EX-1-Everyday-Analogy.png`
 - Target: `public/card-art/sci-fi/cards/target-examples/grade-01.webp`
 - Owner: Card `target-examples` grade `Everyday Analogy`
 - Status: generated
@@ -2972,9 +3297,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A projector casting one familiar homely miniature scene beneath a large abstract form.
 ```
 
-#### 216. EX 2. Worked Example
+#### 241. EX 2. Worked Example
 
-- File name: `SCI-216-EX-2-Worked-Example.png`
+- File name: `SCI-241-EX-2-Worked-Example.png`
 - Target: `public/card-art/sci-fi/cards/target-examples/grade-02.webp`
 - Owner: Card `target-examples` grade `Worked Example`
 - Status: generated
@@ -2985,9 +3310,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A projector carrying a single miniature scene all the way through from start to finish.
 ```
 
-#### 217. EX 3. Domain Example
+#### 242. EX 3. Domain Example
 
-- File name: `SCI-217-EX-3-Domain-Example.png`
+- File name: `SCI-242-EX-3-Domain-Example.png`
 - Target: `public/card-art/sci-fi/cards/target-examples/grade-03.webp`
 - Owner: Card `target-examples` grade `Domain Example`
 - Status: generated
@@ -2998,9 +3323,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A projector casting realistic miniature scenes with their messy irregular detail deliberately left in.
 ```
 
-#### 218. EX 4. Edge Case
+#### 243. EX 4. Edge Case
 
-- File name: `SCI-218-EX-4-Edge-Case.png`
+- File name: `SCI-243-EX-4-Edge-Case.png`
 - Target: `public/card-art/sci-fi/cards/target-examples/grade-04.webp`
 - Owner: Card `target-examples` grade `Edge Case`
 - Status: generated
@@ -3011,9 +3336,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A projector placing miniature scenes right at the boundary where the larger rule visibly breaks down.
 ```
 
-#### 219. DCN 1. Next Decision
+#### 244. DCN 1. Next Decision
 
-- File name: `SCI-219-DCN-1-Next-Decision.png`
+- File name: `SCI-244-DCN-1-Next-Decision.png`
 - Target: `public/card-art/sci-fi/cards/target-decisions/grade-01.webp`
 - Owner: Card `target-decisions` grade `Next Decision`
 - Status: generated
@@ -3024,9 +3349,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A decision console with one lever highlighted and the input it still needs lit beside it.
 ```
 
-#### 220. DCN 2. Actionable Framing
+#### 245. DCN 2. Actionable Framing
 
-- File name: `SCI-220-DCN-2-Actionable-Framing.png`
+- File name: `SCI-245-DCN-2-Actionable-Framing.png`
 - Target: `public/card-art/sci-fi/cards/target-decisions/grade-02.webp`
 - Owner: Card `target-decisions` grade `Actionable Framing`
 - Status: generated
@@ -3037,9 +3362,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A decision console with its levers labeled by the action each one enables further down the board.
 ```
 
-#### 221. DCN 3. Tradeoff Brief
+#### 246. DCN 3. Tradeoff Brief
 
-- File name: `SCI-221-DCN-3-Tradeoff-Brief.png`
+- File name: `SCI-246-DCN-3-Tradeoff-Brief.png`
 - Target: `public/card-art/sci-fi/cards/target-decisions/grade-03.webp`
 - Owner: Card `target-decisions` grade `Tradeoff Brief`
 - Status: generated
@@ -3050,9 +3375,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A decision console of paired levers, each pair showing what is gained against what is given up.
 ```
 
-#### 222. DCN 4. Decision Record
+#### 247. DCN 4. Decision Record
 
-- File name: `SCI-222-DCN-4-Decision-Record.png`
+- File name: `SCI-247-DCN-4-Decision-Record.png`
 - Target: `public/card-art/sci-fi/cards/target-decisions/grade-04.webp`
 - Owner: Card `target-decisions` grade `Decision Record`
 - Status: generated
@@ -3063,9 +3388,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A decision console with the chosen lever locked in place and its accepted consequences recorded along the board.
 ```
 
-#### 223. STN 1. Warm & Encouraging
+#### 248. STN 1. Warm & Encouraging
 
-- File name: `SCI-223-STN-1-Warm-Encouraging.png`
+- File name: `SCI-248-STN-1-Warm-Encouraging.png`
 - Target: `public/card-art/sci-fi/cards/target-stance/grade-01.webp`
 - Owner: Card `target-stance` grade `Warm & Encouraging`
 - Status: generated
@@ -3076,9 +3401,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A stance dial with the needle at the warm amber pole, the scene washed in soft encouraging light.
 ```
 
-#### 224. STN 2. Even & Matter-of-Fact
+#### 249. STN 2. Even & Matter-of-Fact
 
-- File name: `SCI-224-STN-2-Even-Matter-of-Fact.png`
+- File name: `SCI-249-STN-2-Even-Matter-of-Fact.png`
 - Target: `public/card-art/sci-fi/cards/target-stance/grade-02.webp`
 - Owner: Card `target-stance` grade `Even & Matter-of-Fact`
 - Status: generated
@@ -3089,9 +3414,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A stance dial with the needle centered, the light even and matter-of-fact with no lean either way.
 ```
 
-#### 225. STN 3. Candid & Direct
+#### 250. STN 3. Candid & Direct
 
-- File name: `SCI-225-STN-3-Candid-Direct.png`
+- File name: `SCI-250-STN-3-Candid-Direct.png`
 - Target: `public/card-art/sci-fi/cards/target-stance/grade-03.webp`
 - Owner: Card `target-stance` grade `Candid & Direct`
 - Status: generated
@@ -3102,9 +3427,9 @@ Modern sci-fi collectible-card key art in a CG and comic-book hybrid style: pain
 A stance dial with the needle pushed toward the cold pole, the light hard, clear, and unsoftened.
 ```
 
-#### 226. STN 4. Authoritative & Decisive
+#### 251. STN 4. Authoritative & Decisive
 
-- File name: `SCI-226-STN-4-Authoritative-Decisive.png`
+- File name: `SCI-251-STN-4-Authoritative-Decisive.png`
 - Target: `public/card-art/sci-fi/cards/target-stance/grade-04.webp`
 - Owner: Card `target-stance` grade `Authoritative & Decisive`
 - Status: generated

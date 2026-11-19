@@ -27,7 +27,7 @@ Per image:
    `public/`, flip `status` in this pack's JSON, and run
    `npm run data:generate`.
 
-Progress: 226/226 generated - 98 core images first, then 128 per-grade variants.
+Progress: 226/251 generated - 103 core images first, then 148 per-grade variants.
 
 ## Shared art direction
 
@@ -869,11 +869,63 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A will-o'-wisp lantern hovering at a gap in a stone bridge, its light tracing the exact shape of the missing stone rather than filling it in.
 ```
 
+#### 059. LOG lineage
+
+- File name: `FAN-059-LOG-lineage.png`
+- Target: `public/card-art/fantasy/cards/action-record/lineage.webp`
+- Owner: Card `action-record`
+- Status: planned
+
+```
+Epic high-fantasy collectible-card key art, fully hand-painted in the tradition of classic Warcraft trading-card illustration: confident visible brushwork, chunky heroic proportions, rich saturated color, ornate metal, carved stone and weathered leather rendered with loving material detail. Warm amber-gold lantern light rakes the subject from one side, a hard gold rim light separates it from a deep forest-green and umber darkness, and soft ember-lit haze falls away behind. Arcane energy may glow within objects but never reads as writing. One strong centered focal shape, isolated, uncluttered edges, nothing in the background competing with it, and it still reads at thumbnail size. Square composition with generous breathing room. The painting is full-bleed and fills the entire square to every edge, a photographic crop of a larger scene with the background running off all four sides: no border, no margin, no matting, no drawn edge line, no vignette box, not a sticker, no rounded corners. Artwork only: no text, no letters, no numbers, no logos, no readable symbols, no UI labels, no card frame.
+
+A ledger with a dated correction slip.
+```
+
+#### 060. MATCH lineage
+
+- File name: `FAN-060-MATCH-lineage.png`
+- Target: `public/card-art/fantasy/cards/action-matched-compare/lineage.webp`
+- Owner: Card `action-matched-compare`
+- Status: planned
+
+```
+Epic high-fantasy collectible-card key art, fully hand-painted in the tradition of classic Warcraft trading-card illustration: confident visible brushwork, chunky heroic proportions, rich saturated color, ornate metal, carved stone and weathered leather rendered with loving material detail. Warm amber-gold lantern light rakes the subject from one side, a hard gold rim light separates it from a deep forest-green and umber darkness, and soft ember-lit haze falls away behind. Arcane energy may glow within objects but never reads as writing. One strong centered focal shape, isolated, uncluttered edges, nothing in the background competing with it, and it still reads at thumbnail size. Square composition with generous breathing room. The painting is full-bleed and fills the entire square to every edge, a photographic crop of a larger scene with the background running off all four sides: no border, no margin, no matting, no drawn edge line, no vignette box, not a sticker, no rounded corners. Artwork only: no text, no letters, no numbers, no logos, no readable symbols, no UI labels, no card frame.
+
+Two graduated measures aligned on one baseline.
+```
+
+#### 061. REVISE lineage
+
+- File name: `FAN-061-REVISE-lineage.png`
+- Target: `public/card-art/fantasy/cards/action-revise/lineage.webp`
+- Owner: Card `action-revise`
+- Status: planned
+
+```
+Epic high-fantasy collectible-card key art, fully hand-painted in the tradition of classic Warcraft trading-card illustration: confident visible brushwork, chunky heroic proportions, rich saturated color, ornate metal, carved stone and weathered leather rendered with loving material detail. Warm amber-gold lantern light rakes the subject from one side, a hard gold rim light separates it from a deep forest-green and umber darkness, and soft ember-lit haze falls away behind. Arcane energy may glow within objects but never reads as writing. One strong centered focal shape, isolated, uncluttered edges, nothing in the background competing with it, and it still reads at thumbnail size. Square composition with generous breathing room. The painting is full-bleed and fills the entire square to every edge, a photographic crop of a larger scene with the background running off all four sides: no border, no margin, no matting, no drawn edge line, no vignette box, not a sticker, no rounded corners. Artwork only: no text, no letters, no numbers, no logos, no readable symbols, no UI labels, no card frame.
+
+A marked proof laid beside its source.
+```
+
+#### 062. FLIP lineage
+
+- File name: `FAN-062-FLIP-lineage.png`
+- Target: `public/card-art/fantasy/cards/action-conditional-recommend/lineage.webp`
+- Owner: Card `action-conditional-recommend`
+- Status: planned
+
+```
+Epic high-fantasy collectible-card key art, fully hand-painted in the tradition of classic Warcraft trading-card illustration: confident visible brushwork, chunky heroic proportions, rich saturated color, ornate metal, carved stone and weathered leather rendered with loving material detail. Warm amber-gold lantern light rakes the subject from one side, a hard gold rim light separates it from a deep forest-green and umber darkness, and soft ember-lit haze falls away behind. Arcane energy may glow within objects but never reads as writing. One strong centered focal shape, isolated, uncluttered edges, nothing in the background competing with it, and it still reads at thumbnail size. Square composition with generous breathing room. The painting is full-bleed and fills the entire square to every edge, a photographic crop of a larger scene with the background running off all four sides: no border, no margin, no matting, no drawn edge line, no vignette box, not a sticker, no rounded corners. Artwork only: no text, no letters, no numbers, no logos, no readable symbols, no UI labels, no card frame.
+
+A balance with a sliding counterweight.
+```
+
 ### Cards - Format
 
-#### 059. INF lineage
+#### 063. INF lineage
 
-- File name: `FAN-059-INF-lineage.png`
+- File name: `FAN-063-INF-lineage.png`
 - Target: `public/card-art/fantasy/cards/format-info-card/lineage.webp`
 - Owner: Card `format-info-card`
 - Status: generated
@@ -885,9 +937,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A single smooth-faced standing stele alone in the dark, its face flat and plainly lit, no ornament and nothing stacked around it.
 ```
 
-#### 060. KEY lineage
+#### 064. KEY lineage
 
-- File name: `FAN-060-KEY-lineage.png`
+- File name: `FAN-064-KEY-lineage.png`
 - Target: `public/card-art/fantasy/cards/format-key-points/lineage.webp`
 - Owner: Card `format-key-points`
 - Status: generated
@@ -899,9 +951,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A weapon rack of distinct blades standing in a row, each one separate and evenly lit, clear dark gaps holding them apart.
 ```
 
-#### 061. SUM lineage
+#### 065. SUM lineage
 
-- File name: `FAN-061-SUM-lineage.png`
+- File name: `FAN-065-SUM-lineage.png`
 - Target: `public/card-art/fantasy/cards/format-summary/lineage.webp`
 - Owner: Card `format-summary`
 - Status: generated
@@ -913,9 +965,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A tall potion bottle with the brightest essence floated at the very top and the supporting sediment layered below it in shadow.
 ```
 
-#### 062. SEC lineage
+#### 066. SEC lineage
 
-- File name: `FAN-062-SEC-lineage.png`
+- File name: `FAN-066-SEC-lineage.png`
 - Target: `public/card-art/fantasy/cards/format-sections/lineage.webp`
 - Owner: Card `format-sections`
 - Status: generated
@@ -927,9 +979,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A cutaway keep tower of stacked floors, each floor a distinct sealed chamber with its own hearth-glow, the divisions between them crisp.
 ```
 
-#### 063. CIT lineage
+#### 067. CIT lineage
 
-- File name: `FAN-063-CIT-lineage.png`
+- File name: `FAN-067-CIT-lineage.png`
 - Target: `public/card-art/fantasy/cards/format-evidence/lineage.webp`
 - Owner: Card `format-evidence`
 - Status: generated
@@ -941,9 +993,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A floating banner held down by taut chains to heavy source-stones below, each chain lit along its length, one unanchored banner drifting loose.
 ```
 
-#### 064. TAB lineage
+#### 068. TAB lineage
 
-- File name: `FAN-064-TAB-lineage.png`
+- File name: `FAN-068-TAB-lineage.png`
 - Target: `public/card-art/fantasy/cards/format-comparison/lineage.webp`
 - Owner: Card `format-comparison`
 - Status: generated
@@ -955,9 +1007,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 Several shields hung along shared measuring rails inside a compact wooden testing frame, the fittings where they diverge flaring brighter, the frame ending well inside the picture.
 ```
 
-#### 065. NXT lineage
+#### 069. NXT lineage
 
-- File name: `FAN-065-NXT-lineage.png`
+- File name: `FAN-069-NXT-lineage.png`
 - Target: `public/card-art/fantasy/cards/format-next/lineage.webp`
 - Owner: Card `format-next`
 - Status: generated
@@ -969,9 +1021,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A row of signal braziers along a dark rampart, the first blazing primed and hot, the later ones waiting cooler down the line.
 ```
 
-#### 066. LEN lineage
+#### 070. LEN lineage
 
-- File name: `FAN-066-LEN-lineage.png`
+- File name: `FAN-070-LEN-lineage.png`
 - Target: `public/card-art/fantasy/cards/format-length/lineage.webp`
 - Owner: Card `format-length`
 - Status: generated
@@ -983,9 +1035,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A smith's caliper clamped around a glowing ingot, compressing it to an exact marked width, the trimmed excess venting away as bright vapor.
 ```
 
-#### 067. TIER lineage
+#### 071. TIER lineage
 
-- File name: `FAN-067-TIER-lineage.png`
+- File name: `FAN-071-TIER-lineage.png`
 - Target: `public/card-art/fantasy/cards/format-tiers/lineage.webp`
 - Owner: Card `format-tiers`
 - Status: generated
@@ -997,11 +1049,24 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A stone dais of descending steps into the dark, the top step small and brilliantly lit, each lower step wider and dimmer with supporting depth.
 ```
 
+#### 072. EDIT lineage
+
+- File name: `FAN-072-EDIT-lineage.png`
+- Target: `public/card-art/fantasy/cards/format-change-record/lineage.webp`
+- Owner: Card `format-change-record`
+- Status: planned
+
+```
+Epic high-fantasy collectible-card key art, fully hand-painted in the tradition of classic Warcraft trading-card illustration: confident visible brushwork, chunky heroic proportions, rich saturated color, ornate metal, carved stone and weathered leather rendered with loving material detail. Warm amber-gold lantern light rakes the subject from one side, a hard gold rim light separates it from a deep forest-green and umber darkness, and soft ember-lit haze falls away behind. Arcane energy may glow within objects but never reads as writing. One strong centered focal shape, isolated, uncluttered edges, nothing in the background competing with it, and it still reads at thumbnail size. Square composition with generous breathing room. The painting is full-bleed and fills the entire square to every edge, a photographic crop of a larger scene with the background running off all four sides: no border, no margin, no matting, no drawn edge line, no vignette box, not a sticker, no rounded corners. Artwork only: no text, no letters, no numbers, no logos, no readable symbols, no UI labels, no card frame.
+
+A margin note beside a clean proof.
+```
+
 ### Cards - Target
 
-#### 068. LVL lineage
+#### 073. LVL lineage
 
-- File name: `FAN-068-LVL-lineage.png`
+- File name: `FAN-073-LVL-lineage.png`
 - Target: `public/card-art/fantasy/cards/target-language/lineage.webp`
 - Owner: Card `target-language`
 - Status: generated
@@ -1013,9 +1078,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A run of graded crystal lenses stepping a dense beam of light down through simpler and clearer facets at each stage without losing its color.
 ```
 
-#### 069. VOC lineage
+#### 074. VOC lineage
 
-- File name: `FAN-069-VOC-lineage.png`
+- File name: `FAN-074-VOC-lineage.png`
 - Target: `public/card-art/fantasy/cards/target-voice/lineage.webp`
 - Owner: Card `target-voice`
 - Status: generated
@@ -1027,9 +1092,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 An enchanted harp held in a field of register bands, one chosen string ringing bright and steady across its whole length.
 ```
 
-#### 070. EX lineage
+#### 075. EX lineage
 
-- File name: `FAN-070-EX-lineage.png`
+- File name: `FAN-075-EX-lineage.png`
 - Target: `public/card-art/fantasy/cards/target-examples/lineage.webp`
 - Owner: Card `target-examples`
 - Status: generated
@@ -1041,9 +1106,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A storyteller's magic lantern casting small solid diorama scenes into the air beneath a large vague looming form, the little scenes sharp where the abstraction is soft.
 ```
 
-#### 071. DCN lineage
+#### 076. DCN lineage
 
-- File name: `FAN-071-DCN-lineage.png`
+- File name: `FAN-076-DCN-lineage.png`
 - Target: `public/card-art/fantasy/cards/target-decisions/lineage.webp`
 - Owner: Card `target-decisions`
 - Status: generated
@@ -1055,9 +1120,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A lockmaster's board of counterweighted levers, each one linked by a taut rope to the gate it opens further down the waterway.
 ```
 
-#### 072. STN lineage
+#### 077. STN lineage
 
-- File name: `FAN-072-STN-lineage.png`
+- File name: `FAN-077-STN-lineage.png`
 - Target: `public/card-art/fantasy/cards/target-stance/lineage.webp`
 - Owner: Card `target-stance`
 - Status: generated
@@ -1071,9 +1136,9 @@ A forge-tempering dial set between an ember-warm pole and a steel-cold pole, the
 
 ### Archetypes
 
-#### 073. Executive summary
+#### 078. Executive summary
 
-- File name: `FAN-073-Executive-summary.png`
+- File name: `FAN-078-Executive-summary.png`
 - Target: `public/card-art/fantasy/archetypes/executive-summary.webp`
 - Owner: Archetype `executive-summary`
 - Status: generated
@@ -1085,9 +1150,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A king's council table where a mountain of scrolls has been distilled to one decision tablet hovering at eye level under a shaft of light, the source heap receding into darkness behind it.
 ```
 
-#### 074. Creative concept
+#### 079. Creative concept
 
-- File name: `FAN-074-Creative-concept.png`
+- File name: `FAN-079-Creative-concept.png`
 - Target: `public/card-art/fantasy/archetypes/creative-concept.webp`
 - Owner: Archetype `creative-concept`
 - Status: generated
@@ -1099,9 +1164,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 An idea-forge with a luminous concept suspended in the shaping flame, growing structure and a hard bright hook at its core while rough offcuts drift away as sparks.
 ```
 
-#### 075. Note taker
+#### 080. Meeting record
 
-- File name: `FAN-075-Note-taker.png`
+- File name: `FAN-080-Meeting-record.png`
 - Target: `public/card-art/fantasy/archetypes/note-taker.webp`
 - Owner: Archetype `note-taker`
 - Status: generated
@@ -1113,9 +1178,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A scriptorium enchantment turning a chaotic stream of arriving fragments into neat ordered tablets that stack themselves into a clean archive shelf.
 ```
 
-#### 076. Message & email
+#### 081. Message & email
 
-- File name: `FAN-076-Message-email.png`
+- File name: `FAN-081-Message-email.png`
 - Target: `public/card-art/fantasy/archetypes/message-email.webp`
 - Owner: Archetype `message-email`
 - Status: generated
@@ -1127,9 +1192,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A rookery station composing one sealed message scroll, its tone-seal glowing at the chosen register, a messenger raven waiting to carry it into the dark.
 ```
 
-#### 077. Prompt improver
+#### 082. Prompt improver
 
-- File name: `FAN-077-Prompt-improver.png`
+- File name: `FAN-082-Prompt-improver.png`
 - Target: `public/card-art/fantasy/archetypes/prompt-improver.webp`
 - Owner: Archetype `prompt-improver`
 - Status: generated
@@ -1141,9 +1206,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A runed workbench where an old incantation core has been stripped down and rebuilt sharper, the discarded ambiguous parts laid out dark to one side.
 ```
 
-#### 078. Learning guide
+#### 083. Learning guide
 
-- File name: `FAN-078-Learning-guide.png`
+- File name: `FAN-083-Learning-guide.png`
 - Target: `public/card-art/fantasy/archetypes/learning-guide.webp`
 - Owner: Archetype `learning-guide`
 - Status: generated
@@ -1155,9 +1220,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A teaching orrery with a central idea burning at its heart and a guided path of lantern waypoints circling it, worked examples orbiting close.
 ```
 
-#### 079. App build handoff
+#### 084. App build handoff
 
-- File name: `FAN-079-App-build-handoff.png`
+- File name: `FAN-084-App-build-handoff.png`
 - Target: `public/card-art/fantasy/archetypes/app-build-handoff.webp`
 - Owner: Archetype `app-build-handoff`
 - Status: generated
@@ -1169,9 +1234,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A sealed blueprint reliquary holding a complete self-contained plan, every layer visible through its crystal shell, docked into a golem builder waiting to execute.
 ```
 
-#### 080. Agent skill
+#### 085. Agent skill
 
-- File name: `FAN-080-Agent-skill.png`
+- File name: `FAN-085-Agent-skill.png`
 - Target: `public/card-art/fantasy/archetypes/agent-skill.webp`
 - Owner: Archetype `agent-skill`
 - Status: generated
@@ -1183,9 +1248,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A modular spell cartridge seated on a casting rail, its trigger sigil lit, procedure channels and guardrail bindings visible along its length.
 ```
 
-#### 081. Agent gate
+#### 086. Agent gate
 
-- File name: `FAN-081-Agent-gate.png`
+- File name: `FAN-086-Agent-gate.png`
 - Target: `public/card-art/fantasy/archetypes/agent-gate.webp`
 - Owner: Archetype `agent-gate`
 - Status: generated
@@ -1197,9 +1262,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A judgment arch of carved stone scanning an artifact passing beneath it, a hard sweeping plane of light playing over the object and a verdict flame holding at the keystone.
 ```
 
-#### 082. Social post
+#### 087. Social post
 
-- File name: `FAN-082-Social-post.png`
+- File name: `FAN-087-Social-post.png`
 - Target: `public/card-art/fantasy/archetypes/social-post.webp`
 - Owner: Archetype `social-post`
 - Status: generated
@@ -1211,9 +1276,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A herald's tower fitted with several interchangeable horn-bells, one selected and mounted, its shaped call already carrying out over the dark countryside.
 ```
 
-#### 083. Quick explanation
+#### 088. Quick explanation
 
-- File name: `FAN-083-Quick-explanation.png`
+- File name: `FAN-088-Quick-explanation.png`
 - Target: `public/card-art/fantasy/archetypes/quick-explanation.webp`
 - Owner: Archetype `quick-explanation`
 - Status: generated
@@ -1225,9 +1290,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A compact answer lantern standing alone, one clear steady flame, nothing around it and nothing between the viewer and the point.
 ```
 
-#### 084. Research brief
+#### 089. Research brief
 
-- File name: `FAN-084-Research-brief.png`
+- File name: `FAN-089-Research-brief.png`
 - Target: `public/card-art/fantasy/archetypes/research-brief.webp`
 - Owner: Archetype `research-brief`
 - Status: generated
@@ -1239,9 +1304,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A balanced dossier of parchment suspended between two source pillars, certainty bands rendered as visible width around each finding, the uncertain ones deliberately wider.
 ```
 
-#### 085. Decision advisor
+#### 090. Decision advisor
 
-- File name: `FAN-085-Decision-advisor.png`
+- File name: `FAN-090-Decision-advisor.png`
 - Target: `public/card-art/fantasy/archetypes/decision-advisor.webp`
 - Owner: Archetype `decision-advisor`
 - Status: generated
@@ -1253,9 +1318,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A weighing altar with several options mounted on measured arms, one arm settling low and lighting gold as the recommendation commits.
 ```
 
-#### 086. Data analysis
+#### 091. Data analysis
 
-- File name: `FAN-086-Data-analysis.png`
+- File name: `FAN-091-Data-analysis.png`
 - Target: `public/card-art/fantasy/archetypes/data-analysis.webp`
 - Owner: Archetype `data-analysis`
 - Status: generated
@@ -1267,9 +1332,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A crystal memory-geode split open, its contents fanning out into layered insight strata, one segment isolated and brought forward glowing.
 ```
 
-#### 087. Risk premortem
+#### 092. Risk premortem
 
-- File name: `FAN-087-Risk-premortem.png`
+- File name: `FAN-092-Risk-premortem.png`
 - Target: `public/card-art/fantasy/archetypes/risk-premortem.webp`
 - Owner: Archetype `risk-premortem`
 - Status: generated
@@ -1281,9 +1346,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A ruined siege diorama being read in reverse, luminous failure lines running backward from the broken walls to the small quiet cause that started it.
 ```
 
-#### 088. Writing draft
+#### 093. Writing draft
 
-- File name: `FAN-088-Writing-draft.png`
+- File name: `FAN-093-Writing-draft.png`
 - Target: `public/card-art/fantasy/archetypes/writing-draft.webp`
 - Owner: Archetype `writing-draft`
 - Status: generated
@@ -1295,9 +1360,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A tapestry loom weaving a first continuous draft out of raw fiber, the cloth clean but still on the frame, edges deliberately unfinished.
 ```
 
-#### 089. Rewrite & polish
+#### 094. Revision pass
 
-- File name: `FAN-089-Rewrite-polish.png`
+- File name: `FAN-094-Revision-pass.png`
 - Target: `public/card-art/fantasy/archetypes/rewrite-polish.webp`
 - Owner: Archetype `rewrite-polish`
 - Status: generated
@@ -1309,9 +1374,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A polishing wheel refining an existing blade, dull surface lifting away under the stone to reveal the same shape underneath, sharper and brighter.
 ```
 
-#### 090. Critique & review
+#### 095. Critique & review
 
-- File name: `FAN-090-Critique-review.png`
+- File name: `FAN-095-Critique-review.png`
 - Target: `public/card-art/fantasy/archetypes/critique-review.webp`
 - Owner: Archetype `critique-review`
 - Status: generated
@@ -1323,9 +1388,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 An inspection shrine with an artifact held in padded restraints, ranked flag-banners planted along it, the most serious one burning hottest.
 ```
 
-#### 091. Presentation outline
+#### 096. Presentation outline
 
-- File name: `FAN-091-Presentation-outline.png`
+- File name: `FAN-096-Presentation-outline.png`
 - Target: `public/card-art/fantasy/archetypes/presentation-outline.webp`
 - Owner: Archetype `presentation-outline`
 - Status: generated
@@ -1337,9 +1402,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A run of floating banner-panels receding in procession, each holding one clear emblem, a bright golden throughline connecting them front to back.
 ```
 
-#### 092. Project plan
+#### 097. Project plan
 
-- File name: `FAN-092-Project-plan.png`
+- File name: `FAN-097-Project-plan.png`
 - Target: `public/card-art/fantasy/archetypes/build-plan.webp`
 - Owner: Archetype `build-plan`
 - Status: generated
@@ -1351,9 +1416,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A castle scaffold rising in ordered stages with milestone banners locked at each level, dependency ropes drawn taut between them.
 ```
 
-#### 093. Spec / PRD
+#### 098. Spec / PRD
 
-- File name: `FAN-093-Spec-PRD.png`
+- File name: `FAN-098-Spec-PRD.png`
 - Target: `public/card-art/fantasy/archetypes/spec-prd.webp`
 - Owner: Archetype `spec-prd`
 - Status: generated
@@ -1365,9 +1430,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A spec reliquary with requirement plates locked around its core, each plate seated and sealed, tolerances carved as clean grooves in the metal.
 ```
 
-#### 094. Code implementation
+#### 099. Code implementation
 
-- File name: `FAN-094-Code-implementation.png`
+- File name: `FAN-099-Code-implementation.png`
 - Target: `public/card-art/fantasy/archetypes/coding.webp`
 - Owner: Archetype `coding`
 - Status: generated
@@ -1379,9 +1444,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 An artificer's bench writing a working construct into being, structure knitting itself into place under the enchanting tool, proof-wards already touching the finished edge.
 ```
 
-#### 095. Debug & fix
+#### 100. Debug & fix
 
-- File name: `FAN-095-Debug-fix.png`
+- File name: `FAN-100-Debug-fix.png`
 - Target: `public/card-art/fantasy/archetypes/technical-troubleshoot.webp`
 - Owner: Archetype `technical-troubleshoot`
 - Status: generated
@@ -1393,9 +1458,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A repair shrine with a war-engine opened up and one traced fault line glowing along its length, a mending clamp moving in toward the exact break.
 ```
 
-#### 096. Explain code
+#### 101. Explain code
 
-- File name: `FAN-096-Explain-code.png`
+- File name: `FAN-101-Explain-code.png`
 - Target: `public/card-art/fantasy/archetypes/explain-code.webp`
 - Owner: Archetype `explain-code`
 - Status: generated
@@ -1407,9 +1472,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A walkthrough lantern stepping through an opened construct one stage at a time, the active stage lit and turning while the rest of the path stays visible.
 ```
 
-#### 097. Extract to data
+#### 102. Extract to data
 
-- File name: `FAN-097-Extract-to-data.png`
+- File name: `FAN-102-Extract-to-data.png`
 - Target: `public/card-art/fantasy/archetypes/extract-data.webp`
 - Owner: Archetype `extract-data`
 - Status: generated
@@ -1423,9 +1488,9 @@ A sorting enchantment drawing clean uniform crystal shards out of raw unsorted o
 
 ### Shared
 
-#### 098. Custom preset swatch
+#### 103. Custom preset swatch
 
-- File name: `FAN-098-Custom-preset-swatch.png`
+- File name: `FAN-103-Custom-preset-swatch.png`
 - Target: `public/card-art/fantasy/shared/custom-preset.webp`
 - Owner: prompt-custom-archetypes.ts
 - Status: generated
@@ -1445,9 +1510,9 @@ without these. Generate a grade here to override its card face.
 
 ### Per-grade variants - Context
 
-#### 099. SCP 1. Situation Snapshot
+#### 104. SCP 1. Situation Snapshot
 
-- File name: `FAN-099-SCP-1-Situation-Snapshot.png`
+- File name: `FAN-104-SCP-1-Situation-Snapshot.png`
 - Target: `public/card-art/fantasy/cards/context-scope/grade-01.webp`
 - Owner: Card `context-scope` grade `Situation Snapshot`
 - Status: generated
@@ -1458,9 +1523,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A scrying orb holding a small tight circle of vision around a single object, only the ground immediately beneath it visible and everything else swallowed by dark.
 ```
 
-#### 100. SCP 2. Working Brief
+#### 105. SCP 2. Working Brief
 
-- File name: `FAN-100-SCP-2-Working-Brief.png`
+- File name: `FAN-105-SCP-2-Working-Brief.png`
 - Target: `public/card-art/fantasy/cards/context-scope/grade-02.webp`
 - Owner: Card `context-scope` grade `Working Brief`
 - Status: generated
@@ -1471,9 +1536,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A scrying orb with its circle widened to take in the nearby lands it may draw on, a clean marked boundary rune-ring where the vision stops.
 ```
 
-#### 101. SCP 3. Decision Context
+#### 106. SCP 3. Decision Context
 
-- File name: `FAN-101-SCP-3-Decision-Context.png`
+- File name: `FAN-106-SCP-3-Decision-Context.png`
 - Target: `public/card-art/fantasy/cards/context-scope/grade-03.webp`
 - Owner: Card `context-scope` grade `Decision Context`
 - Status: generated
@@ -1484,9 +1549,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A scrying orb lighting a broad stretch of terrain with allied banners standing inside it and worn trails crossing the ground where things have already been tried.
 ```
 
-#### 102. SCP 4. Complete Operating Picture
+#### 107. SCP 4. Complete Operating Picture
 
-- File name: `FAN-102-SCP-4-Complete-Operating-Picture.png`
+- File name: `FAN-107-SCP-4-Complete-Operating-Picture.png`
 - Target: `public/card-art/fantasy/cards/context-scope/grade-04.webp`
 - Owner: Card `context-scope` grade `Complete Operating Picture`
 - Status: generated
@@ -1497,9 +1562,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A scrying orb fully awakened, its vision thrown to the horizon so the entire realm reads at once with nothing left guessed at in shadow.
 ```
 
-#### 103. SRC 1. Given As True
+#### 108. SRC 1. Given As True
 
-- File name: `FAN-103-SRC-1-Given-As-True.png`
+- File name: `FAN-108-SRC-1-Given-As-True.png`
 - Target: `public/card-art/fantasy/cards/context-evidence/grade-01.webp`
 - Owner: Card `context-evidence` grade `Given As True`
 - Status: generated
@@ -1510,9 +1575,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A reliquary rack with claim-tokens mounted and accepted as given, the provenance chains still coiled unused at the base of the shelf.
 ```
 
-#### 104. SRC 2. Source Support
+#### 109. SRC 2. Source Support
 
-- File name: `FAN-104-SRC-2-Source-Support.png`
+- File name: `FAN-109-SRC-2-Source-Support.png`
 - Target: `public/card-art/fantasy/cards/context-evidence/grade-02.webp`
 - Owner: Card `context-evidence` grade `Source Support`
 - Status: generated
@@ -1523,9 +1588,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A reliquary rack with chains run from the load-bearing claims down to a few solid relics, the unsupported claims left hanging dark.
 ```
 
-#### 105. SRC 3. Corroborated Sources
+#### 110. SRC 3. Corroborated Sources
 
-- File name: `FAN-105-SRC-3-Corroborated-Sources.png`
+- File name: `FAN-110-SRC-3-Corroborated-Sources.png`
 - Target: `public/card-art/fantasy/cards/context-evidence/grade-03.webp`
 - Owner: Card `context-evidence` grade `Corroborated Sources`
 - Status: generated
@@ -1536,9 +1601,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A reliquary rack where each key claim is cross-braced by several converging chains arriving from different relics.
 ```
 
-#### 106. SRC 4. Audit Trail
+#### 111. SRC 4. Audit Trail
 
-- File name: `FAN-106-SRC-4-Audit-Trail.png`
+- File name: `FAN-111-SRC-4-Audit-Trail.png`
 - Target: `public/card-art/fantasy/cards/context-evidence/grade-04.webp`
 - Owner: Card `context-evidence` grade `Audit Trail`
 - Status: generated
@@ -1549,9 +1614,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A reliquary rack threaded end to end, conflicting chains held deliberately apart and lit against each other, confidence readable in every link.
 ```
 
-#### 107. LIM 1. Basic Limits
+#### 112. LIM 1. Basic Limits
 
-- File name: `FAN-107-LIM-1-Basic-Limits.png`
+- File name: `FAN-112-LIM-1-Basic-Limits.png`
 - Target: `public/card-art/fantasy/cards/context-constraints/grade-01.webp`
 - Owner: Card `context-constraints` grade `Basic Limits`
 - Status: generated
@@ -1562,9 +1627,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A pair of iron binding rings resting lightly at the edges of a working volume, barely engaged, holding only the stated exclusions.
 ```
 
-#### 108. LIM 2. Operating Limits
+#### 113. LIM 2. Operating Limits
 
-- File name: `FAN-108-LIM-2-Operating-Limits.png`
+- File name: `FAN-113-LIM-2-Operating-Limits.png`
 - Target: `public/card-art/fantasy/cards/context-constraints/grade-02.webp`
 - Owner: Card `context-constraints` grade `Operating Limits`
 - Status: generated
@@ -1575,9 +1640,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 Four iron binding rings closed on a working volume, compressing it to a smaller practical footprint of time, tools, and coin.
 ```
 
-#### 109. LIM 3. Constraint Map
+#### 114. LIM 3. Constraint Map
 
-- File name: `FAN-109-LIM-3-Constraint-Map.png`
+- File name: `FAN-114-LIM-3-Constraint-Map.png`
 - Target: `public/card-art/fantasy/cards/context-constraints/grade-03.webp`
 - Owner: Card `context-constraints` grade `Constraint Map`
 - Status: generated
@@ -1588,9 +1653,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 Hard iron rings locked tight while softer preference-ribbons rest visibly separate and loose beside them, the difference obvious.
 ```
 
-#### 110. LIM 4. Boundary Conditions
+#### 115. LIM 4. Boundary Conditions
 
-- File name: `FAN-110-LIM-4-Boundary-Conditions.png`
+- File name: `FAN-115-LIM-4-Boundary-Conditions.png`
 - Target: `public/card-art/fantasy/cards/context-constraints/grade-04.webp`
 - Owner: Card `context-constraints` grade `Boundary Conditions`
 - Status: generated
@@ -1601,9 +1666,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A full cage of binding rings around a volume with strain-glow at every joint and exception latches sprung along the frame.
 ```
 
-#### 111. ASM 1. Working Assumptions
+#### 116. ASM 1. Working Assumptions
 
-- File name: `FAN-111-ASM-1-Working-Assumptions.png`
+- File name: `FAN-116-ASM-1-Working-Assumptions.png`
 - Target: `public/card-art/fantasy/cards/context-assumptions/grade-01.webp`
 - Owner: Card `context-assumptions` grade `Working Assumptions`
 - Status: generated
@@ -1614,9 +1679,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A bridge with a few translucent ghost-stones plainly visible among the solid masonry, simply shown rather than hidden.
 ```
 
-#### 112. ASM 2. Assumption Check
+#### 117. ASM 2. Assumption Check
 
-- File name: `FAN-112-ASM-2-Assumption-Check.png`
+- File name: `FAN-117-ASM-2-Assumption-Check.png`
 - Target: `public/card-art/fantasy/cards/context-assumptions/grade-02.webp`
 - Owner: Card `context-assumptions` grade `Assumption Check`
 - Status: generated
@@ -1627,9 +1692,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A bridge where the load-bearing ghost-stones pulse with warning light, marking the ones that would drop the span.
 ```
 
-#### 113. ASM 3. Assumption Register
+#### 118. ASM 3. Assumption Register
 
-- File name: `FAN-113-ASM-3-Assumption-Register.png`
+- File name: `FAN-118-ASM-3-Assumption-Register.png`
 - Target: `public/card-art/fantasy/cards/context-assumptions/grade-03.webp`
 - Owner: Card `context-assumptions` grade `Assumption Register`
 - Status: generated
@@ -1640,9 +1705,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A bridge where every ghost-stone carries its own footing-mark and a consequence rope running out from it.
 ```
 
-#### 114. ASM 4. Uncertainty Model
+#### 119. ASM 4. Uncertainty Model
 
-- File name: `FAN-114-ASM-4-Uncertainty-Model.png`
+- File name: `FAN-119-ASM-4-Uncertainty-Model.png`
 - Target: `public/card-art/fantasy/cards/context-assumptions/grade-04.webp`
 - Owner: Card `context-assumptions` grade `Uncertainty Model`
 - Status: generated
@@ -1653,9 +1718,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A bridge of ghost-stones ranked by size and brightness, tilt-lines projecting how far the span shifts if each one fails.
 ```
 
-#### 115. WIN 1. Done Means
+#### 120. WIN 1. Done Means
 
-- File name: `FAN-115-WIN-1-Done-Means.png`
+- File name: `FAN-120-WIN-1-Done-Means.png`
 - Target: `public/card-art/fantasy/cards/context-success/grade-01.webp`
 - Owner: Card `context-success` grade `Done Means`
 - Status: generated
@@ -1666,9 +1731,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A simple archery target with a single arrow resting home, one clear gold mark for what finished means.
 ```
 
-#### 116. WIN 2. Success Check
+#### 121. WIN 2. Success Check
 
-- File name: `FAN-116-WIN-2-Success-Check.png`
+- File name: `FAN-121-WIN-2-Success-Check.png`
 - Target: `public/card-art/fantasy/cards/context-success/grade-02.webp`
 - Owner: Card `context-success` grade `Success Check`
 - Status: generated
@@ -1679,9 +1744,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 An archery target with the gold ring lit and scored sharp, the acceptance line unmistakable on its face.
 ```
 
-#### 117. WIN 3. Success Criteria
+#### 122. WIN 3. Success Criteria
 
-- File name: `FAN-117-WIN-3-Success-Criteria.png`
+- File name: `FAN-122-WIN-3-Success-Criteria.png`
 - Target: `public/card-art/fantasy/cards/context-success/grade-03.webp`
 - Owner: Card `context-success` grade `Success Criteria`
 - Status: generated
@@ -1692,9 +1757,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A rank of archery targets mounted together, gold zones lit bright and failure zones marked hard in dark paint.
 ```
 
-#### 118. WIN 4. Evaluation Framework
+#### 123. WIN 4. Evaluation Framework
 
-- File name: `FAN-118-WIN-4-Evaluation-Framework.png`
+- File name: `FAN-123-WIN-4-Evaluation-Framework.png`
 - Target: `public/card-art/fantasy/cards/context-success/grade-04.webp`
 - Owner: Card `context-success` grade `Evaluation Framework`
 - Status: generated
@@ -1705,9 +1770,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A full trial wall of graded targets, tolerance rings carved into each face and the whole wall reading out at once.
 ```
 
-#### 119. OUT 1. No-Go List
+#### 124. OUT 1. No-Go List
 
-- File name: `FAN-119-OUT-1-No-Go-List.png`
+- File name: `FAN-124-OUT-1-No-Go-List.png`
 - Target: `public/card-art/fantasy/cards/context-exclusions/grade-01.webp`
 - Owner: Card `context-exclusions` grade `No-Go List`
 - Status: generated
@@ -1718,9 +1783,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A sluice gate shunting a few marked flows aside into a small dark holding pool while the rest of the stream continues.
 ```
 
-#### 120. OUT 2. Scope Fence
+#### 125. OUT 2. Scope Fence
 
-- File name: `FAN-120-OUT-2-Scope-Fence.png`
+- File name: `FAN-125-OUT-2-Scope-Fence.png`
 - Target: `public/card-art/fantasy/cards/context-exclusions/grade-02.webp`
 - Owner: Card `context-exclusions` grade `Scope Fence`
 - Status: generated
@@ -1731,9 +1796,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A sluice gate holding a clean lit line across the channel, the stream kept firmly on one side of it.
 ```
 
-#### 121. OUT 3. Anti-Goals
+#### 126. OUT 3. Anti-Goals
 
-- File name: `FAN-121-OUT-3-Anti-Goals.png`
+- File name: `FAN-126-OUT-3-Anti-Goals.png`
 - Target: `public/card-art/fantasy/cards/context-exclusions/grade-03.webp`
 - Owner: Card `context-exclusions` grade `Anti-Goals`
 - Status: generated
@@ -1744,9 +1809,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A sluice gate as a hard sealed wall with rejected currents visibly pressed against its face, unable to pass.
 ```
 
-#### 122. OUT 4. Drift Alarm
+#### 127. OUT 4. Drift Alarm
 
-- File name: `FAN-122-OUT-4-Drift-Alarm.png`
+- File name: `FAN-127-OUT-4-Drift-Alarm.png`
 - Target: `public/card-art/fantasy/cards/context-exclusions/grade-04.webp`
 - Owner: Card `context-exclusions` grade `Drift Alarm`
 - Status: generated
@@ -1759,9 +1824,9 @@ A sluice gate slamming actively, warning fire sweeping the channel, an escaping 
 
 ### Per-grade variants - Action
 
-#### 123. INS 1. Guided Review
+#### 128. INS 1. Guided Review
 
-- File name: `FAN-123-INS-1-Guided-Review.png`
+- File name: `FAN-128-INS-1-Guided-Review.png`
 - Target: `public/card-art/fantasy/cards/action-inspect/grade-01.webp`
 - Owner: Card `action-inspect` grade `Guided Review`
 - Status: generated
@@ -1772,9 +1837,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A loupe-crystal following a single pointed line across an opened mechanism, one indicated area lit and the rest dim.
 ```
 
-#### 124. INS 2. Checklist Inspection
+#### 129. INS 2. Checklist Inspection
 
-- File name: `FAN-124-INS-2-Checklist-Inspection.png`
+- File name: `FAN-129-INS-2-Checklist-Inspection.png`
 - Target: `public/card-art/fantasy/cards/action-inspect/grade-02.webp`
 - Owner: Card `action-inspect` grade `Checklist Inspection`
 - Status: generated
@@ -1785,9 +1850,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A loupe-crystal stepping across marked checkpoints in sequence along an opened mechanism, each one lighting as it clears.
 ```
 
-#### 125. INS 3. Independent Inspection
+#### 130. INS 3. Independent Inspection
 
-- File name: `FAN-125-INS-3-Independent-Inspection.png`
+- File name: `FAN-130-INS-3-Independent-Inspection.png`
 - Target: `public/card-art/fantasy/cards/action-inspect/grade-03.webp`
 - Owner: Card `action-inspect` grade `Independent Inspection`
 - Status: generated
@@ -1798,9 +1863,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A loupe-crystal roaming an opened mechanism under its own will, several gaps and conflicts flagged where it has been.
 ```
 
-#### 126. INS 4. Full Audit
+#### 131. INS 4. Full Audit
 
-- File name: `FAN-126-INS-4-Full-Audit.png`
+- File name: `FAN-131-INS-4-Full-Audit.png`
 - Target: `public/card-art/fantasy/cards/action-inspect/grade-04.webp`
 - Owner: Card `action-inspect` grade `Full Audit`
 - Status: generated
@@ -1811,9 +1876,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 An opened mechanism fully laid out under a ring of loupe-crystals, every part lit and measured at once.
 ```
 
-#### 127. ANL 1. Pattern Read
+#### 132. ANL 1. Pattern Read
 
-- File name: `FAN-127-ANL-1-Pattern-Read.png`
+- File name: `FAN-132-ANL-1-Pattern-Read.png`
 - Target: `public/card-art/fantasy/cards/action-analyze/grade-01.webp`
 - Owner: Card `action-analyze` grade `Pattern Read`
 - Status: generated
@@ -1824,9 +1889,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 An alembic resolving a mixed draught into two or three clean luminous bands.
 ```
 
-#### 128. ANL 2. Rival Explanations
+#### 133. ANL 2. Rival Explanations
 
-- File name: `FAN-128-ANL-2-Rival-Explanations.png`
+- File name: `FAN-133-ANL-2-Rival-Explanations.png`
 - Target: `public/card-art/fantasy/cards/action-analyze/grade-02.webp`
 - Owner: Card `action-analyze` grade `Rival Explanations`
 - Status: generated
@@ -1837,9 +1902,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 Two alembics held side by side, a candidate band-pattern in each, the rival readings compared directly.
 ```
 
-#### 129. ANL 3. Critical Analysis
+#### 134. ANL 3. Critical Analysis
 
-- File name: `FAN-129-ANL-3-Critical-Analysis.png`
+- File name: `FAN-134-ANL-3-Critical-Analysis.png`
 - Target: `public/card-art/fantasy/cards/action-analyze/grade-03.webp`
 - Owner: Card `action-analyze` grade `Critical Analysis`
 - Status: generated
@@ -1850,9 +1915,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 An alembic heated harder until the assumptions inside crack apart into visible sub-bands.
 ```
 
-#### 130. ANL 4. Adversarial Analysis
+#### 135. ANL 4. Adversarial Analysis
 
-- File name: `FAN-130-ANL-4-Adversarial-Analysis.png`
+- File name: `FAN-135-ANL-4-Adversarial-Analysis.png`
 - Target: `public/card-art/fantasy/cards/action-analyze/grade-04.webp`
 - Owner: Card `action-analyze` grade `Adversarial Analysis`
 - Status: generated
@@ -1863,9 +1928,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 An alembic run to its limit, the dregs searched for the one disconfirming trace that breaks the pattern.
 ```
 
-#### 131. CMP 1. Options on the Table
+#### 136. CMP 1. Options on the Table
 
-- File name: `FAN-131-CMP-1-Options-on-the-Table.png`
+- File name: `FAN-136-CMP-1-Options-on-the-Table.png`
 - Target: `public/card-art/fantasy/cards/action-compare/grade-01.webp`
 - Owner: Card `action-compare` grade `Options on the Table`
 - Status: generated
@@ -1876,9 +1941,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A bronze balance with two artifacts simply laid on its pans, the beam still level, differences visible but unjudged.
 ```
 
-#### 132. CMP 2. Framed Comparison
+#### 137. CMP 2. Framed Comparison
 
-- File name: `FAN-132-CMP-2-Framed-Comparison.png`
+- File name: `FAN-137-CMP-2-Framed-Comparison.png`
 - Target: `public/card-art/fantasy/cards/action-compare/grade-02.webp`
 - Owner: Card `action-compare` grade `Framed Comparison`
 - Status: generated
@@ -1889,9 +1954,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A bronze balance with a measuring beam sighted across both artifacts against criteria notched into the frame.
 ```
 
-#### 133. CMP 3. Weighted Comparison
+#### 138. CMP 3. Weighted Comparison
 
-- File name: `FAN-133-CMP-3-Weighted-Comparison.png`
+- File name: `FAN-138-CMP-3-Weighted-Comparison.png`
 - Target: `public/card-art/fantasy/cards/action-compare/grade-03.webp`
 - Owner: Card `action-compare` grade `Weighted Comparison`
 - Status: generated
@@ -1902,9 +1967,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A bronze balance with calibrated weights added along its arms, the tilt now decisive rather than incidental.
 ```
 
-#### 134. CMP 4. Decision Matrix
+#### 139. CMP 4. Decision Matrix
 
-- File name: `FAN-134-CMP-4-Decision-Matrix.png`
+- File name: `FAN-139-CMP-4-Decision-Matrix.png`
 - Target: `public/card-art/fantasy/cards/action-compare/grade-04.webp`
 - Owner: Card `action-compare` grade `Decision Matrix`
 - Status: generated
@@ -1915,9 +1980,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A full array of bronze pans on notched arms, every artifact measured against every axis, a victor's lamp burning above the winner.
 ```
 
-#### 135. BLD 1. Draft Together
+#### 140. BLD 1. Draft Together
 
-- File name: `FAN-135-BLD-1-Draft-Together.png`
+- File name: `FAN-140-BLD-1-Draft-Together.png`
 - Target: `public/card-art/fantasy/cards/action-create/grade-01.webp`
 - Owner: Card `action-create` grade `Draft Together`
 - Status: generated
@@ -1928,9 +1993,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A forge holding a rough unfinished armature in its fire, open questions sparking at the joints where a decision is still needed.
 ```
 
-#### 136. BLD 2. Build to Plan
+#### 141. BLD 2. Build to Plan
 
-- File name: `FAN-136-BLD-2-Build-to-Plan.png`
+- File name: `FAN-141-BLD-2-Build-to-Plan.png`
 - Target: `public/card-art/fantasy/cards/action-create/grade-02.webp`
 - Owner: Card `action-create` grade `Build to Plan`
 - Status: generated
@@ -1941,9 +2006,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A forge working precisely along a projected pattern, hammer following the glowing guide-lines without deviation.
 ```
 
-#### 137. BLD 3. Independent Build
+#### 142. BLD 3. Independent Build
 
-- File name: `FAN-137-BLD-3-Independent-Build.png`
+- File name: `FAN-142-BLD-3-Independent-Build.png`
 - Target: `public/card-art/fantasy/cards/action-create/grade-03.webp`
 - Owner: Card `action-create` grade `Independent Build`
 - Status: generated
@@ -1954,9 +2019,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A forge working with no pattern projected, filling the silent gaps with its own decisions as the piece completes.
 ```
 
-#### 138. BLD 4. End-to-End Delivery
+#### 143. BLD 4. End-to-End Delivery
 
-- File name: `FAN-138-BLD-4-End-to-End-Delivery.png`
+- File name: `FAN-143-BLD-4-End-to-End-Delivery.png`
 - Target: `public/card-art/fantasy/cards/action-create/grade-04.webp`
 - Owner: Card `action-create` grade `End-to-End Delivery`
 - Status: generated
@@ -1967,9 +2032,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A finished artifact lifted glowing from the anvil, proven and whole, the hammer already at rest behind it.
 ```
 
-#### 139. REC 1. Directions
+#### 144. REC 1. Directions
 
-- File name: `FAN-139-REC-1-Directions.png`
+- File name: `FAN-144-REC-1-Directions.png`
 - Target: `public/card-art/fantasy/cards/action-recommend/grade-01.webp`
 - Owner: Card `action-recommend` grade `Directions`
 - Status: generated
@@ -1980,9 +2045,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A crossroads signpost with several roads lit equally under it, none chosen, each simply shown as possible.
 ```
 
-#### 140. REC 2. Practical Pick
+#### 145. REC 2. Practical Pick
 
-- File name: `FAN-140-REC-2-Practical-Pick.png`
+- File name: `FAN-145-REC-2-Practical-Pick.png`
 - Target: `public/card-art/fantasy/cards/action-recommend/grade-02.webp`
 - Owner: Card `action-recommend` grade `Practical Pick`
 - Status: generated
@@ -1993,9 +2058,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A crossroads with one road selected and the toll-gates it fits standing open along its length.
 ```
 
-#### 141. REC 3. Backed Recommendation
+#### 146. REC 3. Backed Recommendation
 
-- File name: `FAN-141-REC-3-Backed-Recommendation.png`
+- File name: `FAN-146-REC-3-Backed-Recommendation.png`
 - Target: `public/card-art/fantasy/cards/action-recommend/grade-03.webp`
 - Owner: Card `action-recommend` grade `Backed Recommendation`
 - Status: generated
@@ -2006,9 +2071,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A crossroads with the chosen road blazing, the runner-up dimmed but still visible beside it, a hazard-flame marked on the choice.
 ```
 
-#### 142. REC 4. Full Conviction
+#### 147. REC 4. Full Conviction
 
-- File name: `FAN-142-REC-4-Full-Conviction.png`
+- File name: `FAN-147-REC-4-Full-Conviction.png`
 - Target: `public/card-art/fantasy/cards/action-recommend/grade-04.webp`
 - Owner: Card `action-recommend` grade `Full Conviction`
 - Status: generated
@@ -2019,9 +2084,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A crossroads with the way committed hard, a single road blazing to the horizon and every alternative faded into the dark.
 ```
 
-#### 143. TST 1. Sanity Pass
+#### 148. TST 1. Sanity Pass
 
-- File name: `FAN-143-TST-1-Sanity-Pass.png`
+- File name: `FAN-148-TST-1-Sanity-Pass.png`
 - Target: `public/card-art/fantasy/cards/action-verify/grade-01.webp`
 - Owner: Card `action-verify` grade `Sanity Pass`
 - Status: generated
@@ -2032,9 +2097,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A trial arch running a blade through one quick ward, an obvious flaw catching in the light.
 ```
 
-#### 144. TST 2. Criteria Check
+#### 149. TST 2. Criteria Check
 
-- File name: `FAN-144-TST-2-Criteria-Check.png`
+- File name: `FAN-149-TST-2-Criteria-Check.png`
 - Target: `public/card-art/fantasy/cards/action-verify/grade-02.webp`
 - Owner: Card `action-verify` grade `Criteria Check`
 - Status: generated
@@ -2045,9 +2110,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A row of trial arches lighting pass or fail in turn as the blade travels the gauntlet.
 ```
 
-#### 145. TST 3. Stress Test
+#### 150. TST 3. Stress Test
 
-- File name: `FAN-145-TST-3-Stress-Test.png`
+- File name: `FAN-150-TST-3-Stress-Test.png`
 - Target: `public/card-art/fantasy/cards/action-verify/grade-03.webp`
 - Owner: Card `action-verify` grade `Stress Test`
 - Status: generated
@@ -2058,9 +2123,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A trial gauntlet pushing a blade past its tempering, the edge and spine glowing hot where they strain.
 ```
 
-#### 146. TST 4. Red Team
+#### 151. TST 4. Red Team
 
-- File name: `FAN-146-TST-4-Red-Team.png`
+- File name: `FAN-151-TST-4-Red-Team.png`
 - Target: `public/card-art/fantasy/cards/action-verify/grade-04.webp`
 - Owner: Card `action-verify` grade `Red Team`
 - Status: generated
@@ -2071,9 +2136,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A trial gauntlet turned hostile, the arches striking at the blade from every side at once like a duelist.
 ```
 
-#### 147. SMR 1. Key Points Pull
+#### 152. SMR 1. Key Points Pull
 
-- File name: `FAN-147-SMR-1-Key-Points-Pull.png`
+- File name: `FAN-152-SMR-1-Key-Points-Pull.png`
 - Target: `public/card-art/fantasy/cards/action-summarize/grade-01.webp`
 - Owner: Card `action-summarize` grade `Key Points Pull`
 - Status: generated
@@ -2084,9 +2149,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A screw-press lifting a few key sheaves cleanly out of a tall stack of harvest.
 ```
 
-#### 148. SMR 2. Faithful Summary
+#### 153. SMR 2. Faithful Summary
 
-- File name: `FAN-148-SMR-2-Faithful-Summary.png`
+- File name: `FAN-153-SMR-2-Faithful-Summary.png`
 - Target: `public/card-art/fantasy/cards/action-summarize/grade-02.webp`
 - Owner: Card `action-summarize` grade `Faithful Summary`
 - Status: generated
@@ -2097,9 +2162,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A screw-press reducing a stack evenly, the original proportions still readable in the pressed slab.
 ```
 
-#### 149. SMR 3. Decision Summary
+#### 154. SMR 3. Decision Summary
 
-- File name: `FAN-149-SMR-3-Decision-Summary.png`
+- File name: `FAN-154-SMR-3-Decision-Summary.png`
 - Target: `public/card-art/fantasy/cards/action-summarize/grade-03.webp`
 - Owner: Card `action-summarize` grade `Decision Summary`
 - Status: generated
@@ -2110,9 +2175,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A screw-press with the decision-critical layer drawn bright to the top and the remainder pressed thin beneath it.
 ```
 
-#### 150. SMR 4. Executive Distillation
+#### 155. SMR 4. Executive Distillation
 
-- File name: `FAN-150-SMR-4-Executive-Distillation.png`
+- File name: `FAN-155-SMR-4-Executive-Distillation.png`
 - Target: `public/card-art/fantasy/cards/action-summarize/grade-04.webp`
 - Owner: Card `action-summarize` grade `Executive Distillation`
 - Status: generated
@@ -2123,9 +2188,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A screw-press yielding one brilliant dense seal-wafer, the enormous harvest behind it only a faint ghost.
 ```
 
-#### 151. RES 1. Supplied Sources
+#### 156. RES 1. Supplied Sources
 
-- File name: `FAN-151-RES-1-Supplied-Sources.png`
+- File name: `FAN-156-RES-1-Supplied-Sources.png`
 - Target: `public/card-art/fantasy/cards/action-research/grade-01.webp`
 - Owner: Card `action-research` grade `Supplied Sources`
 - Status: generated
@@ -2136,9 +2201,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A scrying beacon pointed at a few supplied relics, the dark gaps between them plainly marked and unfilled.
 ```
 
-#### 152. RES 2. Targeted Lookup
+#### 157. RES 2. Targeted Lookup
 
-- File name: `FAN-152-RES-2-Targeted-Lookup.png`
+- File name: `FAN-157-RES-2-Targeted-Lookup.png`
 - Target: `public/card-art/fantasy/cards/action-research/grade-02.webp`
 - Owner: Card `action-research` grade `Targeted Lookup`
 - Status: generated
@@ -2149,9 +2214,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A scrying beacon casting narrow targeted beams into specific gaps, each return marked with where it came from.
 ```
 
-#### 153. RES 3. Open Research
+#### 158. RES 3. Open Research
 
-- File name: `FAN-153-RES-3-Open-Research.png`
+- File name: `FAN-158-RES-3-Open-Research.png`
 - Target: `public/card-art/fantasy/cards/action-research/grade-03.webp`
 - Owner: Card `action-research` grade `Open Research`
 - Status: generated
@@ -2162,9 +2227,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A scrying beacon sweeping wide across the open dark on its own will, weighing the returns it finds.
 ```
 
-#### 154. RES 4. Deep Investigation
+#### 159. RES 4. Deep Investigation
 
-- File name: `FAN-154-RES-4-Deep-Investigation.png`
+- File name: `FAN-159-RES-4-Deep-Investigation.png`
 - Target: `public/card-art/fantasy/cards/action-research/grade-04.webp`
 - Owner: Card `action-research` grade `Deep Investigation`
 - Status: generated
@@ -2175,9 +2240,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A scrying beacon with several beams converging to confirm one distant return, certainty rings tightening around the find.
 ```
 
-#### 155. PLN 1. Rough Outline
+#### 160. PLN 1. Rough Outline
 
-- File name: `FAN-155-PLN-1-Rough-Outline.png`
+- File name: `FAN-160-PLN-1-Rough-Outline.png`
 - Target: `public/card-art/fantasy/cards/action-plan/grade-01.webp`
 - Owner: Card `action-plan` grade `Rough Outline`
 - Status: generated
@@ -2188,9 +2253,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A campaign trail with a few banner-waypoints pinned loosely along it in a sensible order.
 ```
 
-#### 156. PLN 2. Sequenced Plan
+#### 161. PLN 2. Sequenced Plan
 
-- File name: `FAN-156-PLN-2-Sequenced-Plan.png`
+- File name: `FAN-161-PLN-2-Sequenced-Plan.png`
 - Target: `public/card-art/fantasy/cards/action-plan/grade-02.webp`
 - Owner: Card `action-plan` grade `Sequenced Plan`
 - Status: generated
@@ -2201,9 +2266,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A campaign trail with ordered waypoints, rope lines drawn taut between them and one hazard-flame burning.
 ```
 
-#### 157. PLN 3. Delivery Plan
+#### 162. PLN 3. Delivery Plan
 
-- File name: `FAN-157-PLN-3-Delivery-Plan.png`
+- File name: `FAN-162-PLN-3-Delivery-Plan.png`
 - Target: `public/card-art/fantasy/cards/action-plan/grade-03.webp`
 - Owner: Card `action-plan` grade `Delivery Plan`
 - Status: generated
@@ -2214,9 +2279,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A campaign trail phased into grouped marches with milestone camps and inspection posts standing between them.
 ```
 
-#### 158. PLN 4. Executable Program
+#### 163. PLN 4. Executable Program
 
-- File name: `FAN-158-PLN-4-Executable-Program.png`
+- File name: `FAN-163-PLN-4-Executable-Program.png`
 - Target: `public/card-art/fantasy/cards/action-plan/grade-04.webp`
 - Owner: Card `action-plan` grade `Executable Program`
 - Status: generated
@@ -2227,9 +2292,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A campaign trail fully mustered and marching itself, every waypoint firing in order with no marshal anywhere in sight.
 ```
 
-#### 159. IDE 1. Quick Options
+#### 164. IDE 1. Quick Options
 
-- File name: `FAN-159-IDE-1-Quick-Options.png`
+- File name: `FAN-164-IDE-1-Quick-Options.png`
 - Target: `public/card-art/fantasy/cards/action-ideate/grade-01.webp`
 - Owner: Card `action-ideate` grade `Quick Options`
 - Status: generated
@@ -2240,9 +2305,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A wild-magic brazier throwing off a small handful of distinct starting sparks.
 ```
 
-#### 160. IDE 2. Divergent Set
+#### 165. IDE 2. Divergent Set
 
-- File name: `FAN-160-IDE-2-Divergent-Set.png`
+- File name: `FAN-165-IDE-2-Divergent-Set.png`
 - Target: `public/card-art/fantasy/cards/action-ideate/grade-02.webp`
 - Owner: Card `action-ideate` grade `Divergent Set`
 - Status: generated
@@ -2253,9 +2318,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A wild-magic brazier flinging many genuinely different shapes wide, no two alike anywhere in the spray.
 ```
 
-#### 161. IDE 3. Explore and Converge
+#### 166. IDE 3. Explore and Converge
 
-- File name: `FAN-161-IDE-3-Explore-and-Converge.png`
+- File name: `FAN-166-IDE-3-Explore-and-Converge.png`
 - Target: `public/card-art/fantasy/cards/action-ideate/grade-03.webp`
 - Owner: Card `action-ideate` grade `Explore and Converge`
 - Status: generated
@@ -2266,9 +2331,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A wild-magic brazier mid-burst with the strongest few sparks already pulled together into a lit converging cluster.
 ```
 
-#### 162. IDE 4. Creative Sweep
+#### 167. IDE 4. Creative Sweep
 
-- File name: `FAN-162-IDE-4-Creative-Sweep.png`
+- File name: `FAN-167-IDE-4-Creative-Sweep.png`
 - Target: `public/card-art/fantasy/cards/action-ideate/grade-04.webp`
 - Owner: Card `action-ideate` grade `Creative Sweep`
 - Status: generated
@@ -2279,9 +2344,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A wild-magic brazier showing its full spectrum from tame compact sparks to feral irregular ones, ranked along a lit gradient.
 ```
 
-#### 163. EXP 1. Direct Answer
+#### 168. EXP 1. Direct Answer
 
-- File name: `FAN-163-EXP-1-Direct-Answer.png`
+- File name: `FAN-168-EXP-1-Direct-Answer.png`
 - Target: `public/card-art/fantasy/cards/action-explain/grade-01.webp`
 - Owner: Card `action-explain` grade `Direct Answer`
 - Status: generated
@@ -2292,9 +2357,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 An orrery showing a single part in isolation, the rest of the mechanism still folded shut.
 ```
 
-#### 164. EXP 2. Guided Walkthrough
+#### 169. EXP 2. Guided Walkthrough
 
-- File name: `FAN-164-EXP-2-Guided-Walkthrough.png`
+- File name: `FAN-169-EXP-2-Guided-Walkthrough.png`
 - Target: `public/card-art/fantasy/cards/action-explain/grade-02.webp`
 - Owner: Card `action-explain` grade `Guided Walkthrough`
 - Status: generated
@@ -2305,9 +2370,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 An orrery unfolding parts one at a time along a lit golden path, each step following from the one before.
 ```
 
-#### 165. EXP 3. Deep Explanation
+#### 170. EXP 3. Deep Explanation
 
-- File name: `FAN-165-EXP-3-Deep-Explanation.png`
+- File name: `FAN-170-EXP-3-Deep-Explanation.png`
 - Target: `public/card-art/fantasy/cards/action-explain/grade-03.webp`
 - Owner: Card `action-explain` grade `Deep Explanation`
 - Status: generated
@@ -2318,9 +2383,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 An orrery with the mechanism fully open, the hidden linkage exposed and one trap-point flagged bright.
 ```
 
-#### 166. EXP 4. Full Teaching Pass
+#### 171. EXP 4. Full Teaching Pass
 
-- File name: `FAN-166-EXP-4-Full-Teaching-Pass.png`
+- File name: `FAN-171-EXP-4-Full-Teaching-Pass.png`
 - Target: `public/card-art/fantasy/cards/action-explain/grade-04.webp`
 - Owner: Card `action-explain` grade `Full Teaching Pass`
 - Status: generated
@@ -2331,9 +2396,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 An orrery with everything unfolded and further wheels still opening outward at the edges of the scene.
 ```
 
-#### 167. ASK 1. Full Interview
+#### 172. ASK 1. Full Interview
 
-- File name: `FAN-167-ASK-1-Full-Interview.png`
+- File name: `FAN-172-ASK-1-Full-Interview.png`
 - Target: `public/card-art/fantasy/cards/action-clarify/grade-01.webp`
 - Owner: Card `action-clarify` grade `Full Interview`
 - Status: generated
@@ -2344,9 +2409,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A will-o'-wisp firing many pulses in patient batches into a dark gap, its outline almost completely traced by the returns.
 ```
 
-#### 168. ASK 2. 95% Confidence Check
+#### 173. ASK 2. 95% Confidence Check
 
-- File name: `FAN-168-ASK-2-95-Confidence-Check.png`
+- File name: `FAN-173-ASK-2-95-Confidence-Check.png`
 - Target: `public/card-art/fantasy/cards/action-clarify/grade-02.webp`
 - Owner: Card `action-clarify` grade `95% Confidence Check`
 - Status: generated
@@ -2357,9 +2422,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A will-o'-wisp still pulsing at a gap that is nearly closed, only a thin sliver of unknown shape left dark.
 ```
 
-#### 169. ASK 3. Blocking Questions Only
+#### 174. ASK 3. Blocking Questions Only
 
-- File name: `FAN-169-ASK-3-Blocking-Questions-Only.png`
+- File name: `FAN-174-ASK-3-Blocking-Questions-Only.png`
 - Target: `public/card-art/fantasy/cards/action-clarify/grade-03.webp`
 - Owner: Card `action-clarify` grade `Blocking Questions Only`
 - Status: generated
@@ -2370,9 +2435,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A will-o'-wisp sending one single hard flare into the one gap that actually blocks the road forward.
 ```
 
-#### 170. ASK 4. Assume & Log
+#### 175. ASK 4. Assume & Log
 
-- File name: `FAN-170-ASK-4-Assume-Log.png`
+- File name: `FAN-175-ASK-4-Assume-Log.png`
 - Target: `public/card-art/fantasy/cards/action-clarify/grade-04.webp`
 - Owner: Card `action-clarify` grade `Assume & Log`
 - Status: generated
@@ -2383,11 +2448,219 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A will-o'-wisp gone dark, the gap bridged instead by a placed assumption-stone with a bright wax marker fixed to its face.
 ```
 
+#### 176. LOG 1. Capture commitments
+
+- File name: `FAN-176-LOG-1-Capture-commitments.png`
+- Target: `public/card-art/fantasy/cards/action-record/grade-01.webp`
+- Owner: Card `action-record` grade `Capture commitments`
+- Status: planned
+
+```
+Epic high-fantasy collectible-card key art, fully hand-painted in the tradition of classic Warcraft trading-card illustration: confident visible brushwork, chunky heroic proportions, rich saturated color, ornate metal, carved stone and weathered leather rendered with loving material detail. Warm amber-gold lantern light rakes the subject from one side, a hard gold rim light separates it from a deep forest-green and umber darkness, and soft ember-lit haze falls away behind. Arcane energy may glow within objects but never reads as writing. One strong centered focal shape, isolated, uncluttered edges, nothing in the background competing with it, and it still reads at thumbnail size. Square composition with generous breathing room. The painting is full-bleed and fills the entire square to every edge, a photographic crop of a larger scene with the background running off all four sides: no border, no margin, no matting, no drawn edge line, no vignette box, not a sticker, no rounded corners. Artwork only: no text, no letters, no numbers, no logos, no readable symbols, no UI labels, no card frame.
+
+A ledger with a dated correction slip.
+```
+
+#### 177. LOG 2. Meeting handoff
+
+- File name: `FAN-177-LOG-2-Meeting-handoff.png`
+- Target: `public/card-art/fantasy/cards/action-record/grade-02.webp`
+- Owner: Card `action-record` grade `Meeting handoff`
+- Status: planned
+
+```
+Epic high-fantasy collectible-card key art, fully hand-painted in the tradition of classic Warcraft trading-card illustration: confident visible brushwork, chunky heroic proportions, rich saturated color, ornate metal, carved stone and weathered leather rendered with loving material detail. Warm amber-gold lantern light rakes the subject from one side, a hard gold rim light separates it from a deep forest-green and umber darkness, and soft ember-lit haze falls away behind. Arcane energy may glow within objects but never reads as writing. One strong centered focal shape, isolated, uncluttered edges, nothing in the background competing with it, and it still reads at thumbnail size. Square composition with generous breathing room. The painting is full-bleed and fills the entire square to every edge, a photographic crop of a larger scene with the background running off all four sides: no border, no margin, no matting, no drawn edge line, no vignette box, not a sticker, no rounded corners. Artwork only: no text, no letters, no numbers, no logos, no readable symbols, no UI labels, no card frame.
+
+A ledger with a dated correction slip.
+```
+
+#### 178. LOG 3. Reconcile the minutes
+
+- File name: `FAN-178-LOG-3-Reconcile-the-minutes.png`
+- Target: `public/card-art/fantasy/cards/action-record/grade-03.webp`
+- Owner: Card `action-record` grade `Reconcile the minutes`
+- Status: planned
+
+```
+Epic high-fantasy collectible-card key art, fully hand-painted in the tradition of classic Warcraft trading-card illustration: confident visible brushwork, chunky heroic proportions, rich saturated color, ornate metal, carved stone and weathered leather rendered with loving material detail. Warm amber-gold lantern light rakes the subject from one side, a hard gold rim light separates it from a deep forest-green and umber darkness, and soft ember-lit haze falls away behind. Arcane energy may glow within objects but never reads as writing. One strong centered focal shape, isolated, uncluttered edges, nothing in the background competing with it, and it still reads at thumbnail size. Square composition with generous breathing room. The painting is full-bleed and fills the entire square to every edge, a photographic crop of a larger scene with the background running off all four sides: no border, no margin, no matting, no drawn edge line, no vignette box, not a sticker, no rounded corners. Artwork only: no text, no letters, no numbers, no logos, no readable symbols, no UI labels, no card frame.
+
+A ledger with a dated correction slip.
+```
+
+#### 179. LOG 4. Trace the record
+
+- File name: `FAN-179-LOG-4-Trace-the-record.png`
+- Target: `public/card-art/fantasy/cards/action-record/grade-04.webp`
+- Owner: Card `action-record` grade `Trace the record`
+- Status: planned
+
+```
+Epic high-fantasy collectible-card key art, fully hand-painted in the tradition of classic Warcraft trading-card illustration: confident visible brushwork, chunky heroic proportions, rich saturated color, ornate metal, carved stone and weathered leather rendered with loving material detail. Warm amber-gold lantern light rakes the subject from one side, a hard gold rim light separates it from a deep forest-green and umber darkness, and soft ember-lit haze falls away behind. Arcane energy may glow within objects but never reads as writing. One strong centered focal shape, isolated, uncluttered edges, nothing in the background competing with it, and it still reads at thumbnail size. Square composition with generous breathing room. The painting is full-bleed and fills the entire square to every edge, a photographic crop of a larger scene with the background running off all four sides: no border, no margin, no matting, no drawn edge line, no vignette box, not a sticker, no rounded corners. Artwork only: no text, no letters, no numbers, no logos, no readable symbols, no UI labels, no card frame.
+
+A ledger with a dated correction slip.
+```
+
+#### 180. MATCH 1. Check the unit
+
+- File name: `FAN-180-MATCH-1-Check-the-unit.png`
+- Target: `public/card-art/fantasy/cards/action-matched-compare/grade-01.webp`
+- Owner: Card `action-matched-compare` grade `Check the unit`
+- Status: planned
+
+```
+Epic high-fantasy collectible-card key art, fully hand-painted in the tradition of classic Warcraft trading-card illustration: confident visible brushwork, chunky heroic proportions, rich saturated color, ornate metal, carved stone and weathered leather rendered with loving material detail. Warm amber-gold lantern light rakes the subject from one side, a hard gold rim light separates it from a deep forest-green and umber darkness, and soft ember-lit haze falls away behind. Arcane energy may glow within objects but never reads as writing. One strong centered focal shape, isolated, uncluttered edges, nothing in the background competing with it, and it still reads at thumbnail size. Square composition with generous breathing room. The painting is full-bleed and fills the entire square to every edge, a photographic crop of a larger scene with the background running off all four sides: no border, no margin, no matting, no drawn edge line, no vignette box, not a sticker, no rounded corners. Artwork only: no text, no letters, no numbers, no logos, no readable symbols, no UI labels, no card frame.
+
+Two graduated measures aligned on one baseline.
+```
+
+#### 181. MATCH 2. Match the groups
+
+- File name: `FAN-181-MATCH-2-Match-the-groups.png`
+- Target: `public/card-art/fantasy/cards/action-matched-compare/grade-02.webp`
+- Owner: Card `action-matched-compare` grade `Match the groups`
+- Status: planned
+
+```
+Epic high-fantasy collectible-card key art, fully hand-painted in the tradition of classic Warcraft trading-card illustration: confident visible brushwork, chunky heroic proportions, rich saturated color, ornate metal, carved stone and weathered leather rendered with loving material detail. Warm amber-gold lantern light rakes the subject from one side, a hard gold rim light separates it from a deep forest-green and umber darkness, and soft ember-lit haze falls away behind. Arcane energy may glow within objects but never reads as writing. One strong centered focal shape, isolated, uncluttered edges, nothing in the background competing with it, and it still reads at thumbnail size. Square composition with generous breathing room. The painting is full-bleed and fills the entire square to every edge, a photographic crop of a larger scene with the background running off all four sides: no border, no margin, no matting, no drawn edge line, no vignette box, not a sticker, no rounded corners. Artwork only: no text, no letters, no numbers, no logos, no readable symbols, no UI labels, no card frame.
+
+Two graduated measures aligned on one baseline.
+```
+
+#### 182. MATCH 3. Compare like for like
+
+- File name: `FAN-182-MATCH-3-Compare-like-for-like.png`
+- Target: `public/card-art/fantasy/cards/action-matched-compare/grade-03.webp`
+- Owner: Card `action-matched-compare` grade `Compare like for like`
+- Status: planned
+
+```
+Epic high-fantasy collectible-card key art, fully hand-painted in the tradition of classic Warcraft trading-card illustration: confident visible brushwork, chunky heroic proportions, rich saturated color, ornate metal, carved stone and weathered leather rendered with loving material detail. Warm amber-gold lantern light rakes the subject from one side, a hard gold rim light separates it from a deep forest-green and umber darkness, and soft ember-lit haze falls away behind. Arcane energy may glow within objects but never reads as writing. One strong centered focal shape, isolated, uncluttered edges, nothing in the background competing with it, and it still reads at thumbnail size. Square composition with generous breathing room. The painting is full-bleed and fills the entire square to every edge, a photographic crop of a larger scene with the background running off all four sides: no border, no margin, no matting, no drawn edge line, no vignette box, not a sticker, no rounded corners. Artwork only: no text, no letters, no numbers, no logos, no readable symbols, no UI labels, no card frame.
+
+Two graduated measures aligned on one baseline.
+```
+
+#### 183. MATCH 4. Test the comparison
+
+- File name: `FAN-183-MATCH-4-Test-the-comparison.png`
+- Target: `public/card-art/fantasy/cards/action-matched-compare/grade-04.webp`
+- Owner: Card `action-matched-compare` grade `Test the comparison`
+- Status: planned
+
+```
+Epic high-fantasy collectible-card key art, fully hand-painted in the tradition of classic Warcraft trading-card illustration: confident visible brushwork, chunky heroic proportions, rich saturated color, ornate metal, carved stone and weathered leather rendered with loving material detail. Warm amber-gold lantern light rakes the subject from one side, a hard gold rim light separates it from a deep forest-green and umber darkness, and soft ember-lit haze falls away behind. Arcane energy may glow within objects but never reads as writing. One strong centered focal shape, isolated, uncluttered edges, nothing in the background competing with it, and it still reads at thumbnail size. Square composition with generous breathing room. The painting is full-bleed and fills the entire square to every edge, a photographic crop of a larger scene with the background running off all four sides: no border, no margin, no matting, no drawn edge line, no vignette box, not a sticker, no rounded corners. Artwork only: no text, no letters, no numbers, no logos, no readable symbols, no UI labels, no card frame.
+
+Two graduated measures aligned on one baseline.
+```
+
+#### 184. REVISE 1. Local revision
+
+- File name: `FAN-184-REVISE-1-Local-revision.png`
+- Target: `public/card-art/fantasy/cards/action-revise/grade-01.webp`
+- Owner: Card `action-revise` grade `Local revision`
+- Status: planned
+
+```
+Epic high-fantasy collectible-card key art, fully hand-painted in the tradition of classic Warcraft trading-card illustration: confident visible brushwork, chunky heroic proportions, rich saturated color, ornate metal, carved stone and weathered leather rendered with loving material detail. Warm amber-gold lantern light rakes the subject from one side, a hard gold rim light separates it from a deep forest-green and umber darkness, and soft ember-lit haze falls away behind. Arcane energy may glow within objects but never reads as writing. One strong centered focal shape, isolated, uncluttered edges, nothing in the background competing with it, and it still reads at thumbnail size. Square composition with generous breathing room. The painting is full-bleed and fills the entire square to every edge, a photographic crop of a larger scene with the background running off all four sides: no border, no margin, no matting, no drawn edge line, no vignette box, not a sticker, no rounded corners. Artwork only: no text, no letters, no numbers, no logos, no readable symbols, no UI labels, no card frame.
+
+A marked proof laid beside its source.
+```
+
+#### 185. REVISE 2. Revision pass
+
+- File name: `FAN-185-REVISE-2-Revision-pass.png`
+- Target: `public/card-art/fantasy/cards/action-revise/grade-02.webp`
+- Owner: Card `action-revise` grade `Revision pass`
+- Status: planned
+
+```
+Epic high-fantasy collectible-card key art, fully hand-painted in the tradition of classic Warcraft trading-card illustration: confident visible brushwork, chunky heroic proportions, rich saturated color, ornate metal, carved stone and weathered leather rendered with loving material detail. Warm amber-gold lantern light rakes the subject from one side, a hard gold rim light separates it from a deep forest-green and umber darkness, and soft ember-lit haze falls away behind. Arcane energy may glow within objects but never reads as writing. One strong centered focal shape, isolated, uncluttered edges, nothing in the background competing with it, and it still reads at thumbnail size. Square composition with generous breathing room. The painting is full-bleed and fills the entire square to every edge, a photographic crop of a larger scene with the background running off all four sides: no border, no margin, no matting, no drawn edge line, no vignette box, not a sticker, no rounded corners. Artwork only: no text, no letters, no numbers, no logos, no readable symbols, no UI labels, no card frame.
+
+A marked proof laid beside its source.
+```
+
+#### 186. REVISE 3. Structural revision
+
+- File name: `FAN-186-REVISE-3-Structural-revision.png`
+- Target: `public/card-art/fantasy/cards/action-revise/grade-03.webp`
+- Owner: Card `action-revise` grade `Structural revision`
+- Status: planned
+
+```
+Epic high-fantasy collectible-card key art, fully hand-painted in the tradition of classic Warcraft trading-card illustration: confident visible brushwork, chunky heroic proportions, rich saturated color, ornate metal, carved stone and weathered leather rendered with loving material detail. Warm amber-gold lantern light rakes the subject from one side, a hard gold rim light separates it from a deep forest-green and umber darkness, and soft ember-lit haze falls away behind. Arcane energy may glow within objects but never reads as writing. One strong centered focal shape, isolated, uncluttered edges, nothing in the background competing with it, and it still reads at thumbnail size. Square composition with generous breathing room. The painting is full-bleed and fills the entire square to every edge, a photographic crop of a larger scene with the background running off all four sides: no border, no margin, no matting, no drawn edge line, no vignette box, not a sticker, no rounded corners. Artwork only: no text, no letters, no numbers, no logos, no readable symbols, no UI labels, no card frame.
+
+A marked proof laid beside its source.
+```
+
+#### 187. REVISE 4. Constraint review
+
+- File name: `FAN-187-REVISE-4-Constraint-review.png`
+- Target: `public/card-art/fantasy/cards/action-revise/grade-04.webp`
+- Owner: Card `action-revise` grade `Constraint review`
+- Status: planned
+
+```
+Epic high-fantasy collectible-card key art, fully hand-painted in the tradition of classic Warcraft trading-card illustration: confident visible brushwork, chunky heroic proportions, rich saturated color, ornate metal, carved stone and weathered leather rendered with loving material detail. Warm amber-gold lantern light rakes the subject from one side, a hard gold rim light separates it from a deep forest-green and umber darkness, and soft ember-lit haze falls away behind. Arcane energy may glow within objects but never reads as writing. One strong centered focal shape, isolated, uncluttered edges, nothing in the background competing with it, and it still reads at thumbnail size. Square composition with generous breathing room. The painting is full-bleed and fills the entire square to every edge, a photographic crop of a larger scene with the background running off all four sides: no border, no margin, no matting, no drawn edge line, no vignette box, not a sticker, no rounded corners. Artwork only: no text, no letters, no numbers, no logos, no readable symbols, no UI labels, no card frame.
+
+A marked proof laid beside its source.
+```
+
+#### 188. FLIP 1. Conditional choice
+
+- File name: `FAN-188-FLIP-1-Conditional-choice.png`
+- Target: `public/card-art/fantasy/cards/action-conditional-recommend/grade-01.webp`
+- Owner: Card `action-conditional-recommend` grade `Conditional choice`
+- Status: planned
+
+```
+Epic high-fantasy collectible-card key art, fully hand-painted in the tradition of classic Warcraft trading-card illustration: confident visible brushwork, chunky heroic proportions, rich saturated color, ornate metal, carved stone and weathered leather rendered with loving material detail. Warm amber-gold lantern light rakes the subject from one side, a hard gold rim light separates it from a deep forest-green and umber darkness, and soft ember-lit haze falls away behind. Arcane energy may glow within objects but never reads as writing. One strong centered focal shape, isolated, uncluttered edges, nothing in the background competing with it, and it still reads at thumbnail size. Square composition with generous breathing room. The painting is full-bleed and fills the entire square to every edge, a photographic crop of a larger scene with the background running off all four sides: no border, no margin, no matting, no drawn edge line, no vignette box, not a sticker, no rounded corners. Artwork only: no text, no letters, no numbers, no logos, no readable symbols, no UI labels, no card frame.
+
+A balance with a sliding counterweight.
+```
+
+#### 189. FLIP 2. Recommend with a condition
+
+- File name: `FAN-189-FLIP-2-Recommend-with-a-condition.png`
+- Target: `public/card-art/fantasy/cards/action-conditional-recommend/grade-02.webp`
+- Owner: Card `action-conditional-recommend` grade `Recommend with a condition`
+- Status: planned
+
+```
+Epic high-fantasy collectible-card key art, fully hand-painted in the tradition of classic Warcraft trading-card illustration: confident visible brushwork, chunky heroic proportions, rich saturated color, ornate metal, carved stone and weathered leather rendered with loving material detail. Warm amber-gold lantern light rakes the subject from one side, a hard gold rim light separates it from a deep forest-green and umber darkness, and soft ember-lit haze falls away behind. Arcane energy may glow within objects but never reads as writing. One strong centered focal shape, isolated, uncluttered edges, nothing in the background competing with it, and it still reads at thumbnail size. Square composition with generous breathing room. The painting is full-bleed and fills the entire square to every edge, a photographic crop of a larger scene with the background running off all four sides: no border, no margin, no matting, no drawn edge line, no vignette box, not a sticker, no rounded corners. Artwork only: no text, no letters, no numbers, no logos, no readable symbols, no UI labels, no card frame.
+
+A balance with a sliding counterweight.
+```
+
+#### 190. FLIP 3. Decision threshold
+
+- File name: `FAN-190-FLIP-3-Decision-threshold.png`
+- Target: `public/card-art/fantasy/cards/action-conditional-recommend/grade-03.webp`
+- Owner: Card `action-conditional-recommend` grade `Decision threshold`
+- Status: planned
+
+```
+Epic high-fantasy collectible-card key art, fully hand-painted in the tradition of classic Warcraft trading-card illustration: confident visible brushwork, chunky heroic proportions, rich saturated color, ornate metal, carved stone and weathered leather rendered with loving material detail. Warm amber-gold lantern light rakes the subject from one side, a hard gold rim light separates it from a deep forest-green and umber darkness, and soft ember-lit haze falls away behind. Arcane energy may glow within objects but never reads as writing. One strong centered focal shape, isolated, uncluttered edges, nothing in the background competing with it, and it still reads at thumbnail size. Square composition with generous breathing room. The painting is full-bleed and fills the entire square to every edge, a photographic crop of a larger scene with the background running off all four sides: no border, no margin, no matting, no drawn edge line, no vignette box, not a sticker, no rounded corners. Artwork only: no text, no letters, no numbers, no logos, no readable symbols, no UI labels, no card frame.
+
+A balance with a sliding counterweight.
+```
+
+#### 191. FLIP 4. Test the reversal
+
+- File name: `FAN-191-FLIP-4-Test-the-reversal.png`
+- Target: `public/card-art/fantasy/cards/action-conditional-recommend/grade-04.webp`
+- Owner: Card `action-conditional-recommend` grade `Test the reversal`
+- Status: planned
+
+```
+Epic high-fantasy collectible-card key art, fully hand-painted in the tradition of classic Warcraft trading-card illustration: confident visible brushwork, chunky heroic proportions, rich saturated color, ornate metal, carved stone and weathered leather rendered with loving material detail. Warm amber-gold lantern light rakes the subject from one side, a hard gold rim light separates it from a deep forest-green and umber darkness, and soft ember-lit haze falls away behind. Arcane energy may glow within objects but never reads as writing. One strong centered focal shape, isolated, uncluttered edges, nothing in the background competing with it, and it still reads at thumbnail size. Square composition with generous breathing room. The painting is full-bleed and fills the entire square to every edge, a photographic crop of a larger scene with the background running off all four sides: no border, no margin, no matting, no drawn edge line, no vignette box, not a sticker, no rounded corners. Artwork only: no text, no letters, no numbers, no logos, no readable symbols, no UI labels, no card frame.
+
+A balance with a sliding counterweight.
+```
+
 ### Per-grade variants - Format
 
-#### 171. INF 1. Plain Answer
+#### 192. INF 1. Plain Answer
 
-- File name: `FAN-171-INF-1-Plain-Answer.png`
+- File name: `FAN-192-INF-1-Plain-Answer.png`
 - Target: `public/card-art/fantasy/cards/format-info-card/grade-01.webp`
 - Owner: Card `format-info-card` grade `Plain Answer`
 - Status: generated
@@ -2398,9 +2671,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A single answer stele standing bare in the dark, its face plain and unornamented.
 ```
 
-#### 172. INF 2. Answer Card
+#### 193. INF 2. Answer Card
 
-- File name: `FAN-172-INF-2-Answer-Card.png`
+- File name: `FAN-193-INF-2-Answer-Card.png`
 - Target: `public/card-art/fantasy/cards/format-info-card/grade-02.webp`
 - Owner: Card `format-info-card` grade `Answer Card`
 - Status: generated
@@ -2411,9 +2684,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A single answer stele dressed close, its essentials arranged in one clean readable face.
 ```
 
-#### 173. INF 3. Information Brief
+#### 194. INF 3. Information Brief
 
-- File name: `FAN-173-INF-3-Information-Brief.png`
+- File name: `FAN-194-INF-3-Information-Brief.png`
 - Target: `public/card-art/fantasy/cards/format-info-card/grade-03.webp`
 - Owner: Card `format-info-card` grade `Information Brief`
 - Status: generated
@@ -2424,9 +2697,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A thicker answer stele with context strata visible in its cut edge, layered beneath the face.
 ```
 
-#### 174. INF 4. Reference Piece
+#### 195. INF 4. Reference Piece
 
-- File name: `FAN-174-INF-4-Reference-Piece.png`
+- File name: `FAN-195-INF-4-Reference-Piece.png`
 - Target: `public/card-art/fantasy/cards/format-info-card/grade-04.webp`
 - Owner: Card `format-info-card` grade `Reference Piece`
 - Status: generated
@@ -2437,9 +2710,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A substantial reference monolith with caveat notches cut into its margin and worked scenes inset along its side.
 ```
 
-#### 175. KEY 1. Loose Bullets
+#### 196. KEY 1. Loose Bullets
 
-- File name: `FAN-175-KEY-1-Loose-Bullets.png`
+- File name: `FAN-196-KEY-1-Loose-Bullets.png`
 - Target: `public/card-art/fantasy/cards/format-key-points/grade-01.webp`
 - Owner: Card `format-key-points` grade `Loose Bullets`
 - Status: generated
@@ -2450,9 +2723,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A rack holding a few blades leaning loosely, unaligned but separate.
 ```
 
-#### 176. KEY 2. Grouped Points
+#### 197. KEY 2. Grouped Points
 
-- File name: `FAN-176-KEY-2-Grouped-Points.png`
+- File name: `FAN-197-KEY-2-Grouped-Points.png`
 - Target: `public/card-art/fantasy/cards/format-key-points/grade-02.webp`
 - Owner: Card `format-key-points` grade `Grouped Points`
 - Status: generated
@@ -2463,9 +2736,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A rack of blades clustered into marked groups, related edges standing together.
 ```
 
-#### 177. KEY 3. Sectioned Points
+#### 198. KEY 3. Sectioned Points
 
-- File name: `FAN-177-KEY-3-Sectioned-Points.png`
+- File name: `FAN-198-KEY-3-Sectioned-Points.png`
 - Target: `public/card-art/fantasy/cards/format-key-points/grade-03.webp`
 - Owner: Card `format-key-points` grade `Sectioned Points`
 - Status: generated
@@ -2476,9 +2749,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A full rack of blades arranged into clearly divided marked sections.
 ```
 
-#### 178. KEY 4. Checklist Discipline
+#### 199. KEY 4. Checklist Discipline
 
-- File name: `FAN-178-KEY-4-Checklist-Discipline.png`
+- File name: `FAN-199-KEY-4-Checklist-Discipline.png`
 - Target: `public/card-art/fantasy/cards/format-key-points/grade-04.webp`
 - Owner: Card `format-key-points` grade `Checklist Discipline`
 - Status: generated
@@ -2489,9 +2762,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A rack of uniform matched blades, each identical in length with a tally-notch cut into its pommel.
 ```
 
-#### 179. SUM 1. One-Liner
+#### 200. SUM 1. One-Liner
 
-- File name: `FAN-179-SUM-1-One-Liner.png`
+- File name: `FAN-200-SUM-1-One-Liner.png`
 - Target: `public/card-art/fantasy/cards/format-summary/grade-01.webp`
 - Owner: Card `format-summary` grade `One-Liner`
 - Status: generated
@@ -2502,9 +2775,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A potion bottle holding one bright drop suspended at the very top.
 ```
 
-#### 180. SUM 2. Quick Summary
+#### 201. SUM 2. Quick Summary
 
-- File name: `FAN-180-SUM-2-Quick-Summary.png`
+- File name: `FAN-201-SUM-2-Quick-Summary.png`
 - Target: `public/card-art/fantasy/cards/format-summary/grade-02.webp`
 - Owner: Card `format-summary` grade `Quick Summary`
 - Status: generated
@@ -2515,9 +2788,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A potion bottle with a small clear band of essence floating above the settled sediment.
 ```
 
-#### 181. SUM 3. Executive Summary
+#### 202. SUM 3. Executive Summary
 
-- File name: `FAN-181-SUM-3-Executive-Summary.png`
+- File name: `FAN-202-SUM-3-Executive-Summary.png`
 - Target: `public/card-art/fantasy/cards/format-summary/grade-03.webp`
 - Owner: Card `format-summary` grade `Executive Summary`
 - Status: generated
@@ -2528,9 +2801,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A potion bottle with a thick lit layer of findings and a pour-spout channel running off toward a marked cup.
 ```
 
-#### 182. SUM 4. Standalone Abstract
+#### 203. SUM 4. Standalone Abstract
 
-- File name: `FAN-182-SUM-4-Standalone-Abstract.png`
+- File name: `FAN-203-SUM-4-Standalone-Abstract.png`
 - Target: `public/card-art/fantasy/cards/format-summary/grade-04.webp`
 - Owner: Card `format-summary` grade `Standalone Abstract`
 - Status: generated
@@ -2541,9 +2814,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A sealed self-contained potion bottle, complete on its own, needing nothing outside its own glass.
 ```
 
-#### 183. SEC 1. Natural Flow
+#### 204. SEC 1. Natural Flow
 
-- File name: `FAN-183-SEC-1-Natural-Flow.png`
+- File name: `FAN-204-SEC-1-Natural-Flow.png`
 - Target: `public/card-art/fantasy/cards/format-sections/grade-01.webp`
 - Owner: Card `format-sections` grade `Natural Flow`
 - Status: generated
@@ -2554,9 +2827,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A mostly continuous tower with only one or two floors divided where they genuinely help.
 ```
 
-#### 184. SEC 2. Clear Sections
+#### 205. SEC 2. Clear Sections
 
-- File name: `FAN-184-SEC-2-Clear-Sections.png`
+- File name: `FAN-205-SEC-2-Clear-Sections.png`
 - Target: `public/card-art/fantasy/cards/format-sections/grade-02.webp`
 - Owner: Card `format-sections` grade `Clear Sections`
 - Status: generated
@@ -2567,9 +2840,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A tower divided into evenly spaced chambers, each one distinct and separately hearth-lit.
 ```
 
-#### 185. SEC 3. Set Sequence
+#### 206. SEC 3. Set Sequence
 
-- File name: `FAN-185-SEC-3-Set-Sequence.png`
+- File name: `FAN-206-SEC-3-Set-Sequence.png`
 - Target: `public/card-art/fantasy/cards/format-sections/grade-03.webp`
 - Owner: Card `format-sections` grade `Set Sequence`
 - Status: generated
@@ -2580,9 +2853,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A tower of chambers in a fixed ordered stack, every floor present and none skipped.
 ```
 
-#### 186. SEC 4. Locked Template
+#### 207. SEC 4. Locked Template
 
-- File name: `FAN-186-SEC-4-Locked-Template.png`
+- File name: `FAN-207-SEC-4-Locked-Template.png`
 - Target: `public/card-art/fantasy/cards/format-sections/grade-04.webp`
 - Owner: Card `format-sections` grade `Locked Template`
 - Status: generated
@@ -2593,9 +2866,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A tower cut to an exact master plan, floor seams flush and sealed, nothing added and nothing dropped.
 ```
 
-#### 187. CIT 1. Source Notes
+#### 208. CIT 1. Source Notes
 
-- File name: `FAN-187-CIT-1-Source-Notes.png`
+- File name: `FAN-208-CIT-1-Source-Notes.png`
 - Target: `public/card-art/fantasy/cards/format-evidence/grade-01.webp`
 - Owner: Card `format-evidence` grade `Source Notes`
 - Status: generated
@@ -2606,9 +2879,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A floating banner with a couple of chains dropped to the strongest source-stones below it.
 ```
 
-#### 188. CIT 2. Linked Sources
+#### 209. CIT 2. Linked Sources
 
-- File name: `FAN-188-CIT-2-Linked-Sources.png`
+- File name: `FAN-209-CIT-2-Linked-Sources.png`
 - Target: `public/card-art/fantasy/cards/format-evidence/grade-02.webp`
 - Owner: Card `format-evidence` grade `Linked Sources`
 - Status: generated
@@ -2619,9 +2892,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 Several floating banners each chained inline to its own source-stone, links short and taut.
 ```
 
-#### 189. CIT 3. Evidence Notes
+#### 210. CIT 3. Evidence Notes
 
-- File name: `FAN-189-CIT-3-Evidence-Notes.png`
+- File name: `FAN-210-CIT-3-Evidence-Notes.png`
 - Target: `public/card-art/fantasy/cards/format-evidence/grade-03.webp`
 - Owner: Card `format-evidence` grade `Evidence Notes`
 - Status: generated
@@ -2632,9 +2905,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 Anchor chains forged at visible weights, each link's heft showing the strength of the stone it hangs from.
 ```
 
-#### 190. CIT 4. Citation Record
+#### 211. CIT 4. Citation Record
 
-- File name: `FAN-190-CIT-4-Citation-Record.png`
+- File name: `FAN-211-CIT-4-Citation-Record.png`
 - Target: `public/card-art/fantasy/cards/format-evidence/grade-04.webp`
 - Owner: Card `format-evidence` grade `Citation Record`
 - Status: generated
@@ -2645,9 +2918,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 Every banner chained to a stone, with inferred links rendered distinctly as pale ghost-chain among the solid iron.
 ```
 
-#### 191. TAB 1. Option Notes
+#### 212. TAB 1. Option Notes
 
-- File name: `FAN-191-TAB-1-Option-Notes.png`
+- File name: `FAN-212-TAB-1-Option-Notes.png`
 - Target: `public/card-art/fantasy/cards/format-comparison/grade-01.webp`
 - Owner: Card `format-comparison` grade `Option Notes`
 - Status: generated
@@ -2658,9 +2931,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 Several shields standing separated in the dark, clearly apart from each other but with no rails hung yet.
 ```
 
-#### 192. TAB 2. Comparison Table
+#### 213. TAB 2. Comparison Table
 
-- File name: `FAN-192-TAB-2-Comparison-Table.png`
+- File name: `FAN-213-TAB-2-Comparison-Table.png`
 - Target: `public/card-art/fantasy/cards/format-comparison/grade-02.webp`
 - Owner: Card `format-comparison` grade `Comparison Table`
 - Status: generated
@@ -2671,9 +2944,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A compact wooden frame with the shields hung on it and the key measuring rails lit, the frame ending well inside the picture.
 ```
 
-#### 193. TAB 3. Decision Table
+#### 214. TAB 3. Decision Table
 
-- File name: `FAN-193-TAB-3-Decision-Table.png`
+- File name: `FAN-214-TAB-3-Decision-Table.png`
 - Target: `public/card-art/fantasy/cards/format-comparison/grade-03.webp`
 - Owner: Card `format-comparison` grade `Decision Table`
 - Status: generated
@@ -2684,9 +2957,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A testing frame with criteria pegs along its edges and the winning shield's rail glowing across its full width, the frame ending well inside the picture.
 ```
 
-#### 194. TAB 4. Evaluation Matrix
+#### 215. TAB 4. Evaluation Matrix
 
-- File name: `FAN-194-TAB-4-Evaluation-Matrix.png`
+- File name: `FAN-215-TAB-4-Evaluation-Matrix.png`
 - Target: `public/card-art/fantasy/cards/format-comparison/grade-04.webp`
 - Owner: Card `format-comparison` grade `Evaluation Matrix`
 - Status: generated
@@ -2697,9 +2970,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A dense frame of weighted fittings with scored joints and a victor's column burning down one side, the frame ending well inside the picture.
 ```
 
-#### 195. NXT 1. Next Move
+#### 216. NXT 1. Next Move
 
-- File name: `FAN-195-NXT-1-Next-Move.png`
+- File name: `FAN-216-NXT-1-Next-Move.png`
 - Target: `public/card-art/fantasy/cards/format-next/grade-01.webp`
 - Owner: Card `format-next` grade `Next Move`
 - Status: generated
@@ -2710,9 +2983,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A rampart with a single brazier primed and blazing hot at its head.
 ```
 
-#### 196. NXT 2. Next Steps
+#### 217. NXT 2. Next Steps
 
-- File name: `FAN-196-NXT-2-Next-Steps.png`
+- File name: `FAN-217-NXT-2-Next-Steps.png`
 - Target: `public/card-art/fantasy/cards/format-next/grade-02.webp`
 - Owner: Card `format-next` grade `Next Steps`
 - Status: generated
@@ -2723,9 +2996,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A rampart with a short ordered run of braziers lit in sequence down its length.
 ```
 
-#### 197. NXT 3. Prioritized Actions
+#### 218. NXT 3. Prioritized Actions
 
-- File name: `FAN-197-NXT-3-Prioritized-Actions.png`
+- File name: `FAN-218-NXT-3-Prioritized-Actions.png`
 - Target: `public/card-art/fantasy/cards/format-next/grade-03.webp`
 - Owner: Card `format-next` grade `Prioritized Actions`
 - Status: generated
@@ -2736,9 +3009,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A rampart with braziers ranked by heat, keeper's tokens hung on the hottest ones.
 ```
 
-#### 198. NXT 4. Execution Handoff
+#### 219. NXT 4. Execution Handoff
 
-- File name: `FAN-198-NXT-4-Execution-Handoff.png`
+- File name: `FAN-219-NXT-4-Execution-Handoff.png`
 - Target: `public/card-art/fantasy/cards/format-next/grade-04.webp`
 - Owner: Card `format-next` grade `Execution Handoff`
 - Status: generated
@@ -2749,9 +3022,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A rampart fully stoked and burning in relay, running its whole sequence with no watchman present to tend it.
 ```
 
-#### 199. LEN 1. Tight Budget
+#### 220. LEN 1. Tight Budget
 
-- File name: `FAN-199-LEN-1-Tight-Budget.png`
+- File name: `FAN-220-LEN-1-Tight-Budget.png`
 - Target: `public/card-art/fantasy/cards/format-length/grade-01.webp`
 - Owner: Card `format-length` grade `Tight Budget`
 - Status: generated
@@ -2762,9 +3035,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A smith's caliper clamped hard on a glowing ingot, a heavy offcut venting away as bright vapor.
 ```
 
-#### 200. LEN 2. One Screen
+#### 221. LEN 2. One Screen
 
-- File name: `FAN-200-LEN-2-One-Screen.png`
+- File name: `FAN-221-LEN-2-One-Screen.png`
 - Target: `public/card-art/fantasy/cards/format-length/grade-02.webp`
 - Owner: Card `format-length` grade `One Screen`
 - Status: generated
@@ -2775,9 +3048,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A smith's caliper holding metal to a single dense measure, compact and fully worked.
 ```
 
-#### 201. LEN 3. Room to Explain
+#### 222. LEN 3. Room to Explain
 
-- File name: `FAN-201-LEN-3-Room-to-Explain.png`
+- File name: `FAN-222-LEN-3-Room-to-Explain.png`
 - Target: `public/card-art/fantasy/cards/format-length/grade-03.webp`
 - Owner: Card `format-length` grade `Room to Explain`
 - Status: generated
@@ -2788,9 +3061,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A smith's caliper opened to the metal's natural width, the space spent on substance rather than padding.
 ```
 
-#### 202. LEN 4. Complete Treatment
+#### 223. LEN 4. Complete Treatment
 
-- File name: `FAN-202-LEN-4-Complete-Treatment.png`
+- File name: `FAN-223-LEN-4-Complete-Treatment.png`
 - Target: `public/card-art/fantasy/cards/format-length/grade-04.webp`
 - Owner: Card `format-length` grade `Complete Treatment`
 - Status: generated
@@ -2801,9 +3074,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A smith's caliper opened wide but stopping exactly at the metal's true edge, complete with nothing added beyond it.
 ```
 
-#### 203. TIER 1. Essentials First
+#### 224. TIER 1. Essentials First
 
-- File name: `FAN-203-TIER-1-Essentials-First.png`
+- File name: `FAN-224-TIER-1-Essentials-First.png`
 - Target: `public/card-art/fantasy/cards/format-tiers/grade-01.webp`
 - Owner: Card `format-tiers` grade `Essentials First`
 - Status: generated
@@ -2814,9 +3087,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A stone dais with one small brilliantly lit top step and the depth below it only suggested in shadow.
 ```
 
-#### 204. TIER 2. Three Tiers
+#### 225. TIER 2. Three Tiers
 
-- File name: `FAN-204-TIER-2-Three-Tiers.png`
+- File name: `FAN-225-TIER-2-Three-Tiers.png`
 - Target: `public/card-art/fantasy/cards/format-tiers/grade-02.webp`
 - Owner: Card `format-tiers` grade `Three Tiers`
 - Status: generated
@@ -2827,9 +3100,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A stone dais of three clean descending steps, each one clearly separated from the next.
 ```
 
-#### 205. TIER 3. Tiered Sections
+#### 226. TIER 3. Tiered Sections
 
-- File name: `FAN-205-TIER-3-Tiered-Sections.png`
+- File name: `FAN-226-TIER-3-Tiered-Sections.png`
 - Target: `public/card-art/fantasy/cards/format-tiers/grade-03.webp`
 - Owner: Card `format-tiers` grade `Tiered Sections`
 - Status: generated
@@ -2840,9 +3113,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A stone dais of three marked steps with every offering visibly placed on one of them.
 ```
 
-#### 206. TIER 4. Locked Tier Hierarchy
+#### 227. TIER 4. Locked Tier Hierarchy
 
-- File name: `FAN-206-TIER-4-Locked-Tier-Hierarchy.png`
+- File name: `FAN-227-TIER-4-Locked-Tier-Hierarchy.png`
 - Target: `public/card-art/fantasy/cards/format-tiers/grade-04.webp`
 - Owner: Card `format-tiers` grade `Locked Tier Hierarchy`
 - Status: generated
@@ -2853,11 +3126,63 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A strictly cut stone terrace with hard edges, nothing resting anywhere outside the hierarchy.
 ```
 
+#### 228. EDIT 1. Change record
+
+- File name: `FAN-228-EDIT-1-Change-record.png`
+- Target: `public/card-art/fantasy/cards/format-change-record/grade-01.webp`
+- Owner: Card `format-change-record` grade `Change record`
+- Status: planned
+
+```
+Epic high-fantasy collectible-card key art, fully hand-painted in the tradition of classic Warcraft trading-card illustration: confident visible brushwork, chunky heroic proportions, rich saturated color, ornate metal, carved stone and weathered leather rendered with loving material detail. Warm amber-gold lantern light rakes the subject from one side, a hard gold rim light separates it from a deep forest-green and umber darkness, and soft ember-lit haze falls away behind. Arcane energy may glow within objects but never reads as writing. One strong centered focal shape, isolated, uncluttered edges, nothing in the background competing with it, and it still reads at thumbnail size. Square composition with generous breathing room. The painting is full-bleed and fills the entire square to every edge, a photographic crop of a larger scene with the background running off all four sides: no border, no margin, no matting, no drawn edge line, no vignette box, not a sticker, no rounded corners. Artwork only: no text, no letters, no numbers, no logos, no readable symbols, no UI labels, no card frame.
+
+A margin note beside a clean proof.
+```
+
+#### 229. EDIT 2. Change record · reason
+
+- File name: `FAN-229-EDIT-2-Change-record-reason.png`
+- Target: `public/card-art/fantasy/cards/format-change-record/grade-02.webp`
+- Owner: Card `format-change-record` grade `Change record · reason`
+- Status: planned
+
+```
+Epic high-fantasy collectible-card key art, fully hand-painted in the tradition of classic Warcraft trading-card illustration: confident visible brushwork, chunky heroic proportions, rich saturated color, ornate metal, carved stone and weathered leather rendered with loving material detail. Warm amber-gold lantern light rakes the subject from one side, a hard gold rim light separates it from a deep forest-green and umber darkness, and soft ember-lit haze falls away behind. Arcane energy may glow within objects but never reads as writing. One strong centered focal shape, isolated, uncluttered edges, nothing in the background competing with it, and it still reads at thumbnail size. Square composition with generous breathing room. The painting is full-bleed and fills the entire square to every edge, a photographic crop of a larger scene with the background running off all four sides: no border, no margin, no matting, no drawn edge line, no vignette box, not a sticker, no rounded corners. Artwork only: no text, no letters, no numbers, no logos, no readable symbols, no UI labels, no card frame.
+
+A margin note beside a clean proof.
+```
+
+#### 230. EDIT 3. Change record · example
+
+- File name: `FAN-230-EDIT-3-Change-record-example.png`
+- Target: `public/card-art/fantasy/cards/format-change-record/grade-03.webp`
+- Owner: Card `format-change-record` grade `Change record · example`
+- Status: planned
+
+```
+Epic high-fantasy collectible-card key art, fully hand-painted in the tradition of classic Warcraft trading-card illustration: confident visible brushwork, chunky heroic proportions, rich saturated color, ornate metal, carved stone and weathered leather rendered with loving material detail. Warm amber-gold lantern light rakes the subject from one side, a hard gold rim light separates it from a deep forest-green and umber darkness, and soft ember-lit haze falls away behind. Arcane energy may glow within objects but never reads as writing. One strong centered focal shape, isolated, uncluttered edges, nothing in the background competing with it, and it still reads at thumbnail size. Square composition with generous breathing room. The painting is full-bleed and fills the entire square to every edge, a photographic crop of a larger scene with the background running off all four sides: no border, no margin, no matting, no drawn edge line, no vignette box, not a sticker, no rounded corners. Artwork only: no text, no letters, no numbers, no logos, no readable symbols, no UI labels, no card frame.
+
+A margin note beside a clean proof.
+```
+
+#### 231. EDIT 4. Change record · review
+
+- File name: `FAN-231-EDIT-4-Change-record-review.png`
+- Target: `public/card-art/fantasy/cards/format-change-record/grade-04.webp`
+- Owner: Card `format-change-record` grade `Change record · review`
+- Status: planned
+
+```
+Epic high-fantasy collectible-card key art, fully hand-painted in the tradition of classic Warcraft trading-card illustration: confident visible brushwork, chunky heroic proportions, rich saturated color, ornate metal, carved stone and weathered leather rendered with loving material detail. Warm amber-gold lantern light rakes the subject from one side, a hard gold rim light separates it from a deep forest-green and umber darkness, and soft ember-lit haze falls away behind. Arcane energy may glow within objects but never reads as writing. One strong centered focal shape, isolated, uncluttered edges, nothing in the background competing with it, and it still reads at thumbnail size. Square composition with generous breathing room. The painting is full-bleed and fills the entire square to every edge, a photographic crop of a larger scene with the background running off all four sides: no border, no margin, no matting, no drawn edge line, no vignette box, not a sticker, no rounded corners. Artwork only: no text, no letters, no numbers, no logos, no readable symbols, no UI labels, no card frame.
+
+A margin note beside a clean proof.
+```
+
 ### Per-grade variants - Target
 
-#### 207. LVL 1. First Contact
+#### 232. LVL 1. First Contact
 
-- File name: `FAN-207-LVL-1-First-Contact.png`
+- File name: `FAN-232-LVL-1-First-Contact.png`
 - Target: `public/card-art/fantasy/cards/target-language/grade-01.webp`
 - Owner: Card `target-language` grade `First Contact`
 - Status: generated
@@ -2868,9 +3193,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A run of crystal lenses stepping light all the way down to the simplest broadest facet, emerging plain and unhurried.
 ```
 
-#### 208. LVL 2. Plain Language
+#### 233. LVL 2. Plain Language
 
-- File name: `FAN-208-LVL-2-Plain-Language.png`
+- File name: `FAN-233-LVL-2-Plain-Language.png`
 - Target: `public/card-art/fantasy/cards/target-language/grade-02.webp`
 - Owner: Card `target-language` grade `Plain Language`
 - Status: generated
@@ -2881,9 +3206,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A run of crystal lenses holding a clear middle facet, unfamiliar glints visibly unpacked as the light enters.
 ```
 
-#### 209. LVL 3. Working Vocabulary
+#### 234. LVL 3. Working Vocabulary
 
-- File name: `FAN-209-LVL-3-Working-Vocabulary.png`
+- File name: `FAN-234-LVL-3-Working-Vocabulary.png`
 - Target: `public/card-art/fantasy/cards/target-language/grade-03.webp`
 - Owner: Card `target-language` grade `Working Vocabulary`
 - Status: generated
@@ -2894,9 +3219,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A run of crystal lenses passing light at standard density, only the strangest facets clarified along the path.
 ```
 
-#### 210. LVL 4. Expert Shorthand
+#### 235. LVL 4. Expert Shorthand
 
-- File name: `FAN-210-LVL-4-Expert-Shorthand.png`
+- File name: `FAN-235-LVL-4-Expert-Shorthand.png`
 - Target: `public/card-art/fantasy/cards/target-language/grade-04.webp`
 - Owner: Card `target-language` grade `Expert Shorthand`
 - Status: generated
@@ -2907,9 +3232,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A run of crystal lenses passed straight through undimmed, the beam leaving at full arcane density.
 ```
 
-#### 211. VOC 1. Straight Talk
+#### 236. VOC 1. Straight Talk
 
-- File name: `FAN-211-VOC-1-Straight-Talk.png`
+- File name: `FAN-236-VOC-1-Straight-Talk.png`
 - Target: `public/card-art/fantasy/cards/target-voice/grade-01.webp`
 - Owner: Card `target-voice` grade `Straight Talk`
 - Status: generated
@@ -2920,9 +3245,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 An enchanted harp with its string ringing loose and natural, the band warm and companionable.
 ```
 
-#### 212. VOC 2. Clear Neutral
+#### 237. VOC 2. Clear Neutral
 
-- File name: `FAN-212-VOC-2-Clear-Neutral.png`
+- File name: `FAN-237-VOC-2-Clear-Neutral.png`
 - Target: `public/card-art/fantasy/cards/target-voice/grade-02.webp`
 - Owner: Card `target-voice` grade `Clear Neutral`
 - Status: generated
@@ -2933,9 +3258,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 An enchanted harp holding a calm even band without ornament or flourish.
 ```
 
-#### 213. VOC 3. Professional Voice
+#### 238. VOC 3. Professional Voice
 
-- File name: `FAN-213-VOC-3-Professional-Voice.png`
+- File name: `FAN-238-VOC-3-Professional-Voice.png`
 - Target: `public/card-art/fantasy/cards/target-voice/grade-03.webp`
 - Owner: Card `target-voice` grade `Professional Voice`
 - Status: generated
@@ -2946,9 +3271,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 An enchanted harp holding a polished precise band, its edges clean and deliberate.
 ```
 
-#### 214. VOC 4. Formal Register
+#### 239. VOC 4. Formal Register
 
-- File name: `FAN-214-VOC-4-Formal-Register.png`
+- File name: `FAN-239-VOC-4-Formal-Register.png`
 - Target: `public/card-art/fantasy/cards/target-voice/grade-04.webp`
 - Owner: Card `target-voice` grade `Formal Register`
 - Status: generated
@@ -2959,9 +3284,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 An enchanted harp holding a rigid courtly band exactly on its mark, formal and unwavering.
 ```
 
-#### 215. EX 1. Everyday Analogy
+#### 240. EX 1. Everyday Analogy
 
-- File name: `FAN-215-EX-1-Everyday-Analogy.png`
+- File name: `FAN-240-EX-1-Everyday-Analogy.png`
 - Target: `public/card-art/fantasy/cards/target-examples/grade-01.webp`
 - Owner: Card `target-examples` grade `Everyday Analogy`
 - Status: generated
@@ -2972,9 +3297,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A magic lantern casting one familiar homely diorama beneath a large vague form.
 ```
 
-#### 216. EX 2. Worked Example
+#### 241. EX 2. Worked Example
 
-- File name: `FAN-216-EX-2-Worked-Example.png`
+- File name: `FAN-241-EX-2-Worked-Example.png`
 - Target: `public/card-art/fantasy/cards/target-examples/grade-02.webp`
 - Owner: Card `target-examples` grade `Worked Example`
 - Status: generated
@@ -2985,9 +3310,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A magic lantern carrying a single diorama all the way through from start to finish.
 ```
 
-#### 217. EX 3. Domain Example
+#### 242. EX 3. Domain Example
 
-- File name: `FAN-217-EX-3-Domain-Example.png`
+- File name: `FAN-242-EX-3-Domain-Example.png`
 - Target: `public/card-art/fantasy/cards/target-examples/grade-03.webp`
 - Owner: Card `target-examples` grade `Domain Example`
 - Status: generated
@@ -2998,9 +3323,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A magic lantern casting true-to-life dioramas with their messy irregular detail deliberately left in.
 ```
 
-#### 218. EX 4. Edge Case
+#### 243. EX 4. Edge Case
 
-- File name: `FAN-218-EX-4-Edge-Case.png`
+- File name: `FAN-243-EX-4-Edge-Case.png`
 - Target: `public/card-art/fantasy/cards/target-examples/grade-04.webp`
 - Owner: Card `target-examples` grade `Edge Case`
 - Status: generated
@@ -3011,9 +3336,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A magic lantern placing dioramas right at the boundary where the larger rule visibly breaks down.
 ```
 
-#### 219. DCN 1. Next Decision
+#### 244. DCN 1. Next Decision
 
-- File name: `FAN-219-DCN-1-Next-Decision.png`
+- File name: `FAN-244-DCN-1-Next-Decision.png`
 - Target: `public/card-art/fantasy/cards/target-decisions/grade-01.webp`
 - Owner: Card `target-decisions` grade `Next Decision`
 - Status: generated
@@ -3024,9 +3349,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A lever-board with one lever highlighted and the missing counterweight it still needs lit beside it.
 ```
 
-#### 220. DCN 2. Actionable Framing
+#### 245. DCN 2. Actionable Framing
 
-- File name: `FAN-220-DCN-2-Actionable-Framing.png`
+- File name: `FAN-245-DCN-2-Actionable-Framing.png`
 - Target: `public/card-art/fantasy/cards/target-decisions/grade-02.webp`
 - Owner: Card `target-decisions` grade `Actionable Framing`
 - Status: generated
@@ -3037,9 +3362,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A lever-board with its levers marked by the gate each one opens further down the waterway.
 ```
 
-#### 221. DCN 3. Tradeoff Brief
+#### 246. DCN 3. Tradeoff Brief
 
-- File name: `FAN-221-DCN-3-Tradeoff-Brief.png`
+- File name: `FAN-246-DCN-3-Tradeoff-Brief.png`
 - Target: `public/card-art/fantasy/cards/target-decisions/grade-03.webp`
 - Owner: Card `target-decisions` grade `Tradeoff Brief`
 - Status: generated
@@ -3050,9 +3375,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A lever-board of paired levers, each pair showing what is gained against what is given up.
 ```
 
-#### 222. DCN 4. Decision Record
+#### 247. DCN 4. Decision Record
 
-- File name: `FAN-222-DCN-4-Decision-Record.png`
+- File name: `FAN-247-DCN-4-Decision-Record.png`
 - Target: `public/card-art/fantasy/cards/target-decisions/grade-04.webp`
 - Owner: Card `target-decisions` grade `Decision Record`
 - Status: generated
@@ -3063,9 +3388,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A lever-board with the chosen lever locked in place and its accepted consequences carved along the board.
 ```
 
-#### 223. STN 1. Warm & Encouraging
+#### 248. STN 1. Warm & Encouraging
 
-- File name: `FAN-223-STN-1-Warm-Encouraging.png`
+- File name: `FAN-248-STN-1-Warm-Encouraging.png`
 - Target: `public/card-art/fantasy/cards/target-stance/grade-01.webp`
 - Owner: Card `target-stance` grade `Warm & Encouraging`
 - Status: generated
@@ -3076,9 +3401,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A tempering dial with the needle at the ember-warm pole, the forge washed in soft encouraging light.
 ```
 
-#### 224. STN 2. Even & Matter-of-Fact
+#### 249. STN 2. Even & Matter-of-Fact
 
-- File name: `FAN-224-STN-2-Even-Matter-of-Fact.png`
+- File name: `FAN-249-STN-2-Even-Matter-of-Fact.png`
 - Target: `public/card-art/fantasy/cards/target-stance/grade-02.webp`
 - Owner: Card `target-stance` grade `Even & Matter-of-Fact`
 - Status: generated
@@ -3089,9 +3414,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A tempering dial with the needle centered, the light even and matter-of-fact with no lean either way.
 ```
 
-#### 225. STN 3. Candid & Direct
+#### 250. STN 3. Candid & Direct
 
-- File name: `FAN-225-STN-3-Candid-Direct.png`
+- File name: `FAN-250-STN-3-Candid-Direct.png`
 - Target: `public/card-art/fantasy/cards/target-stance/grade-03.webp`
 - Owner: Card `target-stance` grade `Candid & Direct`
 - Status: generated
@@ -3102,9 +3427,9 @@ Epic high-fantasy collectible-card key art, fully hand-painted in the tradition 
 A tempering dial with the needle pushed toward the steel-cold pole, the light hard, clear, and unsoftened.
 ```
 
-#### 226. STN 4. Authoritative & Decisive
+#### 251. STN 4. Authoritative & Decisive
 
-- File name: `FAN-226-STN-4-Authoritative-Decisive.png`
+- File name: `FAN-251-STN-4-Authoritative-Decisive.png`
 - Target: `public/card-art/fantasy/cards/target-stance/grade-04.webp`
 - Owner: Card `target-stance` grade `Authoritative & Decisive`
 - Status: generated

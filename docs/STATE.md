@@ -4,7 +4,8 @@ Last rewritten 2026-11-19.
 
 ## Now
 
-Card Prompts opens in CRAFT. The Outcome Lab cleanup shipped to production on main at 089fb06. The four-hand editorial comparison uses the eight prepared briefs inside the chat. The local board revision keeps archetypes in the collapsible left rail, frames Setup when one is selected and leaves individual cards in their section hands. CRAFT, PICTURE and SONIC export a prompt and a reusable skill locally.
+The fixed archetype rail and standard-size board cards shipped to production at 9b2d4c3. Four CRAFT presets now carry the editorial pilot methods. Meeting record traces commitments, Research brief matches evidence, Decision advisor checks reversal conditions, and Revision pass preserves facts and voice. Change record is an optional Format card. The local prompt and skill exporters use the same equipped instructions. The PICTURE editorial proposal is in docs/PICTURE_CONTENT_PROPOSAL.md and awaits owner review.
+
 
 ## Runbook
 
@@ -60,7 +61,7 @@ Card Prompts opens in CRAFT. The Outcome Lab cleanup shipped to production on ma
 flow view, plus two unregistered authoring surfaces.
 
 - **CRAFT Deck** (`prompt-builder`): C.R.A.F.T. prompts from card choices —
-  35 roles, 32 lineages ×4 grades, 25 archetypes, library/share/sessions/
+  35 roles, 37 lineages ×4 grades, 25 archetypes, library/share/sessions/
   dictation/proof lab, the world picker (3 illustrated worlds), the
   dev-only art-queue mode, and local Prompt and Skill exports. Credits Lawton Solutions.
 - **PICTURE Deck** (`picture-deck`): P.I.C.T.U.R.E. image prompts — 100
@@ -78,8 +79,8 @@ flow view, plus two unregistered authoring surfaces.
 - **Card Studio** (`/studio/cards`, `/studio/picture`): facet tabs, art
   workflow + bio editor, "Generate more" queue button.
 
-**The art-pack model** (`docs/ARCHITECTURE.md` §1): four packs complete —
-sci-fi, fantasy, superhero (226 each), gallery (426) — 1,104 images.
+**The art-pack model** (`docs/ARCHITECTURE.md` §1): previously rendered assets across four packs —
+sci-fi, fantasy, superhero (226 each), gallery (426) — 1,104 existing images. Five editorial lineages have planned entries in each CRAFT pack and use the standard unillustrated face.
 
 **Outcome Lab** is retired. Historical scenario data and pure helpers are available for offline review. The provider batch script, project-local API key and deck integration were removed.
 
@@ -92,6 +93,6 @@ gates in `.claude/agents/` + deterministic halves in `scripts/check-*.mjs`
 
 - The owner authorized publishing the release on main. The production build passed, and the local browser downloaded each deck's skill and matched it to its preview. The release includes the September split and board. The setup hand uses native keyboard button activation and pointer dragging. The shared archetype tray can collapse independently of Output. Drag individual cards from the section hand to its slots. Hover or focus to inspect a card. On narrow screens it becomes a horizontal strip. Browser verification covered all three decks at 3840 by 2160, gray-surface panning, wheel zoom and drops from the tray while viewing a section.
 - The board still owes a manual screen-reader pass. SONIC lacks an illustrated art pack and its original deck-wide design paperwork.
-- Board revision prepared locally after publishing the cleanup. The table uses 152px-wide 5:7 faces, larger sockets and three procedural backs per deck. The editorial comparison is an in-chat reading; independent provider trials and commissioned art remain paused.
+- Board revision published after the cleanup. The table uses 152px-wide 5:7 faces, larger sockets and three procedural backs per deck. The editorial comparison is an in-chat reading; independent provider trials and commissioned art remain paused.
 - Review findings and deck-by-deck product recommendations are in docs/DECK_REVIEW.md.
 - Prior decisions and outstanding amendment proposals are in the sessions ledger. Use the gate reports for the November review and fixes.

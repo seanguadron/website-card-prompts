@@ -108,49 +108,37 @@
     {
       "id": "note-taker",
       "code": "NOTE",
-      "name": "Note taker",
-      "description": "Turn raw material into clean, organized, faithful notes.",
-      "defaultAudience": "the note-taker's future self, returning weeks later and needing the notes to stand on their own.",
+      "name": "Meeting record",
+      "description": "Hand off the current decisions, commitments and open questions.",
+      "defaultAudience": "the next person responsible for acting on these notes.",
       "formatCode": "LIST",
       "roleIds": [
-        "organizer",
-        "summarizer",
-        "synthesizer"
+        "organizer"
       ],
       "tracks": {
         "contextDepth": 1,
         "evidenceRigor": 1,
         "autonomy": 1,
-        "challenge": 0,
+        "challenge": 2,
         "outputDetail": 1,
         "structure": 2,
         "audienceExpertise": 2,
         "voiceFormality": 1
       },
       "equipped": {
-        "context": [
-          "context-scope"
-        ],
+        "context": [],
         "action": [
-          "action-inspect",
-          "action-summarize"
+          "action-record"
         ],
-        "format": [
-          "format-key-points",
-          "format-sections",
-          "format-summary"
-        ],
-        "target": [
-          "target-language",
-          "target-voice"
-        ]
+        "format": [],
+        "target": []
       },
-      "action": "Read the material and capture it as organized notes.\nGroup related points and separate key points, decisions, action items, and open questions.\nStay faithful to the source and do not add opinions.",
-      "formatNotes": "Use clear sections: Summary, Key points, Decisions, Action items, and Open questions. Keep each note short.",
+      "action": "Prepare a handoff from the supplied notes. Identify corrections and the decisions they replace.",
+      "formatNotes": "Put the instruction in force first. Follow with commitments and open questions.",
       "effects": [
-        "Sets LIST as the base output type.",
-        "Loads 3 role cards and 8 support cards.",
-        "Preserves the user's Context and Target writing fields."
+        "Loads the Organizer role.",
+        "Hand off the current decisions, commitments and open questions.",
+        "Keeps your Context and Target fields."
       ]
     },
     {
@@ -575,13 +563,11 @@
       "id": "research-brief",
       "code": "RSH",
       "name": "Research brief",
-      "description": "A sourced, balanced brief with uncertainty made visible.",
-      "defaultAudience": "an informed reader who will act on the findings and needs to see where the evidence is thin.",
+      "description": "Answer a bounded question and show what the evidence can establish.",
+      "defaultAudience": "the reader deciding what the evidence supports.",
       "formatCode": "RPT",
       "roleIds": [
-        "researcher",
-        "fact-checker",
-        "synthesizer"
+        "researcher"
       ],
       "tracks": {
         "contextDepth": 2,
@@ -594,47 +580,32 @@
         "voiceFormality": 2
       },
       "equipped": {
-        "context": [
-          "context-scope",
-          "context-evidence",
-          "context-assumptions"
-        ],
+        "context": [],
         "action": [
-          "action-research",
-          "action-inspect",
-          "action-analyze",
-          "action-verify"
+          "action-matched-compare"
         ],
         "format": [
-          "format-summary",
-          "format-evidence",
-          "format-sections"
+          "format-evidence"
         ],
-        "target": [
-          "target-language",
-          "target-stance",
-          "target-decisions"
-        ]
+        "target": []
       },
-      "action": "Research the question and gather credible sources.\nCompare what the sources agree and disagree on.\nSummarize the findings with evidence and open questions.",
-      "formatNotes": "Separate confirmed facts, interpretation, and unknowns.",
+      "action": "Answer the question using the supplied evidence. Identify the missing comparison that would change the answer.",
+      "formatNotes": "Lead with the answer. Attach source labels to findings and identify inferences.",
       "effects": [
-        "Sets RPT as the base output type.",
-        "Loads 3 role cards and 13 support cards.",
-        "Preserves the user's Context and Target writing fields."
+        "Loads the Researcher role.",
+        "Answer a bounded question and show what the evidence can establish.",
+        "Keeps your Context and Target fields."
       ]
     },
     {
       "id": "decision-advisor",
       "code": "DEC",
       "name": "Decision advisor",
-      "description": "Compare options, surface tradeoffs, and recommend a path.",
-      "defaultAudience": "the person who owns the decision, familiar with the situation, weighing cost against risk.",
+      "description": "Make a choice and identify the condition that would change it.",
+      "defaultAudience": "the person responsible for the decision.",
       "formatCode": "VS",
       "roleIds": [
-        "strategist",
-        "analyst",
-        "comparative-reviewer"
+        "strategist"
       ],
       "tracks": {
         "contextDepth": 2,
@@ -647,35 +618,19 @@
         "voiceFormality": 2
       },
       "equipped": {
-        "context": [
-          "context-scope",
-          "context-constraints",
-          "context-success"
-        ],
+        "context": [],
         "action": [
-          "action-research",
-          "action-analyze",
-          "action-compare",
-          "action-recommend",
-          "action-verify"
+          "action-conditional-recommend"
         ],
-        "format": [
-          "format-comparison",
-          "format-summary",
-          "format-next"
-        ],
-        "target": [
-          "target-decisions",
-          "target-stance",
-          "target-language"
-        ]
+        "format": [],
+        "target": []
       },
-      "action": "Lay out the realistic options.\nCompare them against the criteria that matter.\nRecommend one and explain why it wins.",
-      "formatNotes": "End with the recommended choice and the reason it wins.",
+      "action": "Recommend a feasible option using the stated priorities.",
+      "formatNotes": "Give the choice, the deciding comparison and the reversal condition.",
       "effects": [
-        "Sets VS as the base output type.",
-        "Loads 3 role cards and 14 support cards.",
-        "Preserves the user's Context and Target writing fields."
+        "Loads the Strategist role.",
+        "Make a choice and identify the condition that would change it.",
+        "Keeps your Context and Target fields."
       ]
     },
     {
@@ -838,14 +793,12 @@
     {
       "id": "rewrite-polish",
       "code": "POLISH",
-      "name": "Rewrite & polish",
-      "description": "Improve existing text's clarity, flow, and tone while preserving meaning.",
-      "defaultAudience": "the text's original readership, unchanged; only the writing gets better.",
+      "name": "Revision pass",
+      "description": "Revise a draft while preserving its promises, facts and voice.",
+      "defaultAudience": "the original audience of the supplied draft.",
       "formatCode": "DRAFT",
       "roleIds": [
-        "rewriter",
-        "editor",
-        "copywriter"
+        "editor"
       ],
       "tracks": {
         "contextDepth": 1,
@@ -858,31 +811,19 @@
         "voiceFormality": 1
       },
       "equipped": {
-        "context": [
-          "context-scope",
-          "context-constraints"
-        ],
+        "context": [],
         "action": [
-          "action-inspect",
-          "action-analyze",
-          "action-create"
+          "action-revise"
         ],
-        "format": [
-          "format-info-card",
-          "format-sections"
-        ],
-        "target": [
-          "target-voice",
-          "target-language",
-          "target-stance"
-        ]
+        "format": [],
+        "target": []
       },
-      "action": "Identify what the text is trying to say and where it loses the reader.\nRewrite for clarity, flow, and tone without changing the meaning.\nFlag any change that alters meaning.",
-      "formatNotes": "Return the improved text. Preserve the author's intent and keep edits faithful to the original meaning.",
+      "action": "Revise the supplied text for its intended reader.",
+      "formatNotes": "Return sendable copy first. Include editorial commentary only when requested.",
       "effects": [
-        "Sets DRAFT as the base output type.",
-        "Loads 3 role cards and 10 support cards.",
-        "Preserves the user's Context and Target writing fields."
+        "Loads the Editor role.",
+        "Revise a draft while preserving its promises, facts and voice.",
+        "Equip Change record in Format for an edit note."
       ]
     },
     {

@@ -67,8 +67,8 @@ test("entries come from the catalog with their file names and prompts", async ()
   try {
     const manifest = await store.listEntries("sci-fi");
 
-    assert.equal(manifest.entries.length, 226);
-    assert.equal(manifest.progress.total, 226);
+    assert.equal(manifest.entries.length, 251);
+    assert.equal(manifest.progress.total, 251);
     const researcher = manifest.entries.find((entry) => entry.key === ROLE_KEY);
     assert.equal(researcher.fileName, "SCI-006-Researcher.png");
     assert.equal(researcher.target, "/card-art/sci-fi/roles/researcher.webp");
@@ -91,6 +91,22 @@ test("variants take the next free letter and keep the pasted bytes", async () =>
     const read = await store.readVariantFile("sci-fi", ROLE_KEY, "b");
     assert.equal(read.file, "SCI-006-Researcher-b.png");
     assert.ok(read.bytes.byteLength > 0);
+  } finally {
+    await cleanup();
+  }
+});
+
+test("an earlier catalog filename remains readable and reserves its variant letter", async () => {
+  const { root, store, cleanup } = await makeStore();
+  try {
+    const key = "archetypes.note-taker";
+    const dir = path.join(root, "card-art-source", "sci-fi", "archetypes", "note-taker");
+    await mkdir(dir, { recursive: true });
+    const old = "SCI-074-Note-taker-a.png";
+    await writeFile(path.join(dir, old), Buffer.from(PNG.split(",")[1], "base64"));
+    assert.equal((await store.readVariantFile("sci-fi", key, "a")).file, old);
+    assert.equal((await store.addVariant("sci-fi", key, PNG)).letter, "b");
+    assert.equal((await store.saveCrop("sci-fi", key, "a", PNG)).file, "SCI-074-Note-taker-a_cropped.png");
   } finally {
     await cleanup();
   }
@@ -402,7 +418,7 @@ test("listPacks reports what exists and how far along it is", async () => {
     const packs = await store.listPacks();
     const sciFi = packs.find((pack) => pack.id === "sci-fi");
     assert.equal(sciFi.installed, true);
-    assert.equal(sciFi.total, 226);
+    assert.equal(sciFi.total, 251);
     // The fixture normalizes every status to planned.
     assert.equal(sciFi.generated, 0);
     // The roadmap packs are listed even though they do not exist yet.
@@ -416,13 +432,13 @@ test("scaffolding a world produces a pack that itself validates", async () => {
   const { root, store, cleanup } = await makeStore();
   try {
     const result = await store.scaffoldPack("fantasy");
-    assert.equal(result.entries, 226);
+    assert.equal(result.entries, 251);
 
     const file = path.join(root, "src", "data", "prompt-builder", "art-themes", "fantasy.json");
     const pack = JSON.parse(await readFile(file, "utf8"));
     assert.equal(pack.theme.draft, true, "a new world must land as a draft");
     assert.equal(Object.keys(pack.roles).length, 35);
-    assert.equal(Object.keys(pack.grades).length, 32);
+    assert.equal(Object.keys(pack.grades).length, 37);
     // scaffoldPack runs the pack schema over what it built before writing, so
     // reaching here at all is the shape assertion.
     assert.deepEqual(await artPackShapeErrors(pack), []);

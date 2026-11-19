@@ -2,6 +2,8 @@
 
 **For Sean’s review · November 19, 2026 · proposed catalog changes**
 
+The owner approved the four-hand text pilot and its resulting refits. The catalog counts below describe the pre-pilot edition. Change record is optional. Other proposed mergers and new hands remain proposals.
+
 The best part of CRAFT is that a hand can express a reusable way of working. A Researcher with Source Support and Evidence Notes asks where a claim came from. An Editor with a revision brief asks what should change and what must survive. I would make that difference legible on the cards themselves, before adding another illustrated world.
 
 The recent release added skill export and shortened the role instructions assembled into prompts. It added **zero** CRAFT cards. The current catalog contains **25 starting hands, 35 roles, 32 tactic lineages with 128 graded faces, eight output formats and eight four-position dials**. The recommendations below concern authored content. Starter-hand counts measure catalog design, not player behavior. We have no usage or comparative model-performance data for these recommendations.

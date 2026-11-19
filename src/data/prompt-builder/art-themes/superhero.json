@@ -589,6 +589,31 @@
       "bio": "Encouraging or unflinching is a setting, not a mood. The dial is set on purpose.",
       "liveVariant": "a",
       "liveRev": 1787233908540
+    },
+    "action-record": {
+      "prompt": "A ledger with a dated correction slip.",
+      "alt": "Capture commitments",
+      "status": "planned"
+    },
+    "action-matched-compare": {
+      "prompt": "Two graduated measures aligned on one baseline.",
+      "alt": "Check the unit",
+      "status": "planned"
+    },
+    "action-revise": {
+      "prompt": "A marked proof laid beside its source.",
+      "alt": "Local revision",
+      "status": "planned"
+    },
+    "action-conditional-recommend": {
+      "prompt": "A balance with a sliding counterweight.",
+      "alt": "Conditional choice",
+      "status": "planned"
+    },
+    "format-change-record": {
+      "prompt": "A margin note beside a clean proof.",
+      "alt": "Change record",
+      "status": "planned"
     }
   },
   "archetypes": {
@@ -1752,6 +1777,116 @@
         "status": "generated",
         "liveVariant": "a",
         "liveRev": 1787233908540
+      }
+    ],
+    "action-record": [
+      {
+        "prompt": "A ledger with a dated correction slip.",
+        "alt": "Capture commitments",
+        "status": "planned"
+      },
+      {
+        "prompt": "A ledger with a dated correction slip.",
+        "alt": "Meeting handoff",
+        "status": "planned"
+      },
+      {
+        "prompt": "A ledger with a dated correction slip.",
+        "alt": "Reconcile the minutes",
+        "status": "planned"
+      },
+      {
+        "prompt": "A ledger with a dated correction slip.",
+        "alt": "Trace the record",
+        "status": "planned"
+      }
+    ],
+    "action-matched-compare": [
+      {
+        "prompt": "Two graduated measures aligned on one baseline.",
+        "alt": "Check the unit",
+        "status": "planned"
+      },
+      {
+        "prompt": "Two graduated measures aligned on one baseline.",
+        "alt": "Match the groups",
+        "status": "planned"
+      },
+      {
+        "prompt": "Two graduated measures aligned on one baseline.",
+        "alt": "Compare like for like",
+        "status": "planned"
+      },
+      {
+        "prompt": "Two graduated measures aligned on one baseline.",
+        "alt": "Test the comparison",
+        "status": "planned"
+      }
+    ],
+    "action-revise": [
+      {
+        "prompt": "A marked proof laid beside its source.",
+        "alt": "Local revision",
+        "status": "planned"
+      },
+      {
+        "prompt": "A marked proof laid beside its source.",
+        "alt": "Revision pass",
+        "status": "planned"
+      },
+      {
+        "prompt": "A marked proof laid beside its source.",
+        "alt": "Structural revision",
+        "status": "planned"
+      },
+      {
+        "prompt": "A marked proof laid beside its source.",
+        "alt": "Constraint review",
+        "status": "planned"
+      }
+    ],
+    "action-conditional-recommend": [
+      {
+        "prompt": "A balance with a sliding counterweight.",
+        "alt": "Conditional choice",
+        "status": "planned"
+      },
+      {
+        "prompt": "A balance with a sliding counterweight.",
+        "alt": "Recommend with a condition",
+        "status": "planned"
+      },
+      {
+        "prompt": "A balance with a sliding counterweight.",
+        "alt": "Decision threshold",
+        "status": "planned"
+      },
+      {
+        "prompt": "A balance with a sliding counterweight.",
+        "alt": "Test the reversal",
+        "status": "planned"
+      }
+    ],
+    "format-change-record": [
+      {
+        "prompt": "A margin note beside a clean proof.",
+        "alt": "Change record",
+        "status": "planned"
+      },
+      {
+        "prompt": "A margin note beside a clean proof.",
+        "alt": "Change record · reason",
+        "status": "planned"
+      },
+      {
+        "prompt": "A margin note beside a clean proof.",
+        "alt": "Change record · example",
+        "status": "planned"
+      },
+      {
+        "prompt": "A margin note beside a clean proof.",
+        "alt": "Change record · review",
+        "status": "planned"
       }
     ]
   },

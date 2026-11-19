@@ -5,6 +5,16 @@ appended by the sessions agent (see AGENTS.md → Learning loop). Lines ending
 with the proposed-amendment flag are STANDARDS candidates;
 `npm run amendments` lists the ones not yet annotated "→ landed in §X.Y".
 
+## 2026-11-19 — Four CRAFT hands approved
+
+**Context.** Vercel marked the archetype-only rail and revised board ready in production at `9b2d4c3`. Sean reviewed the eight in-chat comparisons and approved four CRAFT hand changes.
+
+**Decisions.** Meeting record leads with the current instruction and traces corrections to the notes. Research brief checks whether the groups and denominators support a comparison. Decision advisor identifies what would reverse the choice. Revision pass protects facts, commitments and voice. Players can equip Change record when they want an edit note.
+
+**Learnings.** A buyer can act on the difference between a price tie and an outright win. An editor can use the clean draft immediately and request the rationale separately.
+
+**Preferences.** Review PICTURE’s catalog and propose a pilot before changing its cards. Keep model APIs off and defer new artwork.
+
 ## 2026-11-19 — Archetype rail and solitaire deal
 
 **Context.** Sean authorized publication of the Outcome Lab cleanup. Vercel marked commit `089fb06` ready in production. For the four-hand CRAFT comparison, Sean requested two briefs per hand with old and proposed answers side by side in chat. Provider calls and commissioned artwork stay on hold.

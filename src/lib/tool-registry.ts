@@ -40,7 +40,7 @@ export const TOOL_REGISTRY: Record<ToolId, ToolDescriptor> = {
     mobileSupport: "gated",
     mobileGateNotes: [
       "Builds C.R.A.F.T. prompts from explicit card choices — roles, tactics, modifiers, and tuning tracks.",
-      "35 roles, 32 card lineages, and 25 archetype presets to start from.",
+      "35 roles, 37 card lineages, and 25 archetype presets to start from.",
       "Drafts autosave in this browser; sessions export and import as local JSON.",
     ],
   },
