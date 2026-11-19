@@ -179,3 +179,5 @@ the split landed, using best judgment. What shipped, and what it is not:
 ## November 2026 owner direction
 
 Keep CRAFT, PICTURE, and SONIC as card decks. Finishing a hand should produce both a reusable skill and a one-off prompt.
+
+Open directly in CRAFT. The board fills the window, the wheel zooms at the pointer and primary-button dragging pans across board surfaces. Archetypes drag out from a fixed left rail.

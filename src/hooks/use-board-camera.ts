@@ -33,7 +33,7 @@ function isTyping(target: EventTarget | null) {
 
 /**
  * The camera over a deck board: translate + scale state, the gestures that
- * move it (wheel pans, ctrl+wheel zooms to the cursor, space+drag or the
+ * move it (wheel zooms to the cursor, space+drag or the
  * middle button pans from anywhere, the pasteboard's own background drags),
  * keyboard moves, and the framing helpers the board chrome calls. It follows
  * `activeIndex`: whenever the active board changes, the camera frames it.
@@ -214,56 +214,28 @@ export function useBoardCamera({
     return () => observer.disconnect();
   }, [frameBoard, viewportRef]);
 
-  // Wheel: pan, or zoom to the cursor with ctrl/meta. Non-passive so the page
-  // never scrolls underneath. A scrollable ancestor between the target and
-  // the pasteboard keeps its own scrolling: a textarea scrolls its text, a
-  // fanned hand scrolls sideways.
+  // Zoom around the pointer; text fields keep their native scrolling.
   useEffect(() => {
     const node = viewportRef.current;
-    if (!node) {
-      return;
-    }
+    if (!node) return;
     const onWheel = (event: WheelEvent) => {
-      const dx = normalizeWheelDelta(event.deltaX, event.deltaMode);
-      const dy = normalizeWheelDelta(event.deltaY, event.deltaMode);
-      let element =
-        event.target instanceof Element ? event.target : null;
-      while (element && element !== node) {
-        if (isTyping(element)) {
-          return;
-        }
-        const style = window.getComputedStyle(element);
-        const scrollsY =
-          /(auto|scroll)/.test(style.overflowY) &&
-          element.scrollHeight > element.clientHeight + 1;
-        if (scrollsY && !event.ctrlKey && !event.metaKey) {
-          return;
-        }
-        const scrollsX =
-          /(auto|scroll)/.test(style.overflowX) &&
-          element.scrollWidth > element.clientWidth + 1;
-        if (scrollsX && !event.ctrlKey && !event.metaKey) {
-          event.preventDefault();
-          element.scrollLeft += Math.abs(dx) > Math.abs(dy) ? dx : dy;
-          return;
-        }
-        element = element.parentElement;
+      if (isTyping(event.target)) return;
+      const hand = event.target instanceof Element
+        ? event.target.closest<HTMLElement>(".lineage-card-grid, .role-card-grid")
+        : null;
+      if (hand && hand.scrollWidth > hand.clientWidth && !event.ctrlKey &&
+          (event.shiftKey || Math.abs(event.deltaX) > Math.abs(event.deltaY))) {
+        event.preventDefault();
+        hand.scrollLeft += normalizeWheelDelta(event.deltaX || event.deltaY, event.deltaMode);
+        return;
       }
       event.preventDefault();
+      const delta = normalizeWheelDelta(event.deltaY, event.deltaMode);
       const bounds = node.getBoundingClientRect();
-      if (event.ctrlKey || event.metaKey) {
-        const factor = Math.exp(-dy * 0.0016);
-        setView((current) =>
-          zoomAround(
-            current,
-            factor,
-            event.clientX - bounds.left,
-            event.clientY - bounds.top,
-          ),
-        );
-      } else {
-        setView((current) => panBy(current, -dx, -dy));
-      }
+      setView((current) => zoomAround(
+        current, Math.exp(-delta * 0.0016),
+        event.clientX - bounds.left, event.clientY - bounds.top,
+      ));
       setAnimating(false);
     };
     node.addEventListener("wheel", onWheel, { passive: false });
@@ -306,17 +278,14 @@ export function useBoardCamera({
     [],
   );
 
-  function isVoid(target: EventTarget | null) {
-    return (
-      target === viewportRef.current ||
-      (target instanceof HTMLElement && target.classList.contains("deck-board-world"))
-    );
-  }
-
   function onPointerDown(event: ReactPointerEvent<HTMLDivElement>) {
     const middle = event.button === 1;
     const primary = event.button === 0;
-    if (!middle && !(primary && (spaceHeldRef.current || isVoid(event.target)))) {
+    if (!(event.target instanceof Element) || !event.currentTarget.contains(event.target)) return;
+    const control = event.target.closest(
+      'button, a, input, select, textarea, label, summary, [contenteditable="true"], [role="button"], [role="slider"], [draggable="true"], .deck-board-bar',
+    );
+    if (!middle && !(primary && (spaceHeldRef.current || !control))) {
       return;
     }
     event.preventDefault();
@@ -359,6 +328,7 @@ export function useBoardCamera({
   }
 
   function onKeyDown(event: ReactKeyboardEvent<HTMLDivElement>) {
+    if (!event.currentTarget.contains(event.target as Node)) return;
     if (isTyping(event.target) || event.ctrlKey || event.metaKey || event.altKey) {
       return;
     }

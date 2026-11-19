@@ -5,6 +5,16 @@ appended by the sessions agent (see AGENTS.md → Learning loop). Lines ending
 with the proposed-amendment flag are STANDARDS candidates;
 `npm run amendments` lists the ones not yet annotated "→ landed in §X.Y".
 
+## 2026-11-19: Open directly on the CRAFT board
+
+**Context.** Sean revisited how a player enters and moves around the deck workspace.
+
+**Decisions.** Open the site in CRAFT with the board filling the window. Use the mouse wheel to zoom at the pointer and a primary-button drag on the board background to pan.
+
+**Learnings.** Keeping the archetype hand in a fixed rail lets a player deal a new archetype from whichever board they are viewing. Cards and text controls retain their own pointer interactions.
+
+**Preferences.** Keep archetypes visible on the left and let the player drag a card directly onto the board.
+
 ## 2026-11-19: Card Prompts adds reusable skills alongside one-off prompts
 
 **Context.** Sean revisited the card system and asked for a review of what each deck should contribute to a reusable skill.

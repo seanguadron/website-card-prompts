@@ -87,7 +87,7 @@ function HandCard({
 
 /**
  * The archetype socket: the Setup board's master slot. Drop (or click) an
- * archetype card from the hand beside it and the deck builds itself out -
+ * archetype card from the fixed tray and the deck builds itself out -
  * roles, cards, and tracks across every section board. The seated card shows
  * which archetype is in play; editing any board unseats it (the deck's
  * existing rule), and the socket empties while the cards stay.
@@ -107,6 +107,7 @@ export function BoardArchetypeSocket({
 }) {
   const [draggingId, setDraggingId] = useState<string | null>(null);
   const portalTarget = usePortalTarget();
+  const tray = usePortalTarget("board-archetype-tray");
   // The same pointer tilt the card grids have: cards near the pointer lean
   // toward it on fine pointers (DESIGN_DIRECTION, the CRAFT card system).
   const handMotion = useCardDeckMotion();
@@ -133,6 +134,12 @@ export function BoardArchetypeSocket({
     <DndContext
       id="board-archetypes"
       sensors={sensors}
+      collisionDetection={({ pointerCoordinates }) => {
+        if (!pointerCoordinates) return [];
+        const under = document.elementFromPoint(pointerCoordinates.x, pointerCoordinates.y);
+        return under?.closest(".deck-board") && !under.closest(".deck-board-bar")
+          ? [{ id: SOCKET_ID }] : [];
+      }}
       onDragStart={handleDragStart}
       onDragEnd={handleDragEnd}
       onDragCancel={() => setDraggingId(null)}
@@ -143,6 +150,9 @@ export function BoardArchetypeSocket({
           <small>{seated ? seated.code : `${items.length} in hand`}</small>
         </div>
         <Socket seated={seated} onUnseat={onUnseat} hint={hint} />
+      </section>
+      {tray && createPortal(<>
+        <strong className="tray-heading">Archetypes</strong>
         <div
           className="board-archetype-hand"
           role="list"
@@ -160,11 +170,11 @@ export function BoardArchetypeSocket({
             </div>
           ))}
         </div>
-      </section>
+      </>, tray)}
 
       {portalTarget
         ? createPortal(
-            <DragOverlay dropAnimation={null} zIndex={120}>
+            <DragOverlay style={{ pointerEvents: "none" }} dropAnimation={null} zIndex={120}>
               {dragging ? (
                 <div className="board-archetype-card card-drag-overlay is-active">
                   <ArchetypeFace item={dragging} />

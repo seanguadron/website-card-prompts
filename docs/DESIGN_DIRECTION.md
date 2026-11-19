@@ -4,8 +4,7 @@
 
 ## Intent
 
-Card Prompts is a working cockpit, not a public marketing showcase. The welcome
-page should explain the product quickly, then move the user into a real tool.
+Card Prompts is a working cockpit, not a public marketing showcase. The root opens the CRAFT workspace directly.
 The CRAFT Deck should feel useful on first load and remain clear at narrow
 viewport widths.
 
@@ -376,16 +375,13 @@ and SONIC:
   cyan tile, the section label, and "Complete" when the section is.
 - **The camera** frames one board at a time. Next and Back, the pips, the
   subbar step strip, and keyboard focus moving into another board all glide
-  the camera there in 380ms (a cut under reduced motion). Wheel pans,
-  ctrl+wheel zooms to the cursor, Space+drag and the middle button pan from
-  anywhere, the pasteboard's own background drags. Zoom stays between 8%
+  the camera there in 380ms (a cut under reduced motion). Wheel zooms to the cursor, Space+drag and the middle button pan from
+  anywhere, dragging any non-interactive board surface pans. Zoom stays between 8%
   and 200%; Fit frames the active board, All the whole row. Below 45% the
   card faces simplify to their art.
 - **The Setup board** holds the guide and the **archetype socket**: a
-  card-shaped, cyan-tinted dashed slot with the hand of archetype cards
-  beside it. Dropping or clicking an archetype seats it and builds out every
-  board; editing any board unseats it while the cards stay. The archetype
-  rail is hidden in board mode; the socket is the archetype control.
+  card-shaped, cyan-tinted dashed slot with a persistent hand in the left rail (a horizontal strip on narrow screens). Dropping or clicking an archetype seats it and builds out every
+  board; editing any board unseats it while the cards stay. A drop from the rail onto the canvas applies the archetype. The workspace spans the window.
 - **A section board** is the table: the sockets (the slot rack) and the
   tuning console share the top row, the **hand** (the section's deck) fans
   in one row below them and scrolls sideways when it outgrows the table

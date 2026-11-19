@@ -4,7 +4,7 @@ Last rewritten 2026-11-19.
 
 ## Now
 
-Card Prompts is the three-deck website. GitHub and origin point to seanguadron/website-card-prompts. The September split removed Architect, Image, Vector, and the Skills wiki. Existing browser storage keys remain compatible with saved hands. The shared Output dock offers a one-off prompt or SKILL.md. The skill applies reusable card choices to a new brief.
+Card Prompts opens directly in CRAFT. All three deck workspaces span the window. GitHub and origin point to seanguadron/website-card-prompts. The September split removed Architect, Image, Vector, and the Skills wiki. Existing browser storage keys remain compatible with saved hands. The shared Output dock offers a one-off prompt or SKILL.md. The skill applies reusable card choices to a new brief.
 
 ## Runbook
 
@@ -16,9 +16,8 @@ Card Prompts is the three-deck website. GitHub and origin point to seanguadron/w
   `/tools/sound-deck`; dev-only `/studio/cards`, `/studio/picture`.
 - **Checks:** `npm run typecheck` · `lint` · `test` ·
   `data:validate` · `check:standards && check:security`.
-- **The board, hands on:** seat an archetype from the Setup board's hand;
-  `]` / `[` next and previous board, `0` fit, `-` / `=` zoom, wheel pans,
-  ctrl+wheel zooms to the cursor, Space+drag or the middle button pans from
+- **The board, hands on:** drag an archetype from the left tray onto the board or click it;
+  `]` / `[` next and previous board, `0` fit, `-` / `=` zoom, wheel zooms to the cursor, left-drag pans across board backgrounds, Space+drag or the middle button pans from
   anywhere, arrows pan when the pasteboard itself is focused; Fit and All in
   the bottom-left bar; the Board/Flow switch in the nav dock. Board world
   constants (`BOARD_WIDTH` 1280, `BOARD_GAP` 200, scale 0.08–2) live in
@@ -98,7 +97,7 @@ gates in `.claude/agents/` + deterministic halves in `scripts/check-*.mjs`
 
 ## Backlog / in flight
 
-- The owner authorized publishing the release on main. The production build passed, and the local browser downloaded each deck's skill and matched it to its preview. The release includes the September split and board. The setup hand uses native keyboard button activation and pointer dragging.
+- The owner authorized publishing the release on main. The production build passed, and the local browser downloaded each deck's skill and matched it to its preview. The release includes the September split and board. The setup hand uses native keyboard button activation and pointer dragging. The shared tray stays docked as the camera moves. On narrow screens it becomes a horizontal strip. Browser verification covered all three decks at 3840 by 2160, gray-surface panning, wheel zoom and drops from the tray while viewing a section.
 - The board still owes a manual screen-reader pass. SONIC lacks an illustrated art pack and its original deck-wide design paperwork.
 - Outcome Lab remains paused pending credits, a fresh key, and the owner's choice of generation budget. Keep the small probe before a full paid run.
 - Review findings and deck-by-deck product recommendations are in docs/DECK_REVIEW.md.

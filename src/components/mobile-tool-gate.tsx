@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import type { ToolDescriptor } from "@/lib/tool-registry";
 
 // The mobile gate (docs/ARCHITECTURE.md §2): below 768px the shell hides a
@@ -55,9 +54,6 @@ export function MobileToolGate({
         >
           Preview anyway
         </button>
-        <Link className="button button-quiet" href="/">
-          Back to Welcome
-        </Link>
       </div>
     </section>
   );

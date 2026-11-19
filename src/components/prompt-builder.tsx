@@ -987,6 +987,7 @@ export function PromptBuilder({ roles }: { roles: PromptRole[] }) {
           .filter(Boolean)
           .join(" ")}
       >
+        {viewMode === "board" && <aside id="board-archetype-tray" aria-label="Archetypes" />}
         <PromptArchetypeToolbar
           archetypes={PROMPT_ARCHETYPES}
           customArchetypes={customArchetypes}
@@ -1021,7 +1022,7 @@ export function PromptBuilder({ roles }: { roles: PromptRole[] }) {
                   activeId={activeArchetypeId}
                   onApply={applyArchetypeById}
                   onUnseat={unseatArchetype}
-                  hint="Drop an archetype here and every board builds itself out."
+                  hint="Drag an archetype from the tray onto the board, or select one to apply it."
                 />
               }
               draft={draft}

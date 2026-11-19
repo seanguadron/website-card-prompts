@@ -795,6 +795,7 @@ export function SoundDeck() {
           .filter(Boolean)
           .join(" ")}
       >
+        {viewMode === "board" && <aside id="board-archetype-tray" aria-label="Archetypes" />}
         <SoundArchetypeToolbar
           archetypes={SOUND_ARCHETYPES}
           customArchetypes={customArchetypes}
@@ -828,7 +829,7 @@ export function SoundDeck() {
                   activeId={activeArchetypeId}
                   onApply={applyArchetypeById}
                   onUnseat={unseatArchetype}
-                  hint="Drop an archetype here and every board builds itself out."
+                  hint="Drag an archetype from the tray onto the board, or select one to apply it."
                 />
               }
               draft={draft}

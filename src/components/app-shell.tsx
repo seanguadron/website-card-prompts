@@ -65,7 +65,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
   return (
     <div data-app-shell className={shellClassName}>
       <header className="top-bar" data-component="Bar:Top">
-        {/* The brand IS the Welcome button - there is no separate Welcome tab. */}
+        {/* The brand links to the default CRAFT workspace. */}
         <Link
           className={isHome ? "brand is-active" : "brand"}
           href="/"

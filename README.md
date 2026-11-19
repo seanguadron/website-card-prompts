@@ -2,7 +2,7 @@
 
 A local-first card system for prompting AI models. Build prompts for
 language, image, and sound models by equipping cards onto a brief, from three
-decks that share one card engine. Each deck opens on a **board**: a zoomable
+decks that share one card engine. The website opens directly in CRAFT. Drag an archetype from the tray onto the board, drag a board surface to pan, and use the wheel to zoom at the cursor. Each deck opens on a **board**: a zoomable
 workspace with one surface per section and an archetype socket that builds
 the whole prompt out; the older step-by-step flow is one click away.
 

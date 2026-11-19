@@ -23,9 +23,7 @@ browser (`src/lib/browser-download.ts`, file inputs). Every tool is:
 - an optional **catalog** under `src/data/<tool>/` validated by a script +
   schema in the same change (STANDARDS §2.1).
 
-The registry drives the shell's top-bar tabs and the home page's titles,
-taglines, and CTAs automatically. The home page's per-tool marketing
-sections (`src/app/page.tsx`) are hand-written — a new tool adds one.
+The registry drives the shell tabs. The root route redirects to the registered CRAFT deck.
 
 ### Two containers, one deck
 
@@ -44,6 +42,8 @@ the prompt, sessions, undo, or persistence changes with the view. The CSS
 zone `/* ===== Deck Board ===== */` restyles the panel internals on the board
 (sockets and tuning on top, the hand fanned below); the visual grammar is
 `docs/DESIGN_DIRECTION.md` → The board.
+
+The board hand portals into `#board-archetype-tray` outside the camera transform. A pointer drop on the canvas or keyboard activation of a tray card applies its preset. Wheel zoom follows the pointer. Primary dragging on a non-interactive surface pans.
 
 Three rules come with it. **The camera is the only thing that moves the
 pasteboard**: it is `overflow: clip`, so a focus or a `scrollIntoView` inside
@@ -335,8 +335,7 @@ Port one back deliberately if a deck needs it; do not re-add the tools.
 4. **State**: `useLocalDraft` for persistence (keys
    `digitools.<id>.<thing>-v1`), `useUndoableState` for history,
    `SaveStatus` for the chip.
-5. **Home page**: add the tool's section to `src/app/page.tsx` (kicker
-   `Tool 0N · <shortName>`, bullets, spec preview — hand-written).
+5. **Navigation**: the registered route appears in the deck tabs. CRAFT remains the root destination.
 6. **Styles**: append a banner-delimited section to `src/app/globals.css`
    (`/* ===== <Tool name> ===== */`), classes prefixed `<id>-`. Reuse the
    shared form/button/card vocabulary (§5) before writing new primitives.

@@ -804,6 +804,7 @@ export function PictureDeck() {
           .filter(Boolean)
           .join(" ")}
       >
+        {viewMode === "board" && <aside id="board-archetype-tray" aria-label="Archetypes" />}
         <PictureArchetypeToolbar
           archetypes={PICTURE_ARCHETYPES}
           customArchetypes={customArchetypes}
@@ -837,7 +838,7 @@ export function PictureDeck() {
                   activeId={activeArchetypeId}
                   onApply={applyArchetypeById}
                   onUnseat={unseatArchetype}
-                  hint="Drop an archetype here and every board builds itself out."
+                  hint="Drag an archetype from the tray onto the board, or select one to apply it."
                 />
               }
               draft={draft}

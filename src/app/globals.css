@@ -2299,6 +2299,8 @@ button.role-loadout-slot {
   padding: 12px clamp(16px, 2.4vw, 34px) 12px;
 }
 
+.page-stage.is-fluid { width: 100%; }
+
 .page-stage.is-fluid .prompt-flow-page {
   padding-left: 0;
   padding-right: 0;
@@ -5224,45 +5226,57 @@ button.role-loadout-slot {
    carry the depth (soft shadow, lift, the deal-in flip); the board stays
    flat. */
 
+/* The hand stays in screen space as the camera moves between boards. */
 .builder-main-layout.is-board-mode {
-  grid-template-columns: minmax(0, 1fr) 380px;
-  grid-template-areas: "work out";
+  grid-template-columns: clamp(175px, 12vw, 240px) minmax(0, 1fr) 380px;
+  grid-template-areas: "arch work out";
+  grid-template-rows: minmax(0, 1fr);
 }
-
 .builder-main-layout.is-board-mode.is-output-collapsed {
-  grid-template-columns: minmax(0, 1fr) 52px;
+  grid-template-columns: clamp(175px, 12vw, 240px) minmax(0, 1fr) 52px;
 }
-
-/* The archetypes live on the Setup board in this mode; the rail stands down. */
-.builder-main-layout.is-board-mode .archetype-toolbar {
-  display: none;
+.builder-main-layout.is-board-mode .archetype-toolbar { display: none; }
+#board-archetype-tray {
+  grid-area: arch;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  min-width: 0;
+  background: var(--card);
+  border-right: 1px solid var(--border);
 }
-
-/* Narrow viewports: board mode collapses at the flow's breakpoints. The
-   unscoped rule above would otherwise outrank the 1180px and 1100px resets
-   by specificity and keep reserving a dock column the dock has already left
-   (design gate, 2026-09-08). No archetype row here, so a single row. */
-@media (max-width: 1180px) {
-  .builder-main-layout.is-board-mode {
-    grid-template-columns: minmax(0, 1fr) 360px;
-    grid-template-rows: minmax(0, 1fr);
-    grid-template-areas: "work out";
-  }
-
-  .builder-main-layout.is-board-mode.is-output-collapsed {
-    grid-template-columns: minmax(0, 1fr) 52px;
-  }
+.tray-heading { padding: 10px 12px; font-size: .82rem; }
+#board-archetype-tray .board-archetype-hand {
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  gap: 8px;
+  padding: 4px 10px 12px;
 }
-
+#board-archetype-tray .board-archetype-card {
+  aspect-ratio: auto;
+  grid-template-columns: 46px minmax(0, 1fr);
+  grid-template-rows: auto auto;
+  gap: 4px 8px;
+  align-items: center;
+  min-height: 66px;
+  touch-action: manipulation;
+}
+#board-archetype-tray .board-archetype-art { grid-area: 1 / 1 / 3 / 2; height: 46px; }
+#board-archetype-tray .board-archetype-topline { grid-area: 1 / 2; }
+#board-archetype-tray .board-archetype-card strong { grid-area: 2 / 2; }
+#board-archetype-tray .board-archetype-card small { display: none; }
 @media (max-width: 1100px) {
   .builder-main-layout.is-board-mode,
   .builder-main-layout.is-board-mode.is-output-collapsed {
     grid-template-columns: minmax(0, 1fr);
-    grid-template-rows: minmax(0, 1fr);
-    grid-template-areas: "work";
+    grid-template-rows: auto minmax(0, 1fr);
+    grid-template-areas: "arch" "work";
   }
+  #board-archetype-tray .board-archetype-hand { flex-direction: row; }
+  #board-archetype-tray .board-archetype-card { width: 165px; }
+  .builder-main-layout.is-board-mode .flow-workspace { min-height: 350px; }
 }
-
 .deck-board {
   --board-scale: 1;
   --board-tx: 0px;
@@ -5293,6 +5307,13 @@ button.role-loadout-slot {
   /* Full token strength: a diluted ring measured 1.7:1 on the light canvas
      (design gate, 2026-09-08), the same trap the sitewide ring fell into once. */
   box-shadow: 0 0 0 3px var(--brand-cyan);
+}
+
+.deck-board,
+.deck-board-surface { cursor: grab; }
+
+.is-board-mode:has(.board-archetype-card.is-dragging) .deck-board {
+  box-shadow: inset 0 0 0 2px var(--brand-cyan);
 }
 
 .deck-board textarea,
@@ -5387,6 +5408,7 @@ button.role-loadout-slot {
   height: auto;
   min-width: 0;
   flex: none;
+  grid-template-columns: minmax(0, 1fr);
   grid-template-rows: none;
   overflow: visible;
   padding: 18px 28px 30px;
@@ -5497,6 +5519,7 @@ button.role-loadout-slot {
 }
 
 .deck-board .role-loadout {
+  grid-template-columns: minmax(0, 1fr);
   display: grid;
   gap: 18px;
 }
@@ -5688,7 +5711,7 @@ button.role-loadout-slot {
 /* The archetype socket on the Setup board. */
 .board-archetype {
   display: grid;
-  grid-template-columns: 196px minmax(0, 1fr);
+  grid-template-columns: minmax(0, 196px);
   gap: 12px 22px;
   margin-top: 22px;
   padding: 16px 18px 12px;
