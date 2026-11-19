@@ -5,6 +5,16 @@ appended by the sessions agent (see AGENTS.md → Learning loop). Lines ending
 with the proposed-amendment flag are STANDARDS candidates;
 `npm run amendments` lists the ones not yet annotated "→ landed in §X.Y".
 
+## 2026-11-19: Deal individual cards into slots
+
+**Context.** After choosing how archetypes enter the board, Sean clarified how players should inspect and place an individual card.
+
+**Decisions.** Let players drag a card from their hand to the slot they choose. Let them collapse and reopen the left archetype rail to give the board more room.
+
+**Learnings.** A compact card face leaves out details a player needs when choosing a card. Hovering either an individual card or an archetype should reveal its full information before the player commits it to the board.
+
+**Preferences.** Keep the board in view while players inspect cards and decide where to place them.
+
 ## 2026-11-19: Open directly on the CRAFT board
 
 **Context.** Sean revisited how a player enters and moves around the deck workspace.

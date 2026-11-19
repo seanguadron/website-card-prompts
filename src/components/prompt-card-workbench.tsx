@@ -1,11 +1,14 @@
 "use client";
 
-import { useMemo, useState, type ReactNode } from "react";
+import { BoardTrayTarget } from "@/components/deck-board";
+import { useContext, useMemo, useState, type ReactNode } from "react";
 import { createPortal } from "react-dom";
 import {
   DndContext,
   DragOverlay,
   KeyboardSensor,
+  pointerWithin,
+  rectIntersection,
   PointerSensor,
   useDraggable,
   useDroppable,
@@ -23,7 +26,7 @@ import type {
   CardLineageOf,
   TrackValuesOf,
 } from "@/lib/card-engine";
-import { getFloatingPanelPosition } from "@/lib/floating-panel-position";
+import { useCardInspection } from "@/hooks/use-card-inspection";
 
 type ActiveDrag = {
   lineageId: string;
@@ -141,6 +144,7 @@ function WorkbenchCard<
   values,
   selected,
   suggested,
+  inTray = false,
   onToggle,
   onPreview,
   onClearPreview,
@@ -151,6 +155,7 @@ function WorkbenchCard<
   values: TrackValuesOf<T>;
   selected: boolean;
   suggested: boolean;
+  inTray?: boolean;
   onToggle: () => void;
   onPreview: (element: HTMLElement) => void;
   onClearPreview: () => void;
@@ -158,7 +163,7 @@ function WorkbenchCard<
 }) {
   const grade = engine.getCardGrade(lineage, values);
   const { attributes, listeners, setNodeRef, isDragging } = useDraggable({
-    id: `card:${lineage.id}`,
+    id: `${inTray ? "rail" : "card"}:${lineage.id}`,
     data: { lineageId: lineage.id, kind: "card" } satisfies ActiveDrag,
   });
 
@@ -412,7 +417,9 @@ export function PromptCardWorkbench<
     () => engine.getSectionDeck(section, values),
     [engine, section, values],
   );
-  const [previewId, setPreviewId] = useState<string | null>(null);
+  const { preview, show: previewCard, dismiss: clearPreview, leave, panelEvents } = useCardInspection();
+  const previewId = preview?.id;
+  const previewAnchor = preview?.position;
   const [searchQuery, setSearchQuery] = useState("");
   const [activeDrag, setActiveDrag] = useState<ActiveDrag | null>(null);
   const [settlingSlot, setSettlingSlot] = useState({ index: -1, token: 0 });
@@ -422,10 +429,8 @@ export function PromptCardWorkbench<
     useSensor(PointerSensor, { activationConstraint: { distance: 6 } }),
     useSensor(KeyboardSensor),
   );
-  const [previewAnchor, setPreviewAnchor] = useState<ReturnType<
-    typeof getFloatingPanelPosition
-  > | null>(null);
   const portalTarget = usePortalTarget();
+  const tray = useContext(BoardTrayTarget);
   const visibleDeck = useMemo(() => {
     const query = searchQuery.trim().toLowerCase();
     if (!query) {
@@ -454,16 +459,6 @@ export function PromptCardWorkbench<
   const dragLineage = activeDrag
     ? engine.getLineage(activeDrag.lineageId)
     : null;
-
-  function previewCard(lineageId: string, element: HTMLElement) {
-    setPreviewId(lineageId);
-    setPreviewAnchor(getFloatingPanelPosition(element));
-  }
-
-  function clearPreview() {
-    setPreviewId(null);
-    setPreviewAnchor(null);
-  }
 
   function handleDragStart(event: DragStartEvent) {
     const data = event.active.data.current as ActiveDrag | undefined;
@@ -497,14 +492,34 @@ export function PromptCardWorkbench<
     }
   }
 
+  function renderHand(inTray: boolean) {
+    return visibleDeck.map((lineage) => (
+      <WorkbenchCard
+        inTray={inTray}
+        engine={engine}
+        lineage={lineage}
+        values={values}
+        selected={equippedIds.includes(lineage.id)}
+        suggested={suggestedId === lineage.id}
+        onToggle={() => onToggleCard(lineage.id)}
+        onPreview={(element) => previewCard(lineage.id, element)}
+        onClearPreview={leave}
+        artQueue={artQueue}
+        key={lineage.id}
+      />
+    ));
+  }
+
   return (
     <DndContext
       id={`workbench-${section}`}
       sensors={sensors}
+      collisionDetection={(args) => args.pointerCoordinates ? pointerWithin(args) : rectIntersection(args)}
       onDragStart={handleDragStart}
       onDragEnd={handleDragEnd}
       onDragCancel={() => setActiveDrag(null)}
     >
+      {tray && createPortal(<div className="rail-card-list">{renderHand(true)}</div>, tray)}
       <div className={`card-workbench card-workbench--${section}`}>
         <section className="card-slot-board" aria-label="Equipped card slots">
           <div className="workbench-section-heading">
@@ -529,7 +544,7 @@ export function PromptCardWorkbench<
                 onPreview={(element) =>
                   previewCard(equippedIds[slotIndex] ?? "", element)
                 }
-                onClearPreview={clearPreview}
+                onClearPreview={leave}
                 key={`${slotIndex}-${equippedIds[slotIndex] ?? "empty"}-${
                   settlingSlot.index === slotIndex ? settlingSlot.token : 0
                 }`}
@@ -558,20 +573,7 @@ export function PromptCardWorkbench<
             onPointerMove={deckMotion.onPointerMove}
             onPointerLeave={deckMotion.onPointerLeave}
           >
-            {visibleDeck.map((lineage) => (
-              <WorkbenchCard
-                engine={engine}
-                lineage={lineage}
-                values={values}
-                selected={equippedIds.includes(lineage.id)}
-                suggested={suggestedId === lineage.id}
-                onToggle={() => onToggleCard(lineage.id)}
-                onPreview={(element) => previewCard(lineage.id, element)}
-                onClearPreview={clearPreview}
-                artQueue={artQueue}
-                key={lineage.id}
-              />
-            ))}
+            {renderHand(false)}
             {visibleDeck.length === 0 ? (
               <p className="deck-empty-state">No matching cards.</p>
             ) : null}
@@ -611,7 +613,9 @@ export function PromptCardWorkbench<
           ? createPortal(
               <aside
                 className="floating-card-panel"
-                style={previewAnchor}
+                data-inspectable
+              {...panelEvents}
+              style={previewAnchor}
                 aria-live="polite"
               >
                 <CardIllustrationFrame

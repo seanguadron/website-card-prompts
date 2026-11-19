@@ -6,7 +6,7 @@ import type { ChangeEvent } from "react";
 import { BoardArchetypeSocket } from "@/components/board-archetype-socket";
 import { FlowNavDock } from "@/components/flow-nav-dock";
 import { FlowStepStrip } from "@/components/flow-step-strip";
-import { PromptArchetypeToolbar } from "@/components/prompt-archetype-toolbar";
+import { PromptArchetypeToolbar, PromptArchetypeDetails } from "@/components/prompt-archetype-toolbar";
 import { PromptBuilderHeader } from "@/components/prompt-builder-header";
 import { CraftFlowPanels } from "@/components/prompt-flow-panels";
 import { useArtQueue } from "@/hooks/use-art-queue";
@@ -357,7 +357,7 @@ export function PromptBuilder({ roles }: { roles: PromptRole[] }) {
       code: archetype.code,
       name: archetype.name,
       description: archetype.description,
-      effects: archetype.effects,
+      details: <PromptArchetypeDetails archetype={archetype} roles={roles} />,
       art: archetypeArtWithFallback(archetype.id),
       custom: isCustomArchetype(archetype),
     }),
@@ -987,7 +987,7 @@ export function PromptBuilder({ roles }: { roles: PromptRole[] }) {
           .filter(Boolean)
           .join(" ")}
       >
-        {viewMode === "board" && <aside id="board-archetype-tray" aria-label="Archetypes" />}
+        {viewMode === "board" && <aside id="board-archetype-tray" aria-label="Card library" />}
         <PromptArchetypeToolbar
           archetypes={PROMPT_ARCHETYPES}
           customArchetypes={customArchetypes}

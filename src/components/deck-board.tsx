@@ -2,13 +2,19 @@
 
 import {
   Children,
+  createContext,
+  useState,
   useRef,
   type CSSProperties,
   type FocusEvent,
   type ReactNode,
 } from "react";
+import { createPortal } from "react-dom";
+import { usePortalTarget } from "@/hooks/use-portal-target";
 import { useBoardCamera } from "@/hooks/use-board-camera";
 import { BOARD_GAP, BOARD_WIDTH, boardOrigin } from "@/lib/board-layout";
+
+export const BoardTrayTarget = createContext<HTMLElement | null>(null);
 
 export type DeckBoardSpec = {
   key: string;
@@ -44,6 +50,11 @@ export function DeckBoard({
   ariaLabel: string;
   children: ReactNode;
 }) {
+  const tray = usePortalTarget("board-archetype-tray");
+  const [showArchetypes, setShowArchetypes] = useState(false);
+  const railIndex = showArchetypes ? 0 : activeIndex;
+  const [collapsed, setCollapsed] = useState(false);
+  const [handTarget, setHandTarget] = useState<HTMLDivElement | null>(null);
   const nodes = Children.toArray(children);
   const viewportRef = useRef<HTMLDivElement | null>(null);
   const camera = useBoardCamera({
@@ -89,6 +100,27 @@ export function DeckBoard({
       onFocus={followFocus}
       {...camera.handlers}
     >
+      {tray && createPortal(<>
+        <button type="button" className="tray-toggle" aria-expanded={!collapsed}
+          aria-controls="board-card-library" aria-label={collapsed ? "Expand Cards" : "Collapse Cards"}
+          onClick={() => setCollapsed(!collapsed)}>
+          <span aria-hidden="true">{collapsed ? "›" : "‹"}</span>
+          <strong>Cards</strong>
+        </button>
+        <div id="board-card-library" hidden={collapsed}>
+          <select aria-label="Card library section" value={railIndex}
+            onChange={(event) => {
+              const index = Number(event.target.value);
+              setShowArchetypes(index === 0);
+              if (index > 0) onActivate(index);
+            }}>
+            {boards.map((board, index) => <option key={board.key} value={index}>
+              {index === 0 ? "Archetypes" : board.label}
+            </option>)}
+          </select>
+          <div className="tray-hand" ref={setHandTarget} />
+        </div>
+      </>, tray)}
       <div
         className={
           camera.animating ? "deck-board-world is-animating" : "deck-board-world"
@@ -121,7 +153,9 @@ export function DeckBoard({
                 <span>{board.label}</span>
                 {board.complete ? <i>Complete</i> : null}
               </header>
-              {nodes[index] ?? null}
+              <BoardTrayTarget.Provider value={!collapsed && railIndex === index ? handTarget : null}>
+                {nodes[index] ?? null}
+              </BoardTrayTarget.Provider>
             </section>
           );
         })}

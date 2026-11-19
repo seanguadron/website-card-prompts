@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useContext, useId, useState, type ReactNode } from "react";
 import { createPortal } from "react-dom";
 import {
   DndContext,
@@ -13,6 +13,8 @@ import {
   type DragEndEvent,
   type DragStartEvent,
 } from "@dnd-kit/core";
+import { BoardTrayTarget } from "@/components/deck-board";
+import { useCardInspection } from "@/hooks/use-card-inspection";
 import { CardIllustrationFrame } from "@/components/prompt-builder-ui";
 import { useCardDeckMotion } from "@/hooks/use-card-deck-motion";
 import { usePortalTarget } from "@/hooks/use-portal-target";
@@ -23,7 +25,7 @@ export type BoardArchetypeItem = {
   code: string;
   name: string;
   description: string;
-  effects: readonly string[];
+  details: ReactNode;
   art?: CardArtRef;
   custom?: boolean;
 };
@@ -62,9 +64,16 @@ function HandCard({
     data: { archetypeId: item.id },
   });
 
-  return (
+  const detailsId = useId();
+  const { preview, show, leave, dismiss, panelEvents } = useCardInspection();
+  const portalTarget = usePortalTarget();
+  return (<>
     <button
       ref={setNodeRef}
+      onMouseEnter={(event) => show(item.id, event.currentTarget)}
+      onFocus={(event) => show(item.id, event.currentTarget)}
+      onBlur={dismiss}
+      onMouseLeave={leave}
       className={[
         "board-archetype-card",
         active ? "is-active" : "",
@@ -78,11 +87,16 @@ function HandCard({
       aria-label={`Seat the ${item.name} archetype. ${item.description}`}
       {...listeners}
       {...attributes}
+      aria-describedby={[attributes["aria-describedby"], preview && detailsId].filter(Boolean).join(" ")}
       aria-pressed={active}
     >
       <ArchetypeFace item={item} />
     </button>
-  );
+    {portalTarget && preview && !isDragging && createPortal(
+      <aside className="floating-card-panel floating-card-panel--archetype" id={detailsId} data-inspectable {...panelEvents} style={preview.position}>
+        {item.details}
+      </aside>, portalTarget)}
+  </>);
 }
 
 /**
@@ -107,7 +121,7 @@ export function BoardArchetypeSocket({
 }) {
   const [draggingId, setDraggingId] = useState<string | null>(null);
   const portalTarget = usePortalTarget();
-  const tray = usePortalTarget("board-archetype-tray");
+  const tray = useContext(BoardTrayTarget);
   // The same pointer tilt the card grids have: cards near the pointer lean
   // toward it on fine pointers (DESIGN_DIRECTION, the CRAFT card system).
   const handMotion = useCardDeckMotion();
@@ -152,7 +166,6 @@ export function BoardArchetypeSocket({
         <Socket seated={seated} onUnseat={onUnseat} hint={hint} />
       </section>
       {tray && createPortal(<>
-        <strong className="tray-heading">Archetypes</strong>
         <div
           className="board-archetype-hand"
           role="list"

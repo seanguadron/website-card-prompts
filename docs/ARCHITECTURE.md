@@ -43,7 +43,7 @@ zone `/* ===== Deck Board ===== */` restyles the panel internals on the board
 (sockets and tuning on top, the hand fanned below); the visual grammar is
 `docs/DESIGN_DIRECTION.md` → The board.
 
-The board hand portals into `#board-archetype-tray` outside the camera transform. A pointer drop on the canvas or keyboard activation of a tray card applies its preset. Wheel zoom follows the pointer. Primary dragging on a non-interactive surface pans.
+The collapsible left rail lives outside the camera transform. DeckBoard supplies its screen-space host through BoardTrayTarget to the selected section. Setup archetypes apply a preset when dropped on the canvas. Section cards and CRAFT roles use their workbench drag handlers to equip a particular slot. Clicking a card also equips it. Board and Flow render the same archetype inspection content. Wheel zoom follows the pointer. Primary dragging on a non-interactive surface pans.
 
 Three rules come with it. **The camera is the only thing that moves the
 pasteboard**: it is `overflow: clip`, so a focus or a `scrollIntoView` inside
@@ -309,7 +309,7 @@ expect a shell rail; DO recycle these primitives:
 | `useMediaQuery` | `src/hooks/use-media-query.ts` | Live matchMedia state, SSR-safe (`useSyncExternalStore`; the lint rules reject effect-driven setState). |
 | `DeckBoard` | `src/components/deck-board.tsx` | The board container: pasteboard, camera, one surface per child, the pips/zoom bar. Hand it the panel contents in FLOW_PANEL order. |
 | `useBoardCamera` + `board-layout.ts` | `src/hooks/use-board-camera.ts`, `src/lib/board-layout.ts` | The camera (gestures, keyboard, framing) and its pure geometry (`fitRect`, `zoomAround`, `panBy`, tiers). Reuse for any future world-space surface. |
-| `BoardArchetypeSocket` | `src/components/board-archetype-socket.tsx` | The Setup board's socket + hand, generic over `{id, code, name, description, effects, art?}`. |
+| `BoardArchetypeSocket` | `src/components/board-archetype-socket.tsx` | The Setup board's socket + hand, generic over `{id, code, name, description, details, art?}`. |
 | `readBoardMode`, `writeBoardMode` | `src/lib/board-prefs.ts` | The per-deck view preference behind an `isBoardMode` guard. |
 | Output dock | `prompt-output-dock.tsx` | The copy/download artifact panel all three decks share. It takes an optional `outcomeView` node and grows a Prompt/Outcome switch when one is passed (the CRAFT deck's Outcome Lab); without it the dock renders exactly as before. |
 

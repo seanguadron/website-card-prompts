@@ -4,7 +4,7 @@ Last rewritten 2026-11-19.
 
 ## Now
 
-Card Prompts opens directly in CRAFT. All three deck workspaces span the window. GitHub and origin point to seanguadron/website-card-prompts. The September split removed Architect, Image, Vector, and the Skills wiki. Existing browser storage keys remain compatible with saved hands. The shared Output dock offers a one-off prompt or SKILL.md. The skill applies reusable card choices to a new brief.
+Card Prompts opens directly in CRAFT. The left library offers archetypes, section cards and CRAFT roles. The CRAFT editorial proposal is in docs/CRAFT_CONTENT_PROPOSAL.md and awaits owner review before catalog or art changes. All three deck workspaces span the window. GitHub and origin point to seanguadron/website-card-prompts. The September split removed Architect, Image, Vector, and the Skills wiki. Existing browser storage keys remain compatible with saved hands. The shared Output dock offers a one-off prompt or SKILL.md. The skill applies reusable card choices to a new brief.
 
 ## Runbook
 
@@ -97,7 +97,7 @@ gates in `.claude/agents/` + deterministic halves in `scripts/check-*.mjs`
 
 ## Backlog / in flight
 
-- The owner authorized publishing the release on main. The production build passed, and the local browser downloaded each deck's skill and matched it to its preview. The release includes the September split and board. The setup hand uses native keyboard button activation and pointer dragging. The shared tray stays docked as the camera moves. On narrow screens it becomes a horizontal strip. Browser verification covered all three decks at 3840 by 2160, gray-surface panning, wheel zoom and drops from the tray while viewing a section.
+- The owner authorized publishing the release on main. The production build passed, and the local browser downloaded each deck's skill and matched it to its preview. The release includes the September split and board. The setup hand uses native keyboard button activation and pointer dragging. The shared tray can collapse independently of Output. Select a section to drag individual cards to its slots. Hover or focus to inspect a card. On narrow screens it becomes a horizontal strip. Browser verification covered all three decks at 3840 by 2160, gray-surface panning, wheel zoom and drops from the tray while viewing a section.
 - The board still owes a manual screen-reader pass. SONIC lacks an illustrated art pack and its original deck-wide design paperwork.
 - Outcome Lab remains paused pending credits, a fresh key, and the owner's choice of generation budget. Keep the small probe before a full paid run.
 - Review findings and deck-by-deck product recommendations are in docs/DECK_REVIEW.md.

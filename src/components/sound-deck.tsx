@@ -6,7 +6,7 @@ import type { ChangeEvent } from "react";
 import { BoardArchetypeSocket } from "@/components/board-archetype-socket";
 import { FlowNavDock } from "@/components/flow-nav-dock";
 import { FlowStepStrip } from "@/components/flow-step-strip";
-import { SoundArchetypeToolbar } from "@/components/sound-archetype-toolbar";
+import { SoundArchetypeToolbar, SoundArchetypeDetails } from "@/components/sound-archetype-toolbar";
 import { SoundDeckHeader } from "@/components/sound-deck-header";
 import { SoundFlowPanels } from "@/components/sound-flow-panels";
 import type { SoundDictationField } from "@/components/sound-flow-panels";
@@ -468,7 +468,7 @@ export function SoundDeck() {
       code: archetype.code,
       name: archetype.name,
       description: archetype.description,
-      effects: archetype.effects,
+      details: <SoundArchetypeDetails archetype={archetype} />,
       custom: isCustomSoundArchetype(archetype),
     }),
   );
@@ -795,7 +795,7 @@ export function SoundDeck() {
           .filter(Boolean)
           .join(" ")}
       >
-        {viewMode === "board" && <aside id="board-archetype-tray" aria-label="Archetypes" />}
+        {viewMode === "board" && <aside id="board-archetype-tray" aria-label="Card library" />}
         <SoundArchetypeToolbar
           archetypes={SOUND_ARCHETYPES}
           customArchetypes={customArchetypes}

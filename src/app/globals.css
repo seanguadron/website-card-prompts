@@ -4249,6 +4249,13 @@ button.role-loadout-slot {
   animation: card-panel-in 140ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
+/* Board inspectors can be read across the gap and scrolled on short displays. */
+.floating-card-panel[data-inspectable] {
+  pointer-events: auto;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
 .floating-card-art {
   display: grid;
   width: 100%;
@@ -5245,7 +5252,44 @@ button.role-loadout-slot {
   background: var(--card);
   border-right: 1px solid var(--border);
 }
-.tray-heading { padding: 10px 12px; font-size: .82rem; }
+.tray-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 12px;
+  color: var(--foreground);
+  background: var(--card);
+  border: 0;
+  border-bottom: 1px solid var(--border);
+  cursor: pointer;
+}
+.tray-toggle span { font-size: 1.25rem; }
+#board-card-library:not([hidden]) {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+#board-card-library select {
+  margin: 8px 10px;
+  padding: 6px;
+  color: var(--foreground);
+  background: var(--background);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+.tray-hand { min-height: 0; overflow: auto; }
+.rail-card-list { display: grid; gap: 8px; padding: 4px 10px 12px; }
+.rail-card-list > button { width: 100%; }
+@media (min-width: 1101px) {
+  .builder-main-layout.is-board-mode:has(.tray-toggle[aria-expanded="false"]) {
+    grid-template-columns: 46px minmax(0, 1fr) 380px;
+  }
+  .builder-main-layout.is-board-mode.is-output-collapsed:has(.tray-toggle[aria-expanded="false"]) {
+    grid-template-columns: 46px minmax(0, 1fr) 52px;
+  }
+  .tray-toggle[aria-expanded="false"] { align-items: center; flex-direction: column; }
+  .tray-toggle[aria-expanded="false"] strong { writing-mode: vertical-rl; }
+}
 #board-archetype-tray .board-archetype-hand {
   display: flex;
   flex-direction: column;
@@ -5275,6 +5319,8 @@ button.role-loadout-slot {
   }
   #board-archetype-tray .board-archetype-hand { flex-direction: row; }
   #board-archetype-tray .board-archetype-card { width: 165px; }
+  .rail-card-list { display: flex; overflow: auto; }
+  .rail-card-list > button { flex: 0 0 115px; max-height: 130px; }
   .builder-main-layout.is-board-mode .flow-workspace { min-height: 350px; }
 }
 .deck-board {

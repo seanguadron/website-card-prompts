@@ -6,7 +6,7 @@ import type { ChangeEvent } from "react";
 import { BoardArchetypeSocket } from "@/components/board-archetype-socket";
 import { FlowNavDock } from "@/components/flow-nav-dock";
 import { FlowStepStrip } from "@/components/flow-step-strip";
-import { PictureArchetypeToolbar } from "@/components/picture-archetype-toolbar";
+import { PictureArchetypeToolbar, PictureArchetypeDetails } from "@/components/picture-archetype-toolbar";
 import { PictureDeckHeader } from "@/components/picture-deck-header";
 import { PictureFlowPanels } from "@/components/picture-flow-panels";
 import type { PictureDictationField } from "@/components/picture-flow-panels";
@@ -483,7 +483,7 @@ export function PictureDeck() {
       code: archetype.code,
       name: archetype.name,
       description: archetype.description,
-      effects: archetype.effects,
+      details: <PictureArchetypeDetails archetype={archetype} />,
       art: pictureArchetypeArtWithFallback(archetype.id),
       custom: isCustomPictureArchetype(archetype),
     }),
@@ -804,7 +804,7 @@ export function PictureDeck() {
           .filter(Boolean)
           .join(" ")}
       >
-        {viewMode === "board" && <aside id="board-archetype-tray" aria-label="Archetypes" />}
+        {viewMode === "board" && <aside id="board-archetype-tray" aria-label="Card library" />}
         <PictureArchetypeToolbar
           archetypes={PICTURE_ARCHETYPES}
           customArchetypes={customArchetypes}

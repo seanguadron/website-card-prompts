@@ -1,6 +1,7 @@
 "use client";
 
-import { useMemo, useRef, useState } from "react";
+import { BoardTrayTarget } from "@/components/deck-board";
+import { useContext, useMemo, useRef, useState } from "react";
 import type { DragEvent } from "react";
 import { createPortal } from "react-dom";
 import {
@@ -14,7 +15,7 @@ import { useCardDeckMotion } from "@/hooks/use-card-deck-motion";
 import { usePortalTarget } from "@/hooks/use-portal-target";
 import { roleArt } from "@/lib/art-pack";
 import { attachCardDragPreview } from "@/lib/card-motion";
-import { getFloatingPanelPosition } from "@/lib/floating-panel-position";
+import { useCardInspection } from "@/hooks/use-card-inspection";
 import type { PromptRole } from "@/lib/prompt-types";
 
 const ROLE_DRAG_TYPE = "application/x-digitools-role";
@@ -42,10 +43,9 @@ export function PromptRoleWorkbench({
   artQueue?: ArtQueueApi;
 }) {
   const [searchQuery, setSearchQuery] = useState("");
-  const [previewRoleId, setPreviewRoleId] = useState<string | null>(null);
-  const [previewAnchor, setPreviewAnchor] = useState<ReturnType<
-    typeof getFloatingPanelPosition
-  > | null>(null);
+  const { preview, show: previewRoleCard, dismiss: clearRolePreview, leave, panelEvents } = useCardInspection();
+  const previewRoleId = preview?.id;
+  const previewAnchor = preview?.position;
   const [draggingSource, setDraggingSource] = useState<string | null>(null);
   const [settlingSlot, setSettlingSlot] = useState({
     index: -1,
@@ -100,16 +100,6 @@ export function PromptRoleWorkbench({
     ? previewRole.ability.bullets.slice(0, 3)
     : [];
 
-  function previewRoleCard(roleId: string, element: HTMLElement) {
-    setPreviewRoleId(roleId);
-    setPreviewAnchor(getFloatingPanelPosition(element));
-  }
-
-  function clearRolePreview() {
-    setPreviewRoleId(null);
-    setPreviewAnchor(null);
-  }
-
   function beginRoleDrag(
     event: DragEvent<HTMLElement>,
     roleId: string,
@@ -135,8 +125,83 @@ export function PromptRoleWorkbench({
     clearRolePreview();
   }
 
+  const tray = useContext(BoardTrayTarget);
+  const roleCards = visibleRoles.map((role) => {
+    const selectedIndex = selectedRoleIds.indexOf(role.id);
+    const selected = selectedIndex >= 0;
+    const previewed = previewRoleId === role.id;
+    const loadoutLabel =
+      selectedIndex === 0
+        ? "LEAD"
+        : selectedIndex > 0
+          ? `SUPPORT ${selectedIndex}`
+          : roleCategoryCode(role.category);
+
+    // Edit mode repoints the card at the queue: the same click that
+    // equips a role instead asks for another portrait of it. A mode, not
+    // a second button - the card IS a button, and one cannot nest.
+    const queuing = artQueue?.editing ?? false;
+    const artKey = roleArt(role.id)?.key;
+    const queued = queuing ? artQueue!.countFor(artKey) : 0;
+
+    return (
+      <button
+        className={[
+          "role-perk-card",
+          selected ? "is-selected" : "",
+          previewed ? "is-previewed" : "",
+          draggingSource === `deck-${role.id}` ? "is-dragging" : "",
+          queuing ? "is-queuing" : "",
+          queued > 0 ? "is-queued" : "",
+        ]
+          .filter(Boolean)
+          .join(" ")}
+        type="button"
+        draggable={!queuing}
+        data-motion-card
+        onDragStart={(event) =>
+          beginRoleDrag(event, role.id, `deck-${role.id}`)
+        }
+        onDragEnd={endRoleDrag}
+        onClick={() =>
+          queuing ? artQueue!.queueOne(artKey, role.name) : onToggleRole(role)
+        }
+        onMouseEnter={(event) =>
+          previewRoleCard(role.id, event.currentTarget)
+        }
+        onMouseLeave={leave}
+        onFocus={(event) => previewRoleCard(role.id, event.currentTarget)}
+        onBlur={clearRolePreview}
+        aria-pressed={queuing ? undefined : selected}
+        aria-label={
+          queuing
+            ? `Queue another ${role.name} image${
+                queued > 0 ? `. ${queued} queued` : ""
+              }`
+            : selected
+              ? `Remove ${role.name} from role loadout. ${role.description}`
+              : `Add ${role.name} to role loadout. ${role.description}`
+        }
+        key={role.id}
+      >
+        <RoleCardFace
+          role={role}
+          index={roles.findIndex(
+            (candidate) => candidate.id === role.id,
+          )}
+          status={selected ? loadoutLabel : undefined}
+        />
+        {queued > 0 ? (
+          <span className="art-queue-badge" aria-hidden="true">
+            {queued}&times;
+          </span>
+        ) : null}
+      </button>
+    );
+  });
   return (
     <>
+      {tray && createPortal(<div className="rail-card-list">{roleCards}</div>, tray)}
       <div className="role-loadout-summary">
         <div className="role-loadout-summary-heading">
           <strong>Loadout</strong>
@@ -205,7 +270,7 @@ export function PromptRoleWorkbench({
                     onMouseEnter={(event) =>
                       previewRoleCard(role.id, event.currentTarget)
                     }
-                    onMouseLeave={clearRolePreview}
+                    onMouseLeave={leave}
                     onFocus={(event) =>
                       previewRoleCard(role.id, event.currentTarget)
                     }
@@ -272,79 +337,7 @@ export function PromptRoleWorkbench({
         onPointerMove={deckMotion.onPointerMove}
         onPointerLeave={deckMotion.onPointerLeave}
       >
-        {visibleRoles.map((role) => {
-          const selectedIndex = selectedRoleIds.indexOf(role.id);
-          const selected = selectedIndex >= 0;
-          const previewed = previewRoleId === role.id;
-          const loadoutLabel =
-            selectedIndex === 0
-              ? "LEAD"
-              : selectedIndex > 0
-                ? `SUPPORT ${selectedIndex}`
-                : roleCategoryCode(role.category);
-
-          // Edit mode repoints the card at the queue: the same click that
-          // equips a role instead asks for another portrait of it. A mode, not
-          // a second button - the card IS a button, and one cannot nest.
-          const queuing = artQueue?.editing ?? false;
-          const artKey = roleArt(role.id)?.key;
-          const queued = queuing ? artQueue!.countFor(artKey) : 0;
-
-          return (
-            <button
-              className={[
-                "role-perk-card",
-                selected ? "is-selected" : "",
-                previewed ? "is-previewed" : "",
-                draggingSource === `deck-${role.id}` ? "is-dragging" : "",
-                queuing ? "is-queuing" : "",
-                queued > 0 ? "is-queued" : "",
-              ]
-                .filter(Boolean)
-                .join(" ")}
-              type="button"
-              draggable={!queuing}
-              data-motion-card
-              onDragStart={(event) =>
-                beginRoleDrag(event, role.id, `deck-${role.id}`)
-              }
-              onDragEnd={endRoleDrag}
-              onClick={() =>
-                queuing ? artQueue!.queueOne(artKey, role.name) : onToggleRole(role)
-              }
-              onMouseEnter={(event) =>
-                previewRoleCard(role.id, event.currentTarget)
-              }
-              onMouseLeave={clearRolePreview}
-              onFocus={(event) => previewRoleCard(role.id, event.currentTarget)}
-              onBlur={clearRolePreview}
-              aria-pressed={queuing ? undefined : selected}
-              aria-label={
-                queuing
-                  ? `Queue another ${role.name} image${
-                      queued > 0 ? `. ${queued} queued` : ""
-                    }`
-                  : selected
-                    ? `Remove ${role.name} from role loadout. ${role.description}`
-                    : `Add ${role.name} to role loadout. ${role.description}`
-              }
-              key={role.id}
-            >
-              <RoleCardFace
-                role={role}
-                index={roles.findIndex(
-                  (candidate) => candidate.id === role.id,
-                )}
-                status={selected ? loadoutLabel : undefined}
-              />
-              {queued > 0 ? (
-                <span className="art-queue-badge" aria-hidden="true">
-                  {queued}&times;
-                </span>
-              ) : null}
-            </button>
-          );
-        })}
+        {roleCards}
         {visibleRoles.length === 0 ? (
           <p className="deck-empty-state">No matching roles.</p>
         ) : null}
@@ -435,10 +428,12 @@ export function PromptRoleWorkbench({
         })}
       </div>
 
-      {portalTarget && previewRole && previewAnchor
+      {portalTarget && !draggingSource && previewRole && previewAnchor
         ? createPortal(
             <aside
               className="floating-card-panel floating-card-panel--role"
+              data-inspectable
+              {...panelEvents}
               style={previewAnchor}
               aria-live="polite"
             >

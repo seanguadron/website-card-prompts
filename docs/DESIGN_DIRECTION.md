@@ -435,3 +435,5 @@ generic AI product language.
 - No account, team, cloud, or sync language
 
 The output dock presents Prompt and Skill as sibling views. Skill previews the exported Markdown, names the installation folder, and uses the equipped hand independently of the one-off brief. CRAFT also retains the Outcome view.
+
+The left rail collapses independently of Output. Its section selector frames the corresponding board and shows individual cards or roles for its slots. Archetypes can also be selected while viewing another board. Hover and focus reveal the same art and details as Flow.

@@ -61,21 +61,6 @@ export function PromptArchetypeToolbar({
   const previewArchetype = allArchetypes.find(
     (archetype) => archetype.id === previewId,
   );
-  const previewFormat = previewArchetype
-    ? FORMAT_OPTIONS.find((format) => format.code === previewArchetype.formatCode)
-    : null;
-  const previewRoles = previewArchetype
-    ? previewArchetype.roleIds
-        .map((roleId) => roles.find((role) => role.id === roleId)?.name)
-        .filter((name): name is string => Boolean(name))
-    : [];
-  const previewCardCount = previewArchetype
-    ? Object.values(previewArchetype.equipped ?? {}).reduce(
-        (total, cardIds) => total + (cardIds?.length ?? 0),
-        0,
-      )
-    : 0;
-
   function previewArchetypeCard(archetypeId: string, element: HTMLElement) {
     setPreviewId(archetypeId);
     setPreviewAnchor(getFloatingPanelPosition(element));
@@ -204,34 +189,51 @@ export function PromptArchetypeToolbar({
               style={previewAnchor}
               aria-live="polite"
             >
-              <CardIllustrationFrame
-                className="floating-card-art"
-                illustration={archetypeArtWithFallback(previewArchetype.id)}
-                fallback={previewArchetype.code.slice(0, 1)}
-              />
-              <div className="floating-card-panel-identity">
-                <span>Archetype / {previewArchetype.code}</span>
-                <strong>{previewArchetype.name}</strong>
-                <p>{previewArchetype.description}</p>
-              </div>
-              <CardBio text={archetypeArt(previewArchetype.id)?.bio} />
-              <div className="ability-guidance">
-                <span>What this preset changes</span>
-                <ul>
-                  {previewArchetype.effects.map((effect) => (
-                    <li key={effect}>{effect}</li>
-                  ))}
-                </ul>
-              </div>
-              <code>
-                Output: {previewFormat?.name ?? previewArchetype.formatCode}.
-                Roles: {previewRoles.join(", ") || "none"}. Equipped cards:{" "}
-                {previewCardCount}.
-              </code>
+              <PromptArchetypeDetails archetype={previewArchetype} roles={roles} />
             </aside>,
             portalTarget,
           )
         : null}
     </aside>
+  );
+}
+
+export function PromptArchetypeDetails({ archetype, roles }: { archetype: PromptArchetype; roles: readonly PromptRole[] }) {
+  const previewFormat = FORMAT_OPTIONS.find((format) => format.code === archetype.formatCode);
+  const previewRoles = archetype.roleIds
+        .map((roleId) => roles.find((role) => role.id === roleId)?.name)
+        .filter((name): name is string => Boolean(name));
+  const previewCardCount = Object.values(archetype.equipped ?? {}).reduce(
+        (total, cardIds) => total + (cardIds?.length ?? 0),
+        0,
+      );
+
+  return (
+    <>
+      <CardIllustrationFrame
+        className="floating-card-art"
+        illustration={archetypeArtWithFallback(archetype.id)}
+        fallback={archetype.code.slice(0, 1)}
+      />
+      <div className="floating-card-panel-identity">
+        <span>Archetype / {archetype.code}</span>
+        <strong>{archetype.name}</strong>
+        <p>{archetype.description}</p>
+      </div>
+      <CardBio text={archetypeArt(archetype.id)?.bio} />
+      <div className="ability-guidance">
+        <span>What this preset changes</span>
+        <ul>
+          {archetype.effects.map((effect) => (
+            <li key={effect}>{effect}</li>
+          ))}
+        </ul>
+      </div>
+      <code>
+        Output: {previewFormat?.name ?? archetype.formatCode}.
+        Roles: {previewRoles.join(", ") || "none"}. Equipped cards:{" "}
+        {previewCardCount}.
+      </code>
+    </>
   );
 }

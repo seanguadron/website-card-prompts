@@ -58,16 +58,6 @@ export function SoundArchetypeToolbar({
   const previewArchetype = allArchetypes.find(
     (archetype) => archetype.id === previewId,
   );
-  const previewCardCount = previewArchetype
-    ? Object.values(previewArchetype.equipped ?? {}).reduce(
-        (total, cardIds) => total + (cardIds?.length ?? 0),
-        0,
-      )
-    : 0;
-  const previewEmphasis = previewArchetype
-    ? (EMPHASIS_LABELS[previewArchetype.tracks.emphasis] ?? "Present")
-    : "";
-
   function previewArchetypeCard(archetypeId: string, element: HTMLElement) {
     setPreviewId(archetypeId);
     setPreviewAnchor(getFloatingPanelPosition(element));
@@ -196,31 +186,45 @@ export function SoundArchetypeToolbar({
               style={previewAnchor}
               aria-live="polite"
             >
-              <CardIllustrationFrame
-                className="floating-card-art"
-                fallback={previewArchetype.code.slice(0, 1)}
-              />
-              <div className="floating-card-panel-identity">
-                <span>Archetype / {previewArchetype.code}</span>
-                <strong>{previewArchetype.name}</strong>
-                <p>{previewArchetype.description}</p>
-              </div>
-              <div className="ability-guidance">
-                <span>What this preset changes</span>
-                <ul>
-                  {previewArchetype.effects.map((effect) => (
-                    <li key={effect}>{effect}</li>
-                  ))}
-                </ul>
-              </div>
-              <code>
-                Emphasis: {previewEmphasis}. Equipped cards: {previewCardCount}.
-                Ambience: {previewArchetype.ambience === undefined ? "keep current setting" : previewArchetype.ambience ? "on" : "off"}.
-              </code>
+              <SoundArchetypeDetails archetype={previewArchetype} />
             </aside>,
             portalTarget,
           )
         : null}
     </aside>
+  );
+}
+
+export function SoundArchetypeDetails({ archetype }: { archetype: SoundArchetype }) {
+  const previewCardCount = Object.values(archetype.equipped ?? {}).reduce(
+        (total, cardIds) => total + (cardIds?.length ?? 0),
+        0,
+      );
+  const previewEmphasis = (EMPHASIS_LABELS[archetype.tracks.emphasis] ?? "Present");
+
+  return (
+    <>
+      <CardIllustrationFrame
+        className="floating-card-art"
+        fallback={archetype.code.slice(0, 1)}
+      />
+      <div className="floating-card-panel-identity">
+        <span>Archetype / {archetype.code}</span>
+        <strong>{archetype.name}</strong>
+        <p>{archetype.description}</p>
+      </div>
+      <div className="ability-guidance">
+        <span>What this preset changes</span>
+        <ul>
+          {archetype.effects.map((effect) => (
+            <li key={effect}>{effect}</li>
+          ))}
+        </ul>
+      </div>
+      <code>
+        Emphasis: {previewEmphasis}. Equipped cards: {previewCardCount}.
+        Ambience: {archetype.ambience === undefined ? "keep current setting" : archetype.ambience ? "on" : "off"}.
+      </code>
+    </>
   );
 }
