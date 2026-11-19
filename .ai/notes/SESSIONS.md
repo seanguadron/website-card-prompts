@@ -9,7 +9,7 @@ with the proposed-amendment flag are STANDARDS candidates;
 
 **Decisions.** Sean approved publishing all nine rendered backs together with the SONIC and PICTURE prompt updates. He asked for a live check on each deck with the project’s generation API kept off.
 
-**Preferences.** Use the pen as CRAFT’s primary back for now, the prism for PICTURE, and the third design, the waveform, for SONIC. Keep the other six designs in the release.
+**Preferences.** After the release, Sean clarified that every card in a deck should carry the same back throughout the deal. CRAFT uses the pen, PICTURE the prism, and SONIC the waveform. Save the other six designs for later. He requested twelve design ideas for consideration.
 
 ## 2026-11-19 — SONIC and PICTURE prompt accuracy and rendered backs
 
