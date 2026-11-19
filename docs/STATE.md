@@ -4,7 +4,7 @@ Last rewritten 2026-11-19.
 
 ## Now
 
-Card Prompts opens directly in CRAFT. The left library offers archetypes, section cards and CRAFT roles. The four-hand CRAFT editorial pilot is prepared and paused. The old Outcome Lab was removed locally. Its provider batch and project credential are gone. The output dock offers Prompt and Skill. All three deck workspaces span the window. GitHub and origin point to seanguadron/website-card-prompts. The September split removed Architect, Image, Vector, and the Skills wiki. Existing browser storage keys remain compatible with saved hands. The shared Output dock offers a one-off prompt or SKILL.md. The skill applies reusable card choices to a new brief.
+Card Prompts opens in CRAFT. The Outcome Lab cleanup shipped to production on main at 089fb06. The four-hand editorial comparison uses the eight prepared briefs inside the chat. The local board revision keeps archetypes in the collapsible left rail, frames Setup when one is selected and leaves individual cards in their section hands. CRAFT, PICTURE and SONIC export a prompt and a reusable skill locally.
 
 ## Runbook
 
@@ -90,8 +90,8 @@ gates in `.claude/agents/` + deterministic halves in `scripts/check-*.mjs`
 
 ## Backlog / in flight
 
-- The owner authorized publishing the release on main. The production build passed, and the local browser downloaded each deck's skill and matched it to its preview. The release includes the September split and board. The setup hand uses native keyboard button activation and pointer dragging. The shared tray can collapse independently of Output. Select a section to drag individual cards to its slots. Hover or focus to inspect a card. On narrow screens it becomes a horizontal strip. Browser verification covered all three decks at 3840 by 2160, gray-surface panning, wheel zoom and drops from the tray while viewing a section.
+- The owner authorized publishing the release on main. The production build passed, and the local browser downloaded each deck's skill and matched it to its preview. The release includes the September split and board. The setup hand uses native keyboard button activation and pointer dragging. The shared archetype tray can collapse independently of Output. Drag individual cards from the section hand to its slots. Hover or focus to inspect a card. On narrow screens it becomes a horizontal strip. Browser verification covered all three decks at 3840 by 2160, gray-surface panning, wheel zoom and drops from the tray while viewing a section.
 - The board still owes a manual screen-reader pass. SONIC lacks an illustrated art pack and its original deck-wide design paperwork.
-- The four-hand editorial pilot is paused. The owner wants any future trials covered by the monthly account without additional charges.
+- Board revision prepared locally after publishing the cleanup. The table uses 152px-wide 5:7 faces, larger sockets and three procedural backs per deck. The editorial comparison is an in-chat reading; independent provider trials and commissioned art remain paused.
 - Review findings and deck-by-deck product recommendations are in docs/DECK_REVIEW.md.
 - Prior decisions and outstanding amendment proposals are in the sessions ledger. Use the gate reports for the November review and fixes.

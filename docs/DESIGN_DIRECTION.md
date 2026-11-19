@@ -388,10 +388,7 @@ and SONIC:
   (roles keep two rows), and the free-text field sits at the bottom.
   Sockets read as scaffolding: a 2px cyan-tinted dashed frame, solid once
   seated.
-- **The deal.** When an archetype seats, each newly seated card flips in
-  once (`board-deal`, 420ms, a 70ms stagger outward from the socket);
-  nothing loops. Cards on the board lift 4px on hover under a deeper soft
-  shadow. Both are removed under reduced motion.
+- **The deal.** On entering a section, the visible hand travels from a shared pile and turns face up in 400ms with a short stagger. Seating an archetype flips the occupied sockets. Each deck has three geometric backs. Reduced motion leaves the faces immediately available.
 - **The board bar** (bottom-left, screen space): one pip per board with its
   completion state, zoom out, the zoom readout, zoom in, Fit, All. It steps
   aside when the nav dock parks in that corner.
@@ -415,7 +412,7 @@ provide a reduced-motion fallback. Do not add page-load choreography.
 
 Two named exceptions live on the board, because they move a whole scene
 rather than one element: the camera glide between boards (380ms) and the
-deal (420ms per card, a 70ms stagger). Both are user-initiated, run once, and
+deal (400ms per card, staggered by 28ms in a hand or 70ms in sockets). Both are user-initiated, run once, and
 cut under reduced motion (resolved 2026-09-08, design gate).
 
 ## Voice
@@ -436,4 +433,4 @@ generic AI product language.
 
 The output dock presents Prompt and Skill as sibling views. Skill previews the exported Markdown, names the installation folder, and uses the equipped hand independently of the one-off brief.
 
-The left rail collapses independently of Output. Its section selector frames the corresponding board and shows individual cards or roles for its slots. Archetypes can also be selected while viewing another board. Hover and focus reveal the same art and details as Flow.
+The left rail is a permanent archetype hand and collapses independently of Output. Selecting an archetype seats it and frames Setup. Individual cards stay draggable in their section hands. Roles, tactics, modifiers and archetypes share a 152px-wide 5:7 board-space face. Each socket adds clearance around it. The camera scales the whole table. Hover and keyboard focus open a viewport-fitted inspector.

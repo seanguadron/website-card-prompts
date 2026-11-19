@@ -5,6 +5,16 @@ appended by the sessions agent (see AGENTS.md → Learning loop). Lines ending
 with the proposed-amendment flag are STANDARDS candidates;
 `npm run amendments` lists the ones not yet annotated "→ landed in §X.Y".
 
+## 2026-11-19 — Archetype rail and solitaire deal
+
+**Context.** Sean authorized publication of the Outcome Lab cleanup. Vercel marked commit `089fb06` ready in production. For the four-hand CRAFT comparison, Sean requested two briefs per hand with old and proposed answers side by side in chat. Provider calls and commissioned artwork stay on hold.
+
+**Decisions.** Keep archetypes in the left rail as the player moves between sections. One click seats an archetype and jumps to it. Individual cards remain available on their section boards. Use locally drawn backs, three per deck, for the flip and deal.
+
+**Learnings.** Sizing an archetype around its label made it read as a list row during a drag. Give roles, tactics, modifiers and archetypes the same portrait card dimensions. Leave clearance in each socket and room around a hovered card. Rollover details should be readable without an internal scrollbar.
+
+**Preferences.** Sean welcomes a longer, scrollable archetype hand when the artwork and names are easier to see. Solitaire is the motion reference: cards come off a pile, turn face up and settle into place.
+
 ## 2026-11-19 — Separate the Outcome Lab from the deck
 
 **Context.** The Outcome Lab experiment let players inspect model-generated answers for card combinations. The editorial pilot prompted Sean to clarify where model usage belongs.

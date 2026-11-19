@@ -366,6 +366,7 @@ export function PromptBuilder({ roles }: { roles: PromptRole[] }) {
     );
     if (archetype) {
       applyArchetype(archetype);
+      nav.setActivePanel(FLOW_PANEL_INDEX.guide);
     }
   }
 
@@ -984,7 +985,7 @@ export function PromptBuilder({ roles }: { roles: PromptRole[] }) {
           .filter(Boolean)
           .join(" ")}
       >
-        {viewMode === "board" && <aside id="board-archetype-tray" aria-label="Card library" />}
+        {viewMode === "board" && <aside id="board-archetype-tray" aria-label="Archetypes" />}
         <PromptArchetypeToolbar
           archetypes={PROMPT_ARCHETYPES}
           customArchetypes={customArchetypes}

@@ -495,6 +495,7 @@ export function PictureDeck() {
     );
     if (archetype) {
       applyPictureArchetype(archetype);
+      nav.setActivePanel(PICTURE_PANEL_INDEX.guide);
     }
   }
 
@@ -804,7 +805,7 @@ export function PictureDeck() {
           .filter(Boolean)
           .join(" ")}
       >
-        {viewMode === "board" && <aside id="board-archetype-tray" aria-label="Card library" />}
+        {viewMode === "board" && <aside id="board-archetype-tray" aria-label="Archetypes" />}
         <PictureArchetypeToolbar
           archetypes={PICTURE_ARCHETYPES}
           customArchetypes={customArchetypes}

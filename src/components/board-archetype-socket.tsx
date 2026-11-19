@@ -1,5 +1,7 @@
 "use client";
 
+import { CardInspector } from "@/components/card-inspector";
+
 import { useContext, useId, useState, type ReactNode } from "react";
 import { createPortal } from "react-dom";
 import {
@@ -93,9 +95,9 @@ function HandCard({
       <ArchetypeFace item={item} />
     </button>
     {portalTarget && preview && !isDragging && createPortal(
-      <aside className="floating-card-panel floating-card-panel--archetype" id={detailsId} data-inspectable {...panelEvents} style={preview.position}>
+      <CardInspector className="floating-card-panel floating-card-panel--archetype" id={detailsId} {...panelEvents} style={preview.position}>
         {item.details}
-      </aside>, portalTarget)}
+      </CardInspector>, portalTarget)}
   </>);
 }
 

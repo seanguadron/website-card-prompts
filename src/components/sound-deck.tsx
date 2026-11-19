@@ -479,6 +479,7 @@ export function SoundDeck() {
     );
     if (archetype) {
       applySoundArchetype(archetype);
+      nav.setActivePanel(SOUND_PANEL_INDEX.guide);
     }
   }
 
@@ -795,7 +796,7 @@ export function SoundDeck() {
           .filter(Boolean)
           .join(" ")}
       >
-        {viewMode === "board" && <aside id="board-archetype-tray" aria-label="Card library" />}
+        {viewMode === "board" && <aside id="board-archetype-tray" aria-label="Archetypes" />}
         <SoundArchetypeToolbar
           archetypes={SOUND_ARCHETYPES}
           customArchetypes={customArchetypes}

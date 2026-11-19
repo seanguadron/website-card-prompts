@@ -1,7 +1,8 @@
 "use client";
 
-import { BoardTrayTarget } from "@/components/deck-board";
-import { useContext, useMemo, useState, type ReactNode } from "react";
+import { CardInspector } from "@/components/card-inspector";
+
+import { useMemo, useState, type ReactNode } from "react";
 import { createPortal } from "react-dom";
 import {
   DndContext,
@@ -144,7 +145,6 @@ function WorkbenchCard<
   values,
   selected,
   suggested,
-  inTray = false,
   onToggle,
   onPreview,
   onClearPreview,
@@ -155,7 +155,6 @@ function WorkbenchCard<
   values: TrackValuesOf<T>;
   selected: boolean;
   suggested: boolean;
-  inTray?: boolean;
   onToggle: () => void;
   onPreview: (element: HTMLElement) => void;
   onClearPreview: () => void;
@@ -163,7 +162,7 @@ function WorkbenchCard<
 }) {
   const grade = engine.getCardGrade(lineage, values);
   const { attributes, listeners, setNodeRef, isDragging } = useDraggable({
-    id: `${inTray ? "rail" : "card"}:${lineage.id}`,
+    id: `card:${lineage.id}`,
     data: { lineageId: lineage.id, kind: "card" } satisfies ActiveDrag,
   });
 
@@ -430,7 +429,6 @@ export function PromptCardWorkbench<
     useSensor(KeyboardSensor),
   );
   const portalTarget = usePortalTarget();
-  const tray = useContext(BoardTrayTarget);
   const visibleDeck = useMemo(() => {
     const query = searchQuery.trim().toLowerCase();
     if (!query) {
@@ -492,10 +490,9 @@ export function PromptCardWorkbench<
     }
   }
 
-  function renderHand(inTray: boolean) {
+  function renderHand() {
     return visibleDeck.map((lineage) => (
       <WorkbenchCard
-        inTray={inTray}
         engine={engine}
         lineage={lineage}
         values={values}
@@ -519,7 +516,6 @@ export function PromptCardWorkbench<
       onDragEnd={handleDragEnd}
       onDragCancel={() => setActiveDrag(null)}
     >
-      {tray && createPortal(<div className="rail-card-list">{renderHand(true)}</div>, tray)}
       <div className={`card-workbench card-workbench--${section}`}>
         <section className="card-slot-board" aria-label="Equipped card slots">
           <div className="workbench-section-heading">
@@ -573,7 +569,7 @@ export function PromptCardWorkbench<
             onPointerMove={deckMotion.onPointerMove}
             onPointerLeave={deckMotion.onPointerLeave}
           >
-            {renderHand(false)}
+            {renderHand()}
             {visibleDeck.length === 0 ? (
               <p className="deck-empty-state">No matching cards.</p>
             ) : null}
@@ -611,11 +607,10 @@ export function PromptCardWorkbench<
 
         {portalTarget && previewLineage && previewGrade && previewAnchor && !activeDrag
           ? createPortal(
-              <aside
+              <CardInspector
                 className="floating-card-panel"
-                data-inspectable
-              {...panelEvents}
-              style={previewAnchor}
+                {...panelEvents}
+                style={previewAnchor}
                 aria-live="polite"
               >
                 <CardIllustrationFrame
@@ -641,7 +636,7 @@ export function PromptCardWorkbench<
                   {previewGrade.instruction} Focus on these outcomes:{" "}
                   {previewLineage.goals.join(" ")}
                 </code>
-              </aside>,
+              </CardInspector>,
               portalTarget,
             )
           : null}

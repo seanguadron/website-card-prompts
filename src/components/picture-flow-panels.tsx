@@ -525,6 +525,7 @@ export function PictureFlowPanels({
 
     return (
       <DeckBoard
+        deck="picture"
         boards={boards}
         activeIndex={activePanel}
         onActivate={onActivatePanel ?? (() => undefined)}

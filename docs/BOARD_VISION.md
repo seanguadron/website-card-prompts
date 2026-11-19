@@ -183,3 +183,5 @@ Keep CRAFT, PICTURE, and SONIC as card decks. Finishing a hand should produce bo
 Open directly in CRAFT. The board fills the window, the wheel zooms at the pointer and primary-button dragging pans across board surfaces. Archetypes drag out from a fixed left rail.
 
 The left rail should offer individual cards for board slots and collapse independently of Output. Restore rich inspection on hover for cards and archetypes. Sean requested an editorial proposal before changing CRAFT content or generating artwork.
+
+The November direction fixes the left rail to archetypes. Every card keeps its portrait silhouette through hover, drag, seating and camera zoom. The section hand deals from a common pile like solitaire. Card backs can be rendered locally.

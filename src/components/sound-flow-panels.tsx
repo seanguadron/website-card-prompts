@@ -434,6 +434,7 @@ export function SoundFlowPanels({
 
     return (
       <DeckBoard
+        deck="sonic"
         boards={boards}
         activeIndex={activePanel}
         onActivate={onActivatePanel ?? (() => undefined)}

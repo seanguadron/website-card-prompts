@@ -1,7 +1,8 @@
 "use client";
 
-import { BoardTrayTarget } from "@/components/deck-board";
-import { useContext, useMemo, useRef, useState } from "react";
+import { CardInspector } from "@/components/card-inspector";
+
+import { useMemo, useRef, useState } from "react";
 import type { DragEvent } from "react";
 import { createPortal } from "react-dom";
 import {
@@ -125,7 +126,6 @@ export function PromptRoleWorkbench({
     clearRolePreview();
   }
 
-  const tray = useContext(BoardTrayTarget);
   const roleCards = visibleRoles.map((role) => {
     const selectedIndex = selectedRoleIds.indexOf(role.id);
     const selected = selectedIndex >= 0;
@@ -201,7 +201,6 @@ export function PromptRoleWorkbench({
   });
   return (
     <>
-      {tray && createPortal(<div className="rail-card-list">{roleCards}</div>, tray)}
       <div className="role-loadout-summary">
         <div className="role-loadout-summary-heading">
           <strong>Loadout</strong>
@@ -430,9 +429,8 @@ export function PromptRoleWorkbench({
 
       {portalTarget && !draggingSource && previewRole && previewAnchor
         ? createPortal(
-            <aside
+            <CardInspector
               className="floating-card-panel floating-card-panel--role"
-              data-inspectable
               {...panelEvents}
               style={previewAnchor}
               aria-live="polite"
@@ -456,7 +454,7 @@ export function PromptRoleWorkbench({
                   ))}
                 </ul>
               </div>
-            </aside>,
+            </CardInspector>,
             portalTarget,
           )
         : null}

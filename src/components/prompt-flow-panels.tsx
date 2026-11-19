@@ -734,6 +734,7 @@ export function CraftFlowPanels({
 
     return (
       <DeckBoard
+        deck="craft"
         boards={boards}
         activeIndex={activePanel}
         onActivate={onActivatePanel ?? (() => undefined)}

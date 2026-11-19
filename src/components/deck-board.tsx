@@ -5,6 +5,7 @@ import {
   createContext,
   useState,
   useRef,
+  useLayoutEffect,
   type CSSProperties,
   type FocusEvent,
   type ReactNode,
@@ -39,6 +40,7 @@ export function DeckBoard({
   activeIndex,
   onActivate,
   dealing,
+  deck,
   ariaLabel,
   children,
 }: {
@@ -47,12 +49,11 @@ export function DeckBoard({
   onActivate: (index: number) => void;
   /** True while an archetype is being dealt: slot cards flip in. */
   dealing?: boolean;
+  deck: "craft" | "picture" | "sonic";
   ariaLabel: string;
   children: ReactNode;
 }) {
   const tray = usePortalTarget("board-archetype-tray");
-  const [showArchetypes, setShowArchetypes] = useState(false);
-  const railIndex = showArchetypes ? 0 : activeIndex;
   const [collapsed, setCollapsed] = useState(false);
   const [handTarget, setHandTarget] = useState<HTMLDivElement | null>(null);
   const nodes = Children.toArray(children);
@@ -63,6 +64,28 @@ export function DeckBoard({
     activeIndex,
     onActivate,
   });
+  // A section change deals its visible hand from a common point in board space.
+  // Offset coordinates stay independent of the camera's transform.
+  useLayoutEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const surface = viewportRef.current?.querySelector(".deck-board-surface.is-active");
+    const grid = surface?.querySelector<HTMLElement>(".lineage-card-grid, .role-card-grid");
+    if (!grid) return;
+    const cards = Array.from(grid.querySelectorAll<HTMLElement>("[data-motion-card]"))
+      .filter(card => card.offsetLeft + card.offsetWidth > grid.scrollLeft &&
+        card.offsetLeft < grid.scrollLeft + grid.clientWidth);
+    const pile = cards[0];
+    if (!pile) return;
+    cards.forEach((card, index) => {
+      card.style.setProperty("--deal-x", (pile.offsetLeft - card.offsetLeft) + "px");
+      card.style.setProperty("--deal-y", (pile.offsetTop - card.offsetTop + 8) + "px");
+      card.style.setProperty("--deal-delay", Math.min(index, 8) * 28 + "ms");
+      card.classList.add("is-entering-hand");
+    });
+    const clear = () => cards.forEach(card => card.classList.remove("is-entering-hand"));
+    const timer = window.setTimeout(clear, 680);
+    return () => { window.clearTimeout(timer); clear(); };
+  }, [activeIndex]);
   const { view } = camera;
   const style = {
     "--board-scale": view.scale,
@@ -87,6 +110,7 @@ export function DeckBoard({
     <div
       className="deck-board"
       data-component="Board:Deck"
+      data-deck={deck}
       ref={viewportRef}
       role="region"
       aria-label={ariaLabel}
@@ -102,22 +126,12 @@ export function DeckBoard({
     >
       {tray && createPortal(<>
         <button type="button" className="tray-toggle" aria-expanded={!collapsed}
-          aria-controls="board-card-library" aria-label={collapsed ? "Expand Cards" : "Collapse Cards"}
+          aria-controls="board-card-library" aria-label={collapsed ? "Expand archetypes" : "Collapse archetypes"}
           onClick={() => setCollapsed(!collapsed)}>
           <span aria-hidden="true">{collapsed ? "›" : "‹"}</span>
-          <strong>Cards</strong>
+          <strong>Archetypes</strong>
         </button>
         <div id="board-card-library" hidden={collapsed}>
-          <select aria-label="Card library section" value={railIndex}
-            onChange={(event) => {
-              const index = Number(event.target.value);
-              setShowArchetypes(index === 0);
-              if (index > 0) onActivate(index);
-            }}>
-            {boards.map((board, index) => <option key={board.key} value={index}>
-              {index === 0 ? "Archetypes" : board.label}
-            </option>)}
-          </select>
           <div className="tray-hand" ref={setHandTarget} />
         </div>
       </>, tray)}
@@ -153,7 +167,7 @@ export function DeckBoard({
                 <span>{board.label}</span>
                 {board.complete ? <i>Complete</i> : null}
               </header>
-              <BoardTrayTarget.Provider value={!collapsed && railIndex === index ? handTarget : null}>
+              <BoardTrayTarget.Provider value={!collapsed && index === 0 ? handTarget : null}>
                 {nodes[index] ?? null}
               </BoardTrayTarget.Provider>
             </section>
