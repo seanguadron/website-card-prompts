@@ -142,6 +142,7 @@ export function restorePictureDraft(value: string): PictureDraft {
   const parsed = typeof raw === "object" && raw !== null ? raw : {};
 
   return {
+    ...(parsed.frameRatioChosen === true ? {frameRatioChosen: true} : {}),
     ...(parsed.framing ? { framing: readFraming(parsed.framing).join("|") } : {}),
     subject: restoredString(parsed.subject, EMPTY_PICTURE_DRAFT.subject),
     negative: restoredString(parsed.negative, EMPTY_PICTURE_DRAFT.negative),

@@ -41,6 +41,13 @@ test("PICTURE frame marks agree across plain text and skill", () => {
   assert.ok(!prompt.includes("--ar"));
 });
 
+test("an explicitly chosen PICTURE ratio works with no markers or generator flags", () => {
+  assert.deepEqual(framingDirections("", "4:5", true), ["4:5 composition"]);
+  assert.deepEqual(framingDirections("", "1:1"), []);
+  assert.deepEqual(framingDirections("", undefined, true), []);
+  assert.deepEqual(framingDirections("", "invalid", true), []);
+});
+
 test("SONIC shows release length, repeated cycles and rising pitch", () => {
   const tracks = JSON.parse(readFileSync(new URL("../src/data/sound-deck/tracks.json", import.meta.url), "utf8"));
   assert.ok(tracks.slotBudgets.onset >= 2, "A strike and its release must fit in the hand together");

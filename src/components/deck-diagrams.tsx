@@ -2,8 +2,9 @@ import { useState } from "react";
 import { framingZones, readFraming } from "@/lib/framing-board";
 import { sketchEnvelope } from "@/lib/sound-envelope";
 
-export function FramingBoard({ ratio, ratios, onRatio, framing, onChange }: {
+export function FramingBoard({ ratio, ratioChosen, ratios, onRatio, framing, onChange }: {
   ratio: string;
+  ratioChosen: boolean;
   ratios: readonly { value: string }[];
   onRatio: (ratio: string) => void;
   framing: string;
@@ -19,7 +20,8 @@ export function FramingBoard({ ratio, ratios, onRatio, framing, onChange }: {
   }
   return <fieldset className="diagram-tool">
     <legend>Framing board</legend>
-    <label>Frame proportions <select value={ratio} onChange={e => onRatio(e.target.value)}>
+    <label>Frame proportions <select value={ratioChosen || subject || title ? ratio : ""} onChange={e => onRatio(e.target.value)}>
+      <option value="" disabled>Deck default ({ratio})</option>
       {ratios.map(({ value }) => <option key={value}>{value}</option>)}
     </select></label>
     <div role="group" aria-label="Place on frame">
@@ -35,7 +37,7 @@ export function FramingBoard({ ratio, ratios, onRatio, framing, onChange }: {
         {subject === zone ? "●" : title === zone ? "Title" : ""}
       </button>)}
     </div>
-    {(subject || title) && <button type="button" onClick={() => onChange("")}>Clear framing</button>}
+    {(ratioChosen || subject || title) && <button type="button" onClick={() => onChange("")}>Clear framing</button>}
   </fieldset>;
 }
 

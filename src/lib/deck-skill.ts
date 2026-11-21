@@ -14,7 +14,7 @@ const workflows = {
     steps: [
       "Take the new subject, action, and scene from the current brief. Ask for the subject if it is missing.",
       "Describe the subject first, then apply the lighting, medium, and composition choices below. Resolve conflicts in favor of the current brief.",
-      "Return one image prompt. Append the saved parameters only when the chosen image model supports them.",
+      "Return one image prompt. Use the saved parameters supported by the chosen image model. If it cannot use the aspect-ratio flag, describe the saved frame proportions in words.",
     ],
   },
   sonic: {
@@ -44,7 +44,7 @@ export function buildDeckSkill(
   return [
     "---",
     `name: ${name}`,
-    `description: Use the ${name} hand when asked to ${trigger}.`,
+    `description: Use when asked to ${trigger}.`,
     "---", "",
     "## Workflow", "",
     ...steps.map((step, i) => `${i + 1}. ${step}`),

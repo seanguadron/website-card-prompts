@@ -6,6 +6,9 @@ export type ToolId = "prompt-builder" | "picture-deck" | "sound-deck";
 // thinks it is on a desktop.
 export const PHONE_MEDIA_QUERY = "(max-width: 767.98px)";
 
+// The narrow layout displays both rails over the board.
+export const OVERLAY_RAIL_MEDIA_QUERY = "(max-width: 1100px)";
+
 export interface ToolDescriptor {
   id: ToolId;
   name: string;

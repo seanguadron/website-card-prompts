@@ -210,7 +210,7 @@ export function PictureFlowPanels({
   navigateToPictureStep: (stepIndex: number) => void;
   onUpdateDraft: (field: PictureDraftTextField, value: string) => void;
   onSetTailEnabled: (value: boolean) => void;
-  onSelectAspectRatio: (value: string) => void;
+  onSelectAspectRatio: (value: string, fromFramingBoard?: boolean) => void;
   onSetTailNumber: (field: TailNumberField, value: number | null) => void;
   onChangeTrack: (
     section: PictureSection,
@@ -408,7 +408,7 @@ export function PictureFlowPanels({
       "execution",
       <>
       <FramingBoard ratio={draft.aspectRatio} ratios={PICTURE_ASPECT_RATIOS}
-        onRatio={onSelectAspectRatio} framing={draft.framing ?? ""}
+        ratioChosen={draft.frameRatioChosen === true} onRatio={ratio => onSelectAspectRatio(ratio, true)} framing={draft.framing ?? ""}
         onChange={value => onUpdateDraft("framing", value)} />
       <fieldset className="picture-deck-tail">
         <legend className="sr-only">Midjourney parameter tail</legend>

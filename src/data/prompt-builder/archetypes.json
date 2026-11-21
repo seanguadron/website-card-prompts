@@ -748,8 +748,7 @@
       "formatCode": "DRAFT",
       "roleIds": [
         "writer",
-        "editor",
-        "rewriter"
+        "editor"
       ],
       "tracks": {
         "contextDepth": 1,
@@ -768,26 +767,19 @@
         ],
         "action": [
           "action-create",
-          "action-analyze",
-          "action-recommend"
+          "action-revise"
         ],
-        "format": [
-          "format-info-card",
-          "format-sections",
-          "format-summary"
-        ],
+        "format": [],
         "target": [
-          "target-voice",
-          "target-language",
-          "target-stance"
+          "target-language"
         ]
       },
       "action": "Clarify the purpose, audience, and intended effect.\nDraft the text with a clear structure.\nTighten it for clarity and flow.",
       "formatNotes": "Preserve the user's intent while improving clarity and flow.",
       "effects": [
-        "Sets DRAFT as the base output type.",
-        "Loads 3 role cards and 11 support cards.",
-        "Preserves the user's Context and Target writing fields."
+        "Sets DRAFT as the base output type and leaves the layout open.",
+        "Pairs a Writer and Editor with drafting, revision and plain language.",
+        "Preserves the current Context and Target writing fields."
       ]
     },
     {

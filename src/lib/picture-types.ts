@@ -22,6 +22,7 @@ export type PictureCardSystemState = CardSystemStateOf<
 
 export type PictureDraft = {
   framing?: string;
+  frameRatioChosen?: boolean;
   subject: string;
   negative: string;
   mjTailEnabled: boolean;

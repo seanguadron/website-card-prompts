@@ -109,7 +109,7 @@ import {
 import type { SavedPrompt } from "@/lib/prompt-library";
 import { insertIntoSlots } from "@/lib/slot-order";
 import type { PromptRole } from "@/lib/prompt-types";
-import { PHONE_MEDIA_QUERY } from "@/lib/tool-registry";
+import { OVERLAY_RAIL_MEDIA_QUERY } from "@/lib/tool-registry";
 
 const ART_PACK_STORAGE_KEY = "digitools.prompt-builder.art-pack-v1";
 
@@ -137,11 +137,11 @@ export function PromptBuilder({ roles }: { roles: PromptRole[] }) {
   // At phone widths the expanded dock overlays the whole workspace, so the
   // default is collapsed there and expanded everywhere else; any explicit
   // choice (toggle, proof scenarios, review actions) wins over the default.
-  const phoneWidthDock = useMediaQuery(PHONE_MEDIA_QUERY);
+  const overlayRails = useMediaQuery(OVERLAY_RAIL_MEDIA_QUERY);
   const [outputExpandedChoice, setOutputExpanded] = useState<boolean | null>(
     null,
   );
-  const outputExpanded = outputExpandedChoice ?? !phoneWidthDock;
+  const outputExpanded = outputExpandedChoice ?? !overlayRails;
   const [proofLabOpen, setProofLabOpen] = useState(false);
   const [archetypeSaveOpen, setArchetypeSaveOpen] = useState(false);
   const [activeProofId, setActiveProofId] = useState<string | null>(null);
@@ -1217,7 +1217,7 @@ export function PromptBuilder({ roles }: { roles: PromptRole[] }) {
           }).concat(selectedRoles.map((role,i)=>({id:role.id,section:"role",name:role.name,text:formatRoleLoadout(selectedRoles).split("\n\n")[i]})))}
           onRevealCard={(panel, controlId) => {
             nav.navigateToPanel(panel, controlId);
-            if (phoneWidthDock) setOutputExpanded(false);
+            if (overlayRails) setOutputExpanded(false);
           }}
           fork={<HandFork deck="craft" prompt={prompt} ready={persistence.ready} capture={captureHand} restore={(saved, recordHistory) => {
             const next = restorePromptSession(saved.session, roles);

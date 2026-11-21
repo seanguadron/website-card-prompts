@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
+import { readFileSync } from "node:fs";
 import {
   buildSoundPrompt,
   buildSoundSections,
@@ -115,4 +116,17 @@ test("the sections view carries exactly what the prompt carries", () => {
     full.map((section) => section.key),
     ["subject", "source", "nature", "intensity"],
   );
+});
+
+test("the mechanism card can emphasize either a single latch or a steady fan", () => {
+  const catalog = JSON.parse(readFileSync(new URL("../src/data/sound-deck/cards.json", import.meta.url), "utf8"));
+  const mechanism = catalog.cards.find((card) => card.id === "mechanism");
+
+  for (const grade of mechanism.grades) {
+    const terms = { ...EMPTY_TERMS, source: [grade.instruction] };
+    const latch = buildSoundPrompt("Brass latch catching", { ...terms, onset: ["single hit"] }, false);
+    const fan = buildSoundPrompt("Ventilation fan turning", { ...terms, onset: ["steady repeating cycle"] }, false);
+    assert.doesNotMatch(latch, /whirr|churn|heavy machinery/i, "Emphasis must preserve the latch event");
+    assert.doesNotMatch(fan, /click|ticking/i, "Emphasis must preserve a continuous rotation");
+  }
 });

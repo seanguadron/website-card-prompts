@@ -144,7 +144,7 @@ export function useBoardCamera({
     if (!union || viewport.width === 0) {
       return;
     }
-    moveTo(fitRect(union, viewport, BOARD_FIT_PADDING), true);
+    moveTo(fitRect(union, viewport, BOARD_FIT_PADDING, 1, 0), true);
   }, [boardCount, boardRect, moveTo, viewportSize]);
 
   const zoomBy = useCallback(

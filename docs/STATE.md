@@ -4,7 +4,7 @@ Last rewritten 2026-11-21.
 
 ## Now
 
-Production release 24d0718 uses the pen, prism and waveform for every card in their respective decks. In the working tree the single header now contains the deck commands and Workspace menu, and the left and right rail toggles share an implementation. Hand comparison uses the existing deck session codecs to switch between editable A and B variants in the browser tab. The twelve board features are implemented locally. Pins and reserve shelves persist per deck. A/B comparisons retain both branches within their tab. PICTURE framing and CRAFT field mappings participate in exports, and SONIC sketches two onset cards. Edge checks covered all three decks, reload recovery, card interactions and layouts from 390px to 3840px. All 159 tests, lint, type checking, catalog validation, the standards/security checks and the production build passed. The owner approved publishing this revision and checking both rails on all three production decks.
+The twelve-feature board is live. A museum opening provided the brief for a live acceptance pass on CRAFT, PICTURE and SONIC. The review exercised both exports and identified fixes to Writing Draft, selecting reusable input text, standalone aspect ratios, mechanical sound grades, equipping cards into full sections, and selecting sections from the overview. Pins, reserves and comparison branches stay in browser storage. No generation service participates in these workflows.
 
 ## Runbook
 

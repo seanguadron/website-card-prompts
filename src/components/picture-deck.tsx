@@ -97,7 +97,7 @@ import type {
   PictureDraftTextField,
   PictureTrackId,
 } from "@/lib/picture-types";
-import { PHONE_MEDIA_QUERY } from "@/lib/tool-registry";
+import { OVERLAY_RAIL_MEDIA_QUERY } from "@/lib/tool-registry";
 
 export function PictureDeck() {
   const hand = useHandWorkspace("picture", id => Boolean(pictureCardEngine.getLineage(id)));
@@ -133,11 +133,11 @@ export function PictureDeck() {
   // At phone widths the expanded dock overlays the whole workspace, so the
   // default is collapsed there and expanded everywhere else; any explicit
   // choice wins over the default.
-  const phoneWidthDock = useMediaQuery(PHONE_MEDIA_QUERY);
+  const overlayRails = useMediaQuery(OVERLAY_RAIL_MEDIA_QUERY);
   const [outputExpandedChoice, setOutputExpanded] = useState<boolean | null>(
     null,
   );
-  const outputExpanded = outputExpandedChoice ?? !phoneWidthDock;
+  const outputExpanded = outputExpandedChoice ?? !overlayRails;
   // The portal below renders on FIRST render, so the target must be resolved
   // after hydration (see use-portal-target).
   const portalTarget = usePortalTarget();
@@ -195,10 +195,10 @@ export function PictureDeck() {
   const equippedFragments = useMemo(
     () => {
       const fragments = getEquippedFragments(cardSystem.equipped, cardSystem.tracks);
-      fragments.execution.push(...framingDirections(draft.framing, draft.mjTailEnabled ? undefined : draft.aspectRatio));
+      fragments.execution.push(...framingDirections(draft.framing, draft.mjTailEnabled ? undefined : draft.aspectRatio, draft.frameRatioChosen));
       return fragments;
     },
-    [cardSystem.equipped, cardSystem.tracks, draft.framing, draft.mjTailEnabled, draft.aspectRatio],
+    [cardSystem.equipped, cardSystem.tracks, draft.framing, draft.frameRatioChosen, draft.mjTailEnabled, draft.aspectRatio],
   );
   const tail = useMemo(() => draftTail(draft), [draft]);
   const captureHand = useCallback(() => ({
@@ -360,7 +360,10 @@ export function PictureDeck() {
       setActiveArchetypeId(null);
     }
     setCopyState("idle");
-    setDraft((current) => withPictureDraftText(current, field, value));
+    setDraft((current) => {
+      const updated = withPictureDraftText(current, field, value);
+      return field === "framing" && value === "" ? {...updated, frameRatioChosen: false} : updated;
+    });
   }
 
   function setTailEnabled(value: boolean) {
@@ -370,11 +373,11 @@ export function PictureDeck() {
     setDraft((current) => ({ ...current, mjTailEnabled: value }));
   }
 
-  function selectAspectRatio(value: string) {
+  function selectAspectRatio(value: string, fromFramingBoard = false) {
     history.checkpoint();
     setActiveArchetypeId(null);
     setCopyState("idle");
-    setDraft((current) => ({ ...current, aspectRatio: value }));
+    setDraft((current) => ({ ...current, aspectRatio: value, frameRatioChosen: fromFramingBoard || current.frameRatioChosen }));
   }
 
   function setTailNumber(
@@ -961,7 +964,7 @@ export function PictureDeck() {
           })}
           onRevealCard={(panel, controlId) => {
             nav.navigateToPanel(panel, controlId);
-            if (phoneWidthDock) setOutputExpanded(false);
+            if (overlayRails) setOutputExpanded(false);
           }}
           fork={<HandFork deck="picture" prompt={prompt} ready={persistence.ready} capture={captureHand} restore={(saved, recordHistory) => {
             const next = restorePictureSession(saved.session);

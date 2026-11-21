@@ -67,11 +67,13 @@ export function fitRect(
   viewport: BoardViewport,
   padding = BOARD_FIT_PADDING,
   maxScale = 1,
+  minScale = BOARD_SCALE_MIN,
 ): BoardView {
   const availableWidth = Math.max(1, viewport.width - padding * 2);
   const availableHeight = Math.max(1, viewport.height - padding * 2);
   const scale = clampScale(
     Math.min(availableWidth / rect.w, availableHeight / rect.h, maxScale),
+    minScale,
   );
   const scaledWidth = rect.w * scale;
   const scaledHeight = rect.h * scale;

@@ -88,24 +88,24 @@
       "section": "source",
       "driver": "emphasis",
       "goals": [
-        "Put a machine at the center",
-        "Suggest moving parts and purpose"
+        "Bring out the moving parts of the named source",
+        "Keep the mechanism audible through the event"
       ],
       "grades": [
         {
-          "name": "Small Mechanism",
-          "description": "Delicate parts ticking.",
-          "instruction": "small mechanism clicking"
+          "name": "Mechanical Trace",
+          "description": "Movement inside the source is just audible.",
+          "instruction": "faint mechanical movement"
         },
         {
-          "name": "Working Machine",
-          "description": "A machine doing its job.",
-          "instruction": "machine whirring"
+          "name": "Moving Parts",
+          "description": "The movement of the parts is easy to pick out.",
+          "instruction": "distinct movement of fitted parts"
         },
         {
-          "name": "Heavy Machinery",
-          "description": "Industrial mass in motion.",
-          "instruction": "heavy machinery churning"
+          "name": "Foreground Mechanism",
+          "description": "Each contact between moving parts comes through clearly.",
+          "instruction": "mechanical movement in the foreground, each contact distinct"
         }
       ]
     },

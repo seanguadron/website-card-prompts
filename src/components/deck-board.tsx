@@ -11,7 +11,7 @@ import {
   type ReactNode,
 } from "react";
 import { useMediaQuery } from "@/hooks/use-media-query";
-import { PHONE_MEDIA_QUERY } from "@/lib/tool-registry";
+import { OVERLAY_RAIL_MEDIA_QUERY } from "@/lib/tool-registry";
 import { RailToggle } from "./rail-toggle";
 import { createPortal } from "react-dom";
 import { usePortalTarget } from "@/hooks/use-portal-target";
@@ -58,9 +58,9 @@ export function DeckBoard({
 }) {
   const cameraTools = usePortalTarget("workspace-camera-tools");
   const tray = usePortalTarget("board-archetype-tray");
-  const phoneWidth = useMediaQuery(PHONE_MEDIA_QUERY);
+  const overlayRails = useMediaQuery(OVERLAY_RAIL_MEDIA_QUERY);
   const [collapsedChoice, setCollapsed] = useState<boolean|null>(null);
-  const collapsed = collapsedChoice ?? phoneWidth;
+  const collapsed = collapsedChoice ?? overlayRails;
   const [handTarget, setHandTarget] = useState<HTMLDivElement | null>(null);
   const nodes = Children.toArray(children);
   const viewportRef = useRef<HTMLDivElement | null>(null);
@@ -93,6 +93,7 @@ export function DeckBoard({
     return () => { window.clearTimeout(timer); clear(); };
   }, [activeIndex]);
   const { view } = camera;
+  const compactOverview = view.scale * BOARD_WIDTH < 180;
   const style = {
     "--board-scale": view.scale,
     "--board-tx": `${view.tx}px`,
@@ -169,7 +170,7 @@ export function DeckBoard({
                 <span>{board.label}</span>
                 {board.complete ? <i>Complete</i> : null}
               </header>
-              {camera.tier === "far" && (
+              {camera.tier === "far" && !compactOverview && (
                 <button
                   type="button"
                   className="board-overview"
@@ -186,6 +187,16 @@ export function DeckBoard({
           );
         })}
       </div>
+
+      {compactOverview && <nav className="compact-board-overview" aria-label="Section overview">
+        {boards.map((board, index) => (
+          <button type="button" className="board-overview" key={board.key}
+            aria-current={index === activeIndex ? "true" : undefined}
+            onClick={() => camera.inspectBoard(index)}>
+            <b>{board.label}</b><span>{board.summary ?? "Choose an archetype"}</span>
+          </button>
+        ))}
+      </nav>}
 
       {cameraTools && createPortal(<div className="workspace-camera" role="toolbar" aria-label="Board navigation">
         <div className="deck-board-pips" role="group" aria-label="Boards">

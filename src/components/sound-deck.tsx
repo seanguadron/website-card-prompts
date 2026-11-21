@@ -93,7 +93,7 @@ import type {
   SoundDraftTextField,
   SoundTrackId,
 } from "@/lib/sound-types";
-import { PHONE_MEDIA_QUERY } from "@/lib/tool-registry";
+import { OVERLAY_RAIL_MEDIA_QUERY } from "@/lib/tool-registry";
 
 export function SoundDeck() {
   const hand = useHandWorkspace("sonic", id => Boolean(soundCardEngine.getLineage(id)));
@@ -129,7 +129,7 @@ export function SoundDeck() {
   // At phone widths the expanded dock overlays the whole workspace, so the
   // default is collapsed there and expanded everywhere else; any explicit
   // choice wins over the default.
-  const phoneWidthDock = useMediaQuery(PHONE_MEDIA_QUERY);
+  const overlayRails = useMediaQuery(OVERLAY_RAIL_MEDIA_QUERY);
   const [outputExpandedChoice, setOutputExpanded] = useState<boolean | null>(
     null,
   );
@@ -150,7 +150,7 @@ export function SoundDeck() {
     },
     [],
   );
-  const outputExpanded = outputExpandedChoice ?? !phoneWidthDock;
+  const outputExpanded = outputExpandedChoice ?? !overlayRails;
   // The portal below renders on FIRST render, so the target must be resolved
   // after hydration (see use-portal-target).
   const portalTarget = usePortalTarget();
@@ -949,7 +949,7 @@ export function SoundDeck() {
           })}
           onRevealCard={(panel, controlId) => {
             nav.navigateToPanel(panel, controlId);
-            if (phoneWidthDock) setOutputExpanded(false);
+            if (overlayRails) setOutputExpanded(false);
           }}
           fork={<HandFork deck="sound" prompt={prompt} ready={persistence.ready} capture={captureHand} restore={(saved, recordHistory) => {
             const next = restoreSoundSession(saved.session);

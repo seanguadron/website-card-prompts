@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { fieldConflict, type SkillField } from "@/lib/skill-fields";
 
 export function SkillFields({ prompt, fields, onChange }: {
@@ -8,6 +8,19 @@ export function SkillFields({ prompt, fields, onChange }: {
 }) {
   const [name, setName] = useState("");
   const [phrase, setPhrase] = useState("");
+  const [selection, setSelection] = useState("");
+  useEffect(() => {
+    function rememberPromptSelection() {
+      const range = window.getSelection();
+      if (!range || range.isCollapsed || !range.rangeCount) return;
+      const output = document.querySelector("#prompt-output-content pre[aria-live]");
+      if (output?.contains(range.getRangeAt(0).commonAncestorContainer)) {
+        setSelection(range.toString().trim());
+      }
+    }
+    document.addEventListener("selectionchange", rememberPromptSelection);
+    return () => document.removeEventListener("selectionchange", rememberPromptSelection);
+  }, []);
   const field = { name: name.trim(), phrase: phrase.trim() };
   const missing = field.phrase && !prompt.includes(field.phrase);
   const conflict = field.name && field.phrase && fieldConflict(fields, field);
@@ -18,13 +31,14 @@ export function SkillFields({ prompt, fields, onChange }: {
     onChange([...fields, field]);
     setName("");
     setPhrase("");
+    setSelection("");
   }
 
   return <details className="skill-fields">
     <summary>Reusable fields</summary>
     <label>Phrase in this prompt<textarea rows={2} value={phrase} onChange={e => setPhrase(e.target.value)} /></label>
-    <button type="button" onMouseDown={e => e.preventDefault()}
-      onClick={() => setPhrase(window.getSelection()?.toString().trim() || phrase)}>Use selected words</button>
+    <button type="button" disabled={!selection || !prompt.includes(selection)}
+      onClick={() => setPhrase(selection)}>Use selected words</button>
     <label>Field name<input value={name} onChange={e => setName(e.target.value)} placeholder="Source document" /></label>
     <button type="button" disabled={!valid} onClick={add}>Add to skill</button>
     {missing && <p>Choose words that appear in the current prompt.</p>}

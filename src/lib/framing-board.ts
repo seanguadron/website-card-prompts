@@ -9,10 +9,10 @@ export function readFraming(value: unknown): [string, string] {
   return [parts[0], parts[0] === parts[1] ? "" : parts[1]];
 }
 
-export function framingDirections(value: unknown, aspectRatio?: string) {
+export function framingDirections(value: unknown, aspectRatio?: string, ratioChosen = false) {
   const [subject, title] = readFraming(value);
   const lines: string[] = [];
-  if ((subject || title) && aspectRatio && /^[1-9]\d*:[1-9]\d*$/.test(aspectRatio)) {
+  if ((ratioChosen || subject || title) && aspectRatio && /^[1-9]\d*:[1-9]\d*$/.test(aspectRatio)) {
     lines.push(aspectRatio + " composition");
   }
   if (subject) lines.push("subject positioned in the " + subject + " of the frame");

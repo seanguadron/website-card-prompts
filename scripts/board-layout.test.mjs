@@ -36,6 +36,14 @@ test("fitRect centers a board that fits and never scales above 1", () => {
   assert.equal(view.ty, 250);
 });
 
+test("the All overview can frame every board below the manual zoom limit", () => {
+  const rect = { x: 0, y: 0, w: 8 * BOARD_WIDTH + 7 * BOARD_GAP, h: 900 };
+  const view = fitRect(rect, { width: 286, height: 680 }, 28, 1, 0);
+  assert.ok(view.scale > 0 && view.scale < BOARD_SCALE_MIN);
+  assert.ok(Math.abs(view.tx - 28) < 1e-8);
+  assert.ok(Math.abs(view.tx + view.scale * rect.w - 258) < 1e-8);
+});
+
 test("fitRect scales a wide board down and top-aligns a tall one", () => {
   const wide = fitRect({ x: 1780, y: 0, w: 1560, h: 900 }, { width: 1200, height: 900 }, 28);
   assert.ok(Math.abs(wide.scale - (1200 - 56) / 1560) < 1e-9);

@@ -3,7 +3,7 @@
 import { useHandTools } from "./hand-workspace";
 import { CardInspector } from "@/components/card-inspector";
 
-import { useMemo, useState, type ReactNode } from "react";
+import { useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import { createPortal } from "react-dom";
 import {
   DndContext,
@@ -529,6 +529,23 @@ export function PromptCardWorkbench<
     }
   }
 
+  const [replacement, setReplacement] = useState<L | null>(null);
+  const dialog = useRef<HTMLDialogElement>(null);
+  useEffect(() => {
+    if (replacement && !dialog.current?.open) dialog.current?.showModal();
+  }, [replacement]);
+
+  function chooseCard(lineage: L) {
+    if (equippedIds.includes(lineage.id) || equippedIds.filter(Boolean).length < slotBudget) {
+      onToggleCard(lineage.id);
+    } else if (slotBudget === 1) {
+      onDropCard(0, lineage.id);
+    } else {
+      clearPreview();
+      setReplacement(lineage);
+    }
+  }
+
   function renderHand() {
     return visibleDeck.map((lineage) => (
       <WorkbenchCard
@@ -537,7 +554,7 @@ export function PromptCardWorkbench<
         values={values}
         selected={equippedIds.includes(lineage.id)}
         suggested={suggestedId === lineage.id}
-        onToggle={() => onToggleCard(lineage.id)}
+        onToggle={() => chooseCard(lineage)}
         onPreview={element => {
           hand.setHighlight(equippedIds.includes(lineage.id) ? lineage.id : "");
           previewCard(lineage.id, element);
@@ -564,6 +581,22 @@ export function PromptCardWorkbench<
       onDragCancel={() => {setActiveDrag(null);setOverSlot(null);}}
     >
       <div className={`card-workbench card-workbench--${section}`}>
+        {replacement && portalTarget && createPortal(
+          <dialog ref={dialog} className="slot-replacement-dialog"
+            aria-labelledby={`replace-${section}-title`} onClose={() => setReplacement(null)}>
+            <h2 id={`replace-${section}-title`}>Equip {engine.getCardGrade(replacement, values).name}</h2>
+            <p>Choose a card to replace.</p>
+            {equippedIds.map((id, index) => {
+              const current = engine.getLineage(id);
+              if (!current) return null;
+              const grade = engine.getCardGrade(current, values);
+              return <button type="button" key={index} onClick={() => {
+                onDropCard(index, replacement.id);
+                dialog.current?.close();
+              }}><strong>Slot {index + 1}: {grade.name}</strong><small>{grade.instruction}</small></button>;
+            })}
+            <button type="button" onClick={() => dialog.current?.close()}>Cancel</button>
+          </dialog>, portalTarget)}
         <section className="card-slot-board" aria-label="Equipped card slots">
           <div className="workbench-section-heading">
             <strong>Loadout</strong>
@@ -644,7 +677,7 @@ export function PromptCardWorkbench<
               const card = engine.getLineage(id);
               if (!card || card.section !== section) return null;
               return <ReserveCard id={id} key={id} name={engine.getCardGrade(card,values).name}
-                selected={equippedIds.includes(id)} onEquip={() => onToggleCard(id)} onRemove={() => hand.toggleReserve(id)} />;
+                selected={equippedIds.includes(id)} onEquip={() => chooseCard(card)} onRemove={() => hand.toggleReserve(id)} />;
             })}
             <small>Drag a candidate here, or use its inspector.</small>
           </ReserveDrop>

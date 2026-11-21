@@ -7062,3 +7062,25 @@ button.role-loadout-slot {
 .framing-grid button { min-height:0; padding:0; border:1px dashed var(--border); background:var(--background); color:var(--brand-cyan-text); }
 .framing-grid [data-safe=true] { background:color-mix(in oklch,var(--brand-cyan) 22%,var(--card)); }
 .board-overview { position:absolute; top:64px; left:24px; z-index:8; display:grid; text-align:left; background:var(--card); color:var(--foreground); border:2px solid var(--brand-cyan); border-radius:12px; padding:12px 20px; transform:scale(calc(0.72 / var(--board-scale))); transform-origin:top left; }
+
+/* Keep section summaries readable when the scaled board cannot fit their labels. */
+.compact-board-overview {
+  position: absolute; inset: 12px 10px auto; z-index: 9;
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(min(116px, 100%), 1fr));
+  gap: 5px; max-height: calc(100% - 24px); overflow-y: auto;
+}
+.compact-board-overview .board-overview {
+  position: static; transform: none; padding: 6px 8px; min-width: 0;
+  border: 1px solid var(--border); border-radius: 6px; font-size: .75rem; cursor: pointer;
+}
+.compact-board-overview .board-overview:is(:hover,:focus-visible,[aria-current=true]) { border-color: var(--brand-cyan); }
+.slot-replacement-dialog {
+  margin: auto; width: min(27rem, calc(100vw - 24px)); max-height: calc(100dvh - 32px);
+  padding: 18px; background: var(--card); color: var(--foreground); border: 1px solid var(--border); border-radius: 12px;
+}
+.slot-replacement-dialog::backdrop { background: #0008; }
+.slot-replacement-dialog button {
+  display: grid; width: 100%; text-align: left; gap: 4px; padding: 8px; margin-top: 6px;
+  border: 1px solid var(--border); border-radius: 6px; cursor: pointer;
+}
+.slot-replacement-dialog button:is(:hover,:focus-visible) { border-color: var(--brand-cyan); }
