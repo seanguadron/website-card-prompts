@@ -1,3 +1,4 @@
+import { restoreSkillFields } from "@/lib/skill-fields";
 import builderData from "@/data/prompt-builder/builder.json";
 import { getRoleActionSuggestions } from "@/lib/prompt-builder-options";
 import {
@@ -236,7 +237,7 @@ export function isFieldComplete(
     return value;
   }
 
-  return Array.isArray(value) ? value.length > 0 : value.trim().length > 0;
+  return Array.isArray(value) ? value.length > 0 : typeof value === "string" && value.trim().length > 0;
 }
 
 function restoredString(value: unknown, fallback: string) {
@@ -261,6 +262,7 @@ export function restoreDraft(value: string, roles: PromptRole[]): PromptDraft {
   // arbitrary shapes into the draft. Saves that predate the use-default
   // booleans inherit them from EMPTY_DRAFT (true).
   return {
+    ...(Array.isArray(parsed.skillFields) ? { skillFields: restoreSkillFields(parsed.skillFields) } : {}),
     context: restoredString(parsed.context, EMPTY_DRAFT.context),
     roleIds: validRoleIds,
     action: restoredString(parsed.action, EMPTY_DRAFT.action),

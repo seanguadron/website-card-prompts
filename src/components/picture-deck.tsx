@@ -1,6 +1,9 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { framingDirections } from "@/lib/framing-board";
+import { HandFork } from "./hand-fork";
+import { HandWorkspace, useHandWorkspace } from "./hand-workspace";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import type { ChangeEvent } from "react";
 import { BoardArchetypeSocket } from "@/components/board-archetype-socket";
@@ -80,6 +83,7 @@ import {
   PICTURE_PANEL_INDEX,
 } from "@/lib/picture-navigation";
 import {
+  PICTURE_MERGE_ORDER,
   buildPicturePrompt,
   buildPictureSections,
   buildPictureHandSections,
@@ -96,6 +100,7 @@ import type {
 import { PHONE_MEDIA_QUERY } from "@/lib/tool-registry";
 
 export function PictureDeck() {
+  const hand = useHandWorkspace("picture", id => Boolean(pictureCardEngine.getLineage(id)));
   const [draft, setDraft] = useState<PictureDraft>(EMPTY_PICTURE_DRAFT);
   const [cardSystem, setCardSystem] = useState<PictureCardSystemState>(
     createPictureCardSystem,
@@ -188,10 +193,20 @@ export function PictureDeck() {
   });
 
   const equippedFragments = useMemo(
-    () => getEquippedFragments(cardSystem.equipped, cardSystem.tracks),
-    [cardSystem.equipped, cardSystem.tracks],
+    () => {
+      const fragments = getEquippedFragments(cardSystem.equipped, cardSystem.tracks);
+      fragments.execution.push(...framingDirections(draft.framing, draft.mjTailEnabled ? undefined : draft.aspectRatio));
+      return fragments;
+    },
+    [cardSystem.equipped, cardSystem.tracks, draft.framing, draft.mjTailEnabled, draft.aspectRatio],
   );
   const tail = useMemo(() => draftTail(draft), [draft]);
+  const captureHand = useCallback(() => ({
+    session: serializePictureSession(draft, cardSystem),
+    title: activePromptName,
+    archetype: activeArchetypeId,
+  }), [draft, cardSystem, activePromptName, activeArchetypeId]);
+
   const prompt = useMemo(
     () => buildPicturePrompt(draft.subject, equippedFragments, tail),
     [draft.subject, equippedFragments, tail],
@@ -440,7 +455,7 @@ export function PictureDeck() {
     setCardSystem(
       pictureCardEngine.sanitizeCardSystemShape({
         tracks: { ...archetype.tracks },
-        equipped: pictureCardEngine.createEquippedSlots(archetype.equipped),
+        equipped: pictureCardEngine.archetypeSlots(archetype.equipped, cardSystem.equipped, hand.locked),
         memory: pictureCardEngine.createEmptySnapMemory(),
         overrides: [],
         suggested: pictureCardEngine.createEmptySuggestedCards(),
@@ -483,6 +498,7 @@ export function PictureDeck() {
       code: archetype.code,
       name: archetype.name,
       description: archetype.description,
+      equipped: pictureCardEngine.archetypeSlots(archetype.equipped, cardSystem.equipped, hand.locked),
       details: <PictureArchetypeDetails archetype={archetype} />,
       art: pictureArchetypeArtWithFallback(archetype.id),
       custom: isCustomPictureArchetype(archetype),
@@ -742,6 +758,7 @@ export function PictureDeck() {
   };
 
   return (
+    <HandWorkspace.Provider value={hand}>
     <div className={"tool-page prompt-flow-page is-picture-flow"}>
       <PictureDeckHeader
         stepStrip={
@@ -935,6 +952,29 @@ export function PictureDeck() {
         </div>
 
         <PromptOutputDock
+          mergeOrder={PICTURE_MERGE_ORDER}
+          cards={Object.values(cardSystem.equipped).flat().flatMap(id => {
+            const card = pictureCardEngine.getLineage(id);
+            if (!card) return [];
+            const grade = pictureCardEngine.getCardGrade(card, cardSystem.tracks);
+            return [{id, section: String(card.section), name:grade.name, text:grade.instruction}];
+          })}
+          onRevealCard={(panel, controlId) => {
+            nav.navigateToPanel(panel, controlId);
+            if (phoneWidthDock) setOutputExpanded(false);
+          }}
+          fork={<HandFork deck="picture" prompt={prompt} ready={persistence.ready} capture={captureHand} restore={(saved, recordHistory) => {
+            const next = restorePictureSession(saved.session);
+            if (recordHistory) history.checkpoint();
+            cancelDictation(true);
+            setDraft(next.draft);
+            setCardSystem(next.cardSystem);
+            setActiveArchetypeId(saved.archetype);
+            setActivePromptName(saved.title);
+            setActiveProofId(null);
+            setCopyState("idle");
+            setSpeechMessage("Switched comparison hands.");
+          }} />}
           expanded={outputExpanded}
           complete={isComplete}
           missingItems={missingItems}
@@ -952,5 +992,6 @@ export function PictureDeck() {
         />
       </div>
     </div>
+    </HandWorkspace.Provider>
   );
 }

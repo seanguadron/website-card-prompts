@@ -1,3 +1,4 @@
+import { readFraming } from "@/lib/framing-board";
 import builderData from "@/data/picture-deck/builder.json";
 import { pictureCardEngine } from "@/lib/picture-card-system";
 import type { PictureTail } from "@/lib/picture-prompt";
@@ -141,6 +142,7 @@ export function restorePictureDraft(value: string): PictureDraft {
   const parsed = typeof raw === "object" && raw !== null ? raw : {};
 
   return {
+    ...(parsed.framing ? { framing: readFraming(parsed.framing).join("|") } : {}),
     subject: restoredString(parsed.subject, EMPTY_PICTURE_DRAFT.subject),
     negative: restoredString(parsed.negative, EMPTY_PICTURE_DRAFT.negative),
     mjTailEnabled: restoredBoolean(

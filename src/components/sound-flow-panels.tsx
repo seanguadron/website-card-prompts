@@ -1,5 +1,7 @@
 "use client";
 
+import { summarizeSlots } from "@/lib/hand-summary";
+import { SoundEnvelope } from "./deck-diagrams";
 import { useState } from "react";
 import type { ReactNode, RefObject } from "react";
 import { DeckBoard, type DeckBoardSpec } from "@/components/deck-board";
@@ -16,7 +18,7 @@ import type { BoardMode } from "@/lib/board-prefs";
 import { soundCardEngine } from "@/lib/sound-card-system";
 import { SOUND_PARTS } from "@/lib/sound-deck-state";
 import { SOUND_PANEL_INDEX } from "@/lib/sound-navigation";
-import { SOUND_LAYER_LIMIT } from "@/lib/sound-prompt";
+import { SOUND_LAYER_LIMIT, SOUND_SECTIONS } from "@/lib/sound-prompt";
 import type { SoundSection } from "@/lib/sound-prompt";
 import type {
   SoundCardSystemState,
@@ -342,7 +344,7 @@ export function SoundFlowPanels({
         </label>
       </>,
     ),
-    cardPanel("onset"),
+    cardPanel("onset", <SoundEnvelope onset={cardSystem.equipped.onset} emphasis={cardSystem.tracks.emphasis} />),
     cardPanel("nature"),
     cardPanel("intensity"),
     cardPanel(
@@ -422,6 +424,7 @@ export function SoundFlowPanels({
       ...SOUND_PARTS.map((part, index) => ({
         key: part.letter,
         letter: part.letter,
+        summary: summarizeSlots(cardSystem.equipped[SOUND_SECTIONS[index]], soundCardEngine.slotBudgets[SOUND_SECTIONS[index]]),
         label: part.label,
         complete: Boolean(stepComplete[index]),
       })),

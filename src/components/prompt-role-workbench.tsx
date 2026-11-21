@@ -1,5 +1,6 @@
 "use client";
 
+import { useHandTools } from "./hand-workspace";
 import { CardInspector } from "@/components/card-inspector";
 
 import { useMemo, useRef, useState } from "react";
@@ -43,6 +44,9 @@ export function PromptRoleWorkbench({
   /** Development-only card authoring. Absent in production and off-loopback. */
   artQueue?: ArtQueueApi;
 }) {
+  const hand=useHandTools();
+  const [roleOver,setRoleOver]=useState(-1);
+  const [draggingRole,setDraggingRole]=useState("");
   const [searchQuery, setSearchQuery] = useState("");
   const { preview, show: previewRoleCard, dismiss: clearRolePreview, leave, panelEvents } = useCardInspection();
   const previewRoleId = preview?.id;
@@ -116,13 +120,13 @@ export function PromptRoleWorkbench({
       event.clientX,
       event.clientY,
     );
-    setDraggingSource(source);
+    setDraggingSource(source); setDraggingRole(roleId);
   }
 
   function endRoleDrag() {
     dragPreviewCleanupRef.current?.();
     dragPreviewCleanupRef.current = null;
-    setDraggingSource(null);
+    setDraggingSource(null); setDraggingRole(""); setRoleOver(-1);
     clearRolePreview();
   }
 
@@ -157,6 +161,7 @@ export function PromptRoleWorkbench({
           .filter(Boolean)
           .join(" ")}
         type="button"
+        aria-keyshortcuts="Alt+ArrowDown"
         draggable={!queuing}
         data-motion-card
         onDragStart={(event) =>
@@ -166,12 +171,10 @@ export function PromptRoleWorkbench({
         onClick={() =>
           queuing ? artQueue!.queueOne(artKey, role.name) : onToggleRole(role)
         }
-        onMouseEnter={(event) =>
-          previewRoleCard(role.id, event.currentTarget)
-        }
-        onMouseLeave={leave}
-        onFocus={(event) => previewRoleCard(role.id, event.currentTarget)}
-        onBlur={clearRolePreview}
+        onMouseEnter={event => { hand.setHighlight(selected ? role.id : ""); previewRoleCard(role.id, event.currentTarget); }}
+        onMouseLeave={() => { hand.setHighlight(""); leave(); }}
+        onFocus={event => { hand.setHighlight(selected ? role.id : ""); previewRoleCard(role.id, event.currentTarget); }}
+        onBlur={() => { hand.setHighlight(""); leave(); }}
         aria-pressed={queuing ? undefined : selected}
         aria-label={
           queuing
@@ -223,7 +226,10 @@ export function PromptRoleWorkbench({
                     ? "role-loadout-slot is-filled"
                     : "role-loadout-slot"
                 }
+                data-proposed={hand.proposal && !hand.locked.includes(role?.id ?? "") && (hand.proposal.role?.[slotIndex] ?? "")!==(role?.id ?? "") ? "true":undefined}
+                onDragLeave={()=>setRoleOver(-1)}
                 onDragOver={(event) => {
+                  setRoleOver(slotIndex);
                   event.preventDefault();
                   event.dataTransfer.dropEffect = "move";
                 }}
@@ -248,6 +254,11 @@ export function PromptRoleWorkbench({
                 }
               >
                 <span>{slotLabel}</span>
+                {role && <button type="button" className="pin-card" aria-pressed={hand.locked.includes(role.id)} onClick={()=>hand.toggleLock(role.id)}>Pin {slotLabel}</button>}
+                {role && draggingRole && roleOver === slotIndex && draggingRole !== role.id && <div className="swap-preview" role="status">
+                  <div><b>{selectedRoleIds.includes(draggingRole) ? `To slot ${selectedRoleIds.indexOf(draggingRole) + 1}` : "Leaving"}</b>{role.ability.summary}</div>
+                  <div><b>To {slotLabel}</b>{roles.find(r => r.id === draggingRole)?.ability.summary}</div>
+                </div>}
                 {role ? (
                   <div
                     className={[
@@ -259,6 +270,8 @@ export function PromptRoleWorkbench({
                     ]
                       .filter(Boolean)
                       .join(" ")}
+                    aria-keyshortcuts="Alt+ArrowDown"
+                    id={`equipped-${role.id}`} data-equipped-card={role.id} data-highlight={hand.highlight===role.id}
                     draggable
                     data-motion-card
                     tabIndex={0}
@@ -267,13 +280,13 @@ export function PromptRoleWorkbench({
                     }
                     onDragEnd={endRoleDrag}
                     onMouseEnter={(event) =>
-                      previewRoleCard(role.id, event.currentTarget)
+                      (hand.setHighlight(role.id),previewRoleCard(role.id, event.currentTarget))
                     }
-                    onMouseLeave={leave}
+                    onMouseLeave={()=>{hand.setHighlight("");leave();}}
                     onFocus={(event) =>
-                      previewRoleCard(role.id, event.currentTarget)
+                      (hand.setHighlight(role.id),previewRoleCard(role.id, event.currentTarget))
                     }
-                    onBlur={clearRolePreview}
+                    onBlur={()=>{hand.setHighlight("");leave();}}
                     aria-label={`Move ${role.name} from ${slotLabel.toLowerCase()} slot`}
                     key={`${role.id}-${settlingSlot.index === slotIndex ? settlingSlot.token : 0}`}
                   >
@@ -319,6 +332,12 @@ export function PromptRoleWorkbench({
           </p>
         ) : null}
       </div>
+
+      <div className="reserve-row" onDragOver={e=>{if(draggingRole)e.preventDefault();}} onDrop={e=>{
+        e.preventDefault(); if(draggingRole && !hand.reserve.includes(draggingRole))hand.toggleReserve(draggingRole);endRoleDrag();
+      }}><strong>Reserve roles</strong>{roles.filter(r=>hand.reserve.includes(r.id)).map(r=><span key={r.id}>
+        <button type="button" draggable onDragStart={e => beginRoleDrag(e, r.id, `reserve-${r.id}`)} onDragEnd={endRoleDrag}
+          aria-pressed={selectedRoleIds.includes(r.id)} onClick={()=>onToggleRole(r)}>{r.name}</button><button type="button" onClick={()=>hand.toggleReserve(r.id)} aria-label={`Remove ${r.name} from reserve`}>×</button></span>)}</div>
 
       <div
         className="role-card-grid"
@@ -444,6 +463,15 @@ export function PromptRoleWorkbench({
                 <span>{roleCategoryCode(previewRole.category)} / Role</span>
                 <strong>{previewRole.name}</strong>
                 <p>{previewRole.ability.summary}</p>
+              </div>
+              <button type="button" aria-pressed={hand.reserve.includes(previewRole.id)} onClick={()=>hand.toggleReserve(previewRole.id)}>Reserve role</button>
+              <div role="group" aria-label="Seat this role">
+                {["Lead", "Support 1", "Support 2"].map((slot, index) => (
+                  <button key={slot} type="button" disabled={selectedRoles[index]?.id === previewRole.id}
+                    onClick={() => onDropRole(index, previewRole.id)}>
+                    {slot}
+                  </button>
+                ))}
               </div>
               <CardBio text={roleArt(previewRole.id)?.bio} />
               <div className="ability-guidance">

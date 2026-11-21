@@ -1,10 +1,10 @@
 # State
 
-Last rewritten 2026-11-19.
+Last rewritten 2026-11-21.
 
 ## Now
 
-The fixed archetype rail and standard-size board cards shipped to production at 9b2d4c3. Four CRAFT presets now carry the editorial pilot methods. Meeting record traces commitments, Research brief matches evidence, Decision advisor checks reversal conditions, and Revision pass preserves facts and voice. Change record is an optional Format card. The local prompt and skill exporters use the same equipped instructions. PICTURE release 9bd9340 is live at https://www.cardprompts.com/tools/picture-deck and includes Illustrated Cover and Field Plate, plus Sprite Asset alongside Retro Sprite. Studio Product keeps its neutral opening hand. Reflection control and Feature priority are optional. The local SONIC and PICTURE audit is in docs/SONIC_PICTURE_PROMPT_AUDIT.md. SONIC retains equipped ambience terms and the saved skill records ambience mode. PICTURE validates parameter ranges and keeps framing, texture and lighting grades closer to their named jobs. Nine illustrated WebP backs replace the procedural artwork on the local board. Edge loaded all three local boards and decoded each 350 by 490 back. The local checks and judgment reviews passed. Release 7200822 shipped the prompt updates and all nine backs. The owner then selected one back for every card: CRAFT pen, PICTURE prism and SONIC waveform. Alternate designs stay in public/card-backs for later use.
+Production release 24d0718 uses the pen, prism and waveform for every card in their respective decks. In the working tree the single header now contains the deck commands and Workspace menu, and the left and right rail toggles share an implementation. Hand comparison uses the existing deck session codecs to switch between editable A and B variants in the browser tab. The twelve board features are implemented locally. Pins and reserve shelves persist per deck. A/B comparisons retain both branches within their tab. PICTURE framing and CRAFT field mappings participate in exports, and SONIC sketches two onset cards. Edge checks covered all three decks, reload recovery, card interactions and layouts from 390px to 3840px. All 159 tests, lint, type checking, catalog validation, the standards/security checks and the production build passed. The owner approved publishing this revision and checking both rails on all three production decks.
 
 ## Runbook
 
@@ -19,7 +19,7 @@ The fixed archetype rail and standard-size board cards shipped to production at 
 - **The board, hands on:** drag an archetype from the left tray onto the board or click it;
   `]` / `[` next and previous board, `0` fit, `-` / `=` zoom, wheel zooms to the cursor, left-drag pans across board backgrounds, Space+drag or the middle button pans from
   anywhere, arrows pan when the pasteboard itself is focused; Fit and All in
-  the bottom-left bar; the Board/Flow switch in the nav dock. Board world
+  the Workspace menu; the Board/Flow switch in the nav dock. Board world
   constants (`BOARD_WIDTH` 1280, `BOARD_GAP` 200, scale 0.08–2) live in
   `src/lib/board-layout.ts`.
 - **Verifying the board in the Browser pane:** the pane scales a 1440×900
@@ -90,7 +90,7 @@ gates in `.claude/agents/` + deterministic halves in `scripts/check-*.mjs`
 
 ## Backlog / in flight
 
-- The owner authorized publishing the release on main. The production build passed, and the local browser downloaded each deck's skill and matched it to its preview. The release includes the September split and board. The setup hand uses native keyboard button activation and pointer dragging. The shared archetype tray can collapse independently of Output. Drag individual cards from the section hand to its slots. Hover or focus to inspect a card. On narrow screens it becomes a horizontal strip. Browser verification covered all three decks at 3840 by 2160, gray-surface panning, wheel zoom and drops from the tray while viewing a section.
+- The owner authorized publishing the release on main. The production build passed, and the local browser downloaded each deck's skill and matched it to its preview. The release includes the September split and board. The setup hand uses native keyboard button activation and pointer dragging. The shared archetype tray can collapse independently of Output. Drag individual cards from the section hand to its slots. Hover or focus to inspect a card. On narrow screens the Archetypes and Output rails provide mirrored, collapsible edge controls. Browser verification covered all three decks at 3840 by 2160, gray-surface panning, wheel zoom and drops from the tray while viewing a section.
 - The board still owes a manual screen-reader pass. SONIC lacks an illustrated art pack and its original deck-wide design paperwork.
 - Board revision published after the cleanup. The table uses 152px-wide 5:7 faces, larger sockets and three backs per deck. The editorial comparison is an in-chat reading. Audio and image output quality remain untested. Only card backs were rendered.
 - Review findings and deck-by-deck product recommendations are in docs/DECK_REVIEW.md.

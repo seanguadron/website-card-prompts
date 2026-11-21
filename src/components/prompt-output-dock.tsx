@@ -1,5 +1,7 @@
 "use client";
 
+import { TracedPrompt } from "./hand-workspace";
+import { RailToggle } from "./rail-toggle";
 import { useState } from "react";
 
 import { buildDeckSkill, skillFolder, type SkillDeck } from "@/lib/deck-skill";
@@ -22,6 +24,10 @@ export type MissingPromptItem = {
 };
 
 export function PromptOutputDock({
+  mergeOrder, cards,
+  fork,
+  fieldEditor,
+  onRevealCard,
   expanded,
   complete,
   missingItems,
@@ -37,6 +43,11 @@ export function PromptOutputDock({
   onDownload,
   onPrint,
 }: {
+  mergeOrder?: readonly string[];
+  cards: { id: string; section:string; text: string; name: string }[];
+  fork: React.ReactNode;
+  onRevealCard: (panel: number, controlId: string) => void;
+  fieldEditor?: React.ReactNode;
   expanded: boolean;
   complete: boolean;
   missingItems: MissingPromptItem[];
@@ -83,18 +94,8 @@ export function PromptOutputDock({
       aria-labelledby="preview-title"
       data-component="Panel:PromptPreview"
     >
-        <button
-          className="output-dock-toggle"
-          type="button"
-          onClick={onToggle}
-          aria-expanded={expanded}
-          aria-controls="prompt-output-content"
-          aria-label={expanded ? "Collapse live output" : "Expand live output"}
-        >
-          <span aria-hidden="true">{expanded ? ">" : "<"}</span>
-          <strong>Output</strong>
-          <small>{ready ? "Ready" : view === "skill" ? "Hand" : missingItems.length}</small>
-        </button>
+        <RailToggle side="right" title="Output" expanded={expanded} controls="prompt-output-content"
+          count={ready ? "Ready" : view === "skill" ? "Hand" : missingItems.length} onToggle={onToggle} />
 
         <div
           className="output-dock-content"
@@ -159,8 +160,10 @@ export function PromptOutputDock({
           {view === "prompt" ? (
           <>
           <pre aria-live="polite">
-            <code>{prompt}</code>
+            <code><TracedPrompt prompt={prompt} cards={cards} sections={sections} mergeOrder={mergeOrder} onRevealCard={onRevealCard} /></code>
           </pre>
+
+          {fieldEditor}
 
           <dl className="prompt-stats" aria-label="Prompt statistics">
             <div>
@@ -264,6 +267,7 @@ export function PromptOutputDock({
           ) : null}
           </>
           ) : null}
+          <div hidden={view !== "prompt"}>{fork}</div>
         </div>
     </aside>
   );

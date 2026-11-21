@@ -183,6 +183,29 @@ export function useBoardCamera({
 
   // Follow the active board. Skipped on mount (the layout effect framed it).
   const followedRef = useRef<number | null>(null);
+  // Open a section from its overview at a readable scale, even when fitting
+  // the whole board would keep the camera in the overview tier.
+  const inspectBoard = useCallback((index: number) => {
+    const rect = boardRect(index);
+    const viewport = viewportSize();
+    if (!rect || !viewport.width || !viewport.height) return;
+
+    followedRef.current = index;
+    onActivate(index);
+    const fit = fitRect(rect, viewport, BOARD_FIT_PADDING);
+    if (zoomTier(fit.scale) === "near") {
+      moveTo(fit, true);
+    } else {
+      const scale = 0.8;
+      moveTo({
+        scale,
+        tx: BOARD_FIT_PADDING - rect.x * scale,
+        ty: BOARD_FIT_PADDING - rect.y * scale,
+      }, true);
+    }
+    boardRefs.current[index]?.focus({ preventScroll: true });
+  }, [boardRect, moveTo, onActivate, viewportSize]);
+
   useEffect(() => {
     if (followedRef.current === null) {
       followedRef.current = activeIndex;
@@ -388,6 +411,7 @@ export function useBoardCamera({
     ready,
     frameBoard,
     frameAll,
+    inspectBoard,
     zoomBy,
     handlers: {
       onPointerDown,

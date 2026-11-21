@@ -9,7 +9,7 @@
   },
   "slotBudgets": {
     "source": 2,
-    "onset": 1,
+    "onset": 2,
     "nature": 2,
     "intensity": 1,
     "context": 2

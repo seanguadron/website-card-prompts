@@ -2,6 +2,7 @@
 
 import type { ReactNode } from "react";
 import { createPortal } from "react-dom";
+import { useMediaQuery } from "@/hooks/use-media-query";
 import { usePortalTarget } from "@/hooks/use-portal-target";
 import {
   formatSaveStatusLabel,
@@ -9,15 +10,8 @@ import {
   type SaveStatus,
 } from "@/lib/save-status";
 
-// The shell handshake (docs/ARCHITECTURE.md §2): a portal into
-// #app-subbar-slot. The root must be `.prompt-subbar` with no wrapper element
-// — the slot is `display: contents` and the shell hides its default text via
-// `.context-bar:has(.prompt-subbar)`.
-//
-// The slot is resolved by usePortalTarget, never read from the DOM during
-// render — see that hook for why a render-time read cost these routes their
-// theme. The portal still lands before paint, so the bar never blanks (the
-// concern that originally argued against deferring it).
+// Compact windows move the same controls into Workspace. Both portal targets
+// live in the top header, keeping tool state intact when the menu closes.
 export function ToolSubbar({
   className,
   children,
@@ -25,7 +19,8 @@ export function ToolSubbar({
   className?: string;
   children: ReactNode;
 }) {
-  const target = usePortalTarget("app-subbar-slot");
+  const compact = useMediaQuery("(max-width: 1250px)");
+  const target = usePortalTarget(compact ? "compact-tool-header" : "app-subbar-slot");
 
   if (!target) {
     return null;

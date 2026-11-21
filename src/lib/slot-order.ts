@@ -8,11 +8,10 @@ export function insertIntoSlots(
     { length: slotCount },
     (_, index) => slots[index] ?? "",
   );
-  const nextSlots = normalizedSlots.filter(
-    (currentItemId) => currentItemId !== itemId,
-  );
-  const boundedIndex = Math.max(0, Math.min(targetIndex, slotCount - 1));
-
-  nextSlots.splice(boundedIndex, 0, itemId);
-  return nextSlots.slice(0, slotCount);
+  if (slotCount === 0 || !itemId) return normalizedSlots;
+  const target = Math.max(0, Math.min(targetIndex, slotCount - 1));
+  const source = normalizedSlots.indexOf(itemId);
+  if (source !== -1) normalizedSlots[source] = normalizedSlots[target];
+  normalizedSlots[target] = itemId;
+  return normalizedSlots;
 }

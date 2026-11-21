@@ -233,7 +233,7 @@ test("toggle and place clear the section's suggestion", () => {
   assert.equal(state.suggested.beta, null);
 });
 
-test("placing into a slot shift-inserts and dedupes the moved card", () => {
+test("placing an equipped card exchanges it with the target", () => {
   const engine = makeEngine();
   let state = engine.createCardSystem();
   state = {
@@ -242,7 +242,7 @@ test("placing into a slot shift-inserts and dedupes the moved card", () => {
   };
 
   state = engine.placeEquippedCard(state, "beta", 0, "b3");
-  assert.deepEqual(state.equipped.beta, ["b3", "b1", "b2"]);
+  assert.deepEqual(state.equipped.beta, ["b3", "b2", "b1"]);
 });
 
 test("remove leaves a hole; clear empties the section", () => {
@@ -440,4 +440,15 @@ test("createCardSystem copies default tracks instead of sharing them", () => {
   const state = engine.createCardSystem();
   state.tracks.power = 9;
   assert.equal(engine.createCardSystem().tracks.power, 1);
+});
+
+test("a pinned second slot survives an archetype deal, preview and restore", () => {
+  const engine = makeEngine();
+  const oldSlots = engine.createEquippedSlots({ beta: ["", "b2"] });
+  const planned = engine.archetypeSlots({ beta: ["ghost", "b3", "b1", "b3"] }, oldSlots, ["b2"]);
+  assert.deepEqual(planned.beta, ["b3", "b2", "b1"]);
+  const mostlyEmpty = engine.archetypeSlots({}, oldSlots, ["b2"]);
+  assert.deepEqual(mostlyEmpty.beta, ["", "b2", ""]);
+  const restored = engine.sanitizeCardSystemShape({ equipped: mostlyEmpty, tracks: {}, overrides: [] });
+  assert.deepEqual(restored.equipped.beta, mostlyEmpty.beta);
 });

@@ -1,6 +1,8 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { HandFork } from "./hand-fork";
+import { HandWorkspace, useHandWorkspace } from "./hand-workspace";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import type { ChangeEvent } from "react";
 import { BoardArchetypeSocket } from "@/components/board-archetype-socket";
@@ -77,6 +79,7 @@ import {
   SOUND_PANEL_INDEX,
 } from "@/lib/sound-navigation";
 import {
+  SOUND_MERGE_ORDER, AMBIENCE_MERGE_ORDER,
   buildSoundPrompt,
   buildSoundSections,
   buildSoundSkillChoices,
@@ -93,6 +96,7 @@ import type {
 import { PHONE_MEDIA_QUERY } from "@/lib/tool-registry";
 
 export function SoundDeck() {
+  const hand = useHandWorkspace("sonic", id => Boolean(soundCardEngine.getLineage(id)));
   const [draft, setDraft] = useState<SoundDraft>(EMPTY_SOUND_DRAFT);
   const [cardSystem, setCardSystem] = useState<SoundCardSystemState>(
     createSoundCardSystem,
@@ -187,6 +191,12 @@ export function SoundDeck() {
     () => getEquippedTerms(cardSystem.equipped, cardSystem.tracks),
     [cardSystem.equipped, cardSystem.tracks],
   );
+  const captureHand = useCallback(() => ({
+    session: serializeSoundSession(draft, cardSystem),
+    title: activePromptName,
+    archetype: activeArchetypeId,
+  }), [draft, cardSystem, activePromptName, activeArchetypeId]);
+
   const prompt = useMemo(
     () => buildSoundPrompt(draft.subject, equippedTerms, draft.ambience),
     [draft.subject, equippedTerms, draft.ambience],
@@ -426,7 +436,7 @@ export function SoundDeck() {
     setCardSystem(
       soundCardEngine.sanitizeCardSystemShape({
         tracks: { ...archetype.tracks },
-        equipped: soundCardEngine.createEquippedSlots(archetype.equipped),
+        equipped: soundCardEngine.archetypeSlots(archetype.equipped, cardSystem.equipped, hand.locked),
         memory: soundCardEngine.createEmptySnapMemory(),
         overrides: [],
         suggested: soundCardEngine.createEmptySuggestedCards(),
@@ -468,6 +478,7 @@ export function SoundDeck() {
       code: archetype.code,
       name: archetype.name,
       description: archetype.description,
+      equipped: soundCardEngine.archetypeSlots(archetype.equipped, cardSystem.equipped, hand.locked),
       details: <SoundArchetypeDetails archetype={archetype} />,
       custom: isCustomSoundArchetype(archetype),
     }),
@@ -733,6 +744,7 @@ export function SoundDeck() {
   };
 
   return (
+    <HandWorkspace.Provider value={hand}>
     <div className={"tool-page prompt-flow-page is-sound-flow"}>
       <SoundDeckHeader
         stepStrip={
@@ -928,6 +940,29 @@ export function SoundDeck() {
         </div>
 
         <PromptOutputDock
+          mergeOrder={draft.ambience ? AMBIENCE_MERGE_ORDER : SOUND_MERGE_ORDER}
+          cards={Object.values(cardSystem.equipped).flat().flatMap(id => {
+            const card = soundCardEngine.getLineage(id);
+            if (!card) return [];
+            const grade = soundCardEngine.getCardGrade(card, cardSystem.tracks);
+            return [{id, section: String(card.section), name:grade.name, text:grade.instruction}];
+          })}
+          onRevealCard={(panel, controlId) => {
+            nav.navigateToPanel(panel, controlId);
+            if (phoneWidthDock) setOutputExpanded(false);
+          }}
+          fork={<HandFork deck="sound" prompt={prompt} ready={persistence.ready} capture={captureHand} restore={(saved, recordHistory) => {
+            const next = restoreSoundSession(saved.session);
+            if (recordHistory) history.checkpoint();
+            cancelDictation(true);
+            setDraft(next.draft);
+            setCardSystem(next.cardSystem);
+            setActiveArchetypeId(saved.archetype);
+            setActivePromptName(saved.title);
+            setActiveProofId(null);
+            setCopyState("idle");
+            setSpeechMessage("Switched comparison hands.");
+          }} />}
           expanded={outputExpanded}
           complete={isComplete}
           missingItems={missingItems}
@@ -945,5 +980,6 @@ export function SoundDeck() {
         />
       </div>
     </div>
+    </HandWorkspace.Provider>
   );
 }

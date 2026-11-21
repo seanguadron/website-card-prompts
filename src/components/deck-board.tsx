@@ -10,6 +10,9 @@ import {
   type FocusEvent,
   type ReactNode,
 } from "react";
+import { useMediaQuery } from "@/hooks/use-media-query";
+import { PHONE_MEDIA_QUERY } from "@/lib/tool-registry";
+import { RailToggle } from "./rail-toggle";
 import { createPortal } from "react-dom";
 import { usePortalTarget } from "@/hooks/use-portal-target";
 import { useBoardCamera } from "@/hooks/use-board-camera";
@@ -23,14 +26,14 @@ export type DeckBoardSpec = {
   letter: string;
   label: string;
   complete: boolean;
+  summary?: string;
 };
 
 /**
  * The deck board: a pasteboard with a camera over a row of boards, one per
  * child. It is a CONTAINER for the same panels the flow renders - the deck
  * hands it the panel contents in order and says which board is active; the
- * camera follows. Pips, zoom, Fit, and All live in the screen-space bar at
- * the bottom-left. Keyboard: [ and ] move between boards, 0 fits the active
+ * camera follows. The header's Workspace menu holds camera controls. Keyboard: [ and ] move between boards, 0 fits the active
  * one, - and = zoom, arrows pan when the pasteboard itself is focused, and
  * Space + drag pans from anywhere. Focus moving into another board frames
  * it, so tabbing never leaves the user looking at the wrong board.
@@ -53,8 +56,11 @@ export function DeckBoard({
   ariaLabel: string;
   children: ReactNode;
 }) {
+  const cameraTools = usePortalTarget("workspace-camera-tools");
   const tray = usePortalTarget("board-archetype-tray");
-  const [collapsed, setCollapsed] = useState(false);
+  const phoneWidth = useMediaQuery(PHONE_MEDIA_QUERY);
+  const [collapsedChoice, setCollapsed] = useState<boolean|null>(null);
+  const collapsed = collapsedChoice ?? phoneWidth;
   const [handTarget, setHandTarget] = useState<HTMLDivElement | null>(null);
   const nodes = Children.toArray(children);
   const viewportRef = useRef<HTMLDivElement | null>(null);
@@ -94,6 +100,7 @@ export function DeckBoard({
   } as CSSProperties;
 
   function followFocus(event: FocusEvent<HTMLDivElement>) {
+    if ((event.target as HTMLElement).closest(".board-overview")) return;
     const surface = (event.target as HTMLElement).closest<HTMLElement>(
       "[data-board-index]",
     );
@@ -125,13 +132,8 @@ export function DeckBoard({
       {...camera.handlers}
     >
       {tray && createPortal(<>
-        <button type="button" className="tray-toggle" aria-expanded={!collapsed}
-          aria-controls="board-card-library" aria-label={collapsed ? "Expand archetypes" : "Collapse archetypes"}
-          onClick={() => setCollapsed(!collapsed)}>
-          <span aria-hidden="true">{collapsed ? "›" : "‹"}</span>
-          <strong>Archetypes</strong>
-        </button>
-        <div id="board-card-library" hidden={collapsed}>
+        <RailToggle side="left" title="Archetypes" expanded={!collapsed} controls="board-card-library" onToggle={() => setCollapsed(!collapsed)} />
+        <div id="board-card-library" inert={collapsed} aria-hidden={collapsed} hidden={collapsed}>
           <div className="tray-hand" ref={setHandTarget} />
         </div>
       </>, tray)}
@@ -167,7 +169,17 @@ export function DeckBoard({
                 <span>{board.label}</span>
                 {board.complete ? <i>Complete</i> : null}
               </header>
-              <BoardTrayTarget.Provider value={!collapsed && index === 0 ? handTarget : null}>
+              {camera.tier === "far" && (
+                <button
+                  type="button"
+                  className="board-overview"
+                  onClick={() => camera.inspectBoard(index)}
+                >
+                  <b>{board.label}</b>
+                  <span>{board.summary ?? "Choose an archetype"}</span>
+                </button>
+              )}
+              <BoardTrayTarget.Provider value={index === 0 ? handTarget : null}>
                 {nodes[index] ?? null}
               </BoardTrayTarget.Provider>
             </section>
@@ -175,7 +187,7 @@ export function DeckBoard({
         })}
       </div>
 
-      <div className="deck-board-bar" role="toolbar" aria-label="Board navigation">
+      {cameraTools && createPortal(<div className="workspace-camera" role="toolbar" aria-label="Board navigation">
         <div className="deck-board-pips" role="group" aria-label="Boards">
           {boards.map((board, index) => (
             <button
@@ -228,7 +240,7 @@ export function DeckBoard({
             All
           </button>
         </div>
-      </div>
+      </div>, cameraTools)}
     </div>
   );
 }

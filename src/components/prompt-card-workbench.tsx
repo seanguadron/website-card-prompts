@@ -1,5 +1,6 @@
 "use client";
 
+import { useHandTools } from "./hand-workspace";
 import { CardInspector } from "@/components/card-inspector";
 
 import { useMemo, useState, type ReactNode } from "react";
@@ -194,6 +195,7 @@ function WorkbenchCard<
         .join(" ")}
       type="button"
       data-motion-card
+      aria-keyshortcuts="Alt+ArrowDown"
       onClick={queuing ? () => artQueue!.queueOne(artKey, grade.name) : onToggle}
       onMouseEnter={(event) => onPreview(event.currentTarget)}
       onMouseLeave={onClearPreview}
@@ -244,6 +246,7 @@ function SlotCard<
   onPreview: (element: HTMLElement) => void;
   onClearPreview: () => void;
 }) {
+  const hand=useHandTools();
   const grade = engine.getCardGrade(lineage, values);
   const { attributes, listeners, setNodeRef, isDragging } = useDraggable({
     id: `slot:${slotIndex}`,
@@ -256,6 +259,8 @@ function SlotCard<
 
   return (
     <div
+      aria-keyshortcuts="Alt+ArrowDown"
+      id={`equipped-${lineage.id}`} data-equipped-card={lineage.id} data-highlight={hand.highlight===lineage.id}
       ref={setNodeRef}
       className={[
         "lineage-card slot-card is-selected",
@@ -283,7 +288,7 @@ function CardSlot<
   L extends CardLineageOf<S, T>,
 >({
   engine,
-  slotIndex,
+  section, slotIndex,
   lineage,
   values,
   settling,
@@ -292,6 +297,7 @@ function CardSlot<
   onClearPreview,
 }: {
   engine: CardEngine<S, T, L>;
+  section: S;
   slotIndex: number;
   lineage: L | null;
   values: TrackValuesOf<T>;
@@ -300,6 +306,9 @@ function CardSlot<
   onPreview: (element: HTMLElement) => void;
   onClearPreview: () => void;
 }) {
+  const hand = useHandTools();
+  const proposed = hand.proposal?.[lineage?.section ?? section]?.[slotIndex] ?? "";
+  const willChange = hand.proposal && !hand.locked.includes(lineage?.id ?? "") && proposed !== (lineage?.id ?? "");
   const { setNodeRef, isOver } = useDroppable({
     id: `dropslot:${slotIndex}`,
     data: { slotIndex, kind: "slot" },
@@ -316,6 +325,7 @@ function CardSlot<
       ]
         .filter(Boolean)
         .join(" ")}
+      data-proposed={willChange ? "true" : undefined}
       role="group"
       aria-label={
         lineage && grade
@@ -324,6 +334,9 @@ function CardSlot<
       }
     >
       <span>Slot {slotIndex + 1}</span>
+      {lineage && <button type="button" className="pin-card" aria-label={`Lock ${grade?.name} during archetype deals`}
+        aria-pressed={hand.locked.includes(lineage.id)} onClick={()=>hand.toggleLock(lineage.id)}>
+        {hand.locked.includes(lineage.id) ? "Pinned" : "Pin"}</button>}
       {lineage && grade ? (
         <>
           <SlotCard
@@ -380,6 +393,24 @@ function DeckDropZone({
   );
 }
 
+function ReserveCard({id, name, selected, onEquip, onRemove}: {
+  id: string; name: string; selected: boolean; onEquip: () => void; onRemove: () => void;
+}) {
+  const {attributes, listeners, setNodeRef} = useDraggable({
+    id: `reserve:${id}`, data: {lineageId:id, kind:"card"} satisfies ActiveDrag,
+  });
+  return <span>
+    <button type="button" ref={setNodeRef} {...attributes} {...listeners} aria-pressed={selected}
+      onClick={onEquip} title="Equip or drag to a slot">{name}</button>
+    <button type="button" aria-label={`Remove ${name} from reserve`} onClick={onRemove}>×</button>
+  </span>;
+}
+
+function ReserveDrop({children}: {children: ReactNode}) {
+  const {setNodeRef,isOver}=useDroppable({id:"reserve", data:{kind:"reserve"}});
+  return <div ref={setNodeRef} className="reserve-row" data-over={isOver}><strong>Reserve</strong>{children}</div>;
+}
+
 export function PromptCardWorkbench<
   S extends string,
   T extends string,
@@ -412,6 +443,8 @@ export function PromptCardWorkbench<
   /** Development-only card authoring. The PICTURE deck passes none. */
   artQueue?: ArtQueueApi;
 }) {
+  const hand = useHandTools();
+  const [overSlot,setOverSlot]=useState<number|null>(null);
   const deck = useMemo(
     () => engine.getSectionDeck(section, values),
     [engine, section, values],
@@ -463,12 +496,14 @@ export function PromptCardWorkbench<
     if (data) {
       setActiveDrag(data);
     }
+    hand.setHighlight("");
     clearPreview();
   }
 
   function handleDragEnd(event: DragEndEvent) {
     const data = event.active.data.current as ActiveDrag | undefined;
     setActiveDrag(null);
+    setOverSlot(null);
     const overData = event.over?.data.current as
       | { kind?: string; slotIndex?: number }
       | undefined;
@@ -477,6 +512,10 @@ export function PromptCardWorkbench<
       return;
     }
 
+    if (overData.kind === "reserve") {
+      if (!hand.reserve.includes(data.lineageId)) hand.toggleReserve(data.lineageId);
+      return;
+    }
     if (overData.kind === "slot" && typeof overData.slotIndex === "number") {
       onDropCard(overData.slotIndex, data.lineageId);
       setSettlingSlot((current) => ({
@@ -499,8 +538,11 @@ export function PromptCardWorkbench<
         selected={equippedIds.includes(lineage.id)}
         suggested={suggestedId === lineage.id}
         onToggle={() => onToggleCard(lineage.id)}
-        onPreview={(element) => previewCard(lineage.id, element)}
-        onClearPreview={leave}
+        onPreview={element => {
+          hand.setHighlight(equippedIds.includes(lineage.id) ? lineage.id : "");
+          previewCard(lineage.id, element);
+        }}
+        onClearPreview={() => { hand.setHighlight(""); leave(); }}
         artQueue={artQueue}
         key={lineage.id}
       />
@@ -511,10 +553,15 @@ export function PromptCardWorkbench<
     <DndContext
       id={`workbench-${section}`}
       sensors={sensors}
-      collisionDetection={(args) => args.pointerCoordinates ? pointerWithin(args) : rectIntersection(args)}
+      collisionDetection={args => {
+        const hits = args.pointerCoordinates ? pointerWithin(args) : rectIntersection(args);
+        const reserve = hits.find(hit => hit.id === "reserve");
+        return reserve ? [reserve] : hits;
+      }}
       onDragStart={handleDragStart}
+      onDragOver={({over})=>setOverSlot(over?.data.current?.kind==="slot" ? Number(over.data.current.slotIndex) : null)}
       onDragEnd={handleDragEnd}
-      onDragCancel={() => setActiveDrag(null)}
+      onDragCancel={() => {setActiveDrag(null);setOverSlot(null);}}
     >
       <div className={`card-workbench card-workbench--${section}`}>
         <section className="card-slot-board" aria-label="Equipped card slots">
@@ -532,15 +579,17 @@ export function PromptCardWorkbench<
             {Array.from({ length: slotBudget }, (_, slotIndex) => (
               <CardSlot
                 engine={engine}
-                slotIndex={slotIndex}
+                section={section} slotIndex={slotIndex}
                 lineage={engine.getLineage(equippedIds[slotIndex] ?? "") ?? null}
                 values={values}
                 settling={settlingSlot.index === slotIndex}
                 onRemove={onRemoveCard}
-                onPreview={(element) =>
-                  previewCard(equippedIds[slotIndex] ?? "", element)
-                }
-                onClearPreview={leave}
+                onPreview={element => {
+                  const id = equippedIds[slotIndex] ?? "";
+                  hand.setHighlight(id);
+                  previewCard(id, element);
+                }}
+                onClearPreview={()=>{hand.setHighlight("");leave();}}
                 key={`${slotIndex}-${equippedIds[slotIndex] ?? "empty"}-${
                   settlingSlot.index === slotIndex ? settlingSlot.token : 0
                 }`}
@@ -557,6 +606,12 @@ export function PromptCardWorkbench<
           </button>
         </section>
 
+        {activeDrag && overSlot !== null && dragLineage && (() => {
+          const outgoing=engine.getLineage(equippedIds[overSlot] ?? "");
+          if (!outgoing || outgoing.id===dragLineage.id) return null;
+          return <div className="swap-preview" role="status"><div><b>{equippedIds.includes(activeDrag.lineageId) ? `To slot ${equippedIds.indexOf(activeDrag.lineageId)+1}` : "Leaving"}</b>{engine.getCardGrade(outgoing,values).instruction}</div>
+            <div><b>To slot {overSlot+1}</b>{engine.getCardGrade(dragLineage,values).instruction}</div></div>;
+        })()}
         <DeckDropZone active={activeDrag?.kind === "slot"}>
           <div className="workbench-section-heading">
             <strong>Cards</strong>
@@ -584,6 +639,15 @@ export function PromptCardWorkbench<
             />
             <small>{visibleDeck.length} shown</small>
           </label>
+          <ReserveDrop>
+            {hand.reserve.map(id => {
+              const card = engine.getLineage(id);
+              if (!card || card.section !== section) return null;
+              return <ReserveCard id={id} key={id} name={engine.getCardGrade(card,values).name}
+                selected={equippedIds.includes(id)} onEquip={() => onToggleCard(id)} onRemove={() => hand.toggleReserve(id)} />;
+            })}
+            <small>Drag a candidate here, or use its inspector.</small>
+          </ReserveDrop>
         </DeckDropZone>
 
         <section className="tuning-console" aria-label="Tuning tracks">
@@ -623,6 +687,11 @@ export function PromptCardWorkbench<
                   <strong>{previewGrade.name}</strong>
                   <p>{previewGrade.description}</p>
                 </div>
+                <button type="button" aria-pressed={hand.reserve.includes(previewLineage.id)} onClick={()=>hand.toggleReserve(previewLineage.id)}>
+                  {hand.reserve.includes(previewLineage.id) ? "Remove from reserve" : "Place in reserve"}</button>
+                <details className="grade-inspection"><summary>Compare all grades</summary>
+                  {previewLineage.grades.map((grade,i)=><p key={i}><b>{grade.name}</b><br/>{grade.instruction}</p>)}
+                </details>
                 <CardBio text={engine.getCardBio(previewLineage)} />
                 <div className="ability-guidance">
                   <span>What this adds</span>

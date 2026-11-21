@@ -122,13 +122,32 @@ function insertIntoSlots(
     { length: slotCount },
     (_, index) => slots[index] ?? "",
   );
-  const nextSlots = normalizedSlots.filter(
-    (currentItemId) => currentItemId !== itemId,
-  );
-  const boundedIndex = Math.max(0, Math.min(targetIndex, slotCount - 1));
+  if (slotCount === 0 || !itemId) return normalizedSlots;
+  const target = Math.max(0, Math.min(targetIndex, slotCount - 1));
+  const source = normalizedSlots.indexOf(itemId);
+  if (source !== -1) normalizedSlots[source] = normalizedSlots[target];
+  normalizedSlots[target] = itemId;
+  return normalizedSlots;
+}
 
-  nextSlots.splice(boundedIndex, 0, itemId);
-  return nextSlots.slice(0, slotCount);
+/** Seat a preset around the occupied slots the player has pinned. */
+export function preserveLocked<S extends string>(
+  incoming: Record<S, string[]>,
+  current: Record<S, string[]>,
+  locked: readonly string[],
+): Record<S, string[]> {
+  const result = { ...incoming };
+  for (const section of Object.keys(incoming) as S[]) {
+    const candidates = incoming[section];
+    const pinned = candidates.map((_, i) => {
+      const id = current[section]?.[i];
+      return id && locked.includes(id) ? id : "";
+    });
+    if (!pinned.some(Boolean)) continue;
+    const remaining = candidates.filter(id => id && !pinned.includes(id));
+    result[section] = pinned.map(id => id || remaining.shift() || "");
+  }
+  return result;
 }
 
 export function createCardEngine<
@@ -235,6 +254,25 @@ export function createCardEngine<
     return instructions;
   }
 
+  function validSlotIds(section: S, ids: readonly string[]) {
+    return ids.filter((id, index) =>
+      id === "" || (getLineage(id)?.section === section && ids.indexOf(id) === index),
+    ).slice(0, slotBudgets[section]);
+  }
+
+  function archetypeSlots(
+    incoming: Partial<Record<S, readonly string[]>>,
+    current: Record<S, string[]>,
+    locked: readonly string[],
+  ) {
+    const clean = createEquippedSlots();
+    for (const section of sections) {
+      const ids = incoming?.[section];
+      if (Array.isArray(ids)) clean[section] = validSlotIds(section, ids);
+    }
+    return preserveLocked(createEquippedSlots(clean), current, locked);
+  }
+
   // Drops anything a stored card-system state may carry that the current
   // catalog no longer recognizes: unknown or wrong-section card ids,
   // over-budget slots, removed tracks, and out-of-range track values. Old
@@ -261,12 +299,7 @@ export function createCardEngine<
     for (const section of sections) {
       const candidate = state?.equipped?.[section];
       const ids = Array.isArray(candidate) ? candidate : [];
-      equipped[section] = ids
-        .filter(
-          (id, index) =>
-            getLineage(id)?.section === section && ids.indexOf(id) === index,
-        )
-        .slice(0, slotBudgets[section]);
+      equipped[section] = validSlotIds(section, ids);
     }
 
     const overrideList = state?.overrides;
@@ -537,6 +570,7 @@ export function createCardEngine<
     getCardBio,
     getLineage,
     getEquippedInstructions,
+    archetypeSlots,
     sanitizeCardSystemShape,
     createEmptyEquippedCards,
     createEmptySnapMemory,

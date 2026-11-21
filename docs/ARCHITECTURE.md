@@ -1,6 +1,6 @@
 <!-- gov:node id=architecture kind=doc title="ARCHITECTURE.md (the app framework contract)" reads=docs/DESIGN_DIRECTION.md -->
 
-# Architecture — the DigiTools core framework
+# Card Prompts architecture
 
 What the app IS, structurally: the shared shell every tool lives in, the
 contract a tool signs to join it, and the primitives it recycles instead of
@@ -28,7 +28,7 @@ The registry drives the shell tabs. The root route redirects to the registered C
 ### Two containers, one deck
 
 Since 2026-09-05 (`docs/adr/0004-board-is-a-second-container.md`) every deck
-renders the same panels in one of two containers, chosen from the nav dock
+renders the same panels in one of two containers, chosen from the Workspace menu
 and remembered per browser (`src/lib/board-prefs.ts`): the **flow**
 (`.flow-viewport` + `.flow-track`, one panel at a time) or the **board**
 (`src/components/deck-board.tsx`), the default. The board is a pasteboard
@@ -43,7 +43,7 @@ zone `/* ===== Deck Board ===== */` restyles the panel internals on the board
 (sockets and tuning on top, the hand fanned below); the visual grammar is
 `docs/DESIGN_DIRECTION.md` → The board.
 
-The collapsible left rail lives outside the camera transform. DeckBoard supplies its screen-space host through BoardTrayTarget to the selected section. Setup archetypes apply a preset when dropped on the canvas. Section cards and CRAFT roles use their workbench drag handlers to equip a particular slot. Clicking a card also equips it. Board and Flow render the same archetype inspection content. Wheel zoom follows the pointer. Primary dragging on a non-interactive surface pans.
+The collapsible left rail lives outside the camera transform. DeckBoard supplies its screen-space host through BoardTrayTarget to the Setup archetype hand. Setup archetypes apply a preset when dropped on the canvas. Section cards and CRAFT roles use their workbench drag handlers to equip a particular slot. Clicking a card also equips it. Board and Flow render the same archetype inspection content. Wheel zoom follows the pointer. Primary dragging on a non-interactive surface pans.
 
 Three rules come with it. **The camera is the only thing that moves the
 pasteboard**: it is `overflow: clip`, so a focus or a `scrollIntoView` inside
@@ -175,29 +175,7 @@ of the active one. The choice persists in localStorage
 guard — an unknown or tampered value degrades to the default pack
 (`PACKS[0]`, sci-fi) rather than throwing.
 
-The nav dock (`src/components/flow-nav-dock.tsx`) and the subbar's step strip
-(`src/components/flow-step-strip.tsx`) are shared by both decks — recycle
-them rather than reinventing per-deck navigation chrome. The dock is a
-**movable little window**, not fixed furniture: a grab handle drags it
-(clamped to the workspace), and on release it snaps to whichever quadrant of
-`.flow-workspace` its centre landed in (a FLIP settle keeps the motion
-continuous). Arrow keys move it corner to corner. The chosen corner persists
-per browser (`digitools.flow-dock-corner-v1`) behind the `isDockCorner`
-guard, with the same deferred restore as the art pack — a tampered value
-degrades to the bottom-right default.
-
-**The dock publishes its corner** as `data-dock-corner` on its `offsetParent`
-(`.flow-workspace`), which is how the rest of the workspace reacts without
-either deck root wiring anything: `.flow-panel` reserves its dock clearance on
-the side the dock actually occupies, and `.proof-scenario-status` steps to the
-opposite corner rather than stacking on Back/Next. Two conditions come with
-that convenience. **`FlowNavDock` must stay a direct child of
-`.flow-workspace`** — anything positioned inserted between them re-points
-`offsetParent`, and the selectors would go dark silently, with no error. And
-the attribute is for **CSS only**: a consumer that needs the corner in
-JavaScript should get a prop or a callback, not read the DOM back. Adding a
-third, unrelated reader is the point to stop and make the contract explicit
-instead.
+The shared Workspace menu hosts deck view options, navigation and camera controls. Both the flow and board use the deck root's navigation state. The board's zoom overview names each section and reports its loadout; selecting it frames that section.
 
 A pack whose `theme.draft` is true is skipped by the generator and the
 coverage check, so scaffolding a world cannot fail the build. Clearing that
@@ -205,65 +183,16 @@ flag is the moment it has to be complete.
 
 ## 2. The shell contract
 
-`src/components/app-shell.tsx` (wrapped around every page by
-`src/app/layout.tsx`) owns **three horizontal bars and the stage**. It does
-NOT own left or right rails — see §3.
+The shell renders one header above the full-width stage. The header contains deck tabs, deck-specific commands and the Workspace menu. The deck owns the Archetypes and Output rails. Both use the same toggle component, mirrored at the board edges.
 
-| Region | Element | Plug-in mechanism |
+| Region | Component | Content |
 |---|---|---|
-| Top bar | `header.top-bar` (`data-component="Bar:Top"`) | Registry-driven only: brand, one `.tool-tab` per registry entry, theme toggle. A tool never touches it. |
-| Context bar | `div.context-bar` (`Bar:Context`) | Shows `.context-default` ("Tools / <name>") until a tool portals its header into **`#app-subbar-slot`**. |
-| Page stage | `main.page-stage` | Route children. Registry `fullBleed: true` adds `.is-fluid` (escapes the centered column for cockpit-style tools). |
-| Status bar | `footer.status-bar` (`Bar:Status`) | Shows `.status-default` ("Ready · No account…") until a tool portals live status into **`#app-statusbar-slot`**. |
+| Header | `app-shell.tsx` | Brand, deck tabs, deck commands, Workspace menu |
+| Deck commands | `tool-subbar.tsx` | Save state, step navigation, history and Tools |
+| Workspace menu | `flow-nav-dock.tsx` and `deck-board.tsx` | Board/Flow, navigation, camera and theme |
+| Stage | `main.page-stage` | Full-bleed tool workspace |
 
-Chrome heights are CSS variables in `src/app/globals.css:22-29`
-(`--top-bar-height`, `--context-bar-height`, `--status-bar-height`,
-`--app-chrome-height`, `--app-top-chrome-height`) — full-bleed tools size
-their layouts against these, never hardcoded pixels.
-
-### The sub-bar handshake (exact, load-bearing)
-
-A tool's header is injected with a portal — use the shared **`<ToolSubbar>`**
-(`src/components/tool-subbar.tsx`), which owns all of this:
-
-- The portal target is `#app-subbar-slot`, resolved through
-  **`usePortalTarget`** (§3), NEVER read from the DOM during render. The
-  server snapshot is `null`, so the hydration render matches the server; the
-  portal mounts before paint, so the bar still never blanks.
-- **Never write `typeof document === "undefined" ? null : document.body` (or
-  `getElementById`) during render for a portal that renders on FIRST
-  render** — use `usePortalTarget` (§3). The render-time read makes the
-  server render `null` and the client render a portal. When that portal puts
-  REAL DOM into a container React is hydrating, the container's children stop
-  matching the server and React's only recovery at the root is to discard the
-  server HTML and client-render the document. It then re-acquires the
-  `<html>` singleton, wiping its attributes and reapplying `layout.tsx`'s
-  props — which silently undid the no-flash theme bootstrap on all three tool
-  routes until 2026-07-17, with no console error, and cost them their SSR.
-- The hazard is the inserted DOM, not the portal: a portal whose children
-  render to nothing (an `open`-gated dialog, an idle dnd-kit `DragOverlay`)
-  adds no nodes and is inert. Don't rely on that — route every first-render
-  portal through the hook, because the day those children stop being null the
-  breakage is silent.
-- **One deliberate carve-out:** `EditorDialog` (and dialogs built on it)
-  returns `null` until `open` is true, and every consumer initializes
-  `open` to `false` — it never portals on first render, so it may target
-  `document.body` directly. A dialog that is ever open-by-default loses the
-  exemption and must go through `usePortalTarget`.
-- The portaled root must be `div.prompt-subbar` (plus one per-tool modifier
-  class, e.g. `image-editor-subbar`) with `data-component="Header:Tool"`,
-  and **no wrapper element** around it — the slot is `display: contents`
-  (`globals.css`), so the root participates directly in the context-bar
-  flex.
-- The shell hides its default text via
-  `.context-bar:has(.prompt-subbar) .context-default` — the class name IS
-  the handshake. Same pattern for the status bar
-  (`.status-bar:has(...) .status-default`).
-
-`ToolSubbar` children compose from `ToolSubbarTitle` (kicker + h1 + status
-chip), `ToolSaveStateChip` (autosave state), and `ToolSubbarActions` (the
-right-side action cluster), with arbitrary children between them (menus,
-pickers).
+Shared controls mount in header slots through `usePortalTarget`. The portal targets resolve on the client. Keep deck state in the route component so resizing the shell or switching views preserves the hand. Camera and view commands remain available in the header at narrow widths.
 
 ### The mobile gate (registry-driven)
 
@@ -298,7 +227,7 @@ expect a shell rail; DO recycle these primitives:
 
 | Primitive | File | Use it for |
 |---|---|---|
-| `ToolSubbar` + parts | `src/components/tool-subbar.tsx` | The context-bar header (§2). |
+| `ToolSubbar` + parts | `src/components/tool-subbar.tsx` | Deck commands in the shared header (§2). |
 | `usePortalTarget` | `src/hooks/use-portal-target.ts` | ANY portal that renders on first render — resolves `document.body` or a slot id without breaking hydration (§2). |
 | `formatSaveStatusLabel`, `SaveStatus` | `src/lib/save-status.ts` | Autosave chip labels ("Saved 2:41 PM…"). |
 | `useUndoableState` | `src/hooks/use-undoable-state.ts` | Undo/redo: past/future stacks, tag coalescing, `seal`, `jump`, `depth`/`position` for history panels. |
@@ -330,8 +259,7 @@ Port one back deliberately if a deck needs it; do not re-add the tools.
 2. **Route**: `src/app/tools/<id>/page.tsx` (server component, metadata) →
    renders `src/components/<id>.tsx` (`"use client"`).
 3. **Header**: portal via `<ToolSubbar className="<id>-subbar">` (§2).
-   Optional live status → `#app-statusbar-slot` (Image Editor is the
-   precedent).
+   Report save and action status beside its associated control.
 4. **State**: `useLocalDraft` for persistence (keys
    `digitools.<id>.<thing>-v1`), `useUndoableState` for history,
    `SaveStatus` for the chip.

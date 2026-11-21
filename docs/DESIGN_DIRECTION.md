@@ -87,9 +87,7 @@ display type.
 
 ## Layout
 
-The shared shell has a compact top bar, a context bar, and a fixed status bar.
-The welcome page uses an asymmetric split. Tool pages use a responsive work
-area with the editor first and the generated artifact second.
+A single header contains the deck switcher and working controls. Archetypes opens on the left and Output opens on the right. Their mirrored toggles share sizing, focus treatment and collapse behavior. The stage fills the remaining height.
 
 At widths below 900px, the work area becomes one column. Navigation remains
 usable without horizontal page scrolling.
@@ -359,7 +357,7 @@ considering) lands on both at once. Rules specific to this deck:
 ### The board (every deck's default view, 2026-09-05)
 
 Every deck renders its panels in one of two containers, switched from the
-nav dock and remembered per browser: the **flow** (the horizontal panel
+Workspace menu and remembered per browser: the **flow** (the horizontal panel
 slider) and the **board**, the default. The board is the first step toward
 `docs/BOARD_VISION.md` and shares one visual grammar across CRAFT, PICTURE,
 and SONIC:
@@ -389,9 +387,7 @@ and SONIC:
   Sockets read as scaffolding: a 2px cyan-tinted dashed frame, solid once
   seated.
 - **The deal.** On entering a section, the visible hand travels from a shared pile and turns face up in 400ms with a short stagger. Seating an archetype flips the occupied sockets. Every deal and socket flip uses the same back within a deck: the CRAFT pen, PICTURE prism or SONIC waveform. The six alternate illustrations are retained for future use. Brass tools on oxblood mark CRAFT, optical motifs on teal mark PICTURE, and silver sound motifs on indigo mark SONIC. Reduced motion leaves the faces immediately available.
-- **The board bar** (bottom-left, screen space): one pip per board with its
-  completion state, zoom out, the zoom readout, zoom in, Fit, All. It steps
-  aside when the nav dock parks in that corner.
+- **Workspace menu.** Section navigation, zoom, Fit and All are available in the header. The far view gives each section a clickable loadout summary.
 - **Keyboard**: `[` and `]` move between boards, `0` fits the active board,
   `-` and `=` zoom, arrows pan when the pasteboard itself is focused. Every
   card, socket, and control keeps its existing keyboard path; nothing on the

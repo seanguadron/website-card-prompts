@@ -32,7 +32,7 @@ export const SOUND_MERGE_ORDER: readonly SoundSection[] = [
 export const SOUND_INCOMPLETE_TEXT =
   "Name a sound to build your prompt.";
 
-const AMBIENCE_MERGE_ORDER: readonly SoundSection[] = ["context", "source", "nature", "onset", "intensity"];
+export const AMBIENCE_MERGE_ORDER: readonly SoundSection[] = ["context", "source", "nature", "onset", "intensity"];
 
 // The rack holds separate one-sound prompts to generate individually and
 // layer on Firefly audio tracks. Capped so a stored draft stays a draft.

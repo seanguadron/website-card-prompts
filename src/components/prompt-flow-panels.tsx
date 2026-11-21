@@ -1,5 +1,6 @@
 "use client";
 
+import { summarizeSlots } from "@/lib/hand-summary";
 import type { ReactNode, RefObject } from "react";
 import { DeckBoard, type DeckBoardSpec } from "@/components/deck-board";
 import { PromptCardWorkbench } from "@/components/prompt-card-workbench";
@@ -722,11 +723,15 @@ export function CraftFlowPanels({
       formatComplete,
       targetComplete,
     ];
+    const sections = ["context", "role", "action", "format", "target"] as const;
     const boards: DeckBoardSpec[] = [
       { key: "guide", letter: "S", label: "Setup", complete: false },
       ...CRAFT_PARTS.map((part, index) => ({
         key: part.letter,
         letter: part.letter,
+        summary: sections[index] === "role"
+          ? summarizeSlots(draft.roleIds, 3)
+          : summarizeSlots(cardSystem.equipped[sections[index]], craftCardEngine.slotBudgets[sections[index]]),
         label: part.label,
         complete: completes[index],
       })),

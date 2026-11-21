@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useRef } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { MobileToolGate } from "@/components/mobile-tool-gate";
@@ -34,6 +35,25 @@ const TOOL_TAB_ICONS: Record<ToolId, React.ReactNode> = {
 
 export function AppShell({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
+  const workspaceMenu = useRef<HTMLDetailsElement>(null);
+  useEffect(() => {
+    function dismissOutside(event: PointerEvent) {
+      const menu = workspaceMenu.current;
+      if (menu?.open && event.target instanceof Node && !menu.contains(event.target)) menu.open = false;
+    }
+    function dismissOnEscape(event: KeyboardEvent) {
+      const menu = workspaceMenu.current;
+      if (event.key !== "Escape" || !menu?.open) return;
+      menu.open = false;
+      menu.querySelector("summary")?.focus();
+    }
+    document.addEventListener("pointerdown", dismissOutside);
+    document.addEventListener("keydown", dismissOnEscape);
+    return () => {
+      document.removeEventListener("pointerdown", dismissOutside);
+      document.removeEventListener("keydown", dismissOnEscape);
+    };
+  }, []);
 
   const activeTool = TOOLS.find((tool) => pathname === tool.href);
   const isHome = pathname === "/";
@@ -106,6 +126,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
               className={
                 pathname === tool.href ? "tool-tab is-active" : "tool-tab"
               }
+              aria-current={pathname === tool.href ? "page" : undefined}
               href={tool.href}
               key={tool.id}
             >
@@ -131,30 +152,19 @@ export function AppShell({ children }: { children: React.ReactNode }) {
           ))}
         </nav>
 
-        <button
-          className="theme-toggle"
-          type="button"
-          onClick={toggleTheme}
-          aria-label="Toggle color theme"
-        >
-          <span aria-hidden="true">Theme</span>
-        </button>
+        <div className="app-subbar-slot" id="app-subbar-slot" />
+        <details className="workspace-menu" ref={workspaceMenu}>
+          <summary className="button button-quiet">Workspace</summary>
+          <div className="workspace-menu-panel">
+            <div id="compact-tool-header" />
+            <div id="workspace-view-tools" />
+            <div id="workspace-camera-tools" />
+            <button type="button" className="theme-toggle" onClick={toggleTheme}>
+              Switch color theme
+            </button>
+          </div>
+        </details>
       </header>
-
-      <div className="context-bar" data-component="Bar:Context">
-        <div className="context-default">
-          <span className="context-path">
-            <span className="status-dot" aria-hidden="true" />
-            {activeTool ? `Decks / ${activeTool.name}` : "Welcome"}
-          </span>
-          <span className="context-note">Local browser session</span>
-        </div>
-        <div
-          className="app-subbar-slot"
-          id="app-subbar-slot"
-          aria-live="polite"
-        />
-      </div>
 
       <main className={fullBleed ? "page-stage is-fluid" : "page-stage"}>
         {mobileGated && activeTool ? (
@@ -166,21 +176,6 @@ export function AppShell({ children }: { children: React.ReactNode }) {
         ) : null}
         {children}
       </main>
-
-      <footer className="status-bar" data-component="Bar:Status">
-        <div className="status-default">
-          <span>
-            <span className="status-dot" aria-hidden="true" />
-            Ready
-          </span>
-          <span>No account. No cloud sync.</span>
-        </div>
-        <div
-          className="app-statusbar-slot"
-          id="app-statusbar-slot"
-          aria-live="polite"
-        />
-      </footer>
     </div>
   );
 }

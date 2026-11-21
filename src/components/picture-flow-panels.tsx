@@ -1,6 +1,8 @@
 "use client";
 
+import { summarizeSlots } from "@/lib/hand-summary";
 import type { ReactNode, RefObject } from "react";
+import { FramingBoard } from "./deck-diagrams";
 import { DeckBoard, type DeckBoardSpec } from "@/components/deck-board";
 import { PromptCardWorkbench } from "@/components/prompt-card-workbench";
 import {
@@ -23,7 +25,7 @@ import {
   WEIRD_RANGE,
 } from "@/lib/picture-deck-state";
 import { PICTURE_PANEL_INDEX } from "@/lib/picture-navigation";
-import type { PictureSection } from "@/lib/picture-prompt";
+import { PICTURE_SECTIONS, type PictureSection } from "@/lib/picture-prompt";
 import type {
   PictureCardSystemState,
   PictureDraft,
@@ -404,6 +406,10 @@ export function PictureFlowPanels({
     cardPanel("references"),
     cardPanel(
       "execution",
+      <>
+      <FramingBoard ratio={draft.aspectRatio} ratios={PICTURE_ASPECT_RATIOS}
+        onRatio={onSelectAspectRatio} framing={draft.framing ?? ""}
+        onChange={value => onUpdateDraft("framing", value)} />
       <fieldset className="picture-deck-tail">
         <legend className="sr-only">Midjourney parameter tail</legend>
         <label className="workbench-default-check picture-deck-tail-toggle">
@@ -506,7 +512,7 @@ export function PictureFlowPanels({
             />
           </label>
         </div>
-      </fieldset>,
+      </fieldset></>,
     ),
   ];
 
@@ -516,6 +522,7 @@ export function PictureFlowPanels({
       ...PICTURE_PARTS.map((part, index) => ({
         key: part.letter,
         letter: part.letter,
+        summary: summarizeSlots(cardSystem.equipped[PICTURE_SECTIONS[index]], pictureCardEngine.slotBudgets[PICTURE_SECTIONS[index]]),
         label: part.label,
         complete: Boolean(stepComplete[index]),
       })),

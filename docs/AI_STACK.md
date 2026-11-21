@@ -271,6 +271,10 @@ Claude-set additions beyond this catalog:
 
 ## Stack changelog
 
+### Card Prompts workspace, 2026-11-21
+
+The owner made the inherited Amazing OS workflow optional. Card Prompts maintains its own single-header shell, mirrored rails and browser-local hand tools.
+
 ### v2, adapted 2026-09-05
 
 The Digi AI Stack v2 bundle (built from the WebGamingPlatform project) was

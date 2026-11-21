@@ -2,7 +2,7 @@
 
 import { CardInspector } from "@/components/card-inspector";
 
-import { useContext, useId, useState, type ReactNode } from "react";
+import { useContext,  useState, type ReactNode } from "react";
 import { createPortal } from "react-dom";
 import {
   DndContext,
@@ -16,6 +16,7 @@ import {
   type DragStartEvent,
 } from "@dnd-kit/core";
 import { BoardTrayTarget } from "@/components/deck-board";
+import { useHandTools, type Loadout } from "./hand-workspace";
 import { useCardInspection } from "@/hooks/use-card-inspection";
 import { CardIllustrationFrame } from "@/components/prompt-builder-ui";
 import { useCardDeckMotion } from "@/hooks/use-card-deck-motion";
@@ -28,6 +29,7 @@ export type BoardArchetypeItem = {
   name: string;
   description: string;
   details: ReactNode;
+  equipped?: Loadout;
   art?: CardArtRef;
   custom?: boolean;
 };
@@ -66,16 +68,16 @@ function HandCard({
     data: { archetypeId: item.id },
   });
 
-  const detailsId = useId();
+  const hand = useHandTools();
   const { preview, show, leave, dismiss, panelEvents } = useCardInspection();
   const portalTarget = usePortalTarget();
   return (<>
     <button
       ref={setNodeRef}
-      onMouseEnter={(event) => show(item.id, event.currentTarget)}
-      onFocus={(event) => show(item.id, event.currentTarget)}
-      onBlur={dismiss}
-      onMouseLeave={leave}
+      onMouseEnter={(event) => { hand.setProposal(item.equipped ?? {}); show(item.id, event.currentTarget); }}
+      onFocus={(event) => { hand.setProposal(item.equipped ?? {}); show(item.id, event.currentTarget); }}
+      onBlur={()=>{hand.setProposal(null);dismiss();}}
+      onMouseLeave={()=>{hand.setProposal(null);leave();}}
       className={[
         "board-archetype-card",
         active ? "is-active" : "",
@@ -85,17 +87,17 @@ function HandCard({
         .join(" ")}
       type="button"
       data-motion-card
-      onClick={onApply}
+      onClick={()=>{hand.setProposal(null);dismiss();onApply();}}
       aria-label={`Seat the ${item.name} archetype. ${item.description}`}
       {...listeners}
       {...attributes}
-      aria-describedby={[attributes["aria-describedby"], preview && detailsId].filter(Boolean).join(" ")}
+      aria-describedby={[attributes["aria-describedby"], preview && panelEvents.id].filter(Boolean).join(" ")}
       aria-pressed={active}
     >
       <ArchetypeFace item={item} />
     </button>
     {portalTarget && preview && !isDragging && createPortal(
-      <CardInspector className="floating-card-panel floating-card-panel--archetype" id={detailsId} {...panelEvents} style={preview.position}>
+      <CardInspector className="floating-card-panel floating-card-panel--archetype" {...panelEvents} style={preview.position}>
         {item.details}
       </CardInspector>, portalTarget)}
   </>);

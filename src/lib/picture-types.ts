@@ -21,6 +21,7 @@ export type PictureCardSystemState = CardSystemStateOf<
 >;
 
 export type PictureDraft = {
+  framing?: string;
   subject: string;
   negative: string;
   mjTailEnabled: boolean;
@@ -30,7 +31,7 @@ export type PictureDraft = {
   weird: number | null;
 };
 
-export type PictureDraftTextField = "subject" | "negative";
+export type PictureDraftTextField = "subject" | "negative" | "framing";
 
 export type PictureMjTailPreset = {
   aspectRatio?: string;

@@ -9,6 +9,8 @@ detail live in `docs/AI_STACK.md`; the enforceable rulebook is
 `docs/STANDARDS.md`; the gate and learning-loop machinery is described in
 "Gates" and "Learning loop" below.
 
+Card Prompts owns its product workflow and shell. The inherited Amazing OS phases, shell conventions and review rituals are optional references. Choose the checks appropriate to the change and preserve the local-first behavior of the decks.
+
 Stack version: 2, adopted 2026-09-05 by adaptation
 (`docs/adr/0001-stack-v2-adopted-by-adaptation.md`). What changed is in
 `docs/AI_STACK.md` → Stack changelog. The marker at the end of this file is a

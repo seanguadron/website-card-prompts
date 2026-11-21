@@ -1,3 +1,5 @@
+import type { SkillField } from "./skill-fields";
+
 export interface PromptRole {
   id: string;
   name: string;
@@ -17,6 +19,7 @@ export type FormatOption = {
 };
 
 export type PromptDraft = {
+  skillFields?: SkillField[];
   context: string;
   roleIds: string[];
   action: string;

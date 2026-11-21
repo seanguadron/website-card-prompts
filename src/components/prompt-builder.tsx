@@ -1,6 +1,11 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { craftCardEngine } from "@/lib/prompt-card-system";
+import { buildFieldDirections } from "@/lib/skill-fields";
+import { SkillFields } from "./skill-fields";
+import { HandFork } from "./hand-fork";
+import { HandWorkspace, useHandWorkspace, preserveLocked } from "./hand-workspace";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import type { ChangeEvent } from "react";
 import { BoardArchetypeSocket } from "@/components/board-archetype-socket";
@@ -109,6 +114,7 @@ import { PHONE_MEDIA_QUERY } from "@/lib/tool-registry";
 const ART_PACK_STORAGE_KEY = "digitools.prompt-builder.art-pack-v1";
 
 export function PromptBuilder({ roles }: { roles: PromptRole[] }) {
+  const hand = useHandWorkspace("craft", id => Boolean(craftCardEngine.getLineage(id)) || roles.some(role => role.id === id));
   const [draft, setDraft] = useState<PromptDraft>(EMPTY_DRAFT);
   const [cardSystem, setCardSystem] =
     useState<CardSystemState>(createCardSystem);
@@ -233,6 +239,12 @@ export function PromptBuilder({ roles }: { roles: PromptRole[] }) {
   const promptFileBase = exportBase.endsWith("prompt")
     ? exportBase
     : `${exportBase}-prompt`;
+  const captureHand = useCallback(() => ({
+    session: serializePromptSession(draft, cardSystem),
+    title: activePromptName,
+    archetype: activeArchetypeId,
+  }), [draft, cardSystem, activePromptName, activeArchetypeId]);
+
   const prompt = useMemo(
     () => buildPrompt(draft, selectedRoles, equippedInstructions, {
       audienceDefault,
@@ -348,12 +360,19 @@ export function PromptBuilder({ roles }: { roles: PromptRole[] }) {
 
   // The archetype hand on the Setup board: custom presets first, then the
   // catalog, each with its pack art (or the shared preset swatch).
+  function dealRoles(archetype: PromptArchetype, current: readonly string[]) {
+    const incoming = archetype.roleIds.filter(id => roles.some(role => role.id === id));
+    const slots = (ids: readonly string[]) => Array.from({length: 3}, (_, i) => ids[i] ?? "");
+    return preserveLocked({role: slots(incoming)}, {role: slots(current)}, hand.locked).role.filter(Boolean);
+  }
+
   const boardArchetypes = [...customArchetypes, ...PROMPT_ARCHETYPES].map(
     (archetype) => ({
       id: archetype.id,
       code: archetype.code,
       name: archetype.name,
       description: archetype.description,
+      equipped: {...craftCardEngine.archetypeSlots(archetype.equipped, cardSystem.equipped, hand.locked), role: dealRoles(archetype, draft.roleIds)},
       details: <PromptArchetypeDetails archetype={archetype} roles={roles} />,
       art: archetypeArtWithFallback(archetype.id),
       custom: isCustomArchetype(archetype),
@@ -474,10 +493,6 @@ export function PromptBuilder({ roles }: { roles: PromptRole[] }) {
     const formatOption = FORMAT_OPTIONS.find(
       (option) => option.code === archetype.formatCode,
     );
-    const validRoleIds = archetype.roleIds.filter((roleId) =>
-      roles.some((role) => role.id === roleId),
-    );
-
     if (!formatOption) {
       setSpeechMessage(`${archetype.name} uses an unavailable output type.`);
       return;
@@ -487,7 +502,7 @@ export function PromptBuilder({ roles }: { roles: PromptRole[] }) {
     cancelDictation(true);
     setDraft((current) => ({
       ...current,
-      roleIds: validRoleIds,
+      roleIds: dealRoles(archetype, current.roleIds),
       action: archetype.action ?? "",
       format: formatOption.value,
       formatNotes: archetype.formatNotes ?? "",
@@ -498,7 +513,7 @@ export function PromptBuilder({ roles }: { roles: PromptRole[] }) {
     setCardSystem(
       sanitizeCardSystemShape({
         tracks: { ...archetype.tracks },
-        equipped: createEquippedSlots(archetype.equipped),
+        equipped: craftCardEngine.archetypeSlots(archetype.equipped, cardSystem.equipped, hand.locked),
         memory: createEmptySnapMemory(),
         overrides: [],
         suggested: createEmptySuggestedCards(),
@@ -712,22 +727,19 @@ export function PromptBuilder({ roles }: { roles: PromptRole[] }) {
       return;
     }
 
+    // Roles form a contiguous lead/support list. An empty trailing socket
+    // means the next available position, regardless of where it was hit.
+    const nextRoles = insertIntoSlots(draft.roleIds, slotIndex, roleId, 3).filter(Boolean);
+    const destination = nextRoles.indexOf(roleId);
+    if (nextRoles.every((id, index) => id === draft.roleIds[index]) &&
+        nextRoles.length === draft.roleIds.length) {
+      setRoleSelectionMessage(`${role.name} is already in the ${destination === 0 ? "lead" : "support " + destination} slot.`);
+      return;
+    }
     history.checkpoint();
     setActiveArchetypeId(null);
-    setDraft((current) => {
-      const nextRoleIds = insertIntoSlots(
-        current.roleIds,
-        slotIndex,
-        roleId,
-        3,
-      ).filter(Boolean);
-      return { ...current, roleIds: nextRoleIds };
-    });
-    setRoleSelectionMessage(
-      `${role.name} moved to ${
-        slotIndex === 0 ? "lead" : `support ${slotIndex}`
-      }.`,
-    );
+    setDraft(current => ({ ...current, roleIds: nextRoles }));
+    setRoleSelectionMessage(`${role.name} moved to ${destination === 0 ? "lead" : "support " + destination}.`);
     setCopyState("idle");
   }
 
@@ -923,6 +935,7 @@ export function PromptBuilder({ roles }: { roles: PromptRole[] }) {
   };
 
   return (
+    <HandWorkspace.Provider value={hand}>
     <div className={"tool-page prompt-flow-page is-craft-flow"}>
       <PromptBuilderHeader
         stepStrip={
@@ -1195,6 +1208,29 @@ export function PromptBuilder({ roles }: { roles: PromptRole[] }) {
         </div>
 
         <PromptOutputDock
+          fieldEditor={<SkillFields fields={draft.skillFields ?? []} prompt={prompt} onChange={skillFields=>{history.checkpoint();setDraft(d=>({...d,skillFields}));}} />}
+          cards={Object.values(cardSystem.equipped).flat().flatMap(id => {
+            const card = craftCardEngine.getLineage(id);
+            if (!card) return [];
+            const grade = craftCardEngine.getCardGrade(card, cardSystem.tracks);
+            return [{id, section: String(card.section), name:grade.name, text:grade.instruction}];
+          }).concat(selectedRoles.map((role,i)=>({id:role.id,section:"role",name:role.name,text:formatRoleLoadout(selectedRoles).split("\n\n")[i]})))}
+          onRevealCard={(panel, controlId) => {
+            nav.navigateToPanel(panel, controlId);
+            if (phoneWidthDock) setOutputExpanded(false);
+          }}
+          fork={<HandFork deck="craft" prompt={prompt} ready={persistence.ready} capture={captureHand} restore={(saved, recordHistory) => {
+            const next = restorePromptSession(saved.session, roles);
+            if (recordHistory) history.checkpoint();
+            cancelDictation(true);
+            setDraft(next.draft);
+            setCardSystem(next.cardSystem);
+            setActiveArchetypeId(saved.archetype);
+            setActivePromptName(saved.title);
+            setActiveProofId(null);
+            setCopyState("idle");
+            setSpeechMessage("Switched comparison hands.");
+          }} />}
           expanded={outputExpanded}
           complete={isComplete}
           missingItems={missingItems}
@@ -1206,17 +1242,18 @@ export function PromptBuilder({ roles }: { roles: PromptRole[] }) {
           onCopy={copyPrompt}
           skillDeck="craft"
           skillHand={activePromptName ?? activeArchetype?.name ?? selectedRoles[0]?.name ?? "hand"}
-          skillChoices={[
+          skillChoices={buildFieldDirections(prompt, [
               { label: "Roles", body: formatRoleLoadout(selectedRoles) },
               { label: "Format", body: selectedRoles.length || draft.format !== EMPTY_DRAFT.format ? draft.format : "" },
               ...Object.entries(equippedInstructions).map(([label, lines]) => ({
                 label, body: lines.join("\n"),
               })),
-            ]}
+            ], draft.skillFields ?? [])}
           onDownload={downloadPrompt}
           onPrint={printPrompt}
         />
       </div>
     </div>
+    </HandWorkspace.Provider>
   );
 }
