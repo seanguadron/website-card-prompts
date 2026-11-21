@@ -3178,63 +3178,31 @@ button.role-loadout-slot {
 }
 
 .output-dock-toggle {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 2;
-  display: grid;
-  width: 52px;
-  grid-template-rows: auto 1fr auto;
-  place-items: center;
-  gap: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex: none;
+  width: 100%;
+  min-height: 32px;
+  padding: 4px 10px;
   border: 0;
-  border-right: 1px solid var(--border);
-  padding: 13px 0;
-  background: color-mix(in oklch, var(--background) 78%, var(--card));
-  color: var(--muted-foreground);
-  cursor: pointer;
-  transition:
-    background 160ms ease-out,
-    color 160ms ease-out,
-    transform 120ms ease-out;
-}
-
-.output-dock-toggle:hover {
-  background: color-mix(in oklch, var(--brand-cyan) 8%, var(--background));
+  border-bottom: 1px solid var(--border);
+  background: var(--card);
   color: var(--foreground);
+  cursor: pointer;
 }
 
-.output-dock-toggle > span {
-  color: var(--brand-cyan-text);
-  font-family: var(--font-mono), "Cascadia Mono", monospace;
-  font-weight: 800;
+.output-dock-toggle:hover { background: color-mix(in oklch, var(--brand-cyan) 8%, var(--card)); }
+.output-dock-toggle:focus-visible { outline: 2px solid var(--brand-cyan); outline-offset: -2px; }
+.output-dock-toggle svg { flex: none; color: var(--muted-foreground); }
+.output-dock-toggle strong { font-size: .75rem; font-weight: 600; }
+.output-dock-toggle small { font-size: .65rem; color: var(--muted-foreground); }
+.output-dock-toggle[aria-expanded="false"] {
+  flex-direction: column;
+  padding: 8px 0;
+  border: 0;
 }
-
-.output-dock-toggle strong {
-  writing-mode: vertical-rl;
-  font-size: 0.68rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.output-dock-toggle small {
-  color: var(--brand-cyan-text);
-  font-family: var(--font-mono), "Cascadia Mono", monospace;
-  font-size: 0.58rem;
-  font-weight: 800;
-}
-
-.prompt-output-dock.is-expanded .output-dock-toggle {
-  bottom: auto;
-  height: 72px;
-  grid-template-rows: 1fr;
-}
-
-.prompt-output-dock.is-expanded .output-dock-toggle strong,
-.prompt-output-dock.is-expanded .output-dock-toggle small {
-  display: none;
-}
+.output-dock-toggle[aria-expanded="false"] :is(strong, small) { writing-mode: vertical-rl; }
 
 .output-dock-content {
   display: flex;
@@ -3242,7 +3210,7 @@ button.role-loadout-slot {
   overflow: auto;
   width: auto;
   height: 100%;
-  margin-left: 52px;
+  min-height: 0;
   opacity: 0;
   pointer-events: none;
   transition: opacity 140ms ease-out;
@@ -4595,9 +4563,7 @@ button.role-loadout-slot {
     width: min(400px, calc(100vw - 12px));
   }
 
-  .prompt-output-dock.is-expanded .output-dock-content {
-    width: calc(min(400px, 100vw - 12px) - 52px);
-  }
+
 }
 
 .preview-export,
@@ -7006,24 +6972,25 @@ button.role-loadout-slot {
 .workspace-menu-panel .theme-toggle { width:auto; flex:0 0 auto; margin:0; }
 
 #board-archetype-tray { position: relative; border-radius: 12px; overflow: hidden; }
-#board-archetype-tray > .output-dock-toggle { left: auto; right: 0; border-right: 0; border-left: 1px solid var(--border); }
-#board-archetype-tray:has([aria-expanded="true"]) > .output-dock-toggle { height: 72px; bottom: auto; grid-template-rows: 1fr; }
-#board-archetype-tray:has([aria-expanded="true"]) > .output-dock-toggle strong { display: none; }
+.has-deck-rails { --rail-tab-width: 32px; }
+.has-deck-rails .prompt-output-dock { display: flex; flex-direction: column; }
+.has-deck-rails .output-dock-content { flex: 1 1 auto; height: auto; }
+.has-deck-rails .prompt-output-dock:not(.is-expanded) .output-dock-content { display: none; }
 .archetype-card-tools { display: flex; justify-content: flex-end; gap: 4px; }
 .archetype-card-tools button { min-width: 28px; min-height: 24px; color: var(--foreground); }
 .archetype-card-tools button[aria-pressed="true"] { color: var(--brand-cyan-text); }
 #board-card-library .archetype-save-form { flex-wrap: wrap; padding: 8px; }
 #board-card-library .archetype-save-form input { width: 100%; }
-#board-card-library { margin-right: 52px; height: 100%; }
+#board-card-library { flex: 1; min-height: 0; }
 @media (min-width:1101px) {
   .builder-main-layout.has-deck-rails,
   .builder-main-layout.has-deck-rails.is-output-collapsed {
-    --arch-width: 254px;
-    --out-width: 380px;
+    --arch-width: 202px;
+    --out-width: 328px;
     grid-template-columns: var(--arch-width) minmax(0,1fr) var(--out-width);
   }
-  .builder-main-layout.has-deck-rails:has(#board-archetype-tray .output-dock-toggle[aria-expanded="false"]) { --arch-width: 52px; }
-  .builder-main-layout.has-deck-rails.is-output-collapsed { --out-width: 52px; }
+  .builder-main-layout.has-deck-rails:has(#board-archetype-tray .output-dock-toggle[aria-expanded="false"]) { --arch-width: var(--rail-tab-width); }
+  .builder-main-layout.has-deck-rails.is-output-collapsed { --out-width: var(--rail-tab-width); }
 }
 @media (max-width:1100px) {
   .builder-main-layout.has-deck-rails,
@@ -7038,20 +7005,20 @@ button.role-loadout-slot {
     overflow: hidden;
     padding-inline: 0;
   }
-  .builder-main-layout.has-deck-rails .flow-workspace { margin-inline: 52px; }
+  .builder-main-layout.has-deck-rails .flow-workspace { margin-inline: var(--rail-tab-width); }
   #board-archetype-tray, .has-deck-rails .prompt-output-dock {
     position: absolute;
     z-index: 24;
     top: 0;
     bottom: 0;
-    width: 52px;
+    width: var(--rail-tab-width);
     height: auto;
     grid-area: auto;
   }
   #board-archetype-tray { left: 0; }
   .has-deck-rails .prompt-output-dock { right: 0; }
-  #board-archetype-tray:has(.output-dock-toggle[aria-expanded="true"]) { width: min(254px, calc(100% - 56px)); }
-  .has-deck-rails .prompt-output-dock.is-expanded { width: min(380px, calc(100% - 56px)); }
+  #board-archetype-tray:has(.output-dock-toggle[aria-expanded="true"]) { width: min(202px, calc(100% - var(--rail-tab-width) - 4px)); }
+  .has-deck-rails .prompt-output-dock.is-expanded { width: min(328px, calc(100% - var(--rail-tab-width) - 4px)); }
   :is(#board-archetype-tray,.has-deck-rails .prompt-output-dock):focus-within { z-index: 25; }
   #board-archetype-tray .board-archetype-hand { flex-direction: column; width: auto; }
   #board-archetype-tray .board-archetype-card { touch-action: pan-y; }

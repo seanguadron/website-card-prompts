@@ -4,7 +4,7 @@ Last rewritten 2026-11-21.
 
 ## Now
 
-Board and Flow use one shared Archetypes rail on all three decks. A saved SONIC Flow preference exposed the old text list when switching from another deck. The illustrated rail retains favorites, custom preset controls, preview, click and drag. Its open or closed state follows deck switches. Flow uses a viewport-height rail on smaller screens. The SONIC front illustration batch is deferred.
+Archetypes and Output use compact labelled headers across all decks. Removing the old dedicated chevron columns returns 104px to the desktop board when both rails are open. The collapsed tabs are 32px wide. Board and Flow share the same rail components. A saved SONIC Flow preference exposed the old text list when switching from another deck. The illustrated rail retains favorites, custom preset controls, preview, click and drag. Its open or closed state follows deck switches. Flow uses a viewport-height rail on smaller screens. The SONIC front illustration batch is deferred.
 
 Project OpenAI credential audit: no key was found in the checkout, local build or reachable Git history using OpenAI key patterns. GitHub repository, Preview and Production secrets were empty. The Vercel project serving www.cardprompts.com reported zero environment variables, including hidden production variables.
 

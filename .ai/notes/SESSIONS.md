@@ -9,6 +9,8 @@ with the proposed-amendment flag are STANDARDS candidates;
 
 **Decisions.** Sean deferred Higgsfield work on card fronts and requested the existing CRAFT Archetypes rail across all three decks. He explicitly requested removal of any OpenAI API key belonging to Card Prompts.
 
+**Panel controls.** Sean prefers the AmazingOSComponents pattern: place a compact expand/collapse chevron directly beside each panel label.
+
 **Credential check.** Checks of the Vercel project, GitHub repository and its environments found no configured project OpenAI key. Searches of the local project and reachable Git history found no matching key signatures. There was no project key to delete. The check was scoped to Card Prompts and made no changes to account credentials.
 
 ## 2026-11-21 — Deck emblems across three worlds

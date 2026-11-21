@@ -377,7 +377,7 @@ and SONIC:
   anywhere, dragging any non-interactive board surface pans. Zoom stays between 8%
   and 200%; Fit frames the active board, All the whole row. Below 45% the
   card faces simplify to their art.
-- **The Archetypes rail** uses the illustrated CRAFT hand across all three decks and both layouts. It keeps its place on the left as the user moves between sections. A single click or keyboard activation applies the preset; hovering or focusing a card reveals its details. The rail's edge control mirrors Output. An explicit collapse choice follows the user between decks.
+- **The Archetypes rail** uses the illustrated CRAFT hand across all three decks and both layouts. It keeps its place on the left as the user moves between sections. A single click or keyboard activation applies the preset; hovering or focusing a card reveals its details. Archetypes and Output place a 12px chevron beside the panel label with a 6px gap, following the AmazingOSComponents PanelHeader. The whole header can be clicked. Collapsed controls have a 32px-wide labelled edge tab. An explicit collapse choice follows the user between decks.
 - **The Setup board** holds the guide and the archetype socket. Dropping an archetype onto the canvas builds its hand. Editing a section can unseat the archetype while keeping its cards. The workspace spans the window.
 - **A section board** is the table: the sockets (the slot rack) and the
   tuning console share the top row, the **hand** (the section's deck) fans
