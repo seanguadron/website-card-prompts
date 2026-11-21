@@ -7,7 +7,7 @@ import {
 } from "./sound-data-files.mjs";
 
 // The SONIC Deck's validator - the picture validator's shape minus art packs
-// (no pack exists yet; the deck renders letter fallbacks) and minus the
+// (the sound faces have a separate illustration index) and minus the
 // Midjourney tail machinery (Firefly has no parameter tail).
 
 const SECTIONS = ["source", "onset", "nature", "intensity", "context"];

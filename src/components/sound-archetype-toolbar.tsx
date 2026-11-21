@@ -8,6 +8,7 @@ import { getFloatingPanelPosition } from "@/lib/floating-panel-position";
 import { isCustomSoundArchetype } from "@/lib/sound-custom-archetypes";
 import { readStoredStringArray, writeStored } from "@/lib/prompt-storage";
 import type { SoundArchetype } from "@/lib/sound-types";
+import { soundFaceArt } from "@/lib/sound-card-art";
 
 const FAVORITES_KEY = "digitools.sound-deck.favorites-v1";
 const EMPHASIS_LABELS = ["Hint", "Present", "Dominant"];
@@ -206,6 +207,7 @@ export function SoundArchetypeDetails({ archetype }: { archetype: SoundArchetype
     <>
       <CardIllustrationFrame
         className="floating-card-art"
+        illustration={soundFaceArt(archetype.id)}
         fallback={archetype.code.slice(0, 1)}
       />
       <div className="floating-card-panel-identity">

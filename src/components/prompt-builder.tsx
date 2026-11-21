@@ -1,5 +1,9 @@
 "use client";
 
+import { CardFaceThemeProvider } from "./card-face-theme";
+import { DeckThemePicker } from "./deck-theme-picker";
+import { useDeckTheme } from "@/hooks/use-deck-theme";
+import { deckThemeAttributes } from "@/lib/deck-theme";
 import { craftCardEngine } from "@/lib/prompt-card-system";
 import { buildFieldDirections } from "@/lib/skill-fields";
 import { SkillFields } from "./skill-fields";
@@ -29,14 +33,11 @@ import { useCraftFlowNavigation } from "@/hooks/use-craft-flow-navigation";
 import { usePromptBuilderHistory } from "@/hooks/use-prompt-builder-history";
 import { usePromptBuilderPersistence } from "@/hooks/use-prompt-builder-persistence";
 import {
-  ART_PACK_OPTIONS,
   archetypeArtWithFallback,
   getActiveArtPackId,
-  isArtPackId,
   setActiveArtPack,
 } from "@/lib/art-pack";
 import { readBoardMode, writeBoardMode, type BoardMode } from "@/lib/board-prefs";
-import { readStored, writeStored } from "@/lib/prompt-storage";
 import { downloadTextFile, slugifyFilename } from "@/lib/browser-download";
 import {
   PROMPT_ARCHETYPES,
@@ -111,7 +112,6 @@ import { insertIntoSlots } from "@/lib/slot-order";
 import type { PromptRole } from "@/lib/prompt-types";
 import { OVERLAY_RAIL_MEDIA_QUERY } from "@/lib/tool-registry";
 
-const ART_PACK_STORAGE_KEY = "digitools.prompt-builder.art-pack-v1";
 
 export function PromptBuilder({ roles }: { roles: PromptRole[] }) {
   const hand = useHandWorkspace("craft", id => Boolean(craftCardEngine.getLineage(id)) || roles.some(role => role.id === id));
@@ -149,7 +149,7 @@ export function PromptBuilder({ roles }: { roles: PromptRole[] }) {
   // Which world dresses the cards. The pack module owns the actual switch;
   // this state exists to re-render the deck (every face and bio resolves at
   // render time) and to remember the choice across visits.
-  const [artPackId, setArtPackId] = useState(getActiveArtPackId());
+  const { theme, selectTheme } = useDeckTheme(setActiveArtPack, getActiveArtPackId);
   // Which container renders the panels: the board (the default, per
   // docs/BOARD_VISION.md) or the horizontal flow, one click away in the dock.
   const [viewMode, setViewMode] = useState<BoardMode>("board");
@@ -160,7 +160,7 @@ export function PromptBuilder({ roles }: { roles: PromptRole[] }) {
   // Card authoring from inside the deck: development only, and only once the
   // writer has answered. The world is part of it - queuing from the fantasy
   // deck asks for fantasy art, because that is the art you were looking at.
-  const artQueue = useArtQueue("craft", artPackId);
+  const artQueue = useArtQueue("craft", theme);
   const [savedPrompts, setSavedPrompts] = useState<SavedPrompt[]>([]);
   const [customArchetypes, setCustomArchetypes] = useState<PromptArchetype[]>(
     [],
@@ -326,12 +326,6 @@ export function PromptBuilder({ roles }: { roles: PromptRole[] }) {
     const timer = window.setTimeout(() => {
       setSavedPrompts(listSavedPrompts());
       setCustomArchetypes(listCustomArchetypes());
-      // Restore the chosen world. localStorage is user-editable, so the value
-      // only counts if it names a pack this build actually ships.
-      const storedPack = readStored(ART_PACK_STORAGE_KEY, null);
-      if (isArtPackId(storedPack) && setActiveArtPack(storedPack)) {
-        setArtPackId(storedPack);
-      }
       setViewMode(readBoardMode("prompt-builder", "board"));
     }, 0);
     return () => window.clearTimeout(timer);
@@ -345,13 +339,6 @@ export function PromptBuilder({ roles }: { roles: PromptRole[] }) {
     },
     [],
   );
-
-  function switchArtPack(id: string) {
-    if (setActiveArtPack(id)) {
-      setArtPackId(id);
-      writeStored(ART_PACK_STORAGE_KEY, id);
-    }
-  }
 
   function switchViewMode(mode: BoardMode) {
     setViewMode(mode);
@@ -935,8 +922,9 @@ export function PromptBuilder({ roles }: { roles: PromptRole[] }) {
   };
 
   return (
+    <CardFaceThemeProvider deck="craft" theme={theme}>
     <HandWorkspace.Provider value={hand}>
-    <div className={"tool-page prompt-flow-page is-craft-flow"}>
+    <div {...deckThemeAttributes("craft", theme)} className="tool-page prompt-flow-page is-craft-flow">
       <PromptBuilderHeader
         stepStrip={
           <FlowStepStrip
@@ -1046,8 +1034,8 @@ export function PromptBuilder({ roles }: { roles: PromptRole[] }) {
               activeRoleCategory={activeRoleCategory}
               roleSelectionMessage={roleSelectionMessage}
               dictation={dictationApi}
-              artPackId={artPackId}
-              onSelectArtPack={switchArtPack}
+              artPackId={theme}
+              onSelectArtPack={selectTheme}
               navigateToCraftStep={nav.navigateToCraftStep}
               onSelectOutputType={selectOutputType}
               onUpdateDraft={updateDraft}
@@ -1139,29 +1127,7 @@ export function PromptBuilder({ roles }: { roles: PromptRole[] }) {
               </button>
             </div>
 
-            {/* The world switch. Same cards, same prompt - only art and bios
-                change, so it rides with whole-deck navigation, stacked. */}
-            <div
-              className="art-pack-switch"
-              role="group"
-              aria-label="Card art world"
-            >
-              {ART_PACK_OPTIONS.map((option) => (
-                <button
-                  key={option.id}
-                  type="button"
-                  className={
-                    option.id === artPackId
-                      ? "art-pack-switch-option is-active"
-                      : "art-pack-switch-option"
-                  }
-                  aria-pressed={option.id === artPackId}
-                  onClick={() => switchArtPack(option.id)}
-                >
-                  {option.name}
-                </button>
-              ))}
-            </div>
+            <DeckThemePicker theme={theme} onSelect={selectTheme} />
 
             {/* Queue art. Absent in production and off-loopback: the writer
                 is probed, not assumed, so the control never appears where it
@@ -1255,5 +1221,6 @@ export function PromptBuilder({ roles }: { roles: PromptRole[] }) {
       </div>
     </div>
     </HandWorkspace.Provider>
+    </CardFaceThemeProvider>
   );
 }

@@ -3,6 +3,7 @@ import fantasyData from "@/data/prompt-builder/art-themes/fantasy.json";
 import superheroData from "@/data/prompt-builder/art-themes/superhero.json";
 import { artPackEntry } from "../../scripts/art-pack.mjs";
 import type { ArtPackFile, ResolvedArt } from "../../scripts/art-pack.mjs";
+import { isDeckTheme, type DeckTheme } from "./deck-theme";
 
 // The app's door onto the active art pack.
 //
@@ -39,25 +40,13 @@ const PACKS = [
   superheroData as ArtPackFile,
 ];
 
-/** The worlds the picker offers, in display order. */
-export const ART_PACK_OPTIONS = PACKS.map((candidate) => ({
-  id: candidate.theme.id,
-  name: candidate.theme.name,
-}));
+export { DECK_THEMES as ART_PACK_OPTIONS } from "./deck-theme";
 
 let activePack = PACKS[0];
 
-/** True only for the id of a pack this build actually ships. localStorage is
- *  user-editable, so a restored value must pass this before it is trusted. */
-export function isArtPackId(value: unknown): value is string {
-  return (
-    typeof value === "string" &&
-    PACKS.some((candidate) => candidate.theme.id === value)
-  );
-}
-
-export function getActiveArtPackId() {
-  return activePack.theme.id;
+export function getActiveArtPackId(): DeckTheme {
+  const id = activePack.theme.id;
+  return isDeckTheme(id) ? id : "sci-fi";
 }
 
 /**

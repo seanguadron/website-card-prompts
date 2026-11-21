@@ -386,7 +386,8 @@ and SONIC:
   (roles keep two rows), and the free-text field sits at the bottom.
   Sockets read as scaffolding: a 2px cyan-tinted dashed frame, solid once
   seated.
-- **The deal.** On entering a section, the visible hand travels from a shared pile and turns face up in 400ms with a short stagger. Seating an archetype flips the occupied sockets. Every deal and socket flip uses the same back within a deck: the CRAFT pen, PICTURE prism or SONIC waveform. The six alternate illustrations are retained for future use. Brass tools on oxblood mark CRAFT, optical motifs on teal mark PICTURE, and silver sound motifs on indigo mark SONIC. Reduced motion leaves the faces immediately available.
+- **The deal.** A section's first Board visit deals its visible cards from the pile. Returning to a visited section, zooming or switching between Board and Flow keeps the hand settled. Seating an archetype flips its occupied sockets. Reduced motion makes faces available immediately.
+- **Card artwork.** Each world has a CRAFT pen, PICTURE prism and SONIC waveform back. Sci-Fi uses instrument engraving, Superhero uses comic-book halftones, and Fantasy uses gilded botanical borders. The world follows the user across decks. All cards retain the same proportions. SONIC uses sound-source and acoustic illustrations, and a face awaiting its own illustration can use the deck emblem.
 - **Workspace menu.** Section navigation, zoom, Fit and All are available in the header. The far view gives each section a clickable loadout summary.
 - **Keyboard**: `[` and `]` move between boards, `0` fits the active board,
   `-` and `=` zoom, arrows pan when the pasteboard itself is focused. Every

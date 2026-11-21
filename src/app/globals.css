@@ -1538,6 +1538,17 @@ button.role-loadout-slot {
   letter-spacing: -0.08em;
 }
 
+/* Frame the deck emblem as a portrait in the art well; the outer printed
+   border belongs on the reverse of the physical card. */
+.has-deck-emblem {
+  overflow: hidden;
+}
+
+.has-deck-emblem .card-illustration-image {
+  transform: scale(1.14);
+  object-position: center;
+}
+
 .card-illustration-frame:not(.has-generated-image)::before,
 .card-illustration-frame:not(.has-generated-image)::after {
   position: absolute;
@@ -6947,9 +6958,6 @@ button.role-loadout-slot {
     animation: deal-from-pile 400ms ease-in-out var(--deal-delay) both;
   }
 }
-.deck-board[data-deck="craft"] { --card-back: url("/card-backs/craft-1.webp"); }
-.deck-board[data-deck="picture"] { --card-back: url("/card-backs/picture-2.webp"); }
-.deck-board[data-deck="sonic"] { --card-back: url("/card-backs/sonic-3.webp"); }
 
 /* The deck header owns navigation, editing and the Workspace popover. */
 :root { --context-bar-height: 0px; --status-bar-height: 0px; }

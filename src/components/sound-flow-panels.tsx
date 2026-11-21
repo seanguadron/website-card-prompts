@@ -4,7 +4,7 @@ import { summarizeSlots } from "@/lib/hand-summary";
 import { SoundEnvelope } from "./deck-diagrams";
 import { useState } from "react";
 import type { ReactNode, RefObject } from "react";
-import { DeckBoard, type DeckBoardSpec } from "@/components/deck-board";
+import { DeckBoard, useBoardEntrance, type DeckBoardSpec } from "@/components/deck-board";
 import { PromptCardWorkbench } from "@/components/prompt-card-workbench";
 import {
   CardIllustrationFrame,
@@ -16,6 +16,7 @@ import {
 } from "@/components/prompt-builder-ui";
 import type { BoardMode } from "@/lib/board-prefs";
 import { soundCardEngine } from "@/lib/sound-card-system";
+import { soundFaceArt } from "@/lib/sound-card-art";
 import { SOUND_PARTS } from "@/lib/sound-deck-state";
 import { SOUND_PANEL_INDEX } from "@/lib/sound-navigation";
 import { SOUND_LAYER_LIMIT, SOUND_SECTIONS } from "@/lib/sound-prompt";
@@ -157,6 +158,7 @@ export function SoundFlowPanels({
 }) {
   const [copiedLayerId, setCopiedLayerId] = useState<string | null>(null);
   const board = layout === "board";
+  const boardViewportRef = useBoardEntrance(activePanel, board);
 
   async function copyLayer(id: string, text: string) {
     try {
@@ -284,10 +286,9 @@ export function SoundFlowPanels({
                 onClick={() => navigateToSoundStep(index)}
                 key={letter}
               >
-                {/* No art pack yet: the frame renders its letter fallback
-                    until this deck's pack is generated. */}
                 <CardIllustrationFrame
                   className="craft-definition-art"
+                  illustration={soundFaceArt(letter)}
                   fallback={letter}
                 />
                 <span className="craft-definition-word">
@@ -432,6 +433,7 @@ export function SoundFlowPanels({
 
     return (
       <DeckBoard
+        viewportRef={boardViewportRef}
         deck="sonic"
         boards={boards}
         activeIndex={activePanel}

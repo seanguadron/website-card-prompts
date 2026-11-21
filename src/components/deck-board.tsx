@@ -9,6 +9,7 @@ import {
   type CSSProperties,
   type FocusEvent,
   type ReactNode,
+  type RefObject,
 } from "react";
 import { useMediaQuery } from "@/hooks/use-media-query";
 import { OVERLAY_RAIL_MEDIA_QUERY } from "@/lib/tool-registry";
@@ -29,50 +30,15 @@ export type DeckBoardSpec = {
   summary?: string;
 };
 
-/**
- * The deck board: a pasteboard with a camera over a row of boards, one per
- * child. It is a CONTAINER for the same panels the flow renders - the deck
- * hands it the panel contents in order and says which board is active; the
- * camera follows. The header's Workspace menu holds camera controls. Keyboard: [ and ] move between boards, 0 fits the active
- * one, - and = zoom, arrows pan when the pasteboard itself is focused, and
- * Space + drag pans from anywhere. Focus moving into another board frames
- * it, so tabbing never leaves the user looking at the wrong board.
- */
-export function DeckBoard({
-  boards,
-  activeIndex,
-  onActivate,
-  dealing,
-  deck,
-  ariaLabel,
-  children,
-}: {
-  boards: readonly DeckBoardSpec[];
-  activeIndex: number;
-  onActivate: (index: number) => void;
-  /** True while an archetype is being dealt: slot cards flip in. */
-  dealing?: boolean;
-  deck: "craft" | "picture" | "sonic";
-  ariaLabel: string;
-  children: ReactNode;
-}) {
-  const cameraTools = usePortalTarget("workspace-camera-tools");
-  const tray = usePortalTarget("board-archetype-tray");
-  const overlayRails = useMediaQuery(OVERLAY_RAIL_MEDIA_QUERY);
-  const [collapsedChoice, setCollapsed] = useState<boolean|null>(null);
-  const collapsed = collapsedChoice ?? overlayRails;
-  const [handTarget, setHandTarget] = useState<HTMLDivElement | null>(null);
-  const nodes = Children.toArray(children);
+export function useBoardEntrance(activeIndex: number, board: boolean) {
   const viewportRef = useRef<HTMLDivElement | null>(null);
-  const camera = useBoardCamera({
-    viewportRef,
-    boardCount: boards.length,
-    activeIndex,
-    onActivate,
-  });
-  // A section change deals its visible hand from a common point in board space.
+  const visited = useRef(new Set<number>());
+  // A section first seen in Flow is already familiar when Board opens.
   // Offset coordinates stay independent of the camera's transform.
   useLayoutEffect(() => {
+    if (visited.current.has(activeIndex)) return;
+    visited.current.add(activeIndex);
+    if (!board) return;
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const surface = viewportRef.current?.querySelector(".deck-board-surface.is-active");
     const grid = surface?.querySelector<HTMLElement>(".lineage-card-grid, .role-card-grid");
@@ -91,7 +57,52 @@ export function DeckBoard({
     const clear = () => cards.forEach(card => card.classList.remove("is-entering-hand"));
     const timer = window.setTimeout(clear, 680);
     return () => { window.clearTimeout(timer); clear(); };
-  }, [activeIndex]);
+  }, [activeIndex, board]);
+  return viewportRef;
+}
+
+/**
+ * The deck board: a pasteboard with a camera over a row of boards, one per
+ * child. It is a CONTAINER for the same panels the flow renders - the deck
+ * hands it the panel contents in order and says which board is active; the
+ * camera follows. The header's Workspace menu holds camera controls. Keyboard: [ and ] move between boards, 0 fits the active
+ * one, - and = zoom, arrows pan when the pasteboard itself is focused, and
+ * Space + drag pans from anywhere. Focus moving into another board frames
+ * it, so tabbing never leaves the user looking at the wrong board.
+ */
+export function DeckBoard({
+  boards,
+  viewportRef,
+  activeIndex,
+  onActivate,
+  dealing,
+  deck,
+  ariaLabel,
+  children,
+}: {
+  boards: readonly DeckBoardSpec[];
+  viewportRef: RefObject<HTMLDivElement | null>;
+  activeIndex: number;
+  onActivate: (index: number) => void;
+  /** True while an archetype is being dealt: slot cards flip in. */
+  dealing?: boolean;
+  deck: "craft" | "picture" | "sonic";
+  ariaLabel: string;
+  children: ReactNode;
+}) {
+  const cameraTools = usePortalTarget("workspace-camera-tools");
+  const tray = usePortalTarget("board-archetype-tray");
+  const overlayRails = useMediaQuery(OVERLAY_RAIL_MEDIA_QUERY);
+  const [collapsedChoice, setCollapsed] = useState<boolean|null>(null);
+  const collapsed = collapsedChoice ?? overlayRails;
+  const [handTarget, setHandTarget] = useState<HTMLDivElement | null>(null);
+  const nodes = Children.toArray(children);
+  const camera = useBoardCamera({
+    viewportRef,
+    boardCount: boards.length,
+    activeIndex,
+    onActivate,
+  });
   const { view } = camera;
   const compactOverview = view.scale * BOARD_WIDTH < 180;
   const style = {

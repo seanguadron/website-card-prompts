@@ -5,6 +5,14 @@ appended by the sessions agent (see AGENTS.md → Learning loop). Lines ending
 with the proposed-amendment flag are STANDARDS candidates;
 `npm run amendments` lists the ones not yet annotated "→ landed in §X.Y".
 
+## 2026-11-21 — Deck emblems across three worlds
+
+**Decisions.** The nine backs pair each deck emblem with Sci-Fi, Superhero and Fantasy artwork. CRAFT keeps its pen, PICTURE its prism and SONIC its waveform. The Workspace world selector changes the treatment while keeping the emblem recognizable throughout a hand.
+
+**Card faces.** SONIC cards, archetypes and guides use illustrated faces. Four dedicated SONIC paintings complement the Gallery portraits. A front awaiting its own illustration can use the deck emblem from the selected world.
+
+**Navigation.** A section deals on its first board visit and stays settled when the player returns. Applying an archetype deals the occupied sockets so the player can see what changed.
+
 ## 2026-11-19 — Preferred deck backs and release approval
 
 **Decisions.** Sean approved publishing all nine rendered backs together with the SONIC and PICTURE prompt updates. He asked for a live check on each deck with the project’s generation API kept off.

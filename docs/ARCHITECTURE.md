@@ -148,22 +148,11 @@ pack id plus the entry key, which is what makes a second world a drop-in:
 no file moves, no collisions, an honest per-pack `status`, and no way for
 renaming a card in the studio to orphan its art. The deck engine takes
 optional `cardArt`/`cardBio` callbacks, so each deck resolves through its own
-typed door: `src/lib/art-pack.ts` for CRAFT (which world is active is a
-runtime choice) and `src/lib/picture-art-pack.ts` for PICTURE.
+typed resolver. CRAFT uses `src/lib/art-pack.ts` for its three illustrated worlds. PICTURE uses `src/lib/picture-art-pack.ts` for Gallery. SONIC uses `src/lib/sound-card-art.ts` to associate sources, acoustic characteristics, guide cards and archetypes with dedicated sound illustrations or selected Gallery portraits.
 
-**PICTURE has exactly one pack, by design**
-(`src/data/picture-deck/art-themes/gallery.json`). Its cards teach
-image-making techniques, so a card's art IS a demonstration of its own
-concept — a watercolor card must BE watercolor. There is no second world to
-reskin into, so `picture-art-pack.ts` is `art-pack.ts` minus the switching
-machinery: no picker, no mutable active-pack seam. The pack model still earns
-its place there for the derived paths, the per-entry `status`, and the studio
-workflow. The pack also carries the deck's seven **acronym letter** entries
-(`craft.P` … `craft.E`), which the guide page renders as cards.
+**PICTURE has one face pack**, `src/data/picture-deck/art-themes/gallery.json`. A Watercolor card demonstrates watercolor across all three worlds. Gallery tracks the status and artwork of each entry, including the seven acronym letters on the guide.
 
-All three CRAFT packs (sci-fi, fantasy, superhero) ship in the bundle, and
-the deck offers the **world picker** in two places, deliberately (owner,
-2026-08-19): stacked inside the corner nav dock, and as an illustrated
+The Workspace world picker selects a common art direction for all three decks. `src/lib/deck-theme.ts` resolves the nine card backs and the emblems used on faces awaiting artwork. A CRAFT world also changes its illustrated face pack. CRAFT offers an illustrated
 **card style tier** on the guide page — three cards showing the same
 Researcher in each world's art, so the reskin is discoverable rather than
 hidden in a control. `setActiveArtPack(id)` points every resolver at another

@@ -2,7 +2,7 @@
 
 import { summarizeSlots } from "@/lib/hand-summary";
 import type { ReactNode, RefObject } from "react";
-import { DeckBoard, type DeckBoardSpec } from "@/components/deck-board";
+import { DeckBoard, useBoardEntrance, type DeckBoardSpec } from "@/components/deck-board";
 import { PromptCardWorkbench } from "@/components/prompt-card-workbench";
 import type { ArtQueueApi } from "@/hooks/use-art-queue";
 import { PromptRoleWorkbench } from "@/components/prompt-role-workbench";
@@ -13,6 +13,7 @@ import {
   FieldHeading,
   type CraftDictationApi,
 } from "@/components/prompt-builder-ui";
+import type { DeckTheme } from "@/lib/deck-theme";
 import { ART_PACK_OPTIONS, craftLetterArt, packArtFor } from "@/lib/art-pack";
 import type { BoardMode } from "@/lib/board-prefs";
 import { FORMAT_OPTIONS } from "@/lib/prompt-builder-options";
@@ -99,7 +100,7 @@ export function CraftFlowPanels({
   roleSelectionMessage: string;
   dictation: CraftDictationApi;
   artPackId: string;
-  onSelectArtPack: (id: string) => void;
+  onSelectArtPack: (id: DeckTheme) => void;
   navigateToCraftStep: (stepIndex: number) => void;
   onSelectOutputType: (value: string) => void;
   onUpdateDraft: (field: PromptDraftTextField, value: string) => void;
@@ -165,6 +166,7 @@ export function CraftFlowPanels({
   const formatComplete = isFieldComplete(draft, "format");
   const targetComplete = isFieldComplete(draft, "targetAudience");
   const board = layout === "board";
+  const boardViewportRef = useBoardEntrance(activePanel, board);
 
   const guidePanel: Panel = {
     key: "guide",
@@ -739,6 +741,7 @@ export function CraftFlowPanels({
 
     return (
       <DeckBoard
+        viewportRef={boardViewportRef}
         deck="craft"
         boards={boards}
         activeIndex={activePanel}

@@ -4,7 +4,9 @@ Last rewritten 2026-11-21.
 
 ## Now
 
-The twelve-feature board is live. A museum opening provided the brief for a live acceptance pass on CRAFT, PICTURE and SONIC. The review exercised both exports and identified fixes to Writing Draft, selecting reusable input text, standalone aspect ratios, mechanical sound grades, equipping cards into full sections, and selecting sections from the overview. Pins, reserves and comparison branches stay in browser storage. No generation service participates in these workflows.
+The three decks share a world selector in Workspace. Each world has one back per deck: pen, prism and waveform, in Sci-Fi, Superhero or Fantasy artwork. The nine new local WebPs live in `public/card-backs`. A section deals on its first Board visit and stays settled on return. Applying an archetype still deals the occupied sockets.
+
+SONIC's cards, archetypes and guides now carry illustrations. Four dedicated paintings in `public/card-art/sonic` complement the existing Gallery portraits. Card fronts awaiting individual art use the selected deck emblem. Edge verification covered all nine deck/world combinations, section revisits, Flow and Board switching, and the portrait fallback in a hover inspector. All 165 tests and the design, integration and security reviews passed. The twelve board features and local prompt and skill exports remain available.
 
 ## Runbook
 
@@ -68,7 +70,7 @@ flow view, plus two unregistered authoring surfaces.
   Credits Midjourney's documentation.
 - **SONIC Deck** (`sound-deck`): S.O.N.I.C. sound-effect prompts for Adobe
   Firefly — 38 lineages ×3 grades, 12 archetypes, Emphasis dial, ambience
-  mode, layer rack; comma-term prompts; no art yet. Credits Adobe Firefly's
+  mode, layer rack; comma-term prompts; illustrated faces. Credits Adobe Firefly's
   guidance. Gates owed (Now).
 - **The board** (`src/components/deck-board.tsx`, `src/hooks/use-board-camera.ts`,
   `src/lib/board-layout.ts` with 10 tests, `src/components/board-archetype-socket.tsx`,
@@ -79,7 +81,7 @@ flow view, plus two unregistered authoring surfaces.
   workflow + bio editor, "Generate more" queue button.
 
 **The art-pack model** (`docs/ARCHITECTURE.md` §1): previously rendered assets across four packs —
-sci-fi, fantasy, superhero (226 each), gallery (426) — 1,104 existing images. Five editorial lineages have planned entries in each CRAFT pack and use the standard unillustrated face.
+sci-fi, fantasy, superhero (226 each), gallery (426) — 1,104 existing images. Five editorial lineages have planned entries in each CRAFT pack and use the selected deck emblem while awaiting dedicated illustrations.
 
 **Outcome Lab** is retired. Historical scenario data and pure helpers are available for offline review. The provider batch script, project-local API key and deck integration were removed.
 
@@ -91,7 +93,7 @@ gates in `.claude/agents/` + deterministic halves in `scripts/check-*.mjs`
 ## Backlog / in flight
 
 - The owner authorized publishing the release on main. The production build passed, and the local browser downloaded each deck's skill and matched it to its preview. The release includes the September split and board. The setup hand uses native keyboard button activation and pointer dragging. The shared archetype tray can collapse independently of Output. Drag individual cards from the section hand to its slots. Hover or focus to inspect a card. On narrow screens the Archetypes and Output rails provide mirrored, collapsible edge controls. Browser verification covered all three decks at 3840 by 2160, gray-surface panning, wheel zoom and drops from the tray while viewing a section.
-- The board still owes a manual screen-reader pass. SONIC lacks an illustrated art pack and its original deck-wide design paperwork.
-- Board revision published after the cleanup. The table uses 152px-wide 5:7 faces, larger sockets and three backs per deck. The editorial comparison is an in-chat reading. Audio and image output quality remain untested. Only card backs were rendered.
+- The board still owes a manual screen-reader pass. SONIC lacks its original deck-wide design paperwork.
+- Board revision published after the cleanup. The table uses 152px-wide 5:7 faces, larger sockets and three backs per deck. The editorial comparison is an in-chat reading. Audio and image output quality remain untested. Card artwork is separate from generated prompt output.
 - Review findings and deck-by-deck product recommendations are in docs/DECK_REVIEW.md.
 - Prior decisions and outstanding amendment proposals are in the sessions ledger. Use the gate reports for the November review and fixes.

@@ -3,7 +3,7 @@
 import { summarizeSlots } from "@/lib/hand-summary";
 import type { ReactNode, RefObject } from "react";
 import { FramingBoard } from "./deck-diagrams";
-import { DeckBoard, type DeckBoardSpec } from "@/components/deck-board";
+import { DeckBoard, useBoardEntrance, type DeckBoardSpec } from "@/components/deck-board";
 import { PromptCardWorkbench } from "@/components/prompt-card-workbench";
 import {
   CardIllustrationFrame,
@@ -239,6 +239,7 @@ export function PictureFlowPanels({
   );
   const tailDisabled = !draft.mjTailEnabled;
   const board = layout === "board";
+  const boardViewportRef = useBoardEntrance(activePanel, board);
 
   function sectionWorkbench(section: PictureSection, controlId: string) {
     return (
@@ -530,6 +531,7 @@ export function PictureFlowPanels({
 
     return (
       <DeckBoard
+        viewportRef={boardViewportRef}
         deck="picture"
         boards={boards}
         activeIndex={activePanel}

@@ -1,5 +1,9 @@
 "use client";
 
+import { CardFaceThemeProvider } from "./card-face-theme";
+import { DeckThemePicker } from "./deck-theme-picker";
+import { useDeckTheme } from "@/hooks/use-deck-theme";
+import { deckThemeAttributes } from "@/lib/deck-theme";
 import { framingDirections } from "@/lib/framing-board";
 import { HandFork } from "./hand-fork";
 import { HandWorkspace, useHandWorkspace } from "./hand-workspace";
@@ -100,6 +104,7 @@ import type {
 import { OVERLAY_RAIL_MEDIA_QUERY } from "@/lib/tool-registry";
 
 export function PictureDeck() {
+  const { theme, selectTheme } = useDeckTheme();
   const hand = useHandWorkspace("picture", id => Boolean(pictureCardEngine.getLineage(id)));
   const [draft, setDraft] = useState<PictureDraft>(EMPTY_PICTURE_DRAFT);
   const [cardSystem, setCardSystem] = useState<PictureCardSystemState>(
@@ -761,8 +766,9 @@ export function PictureDeck() {
   };
 
   return (
+    <CardFaceThemeProvider deck="picture" theme={theme}>
     <HandWorkspace.Provider value={hand}>
-    <div className={"tool-page prompt-flow-page is-picture-flow"}>
+    <div {...deckThemeAttributes("picture", theme)} className="tool-page prompt-flow-page is-picture-flow">
       <PictureDeckHeader
         stepStrip={
           <FlowStepStrip
@@ -951,6 +957,7 @@ export function PictureDeck() {
                 Flow
               </button>
             </div>
+            <DeckThemePicker theme={theme} onSelect={selectTheme} />
           </FlowNavDock>
         </div>
 
@@ -996,5 +1003,6 @@ export function PictureDeck() {
       </div>
     </div>
     </HandWorkspace.Provider>
+    </CardFaceThemeProvider>
   );
 }

@@ -10,6 +10,7 @@ import type {
 import { roleArt } from "@/lib/art-pack";
 import type { CardArtRef } from "@/lib/card-engine";
 import type { PromptRole } from "@/lib/prompt-types";
+import { useCardFaceEmblem } from "./card-face-theme";
 
 const FIELD_GUIDANCE = {
   context: {
@@ -88,30 +89,36 @@ export function CardIllustrationFrame({
   className: string;
   badge?: string;
 }) {
-  const [imageFailed, setImageFailed] = useState(false);
-  const showImage =
-    illustration?.status === "generated" && illustration.src && !imageFailed;
+  const emblem = useCardFaceEmblem();
+  const [failedIllustration, setFailedIllustration] = useState<string>();
+  const [failedEmblem, setFailedEmblem] = useState<string>();
+  const original = illustration?.status === "generated" ? illustration.src : undefined;
+  const showOriginal = Boolean(original && original !== failedIllustration);
+  const image = showOriginal ? original : emblem !== failedEmblem ? emblem : undefined;
 
   return (
     <span
       className={[
         className,
         "card-illustration-frame",
-        showImage ? "has-generated-image" : "",
+        image ? "has-generated-image" : "",
+        image && !showOriginal ? "has-deck-emblem" : "",
       ]
         .filter(Boolean)
         .join(" ")}
       aria-hidden="true"
     >
-      {showImage ? (
+      {image ? (
         <Image
+          key={image}
           className="card-illustration-image"
-          src={illustration.src}
+          src={image}
+          unoptimized={!showOriginal}
           alt=""
           width={256}
           height={256}
           loading="lazy"
-          onError={() => setImageFailed(true)}
+          onError={() => showOriginal ? setFailedIllustration(image) : setFailedEmblem(image)}
         />
       ) : (
         <span className="card-illustration-placeholder">{fallback}</span>

@@ -1,5 +1,9 @@
 "use client";
 
+import { CardFaceThemeProvider } from "./card-face-theme";
+import { DeckThemePicker } from "./deck-theme-picker";
+import { useDeckTheme } from "@/hooks/use-deck-theme";
+import { deckThemeAttributes } from "@/lib/deck-theme";
 import { HandFork } from "./hand-fork";
 import { HandWorkspace, useHandWorkspace } from "./hand-workspace";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
@@ -9,6 +13,7 @@ import { BoardArchetypeSocket } from "@/components/board-archetype-socket";
 import { FlowNavDock } from "@/components/flow-nav-dock";
 import { FlowStepStrip } from "@/components/flow-step-strip";
 import { SoundArchetypeToolbar, SoundArchetypeDetails } from "@/components/sound-archetype-toolbar";
+import { soundFaceArt } from "@/lib/sound-card-art";
 import { SoundDeckHeader } from "@/components/sound-deck-header";
 import { SoundFlowPanels } from "@/components/sound-flow-panels";
 import type { SoundDictationField } from "@/components/sound-flow-panels";
@@ -96,6 +101,7 @@ import type {
 import { OVERLAY_RAIL_MEDIA_QUERY } from "@/lib/tool-registry";
 
 export function SoundDeck() {
+  const { theme, selectTheme } = useDeckTheme();
   const hand = useHandWorkspace("sonic", id => Boolean(soundCardEngine.getLineage(id)));
   const [draft, setDraft] = useState<SoundDraft>(EMPTY_SOUND_DRAFT);
   const [cardSystem, setCardSystem] = useState<SoundCardSystemState>(
@@ -470,14 +476,14 @@ export function SoundDeck() {
     writeBoardMode("sound-deck", mode);
   }
 
-  // The archetype hand on the Setup board: custom presets first, then the
-  // catalog. No art pack yet, so the faces carry their code letter.
+  // The archetype hand on the Setup board: custom presets first, then the catalog.
   const boardArchetypes = [...customArchetypes, ...SOUND_ARCHETYPES].map(
     (archetype) => ({
       id: archetype.id,
       code: archetype.code,
       name: archetype.name,
       description: archetype.description,
+      art: soundFaceArt(archetype.id),
       equipped: soundCardEngine.archetypeSlots(archetype.equipped, cardSystem.equipped, hand.locked),
       details: <SoundArchetypeDetails archetype={archetype} />,
       custom: isCustomSoundArchetype(archetype),
@@ -744,8 +750,9 @@ export function SoundDeck() {
   };
 
   return (
+    <CardFaceThemeProvider deck="sonic" theme={theme}>
     <HandWorkspace.Provider value={hand}>
-    <div className={"tool-page prompt-flow-page is-sound-flow"}>
+    <div {...deckThemeAttributes("sonic", theme)} className="tool-page prompt-flow-page is-sound-flow">
       <SoundDeckHeader
         stepStrip={
           <FlowStepStrip
@@ -936,6 +943,7 @@ export function SoundDeck() {
                 Flow
               </button>
             </div>
+            <DeckThemePicker theme={theme} onSelect={selectTheme} />
           </FlowNavDock>
         </div>
 
@@ -981,5 +989,6 @@ export function SoundDeck() {
       </div>
     </div>
     </HandWorkspace.Provider>
+    </CardFaceThemeProvider>
   );
 }

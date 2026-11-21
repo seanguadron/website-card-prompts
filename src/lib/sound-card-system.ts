@@ -4,7 +4,8 @@
 // its tests never touch JSON.
 import cardsData from "@/data/sound-deck/cards.json";
 import tracksData from "@/data/sound-deck/tracks.json";
-import { createCardEngine } from "@/lib/card-engine";
+import { createCardEngine, resolveCardIllustration } from "@/lib/card-engine";
+import { soundFaceArt } from "@/lib/sound-card-art";
 import { SOUND_SECTIONS } from "@/lib/sound-prompt";
 import type { SoundSection } from "@/lib/sound-prompt";
 import type {
@@ -32,9 +33,6 @@ export function getSoundCardFamily(section: SoundSection): string {
   return SECTION_FAMILIES[section];
 }
 
-// No cardArt/cardBio seams yet: this deck has no art pack until one is
-// generated, and the engine's fallback (no illustration -> the card face
-// renders its letter/code) is exactly the planned pre-art state.
 export const soundCardEngine = createCardEngine<
   SoundSection,
   SoundTrackId,
@@ -48,6 +46,10 @@ export const soundCardEngine = createCardEngine<
   trackDefinitions: tracksCatalog.definitions,
   defaultTrackValues: tracksCatalog.defaultValues,
   cardFamily: getSoundCardFamily,
+  cardArt(lineage, gradeIndex) {
+    const illustration = resolveCardIllustration(lineage.grades[gradeIndex]?.illustration, lineage.illustration);
+    return illustration?.status === "generated" ? illustration : soundFaceArt(lineage.id);
+  },
 });
 
 export const SOUND_SLOT_BUDGETS = tracksCatalog.slotBudgets;
