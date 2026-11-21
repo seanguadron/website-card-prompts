@@ -5,6 +5,12 @@ appended by the sessions agent (see AGENTS.md → Learning loop). Lines ending
 with the proposed-amendment flag are STANDARDS candidates;
 `npm run amendments` lists the ones not yet annotated "→ landed in §X.Y".
 
+## 2026-11-21 — Shared archetype rail and project credentials
+
+**Decisions.** Sean deferred Higgsfield work on card fronts and requested the existing CRAFT Archetypes rail across all three decks. He explicitly requested removal of any OpenAI API key belonging to Card Prompts.
+
+**Credential check.** Checks of the Vercel project, GitHub repository and its environments found no configured project OpenAI key. Searches of the local project and reachable Git history found no matching key signatures. There was no project key to delete. The check was scoped to Card Prompts and made no changes to account credentials.
+
 ## 2026-11-21 — Deck emblems across three worlds
 
 **Decisions.** The nine backs pair each deck emblem with Sci-Fi, Superhero and Fantasy artwork. CRAFT keeps its pen, PICTURE its prism and SONIC its waveform. The Workspace world selector changes the treatment while keeping the emblem recognizable throughout a hand.

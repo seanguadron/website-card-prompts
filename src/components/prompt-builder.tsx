@@ -15,7 +15,7 @@ import type { ChangeEvent } from "react";
 import { BoardArchetypeSocket } from "@/components/board-archetype-socket";
 import { FlowNavDock } from "@/components/flow-nav-dock";
 import { FlowStepStrip } from "@/components/flow-step-strip";
-import { PromptArchetypeToolbar, PromptArchetypeDetails } from "@/components/prompt-archetype-toolbar";
+import { PromptArchetypeDetails } from "@/components/prompt-archetype-toolbar";
 import { PromptBuilderHeader } from "@/components/prompt-builder-header";
 import { CraftFlowPanels } from "@/components/prompt-flow-panels";
 import { useArtQueue } from "@/hooks/use-art-queue";
@@ -143,6 +143,7 @@ export function PromptBuilder({ roles }: { roles: PromptRole[] }) {
   );
   const outputExpanded = outputExpandedChoice ?? !overlayRails;
   const [proofLabOpen, setProofLabOpen] = useState(false);
+  const [socketTarget, setSocketTarget] = useState<HTMLDivElement | null>(null);
   const [archetypeSaveOpen, setArchetypeSaveOpen] = useState(false);
   const [activeProofId, setActiveProofId] = useState<string | null>(null);
   const [libraryOpen, setLibraryOpen] = useState(false);
@@ -513,7 +514,7 @@ export function PromptBuilder({ roles }: { roles: PromptRole[] }) {
     setProofLabOpen(false);
     setCopyState("idle");
     setSpeechMessage(
-      `${archetype.name} archetype applied. Your current section stayed in place.`,
+      `${archetype.name} archetype applied.`,
     );
     // The deal: the boards' slot cards flip in for a beat.
     if (dealTimerRef.current !== null) {
@@ -979,24 +980,25 @@ export function PromptBuilder({ roles }: { roles: PromptRole[] }) {
 
       <div
         className={[
-          "builder-main-layout",
+          "builder-main-layout has-deck-rails",
           outputExpanded ? "" : "is-output-collapsed",
           viewMode === "board" ? "is-board-mode" : "",
         ]
           .filter(Boolean)
           .join(" ")}
       >
-        {viewMode === "board" && <aside id="board-archetype-tray" aria-label="Archetypes" />}
-        <PromptArchetypeToolbar
-          archetypes={PROMPT_ARCHETYPES}
-          customArchetypes={customArchetypes}
-          roles={roles}
+        <BoardArchetypeSocket
+          tool="prompt-builder"
+          items={boardArchetypes}
           activeId={activeArchetypeId}
+          onApply={applyArchetypeById}
+          onUnseat={unseatArchetype}
+          socketTarget={socketTarget}
           saveFormOpen={archetypeSaveOpen}
           onSaveFormOpenChange={setArchetypeSaveOpen}
-          onApply={applyArchetype}
           onSaveCustom={saveCurrentAsPreset}
           onDeleteCustom={removeCustomPreset}
+          hint="Drop an archetype here, or select one in the rail."
         />
 
         <div className="flow-workspace">
@@ -1015,15 +1017,7 @@ export function PromptBuilder({ roles }: { roles: PromptRole[] }) {
               layout={viewMode}
               dealing={dealing}
               onActivatePanel={nav.setActivePanel}
-              boardSetup={
-                <BoardArchetypeSocket
-                  items={boardArchetypes}
-                  activeId={activeArchetypeId}
-                  onApply={applyArchetypeById}
-                  onUnseat={unseatArchetype}
-                  hint="Drag an archetype from the tray onto the board, or select one to apply it."
-                />
-              }
+              boardSetup={<div ref={setSocketTarget} />}
               draft={draft}
               formatCode={formatCode}
               cardSystem={cardSystem}

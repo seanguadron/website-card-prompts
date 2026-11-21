@@ -81,8 +81,7 @@ export function CraftFlowPanels({
   flowViewportRef: RefObject<HTMLDivElement | null>;
   /** Which container renders the panels: the horizontal flow or the board. */
   layout?: BoardMode;
-  /** Board mode only: rendered on the Setup board under the guide (the
-   *  archetype socket). */
+  /** The seated archetype is visible on the Setup board and in the Flow guide. */
   boardSetup?: ReactNode;
   /** Board mode only: the board asks to make another panel active (a pip,
    *  focus moving into another board, the keyboard). */
@@ -172,6 +171,7 @@ export function CraftFlowPanels({
     key: "guide",
     node: (
       <>
+        {!board && boardSetup}
         <div className="craft-method" aria-labelledby="craft-method-title">
           <div className="craft-method-copy">
             <h2

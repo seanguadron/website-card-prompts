@@ -2,8 +2,6 @@
 
 import {
   Children,
-  createContext,
-  useState,
   useRef,
   useLayoutEffect,
   type CSSProperties,
@@ -11,15 +9,10 @@ import {
   type ReactNode,
   type RefObject,
 } from "react";
-import { useMediaQuery } from "@/hooks/use-media-query";
-import { OVERLAY_RAIL_MEDIA_QUERY } from "@/lib/tool-registry";
-import { RailToggle } from "./rail-toggle";
 import { createPortal } from "react-dom";
 import { usePortalTarget } from "@/hooks/use-portal-target";
 import { useBoardCamera } from "@/hooks/use-board-camera";
 import { BOARD_GAP, BOARD_WIDTH, boardOrigin } from "@/lib/board-layout";
-
-export const BoardTrayTarget = createContext<HTMLElement | null>(null);
 
 export type DeckBoardSpec = {
   key: string;
@@ -91,11 +84,6 @@ export function DeckBoard({
   children: ReactNode;
 }) {
   const cameraTools = usePortalTarget("workspace-camera-tools");
-  const tray = usePortalTarget("board-archetype-tray");
-  const overlayRails = useMediaQuery(OVERLAY_RAIL_MEDIA_QUERY);
-  const [collapsedChoice, setCollapsed] = useState<boolean|null>(null);
-  const collapsed = collapsedChoice ?? overlayRails;
-  const [handTarget, setHandTarget] = useState<HTMLDivElement | null>(null);
   const nodes = Children.toArray(children);
   const camera = useBoardCamera({
     viewportRef,
@@ -143,12 +131,6 @@ export function DeckBoard({
       onFocus={followFocus}
       {...camera.handlers}
     >
-      {tray && createPortal(<>
-        <RailToggle side="left" title="Archetypes" expanded={!collapsed} controls="board-card-library" onToggle={() => setCollapsed(!collapsed)} />
-        <div id="board-card-library" inert={collapsed} aria-hidden={collapsed} hidden={collapsed}>
-          <div className="tray-hand" ref={setHandTarget} />
-        </div>
-      </>, tray)}
       <div
         className={
           camera.animating ? "deck-board-world is-animating" : "deck-board-world"
@@ -191,9 +173,7 @@ export function DeckBoard({
                   <span>{board.summary ?? "Choose an archetype"}</span>
                 </button>
               )}
-              <BoardTrayTarget.Provider value={index === 0 ? handTarget : null}>
-                {nodes[index] ?? null}
-              </BoardTrayTarget.Provider>
+              {nodes[index] ?? null}
             </section>
           );
         })}

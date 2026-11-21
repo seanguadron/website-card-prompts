@@ -2,7 +2,7 @@
 
 import { CardInspector } from "@/components/card-inspector";
 
-import { useContext,  useState, type ReactNode } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 import { createPortal } from "react-dom";
 import {
   DndContext,
@@ -15,7 +15,10 @@ import {
   type DragEndEvent,
   type DragStartEvent,
 } from "@dnd-kit/core";
-import { BoardTrayTarget } from "@/components/deck-board";
+import { RailToggle } from "./rail-toggle";
+import { useMediaQuery } from "@/hooks/use-media-query";
+import { OVERLAY_RAIL_MEDIA_QUERY } from "@/lib/tool-registry";
+import { readStored, readStoredStringArray, writeStored } from "@/lib/prompt-storage";
 import { useHandTools, type Loadout } from "./hand-workspace";
 import { useCardInspection } from "@/hooks/use-card-inspection";
 import { CardIllustrationFrame } from "@/components/prompt-builder-ui";
@@ -35,6 +38,7 @@ export type BoardArchetypeItem = {
 };
 
 const SOCKET_ID = "archetype-socket";
+const RAIL_KEY = "cardprompts.archetypes-expanded";
 
 function ArchetypeFace({ item }: { item: BoardArchetypeItem }) {
   return (
@@ -111,13 +115,25 @@ function HandCard({
  * existing rule), and the socket empties while the cards stay.
  */
 export function BoardArchetypeSocket({
+  tool,
   items,
+  socketTarget,
+  saveFormOpen,
+  onSaveFormOpenChange,
+  onSaveCustom,
+  onDeleteCustom,
   activeId,
   onApply,
   onUnseat,
   hint,
 }: {
+  tool: "prompt-builder" | "picture-deck" | "sound-deck";
   items: readonly BoardArchetypeItem[];
+  socketTarget: HTMLElement | null;
+  saveFormOpen: boolean;
+  onSaveFormOpenChange: (open: boolean) => void;
+  onSaveCustom: (name: string) => void;
+  onDeleteCustom: (id: string) => void;
   activeId: string | null;
   onApply: (id: string) => void;
   onUnseat: () => void;
@@ -125,7 +141,33 @@ export function BoardArchetypeSocket({
 }) {
   const [draggingId, setDraggingId] = useState<string | null>(null);
   const portalTarget = usePortalTarget();
-  const tray = useContext(BoardTrayTarget);
+  const overlayRails = useMediaQuery(OVERLAY_RAIL_MEDIA_QUERY);
+  const [expandedChoice, setExpandedChoice] = useState<boolean | null>(null);
+  const [favorites, setFavorites] = useState<string[]>([]);
+  const [presetName, setPresetName] = useState("");
+  const expanded = saveFormOpen || (expandedChoice ?? !overlayRails);
+  const favoritesKey = `digitools.${tool}.favorites-v1`;
+  useEffect(() => {
+    const frame = requestAnimationFrame(() => {
+      const saved = readStored(RAIL_KEY, null);
+      setExpandedChoice(typeof saved === "boolean" ? saved : null);
+      setFavorites(readStoredStringArray(favoritesKey));
+    });
+    return () => cancelAnimationFrame(frame);
+  }, [favoritesKey]);
+  const ordered = [
+    ...items.filter(item => favorites.includes(item.id)),
+    ...items.filter(item => !favorites.includes(item.id)),
+  ];
+  function toggleFavorite(id: string) {
+    const next = favorites.includes(id) ? favorites.filter(item => item !== id) : [...favorites, id];
+    setFavorites(next);
+    writeStored(favoritesKey, next);
+  }
+  function closeSaveForm() {
+    setPresetName("");
+    onSaveFormOpenChange(false);
+  }
   // The same pointer tilt the card grids have: cards near the pointer lean
   // toward it on fine pointers (DESIGN_DIRECTION, the CRAFT card system).
   const handMotion = useCardDeckMotion();
@@ -155,39 +197,68 @@ export function BoardArchetypeSocket({
       collisionDetection={({ pointerCoordinates }) => {
         if (!pointerCoordinates) return [];
         const under = document.elementFromPoint(pointerCoordinates.x, pointerCoordinates.y);
-        return under?.closest(".deck-board") && !under.closest(".deck-board-bar")
+        return under?.closest(".deck-board, .flow-viewport") && !under.closest(".deck-board-bar")
           ? [{ id: SOCKET_ID }] : [];
       }}
       onDragStart={handleDragStart}
       onDragEnd={handleDragEnd}
       onDragCancel={() => setDraggingId(null)}
     >
-      <section className="board-archetype" aria-labelledby="board-archetype-title">
+      {socketTarget && createPortal(<section className="board-archetype" aria-labelledby="board-archetype-title">
         <div className="workbench-section-heading board-archetype-heading">
           <strong id="board-archetype-title">Archetype socket</strong>
           <small>{seated ? seated.code : `${items.length} in hand`}</small>
         </div>
         <Socket seated={seated} onUnseat={onUnseat} hint={hint} />
-      </section>
-      {tray && createPortal(<>
-        <div
-          className="board-archetype-hand"
-          role="list"
-          aria-label="Archetype cards"
-          onPointerMove={handMotion.onPointerMove}
-          onPointerLeave={handMotion.onPointerLeave}
-        >
-          {items.map((item) => (
-            <div role="listitem" key={item.id}>
-              <HandCard
-                item={item}
-                active={item.id === activeId}
-                onApply={() => onApply(item.id)}
-              />
+      </section>, socketTarget)}
+      <aside id="board-archetype-tray" aria-label="Archetypes">
+        <RailToggle side="left" title="Archetypes" expanded={expanded} controls="board-card-library" onToggle={() => {
+          if (saveFormOpen) closeSaveForm();
+          setExpandedChoice(!expanded);
+          writeStored(RAIL_KEY, !expanded);
+        }} />
+        <div id="board-card-library" hidden={!expanded} inert={!expanded}>
+          {saveFormOpen && <form className="archetype-save-form" onSubmit={event => {
+            event.preventDefault();
+            if (!presetName.trim()) return;
+            onSaveCustom(presetName.trim());
+            closeSaveForm();
+          }}>
+            <input autoFocus aria-label="Preset name" placeholder="Preset name" value={presetName}
+              onChange={event => setPresetName(event.target.value)} onKeyDown={event => {
+                if (event.key === "Escape") closeSaveForm();
+              }} />
+            <button type="submit" disabled={!presetName.trim()}>Save</button>
+            <button type="button" onClick={closeSaveForm}>Cancel</button>
+          </form>}
+          <div className="tray-hand">
+            <div
+              className="board-archetype-hand"
+              role="list"
+              aria-label="Archetype cards"
+              onPointerMove={handMotion.onPointerMove}
+              onPointerLeave={handMotion.onPointerLeave}
+            >
+              {ordered.map((item) => (
+                <div role="listitem" key={item.id}>
+                  <HandCard
+                    item={item}
+                    active={item.id === activeId}
+                    onApply={() => onApply(item.id)}
+                  />
+                  <div className="archetype-card-tools">
+                    <button type="button" aria-pressed={favorites.includes(item.id)}
+                      aria-label={`${favorites.includes(item.id) ? "Unpin" : "Pin"} ${item.name}`}
+                      onClick={() => toggleFavorite(item.id)}>{favorites.includes(item.id) ? "★" : "☆"}</button>
+                    {item.custom && <button type="button" aria-label={`Delete ${item.name} preset`}
+                      onClick={() => onDeleteCustom(item.id)}>Delete</button>}
+                  </div>
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
         </div>
-      </>, tray)}
+      </aside>
 
       {portalTarget
         ? createPortal(

@@ -5176,15 +5176,14 @@ button.role-loadout-slot {
    flat. */
 
 /* The hand stays in screen space as the camera moves between boards. */
-.builder-main-layout.is-board-mode {
+.builder-main-layout.has-deck-rails {
   grid-template-columns: clamp(175px, 12vw, 240px) minmax(0, 1fr) 380px;
   grid-template-areas: "arch work out";
   grid-template-rows: minmax(0, 1fr);
 }
-.builder-main-layout.is-board-mode.is-output-collapsed {
+.builder-main-layout.has-deck-rails.is-output-collapsed {
   grid-template-columns: clamp(175px, 12vw, 240px) minmax(0, 1fr) 52px;
 }
-.builder-main-layout.is-board-mode .archetype-toolbar { display: none; }
 #board-archetype-tray {
   grid-area: arch;
   display: flex;
@@ -5213,10 +5212,10 @@ button.role-loadout-slot {
 }
 .tray-hand { min-height: 0; overflow: auto; }
 @media (min-width: 1101px) {
-  .builder-main-layout.is-board-mode:has(.tray-toggle[aria-expanded="false"]) {
+  .builder-main-layout.has-deck-rails:has(.tray-toggle[aria-expanded="false"]) {
     grid-template-columns: 46px minmax(0, 1fr) 380px;
   }
-  .builder-main-layout.is-board-mode.is-output-collapsed:has(.tray-toggle[aria-expanded="false"]) {
+  .builder-main-layout.has-deck-rails.is-output-collapsed:has(.tray-toggle[aria-expanded="false"]) {
     grid-template-columns: 46px minmax(0, 1fr) 52px;
   }
   .tray-toggle[aria-expanded="false"] { align-items: center; flex-direction: column; }
@@ -5230,14 +5229,14 @@ button.role-loadout-slot {
   padding: 4px 10px 12px;
 }
 @media (max-width: 1100px) {
-  .builder-main-layout.is-board-mode,
-  .builder-main-layout.is-board-mode.is-output-collapsed {
+  .builder-main-layout.has-deck-rails,
+  .builder-main-layout.has-deck-rails.is-output-collapsed {
     grid-template-columns: minmax(0, 1fr);
     grid-template-rows: auto minmax(0, 1fr);
     grid-template-areas: "arch" "work";
   }
   #board-archetype-tray .board-archetype-hand { flex-direction: row; }
-  .builder-main-layout.is-board-mode .flow-workspace { min-height: 350px; }
+  .builder-main-layout.has-deck-rails .flow-workspace { min-height: 350px; }
 }
 .deck-board {
   --board-scale: 1;
@@ -5274,7 +5273,7 @@ button.role-loadout-slot {
 .deck-board,
 .deck-board-surface { cursor: grab; }
 
-.is-board-mode:has(.board-archetype-card.is-dragging) .deck-board {
+.has-deck-rails:has(.board-archetype-card.is-dragging) .deck-board {
   box-shadow: inset 0 0 0 2px var(--brand-cyan);
 }
 
@@ -6887,6 +6886,7 @@ button.role-loadout-slot {
 }
 .deck-board :is(.lineage-card, .role-perk-card, .board-archetype-card),
 #board-archetype-tray .board-archetype-card,
+.board-socket .board-socket-card,
 .board-archetype-card.card-drag-overlay {
   box-sizing: border-box;
   width: var(--playing-card-width);
@@ -6909,7 +6909,8 @@ button.role-loadout-slot {
 .deck-board :is(.card-slot-grid, .role-loadout-slots) {
   grid-template-columns: repeat(auto-fit, var(--socket-width));
 }
-.deck-board :is(.card-slot, .role-loadout-slot, .board-socket) {
+.deck-board :is(.card-slot, .role-loadout-slot),
+.board-archetype .board-socket {
   box-sizing: border-box;
   width: var(--socket-width);
   height: calc(var(--playing-card-height) + 38px);
@@ -7008,27 +7009,37 @@ button.role-loadout-slot {
 #board-archetype-tray > .output-dock-toggle { left: auto; right: 0; border-right: 0; border-left: 1px solid var(--border); }
 #board-archetype-tray:has([aria-expanded="true"]) > .output-dock-toggle { height: 72px; bottom: auto; grid-template-rows: 1fr; }
 #board-archetype-tray:has([aria-expanded="true"]) > .output-dock-toggle strong { display: none; }
+.archetype-card-tools { display: flex; justify-content: flex-end; gap: 4px; }
+.archetype-card-tools button { min-width: 28px; min-height: 24px; color: var(--foreground); }
+.archetype-card-tools button[aria-pressed="true"] { color: var(--brand-cyan-text); }
+#board-card-library .archetype-save-form { flex-wrap: wrap; padding: 8px; }
+#board-card-library .archetype-save-form input { width: 100%; }
 #board-card-library { margin-right: 52px; height: 100%; }
 @media (min-width:1101px) {
-  .builder-main-layout.is-board-mode,
-  .builder-main-layout.is-board-mode.is-output-collapsed {
+  .builder-main-layout.has-deck-rails,
+  .builder-main-layout.has-deck-rails.is-output-collapsed {
     --arch-width: 254px;
     --out-width: 380px;
     grid-template-columns: var(--arch-width) minmax(0,1fr) var(--out-width);
   }
-  .builder-main-layout.is-board-mode:has(#board-archetype-tray .output-dock-toggle[aria-expanded="false"]) { --arch-width: 52px; }
-  .builder-main-layout.is-board-mode.is-output-collapsed { --out-width: 52px; }
+  .builder-main-layout.has-deck-rails:has(#board-archetype-tray .output-dock-toggle[aria-expanded="false"]) { --arch-width: 52px; }
+  .builder-main-layout.has-deck-rails.is-output-collapsed { --out-width: 52px; }
 }
 @media (max-width:1100px) {
-  .builder-main-layout.is-board-mode,
-  .builder-main-layout.is-board-mode.is-output-collapsed {
+  .builder-main-layout.has-deck-rails,
+  .builder-main-layout.has-deck-rails.is-output-collapsed {
     position: relative;
     grid-template-rows: minmax(0,1fr);
     grid-template-areas: "work";
   }
-  .page-stage.is-fluid .prompt-flow-page:has(.is-board-mode) { padding-inline: 0; }
-  .builder-main-layout.is-board-mode .flow-workspace { margin-inline: 52px; }
-  #board-archetype-tray, .is-board-mode .prompt-output-dock {
+  .page-stage.is-fluid .prompt-flow-page:has(.has-deck-rails) {
+    height: calc(100dvh - var(--app-chrome-height));
+    min-height: 0;
+    overflow: hidden;
+    padding-inline: 0;
+  }
+  .builder-main-layout.has-deck-rails .flow-workspace { margin-inline: 52px; }
+  #board-archetype-tray, .has-deck-rails .prompt-output-dock {
     position: absolute;
     z-index: 24;
     top: 0;
@@ -7038,10 +7049,10 @@ button.role-loadout-slot {
     grid-area: auto;
   }
   #board-archetype-tray { left: 0; }
-  .is-board-mode .prompt-output-dock { right: 0; }
+  .has-deck-rails .prompt-output-dock { right: 0; }
   #board-archetype-tray:has(.output-dock-toggle[aria-expanded="true"]) { width: min(254px, calc(100% - 56px)); }
-  .is-board-mode .prompt-output-dock.is-expanded { width: min(380px, calc(100% - 56px)); }
-  :is(#board-archetype-tray,.is-board-mode .prompt-output-dock):focus-within { z-index: 25; }
+  .has-deck-rails .prompt-output-dock.is-expanded { width: min(380px, calc(100% - 56px)); }
+  :is(#board-archetype-tray,.has-deck-rails .prompt-output-dock):focus-within { z-index: 25; }
   #board-archetype-tray .board-archetype-hand { flex-direction: column; width: auto; }
   #board-archetype-tray .board-archetype-card { touch-action: pan-y; }
 }

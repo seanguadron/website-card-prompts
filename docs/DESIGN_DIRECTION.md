@@ -377,9 +377,8 @@ and SONIC:
   anywhere, dragging any non-interactive board surface pans. Zoom stays between 8%
   and 200%; Fit frames the active board, All the whole row. Below 45% the
   card faces simplify to their art.
-- **The Setup board** holds the guide and the **archetype socket**: a
-  card-shaped, cyan-tinted dashed slot with a persistent hand in the left rail (a horizontal strip on narrow screens). Dropping or clicking an archetype seats it and builds out every
-  board; editing any board unseats it while the cards stay. A drop from the rail onto the canvas applies the archetype. The workspace spans the window.
+- **The Archetypes rail** uses the illustrated CRAFT hand across all three decks and both layouts. It keeps its place on the left as the user moves between sections. A single click or keyboard activation applies the preset; hovering or focusing a card reveals its details. The rail's edge control mirrors Output. An explicit collapse choice follows the user between decks.
+- **The Setup board** holds the guide and the archetype socket. Dropping an archetype onto the canvas builds its hand. Editing a section can unseat the archetype while keeping its cards. The workspace spans the window.
 - **A section board** is the table: the sockets (the slot rack) and the
   tuning console share the top row, the **hand** (the section's deck) fans
   in one row below them and scrolls sideways when it outgrows the table

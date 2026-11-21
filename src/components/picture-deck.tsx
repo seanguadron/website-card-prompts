@@ -13,7 +13,7 @@ import type { ChangeEvent } from "react";
 import { BoardArchetypeSocket } from "@/components/board-archetype-socket";
 import { FlowNavDock } from "@/components/flow-nav-dock";
 import { FlowStepStrip } from "@/components/flow-step-strip";
-import { PictureArchetypeToolbar, PictureArchetypeDetails } from "@/components/picture-archetype-toolbar";
+import { PictureArchetypeDetails } from "@/components/picture-archetype-toolbar";
 import { PictureDeckHeader } from "@/components/picture-deck-header";
 import { PictureFlowPanels } from "@/components/picture-flow-panels";
 import type { PictureDictationField } from "@/components/picture-flow-panels";
@@ -122,6 +122,7 @@ export function PictureDeck() {
   const [libraryOpen, setLibraryOpen] = useState(false);
   const [savedPrompts, setSavedPrompts] = useState<SavedPicturePrompt[]>([]);
   const [proofLabOpen, setProofLabOpen] = useState(false);
+  const [socketTarget, setSocketTarget] = useState<HTMLDivElement | null>(null);
   const [archetypeSaveOpen, setArchetypeSaveOpen] = useState(false);
   const [activeProofId, setActiveProofId] = useState<string | null>(null);
   // The library name the current draft was loaded from or saved as; feeds the
@@ -824,23 +825,25 @@ export function PictureDeck() {
 
       <div
         className={[
-          "builder-main-layout",
+          "builder-main-layout has-deck-rails",
           outputExpanded ? "" : "is-output-collapsed",
           viewMode === "board" ? "is-board-mode" : "",
         ]
           .filter(Boolean)
           .join(" ")}
       >
-        {viewMode === "board" && <aside id="board-archetype-tray" aria-label="Archetypes" />}
-        <PictureArchetypeToolbar
-          archetypes={PICTURE_ARCHETYPES}
-          customArchetypes={customArchetypes}
+        <BoardArchetypeSocket
+          tool="picture-deck"
+          items={boardArchetypes}
           activeId={activeArchetypeId}
+          onApply={applyArchetypeById}
+          onUnseat={unseatArchetype}
+          socketTarget={socketTarget}
           saveFormOpen={archetypeSaveOpen}
           onSaveFormOpenChange={setArchetypeSaveOpen}
-          onApply={applyPictureArchetype}
           onSaveCustom={saveCurrentAsPreset}
           onDeleteCustom={removeCustomPreset}
+          hint="Drop an archetype here, or select one in the rail."
         />
 
         <div className="flow-workspace">
@@ -859,15 +862,7 @@ export function PictureDeck() {
               layout={viewMode}
               dealing={dealing}
               onActivatePanel={nav.setActivePanel}
-              boardSetup={
-                <BoardArchetypeSocket
-                  items={boardArchetypes}
-                  activeId={activeArchetypeId}
-                  onApply={applyArchetypeById}
-                  onUnseat={unseatArchetype}
-                  hint="Drag an archetype from the tray onto the board, or select one to apply it."
-                />
-              }
+              boardSetup={<div ref={setSocketTarget} />}
               draft={draft}
               cardSystem={cardSystem}
               stepComplete={flowStepComplete}

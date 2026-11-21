@@ -6,7 +6,7 @@
   "owed": [
     {
       "gate": "integration",
-      "reason": "20 uncommitted file(s) touch its surface"
+      "reason": "12 uncommitted file(s) touch its surface"
     },
     {
       "gate": "design",

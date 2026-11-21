@@ -43,7 +43,7 @@ zone `/* ===== Deck Board ===== */` restyles the panel internals on the board
 (sockets and tuning on top, the hand fanned below); the visual grammar is
 `docs/DESIGN_DIRECTION.md` → The board.
 
-The collapsible left rail lives outside the camera transform. DeckBoard supplies its screen-space host through BoardTrayTarget to the Setup archetype hand. Setup archetypes apply a preset when dropped on the canvas. Section cards and CRAFT roles use their workbench drag handlers to equip a particular slot. Clicking a card also equips it. Board and Flow render the same archetype inspection content. Wheel zoom follows the pointer. Primary dragging on a non-interactive surface pans.
+The collapsible left rail lives outside the camera transform. The shared rail renders the archetype hand directly and puts its socket in the Setup panel through a portal. Dropping a rail card on the Board or Flow workspace applies the preset. Section cards and CRAFT roles use their workbench drag handlers to equip a particular slot. Clicking a card also equips it. Board and Flow render the same archetype inspection content. Wheel zoom follows the pointer. Primary dragging on a non-interactive surface pans.
 
 Three rules come with it. **The camera is the only thing that moves the
 pasteboard**: it is `overflow: clip`, so a focus or a `scrollIntoView` inside
@@ -172,7 +172,7 @@ flag is the moment it has to be complete.
 
 ## 2. The shell contract
 
-The shell renders one header above the full-width stage. The header contains deck tabs, deck-specific commands and the Workspace menu. The deck owns the Archetypes and Output rails. Both use the same toggle component, mirrored at the board edges.
+The shell renders one header above the full-width stage. The header contains deck tabs, deck-specific commands and the Workspace menu. Each deck supplies its archetypes, artwork and preset actions to the shared Archetypes rail. The rail lives outside the Board and Flow containers so layout changes preserve the same hand. Archetypes and Output use the same toggle component, mirrored at the workspace edges.
 
 | Region | Component | Content |
 |---|---|---|

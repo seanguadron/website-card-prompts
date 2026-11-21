@@ -122,7 +122,7 @@ export function SoundFlowPanels({
   flowViewportRef: RefObject<HTMLDivElement | null>;
   /** Which container renders the panels: the horizontal flow or the board. */
   layout?: BoardMode;
-  /** Board mode only: rendered on the Setup board under the guide. */
+  /** The seated archetype is visible on the Setup board and in the Flow guide. */
   boardSetup?: ReactNode;
   /** Board mode only: the board asks to make another panel active. */
   onActivatePanel?: (index: number) => void;
@@ -241,6 +241,7 @@ export function SoundFlowPanels({
     key: "guide",
     node: (
       <>
+        {!board && boardSetup}
         <div className="craft-method" aria-labelledby="sound-method-title">
           <div className="craft-method-copy">
             <h2

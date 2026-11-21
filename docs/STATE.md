@@ -4,6 +4,10 @@ Last rewritten 2026-11-21.
 
 ## Now
 
+Board and Flow use one shared Archetypes rail on all three decks. A saved SONIC Flow preference exposed the old text list when switching from another deck. The illustrated rail retains favorites, custom preset controls, preview, click and drag. Its open or closed state follows deck switches. Flow uses a viewport-height rail on smaller screens. The SONIC front illustration batch is deferred.
+
+Project OpenAI credential audit: no key was found in the checkout, local build or reachable Git history using OpenAI key patterns. GitHub repository, Preview and Production secrets were empty. The Vercel project serving www.cardprompts.com reported zero environment variables, including hidden production variables.
+
 The three decks share a world selector in Workspace. Each world has one back per deck: pen, prism and waveform, in Sci-Fi, Superhero or Fantasy artwork. The nine new local WebPs live in `public/card-backs`. A section deals on its first Board visit and stays settled on return. Applying an archetype still deals the occupied sockets.
 
 SONIC's cards, archetypes and guides now carry illustrations. Four dedicated paintings in `public/card-art/sonic` complement the existing Gallery portraits. Card fronts awaiting individual art use the selected deck emblem. Edge verification covered all nine deck/world combinations, section revisits, Flow and Board switching, and the portrait fallback in a hover inspector. All 165 tests and the design, integration and security reviews passed. The twelve board features and local prompt and skill exports remain available.
