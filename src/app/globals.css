@@ -4180,6 +4180,13 @@ button.role-loadout-slot {
   scale: var(--inspect-scale, 1);
 }
 
+/* The read-only archetype preview can overlap its card on a narrow board. */
+@media (max-width: 767.98px) {
+  .floating-card-panel--archetype[data-inspectable] {
+    pointer-events: none;
+  }
+}
+
 .floating-card-art {
   display: grid;
   width: 100%;
