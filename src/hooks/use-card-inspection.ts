@@ -37,7 +37,8 @@ export function useCardInspection() {
         if (panel?.contains(document.activeElement)) anchor.current?.focus({ preventScroll: true });
         setPreview(null);
       } else if (event.key === "ArrowDown" && event.altKey && anchor.current === document.activeElement) {
-        const action = panel?.querySelector<HTMLElement>("button, summary");
+        const action = panel?.querySelector<HTMLElement>("button, summary") ??
+          (panel?.hasAttribute("tabindex") ? panel : null);
         if (action) {
           event.preventDefault();
           action.focus({ preventScroll: true });

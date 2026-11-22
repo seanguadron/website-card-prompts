@@ -2,8 +2,16 @@ import assert from "node:assert/strict";
 import test from "node:test";
 import {
   createCardEngine,
+  dealRoleSlots,
   resolveCardIllustration,
 } from "../src/lib/card-engine.ts";
+
+test("a pinned second support stays in its socket when a one-role archetype is dealt", () => {
+  const current = ["editor", "writer", "critic"];
+  assert.deepEqual(dealRoleSlots(["researcher"], current, ["critic"]), ["researcher", "", "critic"]);
+  assert.deepEqual(dealRoleSlots(["critic"], current, ["critic"]), ["editor", "", "critic"]);
+  assert.deepEqual(dealRoleSlots(["researcher", "", "critic"], current, []), ["researcher", "", "critic"]);
+});
 
 // Synthetic two-section catalog. "power" carries 14 points so the snap-memory
 // eviction cap (12 entries) can be exercised with real configuration keys.

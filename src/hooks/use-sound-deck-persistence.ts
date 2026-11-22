@@ -2,6 +2,7 @@
 
 import { useCallback, useMemo } from "react";
 import type { Dispatch, SetStateAction } from "react";
+import { restoreDeckSnapshot } from "@/lib/restore-deck-snapshot";
 import { useLocalDraft } from "@/hooks/use-local-draft";
 import {
   createSoundCardSystem,
@@ -19,10 +20,6 @@ type DeckSnapshot = {
   cardSystem: SoundCardSystemState;
 };
 
-// Thin adapter over the shared useLocalDraft lifecycle, mirroring the other
-// decks: restore validation stays here (restoreSoundDraft /
-// restoreSoundCardSystem shape-check the stored JSON); corrupt data clears
-// the keys and degrades to defaults.
 export function useSoundDeckPersistence({
   draft,
   cardSystem,
@@ -35,29 +32,20 @@ export function useSoundDeckPersistence({
   setCardSystem: Dispatch<SetStateAction<SoundCardSystemState>>;
 }) {
   const restore = useCallback(() => {
-    try {
-      const savedDraft = localStorage.getItem(DRAFT_STORAGE_KEY);
-      if (savedDraft) {
-        setDraft(restoreSoundDraft(savedDraft));
-      }
-
-      const savedCardSystem = localStorage.getItem(CARD_STORAGE_KEY);
-      setCardSystem(
-        savedCardSystem
-          ? restoreSoundCardSystem(savedCardSystem)
-          : createSoundCardSystem(),
-      );
-      const savedAt = localStorage.getItem(SAVED_AT_STORAGE_KEY);
-      return {
-        status: "saved" as const,
-        savedAt: savedAt ? new Date(savedAt) : null,
-      };
-    } catch {
-      localStorage.removeItem(DRAFT_STORAGE_KEY);
-      localStorage.removeItem(CARD_STORAGE_KEY);
-      localStorage.removeItem(SAVED_AT_STORAGE_KEY);
-      return { status: "unavailable" as const };
+    const snapshot = restoreDeckSnapshot(
+      localStorage.getItem(DRAFT_STORAGE_KEY),
+      localStorage.getItem(CARD_STORAGE_KEY),
+      localStorage.getItem(SAVED_AT_STORAGE_KEY),
+      {
+        draft: restoreSoundDraft,
+        cards: (raw) => raw ? restoreSoundCardSystem(raw) : createSoundCardSystem(),
+      },
+    );
+    if (snapshot.draft) {
+      setDraft(snapshot.draft);
     }
+    setCardSystem(snapshot.cardSystem);
+    return { status: "saved" as const, savedAt: snapshot.savedAt };
   }, [setCardSystem, setDraft]);
 
   const save = useCallback((snapshot: DeckSnapshot, savedAt: Date) => {

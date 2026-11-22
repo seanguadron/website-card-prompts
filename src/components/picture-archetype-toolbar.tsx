@@ -3,6 +3,7 @@
 import { CardIllustrationFrame } from "@/components/prompt-builder-ui";
 import { pictureArchetypeArtWithFallback } from "@/lib/picture-art-pack";
 import { isCustomPictureArchetype } from "@/lib/picture-custom-archetypes";
+import { picturePresetTailMode } from "@/lib/picture-prompt";
 import type { PictureArchetype } from "@/lib/picture-types";
 
 const INTENSITY_LABELS = ["Subtle", "Bold", "Extreme"];
@@ -10,7 +11,8 @@ const INTENSITY_LABELS = ["Subtle", "Bold", "Extreme"];
 function tailSummary(archetype: PictureArchetype) {
   const tail = archetype.mjTail;
   if (!tail) {
-    return isCustomPictureArchetype(archetype) ? "off" : "keep current setting";
+    return picturePresetTailMode(tail, isCustomPictureArchetype(archetype)) === "off"
+      ? "off" : "keep current setting";
   }
 
   const parts = [

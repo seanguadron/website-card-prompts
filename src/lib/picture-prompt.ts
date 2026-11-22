@@ -54,6 +54,11 @@ export type PictureTail = {
   negative: string;
 };
 
+export function picturePresetTailMode(preset: object | undefined, custom: boolean) {
+  if (preset) return "on";
+  return custom ? "off" : "inherit";
+}
+
 export type PicturePromptSection = {
   key: PictureSection | "subject" | "tail";
   heading: string;

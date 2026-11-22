@@ -89,6 +89,7 @@ import {
 import {
   PICTURE_MERGE_ORDER,
   buildPicturePrompt,
+  picturePresetTailMode,
   buildPictureSections,
   buildPictureHandSections,
   PICTURE_SECTIONS,
@@ -471,7 +472,7 @@ export function PictureDeck() {
       }),
     );
     setDraft((current) =>
-      !archetype.mjTail
+      picturePresetTailMode(archetype.mjTail, isCustomPictureArchetype(archetype)) === "off"
         ? { ...current, mjTailEnabled: false }
         : applyTailPreset(current, archetype.mjTail),
     );
@@ -531,14 +532,20 @@ export function PictureDeck() {
 
   function saveCurrentAsPreset(name: string) {
     const archetype = buildCustomPictureArchetype(name, draft, cardSystem);
-    setCustomArchetypes(saveCustomPictureArchetype(archetype));
+    const saved = saveCustomPictureArchetype(archetype);
+    if (!saved) return false;
+    setCustomArchetypes(saved);
     setActiveArchetypeId(archetype.id);
     setSpeechMessage(`Saved "${archetype.name}" as a preset.`);
+    return true;
   }
 
   function removeCustomPreset(id: string) {
-    setCustomArchetypes(deleteCustomPictureArchetype(id));
+    const remaining = deleteCustomPictureArchetype(id);
+    if (!remaining) return false;
+    setCustomArchetypes(remaining);
     setActiveArchetypeId((current) => (current === id ? null : current));
+    return true;
   }
 
   function downloadSession() {

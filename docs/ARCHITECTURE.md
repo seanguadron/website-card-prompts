@@ -290,6 +290,7 @@ banner.
   wrote its saved-at that way; the decks store raw ISO strings via direct
   `setItem`. Do NOT unify existing keys — you'd orphan users' timestamps.
   New tools: use `useLocalDraft` and its documented format.
+- The three decks keep separate storage keys. `restoreDeckSnapshot` recovers the draft text and equipped cards independently. `createDeckLibrary` shares saved-entry validation, writes and the 50-entry limit. Each deck validates nested card and draft data when it loads the entry.
 - Every localStorage READ of externally-influenced data is a trust boundary:
   validate shape before use, never bare-cast (STANDARDS §2.3).
 

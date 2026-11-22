@@ -5,6 +5,14 @@ appended by the sessions agent (see AGENTS.md → Learning loop). Lines ending
 with the proposed-amendment flag are STANDARDS candidates;
 `npm run amendments` lists the ones not yet annotated "→ landed in §X.Y".
 
+## 2026-11-21 — Whole-history review of the three decks
+
+**Scope.** Sean requested Matt Pocock’s code-review workflow across CRAFT, PICTURE and SONIC. The review covered the initial revision `079f9fd` through `af66519`. The other requested review skill was absent. Review and verification used local code and fixtures.
+
+**Findings.** Six issues were confirmed: rejected custom-preset writes could appear successful, damaged draft data could discard a readable hand, narrow archetype inspectors lost pointer access, the three libraries duplicated saved-entry handling, CRAFT could move a pinned supporting role, and PICTURE could change an inherited parameter-tail setting. The individual findings and remedies are in `docs/DECK_REVIEW.md`.
+
+**SONIC.** The Rain Bed example in the prompt audit resolved the ordering question. The one-off prompt opens with the typed sound and puts location first among ambience descriptors. The reusable skill asks for the environment first. The review required no site generation or provider calls.
+
 ## 2026-11-21 — Shared archetype rail and project credentials
 
 **Decisions.** Sean deferred Higgsfield work on card fronts and requested the existing CRAFT Archetypes rail across all three decks. He explicitly requested removal of any OpenAI API key belonging to Card Prompts.

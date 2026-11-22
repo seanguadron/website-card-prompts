@@ -80,7 +80,7 @@ function HandCard({
       ref={setNodeRef}
       onMouseEnter={(event) => { hand.setProposal(item.equipped ?? {}); show(item.id, event.currentTarget); }}
       onFocus={(event) => { hand.setProposal(item.equipped ?? {}); show(item.id, event.currentTarget); }}
-      onBlur={()=>{hand.setProposal(null);dismiss();}}
+      onBlur={()=>{hand.setProposal(null);leave();}}
       onMouseLeave={()=>{hand.setProposal(null);leave();}}
       className={[
         "board-archetype-card",
@@ -95,13 +95,15 @@ function HandCard({
       aria-label={`Seat the ${item.name} archetype. ${item.description}`}
       {...listeners}
       {...attributes}
+      aria-keyshortcuts="Alt+ArrowDown"
       aria-describedby={[attributes["aria-describedby"], preview && panelEvents.id].filter(Boolean).join(" ")}
       aria-pressed={active}
     >
       <ArchetypeFace item={item} />
     </button>
     {portalTarget && preview && !isDragging && createPortal(
-      <CardInspector className="floating-card-panel floating-card-panel--archetype" {...panelEvents} style={preview.position}>
+      <CardInspector className="floating-card-panel floating-card-panel--archetype" besideId="board-archetype-tray"
+        tabIndex={-1} aria-label={`${item.name} details`} {...panelEvents} style={preview.position}>
         {item.details}
       </CardInspector>, portalTarget)}
   </>);
@@ -132,8 +134,8 @@ export function BoardArchetypeSocket({
   socketTarget: HTMLElement | null;
   saveFormOpen: boolean;
   onSaveFormOpenChange: (open: boolean) => void;
-  onSaveCustom: (name: string) => void;
-  onDeleteCustom: (id: string) => void;
+  onSaveCustom: (name: string) => boolean;
+  onDeleteCustom: (id: string) => boolean;
   activeId: string | null;
   onApply: (id: string) => void;
   onUnseat: () => void;
@@ -144,6 +146,7 @@ export function BoardArchetypeSocket({
   const overlayRails = useMediaQuery(OVERLAY_RAIL_MEDIA_QUERY);
   const [expandedChoice, setExpandedChoice] = useState<boolean | null>(null);
   const [favorites, setFavorites] = useState<string[]>([]);
+  const [presetError, setPresetError] = useState("");
   const [presetName, setPresetName] = useState("");
   const expanded = saveFormOpen || (expandedChoice ?? !overlayRails);
   const favoritesKey = `digitools.${tool}.favorites-v1`;
@@ -165,6 +168,7 @@ export function BoardArchetypeSocket({
     writeStored(favoritesKey, next);
   }
   function closeSaveForm() {
+    setPresetError("");
     setPresetName("");
     onSaveFormOpenChange(false);
   }
@@ -218,11 +222,12 @@ export function BoardArchetypeSocket({
           writeStored(RAIL_KEY, !expanded);
         }} />
         <div id="board-card-library" hidden={!expanded} inert={!expanded}>
+          {presetError && <p role="alert">{presetError}</p>}
           {saveFormOpen && <form className="archetype-save-form" onSubmit={event => {
             event.preventDefault();
             if (!presetName.trim()) return;
-            onSaveCustom(presetName.trim());
-            closeSaveForm();
+            if (onSaveCustom(presetName.trim())) closeSaveForm();
+            else setPresetError("This browser could not save the preset. Your hand is still open.");
           }}>
             <input autoFocus aria-label="Preset name" placeholder="Preset name" value={presetName}
               onChange={event => setPresetName(event.target.value)} onKeyDown={event => {
@@ -251,7 +256,7 @@ export function BoardArchetypeSocket({
                       aria-label={`${favorites.includes(item.id) ? "Unpin" : "Pin"} ${item.name}`}
                       onClick={() => toggleFavorite(item.id)}>{favorites.includes(item.id) ? "★" : "☆"}</button>
                     {item.custom && <button type="button" aria-label={`Delete ${item.name} preset`}
-                      onClick={() => onDeleteCustom(item.id)}>Delete</button>}
+                      onClick={() => setPresetError(onDeleteCustom(item.id) ? "" : "This browser could not delete the preset. It is still in your rail.")}>Delete</button>}
                   </div>
                 </div>
               ))}

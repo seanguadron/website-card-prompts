@@ -7,8 +7,6 @@ import { promptTraces, type TraceCard } from "@/lib/prompt-traces";
 
 export type Loadout = Partial<Record<string, readonly string[]>>;
 
-export { preserveLocked } from "@/lib/card-engine";
-
 type Shelves = { locked: string[]; reserve: string[] };
 
 function readShelves(raw: string, knownCard: (id: string) => boolean): Shelves {

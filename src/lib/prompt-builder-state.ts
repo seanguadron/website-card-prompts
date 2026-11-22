@@ -100,9 +100,10 @@ export type BuildPromptOptions = {
   audienceDefault?: string | null;
 };
 
-export function formatRoleLoadout(selectedRoles: PromptRole[]) {
+export function formatRoleLoadout(selectedRoles: PromptRole[], roleIds = selectedRoles.map(role => role.id)) {
   return selectedRoles
-    .map((role, index) => {
+    .map((role) => {
+      const index = roleIds.indexOf(role.id);
       const position = index === 0 ? "Lead role" : `Supporting role ${index}`;
       const priorities = getRoleActionSuggestions(role)
         .slice(0, 3)
@@ -159,7 +160,7 @@ export function buildPromptSections(
       key: "role",
       heading: "ROLE LOADOUT",
       label: "Roles",
-      body: `Use the lead role as the primary decision-making perspective. Use supporting roles to strengthen the work without overriding the lead role.\n\n${formatRoleLoadout(selectedRoles)}`,
+      body: `Use the lead role as the primary decision-making perspective. Use supporting roles to strengthen the work without overriding the lead role.\n\n${formatRoleLoadout(selectedRoles, draft.roleIds)}`,
     },
     {
       key: "action",
@@ -254,8 +255,10 @@ export function restoreDraft(value: string, roles: PromptRole[]): PromptDraft {
       ? [parsed.roleId]
       : [];
   const validRoleIds = savedRoleIds
-    .filter((roleId) => roles.some((role) => role.id === roleId))
+    .filter((roleId) => roleId === "" || roles.some((role) => role.id === roleId))
     .slice(0, 3);
+  while (validRoleIds.length && !validRoleIds[validRoleIds.length - 1]) validRoleIds.pop();
+  while (validRoleIds[0] === "") validRoleIds.shift();
 
   // Coerce field-by-field: this path also restores URL shares and imported
   // session files, so a tampered payload must degrade to defaults, not leak

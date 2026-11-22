@@ -150,6 +150,15 @@ export function preserveLocked<S extends string>(
   return result;
 }
 
+export function dealRoleSlots(incoming: readonly string[], current: readonly string[], locked: readonly string[]) {
+  const padded = Array.from({ length: 3 }, (_, index) => incoming[index] ?? "");
+  const { role } = preserveLocked({ role: padded }, { role: [...current] }, locked);
+  // If every incoming role is pinned in support, retain the current lead.
+  if (!role[0] && role.some(Boolean)) role[0] = current[0] ?? "";
+  while (role.length && !role[role.length - 1]) role.pop();
+  return role;
+}
+
 export function createCardEngine<
   S extends string,
   T extends string,

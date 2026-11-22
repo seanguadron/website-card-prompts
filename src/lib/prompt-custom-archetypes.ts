@@ -67,6 +67,7 @@ export function buildCustomArchetype(
     0,
   );
   const roles = roleIds.slice(0, 3);
+  const roleCount = roles.filter(Boolean).length;
   const cleanName = name.trim() || "My preset";
   const code =
     cleanName.replace(/[^a-zA-Z0-9]/g, "").slice(0, 4).toUpperCase() || "MINE";
@@ -84,8 +85,8 @@ export function buildCustomArchetype(
     formatNotes,
     effects: [
       `Sets ${formatCode} as the base output type.`,
-      `Loads ${roles.length} role ${
-        roles.length === 1 ? "card" : "cards"
+      `Loads ${roleCount} role ${
+        roleCount === 1 ? "card" : "cards"
       } and ${supportCount} support ${
         supportCount === 1 ? "card" : "cards"
       }.`,
@@ -99,16 +100,14 @@ export function buildCustomArchetype(
 
 export function saveCustomArchetype(
   archetype: PromptArchetype,
-): PromptArchetype[] {
+): PromptArchetype[] | null {
   const next = [archetype, ...listCustomArchetypes()].slice(0, CUSTOM_LIMIT);
-  writeStored(CUSTOM_KEY, next);
-  return next;
+  return writeStored(CUSTOM_KEY, next) ? next : null;
 }
 
-export function deleteCustomArchetype(id: string): PromptArchetype[] {
+export function deleteCustomArchetype(id: string): PromptArchetype[] | null {
   const next = listCustomArchetypes().filter(
     (archetype) => archetype.id !== id,
   );
-  writeStored(CUSTOM_KEY, next);
-  return next;
+  return writeStored(CUSTOM_KEY, next) ? next : null;
 }

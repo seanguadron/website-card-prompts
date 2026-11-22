@@ -70,8 +70,7 @@ export function PromptRoleWorkbench({
   const selectedRoles = useMemo(
     () =>
       selectedRoleIds
-        .map((roleId) => roles.find((role) => role.id === roleId))
-        .filter((role): role is PromptRole => Boolean(role)),
+        .map((roleId) => roles.find((role) => role.id === roleId)),
     [roles, selectedRoleIds],
   );
   const categoryRoles = useMemo(
@@ -207,7 +206,7 @@ export function PromptRoleWorkbench({
       <div className="role-loadout-summary">
         <div className="role-loadout-summary-heading">
           <strong>Loadout</strong>
-          <span>{selectedRoles.length}/3</span>
+          <span>{selectedRoles.filter(Boolean).length}/3</span>
         </div>
         <div
           className="role-loadout-slots"

@@ -102,19 +102,17 @@ export function buildCustomPictureArchetype(
 
 export function saveCustomPictureArchetype(
   archetype: PictureArchetype,
-): PictureArchetype[] {
+): PictureArchetype[] | null {
   const next = [archetype, ...listCustomPictureArchetypes()].slice(
     0,
     CUSTOM_LIMIT,
   );
-  writeStored(CUSTOM_KEY, next);
-  return next;
+  return writeStored(CUSTOM_KEY, next) ? next : null;
 }
 
-export function deleteCustomPictureArchetype(id: string): PictureArchetype[] {
+export function deleteCustomPictureArchetype(id: string): PictureArchetype[] | null {
   const next = listCustomPictureArchetypes().filter(
     (archetype) => archetype.id !== id,
   );
-  writeStored(CUSTOM_KEY, next);
-  return next;
+  return writeStored(CUSTOM_KEY, next) ? next : null;
 }

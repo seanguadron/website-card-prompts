@@ -8,7 +8,8 @@ import { craftCardEngine } from "@/lib/prompt-card-system";
 import { buildFieldDirections } from "@/lib/skill-fields";
 import { SkillFields } from "./skill-fields";
 import { HandFork } from "./hand-fork";
-import { HandWorkspace, useHandWorkspace, preserveLocked } from "./hand-workspace";
+import { HandWorkspace, useHandWorkspace } from "./hand-workspace";
+import { dealRoleSlots } from "@/lib/card-engine";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import type { ChangeEvent } from "react";
@@ -349,9 +350,8 @@ export function PromptBuilder({ roles }: { roles: PromptRole[] }) {
   // The archetype hand on the Setup board: custom presets first, then the
   // catalog, each with its pack art (or the shared preset swatch).
   function dealRoles(archetype: PromptArchetype, current: readonly string[]) {
-    const incoming = archetype.roleIds.filter(id => roles.some(role => role.id === id));
-    const slots = (ids: readonly string[]) => Array.from({length: 3}, (_, i) => ids[i] ?? "");
-    return preserveLocked({role: slots(incoming)}, {role: slots(current)}, hand.locked).role.filter(Boolean);
+    const incoming = archetype.roleIds.filter(id => id === "" || roles.some(role => role.id === id));
+    return dealRoleSlots(incoming, current, hand.locked);
   }
 
   const boardArchetypes = [...customArchetypes, ...PROMPT_ARCHETYPES].map(
@@ -683,28 +683,31 @@ export function PromptBuilder({ roles }: { roles: PromptRole[] }) {
       setActiveArchetypeId(null);
       setDraft((current) => ({
         ...current,
-        roleIds: current.roleIds.filter((roleId) => roleId !== role.id),
+        roleIds: current.roleIds.filter((roleId) => roleId && roleId !== role.id),
       }));
       setRoleSelectionMessage(`${role.name} removed.`);
       setCopyState("idle");
       return;
     }
 
-    if (draft.roleIds.length >= 3) {
+    const gap = draft.roleIds.indexOf("");
+    const destination = gap < 0 ? draft.roleIds.length : gap;
+    if (destination >= 3) {
       setRoleSelectionMessage("Loadout full. Remove a role first.");
       return;
     }
 
     history.checkpoint();
     setActiveArchetypeId(null);
-    setDraft((current) => ({
-      ...current,
-      roleIds: [...current.roleIds, role.id],
-    }));
+    setDraft((current) => {
+      const roleIds = [...current.roleIds];
+      roleIds[destination] = role.id;
+      return { ...current, roleIds };
+    });
     setRoleSelectionMessage(
-      draft.roleIds.length === 0
+      destination === 0
         ? `${role.name} set as lead.`
-        : `${role.name} added to support ${draft.roleIds.length}.`,
+        : `${role.name} added to support ${destination}.`,
     );
     setCopyState("idle");
   }
@@ -715,9 +718,11 @@ export function PromptBuilder({ roles }: { roles: PromptRole[] }) {
       return;
     }
 
-    // Roles form a contiguous lead/support list. An empty trailing socket
-    // means the next available position, regardless of where it was hit.
-    const nextRoles = insertIntoSlots(draft.roleIds, slotIndex, roleId, 3).filter(Boolean);
+    const placed = insertIntoSlots(draft.roleIds, slotIndex, roleId, 3);
+    // Ordinary hands fill in order. A pinned support can leave a middle
+    // socket open after a deal, and placing a role must respect that gap.
+    const nextRoles = draft.roleIds.includes("") && placed[0] ? placed : placed.filter(Boolean);
+    while (nextRoles.length && !nextRoles[nextRoles.length - 1]) nextRoles.pop();
     const destination = nextRoles.indexOf(roleId);
     if (nextRoles.every((id, index) => id === draft.roleIds[index]) &&
         nextRoles.length === draft.roleIds.length) {
@@ -867,14 +872,20 @@ export function PromptBuilder({ roles }: { roles: PromptRole[] }) {
       draft.formatNotes,
       cardSystem,
     );
-    setCustomArchetypes(saveCustomArchetype(archetype));
+    const saved = saveCustomArchetype(archetype);
+    if (!saved) return false;
+    setCustomArchetypes(saved);
     setActiveArchetypeId(archetype.id);
     setSpeechMessage(`Saved "${archetype.name}" as a preset.`);
+    return true;
   }
 
   function removeCustomPreset(id: string) {
-    setCustomArchetypes(deleteCustomArchetype(id));
+    const remaining = deleteCustomArchetype(id);
+    if (!remaining) return false;
+    setCustomArchetypes(remaining);
     setActiveArchetypeId((current) => (current === id ? null : current));
+    return true;
   }
 
   async function copyShareLink() {
@@ -1174,7 +1185,7 @@ export function PromptBuilder({ roles }: { roles: PromptRole[] }) {
             if (!card) return [];
             const grade = craftCardEngine.getCardGrade(card, cardSystem.tracks);
             return [{id, section: String(card.section), name:grade.name, text:grade.instruction}];
-          }).concat(selectedRoles.map((role,i)=>({id:role.id,section:"role",name:role.name,text:formatRoleLoadout(selectedRoles).split("\n\n")[i]})))}
+          }).concat(selectedRoles.map(role=>({id:role.id,section:"role",name:role.name,text:formatRoleLoadout([role], draft.roleIds)})))}
           onRevealCard={(panel, controlId) => {
             nav.navigateToPanel(panel, controlId);
             if (overlayRails) setOutputExpanded(false);
@@ -1203,7 +1214,7 @@ export function PromptBuilder({ roles }: { roles: PromptRole[] }) {
           skillDeck="craft"
           skillHand={activePromptName ?? activeArchetype?.name ?? selectedRoles[0]?.name ?? "hand"}
           skillChoices={buildFieldDirections(prompt, [
-              { label: "Roles", body: formatRoleLoadout(selectedRoles) },
+              { label: "Roles", body: formatRoleLoadout(selectedRoles, draft.roleIds) },
               { label: "Format", body: selectedRoles.length || draft.format !== EMPTY_DRAFT.format ? draft.format : "" },
               ...Object.entries(equippedInstructions).map(([label, lines]) => ({
                 label, body: lines.join("\n"),

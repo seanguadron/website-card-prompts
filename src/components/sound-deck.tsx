@@ -508,14 +508,20 @@ export function SoundDeck() {
 
   function saveCurrentAsPreset(name: string) {
     const archetype = buildCustomSoundArchetype(name, draft, cardSystem);
-    setCustomArchetypes(saveCustomSoundArchetype(archetype));
+    const saved = saveCustomSoundArchetype(archetype);
+    if (!saved) return false;
+    setCustomArchetypes(saved);
     setActiveArchetypeId(archetype.id);
     setSpeechMessage(`Saved "${archetype.name}" as a preset.`);
+    return true;
   }
 
   function removeCustomPreset(id: string) {
-    setCustomArchetypes(deleteCustomSoundArchetype(id));
+    const remaining = deleteCustomSoundArchetype(id);
+    if (!remaining) return false;
+    setCustomArchetypes(remaining);
     setActiveArchetypeId((current) => (current === id ? null : current));
+    return true;
   }
 
   function downloadSession() {

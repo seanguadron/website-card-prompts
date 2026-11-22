@@ -93,19 +93,17 @@ export function buildCustomSoundArchetype(
 
 export function saveCustomSoundArchetype(
   archetype: SoundArchetype,
-): SoundArchetype[] {
+): SoundArchetype[] | null {
   const next = [archetype, ...listCustomSoundArchetypes()].slice(
     0,
     CUSTOM_LIMIT,
   );
-  writeStored(CUSTOM_KEY, next);
-  return next;
+  return writeStored(CUSTOM_KEY, next) ? next : null;
 }
 
-export function deleteCustomSoundArchetype(id: string): SoundArchetype[] {
+export function deleteCustomSoundArchetype(id: string): SoundArchetype[] | null {
   const next = listCustomSoundArchetypes().filter(
     (archetype) => archetype.id !== id,
   );
-  writeStored(CUSTOM_KEY, next);
-  return next;
+  return writeStored(CUSTOM_KEY, next) ? next : null;
 }

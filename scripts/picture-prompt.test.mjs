@@ -3,11 +3,18 @@ import test from "node:test";
 import {
   buildPicturePrompt,
   buildPictureSections,
+  picturePresetTailMode,
   buildTailString,
   PICTURE_INCOMPLETE_TEXT,
   PICTURE_MERGE_ORDER,
   PICTURE_SECTIONS,
 } from "../src/lib/picture-prompt.ts";
+
+test("an omitted catalog tail inherits while an omitted custom tail restores off", () => {
+  assert.equal(picturePresetTailMode(undefined, false), "inherit");
+  assert.equal(picturePresetTailMode(undefined, true), "off");
+  assert.equal(picturePresetTailMode({ aspectRatio: "3:2" }, true), "on");
+});
 
 const EMPTY_FRAGMENTS = Object.fromEntries(
   PICTURE_SECTIONS.map((section) => [section, []]),

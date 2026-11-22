@@ -2,6 +2,7 @@
 
 import { useCallback, useMemo } from "react";
 import type { Dispatch, SetStateAction } from "react";
+import { restoreDeckSnapshot } from "@/lib/restore-deck-snapshot";
 import { useLocalDraft } from "@/hooks/use-local-draft";
 import {
   createCardSystem,
@@ -24,9 +25,6 @@ type BuilderSnapshot = {
   cardSystem: CardSystemState;
 };
 
-// Thin adapter over the shared useLocalDraft lifecycle. Restore validation
-// stays here (restoreDraft/restoreCardSystem shape-check the stored JSON);
-// corrupt data clears the keys and degrades to defaults.
 export function usePromptBuilderPersistence({
   roles,
   draft,
@@ -43,39 +41,28 @@ export function usePromptBuilderPersistence({
   setActiveRoleCategory: Dispatch<SetStateAction<string>>;
 }) {
   const restore = useCallback(() => {
-    try {
-      let restoredFormat = EMPTY_DRAFT.format;
-      const savedDraft = localStorage.getItem(DRAFT_STORAGE_KEY);
-
-      if (savedDraft) {
-        const restoredDraft = restoreDraft(savedDraft, roles);
-        restoredFormat = restoredDraft.format;
-        setDraft(restoredDraft);
-        const leadRole = roles.find(
-          (role) => role.id === restoredDraft.roleIds[0],
-        );
-        if (leadRole) {
-          setActiveRoleCategory(leadRole.category);
-        }
+    const snapshot = restoreDeckSnapshot(
+      localStorage.getItem(DRAFT_STORAGE_KEY),
+      localStorage.getItem(CARD_STORAGE_KEY),
+      localStorage.getItem(SAVED_AT_STORAGE_KEY),
+      {
+        draft: (raw) => restoreDraft(raw, roles),
+        cards: (raw, restoredDraft) => {
+          const format = restoredDraft?.format ?? EMPTY_DRAFT.format;
+          return raw ? restoreCardSystem(raw, format) : createCardSystem(format);
+        },
+      },
+    );
+    if (snapshot.draft) {
+      setDraft(snapshot.draft);
+      const leadRoleId = snapshot.draft.roleIds[0];
+      const leadRole = roles.find((role) => role.id === leadRoleId);
+      if (leadRole) {
+        setActiveRoleCategory(leadRole.category);
       }
-
-      const savedCardSystem = localStorage.getItem(CARD_STORAGE_KEY);
-      setCardSystem(
-        savedCardSystem
-          ? restoreCardSystem(savedCardSystem, restoredFormat)
-          : createCardSystem(restoredFormat),
-      );
-      const savedAt = localStorage.getItem(SAVED_AT_STORAGE_KEY);
-      return {
-        status: "saved" as const,
-        savedAt: savedAt ? new Date(savedAt) : null,
-      };
-    } catch {
-      localStorage.removeItem(DRAFT_STORAGE_KEY);
-      localStorage.removeItem(CARD_STORAGE_KEY);
-      localStorage.removeItem(SAVED_AT_STORAGE_KEY);
-      return { status: "unavailable" as const };
     }
+    setCardSystem(snapshot.cardSystem);
+    return { status: "saved" as const, savedAt: snapshot.savedAt };
   }, [roles, setActiveRoleCategory, setCardSystem, setDraft]);
 
   const save = useCallback((snapshot: BuilderSnapshot, savedAt: Date) => {
